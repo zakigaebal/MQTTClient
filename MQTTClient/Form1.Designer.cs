@@ -75,11 +75,11 @@
 			this.textBox13 = new System.Windows.Forms.TextBox();
 			this.textBoxPort = new System.Windows.Forms.TextBox();
 			this.textBox14 = new System.Windows.Forms.TextBox();
-			this.textBox11 = new System.Windows.Forms.TextBox();
+			this.textBoxM4 = new System.Windows.Forms.TextBox();
 			this.textBox15 = new System.Windows.Forms.TextBox();
-			this.textBox9 = new System.Windows.Forms.TextBox();
+			this.textBoxM3 = new System.Windows.Forms.TextBox();
 			this.textBox16 = new System.Windows.Forms.TextBox();
-			this.textBox7 = new System.Windows.Forms.TextBox();
+			this.textBoxM2 = new System.Windows.Forms.TextBox();
 			this.textBox17 = new System.Windows.Forms.TextBox();
 			this.textBoxMessage = new System.Windows.Forms.TextBox();
 			this.textBox18 = new System.Windows.Forms.TextBox();
@@ -176,11 +176,11 @@
 			this.panel1.Controls.Add(this.textBox13);
 			this.panel1.Controls.Add(this.textBoxPort);
 			this.panel1.Controls.Add(this.textBox14);
-			this.panel1.Controls.Add(this.textBox11);
+			this.panel1.Controls.Add(this.textBoxM4);
 			this.panel1.Controls.Add(this.textBox15);
-			this.panel1.Controls.Add(this.textBox9);
+			this.panel1.Controls.Add(this.textBoxM3);
 			this.panel1.Controls.Add(this.textBox16);
-			this.panel1.Controls.Add(this.textBox7);
+			this.panel1.Controls.Add(this.textBoxM2);
 			this.panel1.Controls.Add(this.textBox17);
 			this.panel1.Controls.Add(this.textBoxMessage);
 			this.panel1.Controls.Add(this.textBox18);
@@ -337,7 +337,7 @@
 			// checkBox2
 			// 
 			this.checkBox2.AutoSize = true;
-			this.checkBox2.Location = new System.Drawing.Point(247, 135);
+			this.checkBox2.Location = new System.Drawing.Point(691, 13);
 			this.checkBox2.Name = "checkBox2";
 			this.checkBox2.Size = new System.Drawing.Size(15, 14);
 			this.checkBox2.TabIndex = 5;
@@ -457,6 +457,7 @@
 			this.buttonPublish4.TabIndex = 2;
 			this.buttonPublish4.Text = "Publish";
 			this.buttonPublish4.UseVisualStyleBackColor = true;
+			this.buttonPublish4.Click += new System.EventHandler(this.buttonPublish4_Click);
 			// 
 			// label8
 			// 
@@ -476,6 +477,7 @@
 			this.buttonPublish3.TabIndex = 2;
 			this.buttonPublish3.Text = "Publish";
 			this.buttonPublish3.UseVisualStyleBackColor = true;
+			this.buttonPublish3.Click += new System.EventHandler(this.buttonPublish3_Click);
 			// 
 			// label9
 			// 
@@ -495,11 +497,12 @@
 			this.buttonPublish2.TabIndex = 2;
 			this.buttonPublish2.Text = "Publish";
 			this.buttonPublish2.UseVisualStyleBackColor = true;
+			this.buttonPublish2.Click += new System.EventHandler(this.buttonPublish2_Click);
 			// 
 			// label6
 			// 
 			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(104, 135);
+			this.label6.Location = new System.Drawing.Point(712, 15);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(137, 12);
 			this.label6.TabIndex = 0;
@@ -596,12 +599,12 @@
 			this.textBox14.Size = new System.Drawing.Size(179, 21);
 			this.textBox14.TabIndex = 1;
 			// 
-			// textBox11
+			// textBoxM4
 			// 
-			this.textBox11.Location = new System.Drawing.Point(99, 366);
-			this.textBox11.Name = "textBox11";
-			this.textBox11.Size = new System.Drawing.Size(260, 21);
-			this.textBox11.TabIndex = 1;
+			this.textBoxM4.Location = new System.Drawing.Point(99, 366);
+			this.textBoxM4.Name = "textBoxM4";
+			this.textBoxM4.Size = new System.Drawing.Size(260, 21);
+			this.textBoxM4.TabIndex = 1;
 			// 
 			// textBox15
 			// 
@@ -610,12 +613,12 @@
 			this.textBox15.Size = new System.Drawing.Size(179, 21);
 			this.textBox15.TabIndex = 1;
 			// 
-			// textBox9
+			// textBoxM3
 			// 
-			this.textBox9.Location = new System.Drawing.Point(99, 310);
-			this.textBox9.Name = "textBox9";
-			this.textBox9.Size = new System.Drawing.Size(260, 21);
-			this.textBox9.TabIndex = 1;
+			this.textBoxM3.Location = new System.Drawing.Point(99, 310);
+			this.textBoxM3.Name = "textBoxM3";
+			this.textBoxM3.Size = new System.Drawing.Size(260, 21);
+			this.textBoxM3.TabIndex = 1;
 			// 
 			// textBox16
 			// 
@@ -624,12 +627,12 @@
 			this.textBox16.Size = new System.Drawing.Size(179, 21);
 			this.textBox16.TabIndex = 1;
 			// 
-			// textBox7
+			// textBoxM2
 			// 
-			this.textBox7.Location = new System.Drawing.Point(99, 254);
-			this.textBox7.Name = "textBox7";
-			this.textBox7.Size = new System.Drawing.Size(260, 21);
-			this.textBox7.TabIndex = 1;
+			this.textBoxM2.Location = new System.Drawing.Point(99, 254);
+			this.textBoxM2.Name = "textBoxM2";
+			this.textBoxM2.Size = new System.Drawing.Size(260, 21);
+			this.textBoxM2.TabIndex = 1;
 			// 
 			// textBox17
 			// 
@@ -766,9 +769,9 @@
 		private System.Windows.Forms.Button buttonSubscribe;
 		private System.Windows.Forms.Button buttonDisconnect;
 		private System.Windows.Forms.TextBox textBoxPort;
-		private System.Windows.Forms.TextBox textBox11;
-		private System.Windows.Forms.TextBox textBox9;
-		private System.Windows.Forms.TextBox textBox7;
+		private System.Windows.Forms.TextBox textBoxM4;
+		private System.Windows.Forms.TextBox textBoxM3;
+		private System.Windows.Forms.TextBox textBoxM2;
 		private System.Windows.Forms.TextBox textBoxMessage;
 		private System.Windows.Forms.TextBox textBoxPT4;
 		private System.Windows.Forms.TextBox textBoxPT3;

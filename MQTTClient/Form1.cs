@@ -10,13 +10,10 @@ namespace MQTTClient
 {
 	public partial class Form1 : Form
 	{
-	
 		static MqttClient clientUser;
 		DataTable dt = new DataTable();
 		private delegate void ShowCallBack(string myStr1, string myStr2, DataGridView dgv);
 	
-
-
 		private void ShowMessage(string myStr1, string myStr2, DataGridView dgv)
 		{
 			if (this.InvokeRequired)
@@ -24,13 +21,11 @@ namespace MQTTClient
 				ShowCallBack myUpdate = new ShowCallBack(ShowMessage);
 				this.Invoke(myUpdate, myStr1, myStr2, dgv);
 			}
-
 			else
 			{
 				//dgv.Rows.Add(myStr + Environment.NewLine);
 				dt.Rows.Add(DateTime.Now.ToString("HH:mm:ss"), myStr1 + Environment.NewLine, myStr2 + Environment.NewLine);
 				dataGridViewMessage.DataSource = dt;
-
 			}
 		}
 
@@ -38,17 +33,12 @@ namespace MQTTClient
 		{
 			byte[] a = System.Text.Encoding.UTF8.GetBytes(data.Topic);
 			ShowMessage(System.Text.Encoding.UTF8.GetString(a), System.Text.Encoding.UTF8.GetString(data.Message), dataGridViewMessage);
-			
 		}
-
-	
 
 		public Form1()
 		{
 			InitializeComponent();
 		}
-
-
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
@@ -202,6 +192,44 @@ namespace MQTTClient
 				textBoxPT2.Enabled = true;
 				textBoxPT3.Enabled = true;
 				textBoxPT4.Enabled = true;
+			}
+		}
+
+		private void buttonPublish2_Click(object sender, EventArgs e)
+		{
+			if(checkBoxTopicpub.Checked == true)
+			{
+				clientUser.Publish(textBoxPubTopic.Text, Encoding.UTF8.GetBytes(textBoxM2.Text), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+			}
+			else if (checkBoxTopicpub.Checked == false)
+			{
+				clientUser.Publish(textBoxPT2.Text, Encoding.UTF8.GetBytes(textBoxM2.Text), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+			}
+		}
+
+		private void buttonPublish3_Click(object sender, EventArgs e)
+		{
+			if (checkBoxTopicpub.Checked == true)
+			{
+				clientUser.Publish(textBoxPubTopic.Text, Encoding.UTF8.GetBytes(textBoxM3.Text), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+			}
+			else if (checkBoxTopicpub.Checked == false)
+			{
+				clientUser.Publish(textBoxPT3.Text, Encoding.UTF8.GetBytes(textBoxM3.Text), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+			}
+		}
+
+		private void buttonPublish4_Click(object sender, EventArgs e)
+		{
+			{
+				if (checkBoxTopicpub.Checked == true)
+				{
+					clientUser.Publish(textBoxPubTopic.Text, Encoding.UTF8.GetBytes(textBoxM4.Text), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+				}
+				else if (checkBoxTopicpub.Checked == false)
+				{
+					clientUser.Publish(textBoxPT4.Text, Encoding.UTF8.GetBytes(textBoxM4.Text), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+				}
 			}
 		}
 	}
