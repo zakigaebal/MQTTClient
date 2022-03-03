@@ -122,10 +122,13 @@
 			// 
 			// dataGridViewMessage
 			// 
+			this.dataGridViewMessage.AllowUserToAddRows = false;
+			this.dataGridViewMessage.AllowUserToDeleteRows = false;
 			this.dataGridViewMessage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridViewMessage.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dataGridViewMessage.Location = new System.Drawing.Point(3, 409);
 			this.dataGridViewMessage.Name = "dataGridViewMessage";
+			this.dataGridViewMessage.ReadOnly = true;
 			this.dataGridViewMessage.RowTemplate.Height = 23;
 			this.dataGridViewMessage.Size = new System.Drawing.Size(1267, 190);
 			this.dataGridViewMessage.TabIndex = 9;

@@ -13,7 +13,34 @@ namespace MQTTClient
 		static MqttClient clientUser;
 		DataTable dt = new DataTable();
 		private delegate void ShowCallBack(string myStr1, string myStr2, DataGridView dgv);
-	
+
+		public Form1()
+		{
+			InitializeComponent();
+		}
+
+		private void Form1_Load(object sender, EventArgs e)
+		{
+			mqttRecord();
+			textBoxPort.Text = "1883";
+			comboBoxQos.SelectedIndex = 1;
+		}
+		private void mqttRecord()
+		{
+			dt.Columns.Add("Time", typeof(string));
+			dt.Columns.Add("Topic");
+			dt.Columns.Add("Message");
+			dt.DefaultView.Sort = "Time desc";
+			dataGridViewMessage.DataSource = dt;
+
+			dataGridViewMessage.ReadOnly = true;
+			dataGridViewMessage.RowHeadersVisible = false;
+			dataGridViewMessage.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+			dataGridViewMessage.Columns[dataGridViewMessage.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+			dataGridViewMessage.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+
+		}
+
 		private void ShowMessage(string myStr1, string myStr2, DataGridView dgv)
 		{
 			if (this.InvokeRequired)
@@ -35,33 +62,9 @@ namespace MQTTClient
 			ShowMessage(System.Text.Encoding.UTF8.GetString(a), System.Text.Encoding.UTF8.GetString(data.Message), dataGridViewMessage);
 		}
 
-		public Form1()
-		{
-			InitializeComponent();
-		}
-
-		private void Form1_Load(object sender, EventArgs e)
-		{
-			mqttRecord();
-			textBoxPort.Text = "1883";
-			comboBoxQos.SelectedIndex = 1;
-		}
-
-		private void mqttRecord()
-		{
-			dt.Columns.Add("Time", typeof(string));
-			dt.Columns.Add("Topic");
-			dt.Columns.Add("Message");
-			dt.DefaultView.Sort = "Time desc";
-			dataGridViewMessage.DataSource = dt;
 	
-			dataGridViewMessage.ReadOnly = true;
-			dataGridViewMessage.RowHeadersVisible = false;
-			dataGridViewMessage.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-			dataGridViewMessage.Columns[dataGridViewMessage.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-			dataGridViewMessage.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+
 	
-		}
 
 		private void buttonLocal_Click(object sender, EventArgs e)
 		{
