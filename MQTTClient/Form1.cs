@@ -2,6 +2,7 @@
 using System.Data;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 using uPLibrary.Networking.M2Mqtt;
 using uPLibrary.Networking.M2Mqtt.Messages;
 
@@ -25,6 +26,7 @@ namespace MQTTClient
 			textBoxPort.Text = "1883";
 			comboBoxQos.SelectedIndex = 1;
 		}
+
 		private void mqttRecord()
 		{
 			dt.Columns.Add("Time", typeof(string));
@@ -59,7 +61,7 @@ namespace MQTTClient
 		private void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs data)
 		{
 			byte[] a = System.Text.Encoding.UTF8.GetBytes(data.Topic);
-			ShowMessage(System.Text.Encoding.UTF8.GetString(a), System.Text.Encoding.UTF8.GetString(data.Message), dataGridViewMessage);
+			ShowMessage(data.Topic, System.Text.Encoding.UTF8.GetString(data.Message), dataGridViewMessage);
 		}
 
 	
