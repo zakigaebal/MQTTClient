@@ -180,6 +180,7 @@ namespace MQTTClient
 		private void buttonClear_Click(object sender, EventArgs e)
 		{
 			listBoxSub.Items.Clear();
+			((DataTable)dataGridViewMessage.DataSource).Rows.Clear();
 		}
 
 		private void checkBoxTopicpub_CheckedChanged(object sender, EventArgs e)
