@@ -13,25 +13,22 @@ namespace MQTTClient
 	
 		static MqttClient clientUser;
 		DataTable dt = new DataTable();
-		private delegate void ShowCallBack(string myStr, DataGridView dgv);
+		private delegate void ShowCallBack(string myStr1, string myStr2, DataGridView dgv);
 	
 
 
-		private void ShowMessage(string myStr, DataGridView dgv)
+		private void ShowMessage(string myStr1, string myStr2, DataGridView dgv)
 		{
 			if (this.InvokeRequired)
 			{
 				ShowCallBack myUpdate = new ShowCallBack(ShowMessage);
-				this.Invoke(myUpdate, myStr, dgv);
+				this.Invoke(myUpdate, myStr1, myStr2, dgv);
 			}
 
 			else
 			{
 				//dgv.Rows.Add(myStr + Environment.NewLine);
-		
-
-
-				dt.Rows.Add(DateTime.Now.ToString("HH:mm:ss"), a + Environment.NewLine, myStr + Environment.NewLine);
+				dt.Rows.Add(DateTime.Now.ToString("HH:mm:ss"), myStr1 + Environment.NewLine, myStr2 + Environment.NewLine);
 				dataGridViewMessage.DataSource = dt;
 
 			}
@@ -39,9 +36,9 @@ namespace MQTTClient
 
 		private void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs data)
 		{
-			ShowMessage(System.Text.Encoding.UTF8.GetString(data.Message), dataGridViewMessage);
 			byte[] a = System.Text.Encoding.UTF8.GetBytes(data.Topic);
-			ShowMessage(System.Text.Encoding.UTF8.GetString(a), dataGridViewMessage);
+			ShowMessage(System.Text.Encoding.UTF8.GetString(a), System.Text.Encoding.UTF8.GetString(data.Message), dataGridViewMessage);
+			
 		}
 
 	
@@ -62,13 +59,13 @@ namespace MQTTClient
 
 		private void mqttRecord()
 		{
-		
 			dt.Columns.Add("Time", typeof(string));
 			dt.Columns.Add("Topic");
 			dt.Columns.Add("Message");
 			dt.DefaultView.Sort = "Time desc";
 			dataGridViewMessage.DataSource = dt;
 	
+			dataGridViewMessage.ReadOnly = true;
 			dataGridViewMessage.RowHeadersVisible = false;
 			dataGridViewMessage.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 			dataGridViewMessage.Columns[dataGridViewMessage.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -140,7 +137,7 @@ namespace MQTTClient
 				
 					listBoxSub.Items.Add(textBoxSubTopic.Text);
 			}
-			catch (Exception ea)
+			catch
 			{
 				return;
 			}
@@ -154,7 +151,7 @@ namespace MQTTClient
 				///게시///
 				clientUser.Publish(textBoxPubTopic.Text, Encoding.UTF8.GetBytes(textBoxMessage.Text), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 			}
-			catch (Exception ea)
+			catch
 			{
 				return;
 			}
