@@ -248,11 +248,12 @@
 			this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.label16.AutoSize = true;
 			this.label16.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label16.Location = new System.Drawing.Point(167, 14);
+			this.label16.Location = new System.Drawing.Point(168, 21);
 			this.label16.Name = "label16";
 			this.label16.Size = new System.Drawing.Size(31, 17);
 			this.label16.TabIndex = 0;
 			this.label16.Text = "Red";
+			this.label16.Click += new System.EventHandler(this.label16_Click);
 			// 
 			// buttonSave
 			// 
@@ -270,7 +271,7 @@
 			this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.label17.AutoSize = true;
 			this.label17.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label17.Location = new System.Drawing.Point(167, 44);
+			this.label17.Location = new System.Drawing.Point(168, 50);
 			this.label17.Name = "label17";
 			this.label17.Size = new System.Drawing.Size(44, 17);
 			this.label17.TabIndex = 0;
@@ -291,7 +292,7 @@
 			this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.label18.AutoSize = true;
 			this.label18.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label18.Location = new System.Drawing.Point(168, 69);
+			this.label18.Location = new System.Drawing.Point(168, 81);
 			this.label18.Name = "label18";
 			this.label18.Size = new System.Drawing.Size(46, 17);
 			this.label18.TabIndex = 0;
@@ -312,7 +313,7 @@
 			this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.label19.AutoSize = true;
 			this.label19.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label19.Location = new System.Drawing.Point(167, 93);
+			this.label19.Location = new System.Drawing.Point(168, 109);
 			this.label19.Name = "label19";
 			this.label19.Size = new System.Drawing.Size(35, 17);
 			this.label19.TabIndex = 0;
@@ -323,7 +324,7 @@
 			this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.label20.AutoSize = true;
 			this.label20.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label20.Location = new System.Drawing.Point(167, 116);
+			this.label20.Location = new System.Drawing.Point(168, 143);
 			this.label20.Name = "label20";
 			this.label20.Size = new System.Drawing.Size(37, 17);
 			this.label20.TabIndex = 0;
@@ -344,7 +345,7 @@
 			this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.label21.AutoSize = true;
 			this.label21.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label21.Location = new System.Drawing.Point(168, 143);
+			this.label21.Location = new System.Drawing.Point(168, 174);
 			this.label21.Name = "label21";
 			this.label21.Size = new System.Drawing.Size(46, 17);
 			this.label21.TabIndex = 0;
@@ -365,7 +366,7 @@
 			this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.label22.AutoSize = true;
 			this.label22.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label22.Location = new System.Drawing.Point(168, 171);
+			this.label22.Location = new System.Drawing.Point(168, 205);
 			this.label22.Name = "label22";
 			this.label22.Size = new System.Drawing.Size(35, 17);
 			this.label22.TabIndex = 0;
@@ -606,10 +607,11 @@
 			// 
 			this.textBoxRed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.textBoxRed.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBoxRed.Location = new System.Drawing.Point(219, 9);
+			this.textBoxRed.Location = new System.Drawing.Point(219, 16);
 			this.textBoxRed.Name = "textBoxRed";
 			this.textBoxRed.Size = new System.Drawing.Size(179, 25);
 			this.textBoxRed.TabIndex = 1;
+			this.textBoxRed.TextChanged += new System.EventHandler(this.textBoxRed_TextChanged);
 			// 
 			// textBoxPort
 			// 
@@ -623,7 +625,7 @@
 			// 
 			this.textBoxGreen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.textBoxGreen.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBoxGreen.Location = new System.Drawing.Point(219, 35);
+			this.textBoxGreen.Location = new System.Drawing.Point(219, 47);
 			this.textBoxGreen.Name = "textBoxGreen";
 			this.textBoxGreen.Size = new System.Drawing.Size(179, 25);
 			this.textBoxGreen.TabIndex = 1;
@@ -640,7 +642,7 @@
 			// 
 			this.textBoxYellow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.textBoxYellow.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBoxYellow.Location = new System.Drawing.Point(219, 59);
+			this.textBoxYellow.Location = new System.Drawing.Point(219, 78);
 			this.textBoxYellow.Name = "textBoxYellow";
 			this.textBoxYellow.Size = new System.Drawing.Size(179, 25);
 			this.textBoxYellow.TabIndex = 1;
@@ -657,7 +659,7 @@
 			// 
 			this.textBoxGray.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.textBoxGray.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBoxGray.Location = new System.Drawing.Point(219, 86);
+			this.textBoxGray.Location = new System.Drawing.Point(219, 109);
 			this.textBoxGray.Name = "textBoxGray";
 			this.textBoxGray.Size = new System.Drawing.Size(179, 25);
 			this.textBoxGray.TabIndex = 1;
@@ -674,7 +676,7 @@
 			// 
 			this.textBoxNavy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.textBoxNavy.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBoxNavy.Location = new System.Drawing.Point(219, 113);
+			this.textBoxNavy.Location = new System.Drawing.Point(219, 140);
 			this.textBoxNavy.Name = "textBoxNavy";
 			this.textBoxNavy.Size = new System.Drawing.Size(179, 25);
 			this.textBoxNavy.TabIndex = 1;
@@ -692,7 +694,7 @@
 			// 
 			this.textBoxPurple.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.textBoxPurple.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBoxPurple.Location = new System.Drawing.Point(219, 140);
+			this.textBoxPurple.Location = new System.Drawing.Point(219, 171);
 			this.textBoxPurple.Name = "textBoxPurple";
 			this.textBoxPurple.Size = new System.Drawing.Size(179, 25);
 			this.textBoxPurple.TabIndex = 1;
@@ -709,7 +711,7 @@
 			// 
 			this.textBoxLime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.textBoxLime.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBoxLime.Location = new System.Drawing.Point(219, 168);
+			this.textBoxLime.Location = new System.Drawing.Point(219, 202);
 			this.textBoxLime.Name = "textBoxLime";
 			this.textBoxLime.Size = new System.Drawing.Size(179, 25);
 			this.textBoxLime.TabIndex = 1;
