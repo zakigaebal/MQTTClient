@@ -101,7 +101,6 @@
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.panel3 = new System.Windows.Forms.Panel();
 			this.panel4 = new System.Windows.Forms.Panel();
-			this.button3 = new System.Windows.Forms.Button();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewMessage)).BeginInit();
@@ -844,7 +843,6 @@
 			this.panel2.Controls.Add(this.textBoxRed);
 			this.panel2.Controls.Add(this.textBoxLime);
 			this.panel2.Controls.Add(this.textBoxPurple);
-			this.panel2.Controls.Add(this.button3);
 			this.panel2.Controls.Add(this.buttonClear);
 			this.panel2.Controls.Add(this.textBoxNavy);
 			this.panel2.Controls.Add(this.textBoxGray);
@@ -921,17 +919,6 @@
 			this.panel4.Name = "panel4";
 			this.panel4.Size = new System.Drawing.Size(632, 450);
 			this.panel4.TabIndex = 14;
-			// 
-			// button3
-			// 
-			this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.button3.Location = new System.Drawing.Point(79, 321);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(89, 41);
-			this.button3.TabIndex = 10;
-			this.button3.Text = "Clear";
-			this.button3.UseVisualStyleBackColor = true;
-			this.button3.Click += new System.EventHandler(this.button3_Click);
 			// 
 			// Form1
 			// 
@@ -1034,7 +1021,6 @@
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Panel panel4;
 		private System.Windows.Forms.Panel panel3;
-		private System.Windows.Forms.Button button3;
 	}
 }
 
