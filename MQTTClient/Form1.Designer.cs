@@ -101,7 +101,6 @@
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.panel3 = new System.Windows.Forms.Panel();
 			this.panel4 = new System.Windows.Forms.Panel();
-			this.button3 = new System.Windows.Forms.Button();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewMessage)).BeginInit();
@@ -199,7 +198,7 @@
 			this.textBoxHost.Location = new System.Drawing.Point(119, 12);
 			this.textBoxHost.Name = "textBoxHost";
 			this.textBoxHost.Size = new System.Drawing.Size(242, 25);
-			this.textBoxHost.TabIndex = 1;
+			this.textBoxHost.TabIndex = 0;
 			// 
 			// label1
 			// 
@@ -611,7 +610,7 @@
 			this.textBoxRed.Location = new System.Drawing.Point(219, 16);
 			this.textBoxRed.Name = "textBoxRed";
 			this.textBoxRed.Size = new System.Drawing.Size(179, 25);
-			this.textBoxRed.TabIndex = 1;
+			this.textBoxRed.TabIndex = 0;
 			this.textBoxRed.TextChanged += new System.EventHandler(this.textBoxRed_TextChanged);
 			// 
 			// textBoxPort
@@ -637,7 +636,7 @@
 			this.textBoxM4.Location = new System.Drawing.Point(119, 420);
 			this.textBoxM4.Name = "textBoxM4";
 			this.textBoxM4.Size = new System.Drawing.Size(509, 25);
-			this.textBoxM4.TabIndex = 1;
+			this.textBoxM4.TabIndex = 10;
 			// 
 			// textBoxYellow
 			// 
@@ -646,7 +645,7 @@
 			this.textBoxYellow.Location = new System.Drawing.Point(219, 78);
 			this.textBoxYellow.Name = "textBoxYellow";
 			this.textBoxYellow.Size = new System.Drawing.Size(179, 25);
-			this.textBoxYellow.TabIndex = 1;
+			this.textBoxYellow.TabIndex = 2;
 			// 
 			// textBoxM3
 			// 
@@ -654,7 +653,7 @@
 			this.textBoxM3.Location = new System.Drawing.Point(120, 343);
 			this.textBoxM3.Name = "textBoxM3";
 			this.textBoxM3.Size = new System.Drawing.Size(509, 25);
-			this.textBoxM3.TabIndex = 1;
+			this.textBoxM3.TabIndex = 8;
 			// 
 			// textBoxGray
 			// 
@@ -663,7 +662,7 @@
 			this.textBoxGray.Location = new System.Drawing.Point(219, 109);
 			this.textBoxGray.Name = "textBoxGray";
 			this.textBoxGray.Size = new System.Drawing.Size(179, 25);
-			this.textBoxGray.TabIndex = 1;
+			this.textBoxGray.TabIndex = 3;
 			// 
 			// textBoxM2
 			// 
@@ -671,7 +670,7 @@
 			this.textBoxM2.Location = new System.Drawing.Point(120, 268);
 			this.textBoxM2.Name = "textBoxM2";
 			this.textBoxM2.Size = new System.Drawing.Size(509, 25);
-			this.textBoxM2.TabIndex = 1;
+			this.textBoxM2.TabIndex = 6;
 			// 
 			// textBoxNavy
 			// 
@@ -680,7 +679,7 @@
 			this.textBoxNavy.Location = new System.Drawing.Point(219, 140);
 			this.textBoxNavy.Name = "textBoxNavy";
 			this.textBoxNavy.Size = new System.Drawing.Size(179, 25);
-			this.textBoxNavy.TabIndex = 1;
+			this.textBoxNavy.TabIndex = 4;
 			// 
 			// textBoxMessage
 			// 
@@ -688,7 +687,7 @@
 			this.textBoxMessage.Location = new System.Drawing.Point(120, 192);
 			this.textBoxMessage.Name = "textBoxMessage";
 			this.textBoxMessage.Size = new System.Drawing.Size(509, 25);
-			this.textBoxMessage.TabIndex = 1;
+			this.textBoxMessage.TabIndex = 4;
 			this.textBoxMessage.TextChanged += new System.EventHandler(this.textBoxMessage_TextChanged);
 			// 
 			// textBoxPurple
@@ -698,7 +697,7 @@
 			this.textBoxPurple.Location = new System.Drawing.Point(219, 171);
 			this.textBoxPurple.Name = "textBoxPurple";
 			this.textBoxPurple.Size = new System.Drawing.Size(179, 25);
-			this.textBoxPurple.TabIndex = 1;
+			this.textBoxPurple.TabIndex = 5;
 			// 
 			// textBoxPT4
 			// 
@@ -706,7 +705,7 @@
 			this.textBoxPT4.Location = new System.Drawing.Point(119, 391);
 			this.textBoxPT4.Name = "textBoxPT4";
 			this.textBoxPT4.Size = new System.Drawing.Size(241, 25);
-			this.textBoxPT4.TabIndex = 1;
+			this.textBoxPT4.TabIndex = 9;
 			// 
 			// textBoxLime
 			// 
@@ -715,7 +714,7 @@
 			this.textBoxLime.Location = new System.Drawing.Point(219, 202);
 			this.textBoxLime.Name = "textBoxLime";
 			this.textBoxLime.Size = new System.Drawing.Size(179, 25);
-			this.textBoxLime.TabIndex = 1;
+			this.textBoxLime.TabIndex = 6;
 			// 
 			// textBoxPT3
 			// 
@@ -723,7 +722,7 @@
 			this.textBoxPT3.Location = new System.Drawing.Point(120, 314);
 			this.textBoxPT3.Name = "textBoxPT3";
 			this.textBoxPT3.Size = new System.Drawing.Size(241, 25);
-			this.textBoxPT3.TabIndex = 1;
+			this.textBoxPT3.TabIndex = 7;
 			// 
 			// label12
 			// 
@@ -741,7 +740,7 @@
 			this.textBoxPT2.Location = new System.Drawing.Point(120, 237);
 			this.textBoxPT2.Name = "textBoxPT2";
 			this.textBoxPT2.Size = new System.Drawing.Size(241, 25);
-			this.textBoxPT2.TabIndex = 1;
+			this.textBoxPT2.TabIndex = 5;
 			// 
 			// textBoxSubTopic
 			// 
@@ -749,7 +748,7 @@
 			this.textBoxSubTopic.Location = new System.Drawing.Point(120, 111);
 			this.textBoxSubTopic.Name = "textBoxSubTopic";
 			this.textBoxSubTopic.Size = new System.Drawing.Size(241, 25);
-			this.textBoxSubTopic.TabIndex = 1;
+			this.textBoxSubTopic.TabIndex = 2;
 			// 
 			// textBoxPubTopic
 			// 
@@ -757,7 +756,7 @@
 			this.textBoxPubTopic.Location = new System.Drawing.Point(141, 157);
 			this.textBoxPubTopic.Name = "textBoxPubTopic";
 			this.textBoxPubTopic.Size = new System.Drawing.Size(220, 25);
-			this.textBoxPubTopic.TabIndex = 1;
+			this.textBoxPubTopic.TabIndex = 3;
 			this.textBoxPubTopic.TextChanged += new System.EventHandler(this.textBoxPubTopic_TextChanged);
 			// 
 			// label14
@@ -843,7 +842,6 @@
 			// 
 			// panel2
 			// 
-			this.panel2.Controls.Add(this.button3);
 			this.panel2.Controls.Add(this.textBoxRed);
 			this.panel2.Controls.Add(this.textBoxLime);
 			this.panel2.Controls.Add(this.textBoxPurple);
@@ -863,7 +861,7 @@
 			this.panel2.Location = new System.Drawing.Point(934, 0);
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(403, 460);
-			this.panel2.TabIndex = 12;
+			this.panel2.TabIndex = 0;
 			// 
 			// panel3
 			// 
@@ -879,7 +877,7 @@
 			this.panel3.Location = new System.Drawing.Point(643, 3);
 			this.panel3.Name = "panel3";
 			this.panel3.Size = new System.Drawing.Size(285, 339);
-			this.panel3.TabIndex = 13;
+			this.panel3.TabIndex = 1;
 			// 
 			// panel4
 			// 
@@ -922,17 +920,7 @@
 			this.panel4.Location = new System.Drawing.Point(5, 4);
 			this.panel4.Name = "panel4";
 			this.panel4.Size = new System.Drawing.Size(632, 450);
-			this.panel4.TabIndex = 14;
-			// 
-			// button3
-			// 
-			this.button3.Location = new System.Drawing.Point(171, 382);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(75, 23);
-			this.button3.TabIndex = 11;
-			this.button3.Text = "button3";
-			this.button3.UseVisualStyleBackColor = true;
-			this.button3.Click += new System.EventHandler(this.button3_Click_1);
+			this.panel4.TabIndex = 2;
 			// 
 			// Form1
 			// 
@@ -1036,7 +1024,6 @@
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Panel panel4;
 		private System.Windows.Forms.Panel panel3;
-		private System.Windows.Forms.Button button3;
 	}
 }
 

@@ -33,8 +33,6 @@ namespace MQTTClient
 			propertyload();
 		}
 
-
-
 		private void propertyload()
 		{
 			textBoxHost.Text = Properties.Settings.Default.host;
@@ -110,8 +108,8 @@ namespace MQTTClient
 			{
 				//dgv.Rows.Add(myStr + Environment.NewLine);
 				dt.Rows.Add(DateTime.Now.ToString("HH:mm:ss:fff"), myStr1 + Environment.NewLine, myStr2 + Environment.NewLine);
-				dataGridViewMessage.DataSource = dt;
 				dataGridViewMessage.CurrentCell = dataGridViewMessage.Rows[0].Cells[0];
+				dataGridViewMessage.DataSource = dt;
 			
 			
 			}
@@ -316,7 +314,7 @@ namespace MQTTClient
 								return;
 							}
 							else
-							  if(text.Contains(",") == false)
+							 // if(text.Contains(",") == false)
 								e.CellStyle.BackColor = Color.Red;
 						
 						}
@@ -355,6 +353,7 @@ namespace MQTTClient
 							}
 							else
 								e.CellStyle.BackColor = Color.Navy;
+							  e.CellStyle.ForeColor = Color.White;
 						}
 						if (text.Contains(textBoxPurple.Text))
 						{
@@ -364,6 +363,7 @@ namespace MQTTClient
 							}
 							else
 								e.CellStyle.BackColor = Color.Purple;
+							e.CellStyle.ForeColor = Color.White;
 						}
 						if (text.Contains(textBoxLime.Text))
 						{
