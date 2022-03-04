@@ -132,7 +132,7 @@
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
 			this.tabPage1.Size = new System.Drawing.Size(1343, 692);
 			this.tabPage1.TabIndex = 0;
-			this.tabPage1.Text = "Mqtt";
+			this.tabPage1.Text = "MQTT";
 			this.tabPage1.UseVisualStyleBackColor = true;
 			// 
 			// dataGridViewMessage
@@ -929,6 +929,7 @@
 			this.ClientSize = new System.Drawing.Size(1351, 718);
 			this.Controls.Add(this.tabControl1);
 			this.Name = "Form1";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "MQTT Client";
 			this.Load += new System.EventHandler(this.Form1_Load);
 			this.tabControl1.ResumeLayout(false);
