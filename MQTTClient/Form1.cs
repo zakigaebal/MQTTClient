@@ -421,6 +421,26 @@ namespace MQTTClient
 		{
 			setttingSave();
 		}
+
+		private void label7_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label8_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void textBoxMessage_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void textBoxPubTopic_TextChanged(object sender, EventArgs e)
+		{
+
+		}
 	}
 	//Put this class at the end of the main class or you will have problems.
 	public static class ExtensionMethods    // DoubleBuffered 메서드를 확장 시켜주자..
