@@ -19,20 +19,67 @@ namespace MQTTClient
 		public Form1()
 		{
 			InitializeComponent();
-			dataGridViewMessage.DoubleBuffered(true);
-			dataGridViewMessage.SuspendLayout();
 			//폼 닫기 이벤트 선언
-
 			this.FormClosed += Form_Closing;
 		}
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
-
+			dataGridViewMessage.DoubleBuffered(true);
+			dataGridViewMessage.SuspendLayout();
 			mqttRecord();
 			textBoxPort.Text = "1883";
 			comboBoxQos.SelectedIndex = 1;
+			propertyload();
 		}
+
+
+
+		private void propertyload()
+		{
+			textBoxHost.Text = Properties.Settings.Default.host;
+			comboBoxQos.Text = Properties.Settings.Default.qos;
+			textBoxSubTopic.Text = Properties.Settings.Default.topicSub;
+			textBoxPubTopic.Text = Properties.Settings.Default.topicPub1;
+			textBoxMessage.Text = Properties.Settings.Default.topicPm1;
+			textBoxPT2.Text = Properties.Settings.Default.topicPub2;
+			textBoxM2.Text = Properties.Settings.Default.topicPm2;
+			textBoxPT3.Text = Properties.Settings.Default.topicPub3;
+			textBoxM3.Text = Properties.Settings.Default.topicPm3;
+			textBoxPT4.Text = Properties.Settings.Default.topicPub4;
+			textBoxM4.Text = Properties.Settings.Default.topicPm4;
+			textBoxRed.Text = Properties.Settings.Default.red;
+			textBoxGreen.Text = Properties.Settings.Default.green;
+			textBoxYellow.Text = Properties.Settings.Default.yellow;
+			textBoxGray.Text = Properties.Settings.Default.gray;
+			textBoxNavy.Text = Properties.Settings.Default.purple;
+			textBoxLime.Text = Properties.Settings.Default.lime;
+		}
+
+		private void propertyCloseMethod()
+		{
+			Properties.Settings.Default.host = textBoxHost.Text;
+			Properties.Settings.Default.port = textBoxPort.Text;
+			Properties.Settings.Default.qos = comboBoxQos.Text;
+			Properties.Settings.Default.topicSub = textBoxSubTopic.Text;
+			Properties.Settings.Default.topicPub1 = textBoxPubTopic.Text;
+			Properties.Settings.Default.topicPm1 = textBoxMessage.Text;
+			Properties.Settings.Default.topicPub2 = textBoxPT2.Text;
+			Properties.Settings.Default.topicPm2 = textBoxM2.Text;
+			Properties.Settings.Default.topicPub3 = textBoxPT3.Text;
+			Properties.Settings.Default.topicPm3 = textBoxM3.Text;
+			Properties.Settings.Default.topicPub4 = textBoxPT4.Text;
+			Properties.Settings.Default.topicPm4 = textBoxM4.Text;
+			Properties.Settings.Default.red = textBoxRed.Text;
+			Properties.Settings.Default.green = textBoxGreen.Text;
+			Properties.Settings.Default.yellow = textBoxYellow.Text;
+			Properties.Settings.Default.gray = textBoxGray.Text;
+			Properties.Settings.Default.navy = textBoxNavy.Text;
+			Properties.Settings.Default.purple = textBoxPurple.Text;
+			Properties.Settings.Default.lime = textBoxLime.Text;
+			Properties.Settings.Default.Save(); ;
+		}
+
 		private void mqttRecord()
 		{
 			dt.Columns.Add("Time", typeof(string));
@@ -343,25 +390,12 @@ namespace MQTTClient
 		/// <param name="e"></param>
 
 		public void Form_Closing(object sender, FormClosedEventArgs e)
-
 		{
+			propertyCloseMethod();
+		}
+
 
 		
-
-		}
-
-
-		private void setttingSave()
-		{
-			Properties.Settings.Default.host = textBoxHost.Text;
-			Properties.Settings.Default.port = textBoxPort.Text;
-			Properties.Settings.Default.qos = comboBoxQos.Text;
-			Properties.Settings.Default.topicSub = textBoxSubTopic.Text;
-			Properties.Settings.Default.topicPub1 = textBoxPubTopic.Text;
-			Properties.Settings.Default.topicPm1 = textBoxMessage.Text;
-
-			Properties.Settings.Default.Save();
-		}
 
 
 		private void buttonSave_Click(object sender, EventArgs e)
@@ -417,10 +451,7 @@ namespace MQTTClient
 			System.Diagnostics.Process.Start("Log");
 		}
 
-		private void button3_Click(object sender, EventArgs e)
-		{
-			setttingSave();
-		}
+
 
 		private void label7_Click(object sender, EventArgs e)
 		{
@@ -451,7 +482,14 @@ namespace MQTTClient
 		{
 
 		}
+
+		private void button3_Click_1(object sender, EventArgs e)
+		{
+			
+		
+		}
 	}
+
 	//Put this class at the end of the main class or you will have problems.
 	public static class ExtensionMethods    // DoubleBuffered 메서드를 확장 시켜주자..
 	{

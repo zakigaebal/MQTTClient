@@ -101,6 +101,7 @@
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.panel3 = new System.Windows.Forms.Panel();
 			this.panel4 = new System.Windows.Forms.Panel();
+			this.button3 = new System.Windows.Forms.Button();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewMessage)).BeginInit();
@@ -842,6 +843,7 @@
 			// 
 			// panel2
 			// 
+			this.panel2.Controls.Add(this.button3);
 			this.panel2.Controls.Add(this.textBoxRed);
 			this.panel2.Controls.Add(this.textBoxLime);
 			this.panel2.Controls.Add(this.textBoxPurple);
@@ -921,6 +923,16 @@
 			this.panel4.Name = "panel4";
 			this.panel4.Size = new System.Drawing.Size(632, 450);
 			this.panel4.TabIndex = 14;
+			// 
+			// button3
+			// 
+			this.button3.Location = new System.Drawing.Point(171, 382);
+			this.button3.Name = "button3";
+			this.button3.Size = new System.Drawing.Size(75, 23);
+			this.button3.TabIndex = 11;
+			this.button3.Text = "button3";
+			this.button3.UseVisualStyleBackColor = true;
+			this.button3.Click += new System.EventHandler(this.button3_Click_1);
 			// 
 			// Form1
 			// 
@@ -1024,6 +1036,7 @@
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Panel panel4;
 		private System.Windows.Forms.Panel panel3;
+		private System.Windows.Forms.Button button3;
 	}
 }
 
