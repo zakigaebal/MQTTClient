@@ -8,6 +8,7 @@ using uPLibrary.Networking.M2Mqtt.Messages;
 using System.Reflection;
 using System.Drawing;
 using System.Runtime.InteropServices;
+using System.Diagnostics;
 
 namespace MQTTClient
 {
@@ -38,8 +39,32 @@ namespace MQTTClient
 			comboBoxQos.SelectedIndex = 1;
 			initload();
 		}
-	
 
+		private void buttonTopicSave_Click(object sender, EventArgs e)
+		{
+			StreamWriter sw;
+			sw = new StreamWriter("Sub.txt");
+			int nCount = listBoxSub.Items.Count;
+			for (int i = 0; i < nCount; i++)
+			{
+				listBoxSub.Items[i] += "\r\n";
+				sw.Write(listBoxSub.Items[i]);
+			}
+			sw.Close();
+		}
+		private void buttonTopicOpen_Click(object sender, EventArgs e)
+		{
+			listBoxSub.Items.Clear();
+			string currentPath = System.IO.Directory.GetCurrentDirectory();
+			StreamReader file = new StreamReader(currentPath + "\\Sub.txt", Encoding.Default); 
+			string s = ""; 
+			while (s != null)
+			{ 
+				s = file.ReadLine(); 
+				if (!string.IsNullOrEmpty(s)) listBoxSub.Items.Add(s); 
+			}
+			file.Close();
+		}
 		private void initload()
 		{
 			// ini값을 집어넣을 변수 선언
@@ -72,6 +97,10 @@ namespace MQTTClient
 			StringBuilder navy = new StringBuilder();
 			StringBuilder purple = new StringBuilder();
 			StringBuilder lime = new StringBuilder();
+			StringBuilder pink = new StringBuilder();
+			StringBuilder orange = new StringBuilder();
+			StringBuilder blue = new StringBuilder();
+			StringBuilder black = new StringBuilder();
 
 			// ini파일에서 데이터를 불러옴
 			// GetPrivateProfileString("카테고리", "Key값", "기본값", "저장할 변수", "불러올 경로");
@@ -104,6 +133,10 @@ namespace MQTTClient
 			GetPrivateProfileString("Color", "Navy", "", navy, 32, Application.StartupPath + @"\MqttClient.ini");
 			GetPrivateProfileString("Color", "Purple", "", purple, 32, Application.StartupPath + @"\MqttClient.ini");
 			GetPrivateProfileString("Color", "Lime", "", lime, 32, Application.StartupPath + @"\MqttClient.ini");
+			GetPrivateProfileString("Color", "Pink", "", pink, 32, Application.StartupPath + @"\MqttClient.ini");
+			GetPrivateProfileString("Color", "Orange", "", orange, 32, Application.StartupPath + @"\MqttClient.ini");
+			GetPrivateProfileString("Color", "Blue", "", blue, 32, Application.StartupPath + @"\MqttClient.ini");
+			GetPrivateProfileString("Color", "Black", "", black, 32, Application.StartupPath + @"\MqttClient.ini");
 
 			// 텍스트박스에 ini파일에서 가져온 데이터를 넣는다
 			textBoxHost.Text = host.ToString();
@@ -135,6 +168,10 @@ namespace MQTTClient
 			textBoxNavy.Text = navy.ToString();
 			textBoxPurple.Text = purple.ToString();
 			textBoxLime.Text = lime.ToString();
+			textBoxPink.Text = pink.ToString();
+			textBoxOrange.Text = orange.ToString();
+			textBoxBlue.Text = blue.ToString();
+			textBoxBlack.Text = black.ToString();
 		}
 
 		private void initCloseMethod()
@@ -170,6 +207,10 @@ namespace MQTTClient
 			WritePrivateProfileString("Color", "Navy", textBoxNavy.Text, Application.StartupPath + @"\MqttClient.ini");
 			WritePrivateProfileString("Color", "Purple", textBoxPurple.Text, Application.StartupPath + @"\MqttClient.ini");
 			WritePrivateProfileString("Color", "Lime", textBoxLime.Text, Application.StartupPath + @"\MqttClient.ini");
+			WritePrivateProfileString("Color", "Pink", textBoxPink.Text, Application.StartupPath + @"\MqttClient.ini");
+			WritePrivateProfileString("Color", "Orange", textBoxOrange.Text, Application.StartupPath + @"\MqttClient.ini");
+			WritePrivateProfileString("Color", "Blue", textBoxBlue.Text, Application.StartupPath + @"\MqttClient.ini");
+			WritePrivateProfileString("Color", "Black", textBoxBlack.Text, Application.StartupPath + @"\MqttClient.ini");
 		}
 
 		private void mqttRecord()
@@ -208,6 +249,7 @@ namespace MQTTClient
 				string sLine = "";
 				for (int r = 0; r <= dataGridViewMessage.Rows.Count - 1; r++)
 				{
+					file.Write(sLine);
 
 					for (int c = 0; c <= dataGridViewMessage.Columns.Count - 1; c++)
 					{
@@ -217,7 +259,6 @@ namespace MQTTClient
 							sLine = sLine + ",";
 						}
 					}
-					file.Write(sLine);
 				}
 					file.Close();
 
@@ -232,7 +273,29 @@ namespace MQTTClient
 			}
 		}
 
+		private void buttonSubscribe2_Click(object sender, EventArgs e)
+		{
+			if (textBoxSubTopic.Text.Length == 0)
+			{
+				return;
+			}
+			else
+			{
+				try
+				{
+					
+					clientUser.Subscribe(new string[] { listBoxSub.SelectedItem.ToString() }, new byte[] { (byte)comboBoxQos.SelectedIndex });
 
+				  
+					dataGridViewMessage.DoubleBuffered(true);
+					dataGridViewMessage.SuspendLayout();
+				}
+				catch
+				{
+					return;
+				}
+			}
+		}
 		private void ShowMessage(string myStr1, string myStr2, DataGridView dgv)
 		{
 			if (this.InvokeRequired)
@@ -246,7 +309,7 @@ namespace MQTTClient
 				dt.Rows.Add(DateTime.Now.ToString("HH:mm:ss:fff"), myStr1 + Environment.NewLine, myStr2 + Environment.NewLine);
 				dataGridViewMessage.CurrentCell = dataGridViewMessage.Rows[0].Cells[0];
 				dataGridViewMessage.DataSource = dt;
-				logSave();
+				//logSave();
 			}
 		}
 
@@ -317,6 +380,7 @@ namespace MQTTClient
 
 		private void buttonSubscribe_Click(object sender, EventArgs e)
 		{
+		
 			if (textBoxSubTopic.Text.Length == 0)
 			{
 				return;
@@ -325,7 +389,7 @@ namespace MQTTClient
 			{
 				try
 				{
-
+				
 					clientUser.Subscribe(new string[] { textBoxSubTopic.Text }, new byte[] { (byte)comboBoxQos.SelectedIndex });
 
 					listBoxSub.Items.Add(textBoxSubTopic.Text);
@@ -480,6 +544,7 @@ namespace MQTTClient
 							}
 							else
 								e.CellStyle.BackColor = Color.Green;
+							  e.CellStyle.ForeColor = Color.White;
 						}
 						if (text.Contains(textBoxYellow.Text))
 						{
@@ -527,6 +592,44 @@ namespace MQTTClient
 							}
 							else
 								e.CellStyle.BackColor = Color.Lime;
+						}
+						if (text.Contains(textBoxPink.Text))
+						{
+							if (textBoxPink.Text == "")
+							{
+								return;
+							}
+							else
+								e.CellStyle.BackColor = Color.Pink;
+						}
+						if (text.Contains(textBoxOrange.Text))
+						{
+							if (textBoxOrange.Text == "")
+							{
+								return;
+							}
+							else
+								e.CellStyle.BackColor = Color.Orange;
+						}
+						if (text.Contains(textBoxBlue.Text))
+						{
+							if (textBoxBlue.Text == "")
+							{
+								return;
+							}
+							else
+								e.CellStyle.BackColor = Color.Blue;
+							e.CellStyle.ForeColor = Color.White;
+						}
+						if (text.Contains(textBoxBlack.Text))
+						{
+							if (textBoxBlack.Text == "")
+							{
+								return;
+							}
+							else
+								e.CellStyle.BackColor = Color.Black;
+							e.CellStyle.ForeColor = Color.White;
 						}
 					}
 				}
@@ -729,6 +832,8 @@ namespace MQTTClient
 		{
 	
 		}
+
+
 	}
 
 	//Put this class at the end of the main class or you will have problems.
