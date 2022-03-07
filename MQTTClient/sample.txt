@@ -1,854 +1,1881 @@
-14:31:17,dawoon/iotCtrl/3870
-,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":2324,"WEGITH_STATE":2,"BAHAP_TIME":5207,"STATUS":"OK","AUTO_MODE":0}
+14:18:36,dawoon/iotCtrl/3793H
+,{"DATA":"SENSO","ADR":2,"TEMP":21.2,"HUM":34.7,"CO2": 972,"AMM":0.5,"DB_SEND":0,"TIME":"2022-03-04 14:18:40"}
 
-14:31:16,dawoon/iotCtrl/3972H
-,{"CMD":"BEAN_NOTI","TIME":"220304,14:31:15:187","FARMCODE":3972,"STATUS":"IDLE","RUNTIME":278478,"LORATIMEOUT":"0/0","LORACNT":"[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]"}
+14:18:36,dawoon/iotCtrl/3794H
+,{"DATA":"SENSO","ADR":2,"TEMP":31.2,"HUM":53.5,"CO2":4135,"AMM":0.7,"DB_SEND":0,"TIME":"2022-03-04 14:18:40"}
 
-14:31:16,dawoon/iotCtrl/3772H
-,{"CMD":"BEAN_NOTI","TIME":"220304,14:31:15:159","FARMCODE":3772,"STATUS":"IDLE","RUNTIME":879788,"LORATIMEOUT":"0/0","LORACNT":"[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]"}
+14:18:36,dawoon/iotCtrl/3889
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":2137,"WEGITH_STATE":1,"BAHAP_TIME":1196,"STATUS":"OK","AUTO_MODE":0}
 
-14:31:15,dawoon/topic
+14:18:36,dawoon/iotCtrl/3751H
+,{"DATA":"WIND","ADR":1,"VALUE":0.0,"DIREC":61,"DB_SEND":1,"TIME":"2022-03-04 14:18:35"}
+
+14:18:36,dawoon/iotCtrl/TMRFEED/3783
+,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3783","DATE":"2022-03-04 14:18:24","VER":"2.3567","CanAVG":"95","TOTAL_ORDER":"45","MAGNATIC_DET":"-13","RUN_TIME":"81046","INPUT_STATUS":"00","OUTPUT_ALL_STATUS":"0000","REAL_WEIGHT":"13.6","LORA_GROUP":"0","LORA_FREQ":"6","ORDER_SEQ":"0","ORDER_NAME":"END","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"ALL_STOP","WEIGHT_CODE":"OK"}
+
+14:18:36,dawoon/iotCtrl/TMRBINARY/3783
+,{"CMD1":"TMR_LORA_BINARY","CODE":"3783","DATE":"2022-03-04 14:18:35","BCC":"0000,0000,OK,16833,ER,0,OT,0","TMR_BINARY":"Ubup:FARM:IA:Seq:Binary:333738333a3338303afe006c281603040e12180f5c5f2df3ff963c01000000008800c70e000006008888000000000a000d8c150d0a0001020304
+"}
+
+14:18:36,dawoon/iotCtrl/3870
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":2335,"WEGITH_STATE":2,"BAHAP_TIME":5207,"STATUS":"OK","AUTO_MODE":0}
+
+14:18:36,dawoon/iotCtrl/3792
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":1060,"WEGITH_STATE":2,"BAHAP_TIME":614,"STATUS":"OK","AUTO_MODE":0}
+
+14:18:35,dawoon/iotCtrl/3870
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":2335,"WEGITH_STATE":2,"BAHAP_TIME":5207,"STATUS":"OK","AUTO_MODE":0}
+
+14:18:35,dawoon/iotCtrl/3888
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":4266,"WEGITH_STATE":3,"BAHAP_TIME":92,"STATUS":"OK","AUTO_MODE":0}
+
+14:18:35,dawoon/iotCtrl/RF3961
+,{"CMD":"TASK_SPY_ERROR_MAC_2e1","NOWTIME":"2022-03-04 14:18:33","CODE":"3961","MAIN":"1393195,777,840","MQTT":"1393195,363,860","BLINK":"1393194,0,1"}
+
+14:18:35,dawoon/iotCtrl/3890
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":4014,"WEGITH_STATE":4,"BAHAP_TIME":605,"STATUS":"OK","AUTO_MODE":0}
+
+14:18:35,dawoon/EnviInfo/3665/1
+,{"CMD":"MAIN_RUNTIME","ID":1,"RUNTIME":32927, "NOWTIME":"14:19:00"}
+
+14:18:34,dawoon/iotCtrl/3798H
+,{"CMD":"BEAN_NOTI","TIME":"220304,14:18:38:231","FARMCODE":3798,"STATUS":"IDLE","RUNTIME":542476,"LORATIMEOUT":"0/0","LORACNT":"[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]"}
+
+14:18:34,dawoon/iotCtrl/3792
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":1060,"WEGITH_STATE":2,"BAHAP_TIME":612,"STATUS":"OK","AUTO_MODE":0}
+
+14:18:33,dawoon/iotCtrl/3734H
+,{"DATA":"SENSO","ADR":1,"TEMP":19.7,"HUM":35.2,"CO2":2094,"AMM":0.0,"DB_SEND":1,"TIME":"2022-03-04 14:18:37"}
+
+14:18:33,dawoon/iotCtrl/RF3797
+,{"CMD":"TASK_SPY_ERROR_MAC_294","NOWTIME":"2022-03-04 14:18:30","CODE":"3797","MAIN":"14352,178,840","MQTT":"14352,47,839","BLINK":"14351,0,1"}
+
+14:18:33,dawoon/iotCtrl/3890
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":4014,"WEGITH_STATE":4,"BAHAP_TIME":603,"STATUS":"OK","AUTO_MODE":0}
+
+14:18:33,dawoon/iotCtrl/3550H
+,{"DATA":"SENSOR","ADR":2,"TEMP":14.6,"HUM":98.5,"CO2":0000,"AMM":0.7}
+
+14:18:33,dawoon/iotCtrl/3889
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":2137,"WEGITH_STATE":1,"BAHAP_TIME":1194,"STATUS":"OK","AUTO_MODE":0}
+
+14:18:32,dawoon/iotCtrl/3792
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":1060,"WEGITH_STATE":2,"BAHAP_TIME":610,"STATUS":"OK","AUTO_MODE":0}
+
+14:18:32,dawoon/iotCtrl/TMRFEED/3818
+,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3818","DATE":"2022-03-04 14:18:22","VER":"3.3706","CanAVG":"95","TOTAL_ORDER":"153","MAGNATIC_DET":"-13","RUN_TIME":"11997","INPUT_STATUS":"01","OUTPUT_ALL_STATUS":"0000","REAL_WEIGHT":"218.4","LORA_GROUP":"507","LORA_FREQ":"0","ORDER_SEQ":"0","ORDER_NAME":"OP_BAT_CHARGE","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"ALL_STOP","WEIGHT_CODE":"OK","IOTBASE_VER":"1.2898","IOTBASE_RUNTIME":"192631","TMR_TEMPERATURE":"35.25"}
+
+14:18:32,dawoon/iotCtrl/TMRBINARY/3818
+,{"CMD1":"TMR_LORA_BINARY","CODE":"3818","DATE":"2022-03-04 14:18:19","BCC":"7505,8ee6,OK,3679,ER,72,OT,80","TMR_BINARY":"Ubup:FARM:IA:Seq:Binary:333831383a3430333afe006c2a1603040e1216aa835f99f3ffdd2e00000100008808ea0efb0100003e00000000000a00c50d0d832e0d0a000102
+"}
+
+14:18:32,dawoon/iotCtrl/3870
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":2334,"WEGITH_STATE":2,"BAHAP_TIME":5207,"STATUS":"OK","AUTO_MODE":0}
+
+14:18:32,dawoon/iotCtrl/3888
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":4279,"WEGITH_STATE":3,"BAHAP_TIME":90,"STATUS":"OK","AUTO_MODE":0}
+
+14:18:31,dawoon/iotCtrl/3812H
+,{"DATA":"SENSO","ADR":2,"TEMP":16.0,"HUM":53.0,"CO2": 393,"AMM":0.3,"DB_SEND":0,"TIME":"2022-03-04 14:18:35"}
+
+14:18:31,dawoon/iotCtrl/3889
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":2133,"WEGITH_STATE":1,"BAHAP_TIME":1192,"STATUS":"OK","AUTO_MODE":0}
+
+14:18:30,dawoon/iotCtrl/3694H
+,{"DATA":"SENSOR","ADR":1,"TEMP":-40.0,"HUM":99.9,"CO2":0000,"AMM":1000.0}
+
+14:18:30,dawoon/iotCtrl/3870
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":2334,"WEGITH_STATE":2,"BAHAP_TIME":5207,"STATUS":"OK","AUTO_MODE":0}
+
+14:18:30,dawoon/iotCtrl/3888
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":4286,"WEGITH_STATE":3,"BAHAP_TIME":88,"STATUS":"OK","AUTO_MODE":0}
+
+14:18:30,dawoon/iotCtrl/3890
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":4015,"WEGITH_STATE":4,"BAHAP_TIME":600,"STATUS":"OK","AUTO_MODE":0}
+
+14:18:30,dawoon/iotCtrl/RF3738
+,{"CMD":"TASK_SPY_ERROR","NOWTIME":"2022-03-04 14:18:05","CODE":"3738","MAIN":"1255464,245,1000","MQTT":"1255464,4,20","BLINK":"1255464,0,1"}
+
+14:18:30,dawoon/iotCtrl/RF447/RF3841
+,{"CMD":"NOTI","VERSION_D_T":"1.424,210602,175000","TIME":"220304,14:18:30:93","FARMCODE":3841,"STATUS":"IDLE","RUNTIME":2844302,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
+
+14:18:29,dawoon/topic
 ,Hello World
 
-14:31:15,dawoon/iotCtrl/3350
+14:18:29,dawoon/iotCtrl/3350
 ,{"CMD":"FAN_MONITOR","FARM":3350,"ADR":2,"EVENT":0,"MUX1":00000000,"MUX2":"00001000","MUX3":"00000000","MUX4":00001111,"MUX5":00000000,"TIME":"2021-11-26 12:39:12"}
 
-14:31:15,dawoon/iotCtrl/3580
+14:18:29,dawoon/iotCtrl/3580
 ,test1
 
-14:31:15,dawoon/iotCtrl/3605
+14:18:29,dawoon/iotCtrl/3605
 ,{"CMD":"CHANGE_RESPONE","ADR":3,"TYPE":20,"NUMBER":8,"VALUE":1}
 
-14:31:15,dawoon/iotCtrl/3627
+14:18:29,dawoon/iotCtrl/3627
 ,{"CMD":"BAHAP_STAT","ADR":7,"TYPE":90,"OUT":"00001000","IN":"00000000","WEGITH":104,"WEGITH_STATE":2,"BAHAP_TIME":0,"STATUS":"OK","AUTO_MODE":0}
 
-14:31:15,dawoon/iotCtrl/3604
+14:18:29,dawoon/iotCtrl/3604
 ,{"CMD":"DEVICE_ERROR","ADR":1,"TYPE":"WEIGH","RUNTIME":3145,"STATUS":0,"TIME":"2022-03-03 05:51:00"}
 
-14:31:15,dawoon/iotCtrl/3609
+14:18:29,dawoon/iotCtrl/3609
 ,{"CMD":"DEVICE_ERROR","ADR":1,"TYPE":"WIND","RUNTIME":2,"STATUS":1,"TIME":"2020-05-18 15:58:00"}
 
-14:31:15,dawoon/iotCtrl/3637
+14:18:29,dawoon/iotCtrl/3637
 ,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":1562,"WEGITH_STATE":1,"BAHAP_TIME":328,"STATUS":"OK","AUTO_MODE":0}
 
-14:31:15,dawoon/iotCtrl/3640
+14:18:29,dawoon/iotCtrl/3640
 ,{"DATA":"SENSOR","ADR":2,"TEMP":5.9,"HUM":29.0,"CO2":0000,"AMM":1.4}
 
-14:31:15,dawoon/iotCtrl/3643
+14:18:29,dawoon/iotCtrl/3643
 ,{"CMD":"STATUS_RESPONE","OUTn":00002000}
 
-14:31:15,dawoon/iotCtrl/3643H
+14:18:29,dawoon/iotCtrl/3643H
 ,{"CMD":"ERROR","RUNTIME":0,"WATCHDOG":0,"ADR":1,"AUTO":3482, "TEMP":0, "SENSOR":179}
 
-14:31:15,dawoon/iotCtrl/3627H
+14:18:29,dawoon/iotCtrl/3627H
 ,{"CMD":"NOTI","FCODE":3627,"RUNTIME":1}
 
-14:31:15,dawoon/iotCtrl/3350H
+14:18:29,dawoon/iotCtrl/3350H
 ,{"CMD":"NOTI","FCODE":3350,"RUNTIME":115}
 
-14:31:15,dawoon/iotCtrl/3644
-,{"CMD":"HCOW_STAT","ADR":1,"TYPE":30,"OUT":"0000000000000000","IN":"11100010","MOVE_TIME1":444,"MOVE_TIME2":0,"MOVE_TIME3":0,"STATUS":"OK","AUTO_MODE":0}
+14:18:29,dawoon/iotCtrl/3644
+,{"CMD":"HCOW_STAT","ADR":2,"TYPE":30,"OUT":"0000000000000000","IN":"10100010","MOVE_TIME1":0,"MOVE_TIME2":501,"MOVE_TIME3":0,"STATUS":"OK","AUTO_MODE":0}
 
-14:31:15,dawoon/iotCtrl/3644H
-,{"CMD":"NOTI","FCODE":3644,"RUNTIME":45836}
+14:18:29,dawoon/iotCtrl/3644H
+,{"CMD":"NOTI","FCODE":3644,"RUNTIME":45824}
 
-14:31:15,dawoon/iotCtrl/3605H
-,{"CMD":"NOTI","FCODE":3605,"RUNTIME":187082}
+14:18:29,dawoon/iotCtrl/3605H
+,{"CMD":"NOTI","FCODE":3605,"RUNTIME":187069}
 
-14:31:15,dawoon/iotCtrl/C9003
+14:18:29,dawoon/iotCtrl/C9003
 ,{"CMD":"NOTI","FCODE":9003}
 
-14:31:15,dawoon/iotCtrl/3609H
+14:18:29,dawoon/iotCtrl/3609H
 ,{"CMD":"NOTI","FCODE":3609,"RUNTIME":5}
 
-14:31:15,dawoon/iotCtrl/3550H
-,{"DATA":"SENSOR","ADR":1,"TEMP":0.0,"HUM":0.0,"CO2":0000,"AMM":0.0}
+14:18:29,dawoon/iotCtrl/3550H
+,{"CMD":"ERROR","RUNTIME":1543,"WATCHDOG":0,"ADR":1,"AUTO":3411, "TEMP":3321, "SENSOR":10}
 
-14:31:15,dawoon/iotCtrl/3637H
+14:18:29,dawoon/iotCtrl/3637H
 ,{"CMD":"NOTI","FCODE":3637,"RUNTIME":3}
 
-14:31:15,dawoon/iotCtrl/C0002
-,{"CMD":"STATUS_RESPONE","AUTO_MODE":1,"BREAKER":0,"IN_GATE":0,"OUT_GATE":0,"CARCLEAN":0,"AIR_DEODORIZATION":0,"REMOVE_WATER":0,"CLEAN_DRIVER":0,"OUPUT_STATUS":"0000000000000000","INPUT_STATUS":"0000000010000000","RUNTIME":"519408"}
+14:18:29,dawoon/iotCtrl/C0002
+,{"CMD":"STATUS_RESPONE","AUTO_MODE":1,"BREAKER":0,"IN_GATE":0,"OUT_GATE":0,"CARCLEAN":0,"AIR_DEODORIZATION":0,"REMOVE_WATER":0,"CLEAN_DRIVER":0,"OUPUT_STATUS":"0000000000000000","INPUT_STATUS":"0000000010000000","RUNTIME":"518633"}
 
-14:31:15,dawoon/iotCtrl/C0002W
+14:18:29,dawoon/iotCtrl/C0002W
 ,{"CMD":"STEP_7-2","STATUS":"All_actions_completed","TIME":"0"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3636
-,{"CMD":"NOTI","VERSION_D_T":"1.428,220121,112400","TIME":"220304,14:29:47:129","FARMCODE":3636,"STATUS":"IDLE","RUNTIME":174332,"LoraQ":"[,0,0/80,]","Tcs":"[,9,0,0,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
+14:18:29,dawoon/iotCtrl/RF447/RF3636
+,{"CMD":"NOTI","VERSION_D_T":"1.428,220121,112400","TIME":"220304,14:14:47:114","FARMCODE":3636,"STATUS":"IDLE","RUNTIME":173431,"LoraQ":"[,0,0/80,]","Tcs":"[,7,0,0,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3669
+14:18:29,dawoon/iotCtrl/RF447/RF3669
 ,{"CMD":"RF447","CODE":"3669","DEVICE":"1002","INTTIME":"5716.465","STATUS":"[OK:1,Fail:0,Err:0,DevErr:0]","WALKING":"[0,0,0,0,0,1]","BAT":"3950","ACCEL":"[X:156,Y:1985,Z:937]","TEMP":"21","PERIOD":"0","Queue":"0"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3491
+14:18:29,dawoon/iotCtrl/RF447/RF3491
 ,{"CMD":"Period_RANGE_OVER_DET[104]","DETECT":",[800],0,[700],0,[500],0,[300],0,[ETC],0,","IIS2DH":"Fsset,1,Modesel,5,Range,15,Time,3,","MotionDet":"PerMOTION[1-6],0,0,0,0,0,0,RangeRoll[+-40]Pitch[+-30],0,0,0,0,","OLD_SUM_CNT":",0,0,","NOWTIME_CODE":",00-00-03,08:49:35,3491,"}
 
-14:31:15,dawoon/iotCtrl/RF447/COWSTATUS3636
+14:18:29,dawoon/iotCtrl/RF447/COWSTATUS3636
 ,{"CMD":"COW_HEAT_STATUS[207,1]","NOWTIME":"210427-232924","CODE":"3636","Continues":",0,0,","Danger":",0,0,","ClearCnt":",0,0,","7DaySum":"28"}
 
-14:31:15,dawoon/iotCtrl/RF447/COLLMOVE3636
+14:18:29,dawoon/iotCtrl/RF447/COLLMOVE3636
 ,{"CMD":"COW_CollectiveMovement_FIND","CODE":"3636","COW_CNT":"1","HOUR":",13,57,","DATE":"2022-02-21,15:01:27"}
 
-14:31:15,dawoon/iotCtrl/RF447/COWSTATUS36dawoon/iotCtrl/RF447/COLLMOVE3636
+14:18:29,dawoon/iotCtrl/RF447/COWSTATUS36dawoon/iotCtrl/RF447/COLLMOVE3636
 ,{"CMD":"COW_HEAT_STATUS[101]","NOWTIME":"190703-171124","CODE":"3636","Continues":",0,0,","Danger":",0,0,","ClearCnt":",0,0,"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3541
+14:18:29,dawoon/iotCtrl/RF447/RF3541
 ,{"CMD":"RF447_DW2016","NOWTIME":"2021-08-27 11:18:31","CODE":"3541","DEVICE":"123","WALKING_ALL":"0","TEMP":"22","OVER_RANGE":"0,0,0,0,0","MOTION_DETECT":"0,0,0,0,0,0","ROLL_PITCH_RANGE":"0,0,0,0","OLD_SUM_CNT":"0,0,0"}
 
-14:31:15,dawoon/iotCtrl/RF447/COLLMOVE3541
+14:18:29,dawoon/iotCtrl/RF447/COLLMOVE3541
 ,{"CMD":"COW_CollectiveMovement_NOT","CODE":"3541","COW_CNT":"1","HOUR":",06,","DATE":"2021-08-27,07:26:55"}
 
-14:31:15,dawoon/iotCtrl/RF447/COWSTATUS3541
+14:18:29,dawoon/iotCtrl/RF447/COWSTATUS3541
 ,{"CMD":"COW_HEAT_STATUS[121,253]","NOWTIME":"210827-090850","CODE":"3541","Continues":",0,0,","Danger":",1,4,","ClearCnt":",0,0,","7DaySum":"42587"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3699
+14:18:29,dawoon/iotCtrl/RF447/RF3699
 ,{"CMD":"BASE_BOARD_LORA_RESET","NOWTIME":"2000-00-00 00:00:00","COUNT":"1"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3580
+14:18:29,dawoon/iotCtrl/RF447/RF3580
 ,{"CMD":"NOTI","TIME":"191212,11:58:33:180","FARMCODE":3580,"STATUS":"IDLE","RUNTIME":600,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3639
+14:18:29,dawoon/iotCtrl/RF447/RF3639
 ,{"CMD":"BASE_BOARD_LORA_RESET","NOWTIME":"2019-12-04 15:33:56","COUNT":"1"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3989
+14:18:29,dawoon/iotCtrl/RF447/RF3989
 ,{"CMD":"BASE_BOARD_LORA_RESET","NOWTIME":"2000-00-00 00:00:00","COUNT":"1"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF50
+14:18:29,dawoon/iotCtrl/RF447/RF50
 ,{"CMD":"RF447_DW2016","NOWTIME":"2020-01-20 21:02:50","CODE":"50","DEVICE":"1010","WALKING_ALL":"0","TEMP":"23","OVER_RANGE":"0,0,0,0,0","MOTION_DETECT":"0,0,0,0,0,0","ROLL_PITCH_RANGE":"0,0,0,0","OLD_SUM_CNT":"0,0,0"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF0000
+14:18:29,dawoon/iotCtrl/RF447/RF0000
 ,{"CMD":"NOTI","VERSION_D_T":"1.285,200521,153600""TIME":"200624,11:17:28:215","FARMCODE":0,"STATUS":"IDLE","RUNTIME":300,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
 
-14:31:15,dawoon/iotCtrl/RF447/COWSTATUS0
+14:18:29,dawoon/iotCtrl/RF447/COWSTATUS0
 ,{"CMD":"COW_HEAT_STATUS[1012,426]","NOWTIME":"200122-150356","CODE":"0","Continues":",0,0,","Danger":",0,0,","ClearCnt":",0,0,","7DaySum":"500976"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3641
+14:18:29,dawoon/iotCtrl/RF447/RF3641
 ,{"CMD":"RESP_NON_ARRIVAL","FCODE":"3641","FNAME":"","ANISEQ":"12","DEVICE":"123","LASTTIME":"2020-04-13 11:12:18","RetMessage":"","Message":"","now":"2020-04-21 09:00:57","Process":"","Sender":"PC"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF9999
+14:18:29,dawoon/iotCtrl/RF447/RF9999
 ,{"CMD":"RESP_NON_ARRIVAL","FCODE":"9999","FNAME":"","ANISEQ":"38","DEVICE":"186","LASTTIME":"2020-08-03 17:19:15","RetMessage":"","Message":"","now":"2020-08-21 14:05:35","Process":"","Sender":"PC_9999_218.157.85.232_192.168.0.2_309C23E9C567"}
 
-14:31:15,dawoon/iotCtrl/RF447/RG3684
+14:18:29,dawoon/iotCtrl/RF447/RG3684
 ,{"CMD":"RESP_NON_ARRIVAL","FCODE":"3684","FNAME":"","ANISEQ":"23","DEVICE":"122","LASTTIME":"2020-02-13 17:40:24","RetMessage":"","Message":"","now":"2020-10-16 10:48:36","Process":"","Sender":"PC_3684_211.221.179.224_192.168.1.11_4CEDFB7486CF"}
 
-14:31:15,dawoon/iotCtrl/RF447/RG3541
+14:18:29,dawoon/iotCtrl/RF447/RG3541
 ,{"CMD":"RESP_NON_ARRIVAL","FCODE":"3541","FNAME":"","ANISEQ":"67","DEVICE":"184","LASTTIME":"2021-02-16 09:23:22","RetMessage":"","Message":"","now":"2021-03-22 18:10:09","Process":"","Sender":"PC_9999_218.157.85.232_192.168.0.2_309C23E9C567"}
 
-14:31:15,dawoon/iotCtrl/RF447/RG3498
+14:18:29,dawoon/iotCtrl/RF447/RG3498
 ,{"CMD":"RESP_RF447_DW2016","RetMessage":"FAIL-DUP","Message":"ESTRUS_DUP_RFID____ANISEQ_0__Date_2021-04-05 14:43:19_","now":"2021-04-06 17:11:11","POS":-1,"RFID":0,"DEVICE":"207","NOWSEQ":"21","TOTALSEQ":"243","BeforeCMD":"RF447_DW2016","Sender":"PC_3498_119.205.1.55_192.168.1.6_94C6919E403D"}
 
-14:31:15,dawoon/iotCtrl/3411
+14:18:29,dawoon/iotCtrl/3411
 ,{"CMD":"STATUS_RESPONE","ADR":1,"TYPE":20,"OUT":"0000000000000000","IN":"00000000","MOVE_TIME1":0,"MOVE_TIME2":0,"MOVE_TIME3":0,"STATUS":"OK","AUTO_MODE":0,"FAN_MODE":"0000000000000000"}
 
-14:31:15,dawoon/iotCtrl/3411H
+14:18:29,dawoon/iotCtrl/3411H
 ,{"CMD":"ERROR","RUNTIME":99,"WATCHDOG":0,"ADR":1,"AUTO":31, "TEMP":0, "SENSOR":0}
 
-14:31:15,dawoon/iotCtrl/C3627
+14:18:29,dawoon/iotCtrl/C3627
 ,{"CMD":"STATUS_RESPONE","AUTO_MODE":1,"BREAKER":0,"IN_GATE":0,"OUT_GATE":0,"CARCLEAN":0,"AIR_DEODORIZATION":0,"REMOVE_WATER":0,"CLEAN_DRIVER":0,"OUPUT_STATUS":"0000000000000000","INPUT_STATUS":"0000010010000000","RUNTIME":"5"}
 
-14:31:15,dawoon/iotCtrl/P0001
+14:18:29,dawoon/iotCtrl/P0001
 ,{"CMD":"Pig_Respone","FCODE":"P1","Piglet_Liquid_feeder":"0","Sow_feeding_behavior":"0","Sow_group_grade":"0","Shipment_Pig_separator":"0","Pig_Lamp":"0","Side_ventilation":"0","Roof_ventilation":"0","Heater_control":"0","Window_control":"0","Water_supply_control":"0","Feed_grade":"0","Mist_spray":"0","Pig_reservation1":"0","Pig_reservation2":"0","Pig_reservation3":"0","Pig_reservation4":"0","Pig_BlackOut":"0","RunTime":"6","LoraSenCnt1":"0","LoraSenCnt2":"0","LoraSenCnt3":"0"}
 
-14:31:15,dawoon/iotCtrl/CS3636
+14:18:29,dawoon/iotCtrl/CS3636
 ,{"CMD":"Sensor","FARMCODE":"3636","STATUS":"SenNum_2","Temp":24.7,"Humudity":36.9,"Co2":3500,"Weight":0,"Ammonia":0.6,"Fire":0,"Elc":0,"Runtime":353911,"TxRxCnt":"[4443,6]"}
 
-14:31:15,dawoon/iotCtrl/3669
+14:18:29,dawoon/iotCtrl/3669
 ,{"CMD":"IOT_TEMP_SET_RESPONE","ADR":1,"VALUE":75}
 
-14:31:15,dawoon/iotCtrl/RF3669
+14:18:29,dawoon/iotCtrl/RF3669
 ,{"CMD":"LORA","FARMCODE":"3669","STATUS":"POS_1","RANGE":"[1.36,1.29,0.76]","BATTERY":"3742","TEMP":"22.17","PERIOD":"30"}
 
-14:31:15,dawoon/iotCtrl/TMRFEED/3699
+14:18:29,dawoon/iotCtrl/TMRFEED/3699
 ,{"CMD":"TMRFEED_DATA","NOWTIME":"2019-05-29 17:19:57","CODE":"3699","Index":"121","Seq_No":"255","Date":"2019-05-29","StartTime":"17:17:00","StopTime":"17:19:00","StartWeight":"0","FillWeight":"0","StopWeight":"0","RunMoveDist":"0","RunFeedDist":"1937","RoutCmdCode":"34952","OrderVal1":"0","OrderVal2":"0","TMRVoltage":"0.0","SystemError":"0","TMR_Dev_Code":"106","Update_Flag":"A"}
 
-14:31:15,dawoon/iotCtrl/TMRFEED/3695
+14:18:29,dawoon/iotCtrl/TMRFEED/3695
 ,{"CMD":"TMRFEED_DATA","NOWTIME":"2019-06-26 16:51:16","CODE":"3627","Index":"3","Seq_No":"3","Date":"2019-06-26","StartTime":"16:51:00","StopTime":"17:11:00","StartWeight":"30","FillWeight":"9","StopWeight":"21","RunMoveDist":"300","RunFeedDist":"210","RoutCmdCode":"1","OrderVal1":"2","OrderVal2":"3","TMRVoltage":"47.4","SystemError":"1","TMR_Dev_Code":"2","Update_Flag":"U"}
 
-14:31:15,dawoon/iotCtrl/TMRFEED/3580
+14:18:29,dawoon/iotCtrl/TMRFEED/3580
 ,{"CMD1":"TMR_ORDER_STOP","CODE":"3580","DATE":"2019-12-12 11:57:52"}
 
-14:31:15,dawoon/iotCtrl/TMRFEED/0
+14:18:29,dawoon/iotCtrl/TMRFEED/0
 ,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3745","DATE":"2019-12-12 14:21:02","VER":"2.329","CanAVG":"95","TOTAL_ORDER":"3","MAGNATIC_DET":"10","RUN_TIME":"8125","INPUT_STATUS":"00","OUTPUT_ALL_STATUS":"0000","REAL_WEIGHT":"0.0","LORA_GROUP":"365","LORA_FREQ":"5","ORDER_SEQ":"1","ORDER_NAME":"STOP","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"ALL_STOP","WEIGHT_CODE":"OK"}
 
-14:31:15,dawoon/iotCtrl/TMRFEED/50
+14:18:29,dawoon/iotCtrl/TMRFEED/50
 ,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3636","DATE":"2020-01-20 21:04:55","VER":"2.345","CanAVG":"96","TOTAL_ORDER":"11","MAGNATIC_DET":"-10","RUN_TIME":"11731","INPUT_STATUS":"00","OUTPUT_ALL_STATUS":"0000","REAL_WEIGHT":"0.0","LORA_GROUP":"293","LORA_FREQ":"6","ORDER_SEQ":"5","ORDER_NAME":"LINE_FEED_LEFT","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"ALL_STOP","WEIGHT_CODE":"OK"}
 
-14:31:15,dawoon/iotCtrl/TMRFEED/3609
+14:18:29,dawoon/iotCtrl/TMRFEED/3609
 ,{"CMD":"TMRFEED_DATA","NOWTIME":"2020-05-18 16:29:30","CODE":"3609","Index":"1300","Seq_No":"18","Date":"2014-00-16","StartTime":"69:08:00","StopTime":"155:07:00","StartWeight":"8975","FillWeight":"13824","StopWeight":"11","RunMoveDist":"0","RunFeedDist":"0","RoutCmdCode":"0","OrderVal1":"3636","OrderVal2":"399","TMRVoltage":"410.2","SystemError":"34952","TMR_Dev_Code":"0","Update_Flag":"L"}
 
-14:31:15,dawoon/iotCtrl/TMRFEED/5000
+14:18:29,dawoon/iotCtrl/TMRFEED/5000
 ,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3636","DATE":"2018-12-11 00:01:53","VER":"2.3498","CanAVG":"95","TOTAL_ORDER":"197","MAGNATIC_DET":"13","RUN_TIME":"145990","INPUT_STATUS":"00","OUTPUT_ALL_STATUS":"0000","REAL_WEIGHT":"0.0","LORA_GROUP":"555","LORA_FREQ":"6","ORDER_SEQ":"11","ORDER_NAME":"OP_BAT_CHARGE","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"ALL_STOP","WEIGHT_CODE":"OK"}
 
-14:31:15,dawoon/iotCtrl/RF3638
+14:18:29,dawoon/iotCtrl/RF3638
 ,{CMD:"0",STATUS:"WATCHDOG HARDWARE RESET!!!!!!"}
 
-14:31:15,dawoon/iotCtrl/3630H
+14:18:29,dawoon/iotCtrl/3630H
 ,{"CMD":"NOTI","FCODE":3630,"RUNTIME":22}
 
-14:31:15,dawoon/iotCtrl/3393
+14:18:29,dawoon/iotCtrl/3393
 ,{"CMD":"STATUS_RESPONE","ADR":2,"TYPE":10,"OUT":"1000000000000000","IN":"00000000","MOVE_TIME1":0,"MOVE_TIME2":0,"MOVE_TIME3":0,"STATUS":"OK","AUTO_MODE":0,"FAN_MODE":"1000000000000000"}
 
-14:31:15,dawoon/iotCtrl/3393H
+14:18:29,dawoon/iotCtrl/3393H
 ,{"DATA":"SENSOR","ADR":1,"TEMP":30.8,"HUM":42.4,"CO2":0971,"AMM":4.6}
 
-14:31:15,dawoon/iotCtrl/COWWATER/3636
+14:18:29,dawoon/iotCtrl/COWWATER/3636
 ,{"CMD":"RESP_COWWATER_ERROR","RetMessage":"FAIL-DUP","Message":"CMD = 'COWWATER_ERROR' and aniRFID = '9999' and id = '1' and date = '2019-05-24' and enter_time = '00:00'","now":"2020-07-03 11:19:28","Process":".","Sender":"PC"}
 
-14:31:15,dawoon/iotCtrl/COWWATER/3637
+14:18:29,dawoon/iotCtrl/COWWATER/3637
 ,{"CMD":"RESP_COWWATER_CALCULATE","RetMessage":"SUCCESS","Message":"","now":"2019-10-25 16:37:03","Process":".","Sender":"PC"}
 
-14:31:15,dawoon/iotCtrl/3693
+14:18:29,dawoon/iotCtrl/3693
 ,{"CMD":"STATUS_RESPONE","ADR":1,"TYPE":0,"OUT":"0000000000000000","IN":"00000000","MOVE_TIME1":0,"MOVE_TIME2":0,"MOVE_TIME3":0,"STATUS":"NO_DEVICE","AUTO_MODE":0,"FAN_MODE":"1000100000000000"}
 
-14:31:15,dawoon/iotCtrl/RF3699
+14:18:29,dawoon/iotCtrl/RF3699
 ,{"MYFARMCODE":"3699","STATUS":"0"}
 
-14:31:15,dawoon/iotCtrl/0H
+14:18:29,dawoon/iotCtrl/0H
 ,{"CMD":"NOTI","FCODE":0,"RUNTIME":1}
 
-14:31:15,dawoon/iotCtrl/12336H
+14:18:29,dawoon/iotCtrl/12336H
 ,{"CMD":"NOTI","FCODE":12336,"RUNTIME":1}
 
-14:31:15,dawoon/iotCtrl/3678H
+14:18:29,dawoon/iotCtrl/3678H
 ,{"CMD":"NOTI","FCODE":3678,"RUNTIME":9}
 
-14:31:15,dawoon/iotCtrl/19737H
+14:18:29,dawoon/iotCtrl/19737H
 ,{"CMD":"NOTI","FCODE":19737,"RUNTIME":1}
 
-14:31:15,dawoon/iotCtrl/4360H
+14:18:29,dawoon/iotCtrl/4360H
 ,{"CMD":"NOTI","FCODE":4360,"RUNTIME":3}
 
-14:31:15,dawoon/iotCtrl/6555H
+14:18:29,dawoon/iotCtrl/6555H
 ,{"CMD":"NOTI","FCODE":6555,"RUNTIME":2}
 
-14:31:15,dawoon/iotCtrl/3690H
+14:18:29,dawoon/iotCtrl/3690H
 ,{"CMD":"ERROR","RUNTIME":2433,"WATCHDOG":0,"ADR":1,"AUTO":0, "TEMP":0, "SENSOR":5371}
 
-14:31:15,dawoon/iotCtrl/3648H
+14:18:29,dawoon/iotCtrl/3648H
 ,{"CMD":"NOTI","FCODE":3648,"RUNTIME":1}
 
-14:31:15,dawoon/iotCtrl/0
+14:18:29,dawoon/iotCtrl/0
 ,{"CMD":"STATUS_RESPONE","ADR":2,"TYPE":10,"OUT":"0001001101110111","IN":"00000000","MOVE_TIME1":0,"MOVE_TIME2":0,"MOVE_TIME3":0,"STATUS":"OK","AUTO_MODE":0,"FAN_MODE":"1000000000000000"}
 
-14:31:15,dawoon/iotCtrl/2H
+14:18:29,dawoon/iotCtrl/2H
 ,{"CMD":"NOTI","FCODE":2,"RUNTIME":6}
 
-14:31:15,dawoon/iotCtrl/33H
+14:18:29,dawoon/iotCtrl/33H
 ,{"CMD":"NOTI","FCODE":33,"RUNTIME":2}
 
-14:31:15,dawoon/iotCtrl/3695H
+14:18:29,dawoon/iotCtrl/3695H
 ,{"DATA":"SENSOR","ADR":2,"TEMP":29.3,"HUM":42.0,"CO2":0962,"AMM":0.0}
 
-14:31:15,dawoon/iotCtrl/3695
+14:18:29,dawoon/iotCtrl/3695
 ,{"CMD":"NOTI","TIME":"190903,16:51:35:20","FARMCODE":3669,"STATUS":"IDLE","RUNTIME":2700,"LORATIMEOUT":"739899/2100000","LORACNT":"[0,8,7,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]"}
 
-14:31:15,dawoon/iotCtrl/3636
+14:18:29,dawoon/iotCtrl/3636
 ,{"CMD":"NOTI","TIME":"190909,11:14:54:16","FARMCODE":3636,"STATUS":"IDLE","RUNTIME":345951,"LORATIMEOUT":"0/0","LORACNT":"[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]"}
 
-14:31:15,dawoon/iotCtrl/3636H
+14:18:29,dawoon/iotCtrl/3636H
 ,{"CMD":"NOTI","FCODE":3636,"RUNTIME":1}
 
-14:31:15,dawoon/iotCtrl/3670
+14:18:29,dawoon/iotCtrl/3670
 ,{"CMD":"NOTI","TIME":"190904,15:06:24:4","FARMCODE":3670,"STATUS":"IDLE","RUNTIME":2400,"LORATIMEOUT":"0/0","LORACNT":"[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]"}
 
-14:31:15,dawoon/iotCtrl/3670H
+14:18:29,dawoon/iotCtrl/3670H
 ,{"CMD":"NOTI","FCODE":3670,"RUNTIME":44} 
 
-14:31:15,dawoon/iotCtrl/3698
+14:18:29,dawoon/iotCtrl/3698
 ,{"CMD":"BEAN_NOTI","TIME":"200109,09:52:35:7","FARMCODE":3698,"STATUS":"IDLE","RUNTIME":1445350,"LORATIMEOUT":"136940/3900000","LORACNT":"[0,10,10,10,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]"}
 
-14:31:15,dawoon/iotCtrl/C0030
+14:18:29,dawoon/iotCtrl/C0030
 ,{"CMD":"STATUS_RESPONE","AUTO_MODE":1,"BREAKER":0,"IN_GATE":0,"OUT_GATE":0,"CARCLEAN":0,"AIR_DEODORIZATION":0,"REMOVE_WATER":0,"CLEAN_DRIVER":0,"OUPUT_STATUS":"0010000000000000","INPUT_STATUS":"0000000000000000","RUNTIME":"302"}
 
-14:31:15,dawoon/iotCtrl/C0030W
+14:18:29,dawoon/iotCtrl/C0030W
 ,{"CMD":"STEP_2-6","STATUS":"InGate_Close","TIME":"0"}
 
-14:31:15,dawoon/iotCtrl/3741
+14:18:29,dawoon/iotCtrl/3741
 ,{"CMD":"STATUS_RESPONE","OUTn":00000000}
 
-14:31:15,dawoon/iotCtrl/3741H
+14:18:29,dawoon/iotCtrl/3741H
 ,{"CMD":"BEAN_NOTI","TIME":"200312,08:37:17:0","FARMCODE":3741,"STATUS":"IDLE","RUNTIME":1619926,"LORATIMEOUT":"0/0","LORACNT":"[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]"}
 
-14:31:15,dawoon/iotCtrl/3742
+14:18:29,dawoon/iotCtrl/3742
 ,{"CMD":"STATUS_RESPONE","ADR":1,"TYPE":10,"OUT":"0000000000000000","IN":"00000000","MOVE_TIME1":0,"MOVE_TIME2":0,"MOVE_TIME3":0,"STATUS":"OK","AUTO_MODE":0,"FAN_MODE":"1111000000000000"}
 
-14:31:15,dawoon/iotCtrl/RF3580
+14:18:29,dawoon/iotCtrl/RF3580
 ,{"MYFARMCODE":"3580","STATUS":"0"}
 
-14:31:15,dawoon/iotCtrl/3989
+14:18:29,dawoon/iotCtrl/3989
 ,{"CMD":"STATUS_RESPONE","OUTn":00002000}
 
-14:31:15,dawoon/iotCtrl/3989H
+14:18:29,dawoon/iotCtrl/3989H
 ,{"CMD":"BEAN_NOTI","TIME":"191202,16:44:40:77","FARMCODE":3989,"STATUS":"IDLE","RUNTIME":900,"LORATIMEOUT":"0/0","LORACNT":"[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]"}
 
-14:31:15,dawoon/iotCtrl/RF3639
+14:18:29,dawoon/iotCtrl/RF3639
 ,{CMD:"0",STATUS:"WATCHDOG HARDWARE RESET!!!!!!"}
 
-14:31:15,dawoon/iotCtrl/3756
+14:18:29,dawoon/iotCtrl/3756
 ,{"CMD":"STATUS_RESPONE","OUTn":00002000}
 
-14:31:15,dawoon/iotCtrl/3756H
+14:18:29,dawoon/iotCtrl/3756H
 ,{"CMD":"BEAN_NOTI","TIME":"200218,18:18:07:68","FARMCODE":3756,"STATUS":"IDLE","RUNTIME":8701,"LORATIMEOUT":"0/0","LORACNT":"[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]"}
 
-14:31:15,dawoon/iotCtrl/3767
+14:18:29,dawoon/iotCtrl/3767
 ,{"CMD":"INFO_RESPONE","VERSION":"DW_IOT_V2_35","MAC":"80-1f-12-5d-34-09","STAT":"RUN","RUNTIME":12748, "SUB_COUNT":0}
 
-14:31:15,dawoon/iotCtrl/3779
+14:18:29,dawoon/iotCtrl/3779
 ,{"CMD":"STATUS_RESPONE","OUTn":00000000}
 
-14:31:15,dawoon/iotCtrl/4865H
+14:18:29,dawoon/iotCtrl/4865H
 ,{"CMD":"NOTI","FCODE":4865,"RUNTIME":1}
 
-14:31:15,dawoon/iotCtrl/TMRBINARY/5000
+14:18:29,dawoon/iotCtrl/TMRBINARY/5000
 ,{"CMD1":"TMR_LORA_BINARY","CODE":"3636","DATE":"2018-12-11 00:02:54","BCC":"0000,0000,OK,4,ER,0,OT,0","TMR_BINARY":"Ubup:FARM:IA:Seq:Binary:333633363a3535353afe006c28120c0b000135ca5b5fc50d00463a02000000000000340e2b02060b3e00000000000a000d66cd0d0a0001020304
 "}
 
-14:31:15,dawoon/iotCtrl/3638H
+14:18:29,dawoon/iotCtrl/3638H
 ,{"CMD":"NOTI","FCODE":3638,"RUNTIME":3}
 
-14:31:15,dawoon/iotCtrl/3791H
+14:18:29,dawoon/iotCtrl/3791H
 ,{"CMD":"NOTI","FCODE":3791,"RUNTIME":22975}
 
-14:31:15,dawoon/iotCtrl/ICTCAR/CAR9999
+14:18:29,dawoon/iotCtrl/ICTCAR/CAR9999
 ,{"CMD":"REQ_CAR_IN_OUT","CARNUMBER":"66부1236","RetMessage":"","Message":"","now":"2020-08-21 11:56:18","BeforeCMD":"","Sender":"PC_9999_218.157.85.232_192.168.0.2_309C23E9C567"}
 
-14:31:15,dawoon/iotCtrl/3805
+14:18:29,dawoon/iotCtrl/3805
 ,{"CMD":"STATUS_RESPONE","OUTn":00000000}
 
-14:31:15,dawoon/iotCtrl/3572
+14:18:29,dawoon/iotCtrl/3572
 ,{"CMD":"NOTI","FCODE":3572}
 
-14:31:15,dawoon/iotCtrl/test
+14:18:29,dawoon/iotCtrl/test
 ,{"CMD":"TEST"}
 
-14:31:15,dawoon/MilkMain/3350
+14:18:29,dawoon/MilkMain/3350
 ,{"CMD":"NONE","ID":11,"COW":11,"VALUE":"0.000","FCODE":3350}
 
-14:31:15,dawoon/HOST/3300
+14:18:29,dawoon/HOST/3300
 ,{"CMD":"HOST","ID":67,"COW":1286,"VALUE":0.000000,"FCODE":3350}
 
-14:31:15,dawoon/FarmMain/3609/1/POLOR
+14:18:29,dawoon/FarmMain/3609/1/POLOR
 ,{"CMD":"RESP_MILKEND","RetMessage":"FAIL","Message":"POLOR_CALLSP_FAIL_RFID_1__Date___now__","now":"2020-07-02 16:29:10","POS":1,"RFID":1,"BeforeCMD":"MILKEND","Sender":"PC"}
 
-14:31:15,dawoon/FarmMain/3609/1/ROBOT
+14:18:29,dawoon/FarmMain/3609/1/ROBOT
 ,{"CMD":"RESP_LOCAL_TIME","RetMessage":"SUCCESS","Message":"","now":"2020-07-27 23:25:10","Sender":"PC"}
 
-14:31:15,dawoon/FarmMain/3627/1/ROBOT
+14:18:29,dawoon/FarmMain/3627/1/ROBOT
 ,{"CMD":"RESP_LOCAL_TIME","RetMessage":"SUCCESS","Message":"","now":"2019-10-25 16:37:08","Sender":"PC"}
 
-14:31:15,dawoon/FarmMain/3684/1/ROBOT
+14:18:29,dawoon/FarmMain/3684/1/ROBOT
 ,{"CMD":"RESP_MILKEND","RetMessage":"FAIL","Message":"ROBOT_CALLSP_FAIL_RFID_7__Date_2020-12-15 08:06:43__now__TotalYield_0","now":"2020-12-15 08:06:10","POS":1,"RFID":7,"DEVICE":"","NOWSEQ":"","TOTALSEQ":"","BeforeCMD":"MILKEND","Sender":"PC"}
 
-14:31:15,dawoon/FarmMain/test
+14:18:29,dawoon/FarmMain/test
 ,{"CMD":"TEST"}
 
-14:31:15,dawoon/FarmMain/9999/1/ROBOT
+14:18:29,dawoon/FarmMain/9999/1/ROBOT
 ,{"CMD":"RESP_COW_INFO","RetMessage":"SUCCESS","Message":"_","now":"2020-09-07 11:52:24","POS":1,"RFID":10,"seq":10,"nationalID":"710","ownerNo":"710","calvingDate":"2017-12-12","milkingDays":1000,"feedSet1":1000.0,"feedSet2":4000.0,"feedSet3":0.0,"feedSetLast1":0.0,"feedSetLast2":0.0,"feedSetLast3":0.0,"AvgMilkLine":[2736,1824,3648,1824],"EstMilkLine":[30301,24678,38995,23007],"AvgMilkCond":[5315,5217,5420,5476],"AvgMilkCheckTime":[22,27,7,8],"MilkSampling":0,"MilkSamplingSec":23,"DataEvent":0,"Sender":"PC"}
 
-14:31:15,dawoon/EnviInfo/3609/1
+14:18:29,dawoon/EnviInfo/3609/1
 ,{"CMD":"MAIN_RUNTIME","ID":1,"RUNTIME":11, "NOWTIME":"21:04:00"}
 
-14:31:15,dawoon/EnviInfo/3627/1
+14:18:29,dawoon/EnviInfo/3627/1
 ,{"CMD":"MAIN_RUNTIME","ID":1,"RUNTIME":1, "NOWTIME":"20:15:08"}
 
-14:31:15,dawoon/MqttLive
+14:18:29,dawoon/MqttLive
 ,{"CMD":"RESP_LIVE","RetMessage":"","Message":"_now_2020-12-15 11:13:51_","now":"2020-12-15 11:13:51","Sender":"MqttPublic"}
 
-14:31:15,dawoon/meterset/3684/1/ROBOT
+14:18:29,dawoon/meterset/3684/1/ROBOT
 ,{"CMD":"RESP_METER_SET_READ","ID":1,"POS":15,"VALUE":800,"NOWTIME":"20.12.14 14:18:49"}
 
-14:31:15,dawoon/EnviSet/3609/1
+14:18:29,dawoon/EnviSet/3609/1
 ,{"CMD":"ENVI_DATA_SEND_TIME_ACK","TIME":"2020-05-07 20:54:39","START":"2020-05-07 20:33:00","STOP":"2020-05-07 21:05:00", "INTERVAL":5}
 
-14:31:15,dawoon/EnviSet/3627/1
+14:18:29,dawoon/EnviSet/3627/1
 ,{"CMD":"ENVI_DATA_SEND_TIME_ACK","TIME":"2019-07-19 21:02:40","START":"2019-07-19 21:02:00","STOP":"2019-07-19 21:05:00", "INTERVAL":10}
 
-14:31:15,dawoon/Robot/3627/1/ROBOT
+14:18:29,dawoon/Robot/3627/1/ROBOT
 ,{"CMD":"MAIN_RUNTIME","ID":1,"RUNTIME":2, "NOWTIME":"19.07.22 20:16:00"}
 
-14:31:15,dawoon/Robot/3609/1/ROBOT
+14:18:29,dawoon/Robot/3609/1/ROBOT
 ,{"CMD":"MAIN_RUNTIME","ID":1,"RUNTIME":4,"NOWTIME":"20.07.27 23:27:00"}
 
-14:31:15,dawoon/Robot/3609/2/ROBOT
+14:18:29,dawoon/Robot/3609/2/ROBOT
 ,{"CMD":"TEST_SHUT_DOWN","POS":0,"ID":2}
 
-14:31:15,dawoon/Robot/3684/1/ROBOT
+14:18:29,dawoon/Robot/3684/1/ROBOT
 ,{"CMD":"MAIN_RUNTIME","ID":1,"RUNTIME":1263,"NOWTIME":"20.12.15 11:14:00"}
 
-14:31:15,dawoon/Robot/9999/1/ROBOT
+14:18:29,dawoon/Robot/9999/1/ROBOT
 ,{"CMD":"MAIN_RUNTIME","ID":1,"RUNTIME":23,"NOWTIME":"20.07.27 23:52:00"}
 
-14:31:15,dawoon/FarmIOWASH/3609/1/ROBOT
+14:18:29,dawoon/FarmIOWASH/3609/1/ROBOT
 ,{"CMD":"FEEDING_AUTO","STATUS":"114","ID":1}
 
-14:31:15,dawoon/FarmIOWASH/3684/1/ROBOT
+14:18:29,dawoon/FarmIOWASH/3684/1/ROBOT
 ,{"CENTER_CAM" : 1,"CMD" : "ROBOT_STATUS","LEFT_CAM" : 1,"POS" : 1,"RIGHT_CAM" : 1,"ROBOT" : 1,"SENDER" : "ROBOT"}
 
-14:31:15,dawoon/FarmIOWASH/9999/1/ROBOT
+14:18:29,dawoon/FarmIOWASH/9999/1/ROBOT
 ,{"CMD":"MAIN_FEEDING_ONE_TIME","STATUS":"139","ID":1,"COUNT":0,"NOWTIME":"20.07.27 23:48:44"}
 
-14:31:15,dawoon/test
+14:18:29,dawoon/test
 ,{"CMD":"TEST"}
 
-14:31:15,dawoon/InDoor/3609/1/ROBOT
+14:18:29,dawoon/InDoor/3609/1/ROBOT
 ,{"CMD":"DOOR_NOTI","ID":1,"DOOR_COUNT":1,"RUNTIME":337,"NOWTIME":"20.09.08 23:59:00"}
 
-14:31:15,dawoon/InDoor/3684/1/ROBOT
+14:18:29,dawoon/InDoor/3684/1/ROBOT
 ,{"CMD":"DOOR_NOTI","ID":1,"DOOR_COUNT":1,"RUNTIME":25942,"NOWTIME":"20.12.15 11:14:00"}
 
-14:31:15,dawoon/RUMINATION/3684
+14:18:29,dawoon/RUMINATION/3684
 ,{"CMD":"RESP_RUMINATION","FARMCODE":"3684","RETMESSAGE":"SUCCESS","MESSAGE":"","DEVICECD":7777,"UNIQUEINDEX":659,"INDEX":1,"MAX":1,"NOW":"2022-03-04 09:02:36","SENDER":"PC"}
 
-14:31:15,CarCleanDevice/0
+14:18:29,CarCleanDevice/0
 ,{"CMD":"NOTI","FCODE":0}
 
-14:31:15,CarCleanDevice/9752
+14:18:29,CarCleanDevice/9752
 ,{"CMD":"NOTI","FCODE":9752}
 
-14:31:15,CarCleanDevice/3636
+14:18:29,CarCleanDevice/3636
 ,{"CMD":"NOTI","FCODE":3636}
 
-14:31:15,333
+14:18:29,333
 ,333
 
-14:31:15,test
+14:18:29,test
 ,aaa
 
-14:31:15,30
+14:18:29,30
 ,3
 
-14:31:15,����������������������������������������������������������������������������������������������������������������������������������������������������������������������������
+14:18:29,����������������������������������������������������������������������������������������������������������������������������������������������������������������������������
 ,{"CMD":"NOTI","FCODE":3684,"RUNTIME":3}
 
-14:31:15,����������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������
+14:18:29,����������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������
 ,{"CMD":"NOTI","FCODE":3684,"RUNTIME":3}
 
-14:31:15,�������������������������������������������������������������������������������������������������������������������������������������������
+14:18:29,�������������������������������������������������������������������������������������������������������������������������������������������
 ,{"CMD":"NOTI","FCODE":3684,"RUNTIME":4}
 
-14:31:15,�������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������
+14:18:29,�������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������
 ,{"CMD":"NOTI","FCODE":3350,"RUNTIME":2}
 
-14:31:15,����������������������������������������������������������������������������������������������������������������������������������
+14:18:29,����������������������������������������������������������������������������������������������������������������������������������
 ,{"CMD":"NOTI","FCODE":3684,"RUNTIME":3}
 
-14:31:15,������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������
+14:18:29,������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������
 ,{"CMD":"NOTI","FCODE":3684,"RUNTIME":1}
 
-14:31:15,�������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������
+14:18:29,�������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������
 ,{"CMD":"NOTI","FCODE":3684,"RUNTIME":8}
 
-14:31:15,�������������������������������������������������������������������������������������������������������������������������������������
+14:18:29,�������������������������������������������������������������������������������������������������������������������������������������
 ,{"CMD":"NOTI","FCODE":3684,"RUNTIME":1}
 
-14:31:15,�������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������awoon/iotCtrl/3684
+14:18:29,�������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������awoon/iotCtrl/3684
 ,{"CMD":"NOTI","FCODE":3684,"RUNTIME":3}
 
-14:31:15,�������������l/3684
+14:18:29,�������������l/3684
 ,{"CMD":"CHANGE_RESPONE","ADR":1,"TYPE":20,"NUMBER":0,"VALUE":0}
 
-14:31:15,�������iotCtrl/3684
+14:18:29,�������iotCtrl/3684
 ,{"CMD":"CHANGE_RESPONE","ADR":1,"TYPE":20,"NUMBER":0,"VALUE":0}
 
-14:31:15,����������������������������������
+14:18:29,����������������������������������
 ,{"CMD":"NOTI","FCODE":3684,"RUNTIME":3}
 
-14:31:15,��������������������������������
+14:18:29,��������������������������������
 ,{"CMD":"NOTI","FCODE":3684,"RUNTIME":1}
 
-14:31:15,������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������
+14:18:29,������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������
 ,{"CMD":"NOTI","FCODE":3684,"RUNTIME":2}
 
-14:31:15,��������������������������������������������������������������������������������������������������������������
+14:18:29,��������������������������������������������������������������������������������������������������������������
 ,{"CMD":"NOTI","FCODE":3684,"RUNTIME":2}
 
-14:31:15,������������������������������������������������������������������������������������������������������������������������������������
+14:18:29,������������������������������������������������������������������������������������������������������������������������������������
 ,{"CMD":"NOTI","FCODE":3684,"RUNTIME":3}
 
-14:31:15,����������������������������������������������������������������������������������������������������������������������������������������������������������������5s 529ms
+14:18:29,����������������������������������������������������������������������������������������������������������������������������������������������������������������5s 529ms
 ,{"CMD":"NOTI","FCODE":3684,"RUNTIME":2}
 
-14:31:15,����������������������������������������������������������������������������������������������������������������������������������������������
+14:18:29,����������������������������������������������������������������������������������������������������������������������������������������������
 ,{"CMD":"NOTI","FCODE":3684,"RUNTIME":2}
 
-14:31:15,����������������������������������������������������
+14:18:29,����������������������������������������������������
 ,{"CMD":"ERROR","RUNTIME":2,"WATCHDOG":1,"ADR":2,"AUTO":9991, "TEMP":0, "SENSOR":0}
 
-14:31:15,�������������������������������������������������������������������������������������������������������������������
+14:18:29,�������������������������������������������������������������������������������������������������������������������
 ,{"CMD":"NOTI","FCODE":3684,"RUNTIME":2}
 
-14:31:15,�������������������������������������������������������������������������������������������������������������������������
+14:18:29,�������������������������������������������������������������������������������������������������������������������������
 ,{"CMD":"NOTI","FCODE":3684,"RUNTIME":2}
 
-14:31:15,����������������������������������������������������������������������������36-84
+14:18:29,����������������������������������������������������������������������������36-84
 ,{"CMD":"NOTI","FCODE":3684,"RUNTIME":1}
 
-14:31:15,����������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������
+14:18:29,����������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������
 ,{"CMD":"NOTI","FCODE":3684,"RUNTIME":2}
 
-14:31:15,��������������������������������������������������������������������������������������������������������������������������
+14:18:29,��������������������������������������������������������������������������������������������������������������������������
 ,{"CMD":"NOTI","FCODE":3684,"RUNTIME":5}
 
-14:31:15,�������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������
+14:18:29,�������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������
 ,{"CMD":"NOTI","FCODE":3684,"RUNTIME":3}
 
-14:31:15,����������������������������������������������������������������������������������������������������������������������������������������������������������������������������������
+14:18:29,����������������������������������������������������������������������������������������������������������������������������������������������������������������������������������
 ,{"CMD":"NOTI","FCODE":3684,"RUNTIME":2}
 
-14:31:15,������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������� 
+14:18:29,������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������� 
 ,{"CMD":"NOTI","FCODE":3684,"RUNTIME":2}
 
-14:31:15,����������������������������������������������������������������������������������������������������������������������������������������������������
+14:18:29,����������������������������������������������������������������������������������������������������������������������������������������������������
 ,{"CMD":"NOTI","FCODE":3684,"RUNTIME":3}
 
-14:31:15,����������������������������������������������������������������������������������������������������������������������������������������������������������������������ms
+14:18:29,����������������������������������������������������������������������������������������������������������������������������������������������������������������������ms
 ,{"CMD":"NOTI","FCODE":3684,"RUNTIME":1}
 
-14:31:15,����������������684H
+14:18:29,����������������684H
 ,{"CMD":"NOTI","FCODE":3684,"RUNTIME":1}
 
-14:31:15,�������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������<
+14:18:29,�������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������<
 ,{"CMD":"NOTI","FCODE":3684,"RUNTIME":3}
 
-14:31:15,�������������������������������������������������������������������������������������������������������������
+14:18:29,�������������������������������������������������������������������������������������������������������������
 ,{"CMD":"NOTI","FCODE":3684,"RUNTIME":2}
 
-14:31:15,�������������������������������������
+14:18:29,�������������������������������������
 ,{"CMD":"NOTI","FCODE":3684,"RUNTIME":1}
 
-14:31:15,������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������
+14:18:29,������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������
 ,{"CMD":"NOTI","FCODE":3684,"RUNTIME":2}
 
-14:31:15,�������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������n/iotCtrl/3684
+14:18:29,�������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������n/iotCtrl/3684
 ,{"CMD":"NOTI","FCODE":3684,"RUNTIME":2}
 
-14:31:15,�������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������
+14:18:29,�������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������
 ,{"CMD":"NOTI","FCODE":3684,"RUNTIME":3}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3637
+14:18:29,dawoon/iotCtrl/RF447/RF3637
 ,{"CMD":"BASE_BOARD_LORA_RESET","NOWTIME":"2000-00-00 00:00:00","COUNT":"1"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3745
-,{"CMD":"NOTI","VERSION_D_T":"1.424,210602,175000","TIME":"220304,14:26:27:189","FARMCODE":3745,"STATUS":"IDLE","RUNTIME":2169934,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"23548","TMR_BCC_ERR":"3,3"}
+14:18:29,dawoon/iotCtrl/RF447/RF3745
+,{"CMD":"NOTI","VERSION_D_T":"1.424,210602,175000","TIME":"220304,14:16:26:174","FARMCODE":3745,"STATUS":"IDLE","RUNTIME":2169334,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"23546","TMR_BCC_ERR":"3,3"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF0
+14:18:29,dawoon/iotCtrl/RF447/RF0
 ,{"CMD":"BASE_BOARD_LORA_RESET","NOWTIME":"2021-07-27 10:22:16","COUNT":"1"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3759
-,{"CMD":"BASE_BOARD_LORA_RESET","NOWTIME":"2022-03-04 14:29:57","COUNT":"2108"}
+14:18:29,dawoon/iotCtrl/RF447/RF3759
+,{"CMD":"BASE_BOARD_LORA_RESET","NOWTIME":"2022-03-04 14:14:37","COUNT":"2106"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3761
+14:18:29,dawoon/iotCtrl/RF447/RF3761
 ,{"CMD":"BASE_BOARD_LORA_RESET","NOWTIME":"2021-06-07 18:51:42","COUNT":"1"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF5000
+14:18:29,dawoon/iotCtrl/RF447/RF5000
 ,{"CMD":"NOTI","VERSION_D_T":"1.415,210216,154700","TIME":"210712,10:32:15:200","FARMCODE":5000,"STATUS":"IDLE","RUNTIME":6300,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,11,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3783
-,{"CMD":"NOTI","VERSION_D_T":"1.2892,200728,112800","TIME":"220304,14:28:03:148","FARMCODE":3783,"STATUS":"IDLE","RUNTIME":1488720,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"16835","TMR_BCC_ERR":"0,0"}
+14:18:29,dawoon/iotCtrl/RF447/RF3783
+,{"CMD":"NOTI","VERSION_D_T":"1.2892,200728,112800","TIME":"220304,14:18:03:163","FARMCODE":3783,"STATUS":"IDLE","RUNTIME":1488120,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"16832","TMR_BCC_ERR":"0,0"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3786
-,{"CMD":"NOTI","VERSION_D_T":"1.2896,200922,113100","TIME":"220304,14:28:10:19","FARMCODE":3786,"STATUS":"IDLE","RUNTIME":1256303,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
+14:18:29,dawoon/iotCtrl/RF447/RF3786
+,{"CMD":"NOTI","VERSION_D_T":"1.2896,200922,113100","TIME":"220304,14:18:10:105","FARMCODE":3786,"STATUS":"IDLE","RUNTIME":1255703,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
 
-14:31:15,dawoon/iotCtrl/RF447/COWPERIODERR3636
+14:18:29,dawoon/iotCtrl/RF447/COWPERIODERR3636
 ,{"CMD":"COW_PERIOD_ERR_FIND_0","NOWTIME":"2021-09-02 16:51:50","CODE":"3636","DEVICE":"1017","ERR_TIME":"00-00,16-26","PERIOD_ERR_MIN":"986","ONECNT/ALLCNT":"2/4","OLD_CNT":"641","NOW_OLD_SUM":"0,0,0,0,0,0"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3738
-,{"CMD":"NOTI","VERSION_D_T":"1.410,201028,102000","TIME":"220304,14:28:22:216","FARMCODE":3738,"STATUS":"IDLE","RUNTIME":1256082,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
+14:18:29,dawoon/iotCtrl/RF447/RF3738
+,{"CMD":"NOTI","VERSION_D_T":"1.410,201028,102000","TIME":"220304,14:13:22:163","FARMCODE":3738,"STATUS":"IDLE","RUNTIME":1255182,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3684
+14:18:29,dawoon/iotCtrl/RF447/RF3684
 ,{"CMD":"DW2019_ACK_RESPONE_OK","DATE":"2022-03-01,15:46:04","CODE":"3684","RESPONE_DEVICE":"7777" }
 
-14:31:15,dawoon/iotCtrl/RF447/RF3795
+14:18:29,dawoon/iotCtrl/RF447/RF3795
 ,{"CMD":"BASE_BOARD_LORA_RESET","NOWTIME":"2021-04-27 17:45:19","COUNT":"1"}
 
-14:31:15,dawoon/iotCtrl/RF447/COWPERIODERR3738
+14:18:29,dawoon/iotCtrl/RF447/COWPERIODERR3738
 ,{"CMD":"COW_PERIOD_ERR_FIND_0","NOWTIME":"2021-02-08 16:53:11","CODE":"3738","DEVICE":"198","ERR_TIME":"15-33,16-33","PERIOD_ERR_MIN":"60","ONECNT/ALLCNT":"2/2","OLD_CNT":"547","NOW_OLD_SUM":"165,3,41,14"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3799
-,{"CMD":"NOTI","VERSION_D_T":"1.424,210602,175000","TIME":"220304,14:27:55:142","FARMCODE":3799,"STATUS":"IDLE","RUNTIME":2409621,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"78602","TMR_BCC_ERR":"10,11"}
+14:18:29,dawoon/iotCtrl/RF447/RF3799
+,{"CMD":"NOTI","VERSION_D_T":"1.424,210602,175000","TIME":"220304,14:17:55:205","FARMCODE":3799,"STATUS":"IDLE","RUNTIME":2409021,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"78600","TMR_BCC_ERR":"10,11"}
 
-14:31:15,dawoon/iotCtrl/RF447/COWSTATUS3738
+14:18:29,dawoon/iotCtrl/RF447/COWSTATUS3738
 ,{"CMD":"COW_HEAT_STATUS[198,416]","NOWTIME":"210208-172142","CODE":"3738","Continues":",0,0,","Danger":",1,2,","ClearCnt":",1,1,","7DaySum":"69923"}
 
-14:31:15,dawoon/iotCtrl/RF447/COLLMOVE3738
+14:18:29,dawoon/iotCtrl/RF447/COLLMOVE3738
 ,{"CMD":"COW_CollectiveMovement_NOT","CODE":"3738","COW_CNT":"35","HOUR":",14,43,","DATE":"2020-10-04,15:25:32"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3791
-,{"CMD":"NOTI","VERSION_D_T":"1.416,210302,154700","TIME":"220304,14:29:11:180","FARMCODE":3791,"STATUS":"IDLE","RUNTIME":691236,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"7187","TMR_BCC_ERR":"5,6"}
+14:18:29,dawoon/iotCtrl/RF447/RF3791
+,{"CMD":"NOTI","VERSION_D_T":"1.416,210302,154700","TIME":"220304,14:14:11:135","FARMCODE":3791,"STATUS":"IDLE","RUNTIME":690336,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"7183","TMR_BCC_ERR":"5,6"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3809
+14:18:29,dawoon/iotCtrl/RF447/RF3809
 ,{"CMD":"NOTI","VERSION_D_T":"1.2895,200907,172300","TIME":"201119,09:03:48:251","FARMCODE":3809,"STATUS":"IDLE","RUNTIME":3278885,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3811
-,{"CMD":"BASE_BOARD_LORA_RESET","NOWTIME":"2022-03-04 14:28:36","COUNT":"1708"}
+14:18:29,dawoon/iotCtrl/RF447/RF3811
+,{"CMD":"NOTI","VERSION_D_T":"1.424,210602,175000","TIME":"220304,14:16:48:66","FARMCODE":3811,"STATUS":"IDLE","RUNTIME":2406741,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"1","TMR_BCC_ERR":"0,0"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3818
-,{"CMD":"NOTI","VERSION_D_T":"1.2898,201223,163900","TIME":"220304,14:28:30:129","FARMCODE":3818,"STATUS":"IDLE","RUNTIME":193242,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"3684","TMR_BCC_ERR":"72,80"}
+14:18:29,dawoon/iotCtrl/RF447/RF3818
+,{"CMD":"NOTI","VERSION_D_T":"1.2898,201223,163900","TIME":"220304,14:13:30:198","FARMCODE":3818,"STATUS":"IDLE","RUNTIME":192342,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"3673","TMR_BCC_ERR":"72,80"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3820
-,{"CMD":"NOTI","VERSION_D_T":"1.2898,201223,163900","TIME":"220304,14:29:55:237","FARMCODE":3820,"STATUS":"IDLE","RUNTIME":1095177,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
+14:18:29,dawoon/iotCtrl/RF447/RF3820
+,{"CMD":"NOTI","VERSION_D_T":"1.2898,201223,163900","TIME":"220304,14:14:53:50","FARMCODE":3820,"STATUS":"IDLE","RUNTIME":1094277,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3821
+14:18:29,dawoon/iotCtrl/RF447/RF3821
 ,{"CMD":"BASE_BOARD_LORA_RESET","NOWTIME":"2021-11-08 08:21:01","COUNT":"5692"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3822
-,{"CMD":"NOTI","VERSION_D_T":"1.424,210602,175000","TIME":"220304,14:29:11:130","FARMCODE":3822,"STATUS":"IDLE","RUNTIME":296446,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"8772","TMR_BCC_ERR":"7,9"}
+14:18:29,dawoon/iotCtrl/RF447/RF3822
+,{"CMD":"NOTI","VERSION_D_T":"1.424,210602,175000","TIME":"220304,14:14:11:72","FARMCODE":3822,"STATUS":"IDLE","RUNTIME":295545,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"8768","TMR_BCC_ERR":"7,9"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3700
-,{"CMD":"NOTI","VERSION_D_T":"1.2896,200922,113100","TIME":"220304,14:26:46:34","FARMCODE":3700,"STATUS":"IDLE","RUNTIME":3716637,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
+14:18:29,dawoon/iotCtrl/RF447/RF3700
+,{"CMD":"NOTI","VERSION_D_T":"1.2896,200922,113100","TIME":"220304,14:16:46:16","FARMCODE":3700,"STATUS":"IDLE","RUNTIME":3716037,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3831
+14:18:29,dawoon/iotCtrl/RF447/RF3831
 ,{"CMD":"BASE_BOARD_LORA_RESET","NOWTIME":"2000-00-00 00:00:00","COUNT":"1"}
 
-14:31:15,dawoon/iotCtrl/RF447/COWPERIODERR3684
+14:18:29,dawoon/iotCtrl/RF447/COWPERIODERR3684
 ,{"CMD":"COW_PERIOD_ERR_FIND_0","NOWTIME":"2021-03-08 19:37:34","CODE":"3684","DEVICE":"7999","ERR_TIME":"18-35,19-37","PERIOD_ERR_MIN":"62","ONECNT/ALLCNT":"1/1","OLD_CNT":"0","NOW_OLD_SUM":"0,0,0,0,0,0"}
 
-14:31:15,dawoon/iotCtrl/RF447/COLLMOVE3684
+14:18:29,dawoon/iotCtrl/RF447/COLLMOVE3684
 ,{"CMD":"COW_CollectiveMovement_FIND","CODE":"3684","COW_CNT":"1","HOUR":",18,35,","DATE":"2021-03-08,19:38:31"}
 
-14:31:15,dawoon/iotCtrl/RF447/COWSTATUS3684
+14:18:29,dawoon/iotCtrl/RF447/COWSTATUS3684
 ,{"CMD":"COW_HEAT_STATUS[7999,3]","NOWTIME":"210308-193734","CODE":"3684","Continues":",0,0,","Danger":",0,0,","ClearCnt":",1,1,","7DaySum":"190"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3839
+14:18:29,dawoon/iotCtrl/RF447/RF3839
 ,{"CMD":"RF447SUM","CODE":"3839","DEVICE":"184","DATE":"2021-08-30,09:36:05","COW_HOUR_WALK_CNT":",08,54,0,2,"}
 
-14:31:15,dawoon/iotCtrl/RF447/COWPERIODERR3839
+14:18:29,dawoon/iotCtrl/RF447/COWPERIODERR3839
 ,{"CMD":"COW_PERIOD_ERR_FIND_0","NOWTIME":"2021-08-11 22:04:07","CODE":"3839","DEVICE":"407","ERR_TIME":"20-57,21-57","PERIOD_ERR_MIN":"60","ONECNT/ALLCNT":"1/1","OLD_CNT":"0","NOW_OLD_SUM":"89,0,156,24,0,0"}
 
-14:31:15,dawoon/iotCtrl/RF447/COWSTATUS3839
+14:18:29,dawoon/iotCtrl/RF447/COWSTATUS3839
 ,{"CMD":"COW_HEAT_STATUS[169,170]","NOWTIME":"210531-234003","CODE":"3839","Continues":",0,0,","Danger":",0,0,","ClearCnt":",3,3,","7DaySum":"4102"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3841
-,{"CMD":"NOTI","VERSION_D_T":"1.424,210602,175000","TIME":"220304,14:28:30:91","FARMCODE":3841,"STATUS":"IDLE","RUNTIME":2844902,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
+14:18:29,dawoon/iotCtrl/RF447/RF3841
+,{"CMD":"NOTI","VERSION_D_T":"1.424,210602,175000","TIME":"220304,14:13:30:100","FARMCODE":3841,"STATUS":"IDLE","RUNTIME":2844002,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
 
-14:31:15,dawoon/iotCtrl/RF447/COLLMOVE3839
+14:18:29,dawoon/iotCtrl/RF447/COLLMOVE3839
 ,{"CMD":"COW_CollectiveMovement_NOT","CODE":"3839","COW_CNT":"6","HOUR":",21,54,","DATE":"2021-08-29,22:51:39"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3695
+14:18:29,dawoon/iotCtrl/RF447/RF3695
 ,{"CMD":"BASE_BOARD_LORA_RESET","NOWTIME":"2020-11-24 19:27:33","COUNT":"1"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3858
-,{"CMD":"NOTI","VERSION_D_T":"1.424,210602,175000","TIME":"220304,14:28:46:202","FARMCODE":3858,"STATUS":"IDLE","RUNTIME":296447,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"4320","TMR_BCC_ERR":"39,44"}
+14:18:29,dawoon/iotCtrl/RF447/RF3858
+,{"CMD":"NOTI","VERSION_D_T":"1.424,210602,175000","TIME":"220304,14:13:45:212","FARMCODE":3858,"STATUS":"IDLE","RUNTIME":295546,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"4316","TMR_BCC_ERR":"39,44"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF7555
+14:18:29,dawoon/iotCtrl/RF447/RF7555
 ,{"CMD":"BASE_BOARD_LORA_RESET","NOWTIME":"2021-03-11 17:34:35","COUNT":"1"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3350
+14:18:29,dawoon/iotCtrl/RF447/RF3350
 ,{"CMD":"NOTI","VERSION_D_T":"1.427,210903,181800","TIME":"211123,17:42:50:248","FARMCODE":3350,"STATUS":"IDLE","RUNTIME":7501,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3380
-,{"CMD":"NOTI","VERSION_D_T":"1.424,210602,175000","TIME":"220304,14:30:34:223","FARMCODE":3380,"STATUS":"IDLE","RUNTIME":1864561,"LoraQ":"[,0,0/80,]","Tcs":"[,92,1,34,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
+14:18:29,dawoon/iotCtrl/RF447/RF3380
+,{"CMD":"NOTI","VERSION_D_T":"1.424,210602,175000","TIME":"220304,14:15:36:209","FARMCODE":3380,"STATUS":"IDLE","RUNTIME":1863661,"LoraQ":"[,0,0/80,]","Tcs":"[,92,1,32,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3872
-,{"CMD":"NOTI","VERSION_D_T":"1.424,210602,175000","TIME":"220304,14:27:11:246","FARMCODE":3872,"STATUS":"IDLE","RUNTIME":295852,"LoraQ":"[,0,0/80,]","Tcs":"[,230,0,2,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
+14:18:29,dawoon/iotCtrl/RF447/RF3872
+,{"CMD":"NOTI","VERSION_D_T":"1.424,210602,175000","TIME":"220304,14:17:09:91","FARMCODE":3872,"STATUS":"IDLE","RUNTIME":295252,"LoraQ":"[,0,0/80,]","Tcs":"[,228,0,2,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3873
-,{"CMD":"RF447SUM","CODE":"3873","DEVICE":"280","DATE":"2022-03-04,14:31:28","COW_HOUR_WALK_CNT":",13,42,138,2,"}
+14:18:29,dawoon/iotCtrl/RF447/RF3873
+,{"CMD":"NOTI","VERSION_D_T":"1.424,210602,175000","TIME":"220304,14:18:26:23","FARMCODE":3873,"STATUS":"IDLE","RUNTIME":3121978,"LoraQ":"[,0,0/80,]","Tcs":"[,537,0,34,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3498
+14:18:29,dawoon/iotCtrl/RF447/RF3498
 ,{"CMD":"NOTI","VERSION_D_T":"1.427,210903,181800","TIME":"211124,09:41:59:58","FARMCODE":3498,"STATUS":"IDLE","RUNTIME":1294147,"LoraQ":"[,0,0/80,]","Tcs":"[,554,0,13,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
 
-14:31:15,dawoon/iotCtrl/RF447/COWPERIODERR3498
+14:18:29,dawoon/iotCtrl/RF447/COWPERIODERR3498
 ,{"CMD":"COW_PERIOD_ERR_FIND_0","NOWTIME":"2021-09-28 01:16:40","CODE":"3498","DEVICE":"422","ERR_TIME":"11-27,00-56","PERIOD_ERR_MIN":"809","ONECNT/ALLCNT":"1/1","OLD_CNT":"0","NOW_OLD_SUM":"0,0,0,0,150,36"}
 
-14:31:15,dawoon/iotCtrl/RF447/COWSTATUS3498
+14:18:29,dawoon/iotCtrl/RF447/COWSTATUS3498
 ,{"CMD":"COW_HEAT_STATUS[415,161]","NOWTIME":"210427-233340","CODE":"3498","Continues":",0,0,","Danger":",0,0,","ClearCnt":",1,1,","7DaySum":"3868"}
 
-14:31:15,dawoon/iotCtrl/RF447/COLLMOVE3498
+14:18:29,dawoon/iotCtrl/RF447/COLLMOVE3498
 ,{"CMD":"COW_CollectiveMovement_NOT","CODE":"3498","COW_CNT":"5","HOUR":",17,37,","DATE":"2021-05-19,18:56:01"}
 
-14:31:15,dawoon/iotCtrl/RF447/COWPERIODERR3872
+14:18:29,dawoon/iotCtrl/RF447/COWPERIODERR3872
 ,{"CMD":"COW_PERIOD_ERR_FIND_0","NOWTIME":"2022-03-01 05:26:28","CODE":"3872","DEVICE":"173","ERR_TIME":"04-11,05-11","PERIOD_ERR_MIN":"60","ONECNT/ALLCNT":"1/1","OLD_CNT":"0","NOW_OLD_SUM":"0,87,0,0,0,14"}
 
-14:31:15,dawoon/iotCtrl/RF447/COLLMOVE3873
+14:18:29,dawoon/iotCtrl/RF447/COLLMOVE3873
 ,{"CMD":"COW_CollectiveMovement_FIND","CODE":"3873","COW_CNT":"5","HOUR":",16,44,","DATE":"2022-02-17,18:01:23"}
 
-14:31:15,dawoon/iotCtrl/RF447/COWPERIODERR3873
+14:18:29,dawoon/iotCtrl/RF447/COWPERIODERR3873
 ,{"CMD":"COW_PERIOD_ERR_FIND_0","NOWTIME":"2022-01-27 11:45:58","CODE":"3873","DEVICE":"188","ERR_TIME":"10-45,11-45","PERIOD_ERR_MIN":"60","ONECNT/ALLCNT":"1/1","OLD_CNT":"0","NOW_OLD_SUM":"0,0,0,0,0,0"}
 
-14:31:15,dawoon/iotCtrl/RF447/COWSTATUS3380
+14:18:29,dawoon/iotCtrl/RF447/COWSTATUS3380
 ,{"CMD":"COW_HEAT_STATUS[338,46]","NOWTIME":"210427-233344","CODE":"3380","Continues":",0,0,","Danger":",0,0,","ClearCnt":",0,0,","7DaySum":"1117"}
 
-14:31:15,dawoon/iotCtrl/RF447/COWPERIODERR3380
+14:18:29,dawoon/iotCtrl/RF447/COWPERIODERR3380
 ,{"CMD":"COW_PERIOD_ERR_FIND_0","NOWTIME":"2021-12-23 13:25:23","CODE":"3380","DEVICE":"280","ERR_TIME":"12-16,13-16","PERIOD_ERR_MIN":"60","ONECNT/ALLCNT":"1/1","OLD_CNT":"18","NOW_OLD_SUM":"126,45,14,17,78,125"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF9353
+14:18:29,dawoon/iotCtrl/RF447/RF9353
 ,{"CMD":"NOTI","VERSION_D_T":"1.425,210702,143000","TIME":"210706,15:05:27:138","FARMCODE":9353,"STATUS":"IDLE","RUNTIME":5400,"LoraQ":"[,0,0/80,]","Tcs":"[,47,2,4,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
 
-14:31:15,dawoon/iotCtrl/RF447/COWPERIODERR9353
+14:18:29,dawoon/iotCtrl/RF447/COWPERIODERR9353
 ,{"CMD":"COW_PERIOD_ERR_FIND_0","NOWTIME":"2021-07-02 16:23:07","CODE":"9353","DEVICE":"1012","ERR_TIME":"15-02,16-02","PERIOD_ERR_MIN":"60","ONECNT/ALLCNT":"1/2","OLD_CNT":"0","NOW_OLD_SUM":"0,0,0,0,0,0"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3797
-,{"CMD":"DW2019_ACK_RESPONE_OK","DATE":"2022-03-04,14:30:30","CODE":"3797","RESPONE_DEVICE":"205" }
+14:18:29,dawoon/iotCtrl/RF447/RF3797
+,{"CMD":"DW2019_ACK_RESPONE_OK","DATE":"2022-03-04,14:16:40","CODE":"3797","RESPONE_DEVICE":"239" }
 
-14:31:15,dawoon/iotCtrl/RF447/COWPERIODERR3797
+14:18:29,dawoon/iotCtrl/RF447/COWPERIODERR3797
 ,{"CMD":"COW_PERIOD_ERR_FIND_0","NOWTIME":"2021-07-15 18:44:33","CODE":"3797","DEVICE":"239","ERR_TIME":"17-39,18-39","PERIOD_ERR_MIN":"60","ONECNT/ALLCNT":"1/1","OLD_CNT":"0","NOW_OLD_SUM":"447,424,321,171,140,25"}
 
-14:31:15,dawoon/iotCtrl/RF447/COLLMOVE3797
+14:18:29,dawoon/iotCtrl/RF447/COLLMOVE3797
 ,{"CMD":"COW_CollectiveMovement_NOT","CODE":"3797","COW_CNT":"7","HOUR":",17,59,","DATE":"2022-03-02,19:04:35"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3916
-,{"CMD":"NOTI","VERSION_D_T":"1.424,210602,175000","TIME":"220304,14:28:59:212","FARMCODE":3916,"STATUS":"IDLE","RUNTIME":1232222,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"117188","TMR_BCC_ERR":"4,4"}
+14:18:29,dawoon/iotCtrl/RF447/RF3916
+,{"CMD":"NOTI","VERSION_D_T":"1.424,210602,175000","TIME":"220304,14:13:59:147","FARMCODE":3916,"STATUS":"IDLE","RUNTIME":1231322,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"117185","TMR_BCC_ERR":"4,4"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3912
+14:18:29,dawoon/iotCtrl/RF447/RF3912
 ,{"CMD":"BASE_BOARD_LORA_RESET","NOWTIME":"2021-07-20 15:38:34","COUNT":"1"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3918
-,{"CMD":"NOTI","VERSION_D_T":"1.424,210602,175000","TIME":"220304,14:31:24:1","FARMCODE":3918,"STATUS":"IDLE","RUNTIME":817662,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
+14:18:29,dawoon/iotCtrl/RF447/RF3918
+,{"CMD":"NOTI","VERSION_D_T":"1.424,210602,175000","TIME":"220304,14:16:24:162","FARMCODE":3918,"STATUS":"IDLE","RUNTIME":816761,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
 
-14:31:15,dawoon/iotCtrl/RF447/COLLMOVE3872
+14:18:29,dawoon/iotCtrl/RF447/COLLMOVE3872
 ,{"CMD":"COW_CollectiveMovement_NOT","CODE":"3872","COW_CNT":"1","HOUR":",04,53,","DATE":"2022-02-04,05:42:13"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF3961
-,{"CMD":"RF447SUM","CODE":"3961","DEVICE":"424","DATE":"2022-03-04,14:31:08","COW_HOUR_WALK_CNT":",13,44,38,2,"}
+14:18:29,dawoon/iotCtrl/RF447/RF3961
+,{"CMD":"DW2019_ACK_RESPONE_OK","DATE":"2022-03-04,14:17:55","CODE":"3961","RESPONE_DEVICE":"270" }
 
-14:31:15,dawoon/iotCtrl/RF447/RF3982
-,{"CMD":"NOTI","VERSION_D_T":"1.427,210903,181800","TIME":"220304,14:29:32:37","FARMCODE":3982,"STATUS":"IDLE","RUNTIME":2186771,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"42978","TMR_BCC_ERR":"4638,6106"}
+14:18:29,dawoon/iotCtrl/RF447/RF3982
+,{"CMD":"NOTI","VERSION_D_T":"1.427,210903,181800","TIME":"220304,14:14:33:186","FARMCODE":3982,"STATUS":"IDLE","RUNTIME":2185871,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"42970","TMR_BCC_ERR":"4638,6106"}
 
-14:31:15,dawoon/iotCtrl/RF447/RF7961
+14:18:29,dawoon/iotCtrl/RF447/RF7961
 ,{"CMD":"BASE_BOARD_LORA_RESET","NOWTIME":"2022-02-28 11:00:14","COUNT":"1"}
 
-14:31:15,dawoon/iotCtrl/3591
+14:18:29,dawoon/iotCtrl/3591
 ,{"CMD":"STATUS_RESPONE","ADR":1,"TYPE":20,"OUT":"0000220000000000","IN":"00000000","MOVE_TIME1":0,"MOVE_TIME2":0,"MOVE_TIME3":0,"STATUS":"OK","AUTO_MODE":0,"FAN_MODE":"0000000000000000"}
 
-14:31:15,dawoon/iotCtrl/3591H
-,{"CMD":"NOTI","FCODE":3591,"RUNTIME":122735}
+14:18:29,dawoon/iotCtrl/3591H
+,{"CMD":"NOTI","FCODE":3591,"RUNTIME":122722}
 
-14:31:15,dawoon/iotCtrl/C3636
+14:18:29,dawoon/iotCtrl/C3636
 ,{"CMD":"STATUS_RESPONE","AUTO_MODE":1,"BREAKER":0,"IN_GATE":0,"OUT_GATE":0,"CARCLEAN":0,"AIR_DEODORIZATION":0,"REMOVE_WATER":0,"CLEAN_DRIVER":0,"OUPUT_STATUS":"0000000000000000","INPUT_STATUS":"0000000000000000","RUNTIME":"300","PIPE_AIR_WATERDRAIN":"0"}
 
-14:31:15,dawoon/iotCtrl/P1
+14:18:29,dawoon/iotCtrl/P1
 ,{"CMD":"Pig_Respone","FCODE":"P1","Piglet_Liquid_feeder":"0","Sow_feeding_behavior":"0","Sow_group_grade":"0","Shipment_Pig_separator":"0","Pig_Lamp":"0","Side_ventilation":"1","Roof_ventilation":"1","Heater_control":"1","Window_control":"1","Water_supply_control":"0","Feed_grade":"0","Mist_spray":"0","Pig_reservation1":"0","Pig_reservation2":"0","Pig_reservation3":"0","Pig_reservation4":"0","Pig_BlackOut":"0","RunTime":"691","LoraSenCnt1":"61","LoraSenCnt2":"0","LoraSenCnt3":"15"}
 
-14:31:15,dawoon/iotCtrl/C3636W
+14:18:29,dawoon/iotCtrl/C3636W
 ,{"CMD":"STEP_4-2","STATUS":"Car_Clean_Proceeding","TIME":"65/173"}
 
-14:31:15,dawoon/iotCtrl/RF3637
+14:18:29,dawoon/iotCtrl/RF3637
 ,{CMD:"0",STATUS:"WATCHDOG HARDWARE RESET!!!!!!"}
 
-14:31:15,dawoon/iotCtrl/RF3636
-,{"CMD":"TASK_SPY_ERROR_MAC_2bd","NOWTIME":"2022-03-04 14:30:18","CODE":"3636","MAIN":"174351,449,822","MQTT":"174351,449,822","BLINK":"174350,0,1"}
+14:18:29,dawoon/iotCtrl/RF3636
+,{"CMD":"TASK_SPY_ERROR_MAC_2bd","NOWTIME":"2022-03-04 14:18:09","CODE":"3636","MAIN":"173630,574,822","MQTT":"173630,574,822","BLINK":"173629,0,1"}
 
-14:31:15,dawoon/iotCtrl/3604H
-,{"DATA":"WEIGH","ADR":1,"WEI":0,"DB_SEND":0,"TIME":"2022-03-04 14:31:16"}
+14:18:29,dawoon/iotCtrl/3604H
+,{"DATA":"SENSO","ADR":6,"TEMP":17.0,"HUM":47.3,"CO2": 592,"AMM":0.9,"DB_SEND":0,"TIME":"2022-03-04 14:18:26"}
 
-14:31:15,dawoon/iotCtrl/TMRFEED/3636
+14:18:29,dawoon/iotCtrl/TMRFEED/3636
 ,{"CMD1":"TMR_NO_RESPONE_DATA_LORA_RESET","CODE":"3636","DATE":"2022-02-17 15:09:54","TMR_BCC":"2816,0,0,0"}
 
-14:31:15,dawoon/iotCtrl/TMRFEED/3700
+14:18:29,dawoon/iotCtrl/TMRFEED/3700
 ,{"CMD1":"TMR_NO_RESPONE_DATA_LORA_RESET","CODE":"3700","DATE":"2021-07-06 19:25:30","TMR_BCC":"102,0,0,0"}
 
-14:31:15,dawoon/iotCtrl/TMRFEED/3745
-,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3745","DATE":"2022-03-04 14:28:40","VER":"3.3704","CanAVG":"95","TOTAL_ORDER":"34","MAGNATIC_DET":"-3","RUN_TIME":"250055","INPUT_STATUS":"00","OUTPUT_ALL_STATUS":"0000","REAL_WEIGHT":"106.8","LORA_GROUP":"488","LORA_FREQ":"0","ORDER_SEQ":"0","ORDER_NAME":"END","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"ALL_STOP","WEIGHT_CODE":"OK","IOTBASE_VER":"1.424","IOTBASE_RUNTIME":"2170052","TMR_TEMPERATURE":"11.23"}
+14:18:29,dawoon/iotCtrl/TMRFEED/3745
+,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3745","DATE":"2022-03-04 14:13:40","VER":"3.3704","CanAVG":"95","TOTAL_ORDER":"34","MAGNATIC_DET":"-3","RUN_TIME":"249155","INPUT_STATUS":"00","OUTPUT_ALL_STATUS":"0000","REAL_WEIGHT":"106.4","LORA_GROUP":"488","LORA_FREQ":"0","ORDER_SEQ":"0","ORDER_NAME":"END","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"ALL_STOP","WEIGHT_CODE":"OK","IOTBASE_VER":"1.424","IOTBASE_RUNTIME":"2169152","TMR_TEMPERATURE":"11.04"}
 
-14:31:15,dawoon/iotCtrl/TMRFEED/3759
-,{"CMD1":"TMR_NO_RESPONE_DATA_LORA_RESET","CODE":"3759","DATE":"2022-03-04 14:29:57","TMR_BCC":"10876,1,43839,463"}
+14:18:29,dawoon/iotCtrl/TMRFEED/3759
+,{"CMD1":"TMR_NO_RESPONE_DATA_LORA_RESET","CODE":"3759","DATE":"2022-03-04 14:14:37","TMR_BCC":"10876,1,43839,463"}
 
-14:31:15,dawoon/iotCtrl/TMRFEED/3761
+14:18:29,dawoon/iotCtrl/TMRFEED/3761
 ,{"CMD1":"TMR_NO_RESPONE_DATA_LORA_RESET","CODE":"3761","DATE":"2021-06-07 18:51:03","TMR_BCC":"93,0,0,0"}
 
-14:31:15,dawoon/iotCtrl/TMRFEED/3783
-,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3783","DATE":"2022-03-04 14:28:44","VER":"2.3567","CanAVG":"95","TOTAL_ORDER":"45","MAGNATIC_DET":"-13","RUN_TIME":"81666","INPUT_STATUS":"00","OUTPUT_ALL_STATUS":"0000","REAL_WEIGHT":"13.4","LORA_GROUP":"0","LORA_FREQ":"6","ORDER_SEQ":"0","ORDER_NAME":"END","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"ALL_STOP","WEIGHT_CODE":"OK"}
+14:18:29,dawoon/iotCtrl/TMRFEED/3783
+,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3783","DATE":"2022-03-04 14:13:24","VER":"2.3567","CanAVG":"96","TOTAL_ORDER":"45","MAGNATIC_DET":"-13","RUN_TIME":"80746","INPUT_STATUS":"00","OUTPUT_ALL_STATUS":"0000","REAL_WEIGHT":"13.6","LORA_GROUP":"0","LORA_FREQ":"6","ORDER_SEQ":"0","ORDER_NAME":"END","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"ALL_STOP","WEIGHT_CODE":"OK"}
 
-14:31:15,dawoon/iotCtrl/TMRFEED/3786
+14:18:29,dawoon/iotCtrl/TMRFEED/3786
 ,{"CMD1":"TMR_NO_RESPONE_DATA_LORA_RESET","CODE":"3786","DATE":"2022-02-18 01:23:59","TMR_BCC":"238,0,0,0"}
 
-14:31:15,dawoon/iotCtrl/TMRFEED/3795
+14:18:29,dawoon/iotCtrl/TMRFEED/3795
 ,{"CMD1":"TMRFEED_DATA","NOWTIME":"2021-04-27 17:46:21","CODE":"3795","StartWeight":"64.0","FillWeight":"0.0","StopWeight":"423.0","RunMoveDist":"0","RunFeedDist":"0","TMRVoltage":"48.9","TMR_Dev_Code":"136","Update_Flag":"L","MRAM_NUM":"147","ORDER_NUM":"5","Date":"2000-00-00","StartTime":"11:34:00","StopTime":"00:02:00","RoutCmdCode":"STOP","OrderVal1":"40","OrderVal2":"0","SystemError":"NONE","MAG_OUT_LINE":"0","MAG_IN_LINE":"0","MAG_CNT_TIME":"0","FEED_DATA":"0.0","FILL_DATA":"0.0",}
 
-14:31:15,dawoon/iotCtrl/TMRFEED/3799
-,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3799","DATE":"2022-03-04 14:28:09","VER":"3.3706","CanAVG":"95","TOTAL_ORDER":"46","MAGNATIC_DET":"-13","RUN_TIME":"17934","INPUT_STATUS":"04","OUTPUT_ALL_STATUS":"0000","REAL_WEIGHT":"50.0","LORA_GROUP":"498","LORA_FREQ":"0","ORDER_SEQ":"0","ORDER_NAME":"END","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"ALL_STOP","WEIGHT_CODE":"OK","IOTBASE_VER":"1.424","IOTBASE_RUNTIME":"2409636","TMR_TEMPERATURE":"12.34"}
+14:18:29,dawoon/iotCtrl/TMRFEED/3799
+,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3799","DATE":"2022-03-04 14:18:09","VER":"3.3706","CanAVG":"95","TOTAL_ORDER":"46","MAGNATIC_DET":"-13","RUN_TIME":"17334","INPUT_STATUS":"04","OUTPUT_ALL_STATUS":"0000","REAL_WEIGHT":"50.0","LORA_GROUP":"498","LORA_FREQ":"0","ORDER_SEQ":"0","ORDER_NAME":"END","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"ALL_STOP","WEIGHT_CODE":"OK","IOTBASE_VER":"1.424","IOTBASE_RUNTIME":"2409036","TMR_TEMPERATURE":"12.48"}
 
-14:31:15,dawoon/iotCtrl/TMRFEED/3791
-,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3791","DATE":"2022-03-04 14:26:20","VER":"3.3704","CanAVG":"95","TOTAL_ORDER":"44","MAGNATIC_DET":"17","RUN_TIME":"419784","INPUT_STATUS":"00","OUTPUT_ALL_STATUS":"0000","REAL_WEIGHT":"49.6","LORA_GROUP":"545","LORA_FREQ":"0","ORDER_SEQ":"0","ORDER_NAME":"END","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"ALL_STOP","WEIGHT_CODE":"OK","IOTBASE_VER":"1.416","IOTBASE_RUNTIME":"691067","TMR_TEMPERATURE":"19.26"}
+14:18:29,dawoon/iotCtrl/TMRFEED/3791
+,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3791","DATE":"2022-03-04 14:16:10","VER":"3.3704","CanAVG":"95","TOTAL_ORDER":"44","MAGNATIC_DET":"17","RUN_TIME":"419174","INPUT_STATUS":"00","OUTPUT_ALL_STATUS":"0000","REAL_WEIGHT":"49.6","LORA_GROUP":"546","LORA_FREQ":"0","ORDER_SEQ":"0","ORDER_NAME":"END","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"ALL_STOP","WEIGHT_CODE":"OK","IOTBASE_VER":"1.416","IOTBASE_RUNTIME":"690457","TMR_TEMPERATURE":"19.23"}
 
-14:31:15,dawoon/iotCtrl/TMRFEED/3811
-,{"CMD1":"TMR_NO_RESPONE_DATA_LORA_RESET","CODE":"3811","DATE":"2022-03-04 14:28:36","TMR_BCC":"1,0,0,0"}
+14:18:29,dawoon/iotCtrl/TMRFEED/3811
+,{"CMD1":"TMR_NO_RESPONE_DATA_LORA_RESET","CODE":"3811","DATE":"2022-03-04 14:13:16","TMR_BCC":"1,0,0,0"}
 
-14:31:15,dawoon/iotCtrl/TMRFEED/3818
-,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3818","DATE":"2022-03-04 14:31:03","VER":"3.3706","CanAVG":"94","TOTAL_ORDER":"153","MAGNATIC_DET":"-13","RUN_TIME":"12758","INPUT_STATUS":"01","OUTPUT_ALL_STATUS":"0000","REAL_WEIGHT":"218.4","LORA_GROUP":"506","LORA_FREQ":"0","ORDER_SEQ":"0","ORDER_NAME":"OP_BAT_CHARGE","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"ALL_STOP","WEIGHT_CODE":"OK","IOTBASE_VER":"1.2898","IOTBASE_RUNTIME":"193391","TMR_TEMPERATURE":"34.88"}
+14:18:29,dawoon/iotCtrl/TMRFEED/3818
+,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3818","DATE":"2022-03-04 14:18:12","VER":"3.3706","CanAVG":"95","TOTAL_ORDER":"153","MAGNATIC_DET":"-13","RUN_TIME":"11987","INPUT_STATUS":"01","OUTPUT_ALL_STATUS":"0000","REAL_WEIGHT":"218.2","LORA_GROUP":"507","LORA_FREQ":"0","ORDER_SEQ":"0","ORDER_NAME":"OP_BAT_CHARGE","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"ALL_STOP","WEIGHT_CODE":"OK","IOTBASE_VER":"1.2898","IOTBASE_RUNTIME":"192621","TMR_TEMPERATURE":"35.37"}
 
-14:31:15,dawoon/iotCtrl/TMRFEED/3820
+14:18:29,dawoon/iotCtrl/TMRFEED/3820
 ,{"CMD1":"TMR_NO_RESPONE_DATA_LORA_RESET","CODE":"3820","DATE":"2022-02-02 11:25:38","TMR_BCC":"21310,2,18128,25808"}
 
-14:31:15,dawoon/iotCtrl/TMRFEED/3809
+14:18:29,dawoon/iotCtrl/TMRFEED/3809
 ,{"CMD1":"TMR_NO_RESPONE_DATA_LORA_RESET","CODE":"3809","DATE":"2020-10-12 10:09:45","TMR_BCC":"290,0,0,0"}
 
-14:31:15,dawoon/iotCtrl/TMRFEED/3821
+14:18:29,dawoon/iotCtrl/TMRFEED/3821
 ,{"CMD1":"TMR_NO_RESPONE_DATA_LORA_RESET","CODE":"3821","DATE":"2021-11-08 08:21:01","TMR_BCC":"29319,0,0,0"}
 
-14:31:15,dawoon/iotCtrl/TMRFEED/3822
-,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3822","DATE":"2022-03-04 14:30:28","VER":"3.3706","CanAVG":"97","TOTAL_ORDER":"106","MAGNATIC_DET":"-3","RUN_TIME":"8764","INPUT_STATUS":"04","OUTPUT_ALL_STATUS":"0000","REAL_WEIGHT":"74.6","LORA_GROUP":"542","LORA_FREQ":"0","ORDER_SEQ":"0","ORDER_NAME":"END","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"ALL_STOP","WEIGHT_CODE":"OK","IOTBASE_VER":"1.424","IOTBASE_RUNTIME":"296531","TMR_TEMPERATURE":"18.67"}
+14:18:29,dawoon/iotCtrl/TMRFEED/3822
+,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3822","DATE":"2022-03-04 14:15:18","VER":"3.3706","CanAVG":"95","TOTAL_ORDER":"106","MAGNATIC_DET":"-3","RUN_TIME":"7854","INPUT_STATUS":"04","OUTPUT_ALL_STATUS":"0000","REAL_WEIGHT":"74.8","LORA_GROUP":"543","LORA_FREQ":"0","ORDER_SEQ":"0","ORDER_NAME":"END","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"ALL_STOP","WEIGHT_CODE":"OK","IOTBASE_VER":"1.424","IOTBASE_RUNTIME":"295621","TMR_TEMPERATURE":"18.99"}
 
-14:31:15,dawoon/iotCtrl/TMRFEED/3831
+14:18:29,dawoon/iotCtrl/TMRFEED/3831
 ,{"CMD1":"TMR_NO_RESPONE_DATA_LORA_RESET","CODE":"3831","DATE":"2021-06-22 10:17:39","TMR_BCC":"760,0,0,0"}
 
-14:31:15,dawoon/iotCtrl/TMRFEED/3841
+14:18:29,dawoon/iotCtrl/TMRFEED/3841
 ,{"CMD1":"TMR_NO_RESPONE_DATA_LORA_RESET","CODE":"3841","DATE":"2021-10-17 09:19:38","TMR_BCC":"81,0,0,0"}
 
-14:31:15,dawoon/iotCtrl/TMRFEED/3858
-,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3858","DATE":"2022-03-04 14:26:11","VER":"3.3707","CanAVG":"95","TOTAL_ORDER":"86","MAGNATIC_DET":"3","RUN_TIME":"1726415","INPUT_STATUS":"00","OUTPUT_ALL_STATUS":"0000","REAL_WEIGHT":"95.2","LORA_GROUP":"557","LORA_FREQ":"0","ORDER_SEQ":"0","ORDER_NAME":"END","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"ALL_STOP","WEIGHT_CODE":"OK","IOTBASE_VER":"1.424","IOTBASE_RUNTIME":"296289","TMR_TEMPERATURE":"18.28"}
+14:18:29,dawoon/iotCtrl/TMRFEED/3858
+,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3858","DATE":"2022-03-04 14:16:01","VER":"3.3707","CanAVG":"95","TOTAL_ORDER":"86","MAGNATIC_DET":"3","RUN_TIME":"1725805","INPUT_STATUS":"00","OUTPUT_ALL_STATUS":"0000","REAL_WEIGHT":"95.0","LORA_GROUP":"558","LORA_FREQ":"0","ORDER_SEQ":"0","ORDER_NAME":"END","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"ALL_STOP","WEIGHT_CODE":"OK","IOTBASE_VER":"1.424","IOTBASE_RUNTIME":"295680","TMR_TEMPERATURE":"18.28"}
 
-14:31:15,dawoon/iotCtrl/TMRFEED/3350
+14:18:29,dawoon/iotCtrl/TMRFEED/3350
 ,{"CMD":"TMRFEED_DATA","NOWTIME":"2021-01-13 10:03:42","CODE":"3350","Index":"277","Seq_No":"13","Date":"2002-00-10","StartTime":"171:33:00","StopTime":"151:31:00","StartWeight":"62268","FillWeight":"56831","StopWeight":"2250","RunMoveDist":"0","RunFeedDist":"0","RoutCmdCode":"0","OrderVal1":"3636","OrderVal2":"106","TMRVoltage":"0.0","SystemError":"50","TMR_Dev_Code":"0","Update_Flag":"L"}
 
-14:31:15,dawoon/iotCtrl/TMRFEED/3916
-,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3916","DATE":"2022-03-04 14:28:50","VER":"3.3710","CanAVG":"95","TOTAL_ORDER":"126","MAGNATIC_DET":"-3","RUN_TIME":"83967","INPUT_STATUS":"04","OUTPUT_ALL_STATUS":"0000","REAL_WEIGHT":"222.6","LORA_GROUP":"537","LORA_FREQ":"0","ORDER_SEQ":"0","ORDER_NAME":"END","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"ALL_STOP","WEIGHT_CODE":"OK","IOTBASE_VER":"1.424","IOTBASE_RUNTIME":"1232201","TMR_TEMPERATURE":"13.41"}
+14:18:29,dawoon/iotCtrl/TMRFEED/3916
+,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3916","DATE":"2022-03-04 14:13:50","VER":"3.3710","CanAVG":"95","TOTAL_ORDER":"126","MAGNATIC_DET":"-3","RUN_TIME":"83067","INPUT_STATUS":"04","OUTPUT_ALL_STATUS":"0000","REAL_WEIGHT":"222.6","LORA_GROUP":"536","LORA_FREQ":"0","ORDER_SEQ":"0","ORDER_NAME":"END","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"ALL_STOP","WEIGHT_CODE":"OK","IOTBASE_VER":"1.424","IOTBASE_RUNTIME":"1231300","TMR_TEMPERATURE":"13.10"}
 
-14:31:15,dawoon/iotCtrl/TMRFEED/3918
+14:18:29,dawoon/iotCtrl/TMRFEED/3918
 ,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3918","DATE":"2021-11-18 14:49:31","VER":"3.3710","CanAVG":"95","TOTAL_ORDER":"73","MAGNATIC_DET":"-20","RUN_TIME":"694","INPUT_STATUS":"00","OUTPUT_ALL_STATUS":"0200","REAL_WEIGHT":"40.0","LORA_GROUP":"539","LORA_FREQ":"0","ORDER_SEQ":"0","ORDER_NAME":"OP_AGV_MANUAL","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"OK","WEIGHT_CODE":"OK","IOTBASE_VER":"1.424","IOTBASE_RUNTIME":"93","TMR_TEMPERATURE":"15.87"}
 
-14:31:15,dawoon/iotCtrl/TMRFEED/3797
+14:18:29,dawoon/iotCtrl/TMRFEED/3797
 ,{"CMD1":"TMR_NO_RESPONE_DATA_LORA_RESET","CODE":"3797","DATE":"2021-10-29 03:37:23","TMR_BCC":"0,0,0,0"}
 
-14:31:15,dawoon/iotCtrl/TMRFEED/3498
+14:18:29,dawoon/iotCtrl/TMRFEED/3498
 ,{"CMD1":"TMR_NO_RESPONE_DATA_LORA_RESET","CODE":"3498","DATE":"2021-11-24 09:37:52","TMR_BCC":"0,0,0,0"}
 
-14:31:15,dawoon/iotCtrl/TMRFEED/3982
-,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3982","DATE":"2022-03-04 14:28:49","VER":"3.3710","CanAVG":"96","TOTAL_ORDER":"54","MAGNATIC_DET":"25","RUN_TIME":"590568","INPUT_STATUS":"04","OUTPUT_ALL_STATUS":"0000","REAL_WEIGHT":"92.2","LORA_GROUP":"585","LORA_FREQ":"0","ORDER_SEQ":"0","ORDER_NAME":"END","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"ALL_STOP","WEIGHT_CODE":"OK","IOTBASE_VER":"1.427","IOTBASE_RUNTIME":"2186697","TMR_TEMPERATURE":"17.74"}
+14:18:29,dawoon/iotCtrl/TMRFEED/3982
+,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3982","DATE":"2022-03-04 14:18:19","VER":"3.3710","CanAVG":"95","TOTAL_ORDER":"54","MAGNATIC_DET":"25","RUN_TIME":"589938","INPUT_STATUS":"04","OUTPUT_ALL_STATUS":"0000","REAL_WEIGHT":"92.2","LORA_GROUP":"584","LORA_FREQ":"0","ORDER_SEQ":"0","ORDER_NAME":"END","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"ALL_STOP","WEIGHT_CODE":"OK","IOTBASE_VER":"1.427","IOTBASE_RUNTIME":"2186068","TMR_TEMPERATURE":"17.83"}
 
-14:31:15,dawoon/iotCtrl/3680H
+14:18:29,dawoon/iotCtrl/3680H
 ,{"CMD":"ERROR","RUNTIME":4051,"WATCHDOG":0,"ADR":2,"AUTO":0, "TEMP":0, "SENSOR":8944}
 
-14:31:15,dawoon/iotCtrl/RF3491
+14:18:29,dawoon/iotCtrl/RF3491
 ,{"CMD":"NOTI","TIME":"000016,03:58:28:40","FARMCODE":3491,"STATUS":"IDLE","RUNTIME":1464757,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]"}
 
-14:31:15,dawoon/iotCtrl/3684
+14:18:29,dawoon/iotCtrl/3684
 ,{"CMD":"FAN_MONITOR","FARM":3684,"ADR":5,"EVENT":0,"MUX1":"11110000","MUX2":"00000000","MUX3":"00000000","MUX4":"00000000","MUX5":"00001111","TIME":"2022-02-04 10:31:16"}
 
-14:31:15,dawoon/iotCtrl/3684H
+14:18:29,dawoon/iotCtrl/3684H
 ,{"CMD":"NOTI","FCODE":3684,"RUNTIME":1}
 
-14:31:15,dawoon/iotCtrl/3351H
+14:18:29,dawoon/iotCtrl/3351H
 ,{"CMD":"BEAN_NOTI","TIME":"000000,00:00:00:0","FARMCODE":3351,"STATUS":"IDLE","RUNTIME":6901,"LORATIMEOUT":"0/0","LORACNT":"[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]"}
 
-14:31:15,dawoon/iotCtrl/3692
+14:18:29,dawoon/iotCtrl/3692
 ,{"CMD":"CHANGE_RESPONE","ADR":1,"TYPE":10,"NUMBER":5,"VALUE":0}
 
-14:31:15,dawoon/iotCtrl/TMRFEED/3791
-,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3791","DATE":"2022-03-04 14:31:20","VER":"3.3704","CanAVG":"95","TOTAL_ORDER":"44","MAGNATIC_DET":"17","RUN_TIME":"420084","INPUT_STATUS":"00","OUTPUT_ALL_STATUS":"0000","REAL_WEIGHT":"49.6","LORA_GROUP":"544","LORA_FREQ":"0","ORDER_SEQ":"0","ORDER_NAME":"END","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"ALL_STOP","WEIGHT_CODE":"OK","IOTBASE_VER":"1.416","IOTBASE_RUNTIME":"691368","TMR_TEMPERATURE":"19.37"}
+14:18:29,dawoon/iotCtrl/C0002
+,{"CMD":"STATUS_RESPONE","AUTO_MODE":1,"BREAKER":0,"IN_GATE":0,"OUT_GATE":0,"CARCLEAN":0,"AIR_DEODORIZATION":0,"REMOVE_WATER":0,"CLEAN_DRIVER":0,"OUPUT_STATUS":"0000000000000000","INPUT_STATUS":"0000000010000000","RUNTIME":"518643"}
 
-14:31:15,dawoon/iotCtrl/TMRBINARY/3791
-,{"CMD1":"TMR_LORA_BINARY","CODE":"3791","DATE":"2022-03-04 14:31:18","BCC":"1ade,b72f,OK,7188,ER,5,OT,6","TMR_BINARY":"Ubup:FARM:IA:Seq:Binary:333739313a3430313afe006c2a1603040e1f14a8835f2c1100f4680600000000f001cf0e200200008888000000000a0091070d7df70d0a000102
+14:18:29,dawoon/iotCtrl/3792
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":1060,"WEGITH_STATE":2,"BAHAP_TIME":608,"STATUS":"OK","AUTO_MODE":0}
+
+14:18:24,dawoon/iotCtrl/3888
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":4303,"WEGITH_STATE":3,"BAHAP_TIME":83,"STATUS":"OK","AUTO_MODE":0}
+
+14:18:24,dawoon/iotCtrl/3890
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":4015,"WEGITH_STATE":4,"BAHAP_TIME":595,"STATUS":"OK","AUTO_MODE":0}
+
+14:18:24,dawoon/iotCtrl/RF3872
+,{"CMD":"TASK_SPY_ERROR_MAC_2b3","NOWTIME":"2022-03-04 14:18:27","CODE":"3872","MAIN":"295337,193,860","MQTT":"295337,329,846","BLINK":"295336,0,1"}
+
+14:18:24,dawoon/iotCtrl/RF3873
+,{"CMD":"TASK_SPY_ERROR_MAC_342","NOWTIME":"2022-03-04 14:18:26","CODE":"3873","MAIN":"3122002,0,844","MQTT":"3122002,602,843","BLINK":"3122002,0,1"}
+
+14:18:23,dawoon/iotCtrl/3870
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":2334,"WEGITH_STATE":2,"BAHAP_TIME":5207,"STATUS":"OK","AUTO_MODE":0}
+
+14:18:23,dawoon/iotCtrl/3792
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":1060,"WEGITH_STATE":2,"BAHAP_TIME":603,"STATUS":"OK","AUTO_MODE":0}
+
+14:18:23,dawoon/iotCtrl/3550H
+,{"CMD":"ERROR","RUNTIME":1543,"WATCHDOG":0,"ADR":1,"AUTO":3411, "TEMP":3321, "SENSOR":10}
+
+14:18:22,dawoon/iotCtrl/TMRFEED/3818
+,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3818","DATE":"2022-03-04 14:18:12","VER":"3.3706","CanAVG":"95","TOTAL_ORDER":"153","MAGNATIC_DET":"-13","RUN_TIME":"11987","INPUT_STATUS":"01","OUTPUT_ALL_STATUS":"0000","REAL_WEIGHT":"218.2","LORA_GROUP":"507","LORA_FREQ":"0","ORDER_SEQ":"0","ORDER_NAME":"OP_BAT_CHARGE","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"ALL_STOP","WEIGHT_CODE":"OK","IOTBASE_VER":"1.2898","IOTBASE_RUNTIME":"192621","TMR_TEMPERATURE":"35.37"}
+
+14:18:22,dawoon/iotCtrl/TMRBINARY/3818
+,{"CMD1":"TMR_LORA_BINARY","CODE":"3818","DATE":"2022-03-04 14:18:10","BCC":"7505,8ee6,OK,3678,ER,72,OT,80","TMR_BINARY":"Ubup:FARM:IA:Seq:Binary:333831383a3430333afe006c2a1603040e120caa835f99f3ffd32e00000100008608ea0efb0100003e00000000000a00d10d0db7a00d0a000102
 "}
 
-14:31:15,dawoon/iotCtrl/3644
-,{"CMD":"HCOW_STAT","ADR":1,"TYPE":30,"OUT":"0000000000000000","IN":"11100010","MOVE_TIME1":446,"MOVE_TIME2":0,"MOVE_TIME3":0,"STATUS":"OK","AUTO_MODE":0}
+14:18:22,dawoon/iotCtrl/3889
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":2200,"WEGITH_STATE":1,"BAHAP_TIME":1184,"STATUS":"OK","AUTO_MODE":0}
 
-14:31:15,dawoon/iotCtrl/3792
-,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":1418,"WEGITH_STATE":2,"BAHAP_TIME":1287,"STATUS":"OK","AUTO_MODE":0}
+14:18:21,dawoon/iotCtrl/3550H
+,{"CMD":"ERROR","RUNTIME":1543,"WATCHDOG":0,"ADR":1,"AUTO":3410, "TEMP":3321, "SENSOR":10}
 
-14:31:15,dawoon/iotCtrl/3890
-,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":4013,"WEGITH_STATE":4,"BAHAP_TIME":1279,"STATUS":"OK","AUTO_MODE":0}
+14:18:21,dawoon/iotCtrl/3792
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":1060,"WEGITH_STATE":2,"BAHAP_TIME":600,"STATUS":"OK","AUTO_MODE":0}
 
-14:31:15,dawoon/iotCtrl/3888
-,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":3085,"WEGITH_STATE":3,"BAHAP_TIME":768,"STATUS":"OK","AUTO_MODE":0}
+14:18:21,dawoon/iotCtrl/3550H
+,{"DATA":"SENSOR","ADR":1,"TEMP":0.0,"HUM":0.0,"CO2":0000,"AMM":0.0}
 
-14:31:15,dawoon/iotCtrl/3775H
-,{"CMD":"ERROR","RUNTIME":0,"WATCHDOG":0,"ADR":1,"AUTO":46738, "TEMP":0, "SENSOR":10000}
+14:18:21,dawoon/iotCtrl/3604H
+,{"DATA":"SENSO","ADR":6,"TEMP":17.0,"HUM":47.3,"CO2": 592,"AMM":0.9,"DB_SEND":0,"TIME":"2022-03-04 14:18:26"}
 
-14:31:15,dawoon/iotCtrl/3954H
-,{"DATA":"SENSO","ADR":2,"TEMP":15.4,"HUM":39.3,"CO2": 426,"AMM":0.1,"DB_SEND":0,"TIME":"2022-03-04 14:31:14"}
+14:18:21,dawoon/iotCtrl/3890
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":4014,"WEGITH_STATE":4,"BAHAP_TIME":593,"STATUS":"OK","AUTO_MODE":0}
 
-14:31:15,dawoon/iotCtrl/3605H
-,{"CMD":"BEAN_NOTI","TIME":"220304,14:31:20:13","FARMCODE":3605,"STATUS":"IDLE","RUNTIME":2650655,"LORATIMEOUT":"0/0","LORACNT":"[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]"}
+14:18:21,dawoon/iotCtrl/RF3799
+,{"CMD":"TASK_SPY_ERROR_MAC_278","NOWTIME":"2022-03-04 14:18:20","CODE":"3799","MAIN":"2409030,760,840","MQTT":"2409030,760,840","BLINK":"2409029,0,1"}
+
+14:18:20,dawoon/iotCtrl/3889
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":2188,"WEGITH_STATE":1,"BAHAP_TIME":1182,"STATUS":"OK","AUTO_MODE":0}
+
+14:18:20,dawoon/iotCtrl/RF3738
+,{"CMD":"TASK_SPY_ERROR","NOWTIME":"2022-03-04 14:17:55","CODE":"3738","MAIN":"1255454,204,1000","MQTT":"1255454,8,20","BLINK":"1255454,0,1"}
+
+14:18:20,dawoon/iotCtrl/3865H
+,{"CMD":"BEAN_NOTI","TIME":"220304,14:18:19:94","FARMCODE":3865,"STATUS":"IDLE","RUNTIME":2084497,"LORATIMEOUT":"0/0","LORACNT":"[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]"}
+
+14:18:20,dawoon/iotCtrl/3870
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":2334,"WEGITH_STATE":2,"BAHAP_TIME":5207,"STATUS":"OK","AUTO_MODE":0}
+
+14:18:19,dawoon/iotCtrl/3870
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":2334,"WEGITH_STATE":2,"BAHAP_TIME":5207,"STATUS":"OK","AUTO_MODE":0}
+
+14:18:19,dawoon/iotCtrl/3888
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":4327,"WEGITH_STATE":3,"BAHAP_TIME":78,"STATUS":"OK","AUTO_MODE":0}
+
+14:18:19,dawoon/iotCtrl/3890
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":4015,"WEGITH_STATE":4,"BAHAP_TIME":591,"STATUS":"OK","AUTO_MODE":0}
+
+14:18:19,dawoon/iotCtrl/C0002
+,{"CMD":"STATUS_RESPONE","AUTO_MODE":1,"BREAKER":0,"IN_GATE":0,"OUT_GATE":0,"CARCLEAN":0,"AIR_DEODORIZATION":0,"REMOVE_WATER":0,"CLEAN_DRIVER":0,"OUPUT_STATUS":"0000000000000000","INPUT_STATUS":"0000000010000000","RUNTIME":"518633"}
+
+14:18:18,dawoon/iotCtrl/TMRFEED/3982
+,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3982","DATE":"2022-03-04 14:18:09","VER":"3.3710","CanAVG":"95","TOTAL_ORDER":"54","MAGNATIC_DET":"25","RUN_TIME":"589928","INPUT_STATUS":"04","OUTPUT_ALL_STATUS":"0000","REAL_WEIGHT":"92.4","LORA_GROUP":"585","LORA_FREQ":"0","ORDER_SEQ":"0","ORDER_NAME":"END","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"ALL_STOP","WEIGHT_CODE":"OK","IOTBASE_VER":"1.427","IOTBASE_RUNTIME":"2186057","TMR_TEMPERATURE":"17.86"}
+
+14:18:18,dawoon/iotCtrl/TMRBINARY/3982
+,{"CMD1":"TMR_LORA_BINARY","CODE":"3982","DATE":"2022-03-04 14:17:53","BCC":"7c09,c896,OK,42972,ER,4638,OT,6106","TMR_BINARY":"Ubup:FARM:IA:Seq:Binary:333938323a3430333afe006c2a1603040e1209ae835f361900680009000400009c038e0f490200008888000000000a00fa060daa7b0d0a000102
+"}
+
+14:18:18,dawoon/iotCtrl/3943H
+,{"CMD":"BEAN_NOTI","TIME":"220304,14:18:17:82","FARMCODE":3943,"STATUS":"IDLE","RUNTIME":2963106,"LORATIMEOUT":"0/0","LORACNT":"[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]"}
+
+14:18:18,dawoon/iotCtrl/RF3636
+,{"CMD":"TASK_SPY_ERROR_MAC_2bd","NOWTIME":"2022-03-04 14:18:09","CODE":"3636","MAIN":"173630,574,822","MQTT":"173630,574,822","BLINK":"173629,0,1"}
+
+14:18:18,dawoon/iotCtrl/3953H
+,{"DATA":"SENSO","ADR":1,"TEMP":9.8,"HUM":65.8,"CO2": 494,"AMM":1.7,"DB_SEND":0,"TIME":"2022-03-04 14:18:18"}
+
+14:18:18,dawoon/iotCtrl/3792
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":1060,"WEGITH_STATE":2,"BAHAP_TIME":598,"STATUS":"OK","AUTO_MODE":0}
+
+14:18:17,dawoon/iotCtrl/3888
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":4338,"WEGITH_STATE":3,"BAHAP_TIME":76,"STATUS":"OK","AUTO_MODE":0}
+
+14:18:17,dawoon/iotCtrl/3774H
+,{"CMD":"ERROR","RUNTIME":0,"WATCHDOG":0,"ADR":1,"AUTO":62485, "TEMP":0, "SENSOR":10000}
+
+14:18:17,dawoon/iotCtrl/3890
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":4014,"WEGITH_STATE":4,"BAHAP_TIME":589,"STATUS":"OK","AUTO_MODE":0}
+
+14:18:17,dawoon/iotCtrl/3694H
+,{"DATA":"SENSOR","ADR":2,"TEMP":18.3,"HUM":99.9,"CO2":0000,"AMM":0.5}
+
+14:18:17,dawoon/iotCtrl/3751H
+,{"DATA":"SENSO","ADR":1,"TEMP":13.4,"HUM":51.8,"CO2": 749,"AMM":0.0,"DB_SEND":1,"TIME":"2022-03-04 14:18:16"}
+
+14:18:17,dawoon/iotCtrl/3889
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":2130,"WEGITH_STATE":2,"BAHAP_TIME":1180,"STATUS":"OK","AUTO_MODE":0}
+
+14:18:16,dawoon/iotCtrl/3954H
+,{"DATA":"WATER","ADR":1,"WV":623,"WM":712,"STAT":5,"DB_SEND":1,"SEND_EVENT":0,"EF_MODE":0,"ELC":0,"FIRE":0,"TIME":"2022-03-04 14:18:14"}
+
+14:18:16,dawoon/iotCtrl/3792
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":1060,"WEGITH_STATE":2,"BAHAP_TIME":596,"STATUS":"OK","AUTO_MODE":0}
+
+14:18:16,dawoon/iotCtrl/3870
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":2334,"WEGITH_STATE":2,"BAHAP_TIME":5207,"STATUS":"OK","AUTO_MODE":0}
+
+14:18:15,dawoon/iotCtrl/3889
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":2120,"WEGITH_STATE":2,"BAHAP_TIME":1178,"STATUS":"OK","AUTO_MODE":0}
+
+14:18:15,dawoon/iotCtrl/3793H
+,{"DATA":"SENSO","ADR":3,"TEMP":20.1,"HUM":36.6,"CO2":2203,"AMM":1.3,"DB_SEND":0,"TIME":"2022-03-04 14:18:20"}
+
+14:18:14,dawoon/topic
+,Hello World
+
+14:18:14,dawoon/iotCtrl/3350
+,{"CMD":"FAN_MONITOR","FARM":3350,"ADR":2,"EVENT":0,"MUX1":00000000,"MUX2":"00001000","MUX3":"00000000","MUX4":00001111,"MUX5":00000000,"TIME":"2021-11-26 12:39:12"}
+
+14:18:14,dawoon/iotCtrl/3580
+,test1
+
+14:18:14,dawoon/iotCtrl/3605
+,{"CMD":"CHANGE_RESPONE","ADR":3,"TYPE":20,"NUMBER":8,"VALUE":1}
+
+14:18:14,dawoon/iotCtrl/3627
+,{"CMD":"BAHAP_STAT","ADR":7,"TYPE":90,"OUT":"00001000","IN":"00000000","WEGITH":104,"WEGITH_STATE":2,"BAHAP_TIME":0,"STATUS":"OK","AUTO_MODE":0}
+
+14:18:14,dawoon/iotCtrl/3604
+,{"CMD":"DEVICE_ERROR","ADR":1,"TYPE":"WEIGH","RUNTIME":3145,"STATUS":0,"TIME":"2022-03-03 05:51:00"}
+
+14:18:14,dawoon/iotCtrl/3609
+,{"CMD":"DEVICE_ERROR","ADR":1,"TYPE":"WIND","RUNTIME":2,"STATUS":1,"TIME":"2020-05-18 15:58:00"}
+
+14:18:14,dawoon/iotCtrl/3637
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":1562,"WEGITH_STATE":1,"BAHAP_TIME":328,"STATUS":"OK","AUTO_MODE":0}
+
+14:18:14,dawoon/iotCtrl/3640
+,{"DATA":"SENSOR","ADR":2,"TEMP":5.9,"HUM":29.0,"CO2":0000,"AMM":1.4}
+
+14:18:14,dawoon/iotCtrl/3643
+,{"CMD":"STATUS_RESPONE","OUTn":00002000}
+
+14:18:14,dawoon/iotCtrl/3643H
+,{"CMD":"ERROR","RUNTIME":0,"WATCHDOG":0,"ADR":1,"AUTO":3482, "TEMP":0, "SENSOR":179}
+
+14:18:14,dawoon/iotCtrl/3627H
+,{"CMD":"NOTI","FCODE":3627,"RUNTIME":1}
+
+14:18:14,dawoon/iotCtrl/3350H
+,{"CMD":"NOTI","FCODE":3350,"RUNTIME":115}
+
+14:18:14,dawoon/iotCtrl/3644
+,{"CMD":"HCOW_STAT","ADR":2,"TYPE":30,"OUT":"0000000000000000","IN":"10100010","MOVE_TIME1":0,"MOVE_TIME2":501,"MOVE_TIME3":0,"STATUS":"OK","AUTO_MODE":0}
+
+14:18:14,dawoon/iotCtrl/3644H
+,{"CMD":"NOTI","FCODE":3644,"RUNTIME":45823}
+
+14:18:14,dawoon/iotCtrl/3605H
+,{"CMD":"NOTI","FCODE":3605,"RUNTIME":187069}
+
+14:18:14,dawoon/iotCtrl/C9003
+,{"CMD":"NOTI","FCODE":9003}
+
+14:18:14,dawoon/iotCtrl/3609H
+,{"CMD":"NOTI","FCODE":3609,"RUNTIME":5}
+
+14:18:14,dawoon/iotCtrl/3550H
+,{"DATA":"SENSOR","ADR":2,"TEMP":14.6,"HUM":98.4,"CO2":0000,"AMM":0.7}
+
+14:18:14,dawoon/iotCtrl/3637H
+,{"CMD":"NOTI","FCODE":3637,"RUNTIME":3}
+
+14:18:14,dawoon/iotCtrl/C0002
+,{"CMD":"STATUS_RESPONE","AUTO_MODE":1,"BREAKER":0,"IN_GATE":0,"OUT_GATE":0,"CARCLEAN":0,"AIR_DEODORIZATION":0,"REMOVE_WATER":0,"CLEAN_DRIVER":0,"OUPUT_STATUS":"0000000000000000","INPUT_STATUS":"0000000010000000","RUNTIME":"518623"}
+
+14:18:14,dawoon/iotCtrl/C0002W
+,{"CMD":"STEP_7-2","STATUS":"All_actions_completed","TIME":"0"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3636
+,{"CMD":"NOTI","VERSION_D_T":"1.428,220121,112400","TIME":"220304,14:14:47:114","FARMCODE":3636,"STATUS":"IDLE","RUNTIME":173431,"LoraQ":"[,0,0/80,]","Tcs":"[,7,0,0,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3669
+,{"CMD":"RF447","CODE":"3669","DEVICE":"1002","INTTIME":"5716.465","STATUS":"[OK:1,Fail:0,Err:0,DevErr:0]","WALKING":"[0,0,0,0,0,1]","BAT":"3950","ACCEL":"[X:156,Y:1985,Z:937]","TEMP":"21","PERIOD":"0","Queue":"0"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3491
+,{"CMD":"Period_RANGE_OVER_DET[104]","DETECT":",[800],0,[700],0,[500],0,[300],0,[ETC],0,","IIS2DH":"Fsset,1,Modesel,5,Range,15,Time,3,","MotionDet":"PerMOTION[1-6],0,0,0,0,0,0,RangeRoll[+-40]Pitch[+-30],0,0,0,0,","OLD_SUM_CNT":",0,0,","NOWTIME_CODE":",00-00-03,08:49:35,3491,"}
+
+14:18:14,dawoon/iotCtrl/RF447/COWSTATUS3636
+,{"CMD":"COW_HEAT_STATUS[207,1]","NOWTIME":"210427-232924","CODE":"3636","Continues":",0,0,","Danger":",0,0,","ClearCnt":",0,0,","7DaySum":"28"}
+
+14:18:14,dawoon/iotCtrl/RF447/COLLMOVE3636
+,{"CMD":"COW_CollectiveMovement_FIND","CODE":"3636","COW_CNT":"1","HOUR":",13,57,","DATE":"2022-02-21,15:01:27"}
+
+14:18:14,dawoon/iotCtrl/RF447/COWSTATUS36dawoon/iotCtrl/RF447/COLLMOVE3636
+,{"CMD":"COW_HEAT_STATUS[101]","NOWTIME":"190703-171124","CODE":"3636","Continues":",0,0,","Danger":",0,0,","ClearCnt":",0,0,"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3541
+,{"CMD":"RF447_DW2016","NOWTIME":"2021-08-27 11:18:31","CODE":"3541","DEVICE":"123","WALKING_ALL":"0","TEMP":"22","OVER_RANGE":"0,0,0,0,0","MOTION_DETECT":"0,0,0,0,0,0","ROLL_PITCH_RANGE":"0,0,0,0","OLD_SUM_CNT":"0,0,0"}
+
+14:18:14,dawoon/iotCtrl/RF447/COLLMOVE3541
+,{"CMD":"COW_CollectiveMovement_NOT","CODE":"3541","COW_CNT":"1","HOUR":",06,","DATE":"2021-08-27,07:26:55"}
+
+14:18:14,dawoon/iotCtrl/RF447/COWSTATUS3541
+,{"CMD":"COW_HEAT_STATUS[121,253]","NOWTIME":"210827-090850","CODE":"3541","Continues":",0,0,","Danger":",1,4,","ClearCnt":",0,0,","7DaySum":"42587"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3699
+,{"CMD":"BASE_BOARD_LORA_RESET","NOWTIME":"2000-00-00 00:00:00","COUNT":"1"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3580
+,{"CMD":"NOTI","TIME":"191212,11:58:33:180","FARMCODE":3580,"STATUS":"IDLE","RUNTIME":600,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3639
+,{"CMD":"BASE_BOARD_LORA_RESET","NOWTIME":"2019-12-04 15:33:56","COUNT":"1"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3989
+,{"CMD":"BASE_BOARD_LORA_RESET","NOWTIME":"2000-00-00 00:00:00","COUNT":"1"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF50
+,{"CMD":"RF447_DW2016","NOWTIME":"2020-01-20 21:02:50","CODE":"50","DEVICE":"1010","WALKING_ALL":"0","TEMP":"23","OVER_RANGE":"0,0,0,0,0","MOTION_DETECT":"0,0,0,0,0,0","ROLL_PITCH_RANGE":"0,0,0,0","OLD_SUM_CNT":"0,0,0"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF0000
+,{"CMD":"NOTI","VERSION_D_T":"1.285,200521,153600""TIME":"200624,11:17:28:215","FARMCODE":0,"STATUS":"IDLE","RUNTIME":300,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
+
+14:18:14,dawoon/iotCtrl/RF447/COWSTATUS0
+,{"CMD":"COW_HEAT_STATUS[1012,426]","NOWTIME":"200122-150356","CODE":"0","Continues":",0,0,","Danger":",0,0,","ClearCnt":",0,0,","7DaySum":"500976"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3641
+,{"CMD":"RESP_NON_ARRIVAL","FCODE":"3641","FNAME":"","ANISEQ":"12","DEVICE":"123","LASTTIME":"2020-04-13 11:12:18","RetMessage":"","Message":"","now":"2020-04-21 09:00:57","Process":"","Sender":"PC"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF9999
+,{"CMD":"RESP_NON_ARRIVAL","FCODE":"9999","FNAME":"","ANISEQ":"38","DEVICE":"186","LASTTIME":"2020-08-03 17:19:15","RetMessage":"","Message":"","now":"2020-08-21 14:05:35","Process":"","Sender":"PC_9999_218.157.85.232_192.168.0.2_309C23E9C567"}
+
+14:18:14,dawoon/iotCtrl/RF447/RG3684
+,{"CMD":"RESP_NON_ARRIVAL","FCODE":"3684","FNAME":"","ANISEQ":"23","DEVICE":"122","LASTTIME":"2020-02-13 17:40:24","RetMessage":"","Message":"","now":"2020-10-16 10:48:36","Process":"","Sender":"PC_3684_211.221.179.224_192.168.1.11_4CEDFB7486CF"}
+
+14:18:14,dawoon/iotCtrl/RF447/RG3541
+,{"CMD":"RESP_NON_ARRIVAL","FCODE":"3541","FNAME":"","ANISEQ":"67","DEVICE":"184","LASTTIME":"2021-02-16 09:23:22","RetMessage":"","Message":"","now":"2021-03-22 18:10:09","Process":"","Sender":"PC_9999_218.157.85.232_192.168.0.2_309C23E9C567"}
+
+14:18:14,dawoon/iotCtrl/RF447/RG3498
+,{"CMD":"RESP_RF447_DW2016","RetMessage":"FAIL-DUP","Message":"ESTRUS_DUP_RFID____ANISEQ_0__Date_2021-04-05 14:43:19_","now":"2021-04-06 17:11:11","POS":-1,"RFID":0,"DEVICE":"207","NOWSEQ":"21","TOTALSEQ":"243","BeforeCMD":"RF447_DW2016","Sender":"PC_3498_119.205.1.55_192.168.1.6_94C6919E403D"}
+
+14:18:14,dawoon/iotCtrl/3411
+,{"CMD":"STATUS_RESPONE","ADR":1,"TYPE":20,"OUT":"0000000000000000","IN":"00000000","MOVE_TIME1":0,"MOVE_TIME2":0,"MOVE_TIME3":0,"STATUS":"OK","AUTO_MODE":0,"FAN_MODE":"0000000000000000"}
+
+14:18:14,dawoon/iotCtrl/3411H
+,{"CMD":"ERROR","RUNTIME":99,"WATCHDOG":0,"ADR":1,"AUTO":31, "TEMP":0, "SENSOR":0}
+
+14:18:14,dawoon/iotCtrl/C3627
+,{"CMD":"STATUS_RESPONE","AUTO_MODE":1,"BREAKER":0,"IN_GATE":0,"OUT_GATE":0,"CARCLEAN":0,"AIR_DEODORIZATION":0,"REMOVE_WATER":0,"CLEAN_DRIVER":0,"OUPUT_STATUS":"0000000000000000","INPUT_STATUS":"0000010010000000","RUNTIME":"5"}
+
+14:18:14,dawoon/iotCtrl/P0001
+,{"CMD":"Pig_Respone","FCODE":"P1","Piglet_Liquid_feeder":"0","Sow_feeding_behavior":"0","Sow_group_grade":"0","Shipment_Pig_separator":"0","Pig_Lamp":"0","Side_ventilation":"0","Roof_ventilation":"0","Heater_control":"0","Window_control":"0","Water_supply_control":"0","Feed_grade":"0","Mist_spray":"0","Pig_reservation1":"0","Pig_reservation2":"0","Pig_reservation3":"0","Pig_reservation4":"0","Pig_BlackOut":"0","RunTime":"6","LoraSenCnt1":"0","LoraSenCnt2":"0","LoraSenCnt3":"0"}
+
+14:18:14,dawoon/iotCtrl/CS3636
+,{"CMD":"Sensor","FARMCODE":"3636","STATUS":"SenNum_2","Temp":24.7,"Humudity":36.9,"Co2":3500,"Weight":0,"Ammonia":0.6,"Fire":0,"Elc":0,"Runtime":353911,"TxRxCnt":"[4443,6]"}
+
+14:18:14,dawoon/iotCtrl/3669
+,{"CMD":"IOT_TEMP_SET_RESPONE","ADR":1,"VALUE":75}
+
+14:18:14,dawoon/iotCtrl/RF3669
+,{"CMD":"LORA","FARMCODE":"3669","STATUS":"POS_1","RANGE":"[1.36,1.29,0.76]","BATTERY":"3742","TEMP":"22.17","PERIOD":"30"}
+
+14:18:14,dawoon/iotCtrl/TMRFEED/3699
+,{"CMD":"TMRFEED_DATA","NOWTIME":"2019-05-29 17:19:57","CODE":"3699","Index":"121","Seq_No":"255","Date":"2019-05-29","StartTime":"17:17:00","StopTime":"17:19:00","StartWeight":"0","FillWeight":"0","StopWeight":"0","RunMoveDist":"0","RunFeedDist":"1937","RoutCmdCode":"34952","OrderVal1":"0","OrderVal2":"0","TMRVoltage":"0.0","SystemError":"0","TMR_Dev_Code":"106","Update_Flag":"A"}
+
+14:18:14,dawoon/iotCtrl/TMRFEED/3695
+,{"CMD":"TMRFEED_DATA","NOWTIME":"2019-06-26 16:51:16","CODE":"3627","Index":"3","Seq_No":"3","Date":"2019-06-26","StartTime":"16:51:00","StopTime":"17:11:00","StartWeight":"30","FillWeight":"9","StopWeight":"21","RunMoveDist":"300","RunFeedDist":"210","RoutCmdCode":"1","OrderVal1":"2","OrderVal2":"3","TMRVoltage":"47.4","SystemError":"1","TMR_Dev_Code":"2","Update_Flag":"U"}
+
+14:18:14,dawoon/iotCtrl/TMRFEED/3580
+,{"CMD1":"TMR_ORDER_STOP","CODE":"3580","DATE":"2019-12-12 11:57:52"}
+
+14:18:14,dawoon/iotCtrl/TMRFEED/0
+,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3745","DATE":"2019-12-12 14:21:02","VER":"2.329","CanAVG":"95","TOTAL_ORDER":"3","MAGNATIC_DET":"10","RUN_TIME":"8125","INPUT_STATUS":"00","OUTPUT_ALL_STATUS":"0000","REAL_WEIGHT":"0.0","LORA_GROUP":"365","LORA_FREQ":"5","ORDER_SEQ":"1","ORDER_NAME":"STOP","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"ALL_STOP","WEIGHT_CODE":"OK"}
+
+14:18:14,dawoon/iotCtrl/TMRFEED/50
+,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3636","DATE":"2020-01-20 21:04:55","VER":"2.345","CanAVG":"96","TOTAL_ORDER":"11","MAGNATIC_DET":"-10","RUN_TIME":"11731","INPUT_STATUS":"00","OUTPUT_ALL_STATUS":"0000","REAL_WEIGHT":"0.0","LORA_GROUP":"293","LORA_FREQ":"6","ORDER_SEQ":"5","ORDER_NAME":"LINE_FEED_LEFT","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"ALL_STOP","WEIGHT_CODE":"OK"}
+
+14:18:14,dawoon/iotCtrl/TMRFEED/3609
+,{"CMD":"TMRFEED_DATA","NOWTIME":"2020-05-18 16:29:30","CODE":"3609","Index":"1300","Seq_No":"18","Date":"2014-00-16","StartTime":"69:08:00","StopTime":"155:07:00","StartWeight":"8975","FillWeight":"13824","StopWeight":"11","RunMoveDist":"0","RunFeedDist":"0","RoutCmdCode":"0","OrderVal1":"3636","OrderVal2":"399","TMRVoltage":"410.2","SystemError":"34952","TMR_Dev_Code":"0","Update_Flag":"L"}
+
+14:18:14,dawoon/iotCtrl/TMRFEED/5000
+,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3636","DATE":"2018-12-11 00:01:53","VER":"2.3498","CanAVG":"95","TOTAL_ORDER":"197","MAGNATIC_DET":"13","RUN_TIME":"145990","INPUT_STATUS":"00","OUTPUT_ALL_STATUS":"0000","REAL_WEIGHT":"0.0","LORA_GROUP":"555","LORA_FREQ":"6","ORDER_SEQ":"11","ORDER_NAME":"OP_BAT_CHARGE","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"ALL_STOP","WEIGHT_CODE":"OK"}
+
+14:18:14,dawoon/iotCtrl/RF3638
+,{CMD:"0",STATUS:"WATCHDOG HARDWARE RESET!!!!!!"}
+
+14:18:14,dawoon/iotCtrl/3630H
+,{"CMD":"NOTI","FCODE":3630,"RUNTIME":22}
+
+14:18:14,dawoon/iotCtrl/3393
+,{"CMD":"STATUS_RESPONE","ADR":2,"TYPE":10,"OUT":"1000000000000000","IN":"00000000","MOVE_TIME1":0,"MOVE_TIME2":0,"MOVE_TIME3":0,"STATUS":"OK","AUTO_MODE":0,"FAN_MODE":"1000000000000000"}
+
+14:18:14,dawoon/iotCtrl/3393H
+,{"DATA":"SENSOR","ADR":1,"TEMP":30.8,"HUM":42.4,"CO2":0971,"AMM":4.6}
+
+14:18:14,dawoon/iotCtrl/COWWATER/3636
+,{"CMD":"RESP_COWWATER_ERROR","RetMessage":"FAIL-DUP","Message":"CMD = 'COWWATER_ERROR' and aniRFID = '9999' and id = '1' and date = '2019-05-24' and enter_time = '00:00'","now":"2020-07-03 11:19:28","Process":".","Sender":"PC"}
+
+14:18:14,dawoon/iotCtrl/COWWATER/3637
+,{"CMD":"RESP_COWWATER_CALCULATE","RetMessage":"SUCCESS","Message":"","now":"2019-10-25 16:37:03","Process":".","Sender":"PC"}
+
+14:18:14,dawoon/iotCtrl/3693
+,{"CMD":"STATUS_RESPONE","ADR":1,"TYPE":0,"OUT":"0000000000000000","IN":"00000000","MOVE_TIME1":0,"MOVE_TIME2":0,"MOVE_TIME3":0,"STATUS":"NO_DEVICE","AUTO_MODE":0,"FAN_MODE":"1000100000000000"}
+
+14:18:14,dawoon/iotCtrl/RF3699
+,{"MYFARMCODE":"3699","STATUS":"0"}
+
+14:18:14,dawoon/iotCtrl/0H
+,{"CMD":"NOTI","FCODE":0,"RUNTIME":1}
+
+14:18:14,dawoon/iotCtrl/12336H
+,{"CMD":"NOTI","FCODE":12336,"RUNTIME":1}
+
+14:18:14,dawoon/iotCtrl/3678H
+,{"CMD":"NOTI","FCODE":3678,"RUNTIME":9}
+
+14:18:14,dawoon/iotCtrl/19737H
+,{"CMD":"NOTI","FCODE":19737,"RUNTIME":1}
+
+14:18:14,dawoon/iotCtrl/4360H
+,{"CMD":"NOTI","FCODE":4360,"RUNTIME":3}
+
+14:18:14,dawoon/iotCtrl/6555H
+,{"CMD":"NOTI","FCODE":6555,"RUNTIME":2}
+
+14:18:14,dawoon/iotCtrl/3690H
+,{"CMD":"ERROR","RUNTIME":2433,"WATCHDOG":0,"ADR":1,"AUTO":0, "TEMP":0, "SENSOR":5371}
+
+14:18:14,dawoon/iotCtrl/3648H
+,{"CMD":"NOTI","FCODE":3648,"RUNTIME":1}
+
+14:18:14,dawoon/iotCtrl/0
+,{"CMD":"STATUS_RESPONE","ADR":2,"TYPE":10,"OUT":"0001001101110111","IN":"00000000","MOVE_TIME1":0,"MOVE_TIME2":0,"MOVE_TIME3":0,"STATUS":"OK","AUTO_MODE":0,"FAN_MODE":"1000000000000000"}
+
+14:18:14,dawoon/iotCtrl/2H
+,{"CMD":"NOTI","FCODE":2,"RUNTIME":6}
+
+14:18:14,dawoon/iotCtrl/33H
+,{"CMD":"NOTI","FCODE":33,"RUNTIME":2}
+
+14:18:14,dawoon/iotCtrl/3695H
+,{"DATA":"SENSOR","ADR":2,"TEMP":29.3,"HUM":42.0,"CO2":0962,"AMM":0.0}
+
+14:18:14,dawoon/iotCtrl/3695
+,{"CMD":"NOTI","TIME":"190903,16:51:35:20","FARMCODE":3669,"STATUS":"IDLE","RUNTIME":2700,"LORATIMEOUT":"739899/2100000","LORACNT":"[0,8,7,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]"}
+
+14:18:14,dawoon/iotCtrl/3636
+,{"CMD":"NOTI","TIME":"190909,11:14:54:16","FARMCODE":3636,"STATUS":"IDLE","RUNTIME":345951,"LORATIMEOUT":"0/0","LORACNT":"[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]"}
+
+14:18:14,dawoon/iotCtrl/3636H
+,{"CMD":"NOTI","FCODE":3636,"RUNTIME":1}
+
+14:18:14,dawoon/iotCtrl/3670
+,{"CMD":"NOTI","TIME":"190904,15:06:24:4","FARMCODE":3670,"STATUS":"IDLE","RUNTIME":2400,"LORATIMEOUT":"0/0","LORACNT":"[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]"}
+
+14:18:14,dawoon/iotCtrl/3670H
+,{"CMD":"NOTI","FCODE":3670,"RUNTIME":44} 
+
+14:18:14,dawoon/iotCtrl/3698
+,{"CMD":"BEAN_NOTI","TIME":"200109,09:52:35:7","FARMCODE":3698,"STATUS":"IDLE","RUNTIME":1445350,"LORATIMEOUT":"136940/3900000","LORACNT":"[0,10,10,10,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]"}
+
+14:18:14,dawoon/iotCtrl/C0030
+,{"CMD":"STATUS_RESPONE","AUTO_MODE":1,"BREAKER":0,"IN_GATE":0,"OUT_GATE":0,"CARCLEAN":0,"AIR_DEODORIZATION":0,"REMOVE_WATER":0,"CLEAN_DRIVER":0,"OUPUT_STATUS":"0010000000000000","INPUT_STATUS":"0000000000000000","RUNTIME":"302"}
+
+14:18:14,dawoon/iotCtrl/C0030W
+,{"CMD":"STEP_2-6","STATUS":"InGate_Close","TIME":"0"}
+
+14:18:14,dawoon/iotCtrl/3741
+,{"CMD":"STATUS_RESPONE","OUTn":00000000}
+
+14:18:14,dawoon/iotCtrl/3741H
+,{"CMD":"BEAN_NOTI","TIME":"200312,08:37:17:0","FARMCODE":3741,"STATUS":"IDLE","RUNTIME":1619926,"LORATIMEOUT":"0/0","LORACNT":"[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]"}
+
+14:18:14,dawoon/iotCtrl/3742
+,{"CMD":"STATUS_RESPONE","ADR":1,"TYPE":10,"OUT":"0000000000000000","IN":"00000000","MOVE_TIME1":0,"MOVE_TIME2":0,"MOVE_TIME3":0,"STATUS":"OK","AUTO_MODE":0,"FAN_MODE":"1111000000000000"}
+
+14:18:14,dawoon/iotCtrl/RF3580
+,{"MYFARMCODE":"3580","STATUS":"0"}
+
+14:18:14,dawoon/iotCtrl/3989
+,{"CMD":"STATUS_RESPONE","OUTn":00002000}
+
+14:18:14,dawoon/iotCtrl/3989H
+,{"CMD":"BEAN_NOTI","TIME":"191202,16:44:40:77","FARMCODE":3989,"STATUS":"IDLE","RUNTIME":900,"LORATIMEOUT":"0/0","LORACNT":"[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]"}
+
+14:18:14,dawoon/iotCtrl/RF3639
+,{CMD:"0",STATUS:"WATCHDOG HARDWARE RESET!!!!!!"}
+
+14:18:14,dawoon/iotCtrl/3756
+,{"CMD":"STATUS_RESPONE","OUTn":00002000}
+
+14:18:14,dawoon/iotCtrl/3756H
+,{"CMD":"BEAN_NOTI","TIME":"200218,18:18:07:68","FARMCODE":3756,"STATUS":"IDLE","RUNTIME":8701,"LORATIMEOUT":"0/0","LORACNT":"[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]"}
+
+14:18:14,dawoon/iotCtrl/3767
+,{"CMD":"INFO_RESPONE","VERSION":"DW_IOT_V2_35","MAC":"80-1f-12-5d-34-09","STAT":"RUN","RUNTIME":12748, "SUB_COUNT":0}
+
+14:18:14,dawoon/iotCtrl/3779
+,{"CMD":"STATUS_RESPONE","OUTn":00000000}
+
+14:18:14,dawoon/iotCtrl/4865H
+,{"CMD":"NOTI","FCODE":4865,"RUNTIME":1}
+
+14:18:14,dawoon/iotCtrl/TMRBINARY/5000
+,{"CMD1":"TMR_LORA_BINARY","CODE":"3636","DATE":"2018-12-11 00:02:54","BCC":"0000,0000,OK,4,ER,0,OT,0","TMR_BINARY":"Ubup:FARM:IA:Seq:Binary:333633363a3535353afe006c28120c0b000135ca5b5fc50d00463a02000000000000340e2b02060b3e00000000000a000d66cd0d0a0001020304
+"}
+
+14:18:14,dawoon/iotCtrl/3638H
+,{"CMD":"NOTI","FCODE":3638,"RUNTIME":3}
+
+14:18:14,dawoon/iotCtrl/3791H
+,{"CMD":"NOTI","FCODE":3791,"RUNTIME":22975}
+
+14:18:14,dawoon/iotCtrl/ICTCAR/CAR9999
+,{"CMD":"REQ_CAR_IN_OUT","CARNUMBER":"66부1236","RetMessage":"","Message":"","now":"2020-08-21 11:56:18","BeforeCMD":"","Sender":"PC_9999_218.157.85.232_192.168.0.2_309C23E9C567"}
+
+14:18:14,dawoon/iotCtrl/3805
+,{"CMD":"STATUS_RESPONE","OUTn":00000000}
+
+14:18:14,dawoon/iotCtrl/3572
+,{"CMD":"NOTI","FCODE":3572}
+
+14:18:14,dawoon/iotCtrl/test
+,{"CMD":"TEST"}
+
+14:18:14,dawoon/MilkMain/3350
+,{"CMD":"NONE","ID":11,"COW":11,"VALUE":"0.000","FCODE":3350}
+
+14:18:14,dawoon/HOST/3300
+,{"CMD":"HOST","ID":67,"COW":1286,"VALUE":0.000000,"FCODE":3350}
+
+14:18:14,dawoon/FarmMain/3609/1/POLOR
+,{"CMD":"RESP_MILKEND","RetMessage":"FAIL","Message":"POLOR_CALLSP_FAIL_RFID_1__Date___now__","now":"2020-07-02 16:29:10","POS":1,"RFID":1,"BeforeCMD":"MILKEND","Sender":"PC"}
+
+14:18:14,dawoon/FarmMain/3609/1/ROBOT
+,{"CMD":"RESP_LOCAL_TIME","RetMessage":"SUCCESS","Message":"","now":"2020-07-27 23:25:10","Sender":"PC"}
+
+14:18:14,dawoon/FarmMain/3627/1/ROBOT
+,{"CMD":"RESP_LOCAL_TIME","RetMessage":"SUCCESS","Message":"","now":"2019-10-25 16:37:08","Sender":"PC"}
+
+14:18:14,dawoon/FarmMain/3684/1/ROBOT
+,{"CMD":"RESP_MILKEND","RetMessage":"FAIL","Message":"ROBOT_CALLSP_FAIL_RFID_7__Date_2020-12-15 08:06:43__now__TotalYield_0","now":"2020-12-15 08:06:10","POS":1,"RFID":7,"DEVICE":"","NOWSEQ":"","TOTALSEQ":"","BeforeCMD":"MILKEND","Sender":"PC"}
+
+14:18:14,dawoon/FarmMain/test
+,{"CMD":"TEST"}
+
+14:18:14,dawoon/FarmMain/9999/1/ROBOT
+,{"CMD":"RESP_COW_INFO","RetMessage":"SUCCESS","Message":"_","now":"2020-09-07 11:52:24","POS":1,"RFID":10,"seq":10,"nationalID":"710","ownerNo":"710","calvingDate":"2017-12-12","milkingDays":1000,"feedSet1":1000.0,"feedSet2":4000.0,"feedSet3":0.0,"feedSetLast1":0.0,"feedSetLast2":0.0,"feedSetLast3":0.0,"AvgMilkLine":[2736,1824,3648,1824],"EstMilkLine":[30301,24678,38995,23007],"AvgMilkCond":[5315,5217,5420,5476],"AvgMilkCheckTime":[22,27,7,8],"MilkSampling":0,"MilkSamplingSec":23,"DataEvent":0,"Sender":"PC"}
+
+14:18:14,dawoon/EnviInfo/3609/1
+,{"CMD":"MAIN_RUNTIME","ID":1,"RUNTIME":11, "NOWTIME":"21:04:00"}
+
+14:18:14,dawoon/EnviInfo/3627/1
+,{"CMD":"MAIN_RUNTIME","ID":1,"RUNTIME":1, "NOWTIME":"20:15:08"}
+
+14:18:14,dawoon/MqttLive
+,{"CMD":"RESP_LIVE","RetMessage":"","Message":"_now_2020-12-15 11:13:51_","now":"2020-12-15 11:13:51","Sender":"MqttPublic"}
+
+14:18:14,dawoon/meterset/3684/1/ROBOT
+,{"CMD":"RESP_METER_SET_READ","ID":1,"POS":15,"VALUE":800,"NOWTIME":"20.12.14 14:18:49"}
+
+14:18:14,dawoon/EnviSet/3609/1
+,{"CMD":"ENVI_DATA_SEND_TIME_ACK","TIME":"2020-05-07 20:54:39","START":"2020-05-07 20:33:00","STOP":"2020-05-07 21:05:00", "INTERVAL":5}
+
+14:18:14,dawoon/EnviSet/3627/1
+,{"CMD":"ENVI_DATA_SEND_TIME_ACK","TIME":"2019-07-19 21:02:40","START":"2019-07-19 21:02:00","STOP":"2019-07-19 21:05:00", "INTERVAL":10}
+
+14:18:14,dawoon/Robot/3627/1/ROBOT
+,{"CMD":"MAIN_RUNTIME","ID":1,"RUNTIME":2, "NOWTIME":"19.07.22 20:16:00"}
+
+14:18:14,dawoon/Robot/3609/1/ROBOT
+,{"CMD":"MAIN_RUNTIME","ID":1,"RUNTIME":4,"NOWTIME":"20.07.27 23:27:00"}
+
+14:18:14,dawoon/Robot/3609/2/ROBOT
+,{"CMD":"TEST_SHUT_DOWN","POS":0,"ID":2}
+
+14:18:14,dawoon/Robot/3684/1/ROBOT
+,{"CMD":"MAIN_RUNTIME","ID":1,"RUNTIME":1263,"NOWTIME":"20.12.15 11:14:00"}
+
+14:18:14,dawoon/Robot/9999/1/ROBOT
+,{"CMD":"MAIN_RUNTIME","ID":1,"RUNTIME":23,"NOWTIME":"20.07.27 23:52:00"}
+
+14:18:14,dawoon/FarmIOWASH/3609/1/ROBOT
+,{"CMD":"FEEDING_AUTO","STATUS":"114","ID":1}
+
+14:18:14,dawoon/FarmIOWASH/3684/1/ROBOT
+,{"CENTER_CAM" : 1,"CMD" : "ROBOT_STATUS","LEFT_CAM" : 1,"POS" : 1,"RIGHT_CAM" : 1,"ROBOT" : 1,"SENDER" : "ROBOT"}
+
+14:18:14,dawoon/FarmIOWASH/9999/1/ROBOT
+,{"CMD":"MAIN_FEEDING_ONE_TIME","STATUS":"139","ID":1,"COUNT":0,"NOWTIME":"20.07.27 23:48:44"}
+
+14:18:14,dawoon/test
+,{"CMD":"TEST"}
+
+14:18:14,dawoon/InDoor/3609/1/ROBOT
+,{"CMD":"DOOR_NOTI","ID":1,"DOOR_COUNT":1,"RUNTIME":337,"NOWTIME":"20.09.08 23:59:00"}
+
+14:18:14,dawoon/InDoor/3684/1/ROBOT
+,{"CMD":"DOOR_NOTI","ID":1,"DOOR_COUNT":1,"RUNTIME":25942,"NOWTIME":"20.12.15 11:14:00"}
+
+14:18:14,dawoon/RUMINATION/3684
+,{"CMD":"RESP_RUMINATION","FARMCODE":"3684","RETMESSAGE":"SUCCESS","MESSAGE":"","DEVICECD":7777,"UNIQUEINDEX":659,"INDEX":1,"MAX":1,"NOW":"2022-03-04 09:02:36","SENDER":"PC"}
+
+14:18:14,CarCleanDevice/0
+,{"CMD":"NOTI","FCODE":0}
+
+14:18:14,CarCleanDevice/9752
+,{"CMD":"NOTI","FCODE":9752}
+
+14:18:14,CarCleanDevice/3636
+,{"CMD":"NOTI","FCODE":3636}
+
+14:18:14,333
+,333
+
+14:18:14,test
+,aaa
+
+14:18:14,30
+,3
+
+14:18:14,����������������������������������������������������������������������������������������������������������������������������������������������������������������������������
+,{"CMD":"NOTI","FCODE":3684,"RUNTIME":3}
+
+14:18:14,����������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������
+,{"CMD":"NOTI","FCODE":3684,"RUNTIME":3}
+
+14:18:14,�������������������������������������������������������������������������������������������������������������������������������������������
+,{"CMD":"NOTI","FCODE":3684,"RUNTIME":4}
+
+14:18:14,�������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������
+,{"CMD":"NOTI","FCODE":3350,"RUNTIME":2}
+
+14:18:14,����������������������������������������������������������������������������������������������������������������������������������
+,{"CMD":"NOTI","FCODE":3684,"RUNTIME":3}
+
+14:18:14,������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������
+,{"CMD":"NOTI","FCODE":3684,"RUNTIME":1}
+
+14:18:14,�������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������
+,{"CMD":"NOTI","FCODE":3684,"RUNTIME":8}
+
+14:18:14,�������������������������������������������������������������������������������������������������������������������������������������
+,{"CMD":"NOTI","FCODE":3684,"RUNTIME":1}
+
+14:18:14,�������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������awoon/iotCtrl/3684
+,{"CMD":"NOTI","FCODE":3684,"RUNTIME":3}
+
+14:18:14,�������������l/3684
+,{"CMD":"CHANGE_RESPONE","ADR":1,"TYPE":20,"NUMBER":0,"VALUE":0}
+
+14:18:14,�������iotCtrl/3684
+,{"CMD":"CHANGE_RESPONE","ADR":1,"TYPE":20,"NUMBER":0,"VALUE":0}
+
+14:18:14,����������������������������������
+,{"CMD":"NOTI","FCODE":3684,"RUNTIME":3}
+
+14:18:14,��������������������������������
+,{"CMD":"NOTI","FCODE":3684,"RUNTIME":1}
+
+14:18:14,������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������
+,{"CMD":"NOTI","FCODE":3684,"RUNTIME":2}
+
+14:18:14,��������������������������������������������������������������������������������������������������������������
+,{"CMD":"NOTI","FCODE":3684,"RUNTIME":2}
+
+14:18:14,������������������������������������������������������������������������������������������������������������������������������������
+,{"CMD":"NOTI","FCODE":3684,"RUNTIME":3}
+
+14:18:14,����������������������������������������������������������������������������������������������������������������������������������������������������������������5s 529ms
+,{"CMD":"NOTI","FCODE":3684,"RUNTIME":2}
+
+14:18:14,����������������������������������������������������������������������������������������������������������������������������������������������
+,{"CMD":"NOTI","FCODE":3684,"RUNTIME":2}
+
+14:18:14,����������������������������������������������������
+,{"CMD":"ERROR","RUNTIME":2,"WATCHDOG":1,"ADR":2,"AUTO":9991, "TEMP":0, "SENSOR":0}
+
+14:18:14,�������������������������������������������������������������������������������������������������������������������
+,{"CMD":"NOTI","FCODE":3684,"RUNTIME":2}
+
+14:18:14,�������������������������������������������������������������������������������������������������������������������������
+,{"CMD":"NOTI","FCODE":3684,"RUNTIME":2}
+
+14:18:14,����������������������������������������������������������������������������36-84
+,{"CMD":"NOTI","FCODE":3684,"RUNTIME":1}
+
+14:18:14,����������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������
+,{"CMD":"NOTI","FCODE":3684,"RUNTIME":2}
+
+14:18:14,��������������������������������������������������������������������������������������������������������������������������
+,{"CMD":"NOTI","FCODE":3684,"RUNTIME":5}
+
+14:18:14,�������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������
+,{"CMD":"NOTI","FCODE":3684,"RUNTIME":3}
+
+14:18:14,����������������������������������������������������������������������������������������������������������������������������������������������������������������������������������
+,{"CMD":"NOTI","FCODE":3684,"RUNTIME":2}
+
+14:18:14,������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������� 
+,{"CMD":"NOTI","FCODE":3684,"RUNTIME":2}
+
+14:18:14,����������������������������������������������������������������������������������������������������������������������������������������������������
+,{"CMD":"NOTI","FCODE":3684,"RUNTIME":3}
+
+14:18:14,����������������������������������������������������������������������������������������������������������������������������������������������������������������������ms
+,{"CMD":"NOTI","FCODE":3684,"RUNTIME":1}
+
+14:18:14,����������������684H
+,{"CMD":"NOTI","FCODE":3684,"RUNTIME":1}
+
+14:18:14,�������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������<
+,{"CMD":"NOTI","FCODE":3684,"RUNTIME":3}
+
+14:18:14,�������������������������������������������������������������������������������������������������������������
+,{"CMD":"NOTI","FCODE":3684,"RUNTIME":2}
+
+14:18:14,�������������������������������������
+,{"CMD":"NOTI","FCODE":3684,"RUNTIME":1}
+
+14:18:14,������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������
+,{"CMD":"NOTI","FCODE":3684,"RUNTIME":2}
+
+14:18:14,�������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������n/iotCtrl/3684
+,{"CMD":"NOTI","FCODE":3684,"RUNTIME":2}
+
+14:18:14,�������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������
+,{"CMD":"NOTI","FCODE":3684,"RUNTIME":3}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3637
+,{"CMD":"BASE_BOARD_LORA_RESET","NOWTIME":"2000-00-00 00:00:00","COUNT":"1"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3745
+,{"CMD":"NOTI","VERSION_D_T":"1.424,210602,175000","TIME":"220304,14:16:26:174","FARMCODE":3745,"STATUS":"IDLE","RUNTIME":2169334,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"23546","TMR_BCC_ERR":"3,3"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF0
+,{"CMD":"BASE_BOARD_LORA_RESET","NOWTIME":"2021-07-27 10:22:16","COUNT":"1"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3759
+,{"CMD":"BASE_BOARD_LORA_RESET","NOWTIME":"2022-03-04 14:14:37","COUNT":"2106"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3761
+,{"CMD":"BASE_BOARD_LORA_RESET","NOWTIME":"2021-06-07 18:51:42","COUNT":"1"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF5000
+,{"CMD":"NOTI","VERSION_D_T":"1.415,210216,154700","TIME":"210712,10:32:15:200","FARMCODE":5000,"STATUS":"IDLE","RUNTIME":6300,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,11,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3783
+,{"CMD":"NOTI","VERSION_D_T":"1.2892,200728,112800","TIME":"220304,14:18:03:163","FARMCODE":3783,"STATUS":"IDLE","RUNTIME":1488120,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"16832","TMR_BCC_ERR":"0,0"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3786
+,{"CMD":"NOTI","VERSION_D_T":"1.2896,200922,113100","TIME":"220304,14:18:10:105","FARMCODE":3786,"STATUS":"IDLE","RUNTIME":1255703,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
+
+14:18:14,dawoon/iotCtrl/RF447/COWPERIODERR3636
+,{"CMD":"COW_PERIOD_ERR_FIND_0","NOWTIME":"2021-09-02 16:51:50","CODE":"3636","DEVICE":"1017","ERR_TIME":"00-00,16-26","PERIOD_ERR_MIN":"986","ONECNT/ALLCNT":"2/4","OLD_CNT":"641","NOW_OLD_SUM":"0,0,0,0,0,0"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3738
+,{"CMD":"NOTI","VERSION_D_T":"1.410,201028,102000","TIME":"220304,14:13:22:163","FARMCODE":3738,"STATUS":"IDLE","RUNTIME":1255182,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3684
+,{"CMD":"DW2019_ACK_RESPONE_OK","DATE":"2022-03-01,15:46:04","CODE":"3684","RESPONE_DEVICE":"7777" }
+
+14:18:14,dawoon/iotCtrl/RF447/RF3795
+,{"CMD":"BASE_BOARD_LORA_RESET","NOWTIME":"2021-04-27 17:45:19","COUNT":"1"}
+
+14:18:14,dawoon/iotCtrl/RF447/COWPERIODERR3738
+,{"CMD":"COW_PERIOD_ERR_FIND_0","NOWTIME":"2021-02-08 16:53:11","CODE":"3738","DEVICE":"198","ERR_TIME":"15-33,16-33","PERIOD_ERR_MIN":"60","ONECNT/ALLCNT":"2/2","OLD_CNT":"547","NOW_OLD_SUM":"165,3,41,14"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3799
+,{"CMD":"NOTI","VERSION_D_T":"1.424,210602,175000","TIME":"220304,14:17:55:205","FARMCODE":3799,"STATUS":"IDLE","RUNTIME":2409021,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"78600","TMR_BCC_ERR":"10,11"}
+
+14:18:14,dawoon/iotCtrl/RF447/COWSTATUS3738
+,{"CMD":"COW_HEAT_STATUS[198,416]","NOWTIME":"210208-172142","CODE":"3738","Continues":",0,0,","Danger":",1,2,","ClearCnt":",1,1,","7DaySum":"69923"}
+
+14:18:14,dawoon/iotCtrl/RF447/COLLMOVE3738
+,{"CMD":"COW_CollectiveMovement_NOT","CODE":"3738","COW_CNT":"35","HOUR":",14,43,","DATE":"2020-10-04,15:25:32"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3791
+,{"CMD":"NOTI","VERSION_D_T":"1.416,210302,154700","TIME":"220304,14:14:11:135","FARMCODE":3791,"STATUS":"IDLE","RUNTIME":690336,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"7183","TMR_BCC_ERR":"5,6"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3809
+,{"CMD":"NOTI","VERSION_D_T":"1.2895,200907,172300","TIME":"201119,09:03:48:251","FARMCODE":3809,"STATUS":"IDLE","RUNTIME":3278885,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3811
+,{"CMD":"NOTI","VERSION_D_T":"1.424,210602,175000","TIME":"220304,14:16:48:66","FARMCODE":3811,"STATUS":"IDLE","RUNTIME":2406741,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"1","TMR_BCC_ERR":"0,0"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3818
+,{"CMD":"NOTI","VERSION_D_T":"1.2898,201223,163900","TIME":"220304,14:13:30:198","FARMCODE":3818,"STATUS":"IDLE","RUNTIME":192342,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"3673","TMR_BCC_ERR":"72,80"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3820
+,{"CMD":"NOTI","VERSION_D_T":"1.2898,201223,163900","TIME":"220304,14:14:53:50","FARMCODE":3820,"STATUS":"IDLE","RUNTIME":1094277,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3821
+,{"CMD":"BASE_BOARD_LORA_RESET","NOWTIME":"2021-11-08 08:21:01","COUNT":"5692"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3822
+,{"CMD":"NOTI","VERSION_D_T":"1.424,210602,175000","TIME":"220304,14:14:11:72","FARMCODE":3822,"STATUS":"IDLE","RUNTIME":295545,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"8768","TMR_BCC_ERR":"7,9"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3700
+,{"CMD":"NOTI","VERSION_D_T":"1.2896,200922,113100","TIME":"220304,14:16:46:16","FARMCODE":3700,"STATUS":"IDLE","RUNTIME":3716037,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3831
+,{"CMD":"BASE_BOARD_LORA_RESET","NOWTIME":"2000-00-00 00:00:00","COUNT":"1"}
+
+14:18:14,dawoon/iotCtrl/RF447/COWPERIODERR3684
+,{"CMD":"COW_PERIOD_ERR_FIND_0","NOWTIME":"2021-03-08 19:37:34","CODE":"3684","DEVICE":"7999","ERR_TIME":"18-35,19-37","PERIOD_ERR_MIN":"62","ONECNT/ALLCNT":"1/1","OLD_CNT":"0","NOW_OLD_SUM":"0,0,0,0,0,0"}
+
+14:18:14,dawoon/iotCtrl/RF447/COLLMOVE3684
+,{"CMD":"COW_CollectiveMovement_FIND","CODE":"3684","COW_CNT":"1","HOUR":",18,35,","DATE":"2021-03-08,19:38:31"}
+
+14:18:14,dawoon/iotCtrl/RF447/COWSTATUS3684
+,{"CMD":"COW_HEAT_STATUS[7999,3]","NOWTIME":"210308-193734","CODE":"3684","Continues":",0,0,","Danger":",0,0,","ClearCnt":",1,1,","7DaySum":"190"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3839
+,{"CMD":"RF447SUM","CODE":"3839","DEVICE":"184","DATE":"2021-08-30,09:36:05","COW_HOUR_WALK_CNT":",08,54,0,2,"}
+
+14:18:14,dawoon/iotCtrl/RF447/COWPERIODERR3839
+,{"CMD":"COW_PERIOD_ERR_FIND_0","NOWTIME":"2021-08-11 22:04:07","CODE":"3839","DEVICE":"407","ERR_TIME":"20-57,21-57","PERIOD_ERR_MIN":"60","ONECNT/ALLCNT":"1/1","OLD_CNT":"0","NOW_OLD_SUM":"89,0,156,24,0,0"}
+
+14:18:14,dawoon/iotCtrl/RF447/COWSTATUS3839
+,{"CMD":"COW_HEAT_STATUS[169,170]","NOWTIME":"210531-234003","CODE":"3839","Continues":",0,0,","Danger":",0,0,","ClearCnt":",3,3,","7DaySum":"4102"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3841
+,{"CMD":"NOTI","VERSION_D_T":"1.424,210602,175000","TIME":"220304,14:13:30:100","FARMCODE":3841,"STATUS":"IDLE","RUNTIME":2844002,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
+
+14:18:14,dawoon/iotCtrl/RF447/COLLMOVE3839
+,{"CMD":"COW_CollectiveMovement_NOT","CODE":"3839","COW_CNT":"6","HOUR":",21,54,","DATE":"2021-08-29,22:51:39"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3695
+,{"CMD":"BASE_BOARD_LORA_RESET","NOWTIME":"2020-11-24 19:27:33","COUNT":"1"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3858
+,{"CMD":"NOTI","VERSION_D_T":"1.424,210602,175000","TIME":"220304,14:13:45:212","FARMCODE":3858,"STATUS":"IDLE","RUNTIME":295546,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"4316","TMR_BCC_ERR":"39,44"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF7555
+,{"CMD":"BASE_BOARD_LORA_RESET","NOWTIME":"2021-03-11 17:34:35","COUNT":"1"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3350
+,{"CMD":"NOTI","VERSION_D_T":"1.427,210903,181800","TIME":"211123,17:42:50:248","FARMCODE":3350,"STATUS":"IDLE","RUNTIME":7501,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3380
+,{"CMD":"NOTI","VERSION_D_T":"1.424,210602,175000","TIME":"220304,14:15:36:209","FARMCODE":3380,"STATUS":"IDLE","RUNTIME":1863661,"LoraQ":"[,0,0/80,]","Tcs":"[,92,1,32,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3872
+,{"CMD":"NOTI","VERSION_D_T":"1.424,210602,175000","TIME":"220304,14:17:09:91","FARMCODE":3872,"STATUS":"IDLE","RUNTIME":295252,"LoraQ":"[,0,0/80,]","Tcs":"[,228,0,2,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3873
+,{"CMD":"NOTI","VERSION_D_T":"1.424,210602,175000","TIME":"220304,14:18:26:23","FARMCODE":3873,"STATUS":"IDLE","RUNTIME":3121978,"LoraQ":"[,0,0/80,]","Tcs":"[,537,0,34,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3498
+,{"CMD":"NOTI","VERSION_D_T":"1.427,210903,181800","TIME":"211124,09:41:59:58","FARMCODE":3498,"STATUS":"IDLE","RUNTIME":1294147,"LoraQ":"[,0,0/80,]","Tcs":"[,554,0,13,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
+
+14:18:14,dawoon/iotCtrl/RF447/COWPERIODERR3498
+,{"CMD":"COW_PERIOD_ERR_FIND_0","NOWTIME":"2021-09-28 01:16:40","CODE":"3498","DEVICE":"422","ERR_TIME":"11-27,00-56","PERIOD_ERR_MIN":"809","ONECNT/ALLCNT":"1/1","OLD_CNT":"0","NOW_OLD_SUM":"0,0,0,0,150,36"}
+
+14:18:14,dawoon/iotCtrl/RF447/COWSTATUS3498
+,{"CMD":"COW_HEAT_STATUS[415,161]","NOWTIME":"210427-233340","CODE":"3498","Continues":",0,0,","Danger":",0,0,","ClearCnt":",1,1,","7DaySum":"3868"}
+
+14:18:14,dawoon/iotCtrl/RF447/COLLMOVE3498
+,{"CMD":"COW_CollectiveMovement_NOT","CODE":"3498","COW_CNT":"5","HOUR":",17,37,","DATE":"2021-05-19,18:56:01"}
+
+14:18:14,dawoon/iotCtrl/RF447/COWPERIODERR3872
+,{"CMD":"COW_PERIOD_ERR_FIND_0","NOWTIME":"2022-03-01 05:26:28","CODE":"3872","DEVICE":"173","ERR_TIME":"04-11,05-11","PERIOD_ERR_MIN":"60","ONECNT/ALLCNT":"1/1","OLD_CNT":"0","NOW_OLD_SUM":"0,87,0,0,0,14"}
+
+14:18:14,dawoon/iotCtrl/RF447/COLLMOVE3873
+,{"CMD":"COW_CollectiveMovement_FIND","CODE":"3873","COW_CNT":"5","HOUR":",16,44,","DATE":"2022-02-17,18:01:23"}
+
+14:18:14,dawoon/iotCtrl/RF447/COWPERIODERR3873
+,{"CMD":"COW_PERIOD_ERR_FIND_0","NOWTIME":"2022-01-27 11:45:58","CODE":"3873","DEVICE":"188","ERR_TIME":"10-45,11-45","PERIOD_ERR_MIN":"60","ONECNT/ALLCNT":"1/1","OLD_CNT":"0","NOW_OLD_SUM":"0,0,0,0,0,0"}
+
+14:18:14,dawoon/iotCtrl/RF447/COWSTATUS3380
+,{"CMD":"COW_HEAT_STATUS[338,46]","NOWTIME":"210427-233344","CODE":"3380","Continues":",0,0,","Danger":",0,0,","ClearCnt":",0,0,","7DaySum":"1117"}
+
+14:18:14,dawoon/iotCtrl/RF447/COWPERIODERR3380
+,{"CMD":"COW_PERIOD_ERR_FIND_0","NOWTIME":"2021-12-23 13:25:23","CODE":"3380","DEVICE":"280","ERR_TIME":"12-16,13-16","PERIOD_ERR_MIN":"60","ONECNT/ALLCNT":"1/1","OLD_CNT":"18","NOW_OLD_SUM":"126,45,14,17,78,125"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF9353
+,{"CMD":"NOTI","VERSION_D_T":"1.425,210702,143000","TIME":"210706,15:05:27:138","FARMCODE":9353,"STATUS":"IDLE","RUNTIME":5400,"LoraQ":"[,0,0/80,]","Tcs":"[,47,2,4,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
+
+14:18:14,dawoon/iotCtrl/RF447/COWPERIODERR9353
+,{"CMD":"COW_PERIOD_ERR_FIND_0","NOWTIME":"2021-07-02 16:23:07","CODE":"9353","DEVICE":"1012","ERR_TIME":"15-02,16-02","PERIOD_ERR_MIN":"60","ONECNT/ALLCNT":"1/2","OLD_CNT":"0","NOW_OLD_SUM":"0,0,0,0,0,0"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3797
+,{"CMD":"DW2019_ACK_RESPONE_OK","DATE":"2022-03-04,14:16:40","CODE":"3797","RESPONE_DEVICE":"239" }
+
+14:18:14,dawoon/iotCtrl/RF447/COWPERIODERR3797
+,{"CMD":"COW_PERIOD_ERR_FIND_0","NOWTIME":"2021-07-15 18:44:33","CODE":"3797","DEVICE":"239","ERR_TIME":"17-39,18-39","PERIOD_ERR_MIN":"60","ONECNT/ALLCNT":"1/1","OLD_CNT":"0","NOW_OLD_SUM":"447,424,321,171,140,25"}
+
+14:18:14,dawoon/iotCtrl/RF447/COLLMOVE3797
+,{"CMD":"COW_CollectiveMovement_NOT","CODE":"3797","COW_CNT":"7","HOUR":",17,59,","DATE":"2022-03-02,19:04:35"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3916
+,{"CMD":"NOTI","VERSION_D_T":"1.424,210602,175000","TIME":"220304,14:13:59:147","FARMCODE":3916,"STATUS":"IDLE","RUNTIME":1231322,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"117185","TMR_BCC_ERR":"4,4"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3912
+,{"CMD":"BASE_BOARD_LORA_RESET","NOWTIME":"2021-07-20 15:38:34","COUNT":"1"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3918
+,{"CMD":"NOTI","VERSION_D_T":"1.424,210602,175000","TIME":"220304,14:16:24:162","FARMCODE":3918,"STATUS":"IDLE","RUNTIME":816761,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"0","TMR_BCC_ERR":"0,0"}
+
+14:18:14,dawoon/iotCtrl/RF447/COLLMOVE3872
+,{"CMD":"COW_CollectiveMovement_NOT","CODE":"3872","COW_CNT":"1","HOUR":",04,53,","DATE":"2022-02-04,05:42:13"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF3961
+,{"CMD":"DW2019_ACK_RESPONE_OK","DATE":"2022-03-04,14:17:55","CODE":"3961","RESPONE_DEVICE":"270" }
+
+14:18:14,dawoon/iotCtrl/RF447/RF3982
+,{"CMD":"NOTI","VERSION_D_T":"1.427,210903,181800","TIME":"220304,14:14:33:186","FARMCODE":3982,"STATUS":"IDLE","RUNTIME":2185871,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]","TMR_BCC_OK":"42970","TMR_BCC_ERR":"4638,6106"}
+
+14:18:14,dawoon/iotCtrl/RF447/RF7961
+,{"CMD":"BASE_BOARD_LORA_RESET","NOWTIME":"2022-02-28 11:00:14","COUNT":"1"}
+
+14:18:14,dawoon/iotCtrl/3591
+,{"CMD":"STATUS_RESPONE","ADR":1,"TYPE":20,"OUT":"0000220000000000","IN":"00000000","MOVE_TIME1":0,"MOVE_TIME2":0,"MOVE_TIME3":0,"STATUS":"OK","AUTO_MODE":0,"FAN_MODE":"0000000000000000"}
+
+14:18:14,dawoon/iotCtrl/3591H
+,{"CMD":"NOTI","FCODE":3591,"RUNTIME":122722}
+
+14:18:14,dawoon/iotCtrl/C3636
+,{"CMD":"STATUS_RESPONE","AUTO_MODE":1,"BREAKER":0,"IN_GATE":0,"OUT_GATE":0,"CARCLEAN":0,"AIR_DEODORIZATION":0,"REMOVE_WATER":0,"CLEAN_DRIVER":0,"OUPUT_STATUS":"0000000000000000","INPUT_STATUS":"0000000000000000","RUNTIME":"300","PIPE_AIR_WATERDRAIN":"0"}
+
+14:18:14,dawoon/iotCtrl/P1
+,{"CMD":"Pig_Respone","FCODE":"P1","Piglet_Liquid_feeder":"0","Sow_feeding_behavior":"0","Sow_group_grade":"0","Shipment_Pig_separator":"0","Pig_Lamp":"0","Side_ventilation":"1","Roof_ventilation":"1","Heater_control":"1","Window_control":"1","Water_supply_control":"0","Feed_grade":"0","Mist_spray":"0","Pig_reservation1":"0","Pig_reservation2":"0","Pig_reservation3":"0","Pig_reservation4":"0","Pig_BlackOut":"0","RunTime":"691","LoraSenCnt1":"61","LoraSenCnt2":"0","LoraSenCnt3":"15"}
+
+14:18:14,dawoon/iotCtrl/C3636W
+,{"CMD":"STEP_4-2","STATUS":"Car_Clean_Proceeding","TIME":"65/173"}
+
+14:18:14,dawoon/iotCtrl/RF3637
+,{CMD:"0",STATUS:"WATCHDOG HARDWARE RESET!!!!!!"}
+
+14:18:14,dawoon/iotCtrl/RF3636
+,{"CMD":"TASK_SPY_ERROR_MAC_2bd","NOWTIME":"2022-03-04 14:17:12","CODE":"3636","MAIN":"173570,493,860","MQTT":"173570,493,860","BLINK":"173569,0,1"}
+
+14:18:14,dawoon/iotCtrl/3604H
+,{"DATA":"SENSO","ADR":1,"TEMP":17.5,"HUM":45.3,"CO2": 562,"AMM":0.6,"DB_SEND":1,"TIME":"2022-03-04 14:18:13"}
+
+14:18:14,dawoon/iotCtrl/TMRFEED/3636
+,{"CMD1":"TMR_NO_RESPONE_DATA_LORA_RESET","CODE":"3636","DATE":"2022-02-17 15:09:54","TMR_BCC":"2816,0,0,0"}
+
+14:18:14,dawoon/iotCtrl/TMRFEED/3700
+,{"CMD1":"TMR_NO_RESPONE_DATA_LORA_RESET","CODE":"3700","DATE":"2021-07-06 19:25:30","TMR_BCC":"102,0,0,0"}
+
+14:18:14,dawoon/iotCtrl/TMRFEED/3745
+,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3745","DATE":"2022-03-04 14:13:40","VER":"3.3704","CanAVG":"95","TOTAL_ORDER":"34","MAGNATIC_DET":"-3","RUN_TIME":"249155","INPUT_STATUS":"00","OUTPUT_ALL_STATUS":"0000","REAL_WEIGHT":"106.4","LORA_GROUP":"488","LORA_FREQ":"0","ORDER_SEQ":"0","ORDER_NAME":"END","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"ALL_STOP","WEIGHT_CODE":"OK","IOTBASE_VER":"1.424","IOTBASE_RUNTIME":"2169152","TMR_TEMPERATURE":"11.04"}
+
+14:18:14,dawoon/iotCtrl/TMRFEED/3759
+,{"CMD1":"TMR_NO_RESPONE_DATA_LORA_RESET","CODE":"3759","DATE":"2022-03-04 14:14:37","TMR_BCC":"10876,1,43839,463"}
+
+14:18:14,dawoon/iotCtrl/TMRFEED/3761
+,{"CMD1":"TMR_NO_RESPONE_DATA_LORA_RESET","CODE":"3761","DATE":"2021-06-07 18:51:03","TMR_BCC":"93,0,0,0"}
+
+14:18:14,dawoon/iotCtrl/TMRFEED/3783
+,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3783","DATE":"2022-03-04 14:13:24","VER":"2.3567","CanAVG":"96","TOTAL_ORDER":"45","MAGNATIC_DET":"-13","RUN_TIME":"80746","INPUT_STATUS":"00","OUTPUT_ALL_STATUS":"0000","REAL_WEIGHT":"13.6","LORA_GROUP":"0","LORA_FREQ":"6","ORDER_SEQ":"0","ORDER_NAME":"END","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"ALL_STOP","WEIGHT_CODE":"OK"}
+
+14:18:14,dawoon/iotCtrl/TMRFEED/3786
+,{"CMD1":"TMR_NO_RESPONE_DATA_LORA_RESET","CODE":"3786","DATE":"2022-02-18 01:23:59","TMR_BCC":"238,0,0,0"}
+
+14:18:14,dawoon/iotCtrl/TMRFEED/3795
+,{"CMD1":"TMRFEED_DATA","NOWTIME":"2021-04-27 17:46:21","CODE":"3795","StartWeight":"64.0","FillWeight":"0.0","StopWeight":"423.0","RunMoveDist":"0","RunFeedDist":"0","TMRVoltage":"48.9","TMR_Dev_Code":"136","Update_Flag":"L","MRAM_NUM":"147","ORDER_NUM":"5","Date":"2000-00-00","StartTime":"11:34:00","StopTime":"00:02:00","RoutCmdCode":"STOP","OrderVal1":"40","OrderVal2":"0","SystemError":"NONE","MAG_OUT_LINE":"0","MAG_IN_LINE":"0","MAG_CNT_TIME":"0","FEED_DATA":"0.0","FILL_DATA":"0.0",}
+
+14:18:14,dawoon/iotCtrl/TMRFEED/3799
+,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3799","DATE":"2022-03-04 14:13:09","VER":"3.3706","CanAVG":"95","TOTAL_ORDER":"46","MAGNATIC_DET":"-13","RUN_TIME":"17034","INPUT_STATUS":"04","OUTPUT_ALL_STATUS":"0000","REAL_WEIGHT":"49.8","LORA_GROUP":"498","LORA_FREQ":"0","ORDER_SEQ":"0","ORDER_NAME":"END","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"ALL_STOP","WEIGHT_CODE":"OK","IOTBASE_VER":"1.424","IOTBASE_RUNTIME":"2408737","TMR_TEMPERATURE":"12.80"}
+
+14:18:14,dawoon/iotCtrl/TMRFEED/3791
+,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3791","DATE":"2022-03-04 14:16:10","VER":"3.3704","CanAVG":"95","TOTAL_ORDER":"44","MAGNATIC_DET":"17","RUN_TIME":"419174","INPUT_STATUS":"00","OUTPUT_ALL_STATUS":"0000","REAL_WEIGHT":"49.6","LORA_GROUP":"546","LORA_FREQ":"0","ORDER_SEQ":"0","ORDER_NAME":"END","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"ALL_STOP","WEIGHT_CODE":"OK","IOTBASE_VER":"1.416","IOTBASE_RUNTIME":"690457","TMR_TEMPERATURE":"19.23"}
+
+14:18:14,dawoon/iotCtrl/TMRFEED/3811
+,{"CMD1":"TMR_NO_RESPONE_DATA_LORA_RESET","CODE":"3811","DATE":"2022-03-04 14:13:16","TMR_BCC":"1,0,0,0"}
+
+14:18:14,dawoon/iotCtrl/TMRFEED/3818
+,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3818","DATE":"2022-03-04 14:18:02","VER":"3.3706","CanAVG":"94","TOTAL_ORDER":"153","MAGNATIC_DET":"-13","RUN_TIME":"11977","INPUT_STATUS":"01","OUTPUT_ALL_STATUS":"0000","REAL_WEIGHT":"218.4","LORA_GROUP":"507","LORA_FREQ":"0","ORDER_SEQ":"0","ORDER_NAME":"OP_BAT_CHARGE","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"ALL_STOP","WEIGHT_CODE":"OK","IOTBASE_VER":"1.2898","IOTBASE_RUNTIME":"192610","TMR_TEMPERATURE":"35.40"}
+
+14:18:14,dawoon/iotCtrl/TMRFEED/3820
+,{"CMD1":"TMR_NO_RESPONE_DATA_LORA_RESET","CODE":"3820","DATE":"2022-02-02 11:25:38","TMR_BCC":"21310,2,18128,25808"}
+
+14:18:14,dawoon/iotCtrl/TMRFEED/3809
+,{"CMD1":"TMR_NO_RESPONE_DATA_LORA_RESET","CODE":"3809","DATE":"2020-10-12 10:09:45","TMR_BCC":"290,0,0,0"}
+
+14:18:14,dawoon/iotCtrl/TMRFEED/3821
+,{"CMD1":"TMR_NO_RESPONE_DATA_LORA_RESET","CODE":"3821","DATE":"2021-11-08 08:21:01","TMR_BCC":"29319,0,0,0"}
+
+14:18:14,dawoon/iotCtrl/TMRFEED/3822
+,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3822","DATE":"2022-03-04 14:15:18","VER":"3.3706","CanAVG":"95","TOTAL_ORDER":"106","MAGNATIC_DET":"-3","RUN_TIME":"7854","INPUT_STATUS":"04","OUTPUT_ALL_STATUS":"0000","REAL_WEIGHT":"74.8","LORA_GROUP":"543","LORA_FREQ":"0","ORDER_SEQ":"0","ORDER_NAME":"END","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"ALL_STOP","WEIGHT_CODE":"OK","IOTBASE_VER":"1.424","IOTBASE_RUNTIME":"295621","TMR_TEMPERATURE":"18.99"}
+
+14:18:14,dawoon/iotCtrl/TMRFEED/3831
+,{"CMD1":"TMR_NO_RESPONE_DATA_LORA_RESET","CODE":"3831","DATE":"2021-06-22 10:17:39","TMR_BCC":"760,0,0,0"}
+
+14:18:14,dawoon/iotCtrl/TMRFEED/3841
+,{"CMD1":"TMR_NO_RESPONE_DATA_LORA_RESET","CODE":"3841","DATE":"2021-10-17 09:19:38","TMR_BCC":"81,0,0,0"}
+
+14:18:14,dawoon/iotCtrl/TMRFEED/3858
+,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3858","DATE":"2022-03-04 14:16:01","VER":"3.3707","CanAVG":"95","TOTAL_ORDER":"86","MAGNATIC_DET":"3","RUN_TIME":"1725805","INPUT_STATUS":"00","OUTPUT_ALL_STATUS":"0000","REAL_WEIGHT":"95.0","LORA_GROUP":"558","LORA_FREQ":"0","ORDER_SEQ":"0","ORDER_NAME":"END","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"ALL_STOP","WEIGHT_CODE":"OK","IOTBASE_VER":"1.424","IOTBASE_RUNTIME":"295680","TMR_TEMPERATURE":"18.28"}
+
+14:18:14,dawoon/iotCtrl/TMRFEED/3350
+,{"CMD":"TMRFEED_DATA","NOWTIME":"2021-01-13 10:03:42","CODE":"3350","Index":"277","Seq_No":"13","Date":"2002-00-10","StartTime":"171:33:00","StopTime":"151:31:00","StartWeight":"62268","FillWeight":"56831","StopWeight":"2250","RunMoveDist":"0","RunFeedDist":"0","RoutCmdCode":"0","OrderVal1":"3636","OrderVal2":"106","TMRVoltage":"0.0","SystemError":"50","TMR_Dev_Code":"0","Update_Flag":"L"}
+
+14:18:14,dawoon/iotCtrl/TMRFEED/3916
+,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3916","DATE":"2022-03-04 14:13:50","VER":"3.3710","CanAVG":"95","TOTAL_ORDER":"126","MAGNATIC_DET":"-3","RUN_TIME":"83067","INPUT_STATUS":"04","OUTPUT_ALL_STATUS":"0000","REAL_WEIGHT":"222.6","LORA_GROUP":"536","LORA_FREQ":"0","ORDER_SEQ":"0","ORDER_NAME":"END","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"ALL_STOP","WEIGHT_CODE":"OK","IOTBASE_VER":"1.424","IOTBASE_RUNTIME":"1231300","TMR_TEMPERATURE":"13.10"}
+
+14:18:14,dawoon/iotCtrl/TMRFEED/3918
+,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3918","DATE":"2021-11-18 14:49:31","VER":"3.3710","CanAVG":"95","TOTAL_ORDER":"73","MAGNATIC_DET":"-20","RUN_TIME":"694","INPUT_STATUS":"00","OUTPUT_ALL_STATUS":"0200","REAL_WEIGHT":"40.0","LORA_GROUP":"539","LORA_FREQ":"0","ORDER_SEQ":"0","ORDER_NAME":"OP_AGV_MANUAL","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"OK","WEIGHT_CODE":"OK","IOTBASE_VER":"1.424","IOTBASE_RUNTIME":"93","TMR_TEMPERATURE":"15.87"}
+
+14:18:14,dawoon/iotCtrl/TMRFEED/3797
+,{"CMD1":"TMR_NO_RESPONE_DATA_LORA_RESET","CODE":"3797","DATE":"2021-10-29 03:37:23","TMR_BCC":"0,0,0,0"}
+
+14:18:14,dawoon/iotCtrl/TMRFEED/3498
+,{"CMD1":"TMR_NO_RESPONE_DATA_LORA_RESET","CODE":"3498","DATE":"2021-11-24 09:37:52","TMR_BCC":"0,0,0,0"}
+
+14:18:14,dawoon/iotCtrl/TMRFEED/3982
+,{"CMD1":"TMR_STATUS_DATA","FARMCODE":"3982","DATE":"2022-03-04 14:17:49","VER":"3.3710","CanAVG":"95","TOTAL_ORDER":"54","MAGNATIC_DET":"25","RUN_TIME":"589908","INPUT_STATUS":"04","OUTPUT_ALL_STATUS":"0000","REAL_WEIGHT":"92.4","LORA_GROUP":"585","LORA_FREQ":"0","ORDER_SEQ":"0","ORDER_NAME":"END","MOVE_DIST":"0.00","ERROR_CODE":"NONE","RETURN_CODE":"ALL_STOP","WEIGHT_CODE":"OK","IOTBASE_VER":"1.427","IOTBASE_RUNTIME":"2186037","TMR_TEMPERATURE":"17.80"}
+
+14:18:14,dawoon/iotCtrl/3680H
+,{"CMD":"ERROR","RUNTIME":4051,"WATCHDOG":0,"ADR":2,"AUTO":0, "TEMP":0, "SENSOR":8944}
+
+14:18:14,dawoon/iotCtrl/RF3491
+,{"CMD":"NOTI","TIME":"000016,03:58:28:40","FARMCODE":3491,"STATUS":"IDLE","RUNTIME":1464757,"LoraQ":"[,0,0/80,]","Tcs":"[,0,0,0,0,]"}
+
+14:18:14,dawoon/iotCtrl/3684
+,{"CMD":"FAN_MONITOR","FARM":3684,"ADR":5,"EVENT":0,"MUX1":"11110000","MUX2":"00000000","MUX3":"00000000","MUX4":"00000000","MUX5":"00001111","TIME":"2022-02-04 10:31:16"}
+
+14:18:14,dawoon/iotCtrl/3684H
+,{"CMD":"NOTI","FCODE":3684,"RUNTIME":1}
+
+14:18:14,dawoon/iotCtrl/3351H
+,{"CMD":"BEAN_NOTI","TIME":"000000,00:00:00:0","FARMCODE":3351,"STATUS":"IDLE","RUNTIME":6901,"LORATIMEOUT":"0/0","LORACNT":"[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]"}
+
+14:18:14,dawoon/iotCtrl/3692
+,{"CMD":"CHANGE_RESPONE","ADR":1,"TYPE":10,"NUMBER":5,"VALUE":0}
+
+14:18:14,dawoon/iotCtrl/3698H
+,{"DATA":"SENSO","ADR":3,"TEMP":17.9,"HUM":37.3,"CO2": 203,"AMM":0.0,"DB_SEND":1,"TIME":"2022-03-04 14:18:18"}
+
+14:18:14,dawoon/iotCtrl/3870
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":2334,"WEGITH_STATE":2,"BAHAP_TIME":5207,"STATUS":"OK","AUTO_MODE":0}
+
+14:18:14,dawoon/iotCtrl/3888
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":4345,"WEGITH_STATE":3,"BAHAP_TIME":74,"STATUS":"OK","AUTO_MODE":0}
+
+14:18:14,dawoon/iotCtrl/3793H
+,{"DATA":"SENSO","ADR":1,"TEMP":19.3,"HUM":33.4,"CO2": 760,"AMM":0.8,"DB_SEND":0,"TIME":"2022-03-04 14:18:19"}
+
+14:18:14,dawoon/iotCtrl/3890
+,{"CMD":"BAHAP_STAT","ADR":1,"TYPE":90,"OUT":"00001000","IN":"10000000","WEGITH":4014,"WEGITH_STATE":4,"BAHAP_TIME":586,"STATUS":"OK","AUTO_MODE":0}
 
