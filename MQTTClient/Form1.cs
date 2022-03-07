@@ -30,49 +30,17 @@ namespace MQTTClient
 		[DllImport("kernel32")]
 		private static extern int GetPrivateProfileString(string section, string key, string def, StringBuilder retVal, int size, string filePath);
 		#endregion
+
 		private void Form1_Load(object sender, EventArgs e)
 		{
-
 			mqttRecord();
 			textBoxPort.Text = "1883";
 			comboBoxQos.SelectedIndex = 1;
-			propertyload();
+			initload();
 		}
-		private void button3_Click(object sender, EventArgs e)
-		{
-			// ini파일에 등록
-			// WritePrivateProfileString("카테고리", "Key값", "Value", "저장할 경로");
-			WritePrivateProfileString("MqttClient", "LastHostName", textBoxHost.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastSubTopic", textBoxSubTopic.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastPubTopic1", textBoxPT1.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastPubTopic2", textBoxPT2.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastPubTopic3", textBoxPT3.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastPubTopic4", textBoxPT4.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastPubTopic5", textBoxPT5.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastPubTopic6", textBoxPT6.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastPubTopic7", textBoxPT7.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastPubTopic8", textBoxPT8.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastPubTopic9", textBoxPT9.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastPubTopic10", textBoxPT10.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastMessage1", textBoxM1.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastMessage2", textBoxM2.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastMessage3", textBoxM3.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastMessage4", textBoxM4.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastMessage5", textBoxM5.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastMessage6", textBoxM6.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastMessage7", textBoxM7.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastMessage8", textBoxM8.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastMessage9", textBoxM9.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastMessage10", textBoxM10.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("Color", "Red", textBoxRed.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("Color", "Green", textBoxGreen.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("Color", "Yellow", textBoxYellow.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("Color", "Gray", textBoxGray.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("Color", "Navy", textBoxNavy.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("Color", "Purple", textBoxPurple.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("Color", "Lime", textBoxLime.Text, Application.StartupPath + @"\MqttClient.ini");
-		}
-		private void button4_Click(object sender, EventArgs e)
+	
+
+		private void initload()
 		{
 			// ini값을 집어넣을 변수 선언
 			StringBuilder host = new StringBuilder();
@@ -168,121 +136,8 @@ namespace MQTTClient
 			textBoxPurple.Text = purple.ToString();
 			textBoxLime.Text = lime.ToString();
 		}
-		private void propertyload()
-		{
-			// ini값을 집어넣을 변수 선언
-			StringBuilder host = new StringBuilder();
-			StringBuilder topic = new StringBuilder();
-			StringBuilder pub1 = new StringBuilder();
-			StringBuilder pub2 = new StringBuilder();
-			StringBuilder pub3 = new StringBuilder();
-			StringBuilder pub4 = new StringBuilder();
-			StringBuilder pub5 = new StringBuilder();
-			StringBuilder pub6 = new StringBuilder();
-			StringBuilder pub7 = new StringBuilder();
-			StringBuilder pub8 = new StringBuilder();
-			StringBuilder pub9 = new StringBuilder();
-			StringBuilder pub10 = new StringBuilder();
-			StringBuilder m1 = new StringBuilder();
-			StringBuilder m2 = new StringBuilder();
-			StringBuilder m3 = new StringBuilder();
-			StringBuilder m4 = new StringBuilder();
-			StringBuilder m5 = new StringBuilder();
-			StringBuilder m6 = new StringBuilder();
-			StringBuilder m7 = new StringBuilder();
-			StringBuilder m8 = new StringBuilder();
-			StringBuilder m9 = new StringBuilder();
-			StringBuilder m10 = new StringBuilder();
-			StringBuilder red = new StringBuilder();
-			StringBuilder green = new StringBuilder();
-			StringBuilder yellow = new StringBuilder();
-			StringBuilder gray = new StringBuilder();
-			StringBuilder navy = new StringBuilder();
-			StringBuilder purple = new StringBuilder();
-			StringBuilder lime = new StringBuilder();
 
-			// ini파일에서 데이터를 불러옴
-			// GetPrivateProfileString("카테고리", "Key값", "기본값", "저장할 변수", "불러올 경로");
-			GetPrivateProfileString("MqttClient", "LastHostName", "", host, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastSubTopic", "", topic, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastPubTopic1", "", pub1, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastPubTopic2", "", pub2, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastPubTopic3", "", pub3, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastPubTopic4", "", pub4, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastPubTopic5", "", pub5, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastPubTopic6", "", pub6, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastPubTopic7", "", pub7, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastPubTopic8", "", pub8, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastPubTopic9", "", pub9, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastPubTopic10", "", pub10, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastMessage1", "", m1, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastMessage2", "", m2, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastMessage3", "", m3, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastMessage4", "", m4, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastMessage5", "", m5, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastMessage6", "", m6, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastMessage7", "", m7, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastMessage8", "", m8, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastMessage9", "", m9, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastMessage10", "", m10, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("Color", "Red", "", red, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("Color", "Green", "", green, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("Color", "Yellow", "", yellow, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("Color", "Gray", "", gray, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("Color", "Navy", "", navy, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("Color", "Purple", "", purple, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("Color", "Lime", "", lime, 32, Application.StartupPath + @"\MqttClient.ini");
-
-			// 텍스트박스에 ini파일에서 가져온 데이터를 넣는다
-			textBoxHost.Text = host.ToString();
-			textBoxSubTopic.Text = topic.ToString();
-			textBoxPT1.Text = pub1.ToString();
-			textBoxPT2.Text = pub2.ToString();
-			textBoxPT3.Text = pub3.ToString();
-			textBoxPT4.Text = pub4.ToString();
-			textBoxPT5.Text = pub5.ToString();
-			textBoxPT6.Text = pub6.ToString();
-			textBoxPT7.Text = pub7.ToString();
-			textBoxPT8.Text = pub8.ToString();
-			textBoxPT9.Text = pub9.ToString();
-			textBoxPT10.Text = pub10.ToString();
-			textBoxM1.Text = m1.ToString();
-			textBoxM2.Text = m2.ToString();
-			textBoxM3.Text = m3.ToString();
-			textBoxM4.Text = m4.ToString();
-			textBoxM5.Text = m5.ToString();
-			textBoxM6.Text = m6.ToString();
-			textBoxM7.Text = m7.ToString();
-			textBoxM8.Text = m8.ToString();
-			textBoxM9.Text = m9.ToString();
-			textBoxM10.Text = m10.ToString();
-			textBoxRed.Text = red.ToString();
-			textBoxGreen.Text = green.ToString();
-			textBoxYellow.Text = yellow.ToString();
-			textBoxGray.Text = gray.ToString();
-			textBoxNavy.Text = navy.ToString();
-			textBoxPurple.Text = purple.ToString();
-			textBoxLime.Text = lime.ToString();
-			//textBoxHost.Text = Properties.Settings.Default.host;
-
-			//textBoxSubTopic.Text = Properties.Settings.Default.topicSub;
-			//textBoxPT1.Text = Properties.Settings.Default.topicPub1;
-			//textBoxM1.Text = Properties.Settings.Default.topicPm1;
-			//textBoxPT2.Text = Properties.Settings.Default.topicPub2;
-			//textBoxM2.Text = Properties.Settings.Default.topicPm2;
-			//textBoxPT3.Text = Properties.Settings.Default.topicPub3;
-			//textBoxM3.Text = Properties.Settings.Default.topicPm3;
-			//textBoxPT4.Text = Properties.Settings.Default.topicPub4;
-			//textBoxM4.Text = Properties.Settings.Default.topicPm4;
-			//textBoxRed.Text = Properties.Settings.Default.red;
-			//textBoxGreen.Text = Properties.Settings.Default.green;
-			//textBoxYellow.Text = Properties.Settings.Default.yellow;
-			//textBoxGray.Text = Properties.Settings.Default.gray;
-			//textBoxNavy.Text = Properties.Settings.Default.purple;
-			//textBoxLime.Text = Properties.Settings.Default.lime;
-		}
-
-		private void propertyCloseMethod()
+		private void initCloseMethod()
 		{
 			// ini파일에 등록
 			// WritePrivateProfileString("카테고리", "Key값", "Value", "저장할 경로");
@@ -315,26 +170,6 @@ namespace MQTTClient
 			WritePrivateProfileString("Color", "Navy", textBoxNavy.Text, Application.StartupPath + @"\MqttClient.ini");
 			WritePrivateProfileString("Color", "Purple", textBoxPurple.Text, Application.StartupPath + @"\MqttClient.ini");
 			WritePrivateProfileString("Color", "Lime", textBoxLime.Text, Application.StartupPath + @"\MqttClient.ini");
-			//Properties.Settings.Default.host = textBoxHost.Text;
-			//Properties.Settings.Default.port = textBoxPort.Text;
-			//Properties.Settings.Default.qos = comboBoxQos.Text;
-			//Properties.Settings.Default.topicSub = textBoxSubTopic.Text;
-			//Properties.Settings.Default.topicPub1 = textBoxPT1.Text;
-			//Properties.Settings.Default.topicPm1 = textBoxM1.Text;
-			//Properties.Settings.Default.topicPub2 = textBoxPT2.Text;
-			//Properties.Settings.Default.topicPm2 = textBoxM2.Text;
-			//Properties.Settings.Default.topicPub3 = textBoxPT3.Text;
-			//Properties.Settings.Default.topicPm3 = textBoxM3.Text;
-			//Properties.Settings.Default.topicPub4 = textBoxPT4.Text;
-			//Properties.Settings.Default.topicPm4 = textBoxM4.Text;
-			//Properties.Settings.Default.red = textBoxRed.Text;
-			//Properties.Settings.Default.green = textBoxGreen.Text;
-			//Properties.Settings.Default.yellow = textBoxYellow.Text;
-			//Properties.Settings.Default.gray = textBoxGray.Text;
-			//Properties.Settings.Default.navy = textBoxNavy.Text;
-			//Properties.Settings.Default.purple = textBoxPurple.Text;
-			//Properties.Settings.Default.lime = textBoxLime.Text;
-			//Properties.Settings.Default.Save(); ;
 		}
 
 		private void mqttRecord()
@@ -356,6 +191,48 @@ namespace MQTTClient
 
 		}
 
+		private void logSave()
+		{
+			//폴더 있는지 확인하고 생성하기
+			if (!Directory.Exists("Log"))
+			{
+				System.IO.Directory.CreateDirectory("Log");
+			}
+			string currentPath = System.IO.Directory.GetCurrentDirectory();
+			//This line of code creates a text file for the data export.
+			System.IO.StreamWriter file = new System.IO.StreamWriter(@"" + currentPath + "\\Log\\" + DateTime.Now.ToString("yyyy-MM-dd") + ".txt");
+
+
+			try
+			{
+				string sLine = "";
+				for (int r = 0; r <= dataGridViewMessage.Rows.Count - 1; r++)
+				{
+
+					for (int c = 0; c <= dataGridViewMessage.Columns.Count - 1; c++)
+					{
+						sLine = sLine + dataGridViewMessage.Rows[r].Cells[c].Value;
+						if (c != dataGridViewMessage.Columns.Count - 1)
+						{
+							sLine = sLine + ",";
+						}
+					}
+					file.Write(sLine);
+				}
+					file.Close();
+
+
+
+
+			}
+			catch (System.Exception err)
+			{
+				System.Windows.Forms.MessageBox.Show(err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				file.Close();
+			}
+		}
+
+
 		private void ShowMessage(string myStr1, string myStr2, DataGridView dgv)
 		{
 			if (this.InvokeRequired)
@@ -369,6 +246,7 @@ namespace MQTTClient
 				dt.Rows.Add(DateTime.Now.ToString("HH:mm:ss:fff"), myStr1 + Environment.NewLine, myStr2 + Environment.NewLine);
 				dataGridViewMessage.CurrentCell = dataGridViewMessage.Rows[0].Cells[0];
 				dataGridViewMessage.DataSource = dt;
+				logSave();
 			}
 		}
 
@@ -667,50 +545,12 @@ namespace MQTTClient
 
 		public void Form_Closing(object sender, FormClosedEventArgs e)
 		{
-			propertyCloseMethod();
+			initCloseMethod();
 		}
-
-
-
-
 
 		private void buttonSave_Click(object sender, EventArgs e)
 		{
-			//This line of code creates a text file for the data export.
-			System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\dawoon101\lesson\MQTTClient\MQTTClient\bin\Debug\Log\\" + DateTime.Now.ToString("yyyy-MM-dd") + ".txt");
-			try
-			{
-				string sLine = "";
-
-				//This for loop loops through each row in the table
-				for (int r = 0; r <= dataGridViewMessage.Rows.Count - 1; r++)
-				{
-					//This for loop loops through each column, and the row number
-					//is passed from the for loop above.
-					for (int c = 0; c <= dataGridViewMessage.Columns.Count - 1; c++)
-					{
-						sLine = sLine + dataGridViewMessage.Rows[r].Cells[c].Value;
-						if (c != dataGridViewMessage.Columns.Count - 1)
-						{
-							//A comma is added as a text delimiter in order
-							//to separate each field in the text file.
-							//You can choose another character as a delimiter.
-							sLine = sLine + ",";
-						}
-					}
-					//The exported text is written to the text file, one line at a time.
-					file.WriteLine(sLine);
-					sLine = "";
-				}
-
-				file.Close();
-				System.Windows.Forms.MessageBox.Show("Export Complete.", "Program Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-			}
-			catch (System.Exception err)
-			{
-				System.Windows.Forms.MessageBox.Show(err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				file.Close();
-			}
+		
 		}
 
 		private void buttonLogFolder_Click(object sender, EventArgs e)
@@ -759,11 +599,7 @@ namespace MQTTClient
 
 		}
 
-		private void button3_Click_1(object sender, EventArgs e)
-		{
-
-
-		}
+	
 
 		private void label10_Click(object sender, EventArgs e)
 		{
@@ -810,15 +646,9 @@ namespace MQTTClient
 
 		}
 
-		private void label36_Click(object sender, EventArgs e)
-		{
+		
 
-		}
-
-		private void textBox15_TextChanged(object sender, EventArgs e)
-		{
-
-		}
+		
 
 		private void panel4_Paint(object sender, PaintEventArgs e)
 		{
@@ -895,7 +725,10 @@ namespace MQTTClient
 
 		}
 
+		private void button3_Click(object sender, EventArgs e)
+		{
 	
+		}
 	}
 
 	//Put this class at the end of the main class or you will have problems.

@@ -133,8 +133,6 @@
 			this.button1 = new System.Windows.Forms.Button();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
 			this.panel6 = new System.Windows.Forms.Panel();
-			this.button3 = new System.Windows.Forms.Button();
-			this.button4 = new System.Windows.Forms.Button();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewMessage)).BeginInit();
@@ -1056,8 +1054,6 @@
 			this.panel2.Controls.Add(this.label16);
 			this.panel2.Controls.Add(this.label21);
 			this.panel2.Controls.Add(this.textBoxNavy);
-			this.panel2.Controls.Add(this.button4);
-			this.panel2.Controls.Add(this.button3);
 			this.panel2.Controls.Add(this.buttonClear);
 			this.panel2.Controls.Add(this.textBoxGray);
 			this.panel2.Controls.Add(this.textBoxYellow);
@@ -1349,28 +1345,6 @@
 			this.panel6.Size = new System.Drawing.Size(653, 117);
 			this.panel6.TabIndex = 13;
 			// 
-			// button3
-			// 
-			this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.button3.Location = new System.Drawing.Point(251, 384);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(86, 27);
-			this.button3.TabIndex = 10;
-			this.button3.Text = "저장하기";
-			this.button3.UseVisualStyleBackColor = true;
-			this.button3.Click += new System.EventHandler(this.button3_Click);
-			// 
-			// button4
-			// 
-			this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.button4.Location = new System.Drawing.Point(144, 384);
-			this.button4.Name = "button4";
-			this.button4.Size = new System.Drawing.Size(86, 27);
-			this.button4.TabIndex = 10;
-			this.button4.Text = "불러어기";
-			this.button4.UseVisualStyleBackColor = true;
-			this.button4.Click += new System.EventHandler(this.button4_Click);
-			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -1508,8 +1482,6 @@
 		private System.Windows.Forms.TextBox textBoxM6;
 		private System.Windows.Forms.TextBox textBoxM5;
 		private System.Windows.Forms.Panel panel6;
-		private System.Windows.Forms.Button button3;
-		private System.Windows.Forms.Button button4;
 	}
 }
 
