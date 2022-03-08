@@ -410,20 +410,16 @@ namespace MQTTClient
 			}
 			else
 			{
+					dataGridViewMessage.SuspendLayout();
 					//dt.Rows.Add(DateTime.Now.ToString("HH:mm:ss:fff") + " - [MQTT] " + myStr1 + " - " + myStr2 + Environment.NewLine);
-				//dgv.Rows.Add(myStr + Environment.NewLine);
-				//	dataGridViewMessage.Rows.Add(DateTime.Now.ToString("HH:mm:ss:fff"), myStr1 + Environment.NewLine, myStr2 + Environment.NewLine);
-				dt.Rows.Add(DateTime.Now.ToString("HH:mm:ss:fff"), myStr1 + Environment.NewLine, myStr2 + Environment.NewLine);
+					//dgv.Rows.Add(myStr + Environment.NewLine);
+					//	dataGridViewMessage.Rows.Add(DateTime.Now.ToString("HH:mm:ss:fff"), myStr1 + Environment.NewLine, myStr2 + Environment.NewLine);
+					dt.Rows.Add(DateTime.Now.ToString("HH:mm:ss:fff"), myStr1 + Environment.NewLine, myStr2 + Environment.NewLine);
 			//	dt.Rows.Add(DateTime.Now.ToString("HH:mm:ss:fff "), myStr1, myStr2 + Environment.NewLine);
 				dataGridViewMessage.CurrentCell = dataGridViewMessage.Rows[0].Cells[0];
 				dataGridViewMessage.DataSource = dt;
-			//	logSave();
-				for (int i = 0; i < 10; i++)
-				{
-					//string value = dataGridViewMessage.Rows[i][0].ToString();
-					//string newValue = value.Substring(1, 2);
-					//dataGridViewMessage.Rows[i].Cells[0].Value = newValue;
-				}
+					//	logSave();
+					dataGridViewMessage.ResumeLayout();
 
 			}
 			}catch(Exception ex)
@@ -568,7 +564,7 @@ namespace MQTTClient
 
 
 					dataGridViewMessage.DoubleBuffered(true);
-					dataGridViewMessage.SuspendLayout();
+				
 				}
 				catch(Exception ex)
 				{
