@@ -11,6 +11,8 @@ using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace MQTTClient
 {
@@ -43,9 +45,76 @@ namespace MQTTClient
 			mqttRecord();
 			textBoxPort.Text = "1883";
 			comboBoxQos.SelectedIndex = 1;
+
+			iniload();
+
+			dataGridView2.Columns.Clear();
+			dataGridView2.ReadOnly = true;
+			dataGridView2.RowHeadersVisible = false;
+			dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+			dataGridView2.Columns.Add("0", "POS");
+			dataGridView2.Columns.Add("1", "DESC");
+			dataGridView2.Columns.Add("2", "현재값");
+			dataGridView2.Columns.Add("3", "텐덤/해링본");
+			dataGridView2.Columns.Add("4", "버튼");
+			dataGridView2.Columns[dataGridView2.ColumnCount - 4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+			dataGridView2.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+			dataGridView2.Columns[0].Width = 40;
+			dataGridView2.Columns[2].Width = 70;
+			dataGridView2.Columns[3].Width = 100;
+			for (int i = 0; i < 40; i++)
+			{
+				dataGridView2.Rows.Add();
+				dataGridView2["0", i].Value = i + 1;
+
+
+
+				dataGridView2["4", i] = new DataGridViewButtonCell();
+			}
+
+			dataGridView2["1", 0].Value = "DEVICE_TYPE: 디바이스 종류";
+			dataGridView2["1", 1].Value = "MQTT_IP1: 농장 PC MQTT IP 첫번째 번호";
+			dataGridView2["1", 2].Value = "MQTT_IP2: 농장 PC MQTT IP 두번째 번호";
+			dataGridView2["1", 3].Value = "MQTT_IP3: 농장 PC MQTT IP 세번째 번호";
+			dataGridView2["1", 4].Value = "MQTT_IP4: 농장 PC MQTT IP 네번째 번호";
+			dataGridView2["1", 5].Value = "HTTP_IP1: 농장 PC 프로그램 IP 첫번째 번호";
+			dataGridView2["1", 6].Value = "HTTP_IP2: 농장 PC 프로그램 IP 두번째 번호";
+			dataGridView2["1", 7].Value = "HTTP_IP3: 농장 PC 프로그램 IP 세번째 번호";
+			dataGridView2["1", 8].Value = "HTTP_IP4: 농장 PC 프로그램 IP 네번째 번호";
+			dataGridView2["1", 9].Value = "Milk_Device_Max: 착유 메터 설치 수";
+			dataGridView2["1", 10].Value = "BackLight Auto:0(off)/1(on)";
+			dataGridView2["1", 11].Value = "Milking NUM SET:0(RFID)/1(장비번호)";
+			dataGridView2["1", 12].Value = "RFID Erase Minute: RFID 삭제 시간(기본 60분)";
+			dataGridView2["1", 13].Value = "DW MQTT_IP1: 리눅스서버 MQTT IP 첫번째";
+			dataGridView2["1", 14].Value = "DW MQTT_IP2: 리눅스서버 MQTT IP 두번째";
+			dataGridView2["1", 15].Value = "DW MQTT_IP3: 리눅스서버 MQTT IP 세번째";
+			dataGridView2["1", 16].Value = "DW MQTT_IP4: 리눅스서버 MQTT IP 네번째";
+			dataGridView2["1", 17].Value = "DW MQTT STATUS INFO: 0(미사용)/1(사용)";
+			dataGridView2["1", 18].Value = "DW MQTT MILK INFO: 0(미사용)/1(사용)";
+			dataGridView2["1", 19].Value = "DATA_MQTT_MODE: 0:HTTP모드/1:MQTT모드";
+			dataGridView2["1", 20].Value = "Farm Code: 농장코드(cowplan에 등록된 농장코드) DW2016과 같은 코드";
+			dataGridView2["1", 21].Value = "Device Code: MQTT 번호(1번 설정)";
+			dataGridView2["1", 22].Value = "RFID TYPE: (기본0 셋팅) 0:이전 착유소 인식하지않음 1:이전 착유소 읽을수 있게 변경 2:이전 착유소 지우되 각라인 마지막소는 지우지 않음";
+			dataGridView2["1", 23].Value = "MILKING TYPE: 0:다운착유기 1:타사착유기(기본0 셋팅)";
+			dataGridView2["1", 24].Value = "YIELD_LIMIT: (다운착유기 기본 0, 타사착유기 기본 2000) MILKING TYPE가 1일때 (타사착유기)착유량이 설정 값보다 적으면 착유정보 보내지 않음";
+			dataGridView2["1", 25].Value = "RFID_LINE_RESET: 0:착유소 나가고 바로인식 1:착유라인 전체가 종료되야 RFID인식 시작(기본 1)";
+			dataGridView2["1", 26].Value = "RFID_MQTT_SEND: 1:장비가 RFID인식시 MQTT정보 보냄, 0:보내지않음 1:보냄(기본1)";
+			dataGridView2["1", 27].Value = "IR_RFID_READ_TIME: 한 IR장비 읽기 점유율시간 (1ms) (기본 2000)";
+			dataGridView2["1", 28].Value = "IR_SENSOR_ENABLE: IR장비의 소입력 센서 사용유무 0:사용안함 1:사용함 (기본0) 2:전방 도어센서 인식 3:후방 도어센서 인식";
+			dataGridView2["1", 29].Value = "29.항목이 0일때 착유 완료후 소 IRID 읽기 쉬는 시간(1ms) (기본 60000) 29.항목이 1일때 소로 인식되는 센서 입력 길이(1ms)";
+			dataGridView2["1", 30].Value = "IR_READ_OK_COUNT: IRID인식 획수. 3일경우 같은 번호가 3번 연속 읽혀야 함";
+			dataGridView2["1", 31].Value = "IR_READ_LIMIT: 착유진행됐을 경우 IRID 못읽은 장비의 시도 횟수(값이 읽혔으면 시도횟수 초기화)";
+			dataGridView2["1", 32].Value = "IR_ONE_SEND: 0: 라인별 독립적으로 보냄 1: 한 개의 장비만 데이터보냄(특수한 경우가 아니면 1로 셋팅되어야함)";
+			dataGridView2["1", 33].Value = "YEILD_SEND_ZERO: 착유량이 없더라도 서버에 데이터를 보냄";
+			dataGridView2["1", 34].Value = "DOOR_OPEN_TIME: IR_SENSOR_ENABLE이 2일 경우 도어 오픈 연속 감지 시간(기본값:1000 -> 1초)";
+			dataGridView2["1", 35].Value = "COW_SAME_ID_TIME: 0일때 사용하지 않음,0이 아니면 있으면 그만큼 쉬고 읽기 시작(기본값:20000->20초)";
+			dataGridView2["1", 36].Value = "IRID_MILK_REREAD: 0일경우 착유시작시 다시 읽지 않음, 1일경우 착유 시작시 다시 읽음";
+			dataGridView2["1", 37].Value = "IR_LINE_OK_COUNT: 입구 IRID 인식 횟수. 3일경우 같은 번호가 3번 연속 읽혀야함";
+			dataGridView2["1", 38].Value = "IR_TX_MQTT_SEND: IR TX에 대한 MQTT 정보 표시 0:사용함, 1:사용안함";
+			dataGridView2["1", 39].Value = "MAIN_RESET: 12시간이 넘었고 착유중이 아니면 자정에 메인 리셋 진행 0:사용함 1:사용안함";
+
 			radioButton1.Checked = true;
-			buttonMeter_Click(sender, e);
-			initload();
+
 		}
 
 		private void buttonTopicSave_Click(object sender, EventArgs e)
@@ -73,7 +142,7 @@ namespace MQTTClient
 			}
 			file.Close();
 		}
-		private void initload()
+		private void iniload()
 		{
 			// ini값을 집어넣을 변수 선언
 			StringBuilder host = new StringBuilder();
@@ -333,6 +402,7 @@ namespace MQTTClient
 
 		private void ShowMessage(string myStr1, string myStr2, DataGridView dgv)
 		{
+			try { 
 			if (this.InvokeRequired)
 			{
 				ShowCallBack myUpdate = new ShowCallBack(ShowMessage);
@@ -340,14 +410,14 @@ namespace MQTTClient
 			}
 			else
 			{
-					dt.Rows.Add(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss:fff") + " - [MQTT] " + myStr1 + " - " + myStr2 + Environment.NewLine);
+					//dt.Rows.Add(DateTime.Now.ToString("HH:mm:ss:fff") + " - [MQTT] " + myStr1 + " - " + myStr2 + Environment.NewLine);
 				//dgv.Rows.Add(myStr + Environment.NewLine);
 				//	dataGridViewMessage.Rows.Add(DateTime.Now.ToString("HH:mm:ss:fff"), myStr1 + Environment.NewLine, myStr2 + Environment.NewLine);
-				//dt.Rows.Add(DateTime.Now.ToString("HH:mm:ss:fff"), myStr1 + Environment.NewLine, myStr2 + Environment.NewLine);
+				dt.Rows.Add(DateTime.Now.ToString("HH:mm:ss:fff"), myStr1 + Environment.NewLine, myStr2 + Environment.NewLine);
 			//	dt.Rows.Add(DateTime.Now.ToString("HH:mm:ss:fff "), myStr1, myStr2 + Environment.NewLine);
 				dataGridViewMessage.CurrentCell = dataGridViewMessage.Rows[0].Cells[0];
 				dataGridViewMessage.DataSource = dt;
-				logSave();
+			//	logSave();
 				for (int i = 0; i < 10; i++)
 				{
 					//string value = dataGridViewMessage.Rows[i][0].ToString();
@@ -356,12 +426,16 @@ namespace MQTTClient
 				}
 
 			}
+			}catch(Exception ex)
+			{
+				MessageBox.Show(ex.ToString());
+			}
 		}
 
 		private void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs data)
 		{
 			ShowMessage(data.Topic, System.Text.Encoding.UTF8.GetString(data.Message), dataGridViewMessage);
-			myUI(System.Text.Encoding.UTF8.GetString(data.Message), MessageTextBox);
+	
 		}
 
 		private void myUI(string myStr, TextBox ctl)
@@ -424,7 +498,7 @@ namespace MQTTClient
 					buttonPublish8.Enabled = true;
 					buttonPublish9.Enabled = true;
 					buttonPublish10.Enabled = true;
-					MessageTextBox.Clear();
+			
 					buttonUnscribe.Enabled = true;
 					buttonDisconnect.Enabled = true;
 					textBoxHost.Enabled = false;
@@ -541,7 +615,7 @@ namespace MQTTClient
 
 		private void buttonClear_Click(object sender, EventArgs e)
 		{
-			MessageTextBox.Clear();
+		
 			((DataTable)dataGridViewMessage.DataSource).Rows.Clear();
 		}
 
@@ -635,7 +709,6 @@ namespace MQTTClient
 				}
 			}
 		}
-
 
 		private void dataGridViewMessage_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
 		{
@@ -871,145 +944,184 @@ namespace MQTTClient
 			}
 		}
 
+		private static DateTime Delay(int MS)
+
+		{
+
+			DateTime ThisMoment = DateTime.Now;
+
+			TimeSpan duration = new TimeSpan(0, 0, 0, 0, MS);
+
+			DateTime AfterWards = ThisMoment.Add(duration);
+
+			while (AfterWards >= ThisMoment)
+
+			{
+
+				System.Windows.Forms.Application.DoEvents();
+
+				ThisMoment = DateTime.Now;
+
+			}
+
+			return DateTime.Now;
+
+		}
+
+
+
+
 		private void buttonMeter_Click(object sender, EventArgs e)
 		{
-			if(radioButton1.Checked == true)
+			try
 			{
-				dataGridView2.Rows.Clear();
-				dataGridView2.Columns.Clear();
-				dataGridView2.ReadOnly = true;
-				dataGridView2.RowHeadersVisible = false;
-				dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-				dataGridView2.Columns.Add("0", "POS");
-				dataGridView2.Columns.Add("1", "DESC");
-				dataGridView2.Columns.Add("2", "현재값");
-				dataGridView2.Columns.Add("3", "텐덤/해링본");
-				dataGridView2.Columns.Add("4", "버튼");
-				for (int i = 0; i < 40; i++)
-				{
-					dataGridView2.Rows.Add();
-					dataGridView2["0", i].Value = i + 1;
-					dataGridView2["1", i].Value = "맥동분당횟수(20~80)";
+					string topic = "dawoon/Manual/"+ textBoxCode.Text.Trim() + "/1/POLOR";
 
-					dataGridView2["3", i].Value = "해링본";
-					dataGridView2["4", i] = new DataGridViewButtonCell();
+
+
+				for (int i = 1; i < 41; i++)
+				{
+					
+
+					string message = "{" + "\"CMD\"" + ":" + "\"REQ_MAIN_SET_READ\"" + "," + "\"POS\"" + ":"+ i + "}";
+
+
+				
+				  clientUser.Publish(topic, Encoding.UTF8.GetBytes(message), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+				  Delay(3000);
+
 				}
-				dataGridView2["2", 0].Value = "dawoon/Manual/3850/1/POLOR";
-				dataGridView2["2", 1].Value = "dawoon/Manual/3850/192/POLOR";
-				dataGridView2["2", 2].Value = "dawoon/Manual/3850/168/POLOR";
-				dataGridView2["2", 3].Value = "dawoon/Manual/3850/1/POLOR";
-				dataGridView2["2", 4].Value = "dawoon/Manual/3850/10/POLOR";
-				dataGridView2["2", 5].Value = "dawoon/Manual/3850/192/POLOR";
-				dataGridView2["2", 6].Value = "dawoon/Manual/3850/168/POLOR";
-				dataGridView2["2", 7].Value = "dawoon/Manual/3850/1/POLOR";
-				dataGridView2["2", 8].Value = "dawoon/Manual/3850/10/POLOR";
-				dataGridView2["2", 9].Value = "dawoon/Manual/3850/12/POLOR";
-				dataGridView2["2", 10].Value = "dawoon/Manual/3850/0/POLOR";
-				dataGridView2["2", 11].Value = "dawoon/Manual/3850/0/POLOR";
-				dataGridView2["2", 12].Value = "dawoon/Manual/3850/60/POLOR";
-				dataGridView2["2", 13].Value = "dawoon/Manual/3850/103/POLOR";
-				dataGridView2["2", 14].Value = "dawoon/Manual/3850/60/POLOR";
-				dataGridView2["2", 15].Value = "dawoon/Manual/3850/126/POLOR";
-				dataGridView2["2", 16].Value = "dawoon/Manual/3850/23/POLOR";
-				dataGridView2["2", 17].Value = "dawoon/Manual/3850/1/POLOR";
-				dataGridView2["2", 18].Value = "dawoon/Manual/3850/0/POLOR";
-				dataGridView2["2", 19].Value = "dawoon/Manual/3850/1/POLOR";
-				dataGridView2["2", 20].Value = "dawoon/Manual/3850/3850/POLOR";
-				dataGridView2["2", 21].Value = "dawoon/Manual/3850/1/POLOR";
-				dataGridView2["2", 22].Value = "dawoon/Manual/3850/2/POLOR";
-				dataGridView2["2", 23].Value = "dawoon/Manual/3850/0/POLOR";
-				dataGridView2["2", 24].Value = "dawoon/Manual/3850/0/POLOR";
-				dataGridView2["2", 25].Value = "dawoon/Manual/3850/0/POLOR";
-				dataGridView2["2", 26].Value = "dawoon/Manual/3850/1/POLOR";
-				dataGridView2["2", 27].Value = "dawoon/Manual/3850/2000/POLOR";
-				dataGridView2["2", 28].Value = "dawoon/Manual/3850/2/POLOR";
-				dataGridView2["2", 29].Value = "dawoon/Manual/3850/120000/POLOR";
-				dataGridView2["2", 30].Value = "dawoon/Manual/3850/2/POLOR";
-				dataGridView2["2", 31].Value = "dawoon/Manual/3850/100/POLOR";
-				dataGridView2["2", 32].Value = "dawoon/Manual/3850/1/POLOR";
-				dataGridView2["2", 33].Value = "dawoon/Manual/3850/1/POLOR";
-				dataGridView2["2", 34].Value = "dawoon/Manual/3850/2000/POLOR";
-				dataGridView2["2", 35].Value = "dawoon/Manual/3850/50000/POLOR";
-				dataGridView2["2", 36].Value = "dawoon/Manual/3850/1/POLOR";
-				dataGridView2["2", 37].Value = "dawoon/Manual/3850/1/POLOR";
-				dataGridView2["2", 38].Value = "dawoon/Manual/3850/0/POLOR";
-				dataGridView2["2", 39].Value = "dawoon/Manual/3850/0/POLOR";
-				dataGridView2.Columns[dataGridViewMessage.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-				dataGridView2.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-				dataGridView2.Columns[1].Width = 200;
-				dataGridView2.Columns[3].Width = 200;
+
+
 			}
-		  else if(radioButton2.Checked == true)
+
+			catch (Exception ex)
 			{
-				dataGridView2.Rows.Clear();
-				dataGridView2.Columns.Clear();
-				dataGridView2.ReadOnly = true;
-				dataGridView2.RowHeadersVisible = false;
-				dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+				MessageBox.Show(ex.Message);
+			}
 
 
-				dataGridView2.Columns.Add("0", "POS");
-				dataGridView2.Columns.Add("1", "DESC");
-				dataGridView2.Columns.Add("2", "현재값");
-				dataGridView2.Columns.Add("3", "텐덤/해링본");
-				dataGridView2.Columns.Add("4", "버튼");
+		}
 
-				for (int i = 0; i < 40; i++)
+		private void radioButton1_CheckedChanged(object sender, EventArgs e)
+		{
+			if (radioButton1.Checked == true)
+			{
+				if(dataGridView2.Columns.Count < 3)
 				{
-					dataGridView2.Rows.Add();
-					dataGridView2["0", i].Value = i + 1;
-					dataGridView2["1", i].Value = "맥동분당횟수(20~80)";
-
-					dataGridView2["3", i].Value = "텐덤";
-					dataGridView2["4", i] = new DataGridViewButtonCell();
+					return;
 				}
-				dataGridView2["2", 0].Value = "dawoon/Manual/3863/3/TENDOM";
-				dataGridView2["2", 1].Value = "dawoon/Manual/3863/172/TENDOM";
-				dataGridView2["2", 2].Value = "dawoon/Manual/3863/30/TENDOM";
-				dataGridView2["2", 3].Value = "dawoon/Manual/3863/1/TENDOM";
-				dataGridView2["2", 4].Value = "dawoon/Manual/3863/25/TENDOM";
-				dataGridView2["2", 5].Value = "dawoon/Manual/3863/172/TENDOM";
-				dataGridView2["2", 6].Value = "dawoon/Manual/3863/30/TENDOM";
-				dataGridView2["2", 7].Value = "dawoon/Manual/3863/1/TENDOM";
-				dataGridView2["2", 8].Value = "dawoon/Manual/3863/25/TENDOM";
-				dataGridView2["2", 9].Value = "dawoon/Manual/3863/6/TENDOM";
-				dataGridView2["2", 10].Value = "dawoon/Manual/3863/0/TENDOM";
-				dataGridView2["2", 11].Value = "dawoon/Manual/3863/0/TENDOM";
-				dataGridView2["2", 12].Value = "dawoon/Manual/3863/60/TENDOM";
-				dataGridView2["2", 13].Value = "dawoon/Manual/3863/103/TENDOM";
-				dataGridView2["2", 14].Value = "dawoon/Manual/3863/60/TENDOM";
-				dataGridView2["2", 15].Value = "dawoon/Manual/3863/126/TENDOM";
-				dataGridView2["2", 16].Value = "dawoon/Manual/3863/23/TENDOM";
-				dataGridView2["2", 17].Value = "dawoon/Manual/3863/1/TENDOM";
-				dataGridView2["2", 18].Value = "dawoon/Manual/3863/0/TENDOM";
-				dataGridView2["2", 19].Value = "dawoon/Manual/3863/1/TENDOM";
-				dataGridView2["2", 20].Value = "dawoon/Manual/3863/3863/TENDOM";
-				dataGridView2["2", 21].Value = "dawoon/Manual/3863/1/TENDOM";
-				dataGridView2["2", 22].Value = "dawoon/Manual/3863/0/TENDOM";
-				dataGridView2["2", 23].Value = "dawoon/Manual/3863/0/TENDOM";
-				dataGridView2["2", 24].Value = "dawoon/Manual/3863/0/TENDOM";
-				dataGridView2["2", 25].Value = "dawoon/Manual/3863/1/TENDOM";
-				dataGridView2["2", 26].Value = "dawoon/Manual/3863/1/TENDOM";
-				dataGridView2["2", 27].Value = "dawoon/Manual/3863/2000/TENDOM";
-				dataGridView2["2", 28].Value = "dawoon/Manual/3863/0/TENDOM";
-				dataGridView2["2", 29].Value = "dawoon/Manual/3863/30000/TENDOM";
-				dataGridView2["2", 30].Value = "dawoon/Manual/3863/3/TENDOM";
-				dataGridView2["2", 31].Value = "dawoon/Manual/3863/50/TENDOM";
-				dataGridView2["2", 32].Value = "dawoon/Manual/3863/1/TENDOM";
-				dataGridView2["2", 33].Value = "dawoon/Manual/3863/1/TENDOM";
-				dataGridView2["2", 34].Value = "dawoon/Manual/3863/3000/TENDOM";
-				dataGridView2["2", 35].Value = "dawoon/Manual/3863/20000/TENDOM";
-				dataGridView2["2", 36].Value = "dawoon/Manual/3863/1/TENDOM";
-				dataGridView2["2", 37].Value = "dawoon/Manual/3863/0/TENDOM";
-				dataGridView2["2", 38].Value = "dawoon/Manual/3863/0/TENDOM";
-				dataGridView2["2", 39].Value = "dawoon/Manual/3863/0/TENDOM";
+				dataGridView2.Columns[3].HeaderText = "헤링본";
+
+
+				dataGridView2["3", 0].Value = "1";
+				dataGridView2["3", 1].Value = "192";
+				dataGridView2["3", 2].Value = "168";
+				dataGridView2["3", 3].Value = "1";
+				dataGridView2["3", 4].Value = "10";
+				dataGridView2["3", 5].Value = "192";
+				dataGridView2["3", 6].Value = "168";
+				dataGridView2["3", 7].Value = "1";
+				dataGridView2["3", 8].Value = "10";
+				dataGridView2["3", 9].Value = "12";
+				dataGridView2["3", 10].Value = "0";
+				dataGridView2["3", 11].Value = "0";
+				dataGridView2["3", 12].Value = "60";
+				dataGridView2["3", 13].Value = "103";
+				dataGridView2["3", 14].Value = "60";
+				dataGridView2["3", 15].Value = "126";
+				dataGridView2["3", 16].Value = "23";
+				dataGridView2["3", 17].Value = "1";
+				dataGridView2["3", 18].Value = "0";
+				dataGridView2["3", 19].Value = "1";
+				dataGridView2["3", 20].Value = "3850";
+				dataGridView2["3", 21].Value = "1";
+				dataGridView2["3", 22].Value = "2";
+				dataGridView2["3", 23].Value = "0";
+				dataGridView2["3", 24].Value = "0";
+				dataGridView2["3", 25].Value = "0";
+				dataGridView2["3", 26].Value = "1";
+				dataGridView2["3", 27].Value = "2000";
+				dataGridView2["3", 28].Value = "2";
+				dataGridView2["3", 29].Value = "120000";
+				dataGridView2["3", 30].Value = "2";
+				dataGridView2["3", 31].Value = "100";
+				dataGridView2["3", 32].Value = "1";
+				dataGridView2["3", 33].Value = "1";
+				dataGridView2["3", 34].Value = "2000";
+				dataGridView2["3", 35].Value = "50000";
+				dataGridView2["3", 36].Value = "1";
+				dataGridView2["3", 37].Value = "1";
+				dataGridView2["3", 38].Value = "0";
+				dataGridView2["3", 39].Value = "0";
+				dataGridView2.Columns[dataGridView2.ColumnCount - 4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+				dataGridView2.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+				dataGridView2.Columns[0].Width = 40;
+				dataGridView2.Columns[2].Width = 70;
+				dataGridView2.Columns[3].Width = 100;
+			}
+		}
+
+		private void radioButton2_CheckedChanged(object sender, EventArgs e)
+		{
+			if (radioButton2.Checked == true)
+			{
+
+				if (dataGridView2.Columns.Count < 3)
+				{
+					return;
+				}
+
+				dataGridView2.Columns[3].HeaderText = "텐덤";
+				
+				dataGridView2["3", 0].Value = "3";
+				dataGridView2["3", 1].Value = "172";
+				dataGridView2["3", 2].Value = "30";
+				dataGridView2["3", 3].Value = "1";
+				dataGridView2["3", 4].Value = "25";
+				dataGridView2["3", 5].Value = "172";
+				dataGridView2["3", 6].Value = "30";
+				dataGridView2["3", 7].Value = "1";
+				dataGridView2["3", 8].Value = "25";
+				dataGridView2["3", 9].Value = "6";
+				dataGridView2["3", 10].Value = "0";
+				dataGridView2["3", 11].Value = "0";
+				dataGridView2["3", 12].Value = "60";
+				dataGridView2["3", 13].Value = "103";
+				dataGridView2["3", 14].Value = "60";
+				dataGridView2["3", 15].Value = "126";
+				dataGridView2["3", 16].Value = "23";
+				dataGridView2["3", 17].Value = "1";
+				dataGridView2["3", 18].Value = "0";
+				dataGridView2["3", 19].Value = "1";
+				dataGridView2["3", 20].Value = "3863";
+				dataGridView2["3", 21].Value = "1";
+				dataGridView2["3", 22].Value = "0";
+				dataGridView2["3", 23].Value = "0";
+				dataGridView2["3", 24].Value = "0";
+				dataGridView2["3", 25].Value = "1";
+				dataGridView2["3", 26].Value = "1";
+				dataGridView2["3", 27].Value = "2000";
+				dataGridView2["3", 28].Value = "0";
+				dataGridView2["3", 29].Value = "30000";
+				dataGridView2["3", 30].Value = "3";
+				dataGridView2["3", 31].Value = "50";
+				dataGridView2["3", 32].Value = "1";
+				dataGridView2["3", 33].Value = "1";
+				dataGridView2["3", 34].Value = "3000";
+				dataGridView2["3", 35].Value = "20000";
+				dataGridView2["3", 36].Value = "1";
+				dataGridView2["3", 37].Value = "0";
+				dataGridView2["3", 38].Value = "0";
+				dataGridView2["3", 39].Value = "0";
 
 
 
-				dataGridView2.Columns[dataGridViewMessage.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-				dataGridView2.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-				dataGridView2.Columns[1].Width = 200;
-				dataGridView2.Columns[3].Width = 200;
+				//dataGridView2.Columns[dataGridView2.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+				//dataGridView2.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+				//dataGridView2.Columns[1].Width = 200;
+				//dataGridView2.Columns[3].Width = 200;
+				//dataGridView2.Columns[2].Width = 2000;
 			}
 		}
 	}

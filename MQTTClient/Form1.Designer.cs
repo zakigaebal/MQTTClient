@@ -141,7 +141,8 @@
 			this.buttonMeter = new System.Windows.Forms.Button();
 			this.dataGridView2 = new System.Windows.Forms.DataGridView();
 			this.dataGridViewMessage = new System.Windows.Forms.DataGridView();
-			this.MessageTextBox = new System.Windows.Forms.TextBox();
+			this.textBoxCode = new System.Windows.Forms.TextBox();
+			this.label39 = new System.Windows.Forms.Label();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.panel1.SuspendLayout();
@@ -163,7 +164,7 @@
 			this.tabControl1.Location = new System.Drawing.Point(0, 0);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(1102, 470);
+			this.tabControl1.Size = new System.Drawing.Size(1162, 469);
 			this.tabControl1.TabIndex = 0;
 			// 
 			// tabPage1
@@ -172,7 +173,7 @@
 			this.tabPage1.Location = new System.Drawing.Point(4, 22);
 			this.tabPage1.Name = "tabPage1";
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(1094, 444);
+			this.tabPage1.Size = new System.Drawing.Size(1154, 443);
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "MQTT";
 			this.tabPage1.UseVisualStyleBackColor = true;
@@ -184,7 +185,7 @@
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panel1.Location = new System.Drawing.Point(3, 3);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(1088, 437);
+			this.panel1.Size = new System.Drawing.Size(1148, 437);
 			this.panel1.TabIndex = 10;
 			// 
 			// panel2
@@ -216,7 +217,7 @@
 			this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel2.Location = new System.Drawing.Point(653, 0);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(435, 437);
+			this.panel2.Size = new System.Drawing.Size(495, 437);
 			this.panel2.TabIndex = 0;
 			// 
 			// textBoxBlack
@@ -227,7 +228,7 @@
 			this.textBoxBlack.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
 			this.textBoxBlack.Location = new System.Drawing.Point(266, 316);
 			this.textBoxBlack.Name = "textBoxBlack";
-			this.textBoxBlack.Size = new System.Drawing.Size(164, 25);
+			this.textBoxBlack.Size = new System.Drawing.Size(224, 25);
 			this.textBoxBlack.TabIndex = 11;
 			// 
 			// textBoxBlue
@@ -238,7 +239,7 @@
 			this.textBoxBlue.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
 			this.textBoxBlue.Location = new System.Drawing.Point(266, 285);
 			this.textBoxBlue.Name = "textBoxBlue";
-			this.textBoxBlue.Size = new System.Drawing.Size(164, 25);
+			this.textBoxBlue.Size = new System.Drawing.Size(224, 25);
 			this.textBoxBlue.TabIndex = 10;
 			// 
 			// label38
@@ -262,7 +263,7 @@
 			this.textBoxOrange.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
 			this.textBoxOrange.Location = new System.Drawing.Point(266, 254);
 			this.textBoxOrange.Name = "textBoxOrange";
-			this.textBoxOrange.Size = new System.Drawing.Size(164, 25);
+			this.textBoxOrange.Size = new System.Drawing.Size(224, 25);
 			this.textBoxOrange.TabIndex = 8;
 			// 
 			// label37
@@ -286,7 +287,7 @@
 			this.textBoxPink.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
 			this.textBoxPink.Location = new System.Drawing.Point(266, 223);
 			this.textBoxPink.Name = "textBoxPink";
-			this.textBoxPink.Size = new System.Drawing.Size(164, 25);
+			this.textBoxPink.Size = new System.Drawing.Size(224, 25);
 			this.textBoxPink.TabIndex = 7;
 			// 
 			// label36
@@ -310,7 +311,7 @@
 			this.textBoxLime.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
 			this.textBoxLime.Location = new System.Drawing.Point(266, 192);
 			this.textBoxLime.Name = "textBoxLime";
-			this.textBoxLime.Size = new System.Drawing.Size(164, 25);
+			this.textBoxLime.Size = new System.Drawing.Size(224, 25);
 			this.textBoxLime.TabIndex = 6;
 			// 
 			// label35
@@ -437,7 +438,7 @@
 			this.textBoxRed.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
 			this.textBoxRed.Location = new System.Drawing.Point(266, 6);
 			this.textBoxRed.Name = "textBoxRed";
-			this.textBoxRed.Size = new System.Drawing.Size(164, 25);
+			this.textBoxRed.Size = new System.Drawing.Size(224, 25);
 			this.textBoxRed.TabIndex = 0;
 			// 
 			// textBoxPurple
@@ -448,7 +449,7 @@
 			this.textBoxPurple.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
 			this.textBoxPurple.Location = new System.Drawing.Point(266, 161);
 			this.textBoxPurple.Name = "textBoxPurple";
-			this.textBoxPurple.Size = new System.Drawing.Size(164, 25);
+			this.textBoxPurple.Size = new System.Drawing.Size(224, 25);
 			this.textBoxPurple.TabIndex = 5;
 			// 
 			// label16
@@ -485,13 +486,13 @@
 			this.textBoxNavy.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
 			this.textBoxNavy.Location = new System.Drawing.Point(266, 130);
 			this.textBoxNavy.Name = "textBoxNavy";
-			this.textBoxNavy.Size = new System.Drawing.Size(164, 25);
+			this.textBoxNavy.Size = new System.Drawing.Size(224, 25);
 			this.textBoxNavy.TabIndex = 4;
 			// 
 			// buttonClear
 			// 
 			this.buttonClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.buttonClear.Location = new System.Drawing.Point(344, 405);
+			this.buttonClear.Location = new System.Drawing.Point(404, 405);
 			this.buttonClear.Name = "buttonClear";
 			this.buttonClear.Size = new System.Drawing.Size(86, 27);
 			this.buttonClear.TabIndex = 10;
@@ -507,7 +508,7 @@
 			this.textBoxGray.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
 			this.textBoxGray.Location = new System.Drawing.Point(266, 99);
 			this.textBoxGray.Name = "textBoxGray";
-			this.textBoxGray.Size = new System.Drawing.Size(164, 25);
+			this.textBoxGray.Size = new System.Drawing.Size(224, 25);
 			this.textBoxGray.TabIndex = 3;
 			// 
 			// textBoxYellow
@@ -518,7 +519,7 @@
 			this.textBoxYellow.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
 			this.textBoxYellow.Location = new System.Drawing.Point(266, 68);
 			this.textBoxYellow.Name = "textBoxYellow";
-			this.textBoxYellow.Size = new System.Drawing.Size(164, 25);
+			this.textBoxYellow.Size = new System.Drawing.Size(224, 25);
 			this.textBoxYellow.TabIndex = 2;
 			// 
 			// label20
@@ -542,7 +543,7 @@
 			this.textBoxGreen.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
 			this.textBoxGreen.Location = new System.Drawing.Point(266, 37);
 			this.textBoxGreen.Name = "textBoxGreen";
-			this.textBoxGreen.Size = new System.Drawing.Size(164, 25);
+			this.textBoxGreen.Size = new System.Drawing.Size(224, 25);
 			this.textBoxGreen.TabIndex = 1;
 			// 
 			// label17
@@ -1346,6 +1347,8 @@
 			// 
 			// tabPage2
 			// 
+			this.tabPage2.Controls.Add(this.label39);
+			this.tabPage2.Controls.Add(this.textBoxCode);
 			this.tabPage2.Controls.Add(this.radioButton2);
 			this.tabPage2.Controls.Add(this.radioButton1);
 			this.tabPage2.Controls.Add(this.button3);
@@ -1354,7 +1357,7 @@
 			this.tabPage2.Location = new System.Drawing.Point(4, 22);
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(1094, 444);
+			this.tabPage2.Size = new System.Drawing.Size(1154, 443);
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "수동착유";
 			this.tabPage2.UseVisualStyleBackColor = true;
@@ -1362,31 +1365,33 @@
 			// radioButton2
 			// 
 			this.radioButton2.AutoSize = true;
-			this.radioButton2.Location = new System.Drawing.Point(348, 44);
+			this.radioButton2.Location = new System.Drawing.Point(243, 10);
 			this.radioButton2.Name = "radioButton2";
 			this.radioButton2.Size = new System.Drawing.Size(104, 16);
 			this.radioButton2.TabIndex = 2;
 			this.radioButton2.TabStop = true;
 			this.radioButton2.Text = "텐덤(Tendom)";
 			this.radioButton2.UseVisualStyleBackColor = true;
+			this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
 			// 
 			// radioButton1
 			// 
 			this.radioButton1.AutoSize = true;
-			this.radioButton1.Location = new System.Drawing.Point(171, 44);
+			this.radioButton1.Location = new System.Drawing.Point(101, 10);
 			this.radioButton1.Name = "radioButton1";
 			this.radioButton1.Size = new System.Drawing.Size(136, 16);
 			this.radioButton1.TabIndex = 2;
 			this.radioButton1.TabStop = true;
 			this.radioButton1.Text = "헤링본(herringbone)";
 			this.radioButton1.UseVisualStyleBackColor = true;
+			this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
 			// 
 			// button3
 			// 
 			this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.button3.Location = new System.Drawing.Point(957, 3);
+			this.button3.Location = new System.Drawing.Point(1083, 3);
 			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(129, 96);
+			this.button3.Size = new System.Drawing.Size(63, 27);
 			this.button3.TabIndex = 1;
 			this.button3.Text = "전체적용";
 			this.button3.UseVisualStyleBackColor = true;
@@ -1395,7 +1400,7 @@
 			// 
 			this.buttonMeter.Location = new System.Drawing.Point(6, 6);
 			this.buttonMeter.Name = "buttonMeter";
-			this.buttonMeter.Size = new System.Drawing.Size(126, 93);
+			this.buttonMeter.Size = new System.Drawing.Size(70, 24);
 			this.buttonMeter.TabIndex = 1;
 			this.buttonMeter.Text = "Meter읽기";
 			this.buttonMeter.UseVisualStyleBackColor = true;
@@ -1409,11 +1414,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView2.Location = new System.Drawing.Point(10, 116);
+			this.dataGridView2.Location = new System.Drawing.Point(10, 32);
 			this.dataGridView2.Name = "dataGridView2";
 			this.dataGridView2.ReadOnly = true;
 			this.dataGridView2.RowTemplate.Height = 23;
-			this.dataGridView2.Size = new System.Drawing.Size(1078, 319);
+			this.dataGridView2.Size = new System.Drawing.Size(1138, 394);
 			this.dataGridView2.TabIndex = 0;
 			// 
 			// dataGridViewMessage
@@ -1422,33 +1427,37 @@
 			this.dataGridViewMessage.AllowUserToDeleteRows = false;
 			this.dataGridViewMessage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridViewMessage.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.dataGridViewMessage.Location = new System.Drawing.Point(0, 470);
+			this.dataGridViewMessage.Location = new System.Drawing.Point(0, 469);
 			this.dataGridViewMessage.Name = "dataGridViewMessage";
 			this.dataGridViewMessage.ReadOnly = true;
 			this.dataGridViewMessage.RowTemplate.Height = 23;
-			this.dataGridViewMessage.Size = new System.Drawing.Size(1102, 208);
+			this.dataGridViewMessage.Size = new System.Drawing.Size(1162, 169);
 			this.dataGridViewMessage.TabIndex = 10;
+			this.dataGridViewMessage.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewMessage_CellFormatting);
 			// 
-			// MessageTextBox
+			// textBoxCode
 			// 
-			this.MessageTextBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.MessageTextBox.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-			this.MessageTextBox.Location = new System.Drawing.Point(0, 678);
-			this.MessageTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-			this.MessageTextBox.Multiline = true;
-			this.MessageTextBox.Name = "MessageTextBox";
-			this.MessageTextBox.ReadOnly = true;
-			this.MessageTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.MessageTextBox.Size = new System.Drawing.Size(1102, 40);
-			this.MessageTextBox.TabIndex = 12;
+			this.textBoxCode.Location = new System.Drawing.Point(421, 5);
+			this.textBoxCode.Name = "textBoxCode";
+			this.textBoxCode.Size = new System.Drawing.Size(100, 21);
+			this.textBoxCode.TabIndex = 3;
+			this.textBoxCode.Text = "3850";
+			// 
+			// label39
+			// 
+			this.label39.AutoSize = true;
+			this.label39.Location = new System.Drawing.Point(362, 8);
+			this.label39.Name = "label39";
+			this.label39.Size = new System.Drawing.Size(53, 12);
+			this.label39.TabIndex = 4;
+			this.label39.Text = "목장코드";
 			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1102, 718);
+			this.ClientSize = new System.Drawing.Size(1162, 638);
 			this.Controls.Add(this.dataGridViewMessage);
-			this.Controls.Add(this.MessageTextBox);
 			this.Controls.Add(this.tabControl1);
 			this.Name = "Form1";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1471,7 +1480,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewMessage)).EndInit();
 			this.ResumeLayout(false);
-			this.PerformLayout();
 
 		}
 
@@ -1589,8 +1597,9 @@
 		private System.Windows.Forms.Label label35;
 		private System.Windows.Forms.Button button3;
 		private System.Windows.Forms.DataGridView dataGridViewMessage;
-		private System.Windows.Forms.TextBox MessageTextBox;
 		public System.Windows.Forms.ListBox listBoxSub;
+		private System.Windows.Forms.Label label39;
+		private System.Windows.Forms.TextBox textBoxCode;
 	}
 }
 
