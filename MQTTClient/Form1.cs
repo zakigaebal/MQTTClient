@@ -16,8 +16,9 @@ namespace MQTTClient
 	{
 		static MqttClient clientUser;
 		DataTable dt = new DataTable();
+		DataTable dt2 = new DataTable();
 		private delegate void ShowCallBack(string myStr1, string myStr2, DataGridView dgv);
-
+		string startupPath = Application.StartupPath + @"\MqttClient.ini";
 		public Form1()
 		{
 			InitializeComponent();
@@ -37,6 +38,7 @@ namespace MQTTClient
 			mqttRecord();
 			textBoxPort.Text = "1883";
 			comboBoxQos.SelectedIndex = 1;
+			radioButton1.Checked = true;
 			initload();
 		}
 
@@ -104,39 +106,39 @@ namespace MQTTClient
 
 			// ini파일에서 데이터를 불러옴
 			// GetPrivateProfileString("카테고리", "Key값", "기본값", "저장할 변수", "불러올 경로");
-			GetPrivateProfileString("MqttClient", "LastHostName", "", host, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastSubTopic", "", topic, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastPubTopic1", "", pub1, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastPubTopic2", "", pub2, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastPubTopic3", "", pub3, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastPubTopic4", "", pub4, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastPubTopic5", "", pub5, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastPubTopic6", "", pub6, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastPubTopic7", "", pub7, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastPubTopic8", "", pub8, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastPubTopic9", "", pub9, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastPubTopic10", "", pub10, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastMessage1", "", m1, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastMessage2", "", m2, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastMessage3", "", m3, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastMessage4", "", m4, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastMessage5", "", m5, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastMessage6", "", m6, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastMessage7", "", m7, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastMessage8", "", m8, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastMessage9", "", m9, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("MqttClient", "LastMessage10", "", m10, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("Color", "Red", "", red, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("Color", "Green", "", green, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("Color", "Yellow", "", yellow, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("Color", "Gray", "", gray, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("Color", "Navy", "", navy, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("Color", "Purple", "", purple, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("Color", "Lime", "", lime, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("Color", "Pink", "", pink, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("Color", "Orange", "", orange, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("Color", "Blue", "", blue, 32, Application.StartupPath + @"\MqttClient.ini");
-			GetPrivateProfileString("Color", "Black", "", black, 32, Application.StartupPath + @"\MqttClient.ini");
+			GetPrivateProfileString("MqttClient", "LastHostName", "", host, 32, startupPath);
+			GetPrivateProfileString("MqttClient", "LastSubTopic", "", topic, 32, startupPath);
+			GetPrivateProfileString("MqttClient", "LastPubTopic1", "", pub1, 32, startupPath);
+			GetPrivateProfileString("MqttClient", "LastPubTopic2", "", pub2, 32, startupPath);
+			GetPrivateProfileString("MqttClient", "LastPubTopic3", "", pub3, 32, startupPath);
+			GetPrivateProfileString("MqttClient", "LastPubTopic4", "", pub4, 32, startupPath);
+			GetPrivateProfileString("MqttClient", "LastPubTopic5", "", pub5, 32, startupPath);
+			GetPrivateProfileString("MqttClient", "LastPubTopic6", "", pub6, 32, startupPath);
+			GetPrivateProfileString("MqttClient", "LastPubTopic7", "", pub7, 32, startupPath);
+			GetPrivateProfileString("MqttClient", "LastPubTopic8", "", pub8, 32, startupPath);
+			GetPrivateProfileString("MqttClient", "LastPubTopic9", "", pub9, 32, startupPath);
+			GetPrivateProfileString("MqttClient", "LastPubTopic10", "", pub10, 32, startupPath);
+			GetPrivateProfileString("MqttClient", "LastMessage1", "", m1, 32, startupPath);
+			GetPrivateProfileString("MqttClient", "LastMessage2", "", m2, 32, startupPath);
+			GetPrivateProfileString("MqttClient", "LastMessage3", "", m3, 32, startupPath);
+			GetPrivateProfileString("MqttClient", "LastMessage4", "", m4, 32, startupPath);
+			GetPrivateProfileString("MqttClient", "LastMessage5", "", m5, 32, startupPath);
+			GetPrivateProfileString("MqttClient", "LastMessage6", "", m6, 32, startupPath);
+			GetPrivateProfileString("MqttClient", "LastMessage7", "", m7, 32, startupPath);
+			GetPrivateProfileString("MqttClient", "LastMessage8", "", m8, 32, startupPath);
+			GetPrivateProfileString("MqttClient", "LastMessage9", "", m9, 32, startupPath);
+			GetPrivateProfileString("MqttClient", "LastMessage10", "", m10, 32, startupPath);
+			GetPrivateProfileString("Color", "Red", "", red, 32, startupPath);
+			GetPrivateProfileString("Color", "Green", "", green, 32, startupPath);
+			GetPrivateProfileString("Color", "Yellow", "", yellow, 32, startupPath);
+			GetPrivateProfileString("Color", "Gray", "", gray, 32, startupPath);
+			GetPrivateProfileString("Color", "Navy", "", navy, 32, startupPath);
+			GetPrivateProfileString("Color", "Purple", "", purple, 32, startupPath);
+			GetPrivateProfileString("Color", "Lime", "", lime, 32, startupPath);
+			GetPrivateProfileString("Color", "Pink", "", pink, 32, startupPath);
+			GetPrivateProfileString("Color", "Orange", "", orange, 32, startupPath);
+			GetPrivateProfileString("Color", "Blue", "", blue, 32, startupPath);
+			GetPrivateProfileString("Color", "Black", "", black, 32, startupPath);
 
 			// 텍스트박스에 ini파일에서 가져온 데이터를 넣는다
 			textBoxHost.Text = host.ToString();
@@ -174,43 +176,45 @@ namespace MQTTClient
 			textBoxBlack.Text = black.ToString();
 		}
 
+		
+
 		private void initCloseMethod()
 		{
 			// ini파일에 등록
 			// WritePrivateProfileString("카테고리", "Key값", "Value", "저장할 경로");
-			WritePrivateProfileString("MqttClient", "LastHostName", textBoxHost.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastSubTopic", textBoxSubTopic.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastPubTopic1", textBoxPT1.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastPubTopic2", textBoxPT2.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastPubTopic3", textBoxPT3.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastPubTopic4", textBoxPT4.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastPubTopic5", textBoxPT5.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastPubTopic6", textBoxPT6.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastPubTopic7", textBoxPT7.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastPubTopic8", textBoxPT8.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastPubTopic9", textBoxPT9.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastPubTopic10", textBoxPT10.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastMessage1", textBoxM1.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastMessage2", textBoxM2.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastMessage3", textBoxM3.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastMessage4", textBoxM4.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastMessage5", textBoxM5.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastMessage6", textBoxM6.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastMessage7", textBoxM7.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastMessage8", textBoxM8.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastMessage9", textBoxM9.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("MqttClient", "LastMessage10", textBoxM10.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("Color", "Red", textBoxRed.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("Color", "Green", textBoxGreen.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("Color", "Yellow", textBoxYellow.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("Color", "Gray", textBoxGray.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("Color", "Navy", textBoxNavy.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("Color", "Purple", textBoxPurple.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("Color", "Lime", textBoxLime.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("Color", "Pink", textBoxPink.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("Color", "Orange", textBoxOrange.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("Color", "Blue", textBoxBlue.Text, Application.StartupPath + @"\MqttClient.ini");
-			WritePrivateProfileString("Color", "Black", textBoxBlack.Text, Application.StartupPath + @"\MqttClient.ini");
+			WritePrivateProfileString("MqttClient", "LastHostName", textBoxHost.Text, startupPath);
+			WritePrivateProfileString("MqttClient", "LastSubTopic", textBoxSubTopic.Text, startupPath);
+			WritePrivateProfileString("MqttClient", "LastPubTopic1", textBoxPT1.Text, startupPath);
+			WritePrivateProfileString("MqttClient", "LastPubTopic2", textBoxPT2.Text, startupPath);
+			WritePrivateProfileString("MqttClient", "LastPubTopic3", textBoxPT3.Text, startupPath);
+			WritePrivateProfileString("MqttClient", "LastPubTopic4", textBoxPT4.Text, startupPath);
+			WritePrivateProfileString("MqttClient", "LastPubTopic5", textBoxPT5.Text, startupPath);
+			WritePrivateProfileString("MqttClient", "LastPubTopic6", textBoxPT6.Text, startupPath);
+			WritePrivateProfileString("MqttClient", "LastPubTopic7", textBoxPT7.Text, startupPath);
+			WritePrivateProfileString("MqttClient", "LastPubTopic8", textBoxPT8.Text, startupPath);
+			WritePrivateProfileString("MqttClient", "LastPubTopic9", textBoxPT9.Text, startupPath);
+			WritePrivateProfileString("MqttClient", "LastPubTopic10", textBoxPT10.Text, startupPath);
+			WritePrivateProfileString("MqttClient", "LastMessage1", textBoxM1.Text, startupPath);
+			WritePrivateProfileString("MqttClient", "LastMessage2", textBoxM2.Text, startupPath);
+			WritePrivateProfileString("MqttClient", "LastMessage3", textBoxM3.Text, startupPath);
+			WritePrivateProfileString("MqttClient", "LastMessage4", textBoxM4.Text, startupPath);
+			WritePrivateProfileString("MqttClient", "LastMessage5", textBoxM5.Text, startupPath);
+			WritePrivateProfileString("MqttClient", "LastMessage6", textBoxM6.Text, startupPath);
+			WritePrivateProfileString("MqttClient", "LastMessage7", textBoxM7.Text, startupPath);
+			WritePrivateProfileString("MqttClient", "LastMessage8", textBoxM8.Text, startupPath);
+			WritePrivateProfileString("MqttClient", "LastMessage9", textBoxM9.Text, startupPath);
+			WritePrivateProfileString("MqttClient", "LastMessage10", textBoxM10.Text, startupPath);
+			WritePrivateProfileString("Color", "Red", textBoxRed.Text, startupPath);
+			WritePrivateProfileString("Color", "Green", textBoxGreen.Text, startupPath);
+			WritePrivateProfileString("Color", "Yellow", textBoxYellow.Text, startupPath);
+			WritePrivateProfileString("Color", "Gray", textBoxGray.Text, startupPath);
+			WritePrivateProfileString("Color", "Navy", textBoxNavy.Text, startupPath);
+			WritePrivateProfileString("Color", "Purple", textBoxPurple.Text, startupPath);
+			WritePrivateProfileString("Color", "Lime", textBoxLime.Text, startupPath);
+			WritePrivateProfileString("Color", "Pink", textBoxPink.Text, startupPath);
+			WritePrivateProfileString("Color", "Orange", textBoxOrange.Text, startupPath);
+			WritePrivateProfileString("Color", "Blue", textBoxBlue.Text, startupPath);
+			WritePrivateProfileString("Color", "Black", textBoxBlack.Text, startupPath);
 		}
 
 		private void mqttRecord()
@@ -220,7 +224,6 @@ namespace MQTTClient
 			dt.Columns.Add("Message");
 			dt.DefaultView.Sort = "Time desc";
 			dataGridViewMessage.DataSource = dt;
-
 			dataGridViewMessage.ReadOnly = true;
 			dataGridViewMessage.RowHeadersVisible = false;
 			dataGridViewMessage.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -230,6 +233,13 @@ namespace MQTTClient
 
 
 
+			//dt2.Columns.Add("POS", typeof(string));
+			//dt2.Columns.Add("DESC", typeof(string));
+			//dt2.Columns.Add("현재값", typeof(string));
+			//dt2.Columns.Add("해링본값/텐덤값", typeof(string));
+			//dt2.Columns.Add("버튼", typeof(string));
+			//dataGridView2.DataSource = dt2;
+		
 		}
 
 		private void logSave()
@@ -410,9 +420,9 @@ namespace MQTTClient
 				///게시///
 				clientUser.Publish(textBoxPT1.Text, Encoding.UTF8.GetBytes(textBoxM1.Text), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 			}
-			catch
+			catch(Exception ex)
 			{
-				return;
+				MessageBox.Show(ex.Message);
 			}
 		}
 
@@ -649,11 +659,7 @@ namespace MQTTClient
 		public void Form_Closing(object sender, FormClosedEventArgs e)
 		{
 			initCloseMethod();
-		}
-
-		private void buttonSave_Click(object sender, EventArgs e)
-		{
-		
+			if (clientUser != null && clientUser.IsConnected) clientUser.Disconnect();
 		}
 
 		private void buttonLogFolder_Click(object sender, EventArgs e)
@@ -670,170 +676,231 @@ namespace MQTTClient
 			System.Diagnostics.Process.Start("Log");
 		}
 
-
-
-		private void label7_Click(object sender, EventArgs e)
+		private void buttonPublish5_Click(object sender, EventArgs e)
 		{
-
+			{
+				if (checkBoxTopicpub.Checked == true)
+				{
+					clientUser.Publish(textBoxPT1.Text, Encoding.UTF8.GetBytes(textBoxM5.Text), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+				}
+				else if (checkBoxTopicpub.Checked == false)
+				{
+					clientUser.Publish(textBoxPT5.Text, Encoding.UTF8.GetBytes(textBoxM5.Text), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+				}
+			}
 		}
 
-		private void label8_Click(object sender, EventArgs e)
+		private void buttonPublish6_Click(object sender, EventArgs e)
 		{
-
+			{
+				if (checkBoxTopicpub.Checked == true)
+				{
+					clientUser.Publish(textBoxPT1.Text, Encoding.UTF8.GetBytes(textBoxM6.Text), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+				}
+				else if (checkBoxTopicpub.Checked == false)
+				{
+					clientUser.Publish(textBoxPT6.Text, Encoding.UTF8.GetBytes(textBoxM6.Text), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+				}
+			}
 		}
 
-		private void textBoxMessage_TextChanged(object sender, EventArgs e)
+		private void buttonPublish7_Click(object sender, EventArgs e)
 		{
-
+			{
+				if (checkBoxTopicpub.Checked == true)
+				{
+					clientUser.Publish(textBoxPT1.Text, Encoding.UTF8.GetBytes(textBoxM7.Text), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+				}
+				else if (checkBoxTopicpub.Checked == false)
+				{
+					clientUser.Publish(textBoxPT7.Text, Encoding.UTF8.GetBytes(textBoxM7.Text), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+				}
+			}
 		}
 
-		private void textBoxPubTopic_TextChanged(object sender, EventArgs e)
+		private void buttonPublish8_Click(object sender, EventArgs e)
 		{
-
+			{
+				if (checkBoxTopicpub.Checked == true)
+				{
+					clientUser.Publish(textBoxPT1.Text, Encoding.UTF8.GetBytes(textBoxM8.Text), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+				}
+				else if (checkBoxTopicpub.Checked == false)
+				{
+					clientUser.Publish(textBoxPT8.Text, Encoding.UTF8.GetBytes(textBoxM8.Text), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+				}
+			}
 		}
 
-		private void label16_Click(object sender, EventArgs e)
+		private void buttonPublish9_Click(object sender, EventArgs e)
 		{
-
+			{
+				if (checkBoxTopicpub.Checked == true)
+				{
+					clientUser.Publish(textBoxPT1.Text, Encoding.UTF8.GetBytes(textBoxM9.Text), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+				}
+				else if (checkBoxTopicpub.Checked == false)
+				{
+					clientUser.Publish(textBoxPT9.Text, Encoding.UTF8.GetBytes(textBoxM9.Text), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+				}
+			}
 		}
 
-		private void textBoxRed_TextChanged(object sender, EventArgs e)
+		private void buttonPublish10_Click(object sender, EventArgs e)
 		{
-
+			{
+				if (checkBoxTopicpub.Checked == true)
+				{
+					clientUser.Publish(textBoxPT1.Text, Encoding.UTF8.GetBytes(textBoxM10.Text), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+				}
+				else if (checkBoxTopicpub.Checked == false)
+				{
+					clientUser.Publish(textBoxPT10.Text, Encoding.UTF8.GetBytes(textBoxM10.Text), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+				}
+			}
 		}
 
-	
-
-		private void label10_Click(object sender, EventArgs e)
+		private void buttonMeter_Click(object sender, EventArgs e)
 		{
+			if(radioButton1.Checked == true)
+			{
+				dataGridView2.Rows.Clear();
+				dataGridView2.Columns.Clear();
+				dataGridView2.ReadOnly = true;
+				dataGridView2.RowHeadersVisible = false;
+				dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+				dataGridView2.Columns.Add("0", "POS");
+				dataGridView2.Columns.Add("1", "DESC");
+				dataGridView2.Columns.Add("2", "현재값");
+				dataGridView2.Columns.Add("3", "텐덤/해링본");
+				dataGridView2.Columns.Add("4", "버튼");
+				for (int i = 0; i < 40; i++)
+				{
+					dataGridView2.Rows.Add();
+					dataGridView2["0", i].Value = i + 1;
+					dataGridView2["1", i].Value = "맥동분당횟수(20~80)";
 
+					dataGridView2["3", i].Value = "해링본";
+					dataGridView2["4", i] = new DataGridViewButtonCell();
+				}
+				dataGridView2["2", 0].Value = "dawoon/Manual/3850/1/POLOR";
+				dataGridView2["2", 1].Value = "dawoon/Manual/3850/192/POLOR";
+				dataGridView2["2", 2].Value = "dawoon/Manual/3850/168/POLOR";
+				dataGridView2["2", 3].Value = "dawoon/Manual/3850/1/POLOR";
+				dataGridView2["2", 4].Value = "dawoon/Manual/3850/10/POLOR";
+				dataGridView2["2", 5].Value = "dawoon/Manual/3850/192/POLOR";
+				dataGridView2["2", 6].Value = "dawoon/Manual/3850/168/POLOR";
+				dataGridView2["2", 7].Value = "dawoon/Manual/3850/1/POLOR";
+				dataGridView2["2", 8].Value = "dawoon/Manual/3850/10/POLOR";
+				dataGridView2["2", 9].Value = "dawoon/Manual/3850/12/POLOR";
+				dataGridView2["2", 10].Value = "dawoon/Manual/3850/0/POLOR";
+				dataGridView2["2", 11].Value = "dawoon/Manual/3850/0/POLOR";
+				dataGridView2["2", 12].Value = "dawoon/Manual/3850/60/POLOR";
+				dataGridView2["2", 13].Value = "dawoon/Manual/3850/103/POLOR";
+				dataGridView2["2", 14].Value = "dawoon/Manual/3850/60/POLOR";
+				dataGridView2["2", 15].Value = "dawoon/Manual/3850/126/POLOR";
+				dataGridView2["2", 16].Value = "dawoon/Manual/3850/23/POLOR";
+				dataGridView2["2", 17].Value = "dawoon/Manual/3850/1/POLOR";
+				dataGridView2["2", 18].Value = "dawoon/Manual/3850/0/POLOR";
+				dataGridView2["2", 19].Value = "dawoon/Manual/3850/1/POLOR";
+				dataGridView2["2", 20].Value = "dawoon/Manual/3850/3850/POLOR";
+				dataGridView2["2", 21].Value = "dawoon/Manual/3850/1/POLOR";
+				dataGridView2["2", 22].Value = "dawoon/Manual/3850/2/POLOR";
+				dataGridView2["2", 23].Value = "dawoon/Manual/3850/0/POLOR";
+				dataGridView2["2", 24].Value = "dawoon/Manual/3850/0/POLOR";
+				dataGridView2["2", 25].Value = "dawoon/Manual/3850/0/POLOR";
+				dataGridView2["2", 26].Value = "dawoon/Manual/3850/1/POLOR";
+				dataGridView2["2", 27].Value = "dawoon/Manual/3850/2000/POLOR";
+				dataGridView2["2", 28].Value = "dawoon/Manual/3850/2/POLOR";
+				dataGridView2["2", 29].Value = "dawoon/Manual/3850/120000/POLOR";
+				dataGridView2["2", 30].Value = "dawoon/Manual/3850/2/POLOR";
+				dataGridView2["2", 31].Value = "dawoon/Manual/3850/100/POLOR";
+				dataGridView2["2", 32].Value = "dawoon/Manual/3850/1/POLOR";
+				dataGridView2["2", 33].Value = "dawoon/Manual/3850/1/POLOR";
+				dataGridView2["2", 34].Value = "dawoon/Manual/3850/2000/POLOR";
+				dataGridView2["2", 35].Value = "dawoon/Manual/3850/50000/POLOR";
+				dataGridView2["2", 36].Value = "dawoon/Manual/3850/1/POLOR";
+				dataGridView2["2", 37].Value = "dawoon/Manual/3850/1/POLOR";
+				dataGridView2["2", 38].Value = "dawoon/Manual/3850/0/POLOR";
+				dataGridView2["2", 39].Value = "dawoon/Manual/3850/0/POLOR";
+				dataGridView2.Columns[dataGridViewMessage.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+				dataGridView2.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+				dataGridView2.Columns[1].Width = 200;
+				dataGridView2.Columns[3].Width = 200;
+			}
+		  else if(radioButton2.Checked == true)
+			{
+				dataGridView2.Rows.Clear();
+				dataGridView2.Columns.Clear();
+				dataGridView2.ReadOnly = true;
+				dataGridView2.RowHeadersVisible = false;
+				dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+
+				dataGridView2.Columns.Add("0", "POS");
+				dataGridView2.Columns.Add("1", "DESC");
+				dataGridView2.Columns.Add("2", "현재값");
+				dataGridView2.Columns.Add("3", "텐덤/해링본");
+				dataGridView2.Columns.Add("4", "버튼");
+
+				for (int i = 0; i < 40; i++)
+				{
+					dataGridView2.Rows.Add();
+					dataGridView2["0", i].Value = i + 1;
+					dataGridView2["1", i].Value = "맥동분당횟수(20~80)";
+
+					dataGridView2["3", i].Value = "텐덤";
+					dataGridView2["4", i] = new DataGridViewButtonCell();
+				}
+				dataGridView2["2", 0].Value = "dawoon/Manual/3863/3/TENDOM";
+				dataGridView2["2", 1].Value = "dawoon/Manual/3863/172/TENDOM";
+				dataGridView2["2", 2].Value = "dawoon/Manual/3863/30/TENDOM";
+				dataGridView2["2", 3].Value = "dawoon/Manual/3863/1/TENDOM";
+				dataGridView2["2", 4].Value = "dawoon/Manual/3863/25/TENDOM";
+				dataGridView2["2", 5].Value = "dawoon/Manual/3863/172/TENDOM";
+				dataGridView2["2", 6].Value = "dawoon/Manual/3863/30/TENDOM";
+				dataGridView2["2", 7].Value = "dawoon/Manual/3863/1/TENDOM";
+				dataGridView2["2", 8].Value = "dawoon/Manual/3863/25/TENDOM";
+				dataGridView2["2", 9].Value = "dawoon/Manual/3863/6/TENDOM";
+				dataGridView2["2", 10].Value = "dawoon/Manual/3863/0/TENDOM";
+				dataGridView2["2", 11].Value = "dawoon/Manual/3863/0/TENDOM";
+				dataGridView2["2", 12].Value = "dawoon/Manual/3863/60/TENDOM";
+				dataGridView2["2", 13].Value = "dawoon/Manual/3863/103/TENDOM";
+				dataGridView2["2", 14].Value = "dawoon/Manual/3863/60/TENDOM";
+				dataGridView2["2", 15].Value = "dawoon/Manual/3863/126/TENDOM";
+				dataGridView2["2", 16].Value = "dawoon/Manual/3863/23/TENDOM";
+				dataGridView2["2", 17].Value = "dawoon/Manual/3863/1/TENDOM";
+				dataGridView2["2", 18].Value = "dawoon/Manual/3863/0/TENDOM";
+				dataGridView2["2", 19].Value = "dawoon/Manual/3863/1/TENDOM";
+				dataGridView2["2", 20].Value = "dawoon/Manual/3863/3863/TENDOM";
+				dataGridView2["2", 21].Value = "dawoon/Manual/3863/1/TENDOM";
+				dataGridView2["2", 22].Value = "dawoon/Manual/3863/0/TENDOM";
+				dataGridView2["2", 23].Value = "dawoon/Manual/3863/0/TENDOM";
+				dataGridView2["2", 24].Value = "dawoon/Manual/3863/0/TENDOM";
+				dataGridView2["2", 25].Value = "dawoon/Manual/3863/1/TENDOM";
+				dataGridView2["2", 26].Value = "dawoon/Manual/3863/1/TENDOM";
+				dataGridView2["2", 27].Value = "dawoon/Manual/3863/2000/TENDOM";
+				dataGridView2["2", 28].Value = "dawoon/Manual/3863/0/TENDOM";
+				dataGridView2["2", 29].Value = "dawoon/Manual/3863/30000/TENDOM";
+				dataGridView2["2", 30].Value = "dawoon/Manual/3863/3/TENDOM";
+				dataGridView2["2", 31].Value = "dawoon/Manual/3863/50/TENDOM";
+				dataGridView2["2", 32].Value = "dawoon/Manual/3863/1/TENDOM";
+				dataGridView2["2", 33].Value = "dawoon/Manual/3863/1/TENDOM";
+				dataGridView2["2", 34].Value = "dawoon/Manual/3863/3000/TENDOM";
+				dataGridView2["2", 35].Value = "dawoon/Manual/3863/20000/TENDOM";
+				dataGridView2["2", 36].Value = "dawoon/Manual/3863/1/TENDOM";
+				dataGridView2["2", 37].Value = "dawoon/Manual/3863/0/TENDOM";
+				dataGridView2["2", 38].Value = "dawoon/Manual/3863/0/TENDOM";
+				dataGridView2["2", 39].Value = "dawoon/Manual/3863/0/TENDOM";
+
+
+
+				dataGridView2.Columns[dataGridViewMessage.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+				dataGridView2.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+				dataGridView2.Columns[1].Width = 200;
+				dataGridView2.Columns[3].Width = 200;
+			}
 		}
-
-		private void label12_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void label14_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void label24_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void label26_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void label28_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void label30_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void label32_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void label34_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		
-
-		
-
-		private void panel4_Paint(object sender, PaintEventArgs e)
-		{
-
-		}
-
-		private void label5_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void label4_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void comboBoxQos_SelectedIndexChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void label1_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void label3_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void label6_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void checkBox2_CheckedChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void textBoxSubTopic_TextChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void checkBoxRetain_CheckedChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void textBoxPort_TextChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void label2_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void textBoxHost_TextChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void dataGridViewMessage_CellContentClick(object sender, DataGridViewCellEventArgs e)
-		{
-
-		}
-
-		private void panel3_Paint(object sender, PaintEventArgs e)
-		{
-
-		}
-
-		private void button3_Click(object sender, EventArgs e)
-		{
-	
-		}
-
-
 	}
 
 	//Put this class at the end of the main class or you will have problems.
