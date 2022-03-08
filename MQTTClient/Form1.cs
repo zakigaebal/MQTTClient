@@ -418,7 +418,8 @@ namespace MQTTClient
 			//	dt.Rows.Add(DateTime.Now.ToString("HH:mm:ss:fff "), myStr1, myStr2 + Environment.NewLine);
 				dataGridViewMessage.CurrentCell = dataGridViewMessage.Rows[0].Cells[0];
 				dataGridViewMessage.DataSource = dt;
-					//	logSave();
+					//logSave();
+					logSave2(myStr1, myStr2);
 					dataGridViewMessage.ResumeLayout();
 
 			}
@@ -426,6 +427,11 @@ namespace MQTTClient
 			{
 				MessageBox.Show(ex.ToString());
 			}
+		}
+
+		private void logSave2(string myStr1, string myStr2)
+		{
+			
 		}
 
 		private void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs data)
