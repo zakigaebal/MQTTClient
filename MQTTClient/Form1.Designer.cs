@@ -137,7 +137,6 @@
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.radioButton2 = new System.Windows.Forms.RadioButton();
 			this.radioButton1 = new System.Windows.Forms.RadioButton();
-			this.button2 = new System.Windows.Forms.Button();
 			this.buttonMeter = new System.Windows.Forms.Button();
 			this.dataGridView2 = new System.Windows.Forms.DataGridView();
 			this.button3 = new System.Windows.Forms.Button();
@@ -1349,7 +1348,6 @@
 			this.tabPage2.Controls.Add(this.radioButton2);
 			this.tabPage2.Controls.Add(this.radioButton1);
 			this.tabPage2.Controls.Add(this.button3);
-			this.tabPage2.Controls.Add(this.button2);
 			this.tabPage2.Controls.Add(this.buttonMeter);
 			this.tabPage2.Controls.Add(this.dataGridView2);
 			this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -1382,16 +1380,6 @@
 			this.radioButton1.Text = "헤링본(herringbone)";
 			this.radioButton1.UseVisualStyleBackColor = true;
 			// 
-			// button2
-			// 
-			this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.button2.Location = new System.Drawing.Point(926, 67);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(81, 43);
-			this.button2.TabIndex = 1;
-			this.button2.Text = "기본값적용";
-			this.button2.UseVisualStyleBackColor = true;
-			// 
 			// buttonMeter
 			// 
 			this.buttonMeter.Location = new System.Drawing.Point(6, 6);
@@ -1420,9 +1408,9 @@
 			// button3
 			// 
 			this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.button3.Location = new System.Drawing.Point(1022, 67);
+			this.button3.Location = new System.Drawing.Point(957, 3);
 			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(66, 43);
+			this.button3.Size = new System.Drawing.Size(129, 96);
 			this.button3.TabIndex = 1;
 			this.button3.Text = "전체적용";
 			this.button3.UseVisualStyleBackColor = true;
@@ -1539,7 +1527,6 @@
 		private System.Windows.Forms.TabPage tabPage2;
 		private System.Windows.Forms.RadioButton radioButton2;
 		private System.Windows.Forms.RadioButton radioButton1;
-		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.Button buttonMeter;
 		private System.Windows.Forms.DataGridView dataGridView2;
 		private System.Windows.Forms.Panel panel2;
