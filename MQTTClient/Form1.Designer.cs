@@ -137,10 +137,11 @@
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.radioButton2 = new System.Windows.Forms.RadioButton();
 			this.radioButton1 = new System.Windows.Forms.RadioButton();
+			this.button3 = new System.Windows.Forms.Button();
 			this.buttonMeter = new System.Windows.Forms.Button();
 			this.dataGridView2 = new System.Windows.Forms.DataGridView();
-			this.button3 = new System.Windows.Forms.Button();
 			this.dataGridViewMessage = new System.Windows.Forms.DataGridView();
+			this.MessageTextBox = new System.Windows.Forms.TextBox();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.panel1.SuspendLayout();
@@ -227,7 +228,7 @@
 			this.textBoxBlack.Location = new System.Drawing.Point(266, 316);
 			this.textBoxBlack.Name = "textBoxBlack";
 			this.textBoxBlack.Size = new System.Drawing.Size(164, 25);
-			this.textBoxBlack.TabIndex = 6;
+			this.textBoxBlack.TabIndex = 11;
 			// 
 			// textBoxBlue
 			// 
@@ -238,7 +239,7 @@
 			this.textBoxBlue.Location = new System.Drawing.Point(266, 285);
 			this.textBoxBlue.Name = "textBoxBlue";
 			this.textBoxBlue.Size = new System.Drawing.Size(164, 25);
-			this.textBoxBlue.TabIndex = 6;
+			this.textBoxBlue.TabIndex = 10;
 			// 
 			// label38
 			// 
@@ -262,7 +263,7 @@
 			this.textBoxOrange.Location = new System.Drawing.Point(266, 254);
 			this.textBoxOrange.Name = "textBoxOrange";
 			this.textBoxOrange.Size = new System.Drawing.Size(164, 25);
-			this.textBoxOrange.TabIndex = 6;
+			this.textBoxOrange.TabIndex = 8;
 			// 
 			// label37
 			// 
@@ -286,7 +287,7 @@
 			this.textBoxPink.Location = new System.Drawing.Point(266, 223);
 			this.textBoxPink.Name = "textBoxPink";
 			this.textBoxPink.Size = new System.Drawing.Size(164, 25);
-			this.textBoxPink.TabIndex = 6;
+			this.textBoxPink.TabIndex = 7;
 			// 
 			// label36
 			// 
@@ -860,7 +861,7 @@
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(39, 20);
 			this.label7.TabIndex = 0;
-			this.label7.Text = "pub:";
+			this.label7.Text = "Pub:";
 			// 
 			// buttonPublish2
 			// 
@@ -952,7 +953,7 @@
 			this.label9.Name = "label9";
 			this.label9.Size = new System.Drawing.Size(39, 20);
 			this.label9.TabIndex = 0;
-			this.label9.Text = "pub:";
+			this.label9.Text = "Pub:";
 			// 
 			// buttonPublish3
 			// 
@@ -1013,7 +1014,7 @@
 			this.label11.Name = "label11";
 			this.label11.Size = new System.Drawing.Size(39, 20);
 			this.label11.TabIndex = 0;
-			this.label11.Text = "pub:";
+			this.label11.Text = "Pub:";
 			// 
 			// label12
 			// 
@@ -1145,7 +1146,7 @@
 			this.label33.Name = "label33";
 			this.label33.Size = new System.Drawing.Size(39, 20);
 			this.label33.TabIndex = 0;
-			this.label33.Text = "pub:";
+			this.label33.Text = "Pub:";
 			// 
 			// label31
 			// 
@@ -1155,7 +1156,7 @@
 			this.label31.Name = "label31";
 			this.label31.Size = new System.Drawing.Size(39, 20);
 			this.label31.TabIndex = 0;
-			this.label31.Text = "pub:";
+			this.label31.Text = "Pub:";
 			// 
 			// label29
 			// 
@@ -1165,7 +1166,7 @@
 			this.label29.Name = "label29";
 			this.label29.Size = new System.Drawing.Size(39, 20);
 			this.label29.TabIndex = 0;
-			this.label29.Text = "pub:";
+			this.label29.Text = "Pub:";
 			// 
 			// label27
 			// 
@@ -1175,7 +1176,7 @@
 			this.label27.Name = "label27";
 			this.label27.Size = new System.Drawing.Size(39, 20);
 			this.label27.TabIndex = 0;
-			this.label27.Text = "pub:";
+			this.label27.Text = "Pub:";
 			// 
 			// label25
 			// 
@@ -1185,7 +1186,7 @@
 			this.label25.Name = "label25";
 			this.label25.Size = new System.Drawing.Size(39, 20);
 			this.label25.TabIndex = 0;
-			this.label25.Text = "pub:";
+			this.label25.Text = "Pub:";
 			// 
 			// label23
 			// 
@@ -1195,7 +1196,7 @@
 			this.label23.Name = "label23";
 			this.label23.Size = new System.Drawing.Size(39, 20);
 			this.label23.TabIndex = 0;
-			this.label23.Text = "pub:";
+			this.label23.Text = "Pub:";
 			// 
 			// label13
 			// 
@@ -1205,7 +1206,7 @@
 			this.label13.Name = "label13";
 			this.label13.Size = new System.Drawing.Size(39, 20);
 			this.label13.TabIndex = 0;
-			this.label13.Text = "pub:";
+			this.label13.Text = "Pub:";
 			// 
 			// textBoxPT10
 			// 
@@ -1380,6 +1381,16 @@
 			this.radioButton1.Text = "헤링본(herringbone)";
 			this.radioButton1.UseVisualStyleBackColor = true;
 			// 
+			// button3
+			// 
+			this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.button3.Location = new System.Drawing.Point(957, 3);
+			this.button3.Name = "button3";
+			this.button3.Size = new System.Drawing.Size(129, 96);
+			this.button3.TabIndex = 1;
+			this.button3.Text = "전체적용";
+			this.button3.UseVisualStyleBackColor = true;
+			// 
 			// buttonMeter
 			// 
 			this.buttonMeter.Location = new System.Drawing.Point(6, 6);
@@ -1405,28 +1416,31 @@
 			this.dataGridView2.Size = new System.Drawing.Size(1078, 319);
 			this.dataGridView2.TabIndex = 0;
 			// 
-			// button3
-			// 
-			this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.button3.Location = new System.Drawing.Point(957, 3);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(129, 96);
-			this.button3.TabIndex = 1;
-			this.button3.Text = "전체적용";
-			this.button3.UseVisualStyleBackColor = true;
-			// 
 			// dataGridViewMessage
 			// 
 			this.dataGridViewMessage.AllowUserToAddRows = false;
 			this.dataGridViewMessage.AllowUserToDeleteRows = false;
 			this.dataGridViewMessage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridViewMessage.Dock = System.Windows.Forms.DockStyle.Top;
+			this.dataGridViewMessage.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dataGridViewMessage.Location = new System.Drawing.Point(0, 470);
 			this.dataGridViewMessage.Name = "dataGridViewMessage";
 			this.dataGridViewMessage.ReadOnly = true;
 			this.dataGridViewMessage.RowTemplate.Height = 23;
-			this.dataGridViewMessage.Size = new System.Drawing.Size(1102, 686);
+			this.dataGridViewMessage.Size = new System.Drawing.Size(1102, 208);
 			this.dataGridViewMessage.TabIndex = 10;
+			// 
+			// MessageTextBox
+			// 
+			this.MessageTextBox.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.MessageTextBox.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+			this.MessageTextBox.Location = new System.Drawing.Point(0, 678);
+			this.MessageTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+			this.MessageTextBox.Multiline = true;
+			this.MessageTextBox.Name = "MessageTextBox";
+			this.MessageTextBox.ReadOnly = true;
+			this.MessageTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+			this.MessageTextBox.Size = new System.Drawing.Size(1102, 40);
+			this.MessageTextBox.TabIndex = 12;
 			// 
 			// Form1
 			// 
@@ -1434,6 +1448,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1102, 718);
 			this.Controls.Add(this.dataGridViewMessage);
+			this.Controls.Add(this.MessageTextBox);
 			this.Controls.Add(this.tabControl1);
 			this.Name = "Form1";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1456,6 +1471,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewMessage)).EndInit();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
@@ -1522,7 +1538,6 @@
 		private System.Windows.Forms.Label label15;
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Button buttonClear;
-		private System.Windows.Forms.ListBox listBoxSub;
 		private System.Windows.Forms.CheckBox checkBoxTopicpub;
 		private System.Windows.Forms.TabPage tabPage2;
 		private System.Windows.Forms.RadioButton radioButton2;
@@ -1574,6 +1589,8 @@
 		private System.Windows.Forms.Label label35;
 		private System.Windows.Forms.Button button3;
 		private System.Windows.Forms.DataGridView dataGridViewMessage;
+		private System.Windows.Forms.TextBox MessageTextBox;
+		public System.Windows.Forms.ListBox listBoxSub;
 	}
 }
 
