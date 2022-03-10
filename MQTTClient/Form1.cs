@@ -396,12 +396,13 @@ namespace MQTTClient
 
 			using (StreamWriter Write = new StreamWriter(@"" + currentPath + "\\Log\\" + "log-MQTT-" + DateTime.Now.ToString("yyyy-MM-dd") + ".log", true))
 			{
-					
+
 
 					foreach (string line in lines)
 					{
 						Write.WriteLine(line);
 					}
+			
 					if (checkBoxTopicLog.Checked == true)
 				{
 					if(topic.Contains("�") == true)
@@ -412,10 +413,13 @@ namespace MQTTClient
 						{ 
 					using (StreamWriter Write2 = new StreamWriter(@"" + currentPath + "\\Log\\" + topic.Replace("/", "") + DateTime.Now.ToString("_yyyyMMdd") + ".log", true))
 					{
-						foreach (string line in lines)
+							
+								foreach (string line in lines)
 						{
 							Write2.WriteLine(line);
+									
 						}
+					
 					}
 						}
 					}
@@ -705,125 +709,277 @@ namespace MQTTClient
 			}
 		}
 
-		private void dataGridViewMessage_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+		private void cell1(object sender, DataGridViewCellFormattingEventArgs e)
 		{
+			if (e.ColumnIndex == 1)
 			{
-				// 특정값을 가진 열을 좀 다르게 보여주고 싶을 때
-				if (e.ColumnIndex == 2)
+				if (e.Value != null)
 				{
-					if (e.Value != null)
+					string text = e.Value.ToString();
+					if (text.Contains(textBoxRed.Text))
 					{
-						string text = e.Value.ToString();
-						if (text.Contains(textBoxRed.Text))
-						{
-							if (textBoxRed.Text == "")
-							{
-								return;
-							}
-							else
-								// if(text.Contains(",") == false)
-								e.CellStyle.BackColor = Color.Red;
 
-						}
-						if (text.Contains(textBoxGreen.Text))
+
+
+						if (textBoxRed.Text == "")
 						{
-							if (textBoxGreen.Text == "")
-							{
-								return;
-							}
-							else
-								e.CellStyle.BackColor = Color.Green;
-							  e.CellStyle.ForeColor = Color.White;
+							return;
 						}
-						if (text.Contains(textBoxYellow.Text))
+						else
+							// if(text.Contains(",") == false)
+							e.CellStyle.BackColor = Color.Red;
+
+					}
+
+
+
+
+
+
+
+					if (text.Contains(textBoxGreen.Text))
+					{
+						if (textBoxGreen.Text == "")
 						{
-							if (textBoxYellow.Text == "")
-							{
-								return;
-							}
-							else
-								e.CellStyle.BackColor = Color.Yellow;
+							return;
 						}
-						if (text.Contains(textBoxGray.Text))
+						else
+							e.CellStyle.BackColor = Color.Green;
+						e.CellStyle.ForeColor = Color.White;
+					}
+					if (text.Contains(textBoxYellow.Text))
+					{
+						if (textBoxYellow.Text == "")
 						{
-							if (textBoxGray.Text == "")
-							{
-								return;
-							}
-							else
-								e.CellStyle.BackColor = Color.Gray;
+							return;
 						}
-						if (text.Contains(textBoxNavy.Text))
+						else
+							e.CellStyle.BackColor = Color.Yellow;
+					}
+					if (text.Contains(textBoxGray.Text))
+					{
+						if (textBoxGray.Text == "")
 						{
-							if (textBoxNavy.Text == "")
-							{
-								return;
-							}
-							else
-								e.CellStyle.BackColor = Color.Navy;
-							e.CellStyle.ForeColor = Color.White;
+							return;
 						}
-						if (text.Contains(textBoxPurple.Text))
+						else
+							e.CellStyle.BackColor = Color.Gray;
+					}
+					if (text.Contains(textBoxNavy.Text))
+					{
+						if (textBoxNavy.Text == "")
 						{
-							if (textBoxPurple.Text == "")
-							{
-								return;
-							}
-							else
-								e.CellStyle.BackColor = Color.Purple;
-							e.CellStyle.ForeColor = Color.White;
+							return;
 						}
-						if (text.Contains(textBoxLime.Text))
+						else
+							e.CellStyle.BackColor = Color.Navy;
+						e.CellStyle.ForeColor = Color.White;
+					}
+					if (text.Contains(textBoxPurple.Text))
+					{
+						if (textBoxPurple.Text == "")
 						{
-							if (textBoxLime.Text == "")
-							{
-								return;
-							}
-							else
-								e.CellStyle.BackColor = Color.Lime;
+							return;
 						}
-						if (text.Contains(textBoxPink.Text))
+						else
+							e.CellStyle.BackColor = Color.Purple;
+						e.CellStyle.ForeColor = Color.White;
+					}
+					if (text.Contains(textBoxLime.Text))
+					{
+						if (textBoxLime.Text == "")
 						{
-							if (textBoxPink.Text == "")
-							{
-								return;
-							}
-							else
-								e.CellStyle.BackColor = Color.Pink;
+							return;
 						}
-						if (text.Contains(textBoxOrange.Text))
+						else
+							e.CellStyle.BackColor = Color.Lime;
+					}
+					if (text.Contains(textBoxPink.Text))
+					{
+						if (textBoxPink.Text == "")
 						{
-							if (textBoxOrange.Text == "")
-							{
-								return;
-							}
-							else
-								e.CellStyle.BackColor = Color.Orange;
+							return;
 						}
-						if (text.Contains(textBoxBlue.Text))
+						else
+							e.CellStyle.BackColor = Color.Pink;
+					}
+					if (text.Contains(textBoxOrange.Text))
+					{
+						if (textBoxOrange.Text == "")
 						{
-							if (textBoxBlue.Text == "")
-							{
-								return;
-							}
-							else
-								e.CellStyle.BackColor = Color.Blue;
-							e.CellStyle.ForeColor = Color.White;
+							return;
 						}
-						if (text.Contains(textBoxBlack.Text))
+						else
+							e.CellStyle.BackColor = Color.Orange;
+					}
+					if (text.Contains(textBoxBlue.Text))
+					{
+						if (textBoxBlue.Text == "")
 						{
-							if (textBoxBlack.Text == "")
-							{
-								return;
-							}
-							else
-								e.CellStyle.BackColor = Color.Black;
-							e.CellStyle.ForeColor = Color.White;
+							return;
 						}
+						else
+							e.CellStyle.BackColor = Color.Blue;
+						e.CellStyle.ForeColor = Color.White;
+					}
+					if (text.Contains(textBoxBlack.Text))
+					{
+						if (textBoxBlack.Text == "")
+						{
+							return;
+						}
+						else
+							e.CellStyle.BackColor = Color.Black;
+						e.CellStyle.ForeColor = Color.White;
 					}
 				}
 			}
 		}
+
+		private void cell2(object sender, DataGridViewCellFormattingEventArgs e)
+		{
+			if (e.ColumnIndex == 2)
+			{
+				if (e.Value != null)
+				{
+					string text = e.Value.ToString();
+					if (text.Contains(textBoxRed.Text))
+					{
+
+
+
+						if (textBoxRed.Text == "")
+						{
+							return;
+						}
+						else
+							// if(text.Contains(",") == false)
+							e.CellStyle.BackColor = Color.Red;
+
+					}
+
+
+
+
+
+
+
+					if (text.Contains(textBoxGreen.Text))
+					{
+						if (textBoxGreen.Text == "")
+						{
+							return;
+						}
+						else
+							e.CellStyle.BackColor = Color.Green;
+						e.CellStyle.ForeColor = Color.White;
+					}
+					if (text.Contains(textBoxYellow.Text))
+					{
+						if (textBoxYellow.Text == "")
+						{
+							return;
+						}
+						else
+							e.CellStyle.BackColor = Color.Yellow;
+					}
+					if (text.Contains(textBoxGray.Text))
+					{
+						if (textBoxGray.Text == "")
+						{
+							return;
+						}
+						else
+							e.CellStyle.BackColor = Color.Gray;
+					}
+					if (text.Contains(textBoxNavy.Text))
+					{
+						if (textBoxNavy.Text == "")
+						{
+							return;
+						}
+						else
+							e.CellStyle.BackColor = Color.Navy;
+						e.CellStyle.ForeColor = Color.White;
+					}
+					if (text.Contains(textBoxPurple.Text))
+					{
+						if (textBoxPurple.Text == "")
+						{
+							return;
+						}
+						else
+							e.CellStyle.BackColor = Color.Purple;
+						e.CellStyle.ForeColor = Color.White;
+					}
+					if (text.Contains(textBoxLime.Text))
+					{
+						if (textBoxLime.Text == "")
+						{
+							return;
+						}
+						else
+							e.CellStyle.BackColor = Color.Lime;
+					}
+					if (text.Contains(textBoxPink.Text))
+					{
+						if (textBoxPink.Text == "")
+						{
+							return;
+						}
+						else
+							e.CellStyle.BackColor = Color.Pink;
+					}
+					if (text.Contains(textBoxOrange.Text))
+					{
+						if (textBoxOrange.Text == "")
+						{
+							return;
+						}
+						else
+							e.CellStyle.BackColor = Color.Orange;
+					}
+					if (text.Contains(textBoxBlue.Text))
+					{
+						if (textBoxBlue.Text == "")
+						{
+							return;
+						}
+						else
+							e.CellStyle.BackColor = Color.Blue;
+						e.CellStyle.ForeColor = Color.White;
+					}
+					if (text.Contains(textBoxBlack.Text))
+					{
+						if (textBoxBlack.Text == "")
+						{
+							return;
+						}
+						else
+							e.CellStyle.BackColor = Color.Black;
+						e.CellStyle.ForeColor = Color.White;
+					}
+				}
+			}
+		}
+
+
+		private void dataGridViewMessage_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+		{
+			{
+				// 특정값을 가진 열을 좀 다르게 보여주고 싶을 때
+				if (textBoxRed.Text.Contains(",")==true)
+				{
+					cell1(sender, e);
+					cell2(sender, e);
+				}
+				else
+				cell2(sender,e);
+			
+			}
+		}
+
+	
 
 		/// <summary>
 
