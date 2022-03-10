@@ -48,6 +48,8 @@ namespace MQTTClient
 
 			iniload();
 
+			this.dataGridViewMessage.ClipboardCopyMode =DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+
 			dataGridView2.Columns.Clear();
 			dataGridView2.ReadOnly = true;
 			dataGridView2.RowHeadersVisible = false;
@@ -334,51 +336,7 @@ namespace MQTTClient
 			}
 		}
 
-		private void logSave()
-		{
-			//폴더 있는지 확인하고 생성하기
-			if (!Directory.Exists("Log"))
-			{
-				System.IO.Directory.CreateDirectory("Log");
-			}
-			string currentPath = System.IO.Directory.GetCurrentDirectory();
-			//This line of code creates a text file for the data export.
-			System.IO.StreamWriter file = new System.IO.StreamWriter(@"" + currentPath + "\\Log\\" + "log-MQTT-" + DateTime.Now.ToString("yyyy-MM-dd") + ".txt");
-
-			try
-			{
-				string Line = "";
-				for (int r = 0; r <= dataGridViewMessage.Rows.Count - 1; r++)
-				{
-
-					// 한 라인씩 읽기
-					//IEnumerable<string> lines = File.ReadAllLines(@"" + currentPath + "\\Log\\" + DateTime.Now.ToString("yyyy-MM-dd") + ".txt");
-					//foreach (string line in lines)
-					//{
-				    	
-				//	}
-
-					for (int c = 0; c <= dataGridViewMessage.Columns.Count - 1; c++)
-					{
-						Line = Line + dataGridViewMessage.Rows[r].Cells[c].Value;
-						if (c != dataGridViewMessage.Columns.Count - 1)
-						{
-							Line = Line + "";
-						}
-						file.Write(Line);
-					}
-
-				}
-					file.Close();
-			}
-			catch (System.Exception err)
-			{
-				System.Windows.Forms.MessageBox.Show(err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				file.Close();
-			}
-		}
-
-
+	
 		private void buttonSubscribe2_Click(object sender, EventArgs e)
 		{
 			if (textBoxSubTopic.Text.Length == 0)
@@ -400,13 +358,13 @@ namespace MQTTClient
 			}
 		}
 
-		private void ShowMessage(string myStr1, string myStr2, DataGridView dgv)
+		private void ShowMessage(string topic, string payload, DataGridView dgv)
 		{
 			try { 
 			if (this.InvokeRequired)
 			{
 				ShowCallBack myUpdate = new ShowCallBack(ShowMessage);
-				this.Invoke(myUpdate, myStr1, myStr2, dgv);
+				this.Invoke(myUpdate, topic, payload, dgv);
 			}
 			else
 			{
@@ -414,12 +372,11 @@ namespace MQTTClient
 					//dt.Rows.Add(DateTime.Now.ToString("HH:mm:ss:fff") + " - [MQTT] " + myStr1 + " - " + myStr2 + Environment.NewLine);
 					//dgv.Rows.Add(myStr + Environment.NewLine);
 					//	dataGridViewMessage.Rows.Add(DateTime.Now.ToString("HH:mm:ss:fff"), myStr1 + Environment.NewLine, myStr2 + Environment.NewLine);
-					dt.Rows.Add(DateTime.Now.ToString("HH:mm:ss:fff"), myStr1 + Environment.NewLine, myStr2 + Environment.NewLine);
+					dt.Rows.Add(DateTime.Now.ToString("HH:mm:ss:fff"), topic + Environment.NewLine, payload + Environment.NewLine);
 			//	dt.Rows.Add(DateTime.Now.ToString("HH:mm:ss:fff "), myStr1, myStr2 + Environment.NewLine);
 				dataGridViewMessage.CurrentCell = dataGridViewMessage.Rows[0].Cells[0];
 				dataGridViewMessage.DataSource = dt;
-					//logSave();
-					logSave2(myStr1, myStr2);
+					logSave2(topic, payload);
 					dataGridViewMessage.ResumeLayout();
 
 			}
@@ -429,11 +386,47 @@ namespace MQTTClient
 			}
 		}
 
-		private void logSave2(string myStr1, string myStr2)
+		private void logSave2(string topic, string payload)
 		{
+			try { 
 			
-		}
+				string data = System.IO.Directory.GetCurrentDirectory();
+				string currentPath = System.IO.Directory.GetCurrentDirectory();
+			string[] lines = {DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss:fff - ") + topic + " - " + payload};
 
+			using (StreamWriter Write = new StreamWriter(@"" + currentPath + "\\Log\\" + "log-MQTT-" + DateTime.Now.ToString("yyyy-MM-dd") + ".log", true))
+			{
+					
+
+					foreach (string line in lines)
+					{
+						Write.WriteLine(line);
+					}
+					if (checkBoxTopicLog.Checked == true)
+				{
+					if(topic.Contains("�") == true)
+						{
+							return;
+						}
+					else
+						{ 
+					using (StreamWriter Write2 = new StreamWriter(@"" + currentPath + "\\Log\\" + topic.Replace("/", "") + DateTime.Now.ToString("_yyyyMMdd") + ".log", true))
+					{
+						foreach (string line in lines)
+						{
+							Write2.WriteLine(line);
+						}
+					}
+						}
+					}
+			}
+			}
+			catch (Exception ex)
+			{
+				
+			}
+		}
+		//�
 		private void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs data)
 		{
 			ShowMessage(data.Topic, System.Text.Encoding.UTF8.GetString(data.Message), dataGridViewMessage);
@@ -975,20 +968,20 @@ namespace MQTTClient
 
 		private void buttonMeter_Click(object sender, EventArgs e)
 		{
+		
+
+					string topic = "dawoon/Manual/" + textBoxCode.Text.Trim() + "/1/POLOR";
+
 			try
 			{
-					string topic = "dawoon/Manual/"+ textBoxCode.Text.Trim() + "/1/POLOR";
-
 
 
 				for (int i = 1; i < 41; i++)
 				{
 					
+			
 
 					string message = "{" + "\"CMD\"" + ":" + "\"REQ_MAIN_SET_READ\"" + "," + "\"POS\"" + ":"+ i + "}";
-
-
-				
 				  clientUser.Publish(topic, Encoding.UTF8.GetBytes(message), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 				  Delay(3000);
 
@@ -1000,6 +993,16 @@ namespace MQTTClient
 			catch (Exception ex)
 			{
 				MessageBox.Show(ex.Message);
+
+
+				//if (radioButton1.Checked == true)
+				//{
+				//	string topic = "dawoon/Manual/" + textBoxCode.Text.Trim() + "/1/POLOR";
+				//}
+				//else if (radioButton2.Checked == true)
+				//{
+				//	string topic = "dawoon/Manual/" + textBoxCode.Text.Trim() + "/1/TENDOM";
+				//}
 			}
 
 
@@ -1125,6 +1128,11 @@ namespace MQTTClient
 				//dataGridView2.Columns[3].Width = 200;
 				//dataGridView2.Columns[2].Width = 2000;
 			}
+		}
+
+		private void checkBoxTopicLog_CheckedChanged(object sender, EventArgs e)
+		{
+		
 		}
 	}
 

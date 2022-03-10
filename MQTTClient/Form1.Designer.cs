@@ -68,7 +68,7 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
 			this.buttonSubscribe = new System.Windows.Forms.Button();
-			this.checkBox2 = new System.Windows.Forms.CheckBox();
+			this.checkBoxTopicLog = new System.Windows.Forms.CheckBox();
 			this.textBoxSubTopic = new System.Windows.Forms.TextBox();
 			this.buttonDisconnect = new System.Windows.Forms.Button();
 			this.textBoxHost = new System.Windows.Forms.TextBox();
@@ -135,14 +135,14 @@
 			this.textBoxM1 = new System.Windows.Forms.TextBox();
 			this.textBoxM2 = new System.Windows.Forms.TextBox();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.label39 = new System.Windows.Forms.Label();
+			this.textBoxCode = new System.Windows.Forms.TextBox();
 			this.radioButton2 = new System.Windows.Forms.RadioButton();
 			this.radioButton1 = new System.Windows.Forms.RadioButton();
 			this.button3 = new System.Windows.Forms.Button();
 			this.buttonMeter = new System.Windows.Forms.Button();
 			this.dataGridView2 = new System.Windows.Forms.DataGridView();
 			this.dataGridViewMessage = new System.Windows.Forms.DataGridView();
-			this.textBoxCode = new System.Windows.Forms.TextBox();
-			this.label39 = new System.Windows.Forms.Label();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.panel1.SuspendLayout();
@@ -600,7 +600,7 @@
 			this.panel6.Controls.Add(this.label1);
 			this.panel6.Controls.Add(this.label6);
 			this.panel6.Controls.Add(this.buttonSubscribe);
-			this.panel6.Controls.Add(this.checkBox2);
+			this.panel6.Controls.Add(this.checkBoxTopicLog);
 			this.panel6.Controls.Add(this.textBoxSubTopic);
 			this.panel6.Controls.Add(this.buttonDisconnect);
 			this.panel6.Controls.Add(this.textBoxHost);
@@ -652,15 +652,16 @@
 			this.buttonSubscribe.UseVisualStyleBackColor = true;
 			this.buttonSubscribe.Click += new System.EventHandler(this.buttonSubscribe_Click);
 			// 
-			// checkBox2
+			// checkBoxTopicLog
 			// 
-			this.checkBox2.AutoSize = true;
-			this.checkBox2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.checkBox2.Location = new System.Drawing.Point(628, 101);
-			this.checkBox2.Name = "checkBox2";
-			this.checkBox2.Size = new System.Drawing.Size(15, 14);
-			this.checkBox2.TabIndex = 5;
-			this.checkBox2.UseVisualStyleBackColor = true;
+			this.checkBoxTopicLog.AutoSize = true;
+			this.checkBoxTopicLog.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.checkBoxTopicLog.Location = new System.Drawing.Point(628, 101);
+			this.checkBoxTopicLog.Name = "checkBoxTopicLog";
+			this.checkBoxTopicLog.Size = new System.Drawing.Size(15, 14);
+			this.checkBoxTopicLog.TabIndex = 5;
+			this.checkBoxTopicLog.UseVisualStyleBackColor = true;
+			this.checkBoxTopicLog.CheckedChanged += new System.EventHandler(this.checkBoxTopicLog_CheckedChanged);
 			// 
 			// textBoxSubTopic
 			// 
@@ -1362,6 +1363,23 @@
 			this.tabPage2.Text = "수동착유";
 			this.tabPage2.UseVisualStyleBackColor = true;
 			// 
+			// label39
+			// 
+			this.label39.AutoSize = true;
+			this.label39.Location = new System.Drawing.Point(362, 8);
+			this.label39.Name = "label39";
+			this.label39.Size = new System.Drawing.Size(53, 12);
+			this.label39.TabIndex = 4;
+			this.label39.Text = "목장코드";
+			// 
+			// textBoxCode
+			// 
+			this.textBoxCode.Location = new System.Drawing.Point(421, 5);
+			this.textBoxCode.Name = "textBoxCode";
+			this.textBoxCode.Size = new System.Drawing.Size(100, 21);
+			this.textBoxCode.TabIndex = 3;
+			this.textBoxCode.Text = "3850";
+			// 
 			// radioButton2
 			// 
 			this.radioButton2.AutoSize = true;
@@ -1435,23 +1453,6 @@
 			this.dataGridViewMessage.TabIndex = 10;
 			this.dataGridViewMessage.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewMessage_CellFormatting);
 			// 
-			// textBoxCode
-			// 
-			this.textBoxCode.Location = new System.Drawing.Point(421, 5);
-			this.textBoxCode.Name = "textBoxCode";
-			this.textBoxCode.Size = new System.Drawing.Size(100, 21);
-			this.textBoxCode.TabIndex = 3;
-			this.textBoxCode.Text = "3850";
-			// 
-			// label39
-			// 
-			this.label39.AutoSize = true;
-			this.label39.Location = new System.Drawing.Point(362, 8);
-			this.label39.Name = "label39";
-			this.label39.Size = new System.Drawing.Size(53, 12);
-			this.label39.TabIndex = 4;
-			this.label39.Text = "목장코드";
-			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -1497,7 +1498,7 @@
 		private System.Windows.Forms.Button buttonTopicSave;
 		private System.Windows.Forms.Button buttonSubscribe2;
 		private System.Windows.Forms.Button buttonTopicOpen;
-		private System.Windows.Forms.CheckBox checkBox2;
+		private System.Windows.Forms.CheckBox checkBoxTopicLog;
 		private System.Windows.Forms.CheckBox checkBoxRetain;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.ComboBox comboBoxQos;
