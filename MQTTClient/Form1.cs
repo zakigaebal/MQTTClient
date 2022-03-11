@@ -499,21 +499,14 @@ namespace MQTTClient
 
 		private void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs data)
 		{
-			ShowMessage(data.Topic, System.Text.Encoding.UTF8.GetString(data.Message), dataGridViewMessage);
-			if (data.Topic.Contains("VALUE"))
+			//토픽이 헤링본일때
+			if (System.Text.Encoding.UTF8.GetString(data.Message).Contains("VALUE"))
 			{
-				try
-				{
-					dataGridView2["2", 1].Value = "1";
-				}
-				catch (Exception ex)
-				{
-					MessageBox.Show(ex.ToString());
-				}
+				// valu값을 포함하면 value값 가져오기
+				dataGridView2["2", 0].Value = System.Text.Encoding.UTF8.GetString(data.Message);
+			 //포스가 35번이면 35번에 채우기 할 예정
 			}
-			// 토픽이 valu값을 포함하면 value값 가져오기
-
-
+			ShowMessage(data.Topic, System.Text.Encoding.UTF8.GetString(data.Message), dataGridViewMessage);
 
 		}
 
