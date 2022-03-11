@@ -350,12 +350,76 @@ namespace MQTTClient
 
 					dataGridViewMessage.DataSource = dt;
 					logSave(topic, payload);
+					jsonSave(topic, payload);
+
 					dataGridViewMessage.ResumeLayout();
 
 				}
 			} catch (Exception ex)
 			{
 				MessageBox.Show(ex.ToString());
+			}
+		}
+
+		private void jsonSave(string topic, string payload)
+		{
+			try
+			{
+				//내 폴더 위치 불러오기
+				System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+				//폴더 있는지 확인하고 생성하기
+				if (!Directory.Exists("Json"))
+				{
+					System.IO.Directory.CreateDirectory("Json");
+				}
+
+
+				string currentPath = System.IO.Directory.GetCurrentDirectory();
+				string line =
+					"{\n"
+					+ "\"Date\":" + "\"" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss:fff") + "\","
+					+ Environment.NewLine
+					+ "\"Topic\": " + "\"" + topic + "\","
+					+ Environment.NewLine
+					+ "\"Payload\": " + payload
+					+ ","
+					+ Environment.NewLine
+					+ "\"QosLevel\": " + comboBoxQos.SelectedIndex.ToString() + ","
+					+ Environment.NewLine
+					+ "\"Retain\": " + checkBoxRetain.Checked.ToString().ToLower()
+					+ Environment.NewLine
+					+ "}";
+
+
+				string jsonName = @"" + currentPath + "\\Log\\" + "LogJson_" + DateTime.Now.ToString("yyyyMMdd") + ".json";
+				string topicjsonName = @"" + currentPath + "\\Log\\" + topic.Replace("/", "") + DateTime.Now.ToString("_yyyyMMdd") + ".json";
+
+			
+
+				if (checkBoxTopicLog.Checked == true)
+				{
+					if (topicjsonName.Contains("�") == true)
+					{
+						return;
+					}
+					else
+						using (FileStream topicfs = new FileStream(topicjsonName, FileMode.Append, FileAccess.Write))
+						using (StreamWriter Write2 = new StreamWriter(topicfs))
+						{
+							Write2.WriteLine(line);
+						}
+				}
+
+				using (FileStream fs = new FileStream(jsonName, FileMode.Append, FileAccess.Write))
+				using (StreamWriter Write = new StreamWriter(fs))
+				{
+					Write.WriteLine(line);
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
 			}
 		}
 
