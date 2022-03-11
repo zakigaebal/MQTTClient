@@ -309,6 +309,11 @@ namespace MQTTClient
 
 		private void buttonSubscribe2_Click(object sender, EventArgs e)
 		{
+			if (!listBoxSub.Items.Contains(textBoxSubTopic.Text))
+			{
+				this.listBoxSub.Items.Add(textBoxSubTopic.Text);
+			}
+
 			if (textBoxSubTopic.Text.Length == 0)
 			{
 				return;
@@ -317,9 +322,13 @@ namespace MQTTClient
 			{
 				try
 				{
-					clientUser.Subscribe(new string[] { listBoxSub.SelectedItem.ToString() }, new byte[] { (byte)comboBoxQos.SelectedIndex });
+					string result = ""; 
+					foreach (var item in listBoxSub.Items) 
+					{
+						//result += string.Format("{0} ", item); 
+					  clientUser.Subscribe(new string[] { item.ToString() }, new byte[] { (byte)comboBoxQos.SelectedIndex });
+					}	
 					dataGridViewMessage.DoubleBuffered(true);
-					dataGridViewMessage.SuspendLayout();
 				}
 				catch (Exception ex)
 				{
@@ -347,8 +356,22 @@ namespace MQTTClient
 
 					dataGridViewMessage.CurrentCell = null;
 					//dataGridViewMessage.ClearSelection();
-
 					dataGridViewMessage.DataSource = dt;
+					
+					//a
+					if (topic.Contains("VALUE"))
+					{
+						try
+						{
+								dataGridView2["2", 1].Value = "1";
+						}
+						catch (Exception ex)
+						{
+							MessageBox.Show(ex.ToString());
+						}
+					}
+					//as
+
 					logSave(topic, payload);
 					jsonSave(topic, payload);
 
@@ -477,6 +500,21 @@ namespace MQTTClient
 		private void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs data)
 		{
 			ShowMessage(data.Topic, System.Text.Encoding.UTF8.GetString(data.Message), dataGridViewMessage);
+			if (data.Topic.Contains("VALUE"))
+			{
+				try
+				{
+					dataGridView2["2", 1].Value = "1";
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show(ex.ToString());
+				}
+			}
+			// 토픽이 valu값을 포함하면 value값 가져오기
+
+
+
 		}
 
 		private void myUI(string myStr, TextBox ctl)
@@ -561,16 +599,27 @@ namespace MQTTClient
 				{
 					clientUser.Subscribe(new string[] { textBoxSubTopic.Text }, new byte[] { (byte)comboBoxQos.SelectedIndex });
 					List<string> result = new List<string>();
-
 					result.Add(textBoxSubTopic.Text);
-					////중복 제거
-					result = result.Distinct().ToList();
-					var _items = result.Distinct().ToArray();
-					this.listBoxSub.Items.Clear();
-					foreach (var item in _items)
+					//this.listBoxSub.Items.Add(textBoxSubTopic.Text);
+
+					//result.Add(textBoxSubTopic.Text);
+					//////중복 제거
+					//result = result.Distinct().ToList();
+					//var _items = result.Distinct().ToArray();
+
+					//this.listBoxSub.Items.Clear();
+
+					//foreach (var item in _items)
+					//{
+					//	this.listBoxSub.Items.Add(textBoxSubTopic.Text);
+					//}
+				
+					if (!listBoxSub.Items.Contains(textBoxSubTopic.Text))
 					{
-						this.listBoxSub.Items.Add(item);
+						this.listBoxSub.Items.Add(textBoxSubTopic.Text);
 					}
+				
+
 					dataGridViewMessage.DoubleBuffered(true);
 				}
 				catch (Exception ex)
@@ -1234,15 +1283,9 @@ namespace MQTTClient
 						string REQ = "{" + "\"CMD\"" + ":" + "\"REQ_MAIN_SET_READ\"" + "," + "\"POS\"" + ":" + i + "}";
 						clientUser.Publish(topic, Encoding.UTF8.GetBytes(REQ), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 
-					string RESP = "{" + "\"CMD\"" + ":" + "\"RESP_MAIN_SET_READ\"" + "," + "\"POS\"" + ":" 
-						+ dataGridView2.Rows[i-1].Cells[0].FormattedValue.ToString() + ",\"VALUE\":" + i + "}";
-					clientUser.Publish(topic, Encoding.UTF8.GetBytes(RESP), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
-					if (RESP.Contains("RESP") == true)
-					{
-						dataGridView2["2", i-1].Value = RESP;
-					}
+				
 
-						Delay(3000);
+					Delay(500);
 					}				
 			}
 			catch (Exception ex)
