@@ -1490,7 +1490,6 @@
 		private System.Windows.Forms.TabPage tabPage1;
 		private System.Windows.Forms.Button buttonLocal;
 		private System.Windows.Forms.Button buttonMqttServer;
-		private System.Windows.Forms.Button buttonConnect;
 		private System.Windows.Forms.TextBox textBoxHost;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Button buttonLogFolder;
@@ -1601,6 +1600,7 @@
 		public System.Windows.Forms.ListBox listBoxSub;
 		private System.Windows.Forms.Label label39;
 		private System.Windows.Forms.TextBox textBoxCode;
+		private System.Windows.Forms.Button buttonConnect;
 	}
 }
 

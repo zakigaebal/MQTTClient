@@ -28,6 +28,7 @@ namespace MQTTClient
 		{
 			InitializeComponent();
 			//폼 닫기 이벤트 선언
+
 			this.FormClosed += Form_Closing;
 		}
 
@@ -40,6 +41,8 @@ namespace MQTTClient
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
+		
+
 			this.AcceptButton = this.buttonConnect;
 			comboBoxQos.SelectedIndex = 0;
 			mqttRecord();
@@ -48,7 +51,7 @@ namespace MQTTClient
 
 			iniload();
 
-			this.dataGridViewMessage.ClipboardCopyMode =DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+			this.dataGridViewMessage.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
 
 			dataGridView2.Columns.Clear();
 			dataGridView2.ReadOnly = true;
@@ -62,15 +65,12 @@ namespace MQTTClient
 			dataGridView2.Columns[dataGridView2.ColumnCount - 4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 			dataGridView2.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 			dataGridView2.Columns[0].Width = 40;
-			dataGridView2.Columns[2].Width = 70;
-			dataGridView2.Columns[3].Width = 100;
+			dataGridView2.Columns[2].Width = 350;
+			dataGridView2.Columns[3].Width = 70;
 			for (int i = 0; i < 40; i++)
 			{
 				dataGridView2.Rows.Add();
 				dataGridView2["0", i].Value = i + 1;
-
-
-
 				dataGridView2["4", i] = new DataGridViewButtonCell();
 			}
 
@@ -135,12 +135,12 @@ namespace MQTTClient
 		{
 			listBoxSub.Items.Clear();
 			string currentPath = System.IO.Directory.GetCurrentDirectory();
-			StreamReader file = new StreamReader(currentPath + "\\Sub.txt", Encoding.Default); 
-			string s = ""; 
+			StreamReader file = new StreamReader(currentPath + "\\Sub.txt", Encoding.Default);
+			string s = "";
 			while (s != null)
-			{ 
-				s = file.ReadLine(); 
-				if (!string.IsNullOrEmpty(s)) listBoxSub.Items.Add(s); 
+			{
+				s = file.ReadLine();
+				if (!string.IsNullOrEmpty(s)) listBoxSub.Items.Add(s);
 			}
 			file.Close();
 		}
@@ -253,7 +253,7 @@ namespace MQTTClient
 			textBoxBlack.Text = black.ToString();
 		}
 
-		
+
 
 		private void initCloseMethod()
 		{
@@ -316,27 +316,9 @@ namespace MQTTClient
 
 		}
 
-		private void logs()
-		{
-			//텍스트 파일 쓰기
-			//StreamWriter 객체를 생성한다. 입력파라미터로 File Path나 파일스트림을 사용한다
-			using (StreamWriter wr = new StreamWriter(@"C:\Temp\data/txt"))
-			{
-				//WriteLine()을 써서 한 라인 씩 문자열을 쓴다
-				wr.WriteLine("Line 1");
-				wr.WriteLine("Line 2");
-
-				//숫자를 쓰기
-				decimal val = 1024.19M;
-				wr.WriteLine(val);
-
-				//문자배열을 쓰기
-				char[] array = new char[5] { 'A', 'B', 'C', 'D', 'E' };
-				wr.WriteLine(array);
-			}
-		}
-
 	
+
+
 		private void buttonSubscribe2_Click(object sender, EventArgs e)
 		{
 			if (textBoxSubTopic.Text.Length == 0)
@@ -351,7 +333,7 @@ namespace MQTTClient
 					dataGridViewMessage.DoubleBuffered(true);
 					dataGridViewMessage.SuspendLayout();
 				}
-				catch(Exception ex)
+				catch (Exception ex)
 				{
 					MessageBox.Show(ex.Message);
 				}
@@ -360,81 +342,89 @@ namespace MQTTClient
 
 		private void ShowMessage(string topic, string payload, DataGridView dgv)
 		{
-			try { 
-			if (this.InvokeRequired)
-			{
-				ShowCallBack myUpdate = new ShowCallBack(ShowMessage);
-				this.Invoke(myUpdate, topic, payload, dgv);
-			}
-			else
-			{
+			try {
+				if (this.InvokeRequired)
+				{
+					ShowCallBack myUpdate = new ShowCallBack(ShowMessage);
+					this.Invoke(myUpdate, topic, payload, dgv);
+				}
+				else
+				{
 					dataGridViewMessage.SuspendLayout();
 					//dt.Rows.Add(DateTime.Now.ToString("HH:mm:ss:fff") + " - [MQTT] " + myStr1 + " - " + myStr2 + Environment.NewLine);
 					//dgv.Rows.Add(myStr + Environment.NewLine);
 					//	dataGridViewMessage.Rows.Add(DateTime.Now.ToString("HH:mm:ss:fff"), myStr1 + Environment.NewLine, myStr2 + Environment.NewLine);
 					dt.Rows.Add(DateTime.Now.ToString("HH:mm:ss:fff"), topic + Environment.NewLine, payload + Environment.NewLine);
-			//	dt.Rows.Add(DateTime.Now.ToString("HH:mm:ss:fff "), myStr1, myStr2 + Environment.NewLine);
-				dataGridViewMessage.CurrentCell = dataGridViewMessage.Rows[0].Cells[0];
-				dataGridViewMessage.DataSource = dt;
-					logSave2(topic, payload);
+					//	dt.Rows.Add(DateTime.Now.ToString("HH:mm:ss:fff "), myStr1, myStr2 + Environment.NewLine);
+
+					dataGridViewMessage.CurrentCell = null;
+					//dataGridViewMessage.ClearSelection();
+
+					dataGridViewMessage.DataSource = dt;
+					logSave(topic, payload);
 					dataGridViewMessage.ResumeLayout();
 
-			}
-			}catch(Exception ex)
+				}
+			} catch (Exception ex)
 			{
 				MessageBox.Show(ex.ToString());
 			}
 		}
 
-		private void logSave2(string topic, string payload)
+		private void logSave(string topic, string payload)
 		{
-			try { 
-			
-				string data = System.IO.Directory.GetCurrentDirectory();
-				string currentPath = System.IO.Directory.GetCurrentDirectory();
-			string[] lines = {DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss:fff - ") + topic + " - " + payload};
-
-			using (StreamWriter Write = new StreamWriter(@"" + currentPath + "\\Log\\" + "log-MQTT-" + DateTime.Now.ToString("yyyy-MM-dd") + ".log", true))
+			try
 			{
+				//string data = System.IO.Directory.GetCurrentDirectory();
+				//string[] lines = { DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss:fff - ") + topic + " - " + payload };
+				// 파일모드
+				// FileMode.Create              // 파일을 만든다. 있으면 덮어쓴다.
+				// FileMode.CreateNew           // 파일을 만든다. 있으면 DirectoryNotFoundException 예외가 발생한다.
+				// FileMode.Append              // 파일을 만든다. 있으면 뒤에서 추가로 쓴다.
+				// FileMode.Open                // 파일을 연다. 없으면 FileNotFoundException 예외가 발생한다
+				// FileMode.Truncate            // 파일을 연다. 없으면 만든다. (있든 없든 무조건 만든다.)
 
+				// 파일권한 모드
+				// FileAccess.Read              // 파일에 읽을 수 있는 권한만 준다.
+				// FileAccess.Write             // 파일에 쓰기 권한만 준다.
+				// FileAccess.ReadWrite         // 파일에 읽고 쓰는 권한을 둘다 준다.
 
-					foreach (string line in lines)
-					{
-						Write.WriteLine(line);
-					}
-			
-					if (checkBoxTopicLog.Checked == true)
+				//log파일은 계속해서 추가되어야 하므로 append를 선택
+
+				string currentPath = System.IO.Directory.GetCurrentDirectory();
+				string line = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss:fff - ") + topic + " - " + payload;
+				string logName = @"" + currentPath + "\\Log\\" + "log-MQTT-" + DateTime.Now.ToString("yyyy-MM-dd") + ".log";
+				string topiclogName = @"" + currentPath + "\\Log\\" + topic.Replace("/", "") + DateTime.Now.ToString("_yyyyMMdd") + ".log";
+
+				if (checkBoxTopicLog.Checked == true)
 				{
-					if(topic.Contains("�") == true)
-						{
-							return;
-						}
-					else
-						{ 
-					using (StreamWriter Write2 = new StreamWriter(@"" + currentPath + "\\Log\\" + topic.Replace("/", "") + DateTime.Now.ToString("_yyyyMMdd") + ".log", true))
+					if (topiclogName.Contains("�") == true)
 					{
-							
-								foreach (string line in lines)
-						{
-							Write2.WriteLine(line);
-									
-						}
-					
+						return;
 					}
-						}
+					else
+				  using (FileStream topicfs = new FileStream(topiclogName, FileMode.Append, FileAccess.Write))
+					using (StreamWriter Write2 = new StreamWriter(topicfs))
+					{
+						Write2.WriteLine(line);
 					}
-			}
+				}
+
+				using (FileStream fs = new FileStream(logName, FileMode.Append, FileAccess.Write))
+				using (StreamWriter Write = new StreamWriter(fs))
+				{
+					Write.WriteLine(line);
+				}
 			}
 			catch (Exception ex)
 			{
-				
+				MessageBox.Show(ex.Message);
 			}
 		}
-		//�
+
 		private void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs data)
 		{
 			ShowMessage(data.Topic, System.Text.Encoding.UTF8.GetString(data.Message), dataGridViewMessage);
-	
 		}
 
 		private void myUI(string myStr, TextBox ctl)
@@ -479,7 +469,7 @@ namespace MQTTClient
 					clientUser.Connect(Guid.NewGuid().ToString());
 					clientUser.MqttMsgPublishReceived += new MqttClient.MqttMsgPublishEventHandler(client_MqttMsgPublishReceived);
 				}
-				catch(Exception ex)
+				catch (Exception ex)
 				{
 					MessageBox.Show(ex.Message);
 				}
@@ -497,7 +487,6 @@ namespace MQTTClient
 					buttonPublish8.Enabled = true;
 					buttonPublish9.Enabled = true;
 					buttonPublish10.Enabled = true;
-			
 					buttonUnscribe.Enabled = true;
 					buttonDisconnect.Enabled = true;
 					textBoxHost.Enabled = false;
@@ -509,7 +498,7 @@ namespace MQTTClient
 
 		private void buttonSubscribe_Click(object sender, EventArgs e)
 		{
-		
+
 			if (textBoxSubTopic.Text.Length == 0)
 			{
 				return;
@@ -518,65 +507,26 @@ namespace MQTTClient
 			{
 				try
 				{
-				
 					clientUser.Subscribe(new string[] { textBoxSubTopic.Text }, new byte[] { (byte)comboBoxQos.SelectedIndex });
-				
-				
-
-					//
-
 					List<string> result = new List<string>();
 
 					result.Add(textBoxSubTopic.Text);
 					////중복 제거
 					result = result.Distinct().ToList();
-
-					//List<string> vals = new List<string>();
-
-
-
-
-					//if (listBoxSub.Items.Contains(listBoxSub.Items.ToString()))
-					//{
-					//	return;
-					//}
-					//	else
-					//{ 
-					//	listBoxSub.Items.Add(textBoxSubTopic.Text);
-					//  textBoxSubTopic.Text = "";
-					//}
-
-			
-				  var _items = result.Distinct().ToArray();
+					var _items = result.Distinct().ToArray();
 					this.listBoxSub.Items.Clear();
 					foreach (var item in _items)
-						{
+					{
 						this.listBoxSub.Items.Add(item);
-						}
-
-					//var _items = this.listBoxSub.Items.Cast<string>().Distinct().ToArray();
-					//this.listBoxSub.Items.Clear();
-					//foreach (var item in result)
-					//{
-					//	this.listBoxSub.Items.Add(item);
-					//}
-
-
-
-
-
-
+					}
 					dataGridViewMessage.DoubleBuffered(true);
-				
 				}
-				catch(Exception ex)
+				catch (Exception ex)
 				{
 					MessageBox.Show(ex.Message);
 				}
 			}
 		}
-
-
 
 		private void buttonDisconnect_Click(object sender, EventArgs e)
 		{
@@ -593,20 +543,20 @@ namespace MQTTClient
 
 		private void buttonUnscribe_Click(object sender, EventArgs e)
 		{
-			try 
-			{ 
-			if (listBoxSub.SelectedItem == null)
+			try
 			{
-				return;
+				if (listBoxSub.SelectedItem == null)
+				{
+					return;
+				}
+				else
+				{
+					//listBoxSub.Items.Clear();
+					clientUser.Unsubscribe(new string[] { listBoxSub.SelectedItem.ToString() });
+					listBoxSub.Items.Remove(listBoxSub.SelectedItem);
+				}
 			}
-			else
-			{
-				//listBoxSub.Items.Clear();
-				clientUser.Unsubscribe(new string[] { listBoxSub.SelectedItem.ToString() });
-				listBoxSub.Items.Remove(listBoxSub.SelectedItem);
-			}
-			}
-			catch(Exception ex)
+			catch (Exception ex)
 			{
 				MessageBox.Show(ex.Message);
 			}
@@ -614,7 +564,7 @@ namespace MQTTClient
 
 		private void buttonClear_Click(object sender, EventArgs e)
 		{
-		
+
 			((DataTable)dataGridViewMessage.DataSource).Rows.Clear();
 		}
 
@@ -711,24 +661,33 @@ namespace MQTTClient
 
 		private void cell1(object sender, DataGridViewCellFormattingEventArgs e)
 		{
+					string text = e.Value.ToString().Trim();
+					
 			if (e.ColumnIndex == 1)
 			{
-				if (e.Value != null)
+				if ((e.Value != null))
 				{
-					string text = e.Value.ToString();
-					if (text.Contains(textBoxRed.Text))
+					int id = text.IndexOf(",");
+					int end = text.Length;
+				//	string asd = text.Remove(1, id);
+
+
+
+					if (text.Contains(textBoxRed.Text) && text.Contains(","))
 					{
-
-
-
+						string[] text2 = text.Split(',');
 						if (textBoxRed.Text == "")
 						{
 							return;
 						}
+					
+						else if(text2[0].ToString() == "")
+						{
+							return;
+						}
 						else
-							// if(text.Contains(",") == false)
-							e.CellStyle.BackColor = Color.Red;
-
+						e.CellStyle.BackColor = Color.Red;
+						e.CellStyle.ForeColor = Color.White;
 					}
 
 
@@ -747,6 +706,7 @@ namespace MQTTClient
 							e.CellStyle.BackColor = Color.Green;
 						e.CellStyle.ForeColor = Color.White;
 					}
+
 					if (text.Contains(textBoxYellow.Text))
 					{
 						if (textBoxYellow.Text == "")
@@ -968,18 +928,19 @@ namespace MQTTClient
 		{
 			{
 				// 특정값을 가진 열을 좀 다르게 보여주고 싶을 때
-				if (textBoxRed.Text.Contains(",")==true)
-				{
-					cell1(sender, e);
+				//if (textBoxRed.Text.Contains(",") == true)
+				//{
+				//	cell1(sender, e);
+				//	cell2(sender, e);
+				//}
+				//else
+					cell1(sender,e);
 					cell2(sender, e);
-				}
-				else
-				cell2(sender,e);
-			
+
 			}
 		}
 
-	
+
 
 		/// <summary>
 
@@ -1120,50 +1081,70 @@ namespace MQTTClient
 		}
 
 
+		private void dataGridView2_CellDoubleClick(object sender, EventArgs e)
+		{
+			MessageBox.Show("선택한 row의 0번째cell의 값 == " + dataGridView2.Rows[0].Cells[0].FormattedValue.ToString());
+		}
+
+
+
+
 
 
 		private void buttonMeter_Click(object sender, EventArgs e)
 		{
-		
+			//if (radioButton1.Checked == true)
+			//{
+			//	string topic = "dawoon/Manual/" + textBoxCode.Text.Trim() + "/1/POLOR";
+			//}
+			//else if (radioButton2.Checked == true)
+			//{
+			//	string topic = "dawoon/Manual/" + textBoxCode.Text.Trim() + "/1/TENDOM";
+			//}
+			string POLORTENDOM = "";
+			if (radioButton1.Checked == true)
+			{
+				POLORTENDOM = "POLOR";
+			}
+			else if (radioButton2.Checked == true)
+			{
+				POLORTENDOM = "TENDOM";
+			}
 
-					string topic = "dawoon/Manual/" + textBoxCode.Text.Trim() + "/1/POLOR";
+			string topic = "dawoon/Manual/" + textBoxCode.Text.Trim() + "/1/" + POLORTENDOM;
+
+
+
 
 			try
 			{
-
-
 				for (int i = 1; i < 41; i++)
-				{
-					
-			
+					{
+						string REQ = "{" + "\"CMD\"" + ":" + "\"REQ_MAIN_SET_READ\"" + "," + "\"POS\"" + ":" + i + "}";
+						clientUser.Publish(topic, Encoding.UTF8.GetBytes(REQ), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 
-					string message = "{" + "\"CMD\"" + ":" + "\"REQ_MAIN_SET_READ\"" + "," + "\"POS\"" + ":"+ i + "}";
-				  clientUser.Publish(topic, Encoding.UTF8.GetBytes(message), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
-				  Delay(3000);
+					string RESP = "{" + "\"CMD\"" + ":" + "\"RESP_MAIN_SET_READ\"" + "," + "\"POS\"" + ":" 
+						+ dataGridView2.Rows[i-1].Cells[0].FormattedValue.ToString() + ",\"VALUE\":" + i + "}";
+					clientUser.Publish(topic, Encoding.UTF8.GetBytes(RESP), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+					if (RESP.Contains("RESP") == true)
+					{
+						dataGridView2["2", i-1].Value = RESP;
+					}
 
-				}
-
-
+						Delay(3000);
+					}				
 			}
-
 			catch (Exception ex)
 			{
 				MessageBox.Show(ex.Message);
 
 
-				//if (radioButton1.Checked == true)
-				//{
-				//	string topic = "dawoon/Manual/" + textBoxCode.Text.Trim() + "/1/POLOR";
-				//}
-				//else if (radioButton2.Checked == true)
-				//{
-				//	string topic = "dawoon/Manual/" + textBoxCode.Text.Trim() + "/1/TENDOM";
-				//}
+		
 			}
 
-
+		
 		}
-
+	
 		private void radioButton1_CheckedChanged(object sender, EventArgs e)
 		{
 			if (radioButton1.Checked == true)
@@ -1174,52 +1155,48 @@ namespace MQTTClient
 				}
 				dataGridView2.Columns[3].HeaderText = "헤링본";
 
-
-				dataGridView2["3", 0].Value = "1";
-				dataGridView2["3", 1].Value = "192";
-				dataGridView2["3", 2].Value = "168";
-				dataGridView2["3", 3].Value = "1";
-				dataGridView2["3", 4].Value = "10";
-				dataGridView2["3", 5].Value = "192";
-				dataGridView2["3", 6].Value = "168";
-				dataGridView2["3", 7].Value = "1";
-				dataGridView2["3", 8].Value = "10";
-				dataGridView2["3", 9].Value = "12";
-				dataGridView2["3", 10].Value = "0";
-				dataGridView2["3", 11].Value = "0";
-				dataGridView2["3", 12].Value = "60";
-				dataGridView2["3", 13].Value = "103";
-				dataGridView2["3", 14].Value = "60";
-				dataGridView2["3", 15].Value = "126";
-				dataGridView2["3", 16].Value = "23";
-				dataGridView2["3", 17].Value = "1";
-				dataGridView2["3", 18].Value = "0";
-				dataGridView2["3", 19].Value = "1";
-				dataGridView2["3", 20].Value = "3850";
-				dataGridView2["3", 21].Value = "1";
-				dataGridView2["3", 22].Value = "2";
-				dataGridView2["3", 23].Value = "0";
-				dataGridView2["3", 24].Value = "0";
-				dataGridView2["3", 25].Value = "0";
-				dataGridView2["3", 26].Value = "1";
-				dataGridView2["3", 27].Value = "2000";
-				dataGridView2["3", 28].Value = "2";
-				dataGridView2["3", 29].Value = "120000";
-				dataGridView2["3", 30].Value = "2";
-				dataGridView2["3", 31].Value = "100";
-				dataGridView2["3", 32].Value = "1";
-				dataGridView2["3", 33].Value = "1";
-				dataGridView2["3", 34].Value = "2000";
-				dataGridView2["3", 35].Value = "50000";
-				dataGridView2["3", 36].Value = "1";
-				dataGridView2["3", 37].Value = "1";
-				dataGridView2["3", 38].Value = "0";
-				dataGridView2["3", 39].Value = "0";
-				dataGridView2.Columns[dataGridView2.ColumnCount - 4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-				dataGridView2.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-				dataGridView2.Columns[0].Width = 40;
-				dataGridView2.Columns[2].Width = 70;
-				dataGridView2.Columns[3].Width = 100;
+				int idx = 0;
+				dataGridView2["3", idx++].Value = "1";
+				dataGridView2["3", idx++].Value = "192";
+				dataGridView2["3", idx++].Value = "168";
+				dataGridView2["3", idx++].Value = "1";
+				dataGridView2["3", idx++].Value = "10";
+				dataGridView2["3", idx++].Value = "192";
+				dataGridView2["3", idx++].Value = "168";
+				dataGridView2["3", idx++].Value = "1";
+				dataGridView2["3", idx++].Value = "10";
+				dataGridView2["3", idx++].Value = "12";
+				dataGridView2["3", idx++].Value = "0";
+				dataGridView2["3", idx++].Value = "0";
+				dataGridView2["3", idx++].Value = "60";
+				dataGridView2["3", idx++].Value = "103";
+				dataGridView2["3", idx++].Value = "60";
+				dataGridView2["3", idx++].Value = "126";
+				dataGridView2["3", idx++].Value = "23";
+				dataGridView2["3", idx++].Value = "1";
+				dataGridView2["3", idx++].Value = "0";
+				dataGridView2["3", idx++].Value = "1";
+				dataGridView2["3", idx++].Value = "3850";
+				dataGridView2["3", idx++].Value = "1";
+				dataGridView2["3", idx++].Value = "2";
+				dataGridView2["3", idx++].Value = "0";
+				dataGridView2["3", idx++].Value = "0";
+				dataGridView2["3", idx++].Value = "0";
+				dataGridView2["3", idx++].Value = "1";
+				dataGridView2["3", idx++].Value = "2000";
+				dataGridView2["3", idx++].Value = "2";
+				dataGridView2["3", idx++].Value = "120000";
+				dataGridView2["3", idx++].Value = "2";
+				dataGridView2["3", idx++].Value = "100";
+				dataGridView2["3", idx++].Value = "1";
+				dataGridView2["3", idx++].Value = "1";
+				dataGridView2["3", idx++].Value = "2000";
+				dataGridView2["3", idx++].Value = "50000";
+				dataGridView2["3", idx++].Value = "1";
+				dataGridView2["3", idx++].Value = "1";
+				dataGridView2["3", idx++].Value = "0";
+				dataGridView2["3", idx++].Value = "0";
+		
 			}
 		}
 
@@ -1234,55 +1211,53 @@ namespace MQTTClient
 				}
 
 				dataGridView2.Columns[3].HeaderText = "텐덤";
-				
-				dataGridView2["3", 0].Value = "3";
-				dataGridView2["3", 1].Value = "172";
-				dataGridView2["3", 2].Value = "30";
-				dataGridView2["3", 3].Value = "1";
-				dataGridView2["3", 4].Value = "25";
-				dataGridView2["3", 5].Value = "172";
-				dataGridView2["3", 6].Value = "30";
-				dataGridView2["3", 7].Value = "1";
-				dataGridView2["3", 8].Value = "25";
-				dataGridView2["3", 9].Value = "6";
-				dataGridView2["3", 10].Value = "0";
-				dataGridView2["3", 11].Value = "0";
-				dataGridView2["3", 12].Value = "60";
-				dataGridView2["3", 13].Value = "103";
-				dataGridView2["3", 14].Value = "60";
-				dataGridView2["3", 15].Value = "126";
-				dataGridView2["3", 16].Value = "23";
-				dataGridView2["3", 17].Value = "1";
-				dataGridView2["3", 18].Value = "0";
-				dataGridView2["3", 19].Value = "1";
-				dataGridView2["3", 20].Value = "3863";
-				dataGridView2["3", 21].Value = "1";
-				dataGridView2["3", 22].Value = "0";
-				dataGridView2["3", 23].Value = "0";
-				dataGridView2["3", 24].Value = "0";
-				dataGridView2["3", 25].Value = "1";
-				dataGridView2["3", 26].Value = "1";
-				dataGridView2["3", 27].Value = "2000";
-				dataGridView2["3", 28].Value = "0";
-				dataGridView2["3", 29].Value = "30000";
-				dataGridView2["3", 30].Value = "3";
-				dataGridView2["3", 31].Value = "50";
-				dataGridView2["3", 32].Value = "1";
-				dataGridView2["3", 33].Value = "1";
-				dataGridView2["3", 34].Value = "3000";
-				dataGridView2["3", 35].Value = "20000";
-				dataGridView2["3", 36].Value = "1";
-				dataGridView2["3", 37].Value = "0";
-				dataGridView2["3", 38].Value = "0";
-				dataGridView2["3", 39].Value = "0";
+				int idx = 0;
+
+			
+				dataGridView2["3", idx++].Value = "3";
+				dataGridView2["3", idx++].Value = "172";
+				dataGridView2["3", idx++].Value = "30";
+				dataGridView2["3", idx++].Value = "1";
+				dataGridView2["3", idx++].Value = "25";
+				dataGridView2["3", idx++].Value = "172";
+				dataGridView2["3", idx++].Value = "30";
+				dataGridView2["3", idx++].Value = "1";
+				dataGridView2["3", idx++].Value = "25";
+				dataGridView2["3", idx++].Value = "6";
+				dataGridView2["3", idx++].Value = "0";
+				dataGridView2["3", idx++].Value = "0";
+				dataGridView2["3", idx++].Value = "60";
+				dataGridView2["3", idx++].Value = "103";
+				dataGridView2["3", idx++].Value = "60";
+				dataGridView2["3", idx++].Value = "126";
+				dataGridView2["3", idx++].Value = "23";
+				dataGridView2["3", idx++].Value = "1";
+				dataGridView2["3", idx++].Value = "0";
+				dataGridView2["3", idx++].Value = "1";
+				dataGridView2["3", idx++].Value = "3863";
+				dataGridView2["3", idx++].Value = "1";
+				dataGridView2["3", idx++].Value = "0";
+				dataGridView2["3", idx++].Value = "0";
+				dataGridView2["3", idx++].Value = "0";
+				dataGridView2["3", idx++].Value = "1";
+				dataGridView2["3", idx++].Value = "1";
+				dataGridView2["3", idx++].Value = "2000";
+				dataGridView2["3", idx++].Value = "0";
+				dataGridView2["3", idx++].Value = "30000";
+				dataGridView2["3", idx++].Value = "3";
+				dataGridView2["3", idx++].Value = "50";
+				dataGridView2["3", idx++].Value = "1";
+				dataGridView2["3", idx++].Value = "1";
+				dataGridView2["3", idx++].Value = "3000";
+				dataGridView2["3", idx++].Value = "20000";
+				dataGridView2["3", idx++].Value = "1";
+				dataGridView2["3", idx++].Value = "0";
+				dataGridView2["3", idx++].Value = "0";
+				dataGridView2["3", idx++].Value = "0";
 
 
 
-				//dataGridView2.Columns[dataGridView2.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-				//dataGridView2.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-				//dataGridView2.Columns[1].Width = 200;
-				//dataGridView2.Columns[3].Width = 200;
-				//dataGridView2.Columns[2].Width = 2000;
+	
 			}
 		}
 
