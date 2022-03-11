@@ -24,6 +24,7 @@ namespace MQTTClient
 		private delegate void ShowCallBack(string myStr1, string myStr2, DataGridView dgv);
 		private delegate void myUICallBack(string myStr, TextBox ctl);
 		string startupPath = Application.StartupPath + @"\MqttClient.ini";
+		string mc = "MqttClient";
 		public Form1()
 		{
 			InitializeComponent();
@@ -41,18 +42,13 @@ namespace MQTTClient
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
-		
-
 			this.AcceptButton = this.buttonConnect;
 			comboBoxQos.SelectedIndex = 0;
 			mqttRecord();
 			textBoxPort.Text = "1883";
 			comboBoxQos.SelectedIndex = 1;
-
 			iniload();
-
 			this.dataGridViewMessage.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-
 			dataGridView2.Columns.Clear();
 			dataGridView2.ReadOnly = true;
 			dataGridView2.RowHeadersVisible = false;
@@ -73,7 +69,6 @@ namespace MQTTClient
 				dataGridView2["0", i].Value = i + 1;
 				dataGridView2["4", i] = new DataGridViewButtonCell();
 			}
-
 			dataGridView2["1", 0].Value = "DEVICE_TYPE: 디바이스 종류";
 			dataGridView2["1", 1].Value = "MQTT_IP1: 농장 PC MQTT IP 첫번째 번호";
 			dataGridView2["1", 2].Value = "MQTT_IP2: 농장 PC MQTT IP 두번째 번호";
@@ -183,28 +178,28 @@ namespace MQTTClient
 
 			// ini파일에서 데이터를 불러옴
 			// GetPrivateProfileString("카테고리", "Key값", "기본값", "저장할 변수", "불러올 경로");
-			GetPrivateProfileString("MqttClient", "LastHostName", "", host, 3200, startupPath);
-			GetPrivateProfileString("MqttClient", "LastSubTopic", "", topic, 3200, startupPath);
-			GetPrivateProfileString("MqttClient", "LastPubTopic1", "", pub1, 3200, startupPath);
-			GetPrivateProfileString("MqttClient", "LastPubTopic2", "", pub2, 3200, startupPath);
-			GetPrivateProfileString("MqttClient", "LastPubTopic3", "", pub3, 3200, startupPath);
-			GetPrivateProfileString("MqttClient", "LastPubTopic4", "", pub4, 3200, startupPath);
-			GetPrivateProfileString("MqttClient", "LastPubTopic5", "", pub5, 3200, startupPath);
-			GetPrivateProfileString("MqttClient", "LastPubTopic6", "", pub6, 3200, startupPath);
-			GetPrivateProfileString("MqttClient", "LastPubTopic7", "", pub7, 3200, startupPath);
-			GetPrivateProfileString("MqttClient", "LastPubTopic8", "", pub8, 3200, startupPath);
-			GetPrivateProfileString("MqttClient", "LastPubTopic9", "", pub9, 3200, startupPath);
-			GetPrivateProfileString("MqttClient", "LastPubTopic10", "", pub10, 3200, startupPath);
-			GetPrivateProfileString("MqttClient", "LastMessage1", "", m1, 3200, startupPath);
-			GetPrivateProfileString("MqttClient", "LastMessage2", "", m2, 3200, startupPath);
-			GetPrivateProfileString("MqttClient", "LastMessage3", "", m3, 3200, startupPath);
-			GetPrivateProfileString("MqttClient", "LastMessage4", "", m4, 3200, startupPath);
-			GetPrivateProfileString("MqttClient", "LastMessage5", "", m5, 3200, startupPath);
-			GetPrivateProfileString("MqttClient", "LastMessage6", "", m6, 3200, startupPath);
-			GetPrivateProfileString("MqttClient", "LastMessage7", "", m7, 3200, startupPath);
-			GetPrivateProfileString("MqttClient", "LastMessage8", "", m8, 3200, startupPath);
-			GetPrivateProfileString("MqttClient", "LastMessage9", "", m9, 3200, startupPath);
-			GetPrivateProfileString("MqttClient", "LastMessage10", "", m10, 3200, startupPath);
+			GetPrivateProfileString(mc, "LastHostName", "", host, 3200, startupPath);
+			GetPrivateProfileString(mc, "LastSubTopic", "", topic, 3200, startupPath);
+			GetPrivateProfileString(mc, "LastPubTopic1", "", pub1, 3200, startupPath);
+			GetPrivateProfileString(mc, "LastPubTopic2", "", pub2, 3200, startupPath);
+			GetPrivateProfileString(mc, "LastPubTopic3", "", pub3, 3200, startupPath);
+			GetPrivateProfileString(mc, "LastPubTopic4", "", pub4, 3200, startupPath);
+			GetPrivateProfileString(mc, "LastPubTopic5", "", pub5, 3200, startupPath);
+			GetPrivateProfileString(mc, "LastPubTopic6", "", pub6, 3200, startupPath);
+			GetPrivateProfileString(mc, "LastPubTopic7", "", pub7, 3200, startupPath);
+			GetPrivateProfileString(mc, "LastPubTopic8", "", pub8, 3200, startupPath);
+			GetPrivateProfileString(mc, "LastPubTopic9", "", pub9, 3200, startupPath);
+			GetPrivateProfileString(mc, "LastPubTopic10", "", pub10, 3200, startupPath);
+			GetPrivateProfileString(mc, "LastMessage1", "", m1, 3200, startupPath);
+			GetPrivateProfileString(mc, "LastMessage2", "", m2, 3200, startupPath);
+			GetPrivateProfileString(mc, "LastMessage3", "", m3, 3200, startupPath);
+			GetPrivateProfileString(mc, "LastMessage4", "", m4, 3200, startupPath);
+			GetPrivateProfileString(mc, "LastMessage5", "", m5, 3200, startupPath);
+			GetPrivateProfileString(mc, "LastMessage6", "", m6, 3200, startupPath);
+			GetPrivateProfileString(mc, "LastMessage7", "", m7, 3200, startupPath);
+			GetPrivateProfileString(mc, "LastMessage8", "", m8, 3200, startupPath);
+			GetPrivateProfileString(mc, "LastMessage9", "", m9, 3200, startupPath);
+			GetPrivateProfileString(mc, "LastMessage10", "", m10, 3200, startupPath);
 			GetPrivateProfileString("Color", "Red", "", red, 3200, startupPath);
 			GetPrivateProfileString("Color", "Green", "", green, 3200, startupPath);
 			GetPrivateProfileString("Color", "Yellow", "", yellow, 3200, startupPath);
@@ -252,35 +247,33 @@ namespace MQTTClient
 			textBoxBlue.Text = blue.ToString();
 			textBoxBlack.Text = black.ToString();
 		}
-
-
-
+	
 		private void initCloseMethod()
 		{
 			// ini파일에 등록
 			// WritePrivateProfileString("카테고리", "Key값", "Value", "저장할 경로");
-			WritePrivateProfileString("MqttClient", "LastHostName", textBoxHost.Text, startupPath);
-			WritePrivateProfileString("MqttClient", "LastSubTopic", textBoxSubTopic.Text, startupPath);
-			WritePrivateProfileString("MqttClient", "LastPubTopic1", textBoxPT1.Text, startupPath);
-			WritePrivateProfileString("MqttClient", "LastPubTopic2", textBoxPT2.Text, startupPath);
-			WritePrivateProfileString("MqttClient", "LastPubTopic3", textBoxPT3.Text, startupPath);
-			WritePrivateProfileString("MqttClient", "LastPubTopic4", textBoxPT4.Text, startupPath);
-			WritePrivateProfileString("MqttClient", "LastPubTopic5", textBoxPT5.Text, startupPath);
-			WritePrivateProfileString("MqttClient", "LastPubTopic6", textBoxPT6.Text, startupPath);
-			WritePrivateProfileString("MqttClient", "LastPubTopic7", textBoxPT7.Text, startupPath);
-			WritePrivateProfileString("MqttClient", "LastPubTopic8", textBoxPT8.Text, startupPath);
-			WritePrivateProfileString("MqttClient", "LastPubTopic9", textBoxPT9.Text, startupPath);
-			WritePrivateProfileString("MqttClient", "LastPubTopic10", textBoxPT10.Text, startupPath);
-			WritePrivateProfileString("MqttClient", "LastMessage1", textBoxM1.Text, startupPath);
-			WritePrivateProfileString("MqttClient", "LastMessage2", textBoxM2.Text, startupPath);
-			WritePrivateProfileString("MqttClient", "LastMessage3", textBoxM3.Text, startupPath);
-			WritePrivateProfileString("MqttClient", "LastMessage4", textBoxM4.Text, startupPath);
-			WritePrivateProfileString("MqttClient", "LastMessage5", textBoxM5.Text, startupPath);
-			WritePrivateProfileString("MqttClient", "LastMessage6", textBoxM6.Text, startupPath);
-			WritePrivateProfileString("MqttClient", "LastMessage7", textBoxM7.Text, startupPath);
-			WritePrivateProfileString("MqttClient", "LastMessage8", textBoxM8.Text, startupPath);
-			WritePrivateProfileString("MqttClient", "LastMessage9", textBoxM9.Text, startupPath);
-			WritePrivateProfileString("MqttClient", "LastMessage10", textBoxM10.Text, startupPath);
+			WritePrivateProfileString(mc, "LastHostName", textBoxHost.Text, startupPath);
+			WritePrivateProfileString(mc, "LastSubTopic", textBoxSubTopic.Text, startupPath);
+			WritePrivateProfileString(mc, "LastPubTopic1", textBoxPT1.Text, startupPath);
+			WritePrivateProfileString(mc, "LastPubTopic2", textBoxPT2.Text, startupPath);
+			WritePrivateProfileString(mc, "LastPubTopic3", textBoxPT3.Text, startupPath);
+			WritePrivateProfileString(mc, "LastPubTopic4", textBoxPT4.Text, startupPath);
+			WritePrivateProfileString(mc, "LastPubTopic5", textBoxPT5.Text, startupPath);
+			WritePrivateProfileString(mc, "LastPubTopic6", textBoxPT6.Text, startupPath);
+			WritePrivateProfileString(mc, "LastPubTopic7", textBoxPT7.Text, startupPath);
+			WritePrivateProfileString(mc, "LastPubTopic8", textBoxPT8.Text, startupPath);
+			WritePrivateProfileString(mc, "LastPubTopic9", textBoxPT9.Text, startupPath);
+			WritePrivateProfileString(mc, "LastPubTopic10", textBoxPT10.Text, startupPath);
+			WritePrivateProfileString(mc, "LastMessage1", textBoxM1.Text, startupPath);
+			WritePrivateProfileString(mc, "LastMessage2", textBoxM2.Text, startupPath);
+			WritePrivateProfileString(mc, "LastMessage3", textBoxM3.Text, startupPath);
+			WritePrivateProfileString(mc, "LastMessage4", textBoxM4.Text, startupPath);
+			WritePrivateProfileString(mc, "LastMessage5", textBoxM5.Text, startupPath);
+			WritePrivateProfileString(mc, "LastMessage6", textBoxM6.Text, startupPath);
+			WritePrivateProfileString(mc, "LastMessage7", textBoxM7.Text, startupPath);
+			WritePrivateProfileString(mc, "LastMessage8", textBoxM8.Text, startupPath);
+			WritePrivateProfileString(mc, "LastMessage9", textBoxM9.Text, startupPath);
+			WritePrivateProfileString(mc, "LastMessage10", textBoxM10.Text, startupPath);
 			WritePrivateProfileString("Color", "Red", textBoxRed.Text, startupPath);
 			WritePrivateProfileString("Color", "Green", textBoxGreen.Text, startupPath);
 			WritePrivateProfileString("Color", "Yellow", textBoxYellow.Text, startupPath);
@@ -302,7 +295,6 @@ namespace MQTTClient
 			dt.DefaultView.Sort = "Time desc";
 			dataGridViewMessage.DataSource = dt;
 
-
 			//dataGridViewMessage.Columns.Add("0", "Time");
 			//dataGridViewMessage.Columns.Add("1", "Topic");
 			//dataGridViewMessage.Columns.Add("2", "Message");
@@ -313,11 +305,7 @@ namespace MQTTClient
 			dataGridViewMessage.Columns[dataGridViewMessage.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 			dataGridViewMessage.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 			dataGridViewMessage.Columns[1].Width = 200;
-
 		}
-
-	
-
 
 		private void buttonSubscribe2_Click(object sender, EventArgs e)
 		{
@@ -662,26 +650,18 @@ namespace MQTTClient
 		private void cell1(object sender, DataGridViewCellFormattingEventArgs e)
 		{
 					string text = e.Value.ToString().Trim();
-					
+					string[] text2 = text.Split(',');
+		
 			if (e.ColumnIndex == 1)
 			{
 				if ((e.Value != null))
 				{
-					int id = text.IndexOf(",");
-					int end = text.Length;
-				//	string asd = text.Remove(1, id);
-
-
-
-					if (text.Contains(textBoxRed.Text) && text.Contains(","))
+			
+					if (textBoxRed.Text.Contains(",") == true) 
+					{ 
+					if (text.Contains(textBoxRed.Text.Split(',')[0]) || text.Contains(textBoxRed.Text.Split(',')[1]) || text.Contains(textBoxRed.Text))
 					{
-						string[] text2 = text.Split(',');
 						if (textBoxRed.Text == "")
-						{
-							return;
-						}
-					
-						else if(text2[0].ToString() == "")
 						{
 							return;
 						}
@@ -689,109 +669,158 @@ namespace MQTTClient
 						e.CellStyle.BackColor = Color.Red;
 						e.CellStyle.ForeColor = Color.White;
 					}
+					}
 
-
-
-
-
-
-
-					if (text.Contains(textBoxGreen.Text))
+					if (textBoxGreen.Text.Contains(",") == true)
 					{
-						if (textBoxGreen.Text == "")
+						if (text.Contains(textBoxGreen.Text.Split(',')[0]) || text.Contains(textBoxGreen.Text.Split(',')[1]) || text.Contains(textBoxGreen.Text))
 						{
-							return;
-						}
-						else
+							if (textBoxGreen.Text == "")
+							{
+								return;
+							}
+							else
 							e.CellStyle.BackColor = Color.Green;
-						e.CellStyle.ForeColor = Color.White;
+							e.CellStyle.ForeColor = Color.White;
+						}
 					}
 
-					if (text.Contains(textBoxYellow.Text))
+					if (textBoxYellow.Text.Contains(",") == true)
 					{
-						if (textBoxYellow.Text == "")
+						if (text.Contains(textBoxYellow.Text.Split(',')[0]) || text.Contains(textBoxYellow.Text.Split(',')[1]) || text.Contains(textBoxYellow.Text))
 						{
-							return;
+							if (textBoxYellow.Text == "")
+							{
+								return;
+							}
+							else
+								e.CellStyle.BackColor = Color.Yellow;
 						}
-						else
-							e.CellStyle.BackColor = Color.Yellow;
 					}
-					if (text.Contains(textBoxGray.Text))
+
+
+
+					if (textBoxGray.Text.Contains(",") == true)
 					{
-						if (textBoxGray.Text == "")
+						if (text.Contains(textBoxGray.Text.Split(',')[0]) || text.Contains(textBoxGray.Text.Split(',')[1]) || text.Contains(textBoxGray.Text))
 						{
-							return;
+							if (textBoxGray.Text == "")
+							{
+								return;
+							}
+							else
+								e.CellStyle.BackColor = Color.Gray;
+							e.CellStyle.ForeColor = Color.White;
 						}
-						else
-							e.CellStyle.BackColor = Color.Gray;
 					}
-					if (text.Contains(textBoxNavy.Text))
+
+					if (textBoxNavy.Text.Contains(",") == true)
 					{
-						if (textBoxNavy.Text == "")
+						if (text.Contains(textBoxNavy.Text.Split(',')[0]) || text.Contains(textBoxNavy.Text.Split(',')[1]) || text.Contains(textBoxNavy.Text))
 						{
-							return;
-						}
-						else
+							if (textBoxNavy.Text == "")
+							{
+								return;
+							}
+							else
 							e.CellStyle.BackColor = Color.Navy;
-						e.CellStyle.ForeColor = Color.White;
-					}
-					if (text.Contains(textBoxPurple.Text))
-					{
-						if (textBoxPurple.Text == "")
-						{
-							return;
+							e.CellStyle.ForeColor = Color.White;
 						}
-						else
+					}
+
+
+					if (textBoxPurple.Text.Contains(",") == true)
+					{
+						if (text.Contains(textBoxPurple.Text.Split(',')[0]) || text.Contains(textBoxPurple.Text.Split(',')[1]) || text.Contains(textBoxPurple.Text))
+						{
+							if (textBoxPurple.Text == "")
+							{
+								return;
+							}
+							else
 							e.CellStyle.BackColor = Color.Purple;
-						e.CellStyle.ForeColor = Color.White;
-					}
-					if (text.Contains(textBoxLime.Text))
-					{
-						if (textBoxLime.Text == "")
-						{
-							return;
+							e.CellStyle.ForeColor = Color.White;
 						}
-						else
+					}
+
+
+					if (textBoxLime.Text.Contains(",") == true)
+					{
+						if (text.Contains(textBoxLime.Text.Split(',')[0]) || text.Contains(textBoxLime.Text.Split(',')[1]) || text.Contains(textBoxLime.Text))
+						{
+							if (textBoxLime.Text == "")
+							{
+								return;
+							}
+							else
 							e.CellStyle.BackColor = Color.Lime;
-					}
-					if (text.Contains(textBoxPink.Text))
-					{
-						if (textBoxPink.Text == "")
-						{
-							return;
+							e.CellStyle.ForeColor = Color.White;
 						}
-						else
+					}
+
+
+
+
+					if (textBoxPink.Text.Contains(",") == true)
+					{
+						if (text.Contains(textBoxPink.Text.Split(',')[0]) || text.Contains(textBoxPink.Text.Split(',')[1]) || text.Contains(textBoxPink.Text))
+						{
+							if (textBoxPink.Text == "")
+							{
+								return;
+							}
+							else
 							e.CellStyle.BackColor = Color.Pink;
-					}
-					if (text.Contains(textBoxOrange.Text))
-					{
-						if (textBoxOrange.Text == "")
-						{
-							return;
+							e.CellStyle.ForeColor = Color.White;
 						}
-						else
+					}
+
+
+
+					if (textBoxOrange.Text.Contains(",") == true)
+					{
+						if (text.Contains(textBoxOrange.Text.Split(',')[0]) || text.Contains(textBoxOrange.Text.Split(',')[1]) || text.Contains(textBoxOrange.Text))
+						{
+							if (textBoxPink.Text == "")
+							{
+								return;
+							}
+							else
 							e.CellStyle.BackColor = Color.Orange;
-					}
-					if (text.Contains(textBoxBlue.Text))
-					{
-						if (textBoxBlue.Text == "")
-						{
-							return;
+							e.CellStyle.ForeColor = Color.White;
 						}
-						else
-							e.CellStyle.BackColor = Color.Blue;
-						e.CellStyle.ForeColor = Color.White;
 					}
-					if (text.Contains(textBoxBlack.Text))
+
+
+					if (textBoxBlue.Text.Contains(",") == true)
 					{
-						if (textBoxBlack.Text == "")
+						if (text.Contains(textBoxBlue.Text.Split(',')[0]) || text.Contains(textBoxBlue.Text.Split(',')[1]) || text.Contains(textBoxBlue.Text))
 						{
-							return;
+							if (textBoxBlue.Text == "")
+							{
+								return;
+							}
+							else
+								e.CellStyle.BackColor = Color.Blue;
+							e.CellStyle.ForeColor = Color.White;
 						}
-						else
+					}
+
+
+					if (textBoxBlack.Text.Contains(",") == true)
+					{
+						if (text.Contains(textBoxBlack.Text.Split(',')[0]) || text.Contains(textBoxBlack.Text.Split(',')[1]) || text.Contains(textBoxBlack.Text))
+						{
+							if (textBoxBlack.Text == "")
+							{
+								return;
+							}
+							else
 							e.CellStyle.BackColor = Color.Black;
-						e.CellStyle.ForeColor = Color.White;
+							e.CellStyle.ForeColor = Color.White;
+						}
 					}
+
 				}
 			}
 		}
@@ -803,38 +832,31 @@ namespace MQTTClient
 				if (e.Value != null)
 				{
 					string text = e.Value.ToString();
-					if (text.Contains(textBoxRed.Text))
+
+					if (text.Contains(textBoxRed.Text) || text.Contains(textBoxRed.Text.Split(',')[0]) || text.Contains(textBoxRed.Text.Split(',')[1]))
 					{
-
-
-
 						if (textBoxRed.Text == "")
 						{
 							return;
 						}
 						else
-							// if(text.Contains(",") == false)
 							e.CellStyle.BackColor = Color.Red;
-
+						  e.CellStyle.ForeColor = Color.White;
 					}
-
-
-
-
-
-
 
 					if (text.Contains(textBoxGreen.Text))
 					{
-						if (textBoxGreen.Text == "")
+						if (textBoxNavy.Text == "")
 						{
 							return;
 						}
 						else
-							e.CellStyle.BackColor = Color.Green;
+						e.CellStyle.BackColor = Color.Green;
 						e.CellStyle.ForeColor = Color.White;
 					}
-					if (text.Contains(textBoxYellow.Text))
+
+
+					if (text.Contains(textBoxYellow.Text) || text.Contains(textBoxYellow.Text.Split(',')[0]) || text.Contains(textBoxYellow.Text.Split(',')[1]))
 					{
 						if (textBoxYellow.Text == "")
 						{
@@ -843,7 +865,8 @@ namespace MQTTClient
 						else
 							e.CellStyle.BackColor = Color.Yellow;
 					}
-					if (text.Contains(textBoxGray.Text))
+
+					if (text.Contains(textBoxGray.Text) || text.Contains(textBoxGray.Text.Split(',')[0]) || text.Contains(textBoxGray.Text.Split(',')[1]))
 					{
 						if (textBoxGray.Text == "")
 						{
@@ -852,7 +875,8 @@ namespace MQTTClient
 						else
 							e.CellStyle.BackColor = Color.Gray;
 					}
-					if (text.Contains(textBoxNavy.Text))
+
+					if (text.Contains(textBoxNavy.Text) || text.Contains(textBoxNavy.Text.Split(',')[0]) || text.Contains(textBoxNavy.Text.Split(',')[1]))
 					{
 						if (textBoxNavy.Text == "")
 						{
@@ -862,7 +886,9 @@ namespace MQTTClient
 							e.CellStyle.BackColor = Color.Navy;
 						e.CellStyle.ForeColor = Color.White;
 					}
-					if (text.Contains(textBoxPurple.Text))
+
+
+					if (text.Contains(textBoxPurple.Text) || text.Contains(textBoxPurple.Text.Split(',')[0]) || text.Contains(textBoxPurple.Text.Split(',')[1]))
 					{
 						if (textBoxPurple.Text == "")
 						{
@@ -872,7 +898,8 @@ namespace MQTTClient
 							e.CellStyle.BackColor = Color.Purple;
 						e.CellStyle.ForeColor = Color.White;
 					}
-					if (text.Contains(textBoxLime.Text))
+
+					if (text.Contains(textBoxLime.Text) || text.Contains(textBoxLime.Text.Split(',')[0]) || text.Contains(textBoxLime.Text.Split(',')[1]))
 					{
 						if (textBoxLime.Text == "")
 						{
@@ -880,8 +907,10 @@ namespace MQTTClient
 						}
 						else
 							e.CellStyle.BackColor = Color.Lime;
+						e.CellStyle.ForeColor = Color.White;
 					}
-					if (text.Contains(textBoxPink.Text))
+
+					if (text.Contains(textBoxPink.Text) || text.Contains(textBoxPink.Text.Split(',')[0]) || text.Contains(textBoxPink.Text.Split(',')[1]))
 					{
 						if (textBoxPink.Text == "")
 						{
@@ -889,8 +918,10 @@ namespace MQTTClient
 						}
 						else
 							e.CellStyle.BackColor = Color.Pink;
+						e.CellStyle.ForeColor = Color.White;
 					}
-					if (text.Contains(textBoxOrange.Text))
+
+					if (text.Contains(textBoxOrange.Text) || text.Contains(textBoxOrange.Text.Split(',')[0]) || text.Contains(textBoxOrange.Text.Split(',')[1]))
 					{
 						if (textBoxOrange.Text == "")
 						{
@@ -898,8 +929,10 @@ namespace MQTTClient
 						}
 						else
 							e.CellStyle.BackColor = Color.Orange;
+						e.CellStyle.ForeColor = Color.White;
 					}
-					if (text.Contains(textBoxBlue.Text))
+
+					if (text.Contains(textBoxBlue.Text) || text.Contains(textBoxBlue.Text.Split(',')[0]) || text.Contains(textBoxBlue.Text.Split(',')[1]))
 					{
 						if (textBoxBlue.Text == "")
 						{
@@ -909,16 +942,18 @@ namespace MQTTClient
 							e.CellStyle.BackColor = Color.Blue;
 						e.CellStyle.ForeColor = Color.White;
 					}
-					if (text.Contains(textBoxBlack.Text))
+
+					if (text.Contains(textBoxBlack.Text) || text.Contains(textBoxBlack.Text.Split(',')[0]) || text.Contains(textBoxBlack.Text.Split(',')[1]))
 					{
 						if (textBoxBlack.Text == "")
 						{
 							return;
 						}
 						else
-							e.CellStyle.BackColor = Color.Black;
+						e.CellStyle.BackColor = Color.Black;
 						e.CellStyle.ForeColor = Color.White;
 					}
+
 				}
 			}
 		}
