@@ -503,11 +503,38 @@ namespace MQTTClient
 			if (System.Text.Encoding.UTF8.GetString(data.Message).Contains("VALUE"))
 			{
 				// valu값을 포함하면 value값 가져오기
-				dataGridView2["2", 0].Value = System.Text.Encoding.UTF8.GetString(data.Message);
-			 //포스가 35번이면 35번에 채우기 할 예정
+				//dataGridView2["2", 0].Value = System.Text.Encoding.UTF8.GetString(data.Message);
+				//포스가 35번이면 35번에 채우기 할 예정
+			
+				for (int i = 1; i < 41; i++)
+				{
+					if (System.Text.Encoding.UTF8.GetString(data.Message).Contains("POS\":" + i +","))
+					{
+						string s = System.Text.Encoding.UTF8.GetString(data.Message);
+						string word1 = "VALUE\":";
+						string word2 = "}";
+						string text = stringBetween(s, word1, word2);
+						dataGridView2["2", i - 1].Value = text;
+
+					}
+				}
+			
 			}
 			ShowMessage(data.Topic, System.Text.Encoding.UTF8.GetString(data.Message), dataGridViewMessage);
 
+		}
+
+		public static string stringBetween(string Source, string Start, string End)
+		{
+			string result = "";
+			if (Source.Contains(Start) && Source.Contains(End))
+			{
+				int StartIndex = Source.IndexOf(Start, 0) + Start.Length;
+				int EndIndex = Source.IndexOf(End, StartIndex);
+				result = Source.Substring(StartIndex, EndIndex - StartIndex);
+				return result;
+			}
+			return result;
 		}
 
 		private void myUI(string myStr, TextBox ctl)
