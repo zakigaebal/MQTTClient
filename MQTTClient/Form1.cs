@@ -13,6 +13,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 namespace MQTTClient
 {
@@ -247,7 +249,7 @@ namespace MQTTClient
 			textBoxBlue.Text = blue.ToString();
 			textBoxBlack.Text = black.ToString();
 		}
-	
+
 		private void initCloseMethod()
 		{
 			// ini파일에 등록
@@ -322,12 +324,11 @@ namespace MQTTClient
 			{
 				try
 				{
-					string result = ""; 
-					foreach (var item in listBoxSub.Items) 
+					foreach (var item in listBoxSub.Items)
 					{
 						//result += string.Format("{0} ", item); 
-					  clientUser.Subscribe(new string[] { item.ToString() }, new byte[] { (byte)comboBoxQos.SelectedIndex });
-					}	
+						clientUser.Subscribe(new string[] { item.ToString() }, new byte[] { (byte)comboBoxQos.SelectedIndex });
+					}
 					dataGridViewMessage.DoubleBuffered(true);
 				}
 				catch (Exception ex)
@@ -357,13 +358,13 @@ namespace MQTTClient
 					dataGridViewMessage.CurrentCell = null;
 					//dataGridViewMessage.ClearSelection();
 					dataGridViewMessage.DataSource = dt;
-					
+
 					//a
 					if (topic.Contains("VALUE"))
 					{
 						try
 						{
-								dataGridView2["2", 1].Value = "1";
+							dataGridView2["2", 1].Value = "1";
 						}
 						catch (Exception ex)
 						{
@@ -373,6 +374,7 @@ namespace MQTTClient
 					//as
 
 					logSave(topic, payload);
+					//jsondata(topic, payload);
 					jsonSave(topic, payload);
 
 					dataGridViewMessage.ResumeLayout();
@@ -383,8 +385,33 @@ namespace MQTTClient
 				MessageBox.Show(ex.ToString());
 			}
 		}
+	
+		public class json
+		{
+			public string Date { get; set; }
+			public string Topic { get; internal set; }
+			public string Payload { get; internal set; }
+			public string QosLevel { get; internal set; }
+			public string Retain { get; internal set; }
+		}
 
-		private void jsonSave(string topic, string payload)
+		private void jsondata(string topic, string payload)
+		{
+			//json data = new json
+			//{
+			//	Date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss:fff"),
+			//	Topic = topic,
+			//	Payload = new List<string> { payload },
+			//	QosLevel = comboBoxQos.SelectedIndex.ToString(),
+			//	Retain = checkBoxRetain.Checked.ToString().ToLower()
+			//};
+
+			////직렬화
+			//string json1 = JsonConvert.SerializeObject(data, Formatting.Indented);
+			//MessageBox.Show(json1 + Environment.NewLine);
+	}
+
+	private void jsonSave(string topic, string payload)
 		{
 			try
 			{
@@ -399,23 +426,33 @@ namespace MQTTClient
 
 
 				string currentPath = System.IO.Directory.GetCurrentDirectory();
-				string line =
-					"{\n"
-					+ "\"Date\":" + "\"" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss:fff") + "\","
-					+ Environment.NewLine
-					+ "\"Topic\": " + "\"" + topic + "\","
-					+ Environment.NewLine
-					+ "\"Payload\": " + payload
-					+ ","
-					+ Environment.NewLine
-					+ "\"QosLevel\": " + comboBoxQos.SelectedIndex.ToString() + ","
-					+ Environment.NewLine
-					+ "\"Retain\": " + checkBoxRetain.Checked.ToString().ToLower()
-					+ Environment.NewLine
-					+ "}";
+				//string line =
+				//	"{\n"
+				//	+ "\"Date\":" + "\"" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss:fff") + "\","
+				//	+ Environment.NewLine
+				//	+ "\"Topic\": " + "\"" + topic + "\","
+				//	+ Environment.NewLine
+				//	+ "\"Payload\": " + payload
+				//	+ ","
+				//	+ Environment.NewLine
+				//	+ "\"QosLevel\": " + comboBoxQos.SelectedIndex.ToString() + ","
+				//	+ Environment.NewLine
+				//	+ "\"Retain\": " + checkBoxRetain.Checked.ToString().ToLower()
+				//	+ Environment.NewLine
+				//	+ "}";
+				json data = new json
+				{
+					Date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss:fff"),
+					Topic = topic,
+					Payload = payload,
+					QosLevel = comboBoxQos.SelectedIndex.ToString(),
+					Retain = checkBoxRetain.Checked.ToString().ToLower()
+				};
 
+				//직렬화
+				string json1 = JsonConvert.SerializeObject(data, Formatting.Indented);
 
-				string jsonName = @"" + currentPath + "\\Log\\" + "LogJson_" + DateTime.Now.ToString("yyyyMMdd") + ".json";
+				string jsonName = @"" + currentPath + "\\Log\\" + "LogJson_" + DateTime.Now.ToString("yyyyMM") + ".json";
 				string topicjsonName = @"" + currentPath + "\\Log\\" + topic.Replace("/", "") + DateTime.Now.ToString("_yyyyMMdd") + ".json";
 
 			
@@ -430,14 +467,14 @@ namespace MQTTClient
 						using (FileStream topicfs = new FileStream(topicjsonName, FileMode.Append, FileAccess.Write))
 						using (StreamWriter Write2 = new StreamWriter(topicfs))
 						{
-							Write2.WriteLine(line);
+							Write2.WriteLine(json1.Replace("\\", ""));
 						}
 				}
 
 				using (FileStream fs = new FileStream(jsonName, FileMode.Append, FileAccess.Write))
 				using (StreamWriter Write = new StreamWriter(fs))
 				{
-					Write.WriteLine(line);
+					Write.WriteLine(json1.Replace("\\", ""));
 				}
 			}
 			catch (Exception ex)
@@ -499,8 +536,10 @@ namespace MQTTClient
 
 		private void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs data)
 		{
-			//토픽이 헤링본일때
-			if (System.Text.Encoding.UTF8.GetString(data.Message).Contains("VALUE"))
+			
+			if (System.Text.Encoding.UTF8.GetString(data.Message).Contains(
+				"\"CMD\":" + "\"RESP_MAIN_SET_READ\""
+				))
 			{
 				// valu값을 포함하면 value값 가져오기
 				//dataGridView2["2", 0].Value = System.Text.Encoding.UTF8.GetString(data.Message);
