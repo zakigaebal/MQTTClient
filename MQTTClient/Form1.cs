@@ -536,7 +536,7 @@ namespace MQTTClient
 
 		private void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs data)
 		{
-			
+
 			if (System.Text.Encoding.UTF8.GetString(data.Message).Contains(
 				"\"CMD\":" + "\"RESP_MAIN_SET_READ\""
 				))
@@ -544,25 +544,47 @@ namespace MQTTClient
 				// valu값을 포함하면 value값 가져오기
 				//dataGridView2["2", 0].Value = System.Text.Encoding.UTF8.GetString(data.Message);
 				//포스가 35번이면 35번에 채우기 할 예정
-			
+
 				for (int i = 1; i < 41; i++)
 				{
-					if (System.Text.Encoding.UTF8.GetString(data.Message).Contains("POS\":" + i +","))
+					if (System.Text.Encoding.UTF8.GetString(data.Message).Contains("POS\":" + i + ","))
 					{
 						string s = System.Text.Encoding.UTF8.GetString(data.Message);
 						string word1 = "VALUE\":";
 						string word2 = "}";
 						string text = stringBetween(s, word1, word2);
-						dataGridView2["2", i - 1].Value = text;
+					dataGridView2["2", i - 1].Value = text;
+						//데이터쓰기
+						//	if(data.Topic == "dawoon/Manual/3850/1/POLOR") 
+					}
+				}
+				//	"\"CMD\":" + "\"RESP_MAIN_SET_OK\""
+			}
+			else if (System.Text.Encoding.UTF8.GetString(data.Message).Contains(
+"\"CMD\":" + "\"MAIN_SET_OK\""
+))
+			{
+				// valu값을 포함하면 value값 가져오기
+				//dataGridView2["2", 0].Value = System.Text.Encoding.UTF8.GetString(data.Message);
+				//포스가 35번이면 35번에 채우기 할 예정
+
+				for (int i = 1; i < 41; i++)
+				{
+					if (System.Text.Encoding.UTF8.GetString(data.Message).Contains("POS\":" + i + ","))
+					{
+						string s = System.Text.Encoding.UTF8.GetString(data.Message);
+						string word1 = "VALUE\":";
+						string word2 = ",\"NOWTIME\"";
+						string text = stringBetween(s, word1, word2);
+					 dataGridView2["2", i - 1].Value = text;
 
 					}
 				}
-			
 			}
-			ShowMessage(data.Topic, System.Text.Encoding.UTF8.GetString(data.Message), dataGridViewMessage);
+				ShowMessage(data.Topic, System.Text.Encoding.UTF8.GetString(data.Message), dataGridViewMessage);
 
-		}
-
+			}
+		
 		public static string stringBetween(string Source, string Start, string End)
 		{
 			string result = "";
@@ -990,7 +1012,7 @@ namespace MQTTClient
 									return;
 								}
 								else
-									e.CellStyle.BackColor = Color.Black;
+								e.CellStyle.BackColor = Color.Black;
 								e.CellStyle.ForeColor = Color.White;
 							}
 						}
@@ -1000,7 +1022,7 @@ namespace MQTTClient
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show(ex.Message);
+		
 			}
 		}
 
@@ -1139,7 +1161,7 @@ namespace MQTTClient
 			}
 		}catch (Exception ex)
 			{
-				MessageBox.Show(ex.Message);
+			
 			}
 	}
 
