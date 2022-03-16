@@ -534,53 +534,78 @@ namespace MQTTClient
 			}
 		}
 
+		public class Cmd
+		{
+			public string CMD { get; set; }
+			public string POS { get; set; }
+			public string VALUE { get; set; }
+		}
+
 		private void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs data)
 		{
-
-			if (System.Text.Encoding.UTF8.GetString(data.Message).Contains(
-				"\"CMD\":" + "\"RESP_MAIN_SET_READ\""
-				))
+			/// 1. 토픽 체크
+			/// 2. payload한 메세지에서 cmd를 체크
+			/// 3. 원하는 값 추출
+			/// 데이터그리드뷰 보여주기
+			if (data.Topic == "dawoon/Manual/3850/1/POLOR")
 			{
-				// valu값을 포함하면 value값 가져오기
-				//dataGridView2["2", 0].Value = System.Text.Encoding.UTF8.GetString(data.Message);
-				//포스가 35번이면 35번에 채우기 할 예정
-
-				for (int i = 1; i < 41; i++)
+			Cmd cmd = JsonConvert.DeserializeObject<Cmd>(Encoding.UTF8.GetString(data.Message));
+				if (cmd.CMD == "RESP_MAIN_SET_READ")
 				{
-					if (System.Text.Encoding.UTF8.GetString(data.Message).Contains("POS\":" + i + ","))
-					{
-						string s = System.Text.Encoding.UTF8.GetString(data.Message);
-						string word1 = "VALUE\":";
-						string word2 = "}";
-						string text = stringBetween(s, word1, word2);
-					dataGridView2["2", i - 1].Value = text;
-						//데이터쓰기
-						//	if(data.Topic == "dawoon/Manual/3850/1/POLOR") 
-					}
-				}
-				//	"\"CMD\":" + "\"RESP_MAIN_SET_OK\""
-			}
-			else if (System.Text.Encoding.UTF8.GetString(data.Message).Contains(
-"\"CMD\":" + "\"MAIN_SET_OK\""
-))
-			{
-				// valu값을 포함하면 value값 가져오기
-				//dataGridView2["2", 0].Value = System.Text.Encoding.UTF8.GetString(data.Message);
-				//포스가 35번이면 35번에 채우기 할 예정
-
-				for (int i = 1; i < 41; i++)
-				{
-					if (System.Text.Encoding.UTF8.GetString(data.Message).Contains("POS\":" + i + ","))
-					{
-						string s = System.Text.Encoding.UTF8.GetString(data.Message);
-						string word1 = "VALUE\":";
-						string word2 = ",\"NOWTIME\"";
-						string text = stringBetween(s, word1, word2);
-					 dataGridView2["2", i - 1].Value = text;
-
-					}
+					int pos = Convert.ToInt32(cmd.POS);
+					int value = Convert.ToInt32(cmd.VALUE);
+					dataGridView2["2", pos-1].Value = value.ToString();
 				}
 			}
+			//dynamic json = JsonConvert.DeserializeObject(Encoding.UTF8.GetString(data.Message));
+
+			//MessageBox.Show(cmd.ToString());
+
+
+//			if (System.Text.Encoding.UTF8.GetString(data.Message).Contains(
+//				"\"CMD\":" + "\"RESP_MAIN_SET_READ\""
+//				))
+//			{
+//				// valu값을 포함하면 value값 가져오기
+//				//dataGridView2["2", 0].Value = System.Text.Encoding.UTF8.GetString(data.Message);
+//				//포스가 35번이면 35번에 채우기 할 예정
+
+//				for (int i = 1; i < 41; i++)
+//				{
+//					if (System.Text.Encoding.UTF8.GetString(data.Message).Contains("POS\":" + i + ","))
+//					{
+//						string s = System.Text.Encoding.UTF8.GetString(data.Message);
+//						string word1 = "VALUE\":";
+//						string word2 = "}";
+//						string text = stringBetween(s, word1, word2);
+//					dataGridView2["2", i - 1].Value = text;
+//						//데이터쓰기
+//						//	if(data.Topic == "dawoon/Manual/3850/1/POLOR") 
+//					}
+//				}
+//				//	"\"CMD\":" + "\"RESP_MAIN_SET_OK\""
+//			}
+//			else if (System.Text.Encoding.UTF8.GetString(data.Message).Contains(
+//"\"CMD\":" + "\"MAIN_SET_OK\""
+//))
+//			{
+//				// valu값을 포함하면 value값 가져오기
+//				//dataGridView2["2", 0].Value = System.Text.Encoding.UTF8.GetString(data.Message);
+//				//포스가 35번이면 35번에 채우기 할 예정
+
+//				for (int i = 1; i < 41; i++)
+//				{
+//					if (System.Text.Encoding.UTF8.GetString(data.Message).Contains("POS\":" + i + ","))
+//					{
+//						string s = System.Text.Encoding.UTF8.GetString(data.Message);
+//						string word1 = "VALUE\":";
+//						string word2 = ",\"NOWTIME\"";
+//						string text = stringBetween(s, word1, word2);
+//					 dataGridView2["2", i - 1].Value = text;
+
+//					}
+			//	}
+			//}
 				ShowMessage(data.Topic, System.Text.Encoding.UTF8.GetString(data.Message), dataGridViewMessage);
 
 			}
@@ -1329,38 +1354,20 @@ namespace MQTTClient
 
 
 
-
+	//public 
 
 
 		private void buttonMeter_Click(object sender, EventArgs e)
 		{
-			//if (radioButton1.Checked == true)
-			//{
-			//	string topic = "dawoon/Manual/" + textBoxCode.Text.Trim() + "/1/POLOR";
-			//}
-			//else if (radioButton2.Checked == true)
-			//{
-			//	string topic = "dawoon/Manual/" + textBoxCode.Text.Trim() + "/1/TENDOM";
-			//}
-			string POLORTENDOM = "";
-			if (radioButton1.Checked == true)
-			{
-				POLORTENDOM = "POLOR";
-			}
-			else if (radioButton2.Checked == true)
-			{
-				POLORTENDOM = "TENDOM";
-			}
-
-			string topic = "dawoon/Manual/" + textBoxCode.Text.Trim() + "/1/" + POLORTENDOM;
-
-
-
+		
+			string topic = "dawoon/Manual/" + textBoxCode.Text.Trim() + "/1/" + "POLOR";
 
 			try
 			{
 				for (int i = 1; i < 41; i++)
 					{
+					// REQ CLASS 생성 2개를 가져오는
+					// CMD ,POS 값
 						string REQ = "{" + "\"CMD\"" + ":" + "\"REQ_MAIN_SET_READ\"" + "," + "\"POS\"" + ":" + i + "}";
 						clientUser.Publish(topic, Encoding.UTF8.GetBytes(REQ), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 
