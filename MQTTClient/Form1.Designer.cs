@@ -135,16 +135,33 @@
 			this.textBoxM1 = new System.Windows.Forms.TextBox();
 			this.textBoxM2 = new System.Windows.Forms.TextBox();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
-			this.label39 = new System.Windows.Forms.Label();
-			this.textBoxCode = new System.Windows.Forms.TextBox();
-			this.radioButton2 = new System.Windows.Forms.RadioButton();
+			this.tabControl2 = new System.Windows.Forms.TabControl();
+			this.tabPageMain = new System.Windows.Forms.TabPage();
+			this.panel7 = new System.Windows.Forms.Panel();
+			this.dataGridViewMain = new System.Windows.Forms.DataGridView();
+			this.buttonMain = new System.Windows.Forms.Button();
 			this.radioButton1 = new System.Windows.Forms.RadioButton();
-			this.button3 = new System.Windows.Forms.Button();
+			this.radioButton2 = new System.Windows.Forms.RadioButton();
+			this.tabPageMeter = new System.Windows.Forms.TabPage();
+			this.panel9 = new System.Windows.Forms.Panel();
+			this.panel11 = new System.Windows.Forms.Panel();
+			this.dataGridViewMeter = new System.Windows.Forms.DataGridView();
 			this.buttonMeter = new System.Windows.Forms.Button();
-			this.dataGridView2 = new System.Windows.Forms.DataGridView();
+			this.radioButton3 = new System.Windows.Forms.RadioButton();
+			this.radioButton4 = new System.Windows.Forms.RadioButton();
+			this.tabPageIR = new System.Windows.Forms.TabPage();
+			this.panel10 = new System.Windows.Forms.Panel();
+			this.panel12 = new System.Windows.Forms.Panel();
+			this.dataGridViewIR = new System.Windows.Forms.DataGridView();
+			this.buttonIR = new System.Windows.Forms.Button();
+			this.panel8 = new System.Windows.Forms.Panel();
+			this.buttonIdCount = new System.Windows.Forms.Button();
+			this.textBoxIdCount = new System.Windows.Forms.TextBox();
+			this.label40 = new System.Windows.Forms.Label();
+			this.textBoxCode = new System.Windows.Forms.TextBox();
+			this.label39 = new System.Windows.Forms.Label();
+			this.button3 = new System.Windows.Forms.Button();
 			this.dataGridViewMessage = new System.Windows.Forms.DataGridView();
-			this.tabPage3 = new System.Windows.Forms.TabPage();
-			this.tabPage4 = new System.Windows.Forms.TabPage();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.panel1.SuspendLayout();
@@ -154,7 +171,19 @@
 			this.panel6.SuspendLayout();
 			this.panel5.SuspendLayout();
 			this.tabPage2.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+			this.tabControl2.SuspendLayout();
+			this.tabPageMain.SuspendLayout();
+			this.panel7.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).BeginInit();
+			this.tabPageMeter.SuspendLayout();
+			this.panel9.SuspendLayout();
+			this.panel11.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridViewMeter)).BeginInit();
+			this.tabPageIR.SuspendLayout();
+			this.panel10.SuspendLayout();
+			this.panel12.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridViewIR)).BeginInit();
+			this.panel8.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewMessage)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -162,14 +191,13 @@
 			// 
 			this.tabControl1.Controls.Add(this.tabPage1);
 			this.tabControl1.Controls.Add(this.tabPage2);
-			this.tabControl1.Controls.Add(this.tabPage3);
-			this.tabControl1.Controls.Add(this.tabPage4);
 			this.tabControl1.Dock = System.Windows.Forms.DockStyle.Top;
 			this.tabControl1.Location = new System.Drawing.Point(0, 0);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
 			this.tabControl1.Size = new System.Drawing.Size(1162, 469);
 			this.tabControl1.TabIndex = 0;
+			this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
 			// 
 			// tabPage1
 			// 
@@ -1352,13 +1380,9 @@
 			// 
 			// tabPage2
 			// 
-			this.tabPage2.Controls.Add(this.label39);
-			this.tabPage2.Controls.Add(this.textBoxCode);
-			this.tabPage2.Controls.Add(this.radioButton2);
-			this.tabPage2.Controls.Add(this.radioButton1);
+			this.tabPage2.Controls.Add(this.tabControl2);
+			this.tabPage2.Controls.Add(this.panel8);
 			this.tabPage2.Controls.Add(this.button3);
-			this.tabPage2.Controls.Add(this.buttonMeter);
-			this.tabPage2.Controls.Add(this.dataGridView2);
 			this.tabPage2.Location = new System.Drawing.Point(4, 22);
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -1367,27 +1391,84 @@
 			this.tabPage2.Text = "수동착유";
 			this.tabPage2.UseVisualStyleBackColor = true;
 			// 
-			// label39
+			// tabControl2
 			// 
-			this.label39.AutoSize = true;
-			this.label39.Location = new System.Drawing.Point(362, 8);
-			this.label39.Name = "label39";
-			this.label39.Size = new System.Drawing.Size(53, 12);
-			this.label39.TabIndex = 4;
-			this.label39.Text = "목장코드";
+			this.tabControl2.Controls.Add(this.tabPageMain);
+			this.tabControl2.Controls.Add(this.tabPageMeter);
+			this.tabControl2.Controls.Add(this.tabPageIR);
+			this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.tabControl2.Location = new System.Drawing.Point(3, 30);
+			this.tabControl2.Name = "tabControl2";
+			this.tabControl2.SelectedIndex = 0;
+			this.tabControl2.Size = new System.Drawing.Size(1148, 410);
+			this.tabControl2.TabIndex = 5;
+			this.tabControl2.SelectedIndexChanged += new System.EventHandler(this.tabControl2_SelectedIndexChanged);
+			this.tabControl2.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl2_Selected);
 			// 
-			// textBoxCode
+			// tabPageMain
 			// 
-			this.textBoxCode.Location = new System.Drawing.Point(421, 5);
-			this.textBoxCode.Name = "textBoxCode";
-			this.textBoxCode.Size = new System.Drawing.Size(100, 21);
-			this.textBoxCode.TabIndex = 3;
-			this.textBoxCode.Text = "3850";
+			this.tabPageMain.Controls.Add(this.panel7);
+			this.tabPageMain.Location = new System.Drawing.Point(4, 22);
+			this.tabPageMain.Name = "tabPageMain";
+			this.tabPageMain.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPageMain.Size = new System.Drawing.Size(1140, 384);
+			this.tabPageMain.TabIndex = 0;
+			this.tabPageMain.Text = "MAIN";
+			this.tabPageMain.UseVisualStyleBackColor = true;
+			// 
+			// panel7
+			// 
+			this.panel7.Controls.Add(this.dataGridViewMain);
+			this.panel7.Controls.Add(this.buttonMain);
+			this.panel7.Controls.Add(this.radioButton1);
+			this.panel7.Controls.Add(this.radioButton2);
+			this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel7.Location = new System.Drawing.Point(3, 3);
+			this.panel7.Name = "panel7";
+			this.panel7.Size = new System.Drawing.Size(1134, 378);
+			this.panel7.TabIndex = 0;
+			// 
+			// dataGridViewMain
+			// 
+			this.dataGridViewMain.AllowUserToAddRows = false;
+			this.dataGridViewMain.AllowUserToDeleteRows = false;
+			this.dataGridViewMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.dataGridViewMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridViewMain.Location = new System.Drawing.Point(6, 33);
+			this.dataGridViewMain.Name = "dataGridViewMain";
+			this.dataGridViewMain.ReadOnly = true;
+			this.dataGridViewMain.RowTemplate.Height = 23;
+			this.dataGridViewMain.Size = new System.Drawing.Size(1125, 327);
+			this.dataGridViewMain.TabIndex = 0;
+			// 
+			// buttonMain
+			// 
+			this.buttonMain.Location = new System.Drawing.Point(3, 3);
+			this.buttonMain.Name = "buttonMain";
+			this.buttonMain.Size = new System.Drawing.Size(70, 24);
+			this.buttonMain.TabIndex = 1;
+			this.buttonMain.Text = "MAIN읽기";
+			this.buttonMain.UseVisualStyleBackColor = true;
+			this.buttonMain.Click += new System.EventHandler(this.buttonMain_Click);
+			// 
+			// radioButton1
+			// 
+			this.radioButton1.AutoSize = true;
+			this.radioButton1.Location = new System.Drawing.Point(79, 7);
+			this.radioButton1.Name = "radioButton1";
+			this.radioButton1.Size = new System.Drawing.Size(136, 16);
+			this.radioButton1.TabIndex = 2;
+			this.radioButton1.TabStop = true;
+			this.radioButton1.Text = "헤링본(herringbone)";
+			this.radioButton1.UseVisualStyleBackColor = true;
+			this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
 			// 
 			// radioButton2
 			// 
 			this.radioButton2.AutoSize = true;
-			this.radioButton2.Location = new System.Drawing.Point(243, 10);
+			this.radioButton2.Location = new System.Drawing.Point(221, 7);
 			this.radioButton2.Name = "radioButton2";
 			this.radioButton2.Size = new System.Drawing.Size(104, 16);
 			this.radioButton2.TabIndex = 2;
@@ -1396,17 +1477,198 @@
 			this.radioButton2.UseVisualStyleBackColor = true;
 			this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
 			// 
-			// radioButton1
+			// tabPageMeter
 			// 
-			this.radioButton1.AutoSize = true;
-			this.radioButton1.Location = new System.Drawing.Point(101, 10);
-			this.radioButton1.Name = "radioButton1";
-			this.radioButton1.Size = new System.Drawing.Size(136, 16);
-			this.radioButton1.TabIndex = 2;
-			this.radioButton1.TabStop = true;
-			this.radioButton1.Text = "헤링본(herringbone)";
-			this.radioButton1.UseVisualStyleBackColor = true;
-			this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+			this.tabPageMeter.Controls.Add(this.panel9);
+			this.tabPageMeter.Location = new System.Drawing.Point(4, 22);
+			this.tabPageMeter.Name = "tabPageMeter";
+			this.tabPageMeter.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPageMeter.Size = new System.Drawing.Size(1140, 384);
+			this.tabPageMeter.TabIndex = 1;
+			this.tabPageMeter.Text = "METER";
+			this.tabPageMeter.UseVisualStyleBackColor = true;
+			// 
+			// panel9
+			// 
+			this.panel9.Controls.Add(this.panel11);
+			this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel9.Location = new System.Drawing.Point(3, 3);
+			this.panel9.Name = "panel9";
+			this.panel9.Size = new System.Drawing.Size(1134, 378);
+			this.panel9.TabIndex = 0;
+			// 
+			// panel11
+			// 
+			this.panel11.Controls.Add(this.dataGridViewMeter);
+			this.panel11.Controls.Add(this.buttonMeter);
+			this.panel11.Controls.Add(this.radioButton3);
+			this.panel11.Controls.Add(this.radioButton4);
+			this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel11.Location = new System.Drawing.Point(0, 0);
+			this.panel11.Name = "panel11";
+			this.panel11.Size = new System.Drawing.Size(1134, 378);
+			this.panel11.TabIndex = 1;
+			this.panel11.Paint += new System.Windows.Forms.PaintEventHandler(this.panel11_Paint);
+			// 
+			// dataGridViewMeter
+			// 
+			this.dataGridViewMeter.AllowUserToAddRows = false;
+			this.dataGridViewMeter.AllowUserToDeleteRows = false;
+			this.dataGridViewMeter.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.dataGridViewMeter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridViewMeter.Location = new System.Drawing.Point(6, 33);
+			this.dataGridViewMeter.Name = "dataGridViewMeter";
+			this.dataGridViewMeter.ReadOnly = true;
+			this.dataGridViewMeter.RowTemplate.Height = 23;
+			this.dataGridViewMeter.Size = new System.Drawing.Size(1125, 327);
+			this.dataGridViewMeter.TabIndex = 0;
+			// 
+			// buttonMeter
+			// 
+			this.buttonMeter.Location = new System.Drawing.Point(3, 3);
+			this.buttonMeter.Name = "buttonMeter";
+			this.buttonMeter.Size = new System.Drawing.Size(82, 24);
+			this.buttonMeter.TabIndex = 1;
+			this.buttonMeter.Text = "METER읽기";
+			this.buttonMeter.UseVisualStyleBackColor = true;
+			this.buttonMeter.Click += new System.EventHandler(this.buttonMeter_Click);
+			// 
+			// radioButton3
+			// 
+			this.radioButton3.AutoSize = true;
+			this.radioButton3.Location = new System.Drawing.Point(91, 7);
+			this.radioButton3.Name = "radioButton3";
+			this.radioButton3.Size = new System.Drawing.Size(136, 16);
+			this.radioButton3.TabIndex = 2;
+			this.radioButton3.TabStop = true;
+			this.radioButton3.Text = "헤링본(herringbone)";
+			this.radioButton3.UseVisualStyleBackColor = true;
+			this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+			// 
+			// radioButton4
+			// 
+			this.radioButton4.AutoSize = true;
+			this.radioButton4.Location = new System.Drawing.Point(233, 7);
+			this.radioButton4.Name = "radioButton4";
+			this.radioButton4.Size = new System.Drawing.Size(104, 16);
+			this.radioButton4.TabIndex = 2;
+			this.radioButton4.TabStop = true;
+			this.radioButton4.Text = "텐덤(Tendom)";
+			this.radioButton4.UseVisualStyleBackColor = true;
+			this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
+			// 
+			// tabPageIR
+			// 
+			this.tabPageIR.Controls.Add(this.panel10);
+			this.tabPageIR.Location = new System.Drawing.Point(4, 22);
+			this.tabPageIR.Name = "tabPageIR";
+			this.tabPageIR.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPageIR.Size = new System.Drawing.Size(1140, 384);
+			this.tabPageIR.TabIndex = 2;
+			this.tabPageIR.Text = "IR";
+			this.tabPageIR.UseVisualStyleBackColor = true;
+			// 
+			// panel10
+			// 
+			this.panel10.Controls.Add(this.panel12);
+			this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel10.Location = new System.Drawing.Point(3, 3);
+			this.panel10.Name = "panel10";
+			this.panel10.Size = new System.Drawing.Size(1134, 378);
+			this.panel10.TabIndex = 1;
+			// 
+			// panel12
+			// 
+			this.panel12.Controls.Add(this.dataGridViewIR);
+			this.panel12.Controls.Add(this.buttonIR);
+			this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel12.Location = new System.Drawing.Point(0, 0);
+			this.panel12.Name = "panel12";
+			this.panel12.Size = new System.Drawing.Size(1134, 378);
+			this.panel12.TabIndex = 1;
+			// 
+			// dataGridViewIR
+			// 
+			this.dataGridViewIR.AllowUserToAddRows = false;
+			this.dataGridViewIR.AllowUserToDeleteRows = false;
+			this.dataGridViewIR.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.dataGridViewIR.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridViewIR.Location = new System.Drawing.Point(6, 33);
+			this.dataGridViewIR.Name = "dataGridViewIR";
+			this.dataGridViewIR.ReadOnly = true;
+			this.dataGridViewIR.RowTemplate.Height = 23;
+			this.dataGridViewIR.Size = new System.Drawing.Size(1125, 327);
+			this.dataGridViewIR.TabIndex = 0;
+			// 
+			// buttonIR
+			// 
+			this.buttonIR.Location = new System.Drawing.Point(3, 3);
+			this.buttonIR.Name = "buttonIR";
+			this.buttonIR.Size = new System.Drawing.Size(70, 24);
+			this.buttonIR.TabIndex = 1;
+			this.buttonIR.Text = "IR읽기";
+			this.buttonIR.UseVisualStyleBackColor = true;
+			this.buttonIR.Click += new System.EventHandler(this.buttonIR_Click);
+			// 
+			// panel8
+			// 
+			this.panel8.Controls.Add(this.buttonIdCount);
+			this.panel8.Controls.Add(this.textBoxIdCount);
+			this.panel8.Controls.Add(this.label40);
+			this.panel8.Controls.Add(this.textBoxCode);
+			this.panel8.Controls.Add(this.label39);
+			this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panel8.Location = new System.Drawing.Point(3, 3);
+			this.panel8.Name = "panel8";
+			this.panel8.Size = new System.Drawing.Size(1148, 27);
+			this.panel8.TabIndex = 6;
+			// 
+			// buttonIdCount
+			// 
+			this.buttonIdCount.Location = new System.Drawing.Point(167, 1);
+			this.buttonIdCount.Name = "buttonIdCount";
+			this.buttonIdCount.Size = new System.Drawing.Size(70, 24);
+			this.buttonIdCount.TabIndex = 7;
+			this.buttonIdCount.Text = "개수 읽기";
+			this.buttonIdCount.UseVisualStyleBackColor = true;
+			this.buttonIdCount.Click += new System.EventHandler(this.buttonIdCount_Click);
+			// 
+			// textBoxIdCount
+			// 
+			this.textBoxIdCount.Location = new System.Drawing.Point(302, 4);
+			this.textBoxIdCount.Name = "textBoxIdCount";
+			this.textBoxIdCount.Size = new System.Drawing.Size(100, 21);
+			this.textBoxIdCount.TabIndex = 5;
+			// 
+			// label40
+			// 
+			this.label40.AutoSize = true;
+			this.label40.Location = new System.Drawing.Point(243, 7);
+			this.label40.Name = "label40";
+			this.label40.Size = new System.Drawing.Size(29, 12);
+			this.label40.TabIndex = 6;
+			this.label40.Text = "개수";
+			// 
+			// textBoxCode
+			// 
+			this.textBoxCode.Location = new System.Drawing.Point(61, 4);
+			this.textBoxCode.Name = "textBoxCode";
+			this.textBoxCode.Size = new System.Drawing.Size(100, 21);
+			this.textBoxCode.TabIndex = 3;
+			this.textBoxCode.Text = "3850";
+			// 
+			// label39
+			// 
+			this.label39.AutoSize = true;
+			this.label39.Location = new System.Drawing.Point(2, 7);
+			this.label39.Name = "label39";
+			this.label39.Size = new System.Drawing.Size(53, 12);
+			this.label39.TabIndex = 4;
+			this.label39.Text = "목장코드";
 			// 
 			// button3
 			// 
@@ -1417,31 +1679,6 @@
 			this.button3.TabIndex = 1;
 			this.button3.Text = "전체적용";
 			this.button3.UseVisualStyleBackColor = true;
-			// 
-			// buttonMeter
-			// 
-			this.buttonMeter.Location = new System.Drawing.Point(6, 6);
-			this.buttonMeter.Name = "buttonMeter";
-			this.buttonMeter.Size = new System.Drawing.Size(70, 24);
-			this.buttonMeter.TabIndex = 1;
-			this.buttonMeter.Text = "Meter읽기";
-			this.buttonMeter.UseVisualStyleBackColor = true;
-			this.buttonMeter.Click += new System.EventHandler(this.buttonMeter_Click);
-			// 
-			// dataGridView2
-			// 
-			this.dataGridView2.AllowUserToAddRows = false;
-			this.dataGridView2.AllowUserToDeleteRows = false;
-			this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView2.Location = new System.Drawing.Point(10, 32);
-			this.dataGridView2.Name = "dataGridView2";
-			this.dataGridView2.ReadOnly = true;
-			this.dataGridView2.RowTemplate.Height = 23;
-			this.dataGridView2.Size = new System.Drawing.Size(1138, 394);
-			this.dataGridView2.TabIndex = 0;
 			// 
 			// dataGridViewMessage
 			// 
@@ -1456,26 +1693,6 @@
 			this.dataGridViewMessage.Size = new System.Drawing.Size(1162, 169);
 			this.dataGridViewMessage.TabIndex = 10;
 			this.dataGridViewMessage.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewMessage_CellFormatting);
-			// 
-			// tabPage3
-			// 
-			this.tabPage3.Location = new System.Drawing.Point(4, 22);
-			this.tabPage3.Name = "tabPage3";
-			this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage3.Size = new System.Drawing.Size(1154, 443);
-			this.tabPage3.TabIndex = 2;
-			this.tabPage3.Text = "tabPage3";
-			this.tabPage3.UseVisualStyleBackColor = true;
-			// 
-			// tabPage4
-			// 
-			this.tabPage4.Location = new System.Drawing.Point(4, 22);
-			this.tabPage4.Name = "tabPage4";
-			this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage4.Size = new System.Drawing.Size(1154, 443);
-			this.tabPage4.TabIndex = 3;
-			this.tabPage4.Text = "tabPage4";
-			this.tabPage4.UseVisualStyleBackColor = true;
 			// 
 			// Form1
 			// 
@@ -1501,8 +1718,22 @@
 			this.panel5.ResumeLayout(false);
 			this.panel5.PerformLayout();
 			this.tabPage2.ResumeLayout(false);
-			this.tabPage2.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+			this.tabControl2.ResumeLayout(false);
+			this.tabPageMain.ResumeLayout(false);
+			this.panel7.ResumeLayout(false);
+			this.panel7.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).EndInit();
+			this.tabPageMeter.ResumeLayout(false);
+			this.panel9.ResumeLayout(false);
+			this.panel11.ResumeLayout(false);
+			this.panel11.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridViewMeter)).EndInit();
+			this.tabPageIR.ResumeLayout(false);
+			this.panel10.ResumeLayout(false);
+			this.panel12.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.dataGridViewIR)).EndInit();
+			this.panel8.ResumeLayout(false);
+			this.panel8.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewMessage)).EndInit();
 			this.ResumeLayout(false);
 
@@ -1574,8 +1805,8 @@
 		private System.Windows.Forms.TabPage tabPage2;
 		private System.Windows.Forms.RadioButton radioButton2;
 		private System.Windows.Forms.RadioButton radioButton1;
-		private System.Windows.Forms.Button buttonMeter;
-		private System.Windows.Forms.DataGridView dataGridView2;
+		private System.Windows.Forms.Button buttonMain;
+		private System.Windows.Forms.DataGridView dataGridViewMain;
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Panel panel4;
 		private System.Windows.Forms.Panel panel3;
@@ -1625,8 +1856,25 @@
 		private System.Windows.Forms.Label label39;
 		private System.Windows.Forms.TextBox textBoxCode;
 		private System.Windows.Forms.Button buttonConnect;
-		private System.Windows.Forms.TabPage tabPage3;
-		private System.Windows.Forms.TabPage tabPage4;
+		private System.Windows.Forms.TabControl tabControl2;
+		private System.Windows.Forms.TabPage tabPageMain;
+		private System.Windows.Forms.Panel panel7;
+		private System.Windows.Forms.TabPage tabPageMeter;
+		private System.Windows.Forms.Panel panel9;
+		private System.Windows.Forms.Panel panel11;
+		private System.Windows.Forms.DataGridView dataGridViewMeter;
+		private System.Windows.Forms.Button buttonMeter;
+		private System.Windows.Forms.RadioButton radioButton3;
+		private System.Windows.Forms.RadioButton radioButton4;
+		private System.Windows.Forms.TabPage tabPageIR;
+		private System.Windows.Forms.Panel panel10;
+		private System.Windows.Forms.Panel panel12;
+		private System.Windows.Forms.DataGridView dataGridViewIR;
+		private System.Windows.Forms.Button buttonIR;
+		private System.Windows.Forms.Panel panel8;
+		private System.Windows.Forms.TextBox textBoxIdCount;
+		private System.Windows.Forms.Label label40;
+		public System.Windows.Forms.Button buttonIdCount;
 	}
 }
 
