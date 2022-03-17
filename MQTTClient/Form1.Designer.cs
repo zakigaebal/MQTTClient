@@ -1444,6 +1444,7 @@
 			// 
 			// buttonMain
 			// 
+			this.buttonMain.Enabled = false;
 			this.buttonMain.Location = new System.Drawing.Point(3, 3);
 			this.buttonMain.Name = "buttonMain";
 			this.buttonMain.Size = new System.Drawing.Size(70, 24);
@@ -1526,6 +1527,7 @@
 			// 
 			// buttonMeter
 			// 
+			this.buttonMeter.Enabled = false;
 			this.buttonMeter.Location = new System.Drawing.Point(3, 3);
 			this.buttonMeter.Name = "buttonMeter";
 			this.buttonMeter.Size = new System.Drawing.Size(82, 24);
@@ -1605,6 +1607,7 @@
 			// 
 			// buttonIR
 			// 
+			this.buttonIR.Enabled = false;
 			this.buttonIR.Location = new System.Drawing.Point(3, 3);
 			this.buttonIR.Name = "buttonIR";
 			this.buttonIR.Size = new System.Drawing.Size(70, 24);
@@ -1628,6 +1631,7 @@
 			// 
 			// buttonIdCount
 			// 
+			this.buttonIdCount.Enabled = false;
 			this.buttonIdCount.Location = new System.Drawing.Point(167, 1);
 			this.buttonIdCount.Name = "buttonIdCount";
 			this.buttonIdCount.Size = new System.Drawing.Size(70, 24);
@@ -1638,9 +1642,10 @@
 			// 
 			// textBoxIdCount
 			// 
-			this.textBoxIdCount.Location = new System.Drawing.Point(302, 4);
+			this.textBoxIdCount.Location = new System.Drawing.Point(278, 3);
 			this.textBoxIdCount.Name = "textBoxIdCount";
-			this.textBoxIdCount.Size = new System.Drawing.Size(100, 21);
+			this.textBoxIdCount.ReadOnly = true;
+			this.textBoxIdCount.Size = new System.Drawing.Size(44, 21);
 			this.textBoxIdCount.TabIndex = 5;
 			this.textBoxIdCount.TextChanged += new System.EventHandler(this.textBoxIdCount_TextChanged);
 			// 
