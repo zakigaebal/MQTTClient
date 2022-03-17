@@ -108,6 +108,8 @@ namespace MQTTClient
 			StringBuilder orange = new StringBuilder();
 			StringBuilder blue = new StringBuilder();
 			StringBuilder black = new StringBuilder();
+			StringBuilder autoPubTopic = new StringBuilder();
+			StringBuilder autoPubMsg = new StringBuilder();
 
 			// ini파일에서 데이터를 불러옴
 			// GetPrivateProfileString("카테고리", "Key값", "기본값", "저장할 변수", "불러올 경로");
@@ -144,6 +146,8 @@ namespace MQTTClient
 			GetPrivateProfileString("Color", "Orange", "", orange, 3200, startupPath);
 			GetPrivateProfileString("Color", "Blue", "", blue, 3200, startupPath);
 			GetPrivateProfileString("Color", "Black", "", black, 3200, startupPath);
+			GetPrivateProfileString(mc, "autoPubTopic", "", autoPubTopic, 3200, startupPath);
+		//	GetPrivateProfileString(mc, "autoPubMsg", "", autoPubMsg, 32000, startupPath);
 
 			// 텍스트박스에 ini파일에서 가져온 데이터를 넣는다
 			textBoxHost.Text = host.ToString();
@@ -179,6 +183,8 @@ namespace MQTTClient
 			textBoxOrange.Text = orange.ToString();
 			textBoxBlue.Text = blue.ToString();
 			textBoxBlack.Text = black.ToString();
+			textBoxAutoPubTopic.Text = autoPubTopic.ToString().Trim();
+	    //textBoxAutoPubMsg.Text = autoPubMsg.ToString();
 		}
 
 		private void initCloseMethod()
@@ -218,6 +224,8 @@ namespace MQTTClient
 			WritePrivateProfileString("Color", "Orange", textBoxOrange.Text, startupPath);
 			WritePrivateProfileString("Color", "Blue", textBoxBlue.Text, startupPath);
 			WritePrivateProfileString("Color", "Black", textBoxBlack.Text, startupPath);
+			WritePrivateProfileString(mc, "autoPubTopic", textBoxAutoPubTopic.Text, startupPath);
+		//WritePrivateProfileString(mc, "autoPubMsg", textBoxAutoPubMsg.Text, startupPath);
 		}
 
 		private void mqttRecord()
@@ -2066,7 +2074,34 @@ namespace MQTTClient
 				}
 			}
 		}
+
+		private void richTextBox1_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void buttonIRPublish_Click(object sender, EventArgs e)
+		{
+			string irTopic = "dawoon/meterset/" + textBoxCode.Text +"/1/POLOR";
+			string irMessage = "{ \"CMD\":\"IR_SET\",\"POS\":" + textBoxIrPos.Text + ",\"ID\":"+ textBoxIrId.Text + ",\"VALUE\":"+ textBoxIrValue.Text +" }";
+				clientUser.Publish(irTopic, Encoding.UTF8.GetBytes(irMessage), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+		}
+
+		private void buttonMeterPublish_Click(object sender, EventArgs e)
+		{
+			string irTopic = "dawoon/meterset/" + textBoxCode.Text + "/1/POLOR";
+			string irMessage = "{ \"CMD\":\"METER_SET\",\"POS\":" + textBoxMeterPos.Text + ",\"ID\":" + textBoxMeterId.Text + ",\"VALUE\":" + textBoxMeterValue.Text + " }";
+			clientUser.Publish(irTopic, Encoding.UTF8.GetBytes(irMessage), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+		}
+
+		private void buttonMainPulish_Click(object sender, EventArgs e)
+		{
+			string irTopic = "dawoon/meterset/" + textBoxCode.Text + "/1/POLOR";
+			string irMessage = "{ \"CMD\":\"MAIN_SET\",\"POS\":" + textBoxMainPos.Text + ",\"VALUE\":" + textBoxMainValue.Text + " }";
+			clientUser.Publish(irTopic, Encoding.UTF8.GetBytes(irMessage), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+		}
 	}
+
 
 	//Put this class at the end of the main class or you will have problems.
 	public static class ExtensionMethods    // DoubleBuffered 메서드를 확장 시켜주자..
