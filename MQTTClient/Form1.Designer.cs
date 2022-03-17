@@ -1643,6 +1643,7 @@
 			this.textBoxIdCount.Name = "textBoxIdCount";
 			this.textBoxIdCount.Size = new System.Drawing.Size(100, 21);
 			this.textBoxIdCount.TabIndex = 5;
+			this.textBoxIdCount.TextChanged += new System.EventHandler(this.textBoxIdCount_TextChanged);
 			// 
 			// label40
 			// 

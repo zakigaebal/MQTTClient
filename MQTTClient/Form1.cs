@@ -31,17 +31,14 @@ namespace MQTTClient
 		{
 			InitializeComponent();
 			//폼 닫기 이벤트 선언
-
 			this.FormClosed += Form_Closing;
 		}
-
 		#region ini 입력 메소드
 		[DllImport("kernel32")]
 		private static extern long WritePrivateProfileString(string section, string key, string val, string filePath);
 		[DllImport("kernel32")]
 		private static extern int GetPrivateProfileString(string section, string key, string def, StringBuilder retVal, int size, string filePath);
 		#endregion
-
 		private void Form1_Load(object sender, EventArgs e)
 		{
 			this.AcceptButton = this.buttonConnect;
@@ -55,7 +52,6 @@ namespace MQTTClient
 			this.dataGridViewMessage.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
 			tabControl2_SelectedIndexChanged(sender, e);
 		}
-
 		private void buttonTopicSave_Click(object sender, EventArgs e)
 		{
 			StreamWriter sw;
@@ -533,6 +529,7 @@ namespace MQTTClient
 					string respText = resp.COUNT.ToString();
 					//textBoxIdCount.Text = respText;
 					myUI(respText, textBoxIdCount);
+			
 				}
 				else if (cmd.CMD == "RESP_METER_SET_READ")
 				{
@@ -601,6 +598,10 @@ namespace MQTTClient
 			//	}
 			//}
 			ShowMessage(data.Topic, System.Text.Encoding.UTF8.GetString(data.Message), dataGridViewMessage);
+
+
+
+
 
 			}
 		
@@ -1554,17 +1555,17 @@ namespace MQTTClient
 				dataGridViewMeter.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 				dataGridViewMeter.Columns.Add("0", "POS");
 				dataGridViewMeter.Columns.Add("1", "DESC");
-				for (int i = 1; i <= 10 ; i++)
+				for (int i = 1; i <= 11; i++)
 				{
 					dataGridViewMeter.Columns.Add((i).ToString(), i.ToString());
 				}
 				dataGridViewMeter.Columns.Add((dataGridViewMeter.ColumnCount).ToString(), "텐덤/해링본");
-				dataGridViewMeter.Columns.Add((dataGridViewMeter.ColumnCount+1).ToString(), "버튼");
+				dataGridViewMeter.Columns.Add((dataGridViewMeter.ColumnCount + 1).ToString(), "버튼");
 				for (int i = 0; i < 46; i++)
 				{
 					dataGridViewMeter.Rows.Add();
 					dataGridViewMeter["0", i].Value = i + 1;
-					dataGridViewMeter[dataGridViewMeter.Columns.Count-1, i] = new DataGridViewButtonCell();
+					dataGridViewMeter[dataGridViewMeter.Columns.Count - 1, i] = new DataGridViewButtonCell();
 				}
 				dataGridViewMeter["1", 0].Value = "사용안함";
 				dataGridViewMeter["1", 1].Value = "장비 ID";
@@ -1617,6 +1618,16 @@ namespace MQTTClient
 
 				radioButton3_CheckedChanged(sender, e);
 				radioButton4_CheckedChanged(sender, e);
+				dataGridViewMeter.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+				dataGridViewMeter.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+				dataGridViewMeter.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+				dataGridViewMeter.Columns[(dataGridViewMeter.ColumnCount).ToString()].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+				//dataGridViewMeter.Columns[(dataGridViewMeter.ColumnCount).ToString()].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+				dataGridViewMeter.Columns[0].Width = 40;
+				dataGridViewMeter.Columns[1].Width = 200;
+				dataGridViewMeter.Columns[(dataGridViewMeter.ColumnCount).ToString()].Width = 35;
+
 			}
 
 			if (tabControl2.SelectedTab == tabPageIR)
@@ -1797,20 +1808,29 @@ namespace MQTTClient
 			string topic = "dawoon/Manual/" + textBoxCode.Text.Trim() + "/1/POLOR";
 			try
 			{
+
+			//	textBoxIdCount.Text = "";
 				CMD_ID_COUNT req = new CMD_ID_COUNT();
 				req.CMD = "RESP_METER_COUNT";
 				req.ID = 1;
 				req.COUNT = 10;
 				string reqStr = (JsonConvert.SerializeObject(req, Formatting.Indented)).Trim();
 				clientUser.Publish(topic, Encoding.UTF8.GetBytes(reqStr.Replace(" ","")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
-
 				//string REQ = "{" + "\"CMD\"" + ":" + "\"REQ_METER_COUNT\"" + "," + "\"ID\"" + ":" + 1 + "," + "\"COUNT\"" + ":" + 10 + "}";
 				//	clientUser.Publish(topic, Encoding.UTF8.GetBytes(REQ), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 				//{"CMD":"RESP_METER_COUNT","ID":1,"COUNT":10}
 
-
-			
-
+				//textBoxIdCount.Text = "";
+				//if (textBoxIdCount.Text == "")
+				//{
+				//	return;
+				//}
+				//string aaaa = textBoxIdCount.Text.Trim();
+				//int bbbb = Convert.ToInt32(textBoxIdCount.Text.Trim());
+				//textBoxIdCount.Text = aaaa;
+				//MessageBox.Show(bbbb.ToString());
+	
+				
 
 			}
 			catch (Exception ex)
@@ -1871,6 +1891,11 @@ namespace MQTTClient
 			{
 				MessageBox.Show(ex.Message);
 			}
+		}
+
+		private void textBoxIdCount_TextChanged(object sender, EventArgs e)
+		{
+		
 		}
 	}
 
