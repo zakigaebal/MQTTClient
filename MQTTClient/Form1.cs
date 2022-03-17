@@ -877,176 +877,168 @@ namespace MQTTClient
 				string text = e.Value.ToString().Trim();
 				string[] text2 = text.Split(',');
 
-				if (e.ColumnIndex == 1)
+				if (e.ColumnIndex == 1 || e.ColumnIndex == 2)
 				{
 					if ((e.Value != null))
 					{
-
-						if (textBoxRed.Text.Contains(",") == true)
+						string[] redSplit = textBoxRed.Text.Split(',');
+						for (int i=0; i < redSplit.Length; i++)
 						{
-							if (text.Contains(textBoxRed.Text.Split(',')[0]) || text.Contains(textBoxRed.Text.Split(',')[1]) || text.Contains(textBoxRed.Text))
+							if (redSplit[i].ToString().Trim().Length == 0)
 							{
-								if (textBoxRed.Text == "")
-								{
-									return;
-								}
-								else
-									e.CellStyle.BackColor = Color.Red;
+								continue;
+							}
+							if (text.Contains(redSplit[i].ToString().Trim()))
+							{
+								e.CellStyle.BackColor = Color.Red;
 								e.CellStyle.ForeColor = Color.White;
 							}
 						}
 
-						if (textBoxGreen.Text.Contains(",") == true)
+						string[] greenSplit = textBoxGreen.Text.Split(',');
+						for (int i = 0; i < greenSplit.Length; i++)
 						{
-							if (text.Contains(textBoxGreen.Text.Split(',')[0]) || text.Contains(textBoxGreen.Text.Split(',')[1]) || text.Contains(textBoxGreen.Text))
+							if (greenSplit[i].ToString().Trim().Length == 0)
 							{
-								if (textBoxGreen.Text == "")
-								{
-									return;
-								}
-								else
-									e.CellStyle.BackColor = Color.Green;
+								continue;
+							}
+							if (text.Contains(greenSplit[i].ToString().Trim()))
+							{
+								e.CellStyle.BackColor = Color.Green;
+								e.CellStyle.ForeColor= Color.White;
+							}
+						}
+
+						string[] yellowSplit = textBoxYellow.Text.Split(',');
+						for (int i = 0; i < yellowSplit.Length; i++)
+						{
+							if (yellowSplit[i].ToString().Trim().Length == 0)
+							{
+								continue;
+							}
+							if (text.Contains(yellowSplit[i].ToString().Trim()))
+							{
+								e.CellStyle.BackColor = Color.Yellow;
+								e.CellStyle.ForeColor = Color.Black;
+							}
+						}
+
+
+						string[] graySplit = textBoxGray.Text.Split(',');
+						for (int i = 0; i < graySplit.Length; i++)
+						{
+							if (graySplit[i].ToString().Trim().Length == 0)
+							{
+								continue;
+							}
+							if (text.Contains(graySplit[i].ToString().Trim()))
+							{
+								e.CellStyle.BackColor = Color.Gray;
 								e.CellStyle.ForeColor = Color.White;
 							}
 						}
 
-						if (textBoxYellow.Text.Contains(",") == true)
+						string[] NavySplit = textBoxNavy.Text.Split(',');
+						for (int i = 0; i < NavySplit.Length; i++)
 						{
-							if (text.Contains(textBoxYellow.Text.Split(',')[0]) || text.Contains(textBoxYellow.Text.Split(',')[1]) || text.Contains(textBoxYellow.Text))
+							if (NavySplit[i].ToString().Trim().Length == 0)
 							{
-								if (textBoxYellow.Text == "")
-								{
-									return;
-								}
-								else
-									e.CellStyle.BackColor = Color.Yellow;
+								continue;
+							}
+							if (text.Contains(NavySplit[i].ToString().Trim()))
+							{
+								e.CellStyle.BackColor = Color.Navy;
+								e.CellStyle.ForeColor = Color.White;
+							}
+						}
+
+						string[] PurpleSplit = textBoxPurple.Text.Split(',');
+						for (int i = 0; i < PurpleSplit.Length; i++)
+						{
+							if (PurpleSplit[i].ToString().Trim().Length == 0)
+							{
+								continue;
+							}
+							if (text.Contains(PurpleSplit[i].ToString().Trim()))
+							{
+								e.CellStyle.BackColor = Color.Purple;
+								e.CellStyle.ForeColor = Color.White;
+							}
+						}
+
+
+						string[] LimeSplit = textBoxLime.Text.Split(',');
+						for (int i = 0; i < LimeSplit.Length; i++)
+						{
+							if (LimeSplit[i].ToString().Trim().Length == 0)
+							{
+								continue;
+							}
+							if (text.Contains(LimeSplit[i].ToString().Trim()))
+							{
+								e.CellStyle.BackColor = Color.Lime;
+								e.CellStyle.ForeColor = Color.White;
+							}
+						}
+
+						string[] PinkSplit = textBoxPink.Text.Split(',');
+						for (int i = 0; i < PinkSplit.Length; i++)
+						{
+							if (PinkSplit[i].ToString().Trim().Length == 0)
+							{
+								continue;
+							}
+							if (text.Contains(PinkSplit[i].ToString().Trim()))
+							{
+								e.CellStyle.BackColor = Color.Pink;
+								e.CellStyle.ForeColor = Color.Black;
+							}
+						}
+
+
+						string[] OrangeSplit = textBoxOrange.Text.Split(',');
+						for (int i = 0; i < OrangeSplit.Length; i++)
+						{
+							if (OrangeSplit[i].ToString().Trim().Length == 0)
+							{
+								continue;
+							}
+							if (text.Contains(OrangeSplit[i].ToString().Trim()))
+							{
+								e.CellStyle.BackColor = Color.Orange;
 								e.CellStyle.ForeColor = Color.Black;
 							}
 						}
 
 
 
-						if (textBoxGray.Text.Contains(",") == true)
+						string[] BlueSplit = textBoxBlue.Text.Split(',');
+						for (int i = 0; i < BlueSplit.Length; i++)
 						{
-							if (text.Contains(textBoxGray.Text.Split(',')[0]) || text.Contains(textBoxGray.Text.Split(',')[1]) || text.Contains(textBoxGray.Text))
+							if (BlueSplit[i].ToString().Trim().Length == 0)
 							{
-								if (textBoxGray.Text == "")
-								{
-									return;
-								}
-								else
-									e.CellStyle.BackColor = Color.Gray;
+								continue;
+							}
+							if (text.Contains(BlueSplit[i].ToString().Trim()))
+							{
+								e.CellStyle.BackColor = Color.Blue;
 								e.CellStyle.ForeColor = Color.White;
 							}
 						}
 
-						if (textBoxNavy.Text.Contains(",") == true)
+						string[] BlackSplit = textBoxBlack.Text.Split(',');
+						for (int i = 0; i < BlackSplit.Length; i++)
 						{
-							if (text.Contains(textBoxNavy.Text.Split(',')[0]) || text.Contains(textBoxNavy.Text.Split(',')[1]) || text.Contains(textBoxNavy.Text))
+							if (BlackSplit[i].ToString().Trim().Length == 0)
 							{
-								if (textBoxNavy.Text == "")
-								{
-									return;
-								}
-								else
-									e.CellStyle.BackColor = Color.Navy;
-								e.CellStyle.ForeColor = Color.White;
+								continue;
 							}
-						}
-
-
-						if (textBoxPurple.Text.Contains(",") == true)
-						{
-							if (text.Contains(textBoxPurple.Text.Split(',')[0]) || text.Contains(textBoxPurple.Text.Split(',')[1]) || text.Contains(textBoxPurple.Text))
+							if (text.Contains(BlackSplit[i].ToString().Trim()))
 							{
-								if (textBoxPurple.Text == "")
-								{
-									return;
-								}
-								else
-									e.CellStyle.BackColor = Color.Purple;
-								e.CellStyle.ForeColor = Color.White;
-							}
-						}
-
-
-						if (textBoxLime.Text.Contains(",") == true)
-						{
-							if (text.Contains(textBoxLime.Text.Split(',')[0]) || text.Contains(textBoxLime.Text.Split(',')[1]) || text.Contains(textBoxLime.Text))
-							{
-								if (textBoxLime.Text == "")
-								{
-									return;
-								}
-								else
-									e.CellStyle.BackColor = Color.Lime;
-								e.CellStyle.ForeColor = Color.White;
-							}
-						}
-
-
-
-
-						if (textBoxPink.Text.Contains(",") == true)
-						{
-							if (text.Contains(textBoxPink.Text.Split(',')[0]) || text.Contains(textBoxPink.Text.Split(',')[1]) || text.Contains(textBoxPink.Text))
-							{
-								if (textBoxPink.Text == "")
-								{
-									return;
-								}
-								else
-									e.CellStyle.BackColor = Color.Pink;
-								e.CellStyle.ForeColor = Color.White;
-							}
-						}
-
-
-
-						if (textBoxOrange.Text.Contains(",") == true)
-						{
-							if (text.Contains(textBoxOrange.Text.Split(',')[0]) || text.Contains(textBoxOrange.Text.Split(',')[1]) || text.Contains(textBoxOrange.Text))
-							{
-								if (textBoxPink.Text == "")
-								{
-									return;
-								}
-								else
-									e.CellStyle.BackColor = Color.Orange;
-								e.CellStyle.ForeColor = Color.White;
-							}
-						}
-
-
-						if (textBoxBlue.Text.Contains(",") == true)
-						{
-							if (text.Contains(textBoxBlue.Text.Split(',')[0]) || text.Contains(textBoxBlue.Text.Split(',')[1]) || text.Contains(textBoxBlue.Text))
-							{
-								if (textBoxBlue.Text == "")
-								{
-									return;
-								}
-								else
-									e.CellStyle.BackColor = Color.Blue;
-								e.CellStyle.ForeColor = Color.White;
-							}
-						}
-
-
-						if (textBoxBlack.Text.Contains(",") == true)
-						{
-							if (text.Contains(textBoxBlack.Text.Split(',')[0]) || text.Contains(textBoxBlack.Text.Split(',')[1]) || text.Contains(textBoxBlack.Text))
-							{
-								if (textBoxBlack.Text == "")
-								{
-									return;
-								}
-								else
 								e.CellStyle.BackColor = Color.Black;
 								e.CellStyle.ForeColor = Color.White;
 							}
 						}
-
 					}
 				}
 			}
@@ -1206,7 +1198,7 @@ namespace MQTTClient
 				//}
 				//else
 					cell1(sender,e);
-					cell2(sender, e);
+					//cell2(sender, e);
 
 			}
 		}
