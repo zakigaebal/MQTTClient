@@ -16,6 +16,8 @@ namespace MQTTClient
 	public partial class Form1 : Form
 	{
 		static MqttClient clientUser;
+		static MqttClient clientscr;
+		static MqttClient clientdst;
 		DataTable dt = new DataTable();
 		DataTable dt2 = new DataTable();
 		private delegate void ShowCallBack(string myStr1, string myStr2, DataGridView dgv);
@@ -27,6 +29,7 @@ namespace MQTTClient
 			InitializeComponent();
 			//폼 닫기 이벤트 선언
 			this.FormClosed += Form_Closing;
+			this.buttonClear.BringToFront();
 		}
 		#region ini 입력 메소드
 		[DllImport("kernel32")]
@@ -109,7 +112,7 @@ namespace MQTTClient
 			StringBuilder blue = new StringBuilder();
 			StringBuilder black = new StringBuilder();
 			StringBuilder autoPubTopic = new StringBuilder();
-			StringBuilder autoPubMsg = new StringBuilder();
+			StringBuilder autoPubMsg2 = new StringBuilder();
 
 			// ini파일에서 데이터를 불러옴
 			// GetPrivateProfileString("카테고리", "Key값", "기본값", "저장할 변수", "불러올 경로");
@@ -147,7 +150,7 @@ namespace MQTTClient
 			GetPrivateProfileString("Color", "Blue", "", blue, 3200, startupPath);
 			GetPrivateProfileString("Color", "Black", "", black, 3200, startupPath);
 			GetPrivateProfileString(mc, "autoPubTopic", "", autoPubTopic, 3200, startupPath);
-		//	GetPrivateProfileString(mc, "autoPubMsg", "", autoPubMsg, 32000, startupPath);
+		  GetPrivateProfileString(mc, "autoPubMsg", "", autoPubMsg2, 32000, startupPath);
 
 			// 텍스트박스에 ini파일에서 가져온 데이터를 넣는다
 			textBoxHost.Text = host.ToString();
@@ -184,7 +187,7 @@ namespace MQTTClient
 			textBoxBlue.Text = blue.ToString();
 			textBoxBlack.Text = black.ToString();
 			textBoxAutoPubTopic.Text = autoPubTopic.ToString().Trim();
-	    //textBoxAutoPubMsg.Text = autoPubMsg.ToString();
+	    textBoxAutoPubMsg.Text = autoPubMsg2.ToString();
 		}
 
 		private void initCloseMethod()
@@ -225,7 +228,7 @@ namespace MQTTClient
 			WritePrivateProfileString("Color", "Blue", textBoxBlue.Text, startupPath);
 			WritePrivateProfileString("Color", "Black", textBoxBlack.Text, startupPath);
 			WritePrivateProfileString(mc, "autoPubTopic", textBoxAutoPubTopic.Text, startupPath);
-		//WritePrivateProfileString(mc, "autoPubMsg", textBoxAutoPubMsg.Text, startupPath);
+		  WritePrivateProfileString(mc, "autoPubMsg", textBoxAutoPubMsg.Text, startupPath);
 		}
 
 		private void mqttRecord()
@@ -322,6 +325,7 @@ namespace MQTTClient
 			} catch (Exception ex)
 			{
 				MessageBox.Show(ex.ToString());
+				//로그 에러 저장
 			}
 		}
 	
@@ -511,6 +515,8 @@ namespace MQTTClient
 
 		private void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs data)
 		{
+			//clientdst.Publish(textBoxPT1.Text+data.Topic, data.Message, (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+
 			/// 1. 토픽 체크
 			/// 2. payload한 메세지에서 cmd를 체크
 			/// 3. 원하는 값 추출
@@ -1227,6 +1233,8 @@ namespace MQTTClient
 		{
 			initCloseMethod();
 			if (clientUser != null && clientUser.IsConnected) clientUser.Disconnect();
+			if (clientscr != null && clientUser.IsConnected) clientUser.Disconnect();
+			if (clientdst != null && clientUser.IsConnected) clientUser.Disconnect();
 		}
 
 		private void buttonLogFolder_Click(object sender, EventArgs e)
@@ -2096,6 +2104,121 @@ namespace MQTTClient
 			string irTopic = "dawoon/meterset/" + textBoxCode.Text + "/1/POLOR";
 			string irMessage = "{ \"CMD\":\"MAIN_SET\",\"POS\":" + textBoxMainPos.Text + ",\"VALUE\":" + textBoxMainValue.Text + " }";
 			clientUser.Publish(irTopic, Encoding.UTF8.GetBytes(irMessage), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+		}
+
+		bool a = true;
+		private void buttonAutoPubStart_Click(object sender, EventArgs e)
+		{
+			string topic = textBoxAutoPubTopic.Text;
+
+
+			while (a)
+			{
+				clientUser.Publish(topic, Encoding.UTF8.GetBytes(textBoxAutoPubMsg.Text), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+				Delay(Int32.Parse(textBoxDelay1.Text));
+			}
+
+			CMD_ID_POS req = new CMD_ID_POS();
+
+			for (int k = 1; k <= 20; k++)
+			{
+				for (int i = 1; i <= 20; i++)
+				{
+					req.ID = k;
+					req.CMD = "REQ_IR_SET_READ";
+					req.POS = i;
+
+					string reqStr = JsonConvert.SerializeObject(req, Formatting.Indented);
+					clientUser.Publish(topic, Encoding.UTF8.GetBytes(reqStr.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+				}
+				Delay(500);
+			}
+
+
+		}
+		private void buttonAutoPubStop_Click(object sender, EventArgs e)
+		{
+			a = false;
+		}
+
+		private void button9_Click(object sender, EventArgs e)
+		{
+
+		}
+
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void button7_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label55_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void textBox51_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label50_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void textBox52_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void panel13_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+
+		private void textBoxAutoPubMsg_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void textBoxAutoPubTopic_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label41_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label58_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void tabPage5_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void buttonConnet2_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				clientscr = new MqttClient(textBoxHost.Text);
+				clientscr.Connect(Guid.NewGuid().ToString());
+				clientscr.MqttMsgPublishReceived += new MqttClient.MqttMsgPublishEventHandler(client_MqttMsgPublishReceived);
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
 		}
 	}
 
