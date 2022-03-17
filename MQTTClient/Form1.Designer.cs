@@ -1844,7 +1844,7 @@
 			this.buttonMainPulish.Name = "buttonMainPulish";
 			this.buttonMainPulish.Size = new System.Drawing.Size(75, 23);
 			this.buttonMainPulish.TabIndex = 10;
-			this.buttonMainPulish.Text = "쓰기";
+			this.buttonMainPulish.Text = "MAIN쓰기";
 			this.buttonMainPulish.UseVisualStyleBackColor = true;
 			this.buttonMainPulish.Click += new System.EventHandler(this.buttonMainPulish_Click);
 			// 
@@ -1854,7 +1854,7 @@
 			this.buttonMeterPublish.Name = "buttonMeterPublish";
 			this.buttonMeterPublish.Size = new System.Drawing.Size(75, 23);
 			this.buttonMeterPublish.TabIndex = 17;
-			this.buttonMeterPublish.Text = "쓰기";
+			this.buttonMeterPublish.Text = "Meter쓰기";
 			this.buttonMeterPublish.UseVisualStyleBackColor = true;
 			this.buttonMeterPublish.Click += new System.EventHandler(this.buttonMeterPublish_Click);
 			// 
@@ -1915,7 +1915,7 @@
 			this.buttonIrPublish.Name = "buttonIrPublish";
 			this.buttonIrPublish.Size = new System.Drawing.Size(75, 23);
 			this.buttonIrPublish.TabIndex = 17;
-			this.buttonIrPublish.Text = "쓰기";
+			this.buttonIrPublish.Text = "IR쓰기";
 			this.buttonIrPublish.UseVisualStyleBackColor = true;
 			this.buttonIrPublish.Click += new System.EventHandler(this.buttonIRPublish_Click);
 			// 
