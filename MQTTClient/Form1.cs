@@ -529,6 +529,7 @@ namespace MQTTClient
 					string respText = resp.COUNT.ToString();
 					//textBoxIdCount.Text = respText;
 					myUI(respText, textBoxIdCount);
+				
 			
 				}
 				else if (cmd.CMD == "RESP_METER_SET_READ")
@@ -1549,13 +1550,19 @@ namespace MQTTClient
 
 			if (tabControl2.SelectedTab == tabPageMeter)
 			{
+			
 				dataGridViewMeter.Columns.Clear();
 				dataGridViewMeter.ReadOnly = true;
 				dataGridViewMeter.RowHeadersVisible = false;
 				dataGridViewMeter.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 				dataGridViewMeter.Columns.Add("0", "POS");
 				dataGridViewMeter.Columns.Add("1", "DESC");
-				for (int i = 1; i <= 11; i++)
+				if (textBoxIdCount.Text == "")
+				{
+					return;
+				}
+				int bbbb = Convert.ToInt32(textBoxIdCount.Text);
+				for (int i = 1; i <= bbbb; i++)
 				{
 					dataGridViewMeter.Columns.Add((i).ToString(), i.ToString());
 				}
@@ -1632,13 +1639,20 @@ namespace MQTTClient
 
 			if (tabControl2.SelectedTab == tabPageIR)
 			{
+		
 				dataGridViewIR.Columns.Clear();
 				dataGridViewIR.ReadOnly = true;
 				dataGridViewIR.RowHeadersVisible = false;
 				dataGridViewIR.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 				dataGridViewIR.Columns.Add("0", "POS");
 				dataGridViewIR.Columns.Add("1", "DESC");
-				for (int i = 1; i <= 10; i++)
+
+				if (textBoxIdCount.Text == "")
+				{
+					return;
+				}
+				int bbbb = Convert.ToInt32(textBoxIdCount.Text);
+				for (int i = 1; i <= bbbb; i++)
 				{
 					dataGridViewIR.Columns.Add((i).ToString(), i.ToString());
 				}
@@ -1662,7 +1676,17 @@ namespace MQTTClient
 				dataGridViewIR["1", num++].Value = "be: 0:부져 사용 1: 부져 사용안함. 기본값 0";
 				dataGridViewIR["1", num++].Value = "tuc: 태그 깨어나는 IR 카운트수. IR 라이팅때 같이 사용됨";
 
-				if (dataGridViewMeter.Columns.Count < 3)
+				dataGridViewIR.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+				dataGridViewIR.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+				dataGridViewIR.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+				dataGridViewIR.Columns[(dataGridViewMeter.ColumnCount).ToString()].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+				//dataGridViewMeter.Columns[(dataGridViewMeter.ColumnCount).ToString()].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+				dataGridViewIR.Columns[0].Width = 40;
+				dataGridViewIR.Columns[1].Width = 200;
+				dataGridViewIR.Columns[(dataGridViewMeter.ColumnCount).ToString()].Width = 35;
+
+				if (dataGridViewIR.Columns.Count < 3)
 					{
 						return;
 					}
@@ -1802,14 +1826,18 @@ namespace MQTTClient
 			radioButton3_CheckedChanged(sender,e);
 			radioButton4_CheckedChanged(sender,e);
 		}
+		private void tabcontrols()
+		{
+			//tabControl2_SelectedIndexChanged(sender, e);
+		}
 
 		private void buttonIdCount_Click(object sender, EventArgs e)
 		{
 			string topic = "dawoon/Manual/" + textBoxCode.Text.Trim() + "/1/POLOR";
 			try
 			{
-
-			//	textBoxIdCount.Text = "";
+			//	tabControl2_SelectedIndexChanged(sender, e);
+				textBoxIdCount.Text = "";
 				CMD_ID_COUNT req = new CMD_ID_COUNT();
 				req.CMD = "RESP_METER_COUNT";
 				req.ID = 1;
@@ -1829,8 +1857,10 @@ namespace MQTTClient
 				//int bbbb = Convert.ToInt32(textBoxIdCount.Text.Trim());
 				//textBoxIdCount.Text = aaaa;
 				//MessageBox.Show(bbbb.ToString());
+			
 	
-				
+
+
 
 			}
 			catch (Exception ex)
@@ -1895,7 +1925,7 @@ namespace MQTTClient
 
 		private void textBoxIdCount_TextChanged(object sender, EventArgs e)
 		{
-		
+			tabControl2_SelectedIndexChanged(sender, e);
 		}
 	}
 

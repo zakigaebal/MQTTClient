@@ -1403,7 +1403,6 @@
 			this.tabControl2.Size = new System.Drawing.Size(1148, 410);
 			this.tabControl2.TabIndex = 5;
 			this.tabControl2.SelectedIndexChanged += new System.EventHandler(this.tabControl2_SelectedIndexChanged);
-			this.tabControl2.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl2_Selected);
 			// 
 			// tabPageMain
 			// 
