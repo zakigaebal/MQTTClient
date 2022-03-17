@@ -678,7 +678,7 @@ namespace MQTTClient
 					textBoxHost.Enabled = false;
 					textBoxPort.Enabled = false;
 					buttonConnect.Enabled = false;
-					buttonIdCount.Enabled = false;
+					buttonIdCount.Enabled = true;
 					buttonMain.Enabled = true;
 				}
 			}
@@ -1482,12 +1482,14 @@ namespace MQTTClient
 
 		private void tabControl2_SelectedIndexChanged(object sender, EventArgs e)
 		{
+	
 			buttonIR.Enabled = false;
 			buttonMeter.Enabled = false;
 			//	textBoxIdCount.Text = "0";
 			if (tabControl2.SelectedTab == tabPageMain)
 			{
-				buttonIdCount.Enabled = false;
+				buttonIdCount.Enabled = true;
+		
 				//삭제
 				dataGridViewMain.Columns.Clear();
 				dataGridViewMain.ReadOnly = true;

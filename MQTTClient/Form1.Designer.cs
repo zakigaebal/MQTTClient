@@ -162,7 +162,6 @@
 			this.label39 = new System.Windows.Forms.Label();
 			this.button3 = new System.Windows.Forms.Button();
 			this.dataGridViewMessage = new System.Windows.Forms.DataGridView();
-			this.button1 = new System.Windows.Forms.Button();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.panel1.SuspendLayout();
@@ -223,9 +222,7 @@
 			// 
 			// panel2
 			// 
-			this.panel2.Controls.Add(this.button1);
 			this.panel2.Controls.Add(this.textBoxBlack);
-			this.panel2.Controls.Add(this.buttonClear);
 			this.panel2.Controls.Add(this.textBoxBlue);
 			this.panel2.Controls.Add(this.label38);
 			this.panel2.Controls.Add(this.textBoxOrange);
@@ -241,6 +238,7 @@
 			this.panel2.Controls.Add(this.label16);
 			this.panel2.Controls.Add(this.label21);
 			this.panel2.Controls.Add(this.textBoxNavy);
+			this.panel2.Controls.Add(this.buttonClear);
 			this.panel2.Controls.Add(this.textBoxGray);
 			this.panel2.Controls.Add(this.textBoxYellow);
 			this.panel2.Controls.Add(this.label20);
@@ -526,7 +524,7 @@
 			// buttonClear
 			// 
 			this.buttonClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.buttonClear.Location = new System.Drawing.Point(280, 375);
+			this.buttonClear.Location = new System.Drawing.Point(416, 406);
 			this.buttonClear.Name = "buttonClear";
 			this.buttonClear.Size = new System.Drawing.Size(74, 26);
 			this.buttonClear.TabIndex = 10;
@@ -1701,15 +1699,6 @@
 			this.dataGridViewMessage.TabIndex = 10;
 			this.dataGridViewMessage.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewMessage_CellFormatting);
 			// 
-			// button1
-			// 
-			this.button1.Location = new System.Drawing.Point(352, 344);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 23);
-			this.button1.TabIndex = 12;
-			this.button1.Text = "button1";
-			this.button1.UseVisualStyleBackColor = true;
-			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -1891,7 +1880,6 @@
 		private System.Windows.Forms.TextBox textBoxIdCount;
 		private System.Windows.Forms.Label label40;
 		public System.Windows.Forms.Button buttonIdCount;
-		private System.Windows.Forms.Button button1;
 	}
 }
 
