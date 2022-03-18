@@ -619,12 +619,12 @@ namespace MQTTClient
 			if (textBox7.Text.Trim().Length <= 0)
 			{
 				clientdst.Publish(data.Topic, data.Message, (byte)qosSelectedIndex, checkBox1.Checked);
-			ShowMessage(data.Topic, System.Text.Encoding.UTF8.GetString(data.Message), dataGridView1);
+				ShowMessage(data.Topic, System.Text.Encoding.UTF8.GetString(data.Message), dataGridView1);
 			}
 			else
 			{
 				clientdst.Publish(textBox7.Text.Trim() + data.Topic, data.Message, (byte)qosSelectedIndex, checkBox1.Checked);
-			ShowMessage(textBox7.Text.Trim() + data.Topic, System.Text.Encoding.UTF8.GetString(data.Message), dataGridView1);
+				ShowMessage(textBox7.Text.Trim() + data.Topic, System.Text.Encoding.UTF8.GetString(data.Message), dataGridView1);
 			}
 
 
@@ -633,7 +633,7 @@ namespace MQTTClient
 		{
 
 
-		
+
 		}
 
 		public static string stringBetween(string Source, string Start, string End)
@@ -2286,7 +2286,7 @@ namespace MQTTClient
 				{
 					MessageBox.Show(ex.Message);
 				}
-			
+
 			}
 			int port2;
 			if (textBox5.Text.Length == 0)
@@ -2484,8 +2484,8 @@ namespace MQTTClient
 		{
 			try
 			{
-			if (clientscr != null && clientscr.IsConnected) clientscr.Disconnect();
-			if (clientdst != null && clientdst.IsConnected) clientdst.Disconnect();
+				if (clientscr != null && clientscr.IsConnected) clientscr.Disconnect();
+				if (clientdst != null && clientdst.IsConnected) clientdst.Disconnect();
 
 			}
 			catch (Exception)
@@ -2546,6 +2546,44 @@ namespace MQTTClient
 					MessageBox.Show(ex.Message);
 				}
 			}
+		}
+
+		private void button15_Click(object sender, EventArgs e)
+		{
+			string[] msg = textBox52.Lines;
+			string[] newMsg = textBox52.Lines;
+
+			for (int i = 0; i < msg.Length; i++)
+			{
+				newMsg[i] = msg[i].Substring(Convert.ToInt32(textBox8.Text)-1, msg[i].Length- Convert.ToInt32(textBox8.Text)+1);
+			}
+			textBox52.Lines = newMsg;
+		}
+
+		private void button16_Click(object sender, EventArgs e)
+		{
+			string[] key = textBox4.Text.Split(',');
+			string[] msg = textBox52.Lines;
+			Console.WriteLine(textBox52.Lines.Length.ToString());
+
+			List<string> list = new List<string>();
+			for (int i = 0; i < msg.Length; i++)
+			{
+				for (int j = 0; j < key.Length; j++)
+				{
+					if (key[j].Trim().Length<=0)
+					{
+						continue;
+					}
+					if (msg[i].Contains(key[j].Trim()))
+					{
+						list.Add(msg[i]);
+						Console.WriteLine(i.ToString());
+						break;
+					}
+				}
+			}
+		textBox52.Lines =	list.ToArray();
 		}
 	}
 

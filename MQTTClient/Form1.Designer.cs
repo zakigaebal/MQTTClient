@@ -281,6 +281,14 @@
 			this.button14 = new System.Windows.Forms.Button();
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.label61 = new System.Windows.Forms.Label();
+			this.splitter2 = new System.Windows.Forms.Splitter();
+			this.panel21 = new System.Windows.Forms.Panel();
+			this.textBox4 = new System.Windows.Forms.TextBox();
+			this.label65 = new System.Windows.Forms.Label();
+			this.textBox8 = new System.Windows.Forms.TextBox();
+			this.label73 = new System.Windows.Forms.Label();
+			this.button15 = new System.Windows.Forms.Button();
+			this.button16 = new System.Windows.Forms.Button();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.panel1.SuspendLayout();
@@ -316,6 +324,7 @@
 			this.panel18.SuspendLayout();
 			this.panel17.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewMessage)).BeginInit();
+			this.panel21.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tabControl1
@@ -656,7 +665,6 @@
 			// 
 			// buttonClear
 			// 
-			this.buttonClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.buttonClear.BackColor = System.Drawing.Color.BlanchedAlmond;
 			this.buttonClear.Location = new System.Drawing.Point(285, 2);
 			this.buttonClear.Name = "buttonClear";
@@ -2406,6 +2414,7 @@
 			this.panel15.Controls.Add(this.textBox52);
 			this.panel15.Controls.Add(this.splitter1);
 			this.panel15.Controls.Add(this.textBox51);
+			this.panel15.Controls.Add(this.panel21);
 			this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel15.Location = new System.Drawing.Point(3, 39);
 			this.panel15.Name = "panel15";
@@ -2416,7 +2425,7 @@
 			// 
 			this.splitter1.Location = new System.Drawing.Point(171, 0);
 			this.splitter1.Name = "splitter1";
-			this.splitter1.Size = new System.Drawing.Size(5, 401);
+			this.splitter1.Size = new System.Drawing.Size(5, 362);
 			this.splitter1.TabIndex = 6;
 			this.splitter1.TabStop = false;
 			// 
@@ -2427,8 +2436,9 @@
 			this.textBox51.Multiline = true;
 			this.textBox51.Name = "textBox51";
 			this.textBox51.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.textBox51.Size = new System.Drawing.Size(171, 401);
+			this.textBox51.Size = new System.Drawing.Size(171, 362);
 			this.textBox51.TabIndex = 5;
+			this.textBox51.WordWrap = false;
 			this.textBox51.TextChanged += new System.EventHandler(this.textBox51_TextChanged_1);
 			// 
 			// textBox52
@@ -2437,8 +2447,7 @@
 			this.textBox52.Location = new System.Drawing.Point(176, 0);
 			this.textBox52.Multiline = true;
 			this.textBox52.Name = "textBox52";
-			this.textBox52.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.textBox52.Size = new System.Drawing.Size(972, 401);
+			this.textBox52.Size = new System.Drawing.Size(972, 362);
 			this.textBox52.TabIndex = 5;
 			this.textBox52.TextChanged += new System.EventHandler(this.textBox52_TextChanged_1);
 			// 
@@ -3020,11 +3029,95 @@
 			this.label61.TabIndex = 18;
 			this.label61.Text = "Topic:";
 			// 
+			// splitter2
+			// 
+			this.splitter2.Dock = System.Windows.Forms.DockStyle.Top;
+			this.splitter2.Location = new System.Drawing.Point(0, 469);
+			this.splitter2.Name = "splitter2";
+			this.splitter2.Size = new System.Drawing.Size(1162, 5);
+			this.splitter2.TabIndex = 11;
+			this.splitter2.TabStop = false;
+			// 
+			// panel21
+			// 
+			this.panel21.Controls.Add(this.textBox4);
+			this.panel21.Controls.Add(this.label65);
+			this.panel21.Controls.Add(this.textBox8);
+			this.panel21.Controls.Add(this.label73);
+			this.panel21.Controls.Add(this.button15);
+			this.panel21.Controls.Add(this.button16);
+			this.panel21.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.panel21.Location = new System.Drawing.Point(0, 362);
+			this.panel21.Name = "panel21";
+			this.panel21.Size = new System.Drawing.Size(1148, 39);
+			this.panel21.TabIndex = 13;
+			// 
+			// textBox4
+			// 
+			this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.textBox4.Location = new System.Drawing.Point(253, 9);
+			this.textBox4.Name = "textBox4";
+			this.textBox4.Size = new System.Drawing.Size(284, 21);
+			this.textBox4.TabIndex = 12;
+			this.textBox4.Text = "MILKEND,REQ_COW_FEEDER_END";
+			// 
+			// label65
+			// 
+			this.label65.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.label65.AutoSize = true;
+			this.label65.Location = new System.Drawing.Point(3, 13);
+			this.label65.Name = "label65";
+			this.label65.Size = new System.Drawing.Size(53, 12);
+			this.label65.TabIndex = 10;
+			this.label65.Text = "삭제위치";
+			// 
+			// textBox8
+			// 
+			this.textBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.textBox8.Location = new System.Drawing.Point(62, 9);
+			this.textBox8.Name = "textBox8";
+			this.textBox8.Size = new System.Drawing.Size(53, 21);
+			this.textBox8.TabIndex = 13;
+			this.textBox8.Text = "36";
+			// 
+			// label73
+			// 
+			this.label73.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.label73.AutoSize = true;
+			this.label73.Location = new System.Drawing.Point(182, 13);
+			this.label73.Name = "label73";
+			this.label73.Size = new System.Drawing.Size(65, 12);
+			this.label73.TabIndex = 11;
+			this.label73.Text = "검색문자열";
+			// 
+			// button15
+			// 
+			this.button15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.button15.Location = new System.Drawing.Point(118, 9);
+			this.button15.Name = "button15";
+			this.button15.Size = new System.Drawing.Size(53, 21);
+			this.button15.TabIndex = 8;
+			this.button15.Text = "삭제";
+			this.button15.UseVisualStyleBackColor = true;
+			this.button15.Click += new System.EventHandler(this.button15_Click);
+			// 
+			// button16
+			// 
+			this.button16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.button16.Location = new System.Drawing.Point(543, 8);
+			this.button16.Name = "button16";
+			this.button16.Size = new System.Drawing.Size(53, 21);
+			this.button16.TabIndex = 9;
+			this.button16.Text = "남기기";
+			this.button16.UseVisualStyleBackColor = true;
+			this.button16.Click += new System.EventHandler(this.button16_Click);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1162, 638);
+			this.Controls.Add(this.splitter2);
 			this.Controls.Add(this.buttonClear);
 			this.Controls.Add(this.dataGridViewMessage);
 			this.Controls.Add(this.tabControl1);
@@ -3083,6 +3176,8 @@
 			this.panel17.ResumeLayout(false);
 			this.panel17.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewMessage)).EndInit();
+			this.panel21.ResumeLayout(false);
+			this.panel21.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -3342,6 +3437,14 @@
 		private System.Windows.Forms.Button button14;
 		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.Label label61;
+		private System.Windows.Forms.Splitter splitter2;
+		private System.Windows.Forms.Panel panel21;
+		private System.Windows.Forms.TextBox textBox4;
+		private System.Windows.Forms.Label label65;
+		private System.Windows.Forms.TextBox textBox8;
+		private System.Windows.Forms.Label label73;
+		private System.Windows.Forms.Button button15;
+		private System.Windows.Forms.Button button16;
 	}
 }
 
