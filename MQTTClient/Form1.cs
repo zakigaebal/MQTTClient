@@ -1565,6 +1565,7 @@ namespace MQTTClient
 					return;
 				}
 				dataGridViewMain.Columns[3].HeaderText = "헤링본";
+				dataGridViewMain.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 				int idx = 0;
 				dataGridViewMain["3", idx++].Value = "1";
 				dataGridViewMain["3", idx++].Value = "192";
@@ -1694,16 +1695,16 @@ namespace MQTTClient
 				dataGridViewMain.Columns.Clear();
 				dataGridViewMain.ReadOnly = true;
 				dataGridViewMain.RowHeadersVisible = false;
-				dataGridViewMain.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 				dataGridViewMain.Columns.Add("0", "POS");
 				dataGridViewMain.Columns.Add("1", "DESC");
 				dataGridViewMain.Columns.Add("2", "현재값");
 				dataGridViewMain.Columns.Add("3", "텐덤/해링본");
+				dataGridViewMain.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 			
 				dataGridViewMain.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 				dataGridViewMain.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 				dataGridViewMain.Columns[0].Width = 40;
-				dataGridViewMain.Columns[1].Width = 350;
+				dataGridViewMain.Columns[1].Width = 900;
 				dataGridViewMain.Columns[3].Width = 70;
 				for (int i = 0; i < 40; i++)
 				{
@@ -1753,6 +1754,7 @@ namespace MQTTClient
 				dataGridViewMain["1", 39].Value = "MAIN_RESET: 12시간이 넘었고 착유중이 아니면 자정에 메인 리셋 진행 0:사용함 1:사용안함";
 				radioButton1_CheckedChanged(sender, e);
 				radioButton2_CheckedChanged(sender, e);
+				dataGridViewMain.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 			}
 
 			if (tabControl2.SelectedTab == tabPageMeter)
@@ -1839,7 +1841,7 @@ namespace MQTTClient
 				dataGridViewMeter.Columns[0].Width = 40;
 				dataGridViewMeter.Columns[1].Width = 200;
 				//dataGridViewMeter.Columns[(dataGridViewMeter.ColumnCount).ToString()].Width = 35;
-
+				dataGridViewMeter.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 			}
 
 			if (tabControl2.SelectedTab == tabPageIR)
@@ -1888,7 +1890,7 @@ namespace MQTTClient
 				dataGridViewIR.Columns[0].Width = 40;
 				dataGridViewIR.Columns[1].Width = 200;
 				//dataGridViewIR.Columns[(dataGridViewMeter.ColumnCount).ToString()].Width = 35;
-
+				dataGridViewIR.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 				if (dataGridViewIR.Columns.Count < 3)
 				{
 					return;
@@ -2044,6 +2046,12 @@ namespace MQTTClient
 			string topic = "dawoon/Manual/" + textBoxCode.Text.Trim() + "/1/POLOR";
 			try
 			{
+				//	if (clientUser.IsConnected)
+				//{
+				//	clientUser = new MqttClient(textBoxHost.Text);
+				//	clientUser.Connect(Guid.NewGuid().ToString());
+				//	clientUser.MqttMsgPublishReceived += new MqttClient.MqttMsgPublishEventHandler(client_MqttMsgPublishReceived);
+				//}
 				if ((tabControl2.SelectedTab == tabPageMeter) || (tabControl2.SelectedTab == tabPageIR))
 				{
 					textBoxIdCount.Text = "";
@@ -2054,8 +2062,6 @@ namespace MQTTClient
 					string reqStr = (JsonConvert.SerializeObject(req, Formatting.Indented)).Trim();
 					clientUser.Publish(topic, Encoding.UTF8.GetBytes(reqStr.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 				}
-
-
 			}
 			catch (Exception ex)
 			{
@@ -2205,6 +2211,7 @@ namespace MQTTClient
 				dataGridViewMeter.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 				dataGridViewMeter.Columns[0].Width = 40;
 				dataGridViewMeter.Columns[1].Width = 200;
+				dataGridViewMeter.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 			}
 
 			if (tabControl2.SelectedTab == tabPageIR)
@@ -2248,6 +2255,7 @@ namespace MQTTClient
 				dataGridViewIR.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 				dataGridViewIR.Columns[0].Width = 40;
 				dataGridViewIR.Columns[1].Width = 200;
+				dataGridViewIR.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 				if (dataGridViewIR.Columns.Count < 3)
 				{
 					return;
