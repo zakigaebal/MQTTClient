@@ -11,6 +11,19 @@ using System.Runtime.InteropServices;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
+using System;
+using System.Collections;
+using System.Net;
+using System.Net.Security;
+using System.Net.Sockets;
+using System.Security.Cryptography.X509Certificates;
+using System.Threading;
+using uPLibrary.Networking.M2Mqtt.Exceptions;
+using uPLibrary.Networking.M2Mqtt.Internal;
+using uPLibrary.Networking.M2Mqtt.Messages;
+using uPLibrary.Networking.M2Mqtt.Session;
+using uPLibrary.Networking.M2Mqtt.Utility;
+
 namespace MQTTClient
 {
 	public partial class Form1 : Form
@@ -795,7 +808,7 @@ namespace MQTTClient
 			{
 				try
 				{
-					clientUser = new MqttClient(textBoxHost.Text);
+					clientUser = new MqttClient(textBoxHost.Text, port, false, null, null, MqttSslProtocols.None);
 					clientUser.Connect(Guid.NewGuid().ToString());
 					clientUser.MqttMsgPublishReceived += new MqttClient.MqttMsgPublishEventHandler(client_MqttMsgPublishReceived);
 				}
@@ -2737,6 +2750,37 @@ namespace MQTTClient
 		private void button19_Click(object sender, EventArgs e)
 		{
 			textBox52.Text = "";
+		}
+
+		private void dataGridViewMain_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			if (e.RowIndex < 0)
+			{
+				return;
+			}
+			textBoxMainPos.Text = dataGridViewMain.Rows[e.RowIndex].Cells[0].Value.ToString();
+			//textBoxMainValue.Text = dataGridViewMain.Rows[e.RowIndex].Cells[1].Value.ToString();
+		
+		}
+
+		private void panel19_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+
+		private void label59_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label60_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label61_Click(object sender, EventArgs e)
+		{
+
 		}
 	}
 
