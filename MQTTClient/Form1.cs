@@ -1815,7 +1815,7 @@ namespace MQTTClient
 						dataGridViewMeter["0", i].Value = i + 1;
 					}
 					dataGridViewMeter["1", 0].Value = "사용안함";
-					dataGridViewMeter["1", 1].Value = "장비 ID";
+					dataGridViewMeter["1", 1].Value = "장비 ID(1~20)";
 					dataGridViewMeter["1", 2].Value = "맥동분당횟수(20~80)";
 					dataGridViewMeter["1", 3].Value = "탈착시간 초단위 계산";
 					dataGridViewMeter["1", 4].Value = "초기 착유종료 탈착 초";
@@ -1940,8 +1940,9 @@ namespace MQTTClient
 				dataGridViewMeter.Columns[dgvHeader].HeaderText = "헤링본";
 
 				int idx = 0;
+				dataGridViewMeter["1", 1].Value = "장비 ID(1~12)";
 				dataGridViewMeter[dgvValue.ToString(), idx++].Value = "1";
-				dataGridViewMeter[dgvValue.ToString(), idx++].Value = "1~12";
+				dataGridViewMeter[dgvValue.ToString(), idx++].Value = "1";
 				dataGridViewMeter[dgvValue.ToString(), idx++].Value = "60";
 				dataGridViewMeter[dgvValue.ToString(), idx++].Value = "0";
 				dataGridViewMeter[dgvValue.ToString(), idx++].Value = "180";
@@ -2004,9 +2005,13 @@ namespace MQTTClient
 				int dgvHeader = dataGridViewMeter.Columns.Count - 1;
 				int dgvValue = Convert.ToInt32(textBoxIdCount.Text) + 2;
 				dataGridViewMeter.Columns[dgvHeader].HeaderText = "텐덤";
+				dataGridViewMeter["1", 1].Value = "장비 ID(1~6)";
+				dataGridViewMeter["11", 11].Value = "유방염 에러 밸류 (세이버없음)";
+				dataGridViewMeter["12", 12].Value = "혈류 에러 벨류(mg/L) (세이버없음)";
 				int idx = 0;
+
 				dataGridViewMeter[dgvValue.ToString(), idx++].Value = "1";
-				dataGridViewMeter[dgvValue.ToString(), idx++].Value = "1~6";
+				dataGridViewMeter[dgvValue.ToString(), idx++].Value = "1";
 				dataGridViewMeter[dgvValue.ToString(), idx++].Value = "60";
 				dataGridViewMeter[dgvValue.ToString(), idx++].Value = "0";
 				dataGridViewMeter[dgvValue.ToString(), idx++].Value = "180";
@@ -2016,8 +2021,8 @@ namespace MQTTClient
 				dataGridViewMeter[dgvValue.ToString(), idx++].Value = "60";
 				dataGridViewMeter[dgvValue.ToString(), idx++].Value = "5";
 				dataGridViewMeter[dgvValue.ToString(), idx++].Value = "2";
-				dataGridViewMeter[dgvValue.ToString(), idx++].Value = "8000(세이버없음)";
-				dataGridViewMeter[dgvValue.ToString(), idx++].Value = "1000(세이버없음)";
+				dataGridViewMeter[dgvValue.ToString(), idx++].Value = "8000";
+				dataGridViewMeter[dgvValue.ToString(), idx++].Value = "1000";
 				dataGridViewMeter[dgvValue.ToString(), idx++].Value = "1";
 				dataGridViewMeter[dgvValue.ToString(), idx++].Value = "1000";
 				dataGridViewMeter[dgvValue.ToString(), idx++].Value = "500";
