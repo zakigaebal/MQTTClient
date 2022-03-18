@@ -289,6 +289,11 @@
 			this.label73 = new System.Windows.Forms.Label();
 			this.button15 = new System.Windows.Forms.Button();
 			this.button16 = new System.Windows.Forms.Button();
+			this.textBox9 = new System.Windows.Forms.TextBox();
+			this.label74 = new System.Windows.Forms.Label();
+			this.button17 = new System.Windows.Forms.Button();
+			this.button18 = new System.Windows.Forms.Button();
+			this.button19 = new System.Windows.Forms.Button();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.panel1.SuspendLayout();
@@ -2445,14 +2450,19 @@
 			// 
 			this.textBox52.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.textBox52.Location = new System.Drawing.Point(176, 0);
+			this.textBox52.MaxLength = 999990000;
 			this.textBox52.Multiline = true;
 			this.textBox52.Name = "textBox52";
+			this.textBox52.ScrollBars = System.Windows.Forms.ScrollBars.Both;
 			this.textBox52.Size = new System.Drawing.Size(972, 362);
 			this.textBox52.TabIndex = 5;
+			this.textBox52.WordWrap = false;
 			this.textBox52.TextChanged += new System.EventHandler(this.textBox52_TextChanged_1);
 			// 
 			// panel14
 			// 
+			this.panel14.Controls.Add(this.button19);
+			this.panel14.Controls.Add(this.button18);
 			this.panel14.Controls.Add(this.label55);
 			this.panel14.Controls.Add(this.textBox54);
 			this.panel14.Controls.Add(this.label50);
@@ -3040,6 +3050,9 @@
 			// 
 			// panel21
 			// 
+			this.panel21.Controls.Add(this.textBox9);
+			this.panel21.Controls.Add(this.label74);
+			this.panel21.Controls.Add(this.button17);
 			this.panel21.Controls.Add(this.textBox4);
 			this.panel21.Controls.Add(this.label65);
 			this.panel21.Controls.Add(this.textBox8);
@@ -3054,16 +3067,16 @@
 			// 
 			// textBox4
 			// 
-			this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBox4.Location = new System.Drawing.Point(253, 9);
+			this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.textBox4.Location = new System.Drawing.Point(442, 9);
 			this.textBox4.Name = "textBox4";
-			this.textBox4.Size = new System.Drawing.Size(284, 21);
+			this.textBox4.Size = new System.Drawing.Size(640, 21);
 			this.textBox4.TabIndex = 12;
-			this.textBox4.Text = "MILKEND,REQ_COW_FEEDER_END";
+			this.textBox4.Text = "\"CMD\":\"MILKEND\",\"CMD\":\"REQ_COW_FEEDER_END\"";
 			// 
 			// label65
 			// 
-			this.label65.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.label65.AutoSize = true;
 			this.label65.Location = new System.Drawing.Point(3, 13);
 			this.label65.Name = "label65";
@@ -3073,7 +3086,6 @@
 			// 
 			// textBox8
 			// 
-			this.textBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.textBox8.Location = new System.Drawing.Point(62, 9);
 			this.textBox8.Name = "textBox8";
 			this.textBox8.Size = new System.Drawing.Size(53, 21);
@@ -3082,9 +3094,8 @@
 			// 
 			// label73
 			// 
-			this.label73.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.label73.AutoSize = true;
-			this.label73.Location = new System.Drawing.Point(182, 13);
+			this.label73.Location = new System.Drawing.Point(371, 12);
 			this.label73.Name = "label73";
 			this.label73.Size = new System.Drawing.Size(65, 12);
 			this.label73.TabIndex = 11;
@@ -3092,7 +3103,6 @@
 			// 
 			// button15
 			// 
-			this.button15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.button15.Location = new System.Drawing.Point(118, 9);
 			this.button15.Name = "button15";
 			this.button15.Size = new System.Drawing.Size(53, 21);
@@ -3104,13 +3114,61 @@
 			// button16
 			// 
 			this.button16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.button16.Location = new System.Drawing.Point(543, 8);
+			this.button16.Location = new System.Drawing.Point(1088, 9);
 			this.button16.Name = "button16";
 			this.button16.Size = new System.Drawing.Size(53, 21);
 			this.button16.TabIndex = 9;
 			this.button16.Text = "남기기";
 			this.button16.UseVisualStyleBackColor = true;
 			this.button16.Click += new System.EventHandler(this.button16_Click);
+			// 
+			// textBox9
+			// 
+			this.textBox9.Location = new System.Drawing.Point(251, 10);
+			this.textBox9.Name = "textBox9";
+			this.textBox9.Size = new System.Drawing.Size(55, 21);
+			this.textBox9.TabIndex = 16;
+			this.textBox9.Text = " - ";
+			this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
+			// 
+			// label74
+			// 
+			this.label74.AutoSize = true;
+			this.label74.Location = new System.Drawing.Point(180, 14);
+			this.label74.Name = "label74";
+			this.label74.Size = new System.Drawing.Size(65, 12);
+			this.label74.TabIndex = 15;
+			this.label74.Text = "분리문자열";
+			// 
+			// button17
+			// 
+			this.button17.Location = new System.Drawing.Point(312, 10);
+			this.button17.Name = "button17";
+			this.button17.Size = new System.Drawing.Size(53, 21);
+			this.button17.TabIndex = 14;
+			this.button17.Text = "분리";
+			this.button17.UseVisualStyleBackColor = true;
+			this.button17.Click += new System.EventHandler(this.button17_Click);
+			// 
+			// button18
+			// 
+			this.button18.Location = new System.Drawing.Point(51, 14);
+			this.button18.Name = "button18";
+			this.button18.Size = new System.Drawing.Size(18, 21);
+			this.button18.TabIndex = 9;
+			this.button18.Text = "C";
+			this.button18.UseVisualStyleBackColor = true;
+			this.button18.Click += new System.EventHandler(this.button18_Click);
+			// 
+			// button19
+			// 
+			this.button19.Location = new System.Drawing.Point(246, 15);
+			this.button19.Name = "button19";
+			this.button19.Size = new System.Drawing.Size(18, 21);
+			this.button19.TabIndex = 9;
+			this.button19.Text = "C";
+			this.button19.UseVisualStyleBackColor = true;
+			this.button19.Click += new System.EventHandler(this.button19_Click);
 			// 
 			// Form1
 			// 
@@ -3445,6 +3503,11 @@
 		private System.Windows.Forms.Label label73;
 		private System.Windows.Forms.Button button15;
 		private System.Windows.Forms.Button button16;
+		private System.Windows.Forms.TextBox textBox9;
+		private System.Windows.Forms.Label label74;
+		private System.Windows.Forms.Button button17;
+		private System.Windows.Forms.Button button19;
+		private System.Windows.Forms.Button button18;
 	}
 }
 

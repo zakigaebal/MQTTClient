@@ -53,142 +53,166 @@ namespace MQTTClient
 		}
 		private void buttonTopicSave_Click(object sender, EventArgs e)
 		{
-			StreamWriter sw;
-			sw = new StreamWriter("Sub.txt");
-			int nCount = listBoxSub.Items.Count;
-			for (int i = 0; i < nCount; i++)
+			try
 			{
-				listBoxSub.Items[i] += "\r\n";
-				sw.Write(listBoxSub.Items[i]);
+				StreamWriter sw;
+				sw = new StreamWriter("Sub.txt");
+				int nCount = listBoxSub.Items.Count;
+				for (int i = 0; i < nCount; i++)
+				{
+					listBoxSub.Items[i] += "\r\n";
+					sw.Write(listBoxSub.Items[i]);
+				}
+				sw.Close();
 			}
-			sw.Close();
+			catch (Exception ex)
+			{
+				
+			}
+			
 		}
 		private void buttonTopicOpen_Click(object sender, EventArgs e)
 		{
-			listBoxSub.Items.Clear();
-			string currentPath = System.IO.Directory.GetCurrentDirectory();
-			StreamReader file = new StreamReader(currentPath + "\\Sub.txt", Encoding.Default);
-			string s = "";
-			while (s != null)
+			try
 			{
-				s = file.ReadLine();
-				if (!string.IsNullOrEmpty(s)) listBoxSub.Items.Add(s);
+				listBoxSub.Items.Clear();
+				string currentPath = System.IO.Directory.GetCurrentDirectory();
+				StreamReader file = new StreamReader(currentPath + "\\Sub.txt", Encoding.Default);
+				string s = "";
+				while (s != null)
+				{
+					s = file.ReadLine();
+					if (!string.IsNullOrEmpty(s)) listBoxSub.Items.Add(s);
+				}
+				file.Close();
 			}
-			file.Close();
+			catch (Exception)
+			{
+			}
+	
 		}
 		private void iniload()
 		{
-			// ini값을 집어넣을 변수 선언
-			StringBuilder host = new StringBuilder();
-			StringBuilder topic = new StringBuilder();
-			StringBuilder pub1 = new StringBuilder();
-			StringBuilder pub2 = new StringBuilder();
-			StringBuilder pub3 = new StringBuilder();
-			StringBuilder pub4 = new StringBuilder();
-			StringBuilder pub5 = new StringBuilder();
-			StringBuilder pub6 = new StringBuilder();
-			StringBuilder pub7 = new StringBuilder();
-			StringBuilder pub8 = new StringBuilder();
-			StringBuilder pub9 = new StringBuilder();
-			StringBuilder pub10 = new StringBuilder();
-			StringBuilder m1 = new StringBuilder();
-			StringBuilder m2 = new StringBuilder();
-			StringBuilder m3 = new StringBuilder();
-			StringBuilder m4 = new StringBuilder();
-			StringBuilder m5 = new StringBuilder();
-			StringBuilder m6 = new StringBuilder();
-			StringBuilder m7 = new StringBuilder();
-			StringBuilder m8 = new StringBuilder();
-			StringBuilder m9 = new StringBuilder();
-			StringBuilder m10 = new StringBuilder();
-			StringBuilder red = new StringBuilder();
-			StringBuilder green = new StringBuilder();
-			StringBuilder yellow = new StringBuilder();
-			StringBuilder gray = new StringBuilder();
-			StringBuilder navy = new StringBuilder();
-			StringBuilder purple = new StringBuilder();
-			StringBuilder lime = new StringBuilder();
-			StringBuilder pink = new StringBuilder();
-			StringBuilder orange = new StringBuilder();
-			StringBuilder blue = new StringBuilder();
-			StringBuilder black = new StringBuilder();
-			StringBuilder autoPubTopic = new StringBuilder();
-			StringBuilder autoPubMsg2 = new StringBuilder();
+			try
+			{
+				// ini값을 집어넣을 변수 선언
+				StringBuilder host = new StringBuilder();
+				StringBuilder topic = new StringBuilder();
+				StringBuilder pub1 = new StringBuilder();
+				StringBuilder pub2 = new StringBuilder();
+				StringBuilder pub3 = new StringBuilder();
+				StringBuilder pub4 = new StringBuilder();
+				StringBuilder pub5 = new StringBuilder();
+				StringBuilder pub6 = new StringBuilder();
+				StringBuilder pub7 = new StringBuilder();
+				StringBuilder pub8 = new StringBuilder();
+				StringBuilder pub9 = new StringBuilder();
+				StringBuilder pub10 = new StringBuilder();
+				StringBuilder m1 = new StringBuilder();
+				StringBuilder m2 = new StringBuilder();
+				StringBuilder m3 = new StringBuilder();
+				StringBuilder m4 = new StringBuilder();
+				StringBuilder m5 = new StringBuilder();
+				StringBuilder m6 = new StringBuilder();
+				StringBuilder m7 = new StringBuilder();
+				StringBuilder m8 = new StringBuilder();
+				StringBuilder m9 = new StringBuilder();
+				StringBuilder m10 = new StringBuilder();
+				StringBuilder red = new StringBuilder();
+				StringBuilder green = new StringBuilder();
+				StringBuilder yellow = new StringBuilder();
+				StringBuilder gray = new StringBuilder();
+				StringBuilder navy = new StringBuilder();
+				StringBuilder purple = new StringBuilder();
+				StringBuilder lime = new StringBuilder();
+				StringBuilder pink = new StringBuilder();
+				StringBuilder orange = new StringBuilder();
+				StringBuilder blue = new StringBuilder();
+				StringBuilder black = new StringBuilder();
+				StringBuilder autoPubTopic = new StringBuilder();
+				StringBuilder autoPubMsg2 = new StringBuilder();
 
-			// ini파일에서 데이터를 불러옴
-			// GetPrivateProfileString("카테고리", "Key값", "기본값", "저장할 변수", "불러올 경로");
-			GetPrivateProfileString(mc, "LastHostName", "", host, 3200, startupPath);
-			GetPrivateProfileString(mc, "LastSubTopic", "", topic, 3200, startupPath);
-			GetPrivateProfileString(mc, "LastPubTopic1", "", pub1, 3200, startupPath);
-			GetPrivateProfileString(mc, "LastPubTopic2", "", pub2, 3200, startupPath);
-			GetPrivateProfileString(mc, "LastPubTopic3", "", pub3, 3200, startupPath);
-			GetPrivateProfileString(mc, "LastPubTopic4", "", pub4, 3200, startupPath);
-			GetPrivateProfileString(mc, "LastPubTopic5", "", pub5, 3200, startupPath);
-			GetPrivateProfileString(mc, "LastPubTopic6", "", pub6, 3200, startupPath);
-			GetPrivateProfileString(mc, "LastPubTopic7", "", pub7, 3200, startupPath);
-			GetPrivateProfileString(mc, "LastPubTopic8", "", pub8, 3200, startupPath);
-			GetPrivateProfileString(mc, "LastPubTopic9", "", pub9, 3200, startupPath);
-			GetPrivateProfileString(mc, "LastPubTopic10", "", pub10, 3200, startupPath);
-			GetPrivateProfileString(mc, "LastMessage1", "", m1, 3200, startupPath);
-			GetPrivateProfileString(mc, "LastMessage2", "", m2, 3200, startupPath);
-			GetPrivateProfileString(mc, "LastMessage3", "", m3, 3200, startupPath);
-			GetPrivateProfileString(mc, "LastMessage4", "", m4, 3200, startupPath);
-			GetPrivateProfileString(mc, "LastMessage5", "", m5, 3200, startupPath);
-			GetPrivateProfileString(mc, "LastMessage6", "", m6, 3200, startupPath);
-			GetPrivateProfileString(mc, "LastMessage7", "", m7, 3200, startupPath);
-			GetPrivateProfileString(mc, "LastMessage8", "", m8, 3200, startupPath);
-			GetPrivateProfileString(mc, "LastMessage9", "", m9, 3200, startupPath);
-			GetPrivateProfileString(mc, "LastMessage10", "", m10, 3200, startupPath);
-			GetPrivateProfileString("Color", "Red", "", red, 3200, startupPath);
-			GetPrivateProfileString("Color", "Green", "", green, 3200, startupPath);
-			GetPrivateProfileString("Color", "Yellow", "", yellow, 3200, startupPath);
-			GetPrivateProfileString("Color", "Gray", "", gray, 3200, startupPath);
-			GetPrivateProfileString("Color", "Navy", "", navy, 3200, startupPath);
-			GetPrivateProfileString("Color", "Purple", "", purple, 3200, startupPath);
-			GetPrivateProfileString("Color", "Lime", "", lime, 3200, startupPath);
-			GetPrivateProfileString("Color", "Pink", "", pink, 3200, startupPath);
-			GetPrivateProfileString("Color", "Orange", "", orange, 3200, startupPath);
-			GetPrivateProfileString("Color", "Blue", "", blue, 3200, startupPath);
-			GetPrivateProfileString("Color", "Black", "", black, 3200, startupPath);
-			GetPrivateProfileString(mc, "autoPubTopic", "", autoPubTopic, 3200, startupPath);
-			GetPrivateProfileString(mc, "autoPubMsg", "", autoPubMsg2, 32000, startupPath);
+				// ini파일에서 데이터를 불러옴
+				// GetPrivateProfileString("카테고리", "Key값", "기본값", "저장할 변수", "불러올 경로");
+				GetPrivateProfileString(mc, "LastHostName", "", host, 3200, startupPath);
+				GetPrivateProfileString(mc, "LastSubTopic", "", topic, 3200, startupPath);
+				GetPrivateProfileString(mc, "LastPubTopic1", "", pub1, 3200, startupPath);
+				GetPrivateProfileString(mc, "LastPubTopic2", "", pub2, 3200, startupPath);
+				GetPrivateProfileString(mc, "LastPubTopic3", "", pub3, 3200, startupPath);
+				GetPrivateProfileString(mc, "LastPubTopic4", "", pub4, 3200, startupPath);
+				GetPrivateProfileString(mc, "LastPubTopic5", "", pub5, 3200, startupPath);
+				GetPrivateProfileString(mc, "LastPubTopic6", "", pub6, 3200, startupPath);
+				GetPrivateProfileString(mc, "LastPubTopic7", "", pub7, 3200, startupPath);
+				GetPrivateProfileString(mc, "LastPubTopic8", "", pub8, 3200, startupPath);
+				GetPrivateProfileString(mc, "LastPubTopic9", "", pub9, 3200, startupPath);
+				GetPrivateProfileString(mc, "LastPubTopic10", "", pub10, 3200, startupPath);
+				GetPrivateProfileString(mc, "LastMessage1", "", m1, 3200, startupPath);
+				GetPrivateProfileString(mc, "LastMessage2", "", m2, 3200, startupPath);
+				GetPrivateProfileString(mc, "LastMessage3", "", m3, 3200, startupPath);
+				GetPrivateProfileString(mc, "LastMessage4", "", m4, 3200, startupPath);
+				GetPrivateProfileString(mc, "LastMessage5", "", m5, 3200, startupPath);
+				GetPrivateProfileString(mc, "LastMessage6", "", m6, 3200, startupPath);
+				GetPrivateProfileString(mc, "LastMessage7", "", m7, 3200, startupPath);
+				GetPrivateProfileString(mc, "LastMessage8", "", m8, 3200, startupPath);
+				GetPrivateProfileString(mc, "LastMessage9", "", m9, 3200, startupPath);
+				GetPrivateProfileString(mc, "LastMessage10", "", m10, 3200, startupPath);
+				GetPrivateProfileString("Color", "Red", "", red, 3200, startupPath);
+				GetPrivateProfileString("Color", "Green", "", green, 3200, startupPath);
+				GetPrivateProfileString("Color", "Yellow", "", yellow, 3200, startupPath);
+				GetPrivateProfileString("Color", "Gray", "", gray, 3200, startupPath);
+				GetPrivateProfileString("Color", "Navy", "", navy, 3200, startupPath);
+				GetPrivateProfileString("Color", "Purple", "", purple, 3200, startupPath);
+				GetPrivateProfileString("Color", "Lime", "", lime, 3200, startupPath);
+				GetPrivateProfileString("Color", "Pink", "", pink, 3200, startupPath);
+				GetPrivateProfileString("Color", "Orange", "", orange, 3200, startupPath);
+				GetPrivateProfileString("Color", "Blue", "", blue, 3200, startupPath);
+				GetPrivateProfileString("Color", "Black", "", black, 3200, startupPath);
+				GetPrivateProfileString(mc, "autoPubTopic", "", autoPubTopic, 3200, startupPath);
+				GetPrivateProfileString(mc, "autoPubMsg", "", autoPubMsg2, 32000, startupPath);
 
-			// 텍스트박스에 ini파일에서 가져온 데이터를 넣는다
-			textBoxHost.Text = host.ToString();
-			textBoxSubTopic.Text = topic.ToString();
-			textBoxPT1.Text = pub1.ToString();
-			textBoxPT2.Text = pub2.ToString();
-			textBoxPT3.Text = pub3.ToString();
-			textBoxPT4.Text = pub4.ToString();
-			textBoxPT5.Text = pub5.ToString();
-			textBoxPT6.Text = pub6.ToString();
-			textBoxPT7.Text = pub7.ToString();
-			textBoxPT8.Text = pub8.ToString();
-			textBoxPT9.Text = pub9.ToString();
-			textBoxPT10.Text = pub10.ToString();
-			textBoxM1.Text = m1.ToString();
-			textBoxM2.Text = m2.ToString();
-			textBoxM3.Text = m3.ToString();
-			textBoxM4.Text = m4.ToString();
-			textBoxM5.Text = m5.ToString();
-			textBoxM6.Text = m6.ToString();
-			textBoxM7.Text = m7.ToString();
-			textBoxM8.Text = m8.ToString();
-			textBoxM9.Text = m9.ToString();
-			textBoxM10.Text = m10.ToString();
-			textBoxRed.Text = red.ToString();
-			textBoxGreen.Text = green.ToString();
-			textBoxYellow.Text = yellow.ToString();
-			textBoxGray.Text = gray.ToString();
-			textBoxNavy.Text = navy.ToString();
-			textBoxPurple.Text = purple.ToString();
-			textBoxLime.Text = lime.ToString();
-			textBoxPink.Text = pink.ToString();
-			textBoxOrange.Text = orange.ToString();
-			textBoxBlue.Text = blue.ToString();
-			textBoxBlack.Text = black.ToString();
-			textBoxAutoPubTopic.Text = autoPubTopic.ToString().Trim();
-			textBoxAutoPubMsg.Text = autoPubMsg2.ToString();
+				// 텍스트박스에 ini파일에서 가져온 데이터를 넣는다
+				textBoxHost.Text = host.ToString();
+				textBoxSubTopic.Text = topic.ToString();
+				textBoxPT1.Text = pub1.ToString();
+				textBoxPT2.Text = pub2.ToString();
+				textBoxPT3.Text = pub3.ToString();
+				textBoxPT4.Text = pub4.ToString();
+				textBoxPT5.Text = pub5.ToString();
+				textBoxPT6.Text = pub6.ToString();
+				textBoxPT7.Text = pub7.ToString();
+				textBoxPT8.Text = pub8.ToString();
+				textBoxPT9.Text = pub9.ToString();
+				textBoxPT10.Text = pub10.ToString();
+				textBoxM1.Text = m1.ToString();
+				textBoxM2.Text = m2.ToString();
+				textBoxM3.Text = m3.ToString();
+				textBoxM4.Text = m4.ToString();
+				textBoxM5.Text = m5.ToString();
+				textBoxM6.Text = m6.ToString();
+				textBoxM7.Text = m7.ToString();
+				textBoxM8.Text = m8.ToString();
+				textBoxM9.Text = m9.ToString();
+				textBoxM10.Text = m10.ToString();
+				textBoxRed.Text = red.ToString();
+				textBoxGreen.Text = green.ToString();
+				textBoxYellow.Text = yellow.ToString();
+				textBoxGray.Text = gray.ToString();
+				textBoxNavy.Text = navy.ToString();
+				textBoxPurple.Text = purple.ToString();
+				textBoxLime.Text = lime.ToString();
+				textBoxPink.Text = pink.ToString();
+				textBoxOrange.Text = orange.ToString();
+				textBoxBlue.Text = blue.ToString();
+				textBoxBlack.Text = black.ToString();
+				textBoxAutoPubTopic.Text = autoPubTopic.ToString().Trim();
+				textBoxAutoPubMsg.Text = autoPubMsg2.ToString();
+			}
+			catch (Exception)
+			{
+
+				throw;
+			}
+			
 		}
 
 		private void initCloseMethod()
@@ -335,22 +359,6 @@ namespace MQTTClient
 			public string Payload { get; internal set; }
 			public string QosLevel { get; internal set; }
 			public string Retain { get; internal set; }
-		}
-
-		private void jsondata(string topic, string payload)
-		{
-			//json data = new json
-			//{
-			//	Date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss:fff"),
-			//	Topic = topic,
-			//	Payload = new List<string> { payload },
-			//	QosLevel = comboBoxQos.SelectedIndex.ToString(),
-			//	Retain = checkBoxRetain.Checked.ToString().ToLower()
-			//};
-
-			////직렬화
-			//string json1 = JsonConvert.SerializeObject(data, Formatting.Indented);
-			//MessageBox.Show(json1 + Environment.NewLine);
 		}
 
 		private void jsonSave(string topic, string payload)
@@ -2555,6 +2563,8 @@ namespace MQTTClient
 
 			for (int i = 0; i < msg.Length; i++)
 			{
+				if (msg[i].Length < Convert.ToInt32(textBox8.Text)) continue;
+					
 				newMsg[i] = msg[i].Substring(Convert.ToInt32(textBox8.Text)-1, msg[i].Length- Convert.ToInt32(textBox8.Text)+1);
 			}
 			textBox52.Lines = newMsg;
@@ -2562,9 +2572,9 @@ namespace MQTTClient
 
 		private void button16_Click(object sender, EventArgs e)
 		{
+
 			string[] key = textBox4.Text.Split(',');
 			string[] msg = textBox52.Lines;
-			Console.WriteLine(textBox52.Lines.Length.ToString());
 
 			List<string> list = new List<string>();
 			for (int i = 0; i < msg.Length; i++)
@@ -2578,12 +2588,48 @@ namespace MQTTClient
 					if (msg[i].Contains(key[j].Trim()))
 					{
 						list.Add(msg[i]);
-						Console.WriteLine(i.ToString());
 						break;
 					}
 				}
 			}
 		textBox52.Lines =	list.ToArray();
+		}
+
+		private void button17_Click(object sender, EventArgs e)
+		{
+			string key = textBox9.Text;
+			string[] msg = textBox52.Lines;
+
+			List<string> listTopic = new List<string>();
+			List<string> listMessage = new List<string>();
+			for (int i = 0; i < msg.Length; i++)
+			{
+				string[] tm = new string[2];
+				int pos = msg[i].IndexOf(key);
+				if (pos == -1) continue;
+				tm[0] = msg[i].Substring(0, pos);
+				tm[1] = msg[i].Substring(pos+key.Length);
+				listTopic.Add(tm[0]);
+				listMessage.Add(tm[1]);
+
+			}
+			textBox51.Lines = listTopic.ToArray();
+			textBox52.Lines = listMessage.ToArray();
+		}
+
+		private void textBox9_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void button18_Click(object sender, EventArgs e)
+		{
+			textBox51.Text = "";
+		}
+
+		private void button19_Click(object sender, EventArgs e)
+		{
+			textBox52.Text = "";
 		}
 	}
 
