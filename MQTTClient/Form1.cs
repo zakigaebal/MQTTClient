@@ -42,10 +42,11 @@ namespace MQTTClient
 			this.AcceptButton = this.buttonConnect;
 			radioButton1.Checked = true;
 			radioButton3.Checked = true;
-			comboBoxQos.SelectedIndex = 0;
 			mqttRecord();
 			textBoxPort.Text = "1883";
 			comboBoxQos.SelectedIndex = 1;
+			comboBoxQos2.SelectedIndex = 1;
+			comboBoxQos3.SelectedIndex = 1;
 			iniload();
 			this.dataGridViewMessage.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
 			tabControl2_SelectedIndexChanged(sender, e);
@@ -150,7 +151,7 @@ namespace MQTTClient
 			GetPrivateProfileString("Color", "Blue", "", blue, 3200, startupPath);
 			GetPrivateProfileString("Color", "Black", "", black, 3200, startupPath);
 			GetPrivateProfileString(mc, "autoPubTopic", "", autoPubTopic, 3200, startupPath);
-		  GetPrivateProfileString(mc, "autoPubMsg", "", autoPubMsg2, 32000, startupPath);
+			GetPrivateProfileString(mc, "autoPubMsg", "", autoPubMsg2, 32000, startupPath);
 
 			// 텍스트박스에 ini파일에서 가져온 데이터를 넣는다
 			textBoxHost.Text = host.ToString();
@@ -187,7 +188,7 @@ namespace MQTTClient
 			textBoxBlue.Text = blue.ToString();
 			textBoxBlack.Text = black.ToString();
 			textBoxAutoPubTopic.Text = autoPubTopic.ToString().Trim();
-	    textBoxAutoPubMsg.Text = autoPubMsg2.ToString();
+			textBoxAutoPubMsg.Text = autoPubMsg2.ToString();
 		}
 
 		private void initCloseMethod()
@@ -228,7 +229,7 @@ namespace MQTTClient
 			WritePrivateProfileString("Color", "Blue", textBoxBlue.Text, startupPath);
 			WritePrivateProfileString("Color", "Black", textBoxBlack.Text, startupPath);
 			WritePrivateProfileString(mc, "autoPubTopic", textBoxAutoPubTopic.Text, startupPath);
-		  WritePrivateProfileString(mc, "autoPubMsg", textBoxAutoPubMsg.Text, startupPath);
+			WritePrivateProfileString(mc, "autoPubMsg", textBoxAutoPubMsg.Text, startupPath);
 		}
 
 		private void mqttRecord()
@@ -249,40 +250,37 @@ namespace MQTTClient
 			dataGridViewMessage.Columns[dataGridViewMessage.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 			dataGridViewMessage.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 			dataGridViewMessage.Columns[1].Width = 200;
+
+			dataGridView1.DataSource = dt;
+			dataGridView1.ReadOnly = true;
+			dataGridView1.RowHeadersVisible = false;
+			dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+			dataGridView1.Columns[dataGridView1.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+			dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+			dataGridView1.Columns[1].Width = 200;
 		}
 
 		private void buttonSubscribe2_Click(object sender, EventArgs e)
 		{
-			if (!listBoxSub.Items.Contains(textBoxSubTopic.Text))
+
+			try
 			{
-				this.listBoxSub.Items.Add(textBoxSubTopic.Text);
+				foreach (var item in listBoxSub.Items)
+				{
+					clientUser.Subscribe(new string[] { item.ToString() }, new byte[] { (byte)comboBoxQos.SelectedIndex });
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
 			}
 
-			if (textBoxSubTopic.Text.Length == 0)
-			{
-				return;
-			}
-			else
-			{
-				try
-				{
-					foreach (var item in listBoxSub.Items)
-					{
-						//result += string.Format("{0} ", item); 
-						clientUser.Subscribe(new string[] { item.ToString() }, new byte[] { (byte)comboBoxQos.SelectedIndex });
-					}
-					dataGridViewMessage.DoubleBuffered(true);
-				}
-				catch (Exception ex)
-				{
-					MessageBox.Show(ex.Message);
-				}
-			}
 		}
 
 		private void ShowMessage(string topic, string payload, DataGridView dgv)
 		{
-			try {
+			try
+			{
 				if (this.InvokeRequired)
 				{
 					ShowCallBack myUpdate = new ShowCallBack(ShowMessage);
@@ -322,13 +320,14 @@ namespace MQTTClient
 					dataGridViewMessage.ResumeLayout();
 
 				}
-			} catch (Exception ex)
+			}
+			catch (Exception ex)
 			{
 				MessageBox.Show(ex.ToString());
 				//로그 에러 저장
 			}
 		}
-	
+
 		public class json
 		{
 			public string Date { get; set; }
@@ -352,9 +351,9 @@ namespace MQTTClient
 			////직렬화
 			//string json1 = JsonConvert.SerializeObject(data, Formatting.Indented);
 			//MessageBox.Show(json1 + Environment.NewLine);
-	}
+		}
 
-	private void jsonSave(string topic, string payload)
+		private void jsonSave(string topic, string payload)
 		{
 			try
 			{
@@ -457,11 +456,11 @@ namespace MQTTClient
 						return;
 					}
 					else
-				  using (FileStream topicfs = new FileStream(topiclogName, FileMode.Append, FileAccess.Write))
-					using (StreamWriter Write2 = new StreamWriter(topicfs))
-					{
-						Write2.WriteLine(line);
-					}
+						using (FileStream topicfs = new FileStream(topiclogName, FileMode.Append, FileAccess.Write))
+						using (StreamWriter Write2 = new StreamWriter(topicfs))
+						{
+							Write2.WriteLine(line);
+						}
 				}
 
 				using (FileStream fs = new FileStream(logName, FileMode.Append, FileAccess.Write))
@@ -476,7 +475,7 @@ namespace MQTTClient
 			}
 		}
 
-	
+
 
 		public class CMD_POS_VALUE
 		{
@@ -528,17 +527,17 @@ namespace MQTTClient
 				{
 					int pos = Convert.ToInt32(cmd.POS);
 					int value = Convert.ToInt32(cmd.VALUE);
-					dataGridViewMain["2", pos-1].Value = value.ToString();
+					dataGridViewMain["2", pos - 1].Value = value.ToString();
 				}
-				else if(cmd.CMD == "RESP_METER_COUNT")
+				else if (cmd.CMD == "RESP_METER_COUNT")
 				{
 					CMD_ID_COUNT resp = JsonConvert.DeserializeObject<CMD_ID_COUNT>(Encoding.UTF8.GetString(data.Message));
-				//	MessageBox.Show(resp.COUNT.ToString());
+					//	MessageBox.Show(resp.COUNT.ToString());
 					string respText = resp.COUNT.ToString();
 					//textBoxIdCount.Text = respText;
 					myUI(respText, textBoxIdCount);
-				
-			
+
+
 				}
 				else if (cmd.CMD == "RESP_METER_SET_READ")
 				{
@@ -546,7 +545,7 @@ namespace MQTTClient
 					int id = resp.ID;
 					int pos = Convert.ToInt32(resp.POS);
 					int value = Convert.ToInt32(resp.VALUE);
-					dataGridViewMeter[id+1, pos - 1].Value = value.ToString();
+					dataGridViewMeter[id + 1, pos - 1].Value = value.ToString();
 				}
 				else if (cmd.CMD == "RESP_IR_SET_READ")
 				{
@@ -612,8 +611,31 @@ namespace MQTTClient
 
 
 
+		}
+		private void clientsrc_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs data)
+		{
+
+
+			if (textBox7.Text.Trim().Length <= 0)
+			{
+				clientdst.Publish(data.Topic, data.Message, (byte)qosSelectedIndex, checkBox1.Checked);
+			ShowMessage(data.Topic, System.Text.Encoding.UTF8.GetString(data.Message), dataGridView1);
 			}
+			else
+			{
+				clientdst.Publish(textBox7.Text.Trim() + data.Topic, data.Message, (byte)qosSelectedIndex, checkBox1.Checked);
+			ShowMessage(textBox7.Text.Trim() + data.Topic, System.Text.Encoding.UTF8.GetString(data.Message), dataGridView1);
+			}
+
+
+		}
+		private void clientdst_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs data)
+		{
+
+
 		
+		}
+
 		public static string stringBetween(string Source, string Start, string End)
 		{
 			string result = "";
@@ -725,12 +747,12 @@ namespace MQTTClient
 					//{
 					//	this.listBoxSub.Items.Add(textBoxSubTopic.Text);
 					//}
-				
+
 					if (!listBoxSub.Items.Contains(textBoxSubTopic.Text))
 					{
 						this.listBoxSub.Items.Add(textBoxSubTopic.Text);
 					}
-				
+
 
 					dataGridViewMessage.DoubleBuffered(true);
 				}
@@ -755,16 +777,16 @@ namespace MQTTClient
 			buttonPublish2.Enabled = false;
 			buttonPublish3.Enabled = false;
 			buttonPublish4.Enabled = false;
-			buttonPublish4.Enabled = false ;
-			buttonPublish5.Enabled = false ;
-			buttonPublish6.Enabled = false ;
-			buttonPublish7.Enabled = false ;
+			buttonPublish4.Enabled = false;
+			buttonPublish5.Enabled = false;
+			buttonPublish6.Enabled = false;
+			buttonPublish7.Enabled = false;
 			buttonPublish8.Enabled = false;
-			buttonPublish9.Enabled = false ;
-			buttonPublish10.Enabled = false ;
-			buttonMeter.Enabled = false ;
-			buttonIdCount.Enabled = false ;
-			buttonIR.Enabled = false ;
+			buttonPublish9.Enabled = false;
+			buttonPublish10.Enabled = false;
+			buttonMeter.Enabled = false;
+			buttonIdCount.Enabled = false;
+			buttonIR.Enabled = false;
 		}
 
 		private void buttonUnscribe_Click(object sender, EventArgs e)
@@ -887,7 +909,8 @@ namespace MQTTClient
 
 		private void cell1(object sender, DataGridViewCellFormattingEventArgs e)
 		{
-			try {
+			try
+			{
 				string text = e.Value.ToString().Trim();
 				string[] text2 = text.Split(',');
 
@@ -896,7 +919,7 @@ namespace MQTTClient
 					if ((e.Value != null))
 					{
 						string[] redSplit = textBoxRed.Text.Split(',');
-						for (int i=0; i < redSplit.Length; i++)
+						for (int i = 0; i < redSplit.Length; i++)
 						{
 							if (redSplit[i].ToString().Trim().Length == 0)
 							{
@@ -919,7 +942,7 @@ namespace MQTTClient
 							if (text.Contains(greenSplit[i].ToString().Trim()))
 							{
 								e.CellStyle.BackColor = Color.Green;
-								e.CellStyle.ForeColor= Color.White;
+								e.CellStyle.ForeColor = Color.White;
 							}
 						}
 
@@ -1058,162 +1081,155 @@ namespace MQTTClient
 			}
 			catch (Exception ex)
 			{
-		
+
 			}
 		}
 
 		private void cell2(object sender, DataGridViewCellFormattingEventArgs e)
 		{
-			try { 
-			if (e.ColumnIndex == 2)
+			try
 			{
-				if (e.Value != null)
+				if (e.ColumnIndex == 2)
 				{
-					string text = e.Value.ToString();
-
-					if (text.Contains(textBoxRed.Text) || text.Contains(textBoxRed.Text.Split(',')[0]) || text.Contains(textBoxRed.Text.Split(',')[1]))
+					if (e.Value != null)
 					{
-						if (textBoxRed.Text == "")
+						string text = e.Value.ToString();
+
+						if (text.Contains(textBoxRed.Text) || text.Contains(textBoxRed.Text.Split(',')[0]) || text.Contains(textBoxRed.Text.Split(',')[1]))
 						{
-							return;
+							if (textBoxRed.Text == "")
+							{
+								return;
+							}
+							else
+								e.CellStyle.BackColor = Color.Red;
+							e.CellStyle.ForeColor = Color.White;
 						}
-						else
-							e.CellStyle.BackColor = Color.Red;
-						  e.CellStyle.ForeColor = Color.White;
-					}
 
-					if (text.Contains(textBoxGreen.Text))
-					{
-						if (textBoxNavy.Text == "")
+						if (text.Contains(textBoxGreen.Text))
 						{
-							return;
+							if (textBoxNavy.Text == "")
+							{
+								return;
+							}
+							else
+								e.CellStyle.BackColor = Color.Green;
+							e.CellStyle.ForeColor = Color.White;
 						}
-						else
-						e.CellStyle.BackColor = Color.Green;
-						e.CellStyle.ForeColor = Color.White;
-					}
 
 
-					if (text.Contains(textBoxYellow.Text) || text.Contains(textBoxYellow.Text.Split(',')[0]) || text.Contains(textBoxYellow.Text.Split(',')[1]))
-					{
-						if (textBoxYellow.Text == "")
+						if (text.Contains(textBoxYellow.Text) || text.Contains(textBoxYellow.Text.Split(',')[0]) || text.Contains(textBoxYellow.Text.Split(',')[1]))
 						{
-							return;
+							if (textBoxYellow.Text == "")
+							{
+								return;
+							}
+							else
+								e.CellStyle.BackColor = Color.Yellow;
+							e.CellStyle.ForeColor = Color.Black;
 						}
-						else
-							e.CellStyle.BackColor = Color.Yellow;
-						e.CellStyle.ForeColor = Color.Black;
-					}
 
-					if (text.Contains(textBoxGray.Text) || text.Contains(textBoxGray.Text.Split(',')[0]) || text.Contains(textBoxGray.Text.Split(',')[1]))
-					{
-						if (textBoxGray.Text == "")
+						if (text.Contains(textBoxGray.Text) || text.Contains(textBoxGray.Text.Split(',')[0]) || text.Contains(textBoxGray.Text.Split(',')[1]))
 						{
-							return;
+							if (textBoxGray.Text == "")
+							{
+								return;
+							}
+							else
+								e.CellStyle.BackColor = Color.Gray;
 						}
-						else
-							e.CellStyle.BackColor = Color.Gray;
-					}
 
-					if (text.Contains(textBoxNavy.Text) || text.Contains(textBoxNavy.Text.Split(',')[0]) || text.Contains(textBoxNavy.Text.Split(',')[1]))
-					{
-						if (textBoxNavy.Text == "")
+						if (text.Contains(textBoxNavy.Text) || text.Contains(textBoxNavy.Text.Split(',')[0]) || text.Contains(textBoxNavy.Text.Split(',')[1]))
 						{
-							return;
+							if (textBoxNavy.Text == "")
+							{
+								return;
+							}
+							else
+								e.CellStyle.BackColor = Color.Navy;
+							e.CellStyle.ForeColor = Color.White;
 						}
-						else
-							e.CellStyle.BackColor = Color.Navy;
-						e.CellStyle.ForeColor = Color.White;
-					}
 
 
-					if (text.Contains(textBoxPurple.Text) || text.Contains(textBoxPurple.Text.Split(',')[0]) || text.Contains(textBoxPurple.Text.Split(',')[1]))
-					{
-						if (textBoxPurple.Text == "")
+						if (text.Contains(textBoxPurple.Text) || text.Contains(textBoxPurple.Text.Split(',')[0]) || text.Contains(textBoxPurple.Text.Split(',')[1]))
 						{
-							return;
+							if (textBoxPurple.Text == "")
+							{
+								return;
+							}
+							else
+								e.CellStyle.BackColor = Color.Purple;
+							e.CellStyle.ForeColor = Color.White;
 						}
-						else
-							e.CellStyle.BackColor = Color.Purple;
-						e.CellStyle.ForeColor = Color.White;
-					}
 
-					if (text.Contains(textBoxLime.Text) || text.Contains(textBoxLime.Text.Split(',')[0]) || text.Contains(textBoxLime.Text.Split(',')[1]))
-					{
-						if (textBoxLime.Text == "")
+						if (text.Contains(textBoxLime.Text) || text.Contains(textBoxLime.Text.Split(',')[0]) || text.Contains(textBoxLime.Text.Split(',')[1]))
 						{
-							return;
+							if (textBoxLime.Text == "")
+							{
+								return;
+							}
+							else
+								e.CellStyle.BackColor = Color.Lime;
+							e.CellStyle.ForeColor = Color.White;
 						}
-						else
-							e.CellStyle.BackColor = Color.Lime;
-						e.CellStyle.ForeColor = Color.White;
-					}
 
-					if (text.Contains(textBoxPink.Text) || text.Contains(textBoxPink.Text.Split(',')[0]) || text.Contains(textBoxPink.Text.Split(',')[1]))
-					{
-						if (textBoxPink.Text == "")
+						if (text.Contains(textBoxPink.Text) || text.Contains(textBoxPink.Text.Split(',')[0]) || text.Contains(textBoxPink.Text.Split(',')[1]))
 						{
-							return;
+							if (textBoxPink.Text == "")
+							{
+								return;
+							}
+							else
+								e.CellStyle.BackColor = Color.Pink;
+							e.CellStyle.ForeColor = Color.White;
 						}
-						else
-							e.CellStyle.BackColor = Color.Pink;
-						e.CellStyle.ForeColor = Color.White;
-					}
 
-					if (text.Contains(textBoxOrange.Text) || text.Contains(textBoxOrange.Text.Split(',')[0]) || text.Contains(textBoxOrange.Text.Split(',')[1]))
-					{
-						if (textBoxOrange.Text == "")
+						if (text.Contains(textBoxOrange.Text) || text.Contains(textBoxOrange.Text.Split(',')[0]) || text.Contains(textBoxOrange.Text.Split(',')[1]))
 						{
-							return;
+							if (textBoxOrange.Text == "")
+							{
+								return;
+							}
+							else
+								e.CellStyle.BackColor = Color.Orange;
+							e.CellStyle.ForeColor = Color.White;
 						}
-						else
-							e.CellStyle.BackColor = Color.Orange;
-						e.CellStyle.ForeColor = Color.White;
-					}
 
-					if (text.Contains(textBoxBlue.Text) || text.Contains(textBoxBlue.Text.Split(',')[0]) || text.Contains(textBoxBlue.Text.Split(',')[1]))
-					{
-						if (textBoxBlue.Text == "")
+						if (text.Contains(textBoxBlue.Text) || text.Contains(textBoxBlue.Text.Split(',')[0]) || text.Contains(textBoxBlue.Text.Split(',')[1]))
 						{
-							return;
+							if (textBoxBlue.Text == "")
+							{
+								return;
+							}
+							else
+								e.CellStyle.BackColor = Color.Blue;
+							e.CellStyle.ForeColor = Color.White;
 						}
-						else
-							e.CellStyle.BackColor = Color.Blue;
-						e.CellStyle.ForeColor = Color.White;
-					}
 
-					if (text.Contains(textBoxBlack.Text) || text.Contains(textBoxBlack.Text.Split(',')[0]) || text.Contains(textBoxBlack.Text.Split(',')[1]))
-					{
-						if (textBoxBlack.Text == "")
+						if (text.Contains(textBoxBlack.Text) || text.Contains(textBoxBlack.Text.Split(',')[0]) || text.Contains(textBoxBlack.Text.Split(',')[1]))
 						{
-							return;
+							if (textBoxBlack.Text == "")
+							{
+								return;
+							}
+							else
+								e.CellStyle.BackColor = Color.Black;
+							e.CellStyle.ForeColor = Color.White;
 						}
-						else
-						e.CellStyle.BackColor = Color.Black;
-						e.CellStyle.ForeColor = Color.White;
-					}
 
+					}
 				}
 			}
-		}catch (Exception ex)
+			catch (Exception ex)
 			{
-			
+
 			}
-	}
+		}
 
 		private void dataGridViewMessage_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
 		{
 			{
-				// 특정값을 가진 열을 좀 다르게 보여주고 싶을 때
-				//if (textBoxRed.Text.Contains(",") == true)
-				//{
-				//	cell1(sender, e);
-				//	cell2(sender, e);
-				//}
-				//else
-					cell1(sender,e);
-					//cell2(sender, e);
-
+				cell1(sender, e);
 			}
 		}
 
@@ -1354,7 +1370,7 @@ namespace MQTTClient
 			try
 			{
 				for (int i = 1; i <= 40; i++)
-					{
+				{
 					// REQ CLASS 생성 2개를 가져오는
 					// CMD ,POS 값
 					CMD_POS req = new CMD_POS();
@@ -1363,19 +1379,19 @@ namespace MQTTClient
 					string reqStr = JsonConvert.SerializeObject(req, Formatting.Indented);
 					clientUser.Publish(topic, Encoding.UTF8.GetBytes(reqStr.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 					Delay(500);
-					}
+				}
 			}
 			catch (Exception ex)
 			{
 				MessageBox.Show(ex.Message);
 			}
 		}
-	
+
 		private void radioButton1_CheckedChanged(object sender, EventArgs e)
 		{
 			if (radioButton1.Checked == true)
 			{
-				if(dataGridViewMain.Columns.Count < 3)
+				if (dataGridViewMain.Columns.Count < 3)
 				{
 					return;
 				}
@@ -1422,7 +1438,7 @@ namespace MQTTClient
 				dataGridViewMain["3", idx++].Value = "0";
 				dataGridViewMain["3", idx++].Value = "0";
 
-			
+
 			}
 		}
 		private void radioButton2_CheckedChanged(object sender, EventArgs e)
@@ -1438,7 +1454,7 @@ namespace MQTTClient
 				dataGridViewMain.Columns[3].HeaderText = "텐덤";
 				int idx = 0;
 
-			
+
 				dataGridViewMain["3", idx++].Value = "3";
 				dataGridViewMain["3", idx++].Value = "172";
 				dataGridViewMain["3", idx++].Value = "30";
@@ -1482,13 +1498,13 @@ namespace MQTTClient
 
 
 
-	
+
 			}
 		}
 
 		private void checkBoxTopicLog_CheckedChanged(object sender, EventArgs e)
 		{
-		
+
 		}
 
 		private void tabControl2_Selected(object sender, TabControlEventArgs e)
@@ -1498,14 +1514,14 @@ namespace MQTTClient
 
 		private void tabControl2_SelectedIndexChanged(object sender, EventArgs e)
 		{
-	
+
 			buttonIR.Enabled = false;
 			buttonMeter.Enabled = false;
 			//	textBoxIdCount.Text = "0";
 			if (tabControl2.SelectedTab == tabPageMain)
 			{
 				buttonIdCount.Enabled = true;
-		
+
 				//삭제
 				dataGridViewMain.Columns.Clear();
 				dataGridViewMain.ReadOnly = true;
@@ -1679,7 +1695,7 @@ namespace MQTTClient
 				{
 					dataGridViewIR.Columns.Add((i).ToString(), i.ToString());
 				}
-			
+
 				dataGridViewIR.Columns.Add((dataGridViewMeter.ColumnCount + 1).ToString(), "버튼");
 				for (int i = 0; i < 10; i++)
 				{
@@ -1714,7 +1730,7 @@ namespace MQTTClient
 					return;
 				}
 			}
-			
+
 		}
 
 		private void radioButton3_CheckedChanged(object sender, EventArgs e)
@@ -1725,7 +1741,7 @@ namespace MQTTClient
 				{
 					return;
 				}
-				dataGridViewMeter.Columns[(dataGridViewMeter.Columns.Count-2).ToString()].HeaderText = "헤링본";
+				dataGridViewMeter.Columns[(dataGridViewMeter.Columns.Count - 2).ToString()].HeaderText = "헤링본";
 
 				int idx = 0;
 				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "1";
@@ -1844,10 +1860,10 @@ namespace MQTTClient
 		private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			//tabControl2_SelectedIndexChanged(sender, e);
-			radioButton1_CheckedChanged(sender,e);
-			radioButton2_CheckedChanged(sender,e);
-			radioButton3_CheckedChanged(sender,e);
-			radioButton4_CheckedChanged(sender,e);
+			radioButton1_CheckedChanged(sender, e);
+			radioButton2_CheckedChanged(sender, e);
+			radioButton3_CheckedChanged(sender, e);
+			radioButton4_CheckedChanged(sender, e);
 		}
 		private void tabcontrols()
 		{
@@ -1861,7 +1877,7 @@ namespace MQTTClient
 			string topic = "dawoon/Manual/" + textBoxCode.Text.Trim() + "/1/POLOR";
 			try
 			{
-				if ((tabControl2.SelectedTab == tabPageMeter)||(tabControl2.SelectedTab == tabPageIR))
+				if ((tabControl2.SelectedTab == tabPageMeter) || (tabControl2.SelectedTab == tabPageIR))
 				{
 					textBoxIdCount.Text = "";
 					CMD_ID_COUNT req = new CMD_ID_COUNT();
@@ -1871,14 +1887,14 @@ namespace MQTTClient
 					string reqStr = (JsonConvert.SerializeObject(req, Formatting.Indented)).Trim();
 					clientUser.Publish(topic, Encoding.UTF8.GetBytes(reqStr.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 				}
-		
-			
+
+
 			}
 			catch (Exception ex)
 			{
 				MessageBox.Show(ex.Message);
 			}
-	
+
 		}
 
 		private void buttonMeter_Click(object sender, EventArgs e)
@@ -1886,17 +1902,17 @@ namespace MQTTClient
 			string topic = "dawoon/Manual/" + textBoxCode.Text.Trim() + "/1/" + "POLOR";
 			try
 			{
-			  CMD_ID_POS req = new CMD_ID_POS();
-		
-					for (int k = 1; k <= 20; k++)
-					{
+				CMD_ID_POS req = new CMD_ID_POS();
+
+				for (int k = 1; k <= 20; k++)
+				{
 					for (int i = 1; i <= 20; i++)
 					{
 						req.ID = k;
 						req.CMD = "REQ_METER_SET_READ";
 						req.POS = i;
-					string reqStr = JsonConvert.SerializeObject(req, Formatting.Indented);
-					clientUser.Publish(topic, Encoding.UTF8.GetBytes(reqStr.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+						string reqStr = JsonConvert.SerializeObject(req, Formatting.Indented);
+						clientUser.Publish(topic, Encoding.UTF8.GetBytes(reqStr.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 					}
 					Delay(500);
 				}
@@ -2074,7 +2090,7 @@ namespace MQTTClient
 				//dataGridViewMeter.Columns[(dataGridViewMeter.ColumnCount).ToString()].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 				dataGridViewIR.Columns[0].Width = 40;
 				dataGridViewIR.Columns[1].Width = 200;
-			//	dataGridViewIR.Columns[(dataGridViewMeter.ColumnCount).ToString()].Width = 35;
+				//	dataGridViewIR.Columns[(dataGridViewMeter.ColumnCount).ToString()].Width = 35;
 
 				if (dataGridViewIR.Columns.Count < 3)
 				{
@@ -2083,13 +2099,13 @@ namespace MQTTClient
 			}
 		}
 
-	
+
 
 		private void buttonIRPublish_Click(object sender, EventArgs e)
 		{
-			string irTopic = "dawoon/meterset/" + textBoxCode.Text +"/1/POLOR";
-			string irMessage = "{ \"CMD\":\"IR_SET\",\"POS\":" + textBoxIrPos.Text + ",\"ID\":"+ textBoxIrId.Text + ",\"VALUE\":"+ textBoxIrValue.Text +" }";
-				clientUser.Publish(irTopic, Encoding.UTF8.GetBytes(irMessage), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+			string irTopic = "dawoon/meterset/" + textBoxCode.Text + "/1/POLOR";
+			string irMessage = "{ \"CMD\":\"IR_SET\",\"POS\":" + textBoxIrPos.Text + ",\"ID\":" + textBoxIrId.Text + ",\"VALUE\":" + textBoxIrValue.Text + " }";
+			clientUser.Publish(irTopic, Encoding.UTF8.GetBytes(irMessage), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 		}
 
 		private void buttonMeterPublish_Click(object sender, EventArgs e)
@@ -2109,29 +2125,65 @@ namespace MQTTClient
 		bool a = true;
 		private void buttonAutoPubStart_Click(object sender, EventArgs e)
 		{
+			a = true;
 			string topic = textBoxAutoPubTopic.Text;
+			string newMsg = "";
+			string msg = textBoxAutoPubMsg.Text;
+			string[] varName = new string[10];
+			int[] varInit = new int[10];
+			int[] varAdd = new int[10];
+			varName[0] = textBoxStr1.Text.Trim();
+			varName[1] = textBoxStr2.Text.Trim();
+			varName[2] = textBoxStr3.Text.Trim();
+			varName[3] = textBoxStr4.Text.Trim();
+			varName[4] = textBoxStr5.Text.Trim();
+			varName[5] = textBoxStr6.Text.Trim();
+			varName[6] = textBoxStr7.Text.Trim();
+			varName[7] = textBoxStr8.Text.Trim();
+			varName[8] = textBoxStr9.Text.Trim();
+			varName[9] = textBoxStr10.Text.Trim();
+			int i = 0;
+			if (textBoxfirst1.Text.Trim().Length <= 0) varInit[i++] = 0; else varInit[i++] = Convert.ToInt32(textBoxfirst1.Text.Trim());
+			if (textBoxfirst2.Text.Trim().Length <= 0) varInit[i++] = 0; else varInit[i++] = Convert.ToInt32(textBoxfirst2.Text.Trim());
+			if (textBoxfirst3.Text.Trim().Length <= 0) varInit[i++] = 0; else varInit[i++] = Convert.ToInt32(textBoxfirst3.Text.Trim());
+			if (textBoxfirst4.Text.Trim().Length <= 0) varInit[i++] = 0; else varInit[i++] = Convert.ToInt32(textBoxfirst4.Text.Trim());
+			if (textBoxfirst5.Text.Trim().Length <= 0) varInit[i++] = 0; else varInit[i++] = Convert.ToInt32(textBoxfirst5.Text.Trim());
+			if (textBoxfirst6.Text.Trim().Length <= 0) varInit[i++] = 0; else varInit[i++] = Convert.ToInt32(textBoxfirst6.Text.Trim());
+			if (textBoxfirst7.Text.Trim().Length <= 0) varInit[i++] = 0; else varInit[i++] = Convert.ToInt32(textBoxfirst7.Text.Trim());
+			if (textBoxfirst8.Text.Trim().Length <= 0) varInit[i++] = 0; else varInit[i++] = Convert.ToInt32(textBoxfirst8.Text.Trim());
+			if (textBoxfirst9.Text.Trim().Length <= 0) varInit[i++] = 0; else varInit[i++] = Convert.ToInt32(textBoxfirst9.Text.Trim());
+			if (textBoxfirst10.Text.Trim().Length <= 0) varInit[i++] = 0; else varInit[i++] = Convert.ToInt32(textBoxfirst10.Text.Trim());
+			i = 0;
+			if (textBoxPlus1.Text.Trim().Length <= 0) varInit[i++] = 0; else varAdd[i++] = Convert.ToInt32(textBoxPlus1.Text.Trim());
+			if (textBoxPlus2.Text.Trim().Length <= 0) varInit[i++] = 0; else varAdd[i++] = Convert.ToInt32(textBoxPlus2.Text.Trim());
+			if (textBoxPlus3.Text.Trim().Length <= 0) varInit[i++] = 0; else varAdd[i++] = Convert.ToInt32(textBoxPlus3.Text.Trim());
+			if (textBoxPlus4.Text.Trim().Length <= 0) varInit[i++] = 0; else varAdd[i++] = Convert.ToInt32(textBoxPlus4.Text.Trim());
+			if (textBoxPlus5.Text.Trim().Length <= 0) varInit[i++] = 0; else varAdd[i++] = Convert.ToInt32(textBoxPlus5.Text.Trim());
+			if (textBoxPlus6.Text.Trim().Length <= 0) varInit[i++] = 0; else varAdd[i++] = Convert.ToInt32(textBoxPlus6.Text.Trim());
+			if (textBoxPlus7.Text.Trim().Length <= 0) varInit[i++] = 0; else varAdd[i++] = Convert.ToInt32(textBoxPlus7.Text.Trim());
+			if (textBoxPlus8.Text.Trim().Length <= 0) varInit[i++] = 0; else varAdd[i++] = Convert.ToInt32(textBoxPlus8.Text.Trim());
+			if (textBoxPlus9.Text.Trim().Length <= 0) varInit[i++] = 0; else varAdd[i++] = Convert.ToInt32(textBoxPlus9.Text.Trim());
+			if (textBoxPlus10.Text.Trim().Length <= 0) varInit[i++] = 0; else varAdd[i++] = Convert.ToInt32(textBoxPlus10.Text.Trim());
 
-
+			int[] varInitAdd = new int[10];
+			for (int j = 0; j < 10; j++)
+			{
+				varInitAdd[j] = varInit[j];
+			}
 			while (a)
 			{
-				clientUser.Publish(topic, Encoding.UTF8.GetBytes(textBoxAutoPubMsg.Text), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
-				Delay(Int32.Parse(textBoxDelay1.Text));
-			}
-
-			CMD_ID_POS req = new CMD_ID_POS();
-
-			for (int k = 1; k <= 20; k++)
-			{
-				for (int i = 1; i <= 20; i++)
+				for (int j = 0; j < 10; j++)
 				{
-					req.ID = k;
-					req.CMD = "REQ_IR_SET_READ";
-					req.POS = i;
-
-					string reqStr = JsonConvert.SerializeObject(req, Formatting.Indented);
-					clientUser.Publish(topic, Encoding.UTF8.GetBytes(reqStr.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+					if (varName[j].Trim().Length <= 0)
+					{
+						continue;
+					}
+					varInitAdd[j] += varAdd[j];
+					newMsg = msg.Replace(varName[j], varInitAdd[j].ToString());
 				}
-				Delay(500);
+
+				clientUser.Publish(topic, Encoding.UTF8.GetBytes(newMsg), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+				Delay(Int32.Parse(textBoxDelay1.Text));
 			}
 
 
@@ -2206,18 +2258,293 @@ namespace MQTTClient
 		{
 
 		}
+		int qosSelectedIndex = 0;
 
 		private void buttonConnet2_Click(object sender, EventArgs e)
 		{
+			qosSelectedIndex = comboBoxQos2.SelectedIndex;
+			int port;
+			if (textBox2.Text.Length == 0)
+			{
+				return;
+			}
+			else if (!Int32.TryParse(textBox3.Text, out port))
+			{
+				//로그잡기.메세지박스잡기
+				return;
+			}
+			else
+			{
+				try
+				{
+					clientscr = new MqttClient(textBox2.Text);
+					clientscr.Connect(Guid.NewGuid().ToString());
+					clientscr.MqttMsgPublishReceived += new MqttClient.MqttMsgPublishEventHandler(clientsrc_MqttMsgPublishReceived);
+					button2_Click_1(sender, e);
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show(ex.Message);
+				}
+			
+			}
+			int port2;
+			if (textBox5.Text.Length == 0)
+			{
+				return;
+			}
+			else if (!Int32.TryParse(textBox6.Text, out port2))
+			{
+				return;
+			}
+			else
+			{
+				try
+				{
+					clientdst = new MqttClient(textBox5.Text);
+					clientdst.Connect(Guid.NewGuid().ToString());
+					clientdst.MqttMsgPublishReceived += new MqttClient.MqttMsgPublishEventHandler(clientdst_MqttMsgPublishReceived);
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show(ex.Message);
+				}
+
+			}
+		}
+
+		private void label55_Click_1(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label50_Click_1(object sender, EventArgs e)
+		{
+
+		}
+
+		private void textBox52_TextChanged_1(object sender, EventArgs e)
+		{
+
+		}
+
+		private void button6_Click(object sender, EventArgs e)
+		{
+			a = true;
+			string[] topic = textBox51.Lines;
+			string[] msg = textBox52.Lines;
+			string[] varName = new string[10];
+			int startLine = Convert.ToInt32(textBox53.Text);
+			int delayLine = Convert.ToInt32(textBox54.Text);
+
+
+			for (int j = startLine; j < topic.Length; j++)
+			{
+				if (a == false)
+				{
+					break;
+				}
+				if (topic[j].Trim().Length <= 0)
+				{
+					continue;
+				}
+				if (j >= msg.Length)
+				{
+					break;
+				}
+				if (msg[j].Trim().Length <= 0)
+				{
+					continue;
+				}
+
+				clientUser.Publish(topic[j], Encoding.UTF8.GetBytes(msg[j]), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+				Delay(delayLine);
+			}
+
+		}
+
+		private void button5_Click(object sender, EventArgs e)
+		{
+			a = false;
+		}
+
+		private void panel17_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+
+		private void panel19_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+
+		private void textBox7_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void panel18_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+
+		private void panel20_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+
+		private void label71_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void textBox51_TextChanged_1(object sender, EventArgs e)
+		{
+
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			listBox1.Items.Clear();
+			string currentPath = System.IO.Directory.GetCurrentDirectory();
+			StreamReader file = new StreamReader(currentPath + "\\subSend.txt", Encoding.Default);
+			string s = "";
+			while (s != null)
+			{
+				s = file.ReadLine();
+				if (!string.IsNullOrEmpty(s)) listBox1.Items.Add(s);
+			}
+			file.Close();
+		}
+
+		private void button4_Click(object sender, EventArgs e)
+		{
+			StreamWriter sw;
+			sw = new StreamWriter("subSend.txt");
+			int nCount = listBox1.Items.Count;
+			for (int i = 0; i < nCount; i++)
+			{
+				listBox1.Items[i] += "\r\n";
+				sw.Write(listBox1.Items[i]);
+			}
+			sw.Close();
+		}
+
+		private void button2_Click_1(object sender, EventArgs e)
+		{
 			try
 			{
-				clientscr = new MqttClient(textBoxHost.Text);
-				clientscr.Connect(Guid.NewGuid().ToString());
-				clientscr.MqttMsgPublishReceived += new MqttClient.MqttMsgPublishEventHandler(client_MqttMsgPublishReceived);
+				foreach (var item in listBox1.Items)
+				{
+					clientscr.Subscribe(new string[] { item.ToString() }, new byte[] { (byte)comboBoxQos2.SelectedIndex });
+				}
 			}
 			catch (Exception ex)
 			{
 				MessageBox.Show(ex.Message);
+			}
+
+		}
+
+		private void button8_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				if (listBox1.SelectedItem == null)
+				{
+					return;
+				}
+				else
+				{
+					clientscr.Unsubscribe(new string[] { listBox1.SelectedItem.ToString() });
+					listBox1.Items.Remove(listBox1.SelectedItem);
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+		}
+
+		private void button9_Click_1(object sender, EventArgs e)
+		{
+			//내 폴더 위치 불러오기
+			System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+			//폴더 있는지 확인하고 생성하기
+			if (!Directory.Exists("Log"))
+			{
+				System.IO.Directory.CreateDirectory("Log");
+			}
+			//폴더 열기
+			System.Diagnostics.Process.Start("Log");
+		}
+
+		private void button12_Click(object sender, EventArgs e)
+		{
+			try
+			{
+			if (clientscr != null && clientscr.IsConnected) clientscr.Disconnect();
+			if (clientdst != null && clientdst.IsConnected) clientdst.Disconnect();
+
+			}
+			catch (Exception)
+			{
+				//로그 저장
+			}
+		}
+
+		private void button7_Click_1(object sender, EventArgs e)
+		{
+			textBox2.Text = "103.60.126.23";
+
+		}
+
+		private void button11_Click(object sender, EventArgs e)
+		{
+			if (textBox2.Text == "103.60.126.23")
+			{
+				MessageBox.Show("동일한 서버에 전송할수 없습니다.");
+				return;
+			}
+			textBox5.Text = "103.60.126.23";
+
+		}
+
+		private void button10_Click(object sender, EventArgs e)
+		{
+			textBox2.Text = "127.0.0.1";
+
+		}
+
+		private void button13_Click(object sender, EventArgs e)
+		{
+			textBox5.Text = "127.0.0.1";
+
+		}
+
+		private void button14_Click(object sender, EventArgs e)
+		{
+			if (textBox1.Text.Length == 0)
+			{
+				return;
+			}
+			else
+			{
+				try
+				{
+					clientscr.Subscribe(new string[] { textBox1.Text }, new byte[] { (byte)comboBoxQos2.SelectedIndex });
+					List<string> result = new List<string>();
+					result.Add(textBox1.Text);
+					if (!listBox1.Items.Contains(textBox1.Text))
+					{
+						this.listBox1.Items.Add(textBox1.Text);
+					}
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show(ex.Message);
+				}
 			}
 		}
 	}
