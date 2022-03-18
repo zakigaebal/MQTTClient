@@ -229,12 +229,12 @@
 			this.splitter1 = new System.Windows.Forms.Splitter();
 			this.textBox51 = new System.Windows.Forms.TextBox();
 			this.panel21 = new System.Windows.Forms.Panel();
-			this.textBox9 = new System.Windows.Forms.TextBox();
+			this.textBoxSeperateString = new System.Windows.Forms.TextBox();
 			this.label74 = new System.Windows.Forms.Label();
 			this.button17 = new System.Windows.Forms.Button();
-			this.textBox4 = new System.Windows.Forms.TextBox();
+			this.textBoxSearchString = new System.Windows.Forms.TextBox();
 			this.label65 = new System.Windows.Forms.Label();
-			this.textBox8 = new System.Windows.Forms.TextBox();
+			this.textBoxDelLocation = new System.Windows.Forms.TextBox();
 			this.label73 = new System.Windows.Forms.Label();
 			this.button15 = new System.Windows.Forms.Button();
 			this.button16 = new System.Windows.Forms.Button();
@@ -242,10 +242,10 @@
 			this.button19 = new System.Windows.Forms.Button();
 			this.button18 = new System.Windows.Forms.Button();
 			this.label55 = new System.Windows.Forms.Label();
-			this.textBox54 = new System.Windows.Forms.TextBox();
+			this.textBoxAllDelay = new System.Windows.Forms.TextBox();
 			this.label50 = new System.Windows.Forms.Label();
 			this.label56 = new System.Windows.Forms.Label();
-			this.textBox53 = new System.Windows.Forms.TextBox();
+			this.textBoxAllStartline = new System.Windows.Forms.TextBox();
 			this.label57 = new System.Windows.Forms.Label();
 			this.button6 = new System.Windows.Forms.Button();
 			this.button5 = new System.Windows.Forms.Button();
@@ -262,13 +262,13 @@
 			this.button8 = new System.Windows.Forms.Button();
 			this.button9 = new System.Windows.Forms.Button();
 			this.label69 = new System.Windows.Forms.Label();
-			this.textBox7 = new System.Windows.Forms.TextBox();
+			this.textBoxTopicHeader = new System.Windows.Forms.TextBox();
 			this.panel18 = new System.Windows.Forms.Panel();
 			this.button11 = new System.Windows.Forms.Button();
 			this.button13 = new System.Windows.Forms.Button();
 			this.label72 = new System.Windows.Forms.Label();
 			this.label60 = new System.Windows.Forms.Label();
-			this.textBox5 = new System.Windows.Forms.TextBox();
+			this.textBoxHost3 = new System.Windows.Forms.TextBox();
 			this.checkBox1 = new System.Windows.Forms.CheckBox();
 			this.label66 = new System.Windows.Forms.Label();
 			this.label67 = new System.Windows.Forms.Label();
@@ -279,12 +279,12 @@
 			this.panel17 = new System.Windows.Forms.Panel();
 			this.button14 = new System.Windows.Forms.Button();
 			this.button7 = new System.Windows.Forms.Button();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.textBoxScrTopic = new System.Windows.Forms.TextBox();
 			this.button10 = new System.Windows.Forms.Button();
 			this.label61 = new System.Windows.Forms.Label();
 			this.label71 = new System.Windows.Forms.Label();
 			this.label59 = new System.Windows.Forms.Label();
-			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.textBoxHost2 = new System.Windows.Forms.TextBox();
 			this.checkBox2 = new System.Windows.Forms.CheckBox();
 			this.label62 = new System.Windows.Forms.Label();
 			this.label63 = new System.Windows.Forms.Label();
@@ -2038,8 +2038,10 @@
 			this.textBoxAutoPubMsg.Location = new System.Drawing.Point(0, 44);
 			this.textBoxAutoPubMsg.Multiline = true;
 			this.textBoxAutoPubMsg.Name = "textBoxAutoPubMsg";
+			this.textBoxAutoPubMsg.ScrollBars = System.Windows.Forms.ScrollBars.Both;
 			this.textBoxAutoPubMsg.Size = new System.Drawing.Size(922, 393);
 			this.textBoxAutoPubMsg.TabIndex = 1;
+			this.textBoxAutoPubMsg.WordWrap = false;
 			this.textBoxAutoPubMsg.TextChanged += new System.EventHandler(this.textBoxAutoPubMsg_TextChanged);
 			// 
 			// buttonAutoPubStart
@@ -2450,12 +2452,12 @@
 			// 
 			// panel21
 			// 
-			this.panel21.Controls.Add(this.textBox9);
+			this.panel21.Controls.Add(this.textBoxSeperateString);
 			this.panel21.Controls.Add(this.label74);
 			this.panel21.Controls.Add(this.button17);
-			this.panel21.Controls.Add(this.textBox4);
+			this.panel21.Controls.Add(this.textBoxSearchString);
 			this.panel21.Controls.Add(this.label65);
-			this.panel21.Controls.Add(this.textBox8);
+			this.panel21.Controls.Add(this.textBoxDelLocation);
 			this.panel21.Controls.Add(this.label73);
 			this.panel21.Controls.Add(this.button15);
 			this.panel21.Controls.Add(this.button16);
@@ -2465,15 +2467,15 @@
 			this.panel21.Size = new System.Drawing.Size(1148, 39);
 			this.panel21.TabIndex = 13;
 			// 
-			// textBox9
+			// textBoxSeperateString
 			// 
-			this.textBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBox9.Location = new System.Drawing.Point(1029, 9);
-			this.textBox9.Name = "textBox9";
-			this.textBox9.Size = new System.Drawing.Size(55, 21);
-			this.textBox9.TabIndex = 16;
-			this.textBox9.Text = " - ";
-			this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
+			this.textBoxSeperateString.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.textBoxSeperateString.Location = new System.Drawing.Point(1029, 9);
+			this.textBoxSeperateString.Name = "textBoxSeperateString";
+			this.textBoxSeperateString.Size = new System.Drawing.Size(55, 21);
+			this.textBoxSeperateString.TabIndex = 16;
+			this.textBoxSeperateString.Text = " - ";
+			this.textBoxSeperateString.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
 			// 
 			// label74
 			// 
@@ -2496,15 +2498,15 @@
 			this.button17.UseVisualStyleBackColor = true;
 			this.button17.Click += new System.EventHandler(this.button17_Click);
 			// 
-			// textBox4
+			// textBoxSearchString
 			// 
-			this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+			this.textBoxSearchString.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBox4.Location = new System.Drawing.Point(246, 9);
-			this.textBox4.Name = "textBox4";
-			this.textBox4.Size = new System.Drawing.Size(640, 21);
-			this.textBox4.TabIndex = 12;
-			this.textBox4.Text = "\"CMD\":\"MILKEND\",\"CMD\":\"REQ_COW_FEEDER_END\"";
+			this.textBoxSearchString.Location = new System.Drawing.Point(246, 9);
+			this.textBoxSearchString.Name = "textBoxSearchString";
+			this.textBoxSearchString.Size = new System.Drawing.Size(640, 21);
+			this.textBoxSearchString.TabIndex = 12;
+			this.textBoxSearchString.Text = "\"CMD\":\"MILKEND\",\"CMD\":\"REQ_COW_FEEDER_END\"";
 			// 
 			// label65
 			// 
@@ -2515,13 +2517,13 @@
 			this.label65.TabIndex = 10;
 			this.label65.Text = "삭제위치";
 			// 
-			// textBox8
+			// textBoxDelLocation
 			// 
-			this.textBox8.Location = new System.Drawing.Point(62, 9);
-			this.textBox8.Name = "textBox8";
-			this.textBox8.Size = new System.Drawing.Size(53, 21);
-			this.textBox8.TabIndex = 13;
-			this.textBox8.Text = "36";
+			this.textBoxDelLocation.Location = new System.Drawing.Point(62, 9);
+			this.textBoxDelLocation.Name = "textBoxDelLocation";
+			this.textBoxDelLocation.Size = new System.Drawing.Size(53, 21);
+			this.textBoxDelLocation.TabIndex = 13;
+			this.textBoxDelLocation.Text = "36";
 			// 
 			// label73
 			// 
@@ -2558,10 +2560,10 @@
 			this.panel14.Controls.Add(this.button19);
 			this.panel14.Controls.Add(this.button18);
 			this.panel14.Controls.Add(this.label55);
-			this.panel14.Controls.Add(this.textBox54);
+			this.panel14.Controls.Add(this.textBoxAllDelay);
 			this.panel14.Controls.Add(this.label50);
 			this.panel14.Controls.Add(this.label56);
-			this.panel14.Controls.Add(this.textBox53);
+			this.panel14.Controls.Add(this.textBoxAllStartline);
 			this.panel14.Controls.Add(this.label57);
 			this.panel14.Controls.Add(this.button6);
 			this.panel14.Controls.Add(this.button5);
@@ -2601,14 +2603,14 @@
 			this.label55.Text = "TOPIC";
 			this.label55.Click += new System.EventHandler(this.label55_Click_1);
 			// 
-			// textBox54
+			// textBoxAllDelay
 			// 
-			this.textBox54.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBox54.Location = new System.Drawing.Point(953, 5);
-			this.textBox54.Name = "textBox54";
-			this.textBox54.Size = new System.Drawing.Size(70, 21);
-			this.textBox54.TabIndex = 7;
-			this.textBox54.Text = "500";
+			this.textBoxAllDelay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.textBoxAllDelay.Location = new System.Drawing.Point(953, 5);
+			this.textBoxAllDelay.Name = "textBoxAllDelay";
+			this.textBoxAllDelay.Size = new System.Drawing.Size(70, 21);
+			this.textBoxAllDelay.TabIndex = 7;
+			this.textBoxAllDelay.Text = "500";
 			// 
 			// label50
 			// 
@@ -2630,14 +2632,14 @@
 			this.label56.TabIndex = 6;
 			this.label56.Text = "시작라인";
 			// 
-			// textBox53
+			// textBoxAllStartline
 			// 
-			this.textBox53.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBox53.Location = new System.Drawing.Point(832, 5);
-			this.textBox53.Name = "textBox53";
-			this.textBox53.Size = new System.Drawing.Size(70, 21);
-			this.textBox53.TabIndex = 7;
-			this.textBox53.Text = "0";
+			this.textBoxAllStartline.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.textBoxAllStartline.Location = new System.Drawing.Point(832, 5);
+			this.textBoxAllStartline.Name = "textBoxAllStartline";
+			this.textBoxAllStartline.Size = new System.Drawing.Size(70, 21);
+			this.textBoxAllStartline.TabIndex = 7;
+			this.textBoxAllStartline.Text = "0";
 			// 
 			// label57
 			// 
@@ -2705,17 +2707,17 @@
 			this.panel20.Controls.Add(this.button12);
 			this.panel20.Controls.Add(this.buttonConnet2);
 			this.panel20.Controls.Add(this.label70);
-			this.panel20.Controls.Add(this.textBox7);
+			this.panel20.Controls.Add(this.textBoxTopicHeader);
 			this.panel20.Location = new System.Drawing.Point(662, 139);
 			this.panel20.Name = "panel20";
-			this.panel20.Size = new System.Drawing.Size(478, 155);
+			this.panel20.Size = new System.Drawing.Size(489, 155);
 			this.panel20.TabIndex = 16;
 			this.panel20.Paint += new System.Windows.Forms.PaintEventHandler(this.panel20_Paint);
 			// 
 			// button12
 			// 
 			this.button12.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.button12.Location = new System.Drawing.Point(381, 125);
+			this.button12.Location = new System.Drawing.Point(394, 126);
 			this.button12.Name = "button12";
 			this.button12.Size = new System.Drawing.Size(94, 27);
 			this.button12.TabIndex = 2;
@@ -2726,7 +2728,7 @@
 			// buttonConnet2
 			// 
 			this.buttonConnet2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.buttonConnet2.Location = new System.Drawing.Point(381, 92);
+			this.buttonConnet2.Location = new System.Drawing.Point(394, 99);
 			this.buttonConnet2.Name = "buttonConnet2";
 			this.buttonConnet2.Size = new System.Drawing.Size(94, 27);
 			this.buttonConnet2.TabIndex = 2;
@@ -2825,14 +2827,14 @@
 			this.label69.TabIndex = 0;
 			this.label69.Text = "Subscriptions topic:";
 			// 
-			// textBox7
+			// textBoxTopicHeader
 			// 
-			this.textBox7.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBox7.Location = new System.Drawing.Point(3, 30);
-			this.textBox7.Name = "textBox7";
-			this.textBox7.Size = new System.Drawing.Size(472, 25);
-			this.textBox7.TabIndex = 2;
-			this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+			this.textBoxTopicHeader.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.textBoxTopicHeader.Location = new System.Drawing.Point(78, 5);
+			this.textBoxTopicHeader.Name = "textBoxTopicHeader";
+			this.textBoxTopicHeader.Size = new System.Drawing.Size(397, 25);
+			this.textBoxTopicHeader.TabIndex = 2;
+			this.textBoxTopicHeader.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
 			// 
 			// panel18
 			// 
@@ -2841,7 +2843,7 @@
 			this.panel18.Controls.Add(this.button13);
 			this.panel18.Controls.Add(this.label72);
 			this.panel18.Controls.Add(this.label60);
-			this.panel18.Controls.Add(this.textBox5);
+			this.panel18.Controls.Add(this.textBoxHost3);
 			this.panel18.Controls.Add(this.checkBox1);
 			this.panel18.Controls.Add(this.label66);
 			this.panel18.Controls.Add(this.label67);
@@ -2895,13 +2897,13 @@
 			this.label60.TabIndex = 0;
 			this.label60.Text = "Host:";
 			// 
-			// textBox5
+			// textBoxHost3
 			// 
-			this.textBox5.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBox5.Location = new System.Drawing.Point(54, 30);
-			this.textBox5.Name = "textBox5";
-			this.textBox5.Size = new System.Drawing.Size(146, 25);
-			this.textBox5.TabIndex = 0;
+			this.textBoxHost3.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.textBoxHost3.Location = new System.Drawing.Point(54, 30);
+			this.textBoxHost3.Name = "textBoxHost3";
+			this.textBoxHost3.Size = new System.Drawing.Size(146, 25);
+			this.textBoxHost3.TabIndex = 0;
 			// 
 			// checkBox1
 			// 
@@ -2980,12 +2982,12 @@
 			// 
 			this.panel17.Controls.Add(this.button14);
 			this.panel17.Controls.Add(this.button7);
-			this.panel17.Controls.Add(this.textBox1);
+			this.panel17.Controls.Add(this.textBoxScrTopic);
 			this.panel17.Controls.Add(this.button10);
 			this.panel17.Controls.Add(this.label61);
 			this.panel17.Controls.Add(this.label71);
 			this.panel17.Controls.Add(this.label59);
-			this.panel17.Controls.Add(this.textBox2);
+			this.panel17.Controls.Add(this.textBoxHost2);
 			this.panel17.Controls.Add(this.checkBox2);
 			this.panel17.Controls.Add(this.label62);
 			this.panel17.Controls.Add(this.label63);
@@ -3020,13 +3022,13 @@
 			this.button7.UseVisualStyleBackColor = true;
 			this.button7.Click += new System.EventHandler(this.button7_Click_1);
 			// 
-			// textBox1
+			// textBoxScrTopic
 			// 
-			this.textBox1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBox1.Location = new System.Drawing.Point(53, 90);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(164, 25);
-			this.textBox1.TabIndex = 19;
+			this.textBoxScrTopic.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.textBoxScrTopic.Location = new System.Drawing.Point(53, 90);
+			this.textBoxScrTopic.Name = "textBoxScrTopic";
+			this.textBoxScrTopic.Size = new System.Drawing.Size(164, 25);
+			this.textBoxScrTopic.TabIndex = 19;
 			// 
 			// button10
 			// 
@@ -3069,13 +3071,13 @@
 			this.label59.TabIndex = 0;
 			this.label59.Text = "Host:";
 			// 
-			// textBox2
+			// textBoxHost2
 			// 
-			this.textBox2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBox2.Location = new System.Drawing.Point(53, 31);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(146, 25);
-			this.textBox2.TabIndex = 0;
+			this.textBoxHost2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.textBoxHost2.Location = new System.Drawing.Point(53, 31);
+			this.textBoxHost2.Name = "textBoxHost2";
+			this.textBoxHost2.Size = new System.Drawing.Size(146, 25);
+			this.textBoxHost2.TabIndex = 0;
 			// 
 			// checkBox2
 			// 
@@ -3450,16 +3452,16 @@
 		private System.Windows.Forms.TextBox textBox52;
 		private System.Windows.Forms.Label label50;
 		private System.Windows.Forms.Panel panel14;
-		private System.Windows.Forms.TextBox textBox54;
+		private System.Windows.Forms.TextBox textBoxAllDelay;
 		private System.Windows.Forms.Label label56;
-		private System.Windows.Forms.TextBox textBox53;
+		private System.Windows.Forms.TextBox textBoxAllStartline;
 		private System.Windows.Forms.Label label57;
 		private System.Windows.Forms.Button button6;
 		private System.Windows.Forms.Button button5;
 		private System.Windows.Forms.Panel panel16;
 		private System.Windows.Forms.Panel panel18;
 		private System.Windows.Forms.Label label60;
-		private System.Windows.Forms.TextBox textBox5;
+		private System.Windows.Forms.TextBox textBoxHost3;
 		private System.Windows.Forms.CheckBox checkBox1;
 		private System.Windows.Forms.Label label66;
 		private System.Windows.Forms.Label label67;
@@ -3468,7 +3470,7 @@
 		private System.Windows.Forms.Label label68;
 		private System.Windows.Forms.Panel panel17;
 		private System.Windows.Forms.Label label59;
-		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.TextBox textBoxHost2;
 		private System.Windows.Forms.CheckBox checkBox2;
 		private System.Windows.Forms.Label label62;
 		private System.Windows.Forms.Label label63;
@@ -3486,7 +3488,7 @@
 		private System.Windows.Forms.Label label69;
 		private System.Windows.Forms.Panel panel20;
 		private System.Windows.Forms.Button button12;
-		private System.Windows.Forms.TextBox textBox7;
+		private System.Windows.Forms.TextBox textBoxTopicHeader;
 		private System.Windows.Forms.Label label72;
 		private System.Windows.Forms.Label label70;
 		private System.Windows.Forms.Label label71;
@@ -3497,17 +3499,17 @@
 		private System.Windows.Forms.Button button7;
 		private System.Windows.Forms.Button button10;
 		private System.Windows.Forms.Button button14;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.TextBox textBoxScrTopic;
 		private System.Windows.Forms.Label label61;
 		private System.Windows.Forms.Splitter splitter2;
 		private System.Windows.Forms.Panel panel21;
-		private System.Windows.Forms.TextBox textBox4;
+		private System.Windows.Forms.TextBox textBoxSearchString;
 		private System.Windows.Forms.Label label65;
-		private System.Windows.Forms.TextBox textBox8;
+		private System.Windows.Forms.TextBox textBoxDelLocation;
 		private System.Windows.Forms.Label label73;
 		private System.Windows.Forms.Button button15;
 		private System.Windows.Forms.Button button16;
-		private System.Windows.Forms.TextBox textBox9;
+		private System.Windows.Forms.TextBox textBoxSeperateString;
 		private System.Windows.Forms.Label label74;
 		private System.Windows.Forms.Button button17;
 		private System.Windows.Forms.Button button19;

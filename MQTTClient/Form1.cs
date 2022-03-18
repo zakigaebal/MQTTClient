@@ -131,6 +131,48 @@ namespace MQTTClient
 				StringBuilder black = new StringBuilder();
 				StringBuilder autoPubTopic = new StringBuilder();
 				StringBuilder autoPubMsg2 = new StringBuilder();
+				StringBuilder host2 = new StringBuilder();
+				StringBuilder host3 = new StringBuilder();
+				StringBuilder topicHeader = new StringBuilder();
+				StringBuilder scrTopic = new StringBuilder();
+				StringBuilder delLocation = new StringBuilder();
+				StringBuilder searchString = new StringBuilder();
+				StringBuilder seperateString = new StringBuilder();
+				StringBuilder allStartLine = new StringBuilder();
+				StringBuilder allDelay = new StringBuilder();
+
+				StringBuilder autoDelay = new StringBuilder();
+				StringBuilder autotextStr1 = new StringBuilder();
+				StringBuilder autotextStr2 = new StringBuilder();
+				StringBuilder autotextStr3 = new StringBuilder();
+				StringBuilder autotextStr4 = new StringBuilder();
+				StringBuilder autotextStr5 = new StringBuilder();
+				StringBuilder autotextStr6 = new StringBuilder();
+				StringBuilder autotextStr7 = new StringBuilder();
+				StringBuilder autotextStr8 = new StringBuilder();
+				StringBuilder autotextStr9 = new StringBuilder();
+				StringBuilder autotextStr10 = new StringBuilder();
+				StringBuilder autotextfirst1 = new StringBuilder();
+				StringBuilder autotextfirst2 = new StringBuilder();
+				StringBuilder autotextfirst3 = new StringBuilder();
+				StringBuilder autotextfirst4 = new StringBuilder();
+				StringBuilder autotextfirst5 = new StringBuilder();
+				StringBuilder autotextfirst6 = new StringBuilder();
+				StringBuilder autotextfirst7 = new StringBuilder();
+				StringBuilder autotextfirst8 = new StringBuilder();
+				StringBuilder autotextfirst9 = new StringBuilder();
+				StringBuilder autotextfirst10 = new StringBuilder();
+				StringBuilder autotextPlus1 = new StringBuilder();
+				StringBuilder autotextPlus2 = new StringBuilder();
+				StringBuilder autotextPlus3 = new StringBuilder();
+				StringBuilder autotextPlus4 = new StringBuilder();
+				StringBuilder autotextPlus5 = new StringBuilder();
+				StringBuilder autotextPlus6 = new StringBuilder();
+				StringBuilder autotextPlus7 = new StringBuilder();
+				StringBuilder autotextPlus8 = new StringBuilder();
+				StringBuilder autotextPlus9 = new StringBuilder();
+				StringBuilder autotextPlus10 = new StringBuilder();
+
 
 				// ini파일에서 데이터를 불러옴
 				// GetPrivateProfileString("카테고리", "Key값", "기본값", "저장할 변수", "불러올 경로");
@@ -169,9 +211,51 @@ namespace MQTTClient
 				GetPrivateProfileString("Color", "Black", "", black, 3200, startupPath);
 				GetPrivateProfileString(mc, "autoPubTopic", "", autoPubTopic, 3200, startupPath);
 				GetPrivateProfileString(mc, "autoPubMsg", "", autoPubMsg2, 32000, startupPath);
+				GetPrivateProfileString(mc, "LastHostName2", "", host2, 3200, startupPath);
+				GetPrivateProfileString(mc, "LastHostName3", "", host3, 3200, startupPath);
+				GetPrivateProfileString(mc, "topicHeader", "", topicHeader, 3200, startupPath);
+				GetPrivateProfileString(mc, "scrTopic", "", scrTopic, 3200, startupPath);
+				GetPrivateProfileString(mc, "delLocation", "", delLocation, 3200, startupPath);
+				GetPrivateProfileString(mc, "searchString", "", searchString, 3200, startupPath);
+				GetPrivateProfileString(mc, "seperateString", "", seperateString, 3200, startupPath);
+				GetPrivateProfileString(mc, "allStartLine", "", allStartLine, 3200, startupPath);
+				GetPrivateProfileString(mc, "allDelay", "", allDelay, 3200, startupPath);
+				GetPrivateProfileString(mc, "autoDelay", "", autoDelay, 3200, startupPath);
+				GetPrivateProfileString(mc, "textBoxStr1", "", autotextStr1, 3200, startupPath);
+				GetPrivateProfileString(mc, "textBoxStr2", "", autotextStr2, 3200, startupPath);
+				GetPrivateProfileString(mc, "textBoxStr3", "", autotextStr3, 3200, startupPath);
+				GetPrivateProfileString(mc, "textBoxStr4", "", autotextStr4, 3200, startupPath);
+				GetPrivateProfileString(mc, "textBoxStr5", "", autotextStr5, 3200, startupPath);
+				GetPrivateProfileString(mc, "textBoxStr6", "", autotextStr6, 3200, startupPath);
+				GetPrivateProfileString(mc, "textBoxStr7", "", autotextStr7, 3200, startupPath);
+				GetPrivateProfileString(mc, "textBoxStr8", "", autotextStr8, 3200, startupPath);
+				GetPrivateProfileString(mc, "textBoxStr9", "", autotextStr9, 3200, startupPath);
+				GetPrivateProfileString(mc, "textBoxStr10", "", autotextStr10, 3200, startupPath);
+				GetPrivateProfileString(mc, "textBoxfirst1", "", autotextfirst1, 3200, startupPath);
+				GetPrivateProfileString(mc, "textBoxfirst2", "", autotextfirst2, 3200, startupPath);
+				GetPrivateProfileString(mc, "textBoxfirst3", "", autotextfirst3, 3200, startupPath);
+				GetPrivateProfileString(mc, "textBoxfirst4", "", autotextfirst4, 3200, startupPath);
+				GetPrivateProfileString(mc, "textBoxfirst5", "", autotextfirst5, 3200, startupPath);
+				GetPrivateProfileString(mc, "textBoxfirst6", "", autotextfirst6, 3200, startupPath);
+				GetPrivateProfileString(mc, "textBoxfirst7", "", autotextfirst7, 3200, startupPath);
+				GetPrivateProfileString(mc, "textBoxfirst8", "", autotextfirst8, 3200, startupPath);
+				GetPrivateProfileString(mc, "textBoxfirst9", "", autotextfirst9, 3200, startupPath);
+				GetPrivateProfileString(mc, "textBoxfirst10", "", autotextfirst10, 3200, startupPath);
+				GetPrivateProfileString(mc, "textBoxPlus1", "", autotextPlus1, 3200, startupPath);
+				GetPrivateProfileString(mc, "textBoxPlus2", "", autotextPlus2, 3200, startupPath);
+				GetPrivateProfileString(mc, "textBoxPlus3", "", autotextPlus3, 3200, startupPath);
+				GetPrivateProfileString(mc, "textBoxPlus4", "", autotextPlus4, 3200, startupPath);
+				GetPrivateProfileString(mc, "textBoxPlus5", "", autotextPlus5, 3200, startupPath);
+				GetPrivateProfileString(mc, "textBoxPlus6", "", autotextPlus6, 3200, startupPath);
+				GetPrivateProfileString(mc, "textBoxPlus7", "", autotextPlus7, 3200, startupPath);
+				GetPrivateProfileString(mc, "textBoxPlus8", "", autotextPlus8, 3200, startupPath);
+				GetPrivateProfileString(mc, "textBoxPlus9", "", autotextPlus9, 3200, startupPath);
+				GetPrivateProfileString(mc, "textBoxPlus10", "", autotextPlus10, 3200, startupPath);
 
 				// 텍스트박스에 ini파일에서 가져온 데이터를 넣는다
 				textBoxHost.Text = host.ToString();
+				textBoxHost2.Text = host2.ToString();
+				textBoxHost3.Text = host3.ToString();
 				textBoxSubTopic.Text = topic.ToString();
 				textBoxPT1.Text = pub1.ToString();
 				textBoxPT2.Text = pub2.ToString();
@@ -206,6 +290,44 @@ namespace MQTTClient
 				textBoxBlack.Text = black.ToString();
 				textBoxAutoPubTopic.Text = autoPubTopic.ToString().Trim();
 				textBoxAutoPubMsg.Text = autoPubMsg2.ToString();
+				textBoxTopicHeader.Text = topicHeader.ToString();
+				textBoxScrTopic.Text = scrTopic.ToString();
+				textBoxDelLocation.Text = delLocation.ToString();
+				textBoxSearchString.Text = searchString.ToString();
+				textBoxSeperateString.Text = seperateString.ToString();
+				textBoxAllStartline.Text = allStartLine.ToString();
+				textBoxAllDelay.Text = allDelay.ToString();
+				textBoxDelay1.Text = autoDelay.ToString();
+				textBoxStr1.Text = autotextStr1.ToString();
+				textBoxStr2.Text = autotextStr2.ToString();
+				textBoxStr3.Text = autotextStr3.ToString();
+				textBoxStr4.Text = autotextStr4.ToString();
+				textBoxStr5.Text = autotextStr5.ToString();
+				textBoxStr6.Text = autotextStr6.ToString();
+				textBoxStr7.Text = autotextStr7.ToString();
+				textBoxStr8.Text = autotextStr8.ToString();
+				textBoxStr9.Text = autotextStr9.ToString();
+				textBoxStr10.Text = autotextStr10.ToString();
+				textBoxfirst1.Text = autotextfirst1.ToString();
+				textBoxfirst2.Text = autotextfirst2.ToString();
+				textBoxfirst3.Text = autotextfirst3.ToString();
+				textBoxfirst4.Text = autotextfirst4.ToString();
+				textBoxfirst5.Text = autotextfirst5.ToString();
+				textBoxfirst6.Text = autotextfirst6.ToString();
+				textBoxfirst7.Text = autotextfirst7.ToString();
+				textBoxfirst8.Text = autotextfirst8.ToString();
+				textBoxfirst9.Text = autotextfirst9.ToString();
+				textBoxfirst10.Text = autotextfirst10.ToString();
+				textBoxPlus1.Text = autotextPlus1.ToString();
+				textBoxPlus2.Text = autotextPlus2.ToString();
+				textBoxPlus3.Text = autotextPlus3.ToString();
+				textBoxPlus4.Text = autotextPlus4.ToString();
+				textBoxPlus5.Text = autotextPlus5.ToString();
+				textBoxPlus6.Text = autotextPlus6.ToString();
+				textBoxPlus7.Text = autotextPlus7.ToString();
+				textBoxPlus8.Text = autotextPlus8.ToString();
+				textBoxPlus9.Text = autotextPlus9.ToString();
+				textBoxPlus10.Text = autotextPlus10.ToString();
 			}
 			catch (Exception)
 			{
@@ -253,7 +375,46 @@ namespace MQTTClient
 			WritePrivateProfileString("Color", "Blue", textBoxBlue.Text, startupPath);
 			WritePrivateProfileString("Color", "Black", textBoxBlack.Text, startupPath);
 			WritePrivateProfileString(mc, "autoPubTopic", textBoxAutoPubTopic.Text, startupPath);
-			WritePrivateProfileString(mc, "autoPubMsg", textBoxAutoPubMsg.Text, startupPath);
+			WritePrivateProfileString(mc, "LastHostName2", textBoxHost2.Text, startupPath);
+			WritePrivateProfileString(mc, "LastHostName3", textBoxHost3.Text, startupPath);
+			WritePrivateProfileString(mc, "topicHeader", textBoxTopicHeader.Text, startupPath);
+			WritePrivateProfileString(mc, "scrTopic", textBoxScrTopic.Text, startupPath);
+			WritePrivateProfileString(mc, "delLocation", textBoxDelLocation.Text, startupPath);
+			WritePrivateProfileString(mc, "searchString", textBoxSearchString.Text, startupPath);
+			WritePrivateProfileString(mc, "seperateString", textBoxSeperateString.Text, startupPath);
+			WritePrivateProfileString(mc, "allStartLine", textBoxAllStartline.Text, startupPath);
+			WritePrivateProfileString(mc, "allDelay", textBoxAllDelay.Text, startupPath);
+			WritePrivateProfileString(mc, "autoDelay", textBoxDelay1.Text, startupPath);
+			WritePrivateProfileString(mc, "textBoxStr1", textBoxStr1.Text, startupPath);
+			WritePrivateProfileString(mc, "textBoxStr2", textBoxStr2.Text, startupPath);
+			WritePrivateProfileString(mc, "textBoxStr3", textBoxStr3.Text, startupPath);
+			WritePrivateProfileString(mc, "textBoxStr4", textBoxStr4.Text, startupPath);
+			WritePrivateProfileString(mc, "textBoxStr5", textBoxStr5.Text, startupPath);
+			WritePrivateProfileString(mc, "textBoxStr6", textBoxStr6.Text, startupPath);
+			WritePrivateProfileString(mc, "textBoxStr7", textBoxStr7.Text, startupPath);
+			WritePrivateProfileString(mc, "textBoxStr8", textBoxStr8.Text, startupPath);
+			WritePrivateProfileString(mc, "textBoxStr9", textBoxStr9.Text, startupPath);
+			WritePrivateProfileString(mc, "textBoxStr10", textBoxStr10.Text, startupPath);
+			WritePrivateProfileString(mc, "textBoxfirst1", textBoxfirst1.Text, startupPath);
+			WritePrivateProfileString(mc, "textBoxfirst2", textBoxfirst2.Text, startupPath);
+			WritePrivateProfileString(mc, "textBoxfirst3", textBoxfirst3.Text, startupPath);
+			WritePrivateProfileString(mc, "textBoxfirst4", textBoxfirst4.Text, startupPath);
+			WritePrivateProfileString(mc, "textBoxfirst5", textBoxfirst5.Text, startupPath);
+			WritePrivateProfileString(mc, "textBoxfirst6", textBoxfirst6.Text, startupPath);
+			WritePrivateProfileString(mc, "textBoxfirst7", textBoxfirst7.Text, startupPath);
+			WritePrivateProfileString(mc, "textBoxfirst8", textBoxfirst8.Text, startupPath);
+			WritePrivateProfileString(mc, "textBoxfirst9", textBoxfirst9.Text, startupPath);
+			WritePrivateProfileString(mc, "textBoxfirst10", textBoxfirst10.Text, startupPath);
+			WritePrivateProfileString(mc, "textBoxPlus1", textBoxPlus1.Text, startupPath);
+			WritePrivateProfileString(mc, "textBoxPlus2", textBoxPlus2.Text, startupPath);
+			WritePrivateProfileString(mc, "textBoxPlus3", textBoxPlus3.Text, startupPath);
+			WritePrivateProfileString(mc, "textBoxPlus4", textBoxPlus4.Text, startupPath);
+			WritePrivateProfileString(mc, "textBoxPlus5", textBoxPlus5.Text, startupPath);
+			WritePrivateProfileString(mc, "textBoxPlus6", textBoxPlus6.Text, startupPath);
+			WritePrivateProfileString(mc, "textBoxPlus7", textBoxPlus7.Text, startupPath);
+			WritePrivateProfileString(mc, "textBoxPlus8", textBoxPlus8.Text, startupPath);
+			WritePrivateProfileString(mc, "textBoxPlus9", textBoxPlus9.Text, startupPath);
+			WritePrivateProfileString(mc, "textBoxPlus10", textBoxPlus10.Text, startupPath);
 		}
 
 		private void mqttRecord()
@@ -624,15 +785,15 @@ namespace MQTTClient
 		{
 
 
-			if (textBox7.Text.Trim().Length <= 0)
+			if (textBoxTopicHeader.Text.Trim().Length <= 0)
 			{
 				clientdst.Publish(data.Topic, data.Message, (byte)qosSelectedIndex, checkBox1.Checked);
 				ShowMessage(data.Topic, System.Text.Encoding.UTF8.GetString(data.Message), dataGridView1);
 			}
 			else
 			{
-				clientdst.Publish(textBox7.Text.Trim() + data.Topic, data.Message, (byte)qosSelectedIndex, checkBox1.Checked);
-				ShowMessage(textBox7.Text.Trim() + data.Topic, System.Text.Encoding.UTF8.GetString(data.Message), dataGridView1);
+				clientdst.Publish(textBoxTopicHeader.Text.Trim() + data.Topic, data.Message, (byte)qosSelectedIndex, checkBox1.Checked);
+				ShowMessage(textBoxTopicHeader.Text.Trim() + data.Topic, System.Text.Encoding.UTF8.GetString(data.Message), dataGridView1);
 			}
 
 
@@ -2274,7 +2435,7 @@ namespace MQTTClient
 		{
 			qosSelectedIndex = comboBoxQos2.SelectedIndex;
 			int port;
-			if (textBox2.Text.Length == 0)
+			if (textBoxHost2.Text.Length == 0)
 			{
 				return;
 			}
@@ -2287,7 +2448,7 @@ namespace MQTTClient
 			{
 				try
 				{
-					clientscr = new MqttClient(textBox2.Text);
+					clientscr = new MqttClient(textBoxHost2.Text);
 					clientscr.Connect(Guid.NewGuid().ToString());
 					clientscr.MqttMsgPublishReceived += new MqttClient.MqttMsgPublishEventHandler(clientsrc_MqttMsgPublishReceived);
 					button2_Click_1(sender, e);
@@ -2299,7 +2460,7 @@ namespace MQTTClient
 
 			}
 			int port2;
-			if (textBox5.Text.Length == 0)
+			if (textBoxHost3.Text.Length == 0)
 			{
 				return;
 			}
@@ -2311,7 +2472,7 @@ namespace MQTTClient
 			{
 				try
 				{
-					clientdst = new MqttClient(textBox5.Text);
+					clientdst = new MqttClient(textBoxHost3.Text);
 					clientdst.Connect(Guid.NewGuid().ToString());
 					clientdst.MqttMsgPublishReceived += new MqttClient.MqttMsgPublishEventHandler(clientdst_MqttMsgPublishReceived);
 				}
@@ -2344,8 +2505,8 @@ namespace MQTTClient
 			string[] topic = textBox51.Lines;
 			string[] msg = textBox52.Lines;
 			string[] varName = new string[10];
-			int startLine = Convert.ToInt32(textBox53.Text);
-			int delayLine = Convert.ToInt32(textBox54.Text);
+			int startLine = Convert.ToInt32(textBoxAllStartline.Text);
+			int delayLine = Convert.ToInt32(textBoxAllDelay.Text);
 
 
 			for (int j = startLine; j < topic.Length; j++)
@@ -2506,36 +2667,36 @@ namespace MQTTClient
 
 		private void button7_Click_1(object sender, EventArgs e)
 		{
-			textBox2.Text = "103.60.126.23";
+			textBoxHost2.Text = "103.60.126.23";
 
 		}
 
 		private void button11_Click(object sender, EventArgs e)
 		{
-			if (textBox2.Text == "103.60.126.23")
+			if (textBoxHost2.Text == "103.60.126.23")
 			{
 				MessageBox.Show("동일한 서버에 전송할수 없습니다.");
 				return;
 			}
-			textBox5.Text = "103.60.126.23";
+			textBoxHost3.Text = "103.60.126.23";
 
 		}
 
 		private void button10_Click(object sender, EventArgs e)
 		{
-			textBox2.Text = "127.0.0.1";
+			textBoxHost2.Text = "127.0.0.1";
 
 		}
 
 		private void button13_Click(object sender, EventArgs e)
 		{
-			textBox5.Text = "127.0.0.1";
+			textBoxHost3.Text = "127.0.0.1";
 
 		}
 
 		private void button14_Click(object sender, EventArgs e)
 		{
-			if (textBox1.Text.Length == 0)
+			if (textBoxScrTopic.Text.Length == 0)
 			{
 				return;
 			}
@@ -2543,12 +2704,12 @@ namespace MQTTClient
 			{
 				try
 				{
-					clientscr.Subscribe(new string[] { textBox1.Text }, new byte[] { (byte)comboBoxQos2.SelectedIndex });
+					clientscr.Subscribe(new string[] { textBoxScrTopic.Text }, new byte[] { (byte)comboBoxQos2.SelectedIndex });
 					List<string> result = new List<string>();
-					result.Add(textBox1.Text);
-					if (!listBox1.Items.Contains(textBox1.Text))
+					result.Add(textBoxScrTopic.Text);
+					if (!listBox1.Items.Contains(textBoxScrTopic.Text))
 					{
-						this.listBox1.Items.Add(textBox1.Text);
+						this.listBox1.Items.Add(textBoxScrTopic.Text);
 					}
 				}
 				catch (Exception ex)
@@ -2565,9 +2726,9 @@ namespace MQTTClient
 
 			for (int i = 0; i < msg.Length; i++)
 			{
-				if (msg[i].Length < Convert.ToInt32(textBox8.Text)) continue;
+				if (msg[i].Length < Convert.ToInt32(textBoxDelLocation.Text)) continue;
 					
-				newMsg[i] = msg[i].Substring(Convert.ToInt32(textBox8.Text)-1, msg[i].Length- Convert.ToInt32(textBox8.Text)+1);
+				newMsg[i] = msg[i].Substring(Convert.ToInt32(textBoxDelLocation.Text)-1, msg[i].Length- Convert.ToInt32(textBoxDelLocation.Text)+1);
 			}
 			textBox52.Lines = newMsg;
 		}
@@ -2575,7 +2736,7 @@ namespace MQTTClient
 		private void button16_Click(object sender, EventArgs e)
 		{
 
-			string[] key = textBox4.Text.Split(',');
+			string[] key = textBoxSearchString.Text.Split(',');
 			string[] msg = textBox52.Lines;
 
 			List<string> list = new List<string>();
@@ -2599,7 +2760,7 @@ namespace MQTTClient
 
 		private void button17_Click(object sender, EventArgs e)
 		{
-			string key = textBox9.Text;
+			string key = textBoxSeperateString.Text;
 			string[] msg = textBox52.Lines;
 
 			List<string> listTopic = new List<string>();
