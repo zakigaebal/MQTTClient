@@ -744,7 +744,6 @@ namespace MQTTClient
 			catch (Exception)
 			{
 
-				throw;
 			}
 		}
 		private void clientsrc_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs data)
@@ -2008,7 +2007,7 @@ namespace MQTTClient
 					CMD_ID_COUNT req = new CMD_ID_COUNT();
 					req.CMD = "RESP_METER_COUNT";
 					req.ID = 1;
-					req.COUNT = 8;
+					req.COUNT = 10;
 					string reqStr = (JsonConvert.SerializeObject(req, Formatting.Indented)).Trim();
 					clientUser.Publish(topic, Encoding.UTF8.GetBytes(reqStr.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 				}
@@ -2759,8 +2758,12 @@ namespace MQTTClient
 				return;
 			}
 			textBoxMainPos.Text = dataGridViewMain.Rows[e.RowIndex].Cells[0].Value.ToString();
-			//textBoxMainValue.Text = dataGridViewMain.Rows[e.RowIndex].Cells[1].Value.ToString();
-		
+			if (dataGridViewMain.Rows[e.RowIndex].Cells[2].Value == null)
+			{
+				textBoxMainValue.Text = "";
+			}
+			else
+			textBoxMainValue.Text = dataGridViewMain.Rows[e.RowIndex].Cells[2].Value.ToString();
 		}
 
 		private void panel19_Paint(object sender, PaintEventArgs e)
@@ -2779,6 +2782,86 @@ namespace MQTTClient
 		}
 
 		private void label61_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void dataGridViewMeter_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			if (e.RowIndex < 0)
+			{
+				return;
+			}
+			textBoxMeterPos.Text = dataGridViewMeter.Rows[e.RowIndex].Cells[0].Value.ToString();
+			if (dataGridViewMeter.Rows[e.RowIndex].Cells[2].Value == null)
+			{
+				textBoxMeterId.Text = "";
+			}
+			else textBoxMeterId.Text = dataGridViewMeter.Rows[e.RowIndex].Cells[2].Value.ToString();
+
+			if (dataGridViewMeter.Rows[e.RowIndex].Cells[3].Value == null)
+			{
+				textBoxMeterValue.Text = "";
+			}
+			else textBoxMeterValue.Text = dataGridViewMeter.Rows[e.RowIndex].Cells[3].Value.ToString();
+		}
+
+		private void dataGridViewIR_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			if (e.RowIndex < 0)
+			{
+				return;
+			}
+			textBoxIrPos.Text = dataGridViewIR.Rows[e.RowIndex].Cells[0].Value.ToString();
+			if (dataGridViewIR.Rows[e.RowIndex].Cells[2].Value == null)
+			{
+				textBoxIrId.Text = "";
+			}
+			else textBoxIrId.Text = dataGridViewIR.Rows[e.RowIndex].Cells[2].Value.ToString();
+
+			if (dataGridViewIR.Rows[e.RowIndex].Cells[3].Value == null)
+			{
+				textBoxIrValue.Text = "";
+			}
+			else textBoxIrValue.Text = dataGridViewIR.Rows[e.RowIndex].Cells[3].Value.ToString();
+		}
+
+		private void textBoxHost2_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label63_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void textBox3_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label64_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void comboBoxQos2_SelectedIndexChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label62_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void checkBox2_CheckedChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label66_Click(object sender, EventArgs e)
 		{
 
 		}
