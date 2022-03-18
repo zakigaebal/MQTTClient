@@ -1683,10 +1683,6 @@ namespace MQTTClient
 
 		private void tabControl2_SelectedIndexChanged(object sender, EventArgs e)
 		{
-
-			buttonIR.Enabled = false;
-			buttonMeter.Enabled = false;
-			//	textBoxIdCount.Text = "0";
 			if (tabControl2.SelectedTab == tabPageMain)
 			{
 				buttonIdCount.Enabled = true;
@@ -1775,12 +1771,10 @@ namespace MQTTClient
 					dataGridViewMeter.Columns.Add((i).ToString(), i.ToString());
 				}
 				dataGridViewMeter.Columns.Add((dataGridViewMeter.ColumnCount).ToString(), "텐덤/해링본");
-				dataGridViewMeter.Columns.Add((dataGridViewMeter.ColumnCount + 1).ToString(), "버튼");
 				for (int i = 0; i < 46; i++)
 				{
 					dataGridViewMeter.Rows.Add();
 					dataGridViewMeter["0", i].Value = i + 1;
-					dataGridViewMeter[dataGridViewMeter.Columns.Count - 1, i] = new DataGridViewButtonCell();
 				}
 				dataGridViewMeter["1", 0].Value = "사용안함";
 				dataGridViewMeter["1", 1].Value = "장비 ID";
@@ -1837,11 +1831,11 @@ namespace MQTTClient
 
 				dataGridViewMeter.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 				dataGridViewMeter.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-				dataGridViewMeter.Columns[(dataGridViewMeter.ColumnCount).ToString()].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+				//dataGridViewMeter.Columns[(dataGridViewMeter.ColumnCount).ToString()].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 				//dataGridViewMeter.Columns[(dataGridViewMeter.ColumnCount).ToString()].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 				dataGridViewMeter.Columns[0].Width = 40;
 				dataGridViewMeter.Columns[1].Width = 200;
-				dataGridViewMeter.Columns[(dataGridViewMeter.ColumnCount).ToString()].Width = 35;
+				//dataGridViewMeter.Columns[(dataGridViewMeter.ColumnCount).ToString()].Width = 35;
 
 			}
 
@@ -1865,12 +1859,10 @@ namespace MQTTClient
 					dataGridViewIR.Columns.Add((i).ToString(), i.ToString());
 				}
 
-				dataGridViewIR.Columns.Add((dataGridViewMeter.ColumnCount + 1).ToString(), "버튼");
 				for (int i = 0; i < 10; i++)
 				{
 					dataGridViewIR.Rows.Add();
 					dataGridViewIR["0", i].Value = i + 1;
-					dataGridViewIR[dataGridViewIR.Columns.Count - 1, i] = new DataGridViewButtonCell();
 				}
 				int num = 0;
 				dataGridViewIR["1", num++].Value = "ID: 0:232통신에 사용 1~24 CAN 통신 이용시 고유 ID";
@@ -2208,11 +2200,8 @@ namespace MQTTClient
 
 				dataGridViewMeter.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 				dataGridViewMeter.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-				//dataGridViewMeter.Columns[(dataGridViewMeter.ColumnCount).ToString()].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 				dataGridViewMeter.Columns[0].Width = 40;
 				dataGridViewMeter.Columns[1].Width = 200;
-			//	dataGridViewMeter.Columns[(dataGridViewMeter.ColumnCount).ToString()].Width = 35;
-
 			}
 
 			if (tabControl2.SelectedTab == tabPageIR)
@@ -2234,12 +2223,10 @@ namespace MQTTClient
 				{
 					dataGridViewIR.Columns.Add((i).ToString(), i.ToString());
 				}
-				dataGridViewIR.Columns.Add((dataGridViewMeter.ColumnCount + 1).ToString(), "버튼");
 				for (int i = 0; i < 10; i++)
 				{
 					dataGridViewIR.Rows.Add();
 					dataGridViewIR["0", i].Value = i + 1;
-					dataGridViewIR[dataGridViewIR.Columns.Count - 1, i] = new DataGridViewButtonCell();
 				}
 				int num = 0;
 				dataGridViewIR["1", num++].Value = "ID: 0:232통신에 사용 1~24 CAN 통신 이용시 고유 ID";
@@ -2254,15 +2241,10 @@ namespace MQTTClient
 				dataGridViewIR["1", num++].Value = "tuc: 태그 깨어나는 IR 카운트수. IR 라이팅때 같이 사용됨";
 
 				dataGridViewIR.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
 				dataGridViewIR.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 				dataGridViewIR.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-				//dataGridViewIR.Columns[(dataGridViewMeter.ColumnCount).ToString()].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-				//dataGridViewMeter.Columns[(dataGridViewMeter.ColumnCount).ToString()].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 				dataGridViewIR.Columns[0].Width = 40;
 				dataGridViewIR.Columns[1].Width = 200;
-				//	dataGridViewIR.Columns[(dataGridViewMeter.ColumnCount).ToString()].Width = 35;
-
 				if (dataGridViewIR.Columns.Count < 3)
 				{
 					return;
@@ -2576,16 +2558,24 @@ namespace MQTTClient
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			listBox1.Items.Clear();
-			string currentPath = System.IO.Directory.GetCurrentDirectory();
-			StreamReader file = new StreamReader(currentPath + "\\subSend.txt", Encoding.Default);
-			string s = "";
-			while (s != null)
+			try
 			{
-				s = file.ReadLine();
-				if (!string.IsNullOrEmpty(s)) listBox1.Items.Add(s);
+				listBox1.Items.Clear();
+				string currentPath = System.IO.Directory.GetCurrentDirectory();
+				StreamReader file = new StreamReader(currentPath + "\\subSend.txt", Encoding.Default);
+				string s = "";
+				while (s != null)
+				{
+					s = file.ReadLine();
+					if (!string.IsNullOrEmpty(s)) listBox1.Items.Add(s);
+				}
+				file.Close();
 			}
-			file.Close();
+			catch (Exception error)
+			{
+				MessageBox.Show(error.ToString());
+			}
+			
 		}
 
 		private void button4_Click(object sender, EventArgs e)
