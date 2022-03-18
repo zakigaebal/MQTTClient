@@ -1422,7 +1422,7 @@ namespace MQTTClient
 			catch (Exception error)
 			{
 				MessageBox.Show(error.ToString());
-
+				LogMgr.ExceptionLog(error);
 			}
 		}
 
@@ -1772,6 +1772,10 @@ namespace MQTTClient
 					{
 						return;
 					}
+					if (textBoxIdCount.Text.Trim().Length <= 0)
+					{
+						return;
+					}
 					int bbbb = Convert.ToInt32(textBoxIdCount.Text);
 					for (int i = 1; i <= bbbb; i++)
 					{
@@ -1903,6 +1907,7 @@ namespace MQTTClient
 			catch (Exception ex)
 			{
 				MessageBox.Show(ex.ToString());
+				LogMgr.ExceptionLog(ex);
 			}
 
 		}
@@ -2874,17 +2879,12 @@ namespace MQTTClient
 				return;
 			}
 			textBoxMeterPos.Text = dataGridViewMeter.Rows[e.RowIndex].Cells[0].Value.ToString();
-			if (dataGridViewMeter.Rows[e.RowIndex].Cells[2].Value == null)
-			{
-				textBoxMeterId.Text = "";
-			}
-			else textBoxMeterId.Text = dataGridViewMeter.Rows[e.RowIndex].Cells[2].Value.ToString();
-
-			if (dataGridViewMeter.Rows[e.RowIndex].Cells[3].Value == null)
+				textBoxMeterId.Text = (dataGridViewMeter.Columns[e.ColumnIndex].HeaderText);
+			if (dataGridViewMeter.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == null)
 			{
 				textBoxMeterValue.Text = "";
 			}
-			else textBoxMeterValue.Text = dataGridViewMeter.Rows[e.RowIndex].Cells[3].Value.ToString();
+			else textBoxMeterValue.Text = dataGridViewMeter.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
 		}
 
 		private void dataGridViewIR_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -2894,17 +2894,12 @@ namespace MQTTClient
 				return;
 			}
 			textBoxIrPos.Text = dataGridViewIR.Rows[e.RowIndex].Cells[0].Value.ToString();
-			if (dataGridViewIR.Rows[e.RowIndex].Cells[2].Value == null)
-			{
-				textBoxIrId.Text = "";
-			}
-			else textBoxIrId.Text = dataGridViewIR.Rows[e.RowIndex].Cells[2].Value.ToString();
-
-			if (dataGridViewIR.Rows[e.RowIndex].Cells[3].Value == null)
+			textBoxIrId.Text = (dataGridViewIR.Columns[e.ColumnIndex].HeaderText);
+			if (dataGridViewIR.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == null)
 			{
 				textBoxIrValue.Text = "";
 			}
-			else textBoxIrValue.Text = dataGridViewIR.Rows[e.RowIndex].Cells[3].Value.ToString();
+			else textBoxIrValue.Text = dataGridViewIR.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
 		}
 
 		private void textBoxHost2_TextChanged(object sender, EventArgs e)
