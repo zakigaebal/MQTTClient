@@ -2467,7 +2467,8 @@
 			// 
 			// textBox9
 			// 
-			this.textBox9.Location = new System.Drawing.Point(251, 9);
+			this.textBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.textBox9.Location = new System.Drawing.Point(1029, 9);
 			this.textBox9.Name = "textBox9";
 			this.textBox9.Size = new System.Drawing.Size(55, 21);
 			this.textBox9.TabIndex = 16;
@@ -2476,8 +2477,9 @@
 			// 
 			// label74
 			// 
+			this.label74.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.label74.AutoSize = true;
-			this.label74.Location = new System.Drawing.Point(180, 13);
+			this.label74.Location = new System.Drawing.Point(958, 13);
 			this.label74.Name = "label74";
 			this.label74.Size = new System.Drawing.Size(65, 12);
 			this.label74.TabIndex = 15;
@@ -2485,7 +2487,8 @@
 			// 
 			// button17
 			// 
-			this.button17.Location = new System.Drawing.Point(312, 9);
+			this.button17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.button17.Location = new System.Drawing.Point(1090, 9);
 			this.button17.Name = "button17";
 			this.button17.Size = new System.Drawing.Size(53, 21);
 			this.button17.TabIndex = 14;
@@ -2497,7 +2500,7 @@
 			// 
 			this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBox4.Location = new System.Drawing.Point(442, 9);
+			this.textBox4.Location = new System.Drawing.Point(246, 9);
 			this.textBox4.Name = "textBox4";
 			this.textBox4.Size = new System.Drawing.Size(640, 21);
 			this.textBox4.TabIndex = 12;
@@ -2523,7 +2526,7 @@
 			// label73
 			// 
 			this.label73.AutoSize = true;
-			this.label73.Location = new System.Drawing.Point(371, 13);
+			this.label73.Location = new System.Drawing.Point(175, 13);
 			this.label73.Name = "label73";
 			this.label73.Size = new System.Drawing.Size(65, 12);
 			this.label73.TabIndex = 11;
@@ -2542,7 +2545,7 @@
 			// button16
 			// 
 			this.button16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.button16.Location = new System.Drawing.Point(1088, 9);
+			this.button16.Location = new System.Drawing.Point(892, 9);
 			this.button16.Name = "button16";
 			this.button16.Size = new System.Drawing.Size(53, 21);
 			this.button16.TabIndex = 9;
