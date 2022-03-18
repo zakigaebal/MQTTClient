@@ -1539,7 +1539,7 @@ namespace MQTTClient
 				dataGridViewMain.Columns.Add("1", "DESC");
 				dataGridViewMain.Columns.Add("2", "현재값");
 				dataGridViewMain.Columns.Add("3", "텐덤/해링본");
-				dataGridViewMain.Columns.Add("4", "버튼");
+			
 				dataGridViewMain.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 				dataGridViewMain.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 				dataGridViewMain.Columns[0].Width = 40;
@@ -1549,7 +1549,7 @@ namespace MQTTClient
 				{
 					dataGridViewMain.Rows.Add();
 					dataGridViewMain["0", i].Value = i + 1;
-					dataGridViewMain["4", i] = new DataGridViewButtonCell();
+		
 				}
 				dataGridViewMain["1", 0].Value = "DEVICE_TYPE: 디바이스 종류";
 				dataGridViewMain["1", 1].Value = "MQTT_IP1: 농장 PC MQTT IP 첫번째 번호";

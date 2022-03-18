@@ -55,7 +55,6 @@
 			this.label16 = new System.Windows.Forms.Label();
 			this.label21 = new System.Windows.Forms.Label();
 			this.textBoxNavy = new System.Windows.Forms.TextBox();
-			this.buttonClear = new System.Windows.Forms.Button();
 			this.textBoxGray = new System.Windows.Forms.TextBox();
 			this.textBoxYellow = new System.Windows.Forms.TextBox();
 			this.label20 = new System.Windows.Forms.Label();
@@ -226,10 +225,22 @@
 			this.textBoxStr10 = new System.Windows.Forms.TextBox();
 			this.tabPage4 = new System.Windows.Forms.TabPage();
 			this.panel15 = new System.Windows.Forms.Panel();
+			this.textBox52 = new System.Windows.Forms.TextBox();
 			this.splitter1 = new System.Windows.Forms.Splitter();
 			this.textBox51 = new System.Windows.Forms.TextBox();
-			this.textBox52 = new System.Windows.Forms.TextBox();
+			this.panel21 = new System.Windows.Forms.Panel();
+			this.textBox9 = new System.Windows.Forms.TextBox();
+			this.label74 = new System.Windows.Forms.Label();
+			this.button17 = new System.Windows.Forms.Button();
+			this.textBox4 = new System.Windows.Forms.TextBox();
+			this.label65 = new System.Windows.Forms.Label();
+			this.textBox8 = new System.Windows.Forms.TextBox();
+			this.label73 = new System.Windows.Forms.Label();
+			this.button15 = new System.Windows.Forms.Button();
+			this.button16 = new System.Windows.Forms.Button();
 			this.panel14 = new System.Windows.Forms.Panel();
+			this.button19 = new System.Windows.Forms.Button();
+			this.button18 = new System.Windows.Forms.Button();
 			this.label55 = new System.Windows.Forms.Label();
 			this.textBox54 = new System.Windows.Forms.TextBox();
 			this.label50 = new System.Windows.Forms.Label();
@@ -253,6 +264,8 @@
 			this.label69 = new System.Windows.Forms.Label();
 			this.textBox7 = new System.Windows.Forms.TextBox();
 			this.panel18 = new System.Windows.Forms.Panel();
+			this.button11 = new System.Windows.Forms.Button();
+			this.button13 = new System.Windows.Forms.Button();
 			this.label72 = new System.Windows.Forms.Label();
 			this.label60 = new System.Windows.Forms.Label();
 			this.textBox5 = new System.Windows.Forms.TextBox();
@@ -264,6 +277,11 @@
 			this.label68 = new System.Windows.Forms.Label();
 			this.label70 = new System.Windows.Forms.Label();
 			this.panel17 = new System.Windows.Forms.Panel();
+			this.button14 = new System.Windows.Forms.Button();
+			this.button7 = new System.Windows.Forms.Button();
+			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.button10 = new System.Windows.Forms.Button();
+			this.label61 = new System.Windows.Forms.Label();
 			this.label71 = new System.Windows.Forms.Label();
 			this.label59 = new System.Windows.Forms.Label();
 			this.textBox2 = new System.Windows.Forms.TextBox();
@@ -273,27 +291,9 @@
 			this.textBox3 = new System.Windows.Forms.TextBox();
 			this.comboBoxQos2 = new System.Windows.Forms.ComboBox();
 			this.label64 = new System.Windows.Forms.Label();
+			this.buttonClear = new System.Windows.Forms.Button();
 			this.dataGridViewMessage = new System.Windows.Forms.DataGridView();
-			this.button7 = new System.Windows.Forms.Button();
-			this.button10 = new System.Windows.Forms.Button();
-			this.button11 = new System.Windows.Forms.Button();
-			this.button13 = new System.Windows.Forms.Button();
-			this.button14 = new System.Windows.Forms.Button();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.label61 = new System.Windows.Forms.Label();
 			this.splitter2 = new System.Windows.Forms.Splitter();
-			this.panel21 = new System.Windows.Forms.Panel();
-			this.textBox4 = new System.Windows.Forms.TextBox();
-			this.label65 = new System.Windows.Forms.Label();
-			this.textBox8 = new System.Windows.Forms.TextBox();
-			this.label73 = new System.Windows.Forms.Label();
-			this.button15 = new System.Windows.Forms.Button();
-			this.button16 = new System.Windows.Forms.Button();
-			this.textBox9 = new System.Windows.Forms.TextBox();
-			this.label74 = new System.Windows.Forms.Label();
-			this.button17 = new System.Windows.Forms.Button();
-			this.button18 = new System.Windows.Forms.Button();
-			this.button19 = new System.Windows.Forms.Button();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.panel1.SuspendLayout();
@@ -321,6 +321,7 @@
 			this.panel13.SuspendLayout();
 			this.tabPage4.SuspendLayout();
 			this.panel15.SuspendLayout();
+			this.panel21.SuspendLayout();
 			this.panel14.SuspendLayout();
 			this.tabPage5.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -329,7 +330,6 @@
 			this.panel18.SuspendLayout();
 			this.panel17.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewMessage)).BeginInit();
-			this.panel21.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tabControl1
@@ -667,17 +667,6 @@
 			this.textBoxNavy.Name = "textBoxNavy";
 			this.textBoxNavy.Size = new System.Drawing.Size(224, 25);
 			this.textBoxNavy.TabIndex = 4;
-			// 
-			// buttonClear
-			// 
-			this.buttonClear.BackColor = System.Drawing.Color.BlanchedAlmond;
-			this.buttonClear.Location = new System.Drawing.Point(285, 2);
-			this.buttonClear.Name = "buttonClear";
-			this.buttonClear.Size = new System.Drawing.Size(57, 18);
-			this.buttonClear.TabIndex = 10;
-			this.buttonClear.Text = "Clear";
-			this.buttonClear.UseVisualStyleBackColor = false;
-			this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
 			// 
 			// textBoxGray
 			// 
@@ -2426,6 +2415,19 @@
 			this.panel15.Size = new System.Drawing.Size(1148, 401);
 			this.panel15.TabIndex = 12;
 			// 
+			// textBox52
+			// 
+			this.textBox52.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.textBox52.Location = new System.Drawing.Point(176, 0);
+			this.textBox52.MaxLength = 999990000;
+			this.textBox52.Multiline = true;
+			this.textBox52.Name = "textBox52";
+			this.textBox52.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+			this.textBox52.Size = new System.Drawing.Size(972, 362);
+			this.textBox52.TabIndex = 5;
+			this.textBox52.WordWrap = false;
+			this.textBox52.TextChanged += new System.EventHandler(this.textBox52_TextChanged_1);
+			// 
 			// splitter1
 			// 
 			this.splitter1.Location = new System.Drawing.Point(171, 0);
@@ -2446,18 +2448,107 @@
 			this.textBox51.WordWrap = false;
 			this.textBox51.TextChanged += new System.EventHandler(this.textBox51_TextChanged_1);
 			// 
-			// textBox52
+			// panel21
 			// 
-			this.textBox52.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.textBox52.Location = new System.Drawing.Point(176, 0);
-			this.textBox52.MaxLength = 999990000;
-			this.textBox52.Multiline = true;
-			this.textBox52.Name = "textBox52";
-			this.textBox52.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.textBox52.Size = new System.Drawing.Size(972, 362);
-			this.textBox52.TabIndex = 5;
-			this.textBox52.WordWrap = false;
-			this.textBox52.TextChanged += new System.EventHandler(this.textBox52_TextChanged_1);
+			this.panel21.Controls.Add(this.textBox9);
+			this.panel21.Controls.Add(this.label74);
+			this.panel21.Controls.Add(this.button17);
+			this.panel21.Controls.Add(this.textBox4);
+			this.panel21.Controls.Add(this.label65);
+			this.panel21.Controls.Add(this.textBox8);
+			this.panel21.Controls.Add(this.label73);
+			this.panel21.Controls.Add(this.button15);
+			this.panel21.Controls.Add(this.button16);
+			this.panel21.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.panel21.Location = new System.Drawing.Point(0, 362);
+			this.panel21.Name = "panel21";
+			this.panel21.Size = new System.Drawing.Size(1148, 39);
+			this.panel21.TabIndex = 13;
+			// 
+			// textBox9
+			// 
+			this.textBox9.Location = new System.Drawing.Point(251, 9);
+			this.textBox9.Name = "textBox9";
+			this.textBox9.Size = new System.Drawing.Size(55, 21);
+			this.textBox9.TabIndex = 16;
+			this.textBox9.Text = " - ";
+			this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
+			// 
+			// label74
+			// 
+			this.label74.AutoSize = true;
+			this.label74.Location = new System.Drawing.Point(180, 13);
+			this.label74.Name = "label74";
+			this.label74.Size = new System.Drawing.Size(65, 12);
+			this.label74.TabIndex = 15;
+			this.label74.Text = "분리문자열";
+			// 
+			// button17
+			// 
+			this.button17.Location = new System.Drawing.Point(312, 9);
+			this.button17.Name = "button17";
+			this.button17.Size = new System.Drawing.Size(53, 21);
+			this.button17.TabIndex = 14;
+			this.button17.Text = "분리";
+			this.button17.UseVisualStyleBackColor = true;
+			this.button17.Click += new System.EventHandler(this.button17_Click);
+			// 
+			// textBox4
+			// 
+			this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.textBox4.Location = new System.Drawing.Point(442, 9);
+			this.textBox4.Name = "textBox4";
+			this.textBox4.Size = new System.Drawing.Size(640, 21);
+			this.textBox4.TabIndex = 12;
+			this.textBox4.Text = "\"CMD\":\"MILKEND\",\"CMD\":\"REQ_COW_FEEDER_END\"";
+			// 
+			// label65
+			// 
+			this.label65.AutoSize = true;
+			this.label65.Location = new System.Drawing.Point(3, 13);
+			this.label65.Name = "label65";
+			this.label65.Size = new System.Drawing.Size(53, 12);
+			this.label65.TabIndex = 10;
+			this.label65.Text = "삭제위치";
+			// 
+			// textBox8
+			// 
+			this.textBox8.Location = new System.Drawing.Point(62, 9);
+			this.textBox8.Name = "textBox8";
+			this.textBox8.Size = new System.Drawing.Size(53, 21);
+			this.textBox8.TabIndex = 13;
+			this.textBox8.Text = "36";
+			// 
+			// label73
+			// 
+			this.label73.AutoSize = true;
+			this.label73.Location = new System.Drawing.Point(371, 13);
+			this.label73.Name = "label73";
+			this.label73.Size = new System.Drawing.Size(65, 12);
+			this.label73.TabIndex = 11;
+			this.label73.Text = "검색문자열";
+			// 
+			// button15
+			// 
+			this.button15.Location = new System.Drawing.Point(118, 9);
+			this.button15.Name = "button15";
+			this.button15.Size = new System.Drawing.Size(53, 21);
+			this.button15.TabIndex = 8;
+			this.button15.Text = "삭제";
+			this.button15.UseVisualStyleBackColor = true;
+			this.button15.Click += new System.EventHandler(this.button15_Click);
+			// 
+			// button16
+			// 
+			this.button16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.button16.Location = new System.Drawing.Point(1088, 9);
+			this.button16.Name = "button16";
+			this.button16.Size = new System.Drawing.Size(53, 21);
+			this.button16.TabIndex = 9;
+			this.button16.Text = "남기기";
+			this.button16.UseVisualStyleBackColor = true;
+			this.button16.Click += new System.EventHandler(this.button16_Click);
 			// 
 			// panel14
 			// 
@@ -2476,6 +2567,26 @@
 			this.panel14.Name = "panel14";
 			this.panel14.Size = new System.Drawing.Size(1148, 36);
 			this.panel14.TabIndex = 11;
+			// 
+			// button19
+			// 
+			this.button19.Location = new System.Drawing.Point(246, 15);
+			this.button19.Name = "button19";
+			this.button19.Size = new System.Drawing.Size(18, 21);
+			this.button19.TabIndex = 9;
+			this.button19.Text = "C";
+			this.button19.UseVisualStyleBackColor = true;
+			this.button19.Click += new System.EventHandler(this.button19_Click);
+			// 
+			// button18
+			// 
+			this.button18.Location = new System.Drawing.Point(51, 14);
+			this.button18.Name = "button18";
+			this.button18.Size = new System.Drawing.Size(18, 21);
+			this.button18.TabIndex = 9;
+			this.button18.Text = "C";
+			this.button18.UseVisualStyleBackColor = true;
+			this.button18.Click += new System.EventHandler(this.button18_Click);
 			// 
 			// label55
 			// 
@@ -2739,6 +2850,28 @@
 			this.panel18.TabIndex = 14;
 			this.panel18.Paint += new System.Windows.Forms.PaintEventHandler(this.panel18_Paint);
 			// 
+			// button11
+			// 
+			this.button11.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.button11.Location = new System.Drawing.Point(202, 30);
+			this.button11.Name = "button11";
+			this.button11.Size = new System.Drawing.Size(20, 27);
+			this.button11.TabIndex = 7;
+			this.button11.Text = "K";
+			this.button11.UseVisualStyleBackColor = true;
+			this.button11.Click += new System.EventHandler(this.button11_Click);
+			// 
+			// button13
+			// 
+			this.button13.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.button13.Location = new System.Drawing.Point(224, 30);
+			this.button13.Name = "button13";
+			this.button13.Size = new System.Drawing.Size(20, 27);
+			this.button13.TabIndex = 8;
+			this.button13.Text = "L";
+			this.button13.UseVisualStyleBackColor = true;
+			this.button13.Click += new System.EventHandler(this.button13_Click);
+			// 
 			// label72
 			// 
 			this.label72.AutoSize = true;
@@ -2861,6 +2994,57 @@
 			this.panel17.TabIndex = 14;
 			this.panel17.Paint += new System.Windows.Forms.PaintEventHandler(this.panel17_Paint);
 			// 
+			// button14
+			// 
+			this.button14.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.button14.Location = new System.Drawing.Point(218, 90);
+			this.button14.Name = "button14";
+			this.button14.Size = new System.Drawing.Size(127, 27);
+			this.button14.TabIndex = 20;
+			this.button14.Text = "Subscribe";
+			this.button14.UseVisualStyleBackColor = true;
+			this.button14.Click += new System.EventHandler(this.button14_Click);
+			// 
+			// button7
+			// 
+			this.button7.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.button7.Location = new System.Drawing.Point(205, 30);
+			this.button7.Name = "button7";
+			this.button7.Size = new System.Drawing.Size(20, 27);
+			this.button7.TabIndex = 7;
+			this.button7.Text = "K";
+			this.button7.UseVisualStyleBackColor = true;
+			this.button7.Click += new System.EventHandler(this.button7_Click_1);
+			// 
+			// textBox1
+			// 
+			this.textBox1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.textBox1.Location = new System.Drawing.Point(53, 90);
+			this.textBox1.Name = "textBox1";
+			this.textBox1.Size = new System.Drawing.Size(164, 25);
+			this.textBox1.TabIndex = 19;
+			// 
+			// button10
+			// 
+			this.button10.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.button10.Location = new System.Drawing.Point(227, 30);
+			this.button10.Name = "button10";
+			this.button10.Size = new System.Drawing.Size(20, 27);
+			this.button10.TabIndex = 8;
+			this.button10.Text = "L";
+			this.button10.UseVisualStyleBackColor = true;
+			this.button10.Click += new System.EventHandler(this.button10_Click);
+			// 
+			// label61
+			// 
+			this.label61.AutoSize = true;
+			this.label61.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.label61.Location = new System.Drawing.Point(3, 90);
+			this.label61.Name = "label61";
+			this.label61.Size = new System.Drawing.Size(49, 20);
+			this.label61.TabIndex = 18;
+			this.label61.Text = "Topic:";
+			// 
 			// label71
 			// 
 			this.label71.AutoSize = true;
@@ -2952,6 +3136,17 @@
 			this.label64.TabIndex = 0;
 			this.label64.Text = "QoS:";
 			// 
+			// buttonClear
+			// 
+			this.buttonClear.BackColor = System.Drawing.Color.BlanchedAlmond;
+			this.buttonClear.Location = new System.Drawing.Point(285, 2);
+			this.buttonClear.Name = "buttonClear";
+			this.buttonClear.Size = new System.Drawing.Size(57, 18);
+			this.buttonClear.TabIndex = 10;
+			this.buttonClear.Text = "Clear";
+			this.buttonClear.UseVisualStyleBackColor = false;
+			this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+			// 
 			// dataGridViewMessage
 			// 
 			this.dataGridViewMessage.AllowUserToAddRows = false;
@@ -2966,79 +3161,6 @@
 			this.dataGridViewMessage.TabIndex = 10;
 			this.dataGridViewMessage.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewMessage_CellFormatting);
 			// 
-			// button7
-			// 
-			this.button7.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.button7.Location = new System.Drawing.Point(205, 30);
-			this.button7.Name = "button7";
-			this.button7.Size = new System.Drawing.Size(20, 27);
-			this.button7.TabIndex = 7;
-			this.button7.Text = "K";
-			this.button7.UseVisualStyleBackColor = true;
-			this.button7.Click += new System.EventHandler(this.button7_Click_1);
-			// 
-			// button10
-			// 
-			this.button10.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.button10.Location = new System.Drawing.Point(227, 30);
-			this.button10.Name = "button10";
-			this.button10.Size = new System.Drawing.Size(20, 27);
-			this.button10.TabIndex = 8;
-			this.button10.Text = "L";
-			this.button10.UseVisualStyleBackColor = true;
-			this.button10.Click += new System.EventHandler(this.button10_Click);
-			// 
-			// button11
-			// 
-			this.button11.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.button11.Location = new System.Drawing.Point(202, 30);
-			this.button11.Name = "button11";
-			this.button11.Size = new System.Drawing.Size(20, 27);
-			this.button11.TabIndex = 7;
-			this.button11.Text = "K";
-			this.button11.UseVisualStyleBackColor = true;
-			this.button11.Click += new System.EventHandler(this.button11_Click);
-			// 
-			// button13
-			// 
-			this.button13.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.button13.Location = new System.Drawing.Point(224, 30);
-			this.button13.Name = "button13";
-			this.button13.Size = new System.Drawing.Size(20, 27);
-			this.button13.TabIndex = 8;
-			this.button13.Text = "L";
-			this.button13.UseVisualStyleBackColor = true;
-			this.button13.Click += new System.EventHandler(this.button13_Click);
-			// 
-			// button14
-			// 
-			this.button14.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.button14.Location = new System.Drawing.Point(218, 90);
-			this.button14.Name = "button14";
-			this.button14.Size = new System.Drawing.Size(127, 27);
-			this.button14.TabIndex = 20;
-			this.button14.Text = "Subscribe";
-			this.button14.UseVisualStyleBackColor = true;
-			this.button14.Click += new System.EventHandler(this.button14_Click);
-			// 
-			// textBox1
-			// 
-			this.textBox1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBox1.Location = new System.Drawing.Point(53, 90);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(164, 25);
-			this.textBox1.TabIndex = 19;
-			// 
-			// label61
-			// 
-			this.label61.AutoSize = true;
-			this.label61.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label61.Location = new System.Drawing.Point(3, 90);
-			this.label61.Name = "label61";
-			this.label61.Size = new System.Drawing.Size(49, 20);
-			this.label61.TabIndex = 18;
-			this.label61.Text = "Topic:";
-			// 
 			// splitter2
 			// 
 			this.splitter2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -3047,128 +3169,6 @@
 			this.splitter2.Size = new System.Drawing.Size(1162, 5);
 			this.splitter2.TabIndex = 11;
 			this.splitter2.TabStop = false;
-			// 
-			// panel21
-			// 
-			this.panel21.Controls.Add(this.textBox9);
-			this.panel21.Controls.Add(this.label74);
-			this.panel21.Controls.Add(this.button17);
-			this.panel21.Controls.Add(this.textBox4);
-			this.panel21.Controls.Add(this.label65);
-			this.panel21.Controls.Add(this.textBox8);
-			this.panel21.Controls.Add(this.label73);
-			this.panel21.Controls.Add(this.button15);
-			this.panel21.Controls.Add(this.button16);
-			this.panel21.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.panel21.Location = new System.Drawing.Point(0, 362);
-			this.panel21.Name = "panel21";
-			this.panel21.Size = new System.Drawing.Size(1148, 39);
-			this.panel21.TabIndex = 13;
-			// 
-			// textBox4
-			// 
-			this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBox4.Location = new System.Drawing.Point(442, 9);
-			this.textBox4.Name = "textBox4";
-			this.textBox4.Size = new System.Drawing.Size(640, 21);
-			this.textBox4.TabIndex = 12;
-			this.textBox4.Text = "\"CMD\":\"MILKEND\",\"CMD\":\"REQ_COW_FEEDER_END\"";
-			// 
-			// label65
-			// 
-			this.label65.AutoSize = true;
-			this.label65.Location = new System.Drawing.Point(3, 13);
-			this.label65.Name = "label65";
-			this.label65.Size = new System.Drawing.Size(53, 12);
-			this.label65.TabIndex = 10;
-			this.label65.Text = "삭제위치";
-			// 
-			// textBox8
-			// 
-			this.textBox8.Location = new System.Drawing.Point(62, 9);
-			this.textBox8.Name = "textBox8";
-			this.textBox8.Size = new System.Drawing.Size(53, 21);
-			this.textBox8.TabIndex = 13;
-			this.textBox8.Text = "36";
-			// 
-			// label73
-			// 
-			this.label73.AutoSize = true;
-			this.label73.Location = new System.Drawing.Point(371, 12);
-			this.label73.Name = "label73";
-			this.label73.Size = new System.Drawing.Size(65, 12);
-			this.label73.TabIndex = 11;
-			this.label73.Text = "검색문자열";
-			// 
-			// button15
-			// 
-			this.button15.Location = new System.Drawing.Point(118, 9);
-			this.button15.Name = "button15";
-			this.button15.Size = new System.Drawing.Size(53, 21);
-			this.button15.TabIndex = 8;
-			this.button15.Text = "삭제";
-			this.button15.UseVisualStyleBackColor = true;
-			this.button15.Click += new System.EventHandler(this.button15_Click);
-			// 
-			// button16
-			// 
-			this.button16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.button16.Location = new System.Drawing.Point(1088, 9);
-			this.button16.Name = "button16";
-			this.button16.Size = new System.Drawing.Size(53, 21);
-			this.button16.TabIndex = 9;
-			this.button16.Text = "남기기";
-			this.button16.UseVisualStyleBackColor = true;
-			this.button16.Click += new System.EventHandler(this.button16_Click);
-			// 
-			// textBox9
-			// 
-			this.textBox9.Location = new System.Drawing.Point(251, 10);
-			this.textBox9.Name = "textBox9";
-			this.textBox9.Size = new System.Drawing.Size(55, 21);
-			this.textBox9.TabIndex = 16;
-			this.textBox9.Text = " - ";
-			this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
-			// 
-			// label74
-			// 
-			this.label74.AutoSize = true;
-			this.label74.Location = new System.Drawing.Point(180, 14);
-			this.label74.Name = "label74";
-			this.label74.Size = new System.Drawing.Size(65, 12);
-			this.label74.TabIndex = 15;
-			this.label74.Text = "분리문자열";
-			// 
-			// button17
-			// 
-			this.button17.Location = new System.Drawing.Point(312, 10);
-			this.button17.Name = "button17";
-			this.button17.Size = new System.Drawing.Size(53, 21);
-			this.button17.TabIndex = 14;
-			this.button17.Text = "분리";
-			this.button17.UseVisualStyleBackColor = true;
-			this.button17.Click += new System.EventHandler(this.button17_Click);
-			// 
-			// button18
-			// 
-			this.button18.Location = new System.Drawing.Point(51, 14);
-			this.button18.Name = "button18";
-			this.button18.Size = new System.Drawing.Size(18, 21);
-			this.button18.TabIndex = 9;
-			this.button18.Text = "C";
-			this.button18.UseVisualStyleBackColor = true;
-			this.button18.Click += new System.EventHandler(this.button18_Click);
-			// 
-			// button19
-			// 
-			this.button19.Location = new System.Drawing.Point(246, 15);
-			this.button19.Name = "button19";
-			this.button19.Size = new System.Drawing.Size(18, 21);
-			this.button19.TabIndex = 9;
-			this.button19.Text = "C";
-			this.button19.UseVisualStyleBackColor = true;
-			this.button19.Click += new System.EventHandler(this.button19_Click);
 			// 
 			// Form1
 			// 
@@ -3221,6 +3221,8 @@
 			this.tabPage4.ResumeLayout(false);
 			this.panel15.ResumeLayout(false);
 			this.panel15.PerformLayout();
+			this.panel21.ResumeLayout(false);
+			this.panel21.PerformLayout();
 			this.panel14.ResumeLayout(false);
 			this.panel14.PerformLayout();
 			this.tabPage5.ResumeLayout(false);
@@ -3234,8 +3236,6 @@
 			this.panel17.ResumeLayout(false);
 			this.panel17.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewMessage)).EndInit();
-			this.panel21.ResumeLayout(false);
-			this.panel21.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
