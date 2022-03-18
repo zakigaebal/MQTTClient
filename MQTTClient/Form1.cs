@@ -1749,56 +1749,57 @@ namespace MQTTClient
 				{
 					return;
 				}
-				dataGridViewMeter.Columns[(dataGridViewMeter.Columns.Count - 2).ToString()].HeaderText = "헤링본";
+			//	int dgvValue = 3;
+			//	dataGridViewMeter.Columns[dgvValue].HeaderText = "헤링본";
 
-				int idx = 0;
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "1";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "1~12";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "60";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "0";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "180";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "35";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "60";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "120";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "60";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "3";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "2";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "8000";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "200";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "1";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "1000";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "500";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "5";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "1500";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "1";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "1";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "3000";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "2000";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "2";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "6";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "2";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "1";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "1";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "0";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "2100";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "2100";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "0";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "2000";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "10";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "60";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "53";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "58";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "1";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "83";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "1100";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "5000";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "2";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "1000";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "20";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "50";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "5";
-				dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "0";
-			}
+			//	int idx = 0;
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "1";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "1~12";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "60";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "0";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "180";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "35";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "60";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "120";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "60";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "3";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "2";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "8000";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "200";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "1";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "1000";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "500";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "5";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "1500";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "1";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "1";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "3000";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "2000";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "2";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "6";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "2";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "1";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "1";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "0";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "2100";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "2100";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "0";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "2000";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "10";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "60";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "53";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "58";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "1";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "83";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "1100";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "5000";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "2";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "1000";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "20";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "50";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "5";
+			//	dataGridViewMeter[(dataGridViewMeter.ColumnCount - 2).ToString(), idx++].Value = "0";
+			//}
 		}
 		private void panel11_Paint(object sender, PaintEventArgs e)
 		{
@@ -1982,12 +1983,12 @@ namespace MQTTClient
 					dataGridViewMeter.Columns.Add((i).ToString(), i.ToString());
 				}
 				dataGridViewMeter.Columns.Add((dataGridViewMeter.ColumnCount).ToString(), "텐덤/해링본");
-				dataGridViewMeter.Columns.Add((dataGridViewMeter.ColumnCount + 1).ToString(), "버튼");
+				
 				for (int i = 0; i < 46; i++)
 				{
 					dataGridViewMeter.Rows.Add();
 					dataGridViewMeter["0", i].Value = i + 1;
-					dataGridViewMeter[dataGridViewMeter.Columns.Count - 1, i] = new DataGridViewButtonCell();
+				
 				}
 				dataGridViewMeter["1", 0].Value = "사용안함";
 				dataGridViewMeter["1", 1].Value = "장비 ID";
