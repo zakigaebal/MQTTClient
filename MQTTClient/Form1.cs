@@ -434,7 +434,6 @@ namespace MQTTClient
 			dt.Columns.Add("Message");
 			dt.DefaultView.Sort = "Time desc";
 			dataGridViewMessage.DataSource = dt;
-
 			dataGridViewMessage.ReadOnly = true;
 			dataGridViewMessage.RowHeadersVisible = false;
 			//dataGridViewMessage.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -442,13 +441,20 @@ namespace MQTTClient
 			dataGridViewMessage.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 			dataGridViewMessage.Columns[1].Width = 200;
 
-			dataGridView1.DataSource = dt;
-			dataGridView1.ReadOnly = true;
-			dataGridView1.RowHeadersVisible = false;
+
+
+
+			dt2.Columns.Add("Time", typeof(string));
+			dt2.Columns.Add("Topic");
+			dt2.Columns.Add("Message");
+			dt2.DefaultView.Sort = "Time desc";
+			dataGridViewDelivery.DataSource = dt2;
+			dataGridViewDelivery.ReadOnly = true;
+			dataGridViewDelivery.RowHeadersVisible = false;
 			//dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-			dataGridView1.Columns[dataGridView1.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-			dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-			dataGridView1.Columns[1].Width = 200;
+			dataGridViewDelivery.Columns[dataGridViewDelivery.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+			dataGridViewDelivery.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+			dataGridViewDelivery.Columns[1].Width = 200;
 		}
 
 		private void buttonSubscribe2_Click(object sender, EventArgs e)
@@ -510,6 +516,34 @@ namespace MQTTClient
 
 					dataGridViewMessage.ResumeLayout();
 
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.ToString());
+				//로그 에러 저장
+			}
+		}
+
+
+		private void ShowMessage2(string topic, string payload, DataGridView dgv)
+		{
+			try
+			{
+				if (this.InvokeRequired)
+				{
+					ShowCallBack myUpdate = new ShowCallBack(ShowMessage2);
+					this.Invoke(myUpdate, topic, payload, dgv);
+				}
+				else
+				{
+					dataGridViewDelivery.SuspendLayout();
+					dt.Rows.Add(DateTime.Now.ToString("HH:mm:ss:fff"), topic + Environment.NewLine, payload + Environment.NewLine);
+					dataGridViewDelivery.CurrentCell = null;
+					dataGridViewDelivery.DataSource = dt;
+					logSave(topic, payload);
+					jsonSave(topic, payload);
+					dataGridViewDelivery.ResumeLayout();
 				}
 			}
 			catch (Exception ex)
@@ -738,27 +772,23 @@ namespace MQTTClient
 				}
 				ShowMessage(data.Topic, System.Text.Encoding.UTF8.GetString(data.Message), dataGridViewMessage);
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
-
+				LogMgr.ExceptionLog(ex);
 			}
 		}
 		private void clientsrc_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs data)
 		{
-
-
 			if (textBoxTopicHeader.Text.Trim().Length <= 0)
 			{
 				clientdst.Publish(data.Topic, data.Message, (byte)qosSelectedIndex, checkBox1.Checked);
-				ShowMessage(data.Topic, System.Text.Encoding.UTF8.GetString(data.Message), dataGridView1);
+				ShowMessage2(data.Topic, System.Text.Encoding.UTF8.GetString(data.Message), dataGridViewDelivery);
 			}
 			else
 			{
 				clientdst.Publish(textBoxTopicHeader.Text.Trim() + data.Topic, data.Message, (byte)qosSelectedIndex, checkBox1.Checked);
-				ShowMessage(textBoxTopicHeader.Text.Trim() + data.Topic, System.Text.Encoding.UTF8.GetString(data.Message), dataGridView1);
+				ShowMessage2(textBoxTopicHeader.Text.Trim() + data.Topic, System.Text.Encoding.UTF8.GetString(data.Message), dataGridViewDelivery);
 			}
-
-
 		}
 		private void clientdst_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs data)
 		{
@@ -1687,12 +1717,9 @@ namespace MQTTClient
 
 			try
 			{
-				//	textBoxIdCount.Text = "0";
 				if (tabControl2.SelectedTab == tabPageMain)
 				{
 					buttonIdCount.Enabled = true;
-
-					//삭제
 					dataGridViewMain.Columns.Clear();
 					dataGridViewMain.ReadOnly = true;
 					dataGridViewMain.RowHeadersVisible = false;
@@ -1829,24 +1856,18 @@ namespace MQTTClient
 					dataGridViewMeter["1", 38].Value = "유량보정배율(1.100배)";
 					dataGridViewMeter["1", 39].Value = "유량보정시작ms";
 					dataGridViewMeter["1", 40].Value = "유량보정타입()";
-
 					dataGridViewMeter["1", 41].Value = "집유기 전도도조정(기본:1000)";
 					dataGridViewMeter["1", 42].Value = "종료카운트시작 유량값(100g)";
 					dataGridViewMeter["1", 43].Value = "집유기 밸브 에러 시간(1ms)";
 					dataGridViewMeter["1", 44].Value = "집유기 밸브 에러 횟수";
 					dataGridViewMeter["1", 45].Value = "7,8 OUT 타입(): 다운 착유기시 0";
-
 					radioButton3_CheckedChanged(sender, e);
 					radioButton4_CheckedChanged(sender, e);
 					dataGridViewMeter.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
 					dataGridViewMeter.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 					dataGridViewMeter.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-					//dataGridViewMeter.Columns[(dataGridViewMeter.ColumnCount).ToString()].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-					//dataGridViewMeter.Columns[(dataGridViewMeter.ColumnCount).ToString()].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 					dataGridViewMeter.Columns[0].Width = 40;
 					dataGridViewMeter.Columns[1].Width = 200;
-					//dataGridViewMeter.Columns[(dataGridViewMeter.ColumnCount).ToString()].Width = 35;
 					dataGridViewMeter.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 				}
 
@@ -1856,10 +1877,8 @@ namespace MQTTClient
 					dataGridViewIR.Columns.Clear();
 					dataGridViewIR.ReadOnly = true;
 					dataGridViewIR.RowHeadersVisible = false;
-					//	dataGridViewIR.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 					dataGridViewIR.Columns.Add("0", "POS");
 					dataGridViewIR.Columns.Add("1", "DESC");
-
 					if (textBoxIdCount.Text == "")
 					{
 						return;
@@ -1869,7 +1888,6 @@ namespace MQTTClient
 					{
 						dataGridViewIR.Columns.Add((i).ToString(), i.ToString());
 					}
-
 					for (int i = 0; i < 10; i++)
 					{
 						dataGridViewIR.Rows.Add();
@@ -1886,9 +1904,7 @@ namespace MQTTClient
 					dataGridViewIR["1", num++].Value = "rse: 리모콘사용 여부 0:사용안함 1:사용함";
 					dataGridViewIR["1", num++].Value = "be: 0:부져 사용 1: 부져 사용안함. 기본값 0";
 					dataGridViewIR["1", num++].Value = "tuc: 태그 깨어나는 IR 카운트수. IR 라이팅때 같이 사용됨";
-
 					dataGridViewIR.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
 					dataGridViewIR.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 					dataGridViewIR.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 					//dataGridViewIR.Columns[(dataGridViewMeter.ColumnCount).ToString()].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
@@ -1909,7 +1925,6 @@ namespace MQTTClient
 				MessageBox.Show(ex.ToString());
 				LogMgr.ExceptionLog(ex);
 			}
-
 		}
 
 		private void radioButton3_CheckedChanged(object sender, EventArgs e)
@@ -2879,7 +2894,13 @@ namespace MQTTClient
 				return;
 			}
 			textBoxMeterPos.Text = dataGridViewMeter.Rows[e.RowIndex].Cells[0].Value.ToString();
-				textBoxMeterId.Text = (dataGridViewMeter.Columns[e.ColumnIndex].HeaderText);
+
+			if (dataGridViewMeter.Columns[e.ColumnIndex].HeaderText == "헤링본")
+			{
+				return;
+			}
+			else textBoxMeterId.Text = (dataGridViewMeter.Columns[e.ColumnIndex].HeaderText);
+
 			if (dataGridViewMeter.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == null)
 			{
 				textBoxMeterValue.Text = "";
