@@ -10,8 +10,6 @@ using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Collections.Generic;
 using Newtonsoft.Json;
-
-using System;
 using System.Collections;
 using System.Net;
 using System.Net.Security;
@@ -20,7 +18,6 @@ using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using uPLibrary.Networking.M2Mqtt.Exceptions;
 using uPLibrary.Networking.M2Mqtt.Internal;
-using uPLibrary.Networking.M2Mqtt.Messages;
 using uPLibrary.Networking.M2Mqtt.Session;
 using uPLibrary.Networking.M2Mqtt.Utility;
 
@@ -80,9 +77,9 @@ namespace MQTTClient
 			}
 			catch (Exception ex)
 			{
-				
+				LogMgr.ExceptionLog(ex);
 			}
-			
+
 		}
 		private void buttonTopicOpen_Click(object sender, EventArgs e)
 		{
@@ -102,7 +99,7 @@ namespace MQTTClient
 			catch (Exception)
 			{
 			}
-	
+
 		}
 		private void iniload()
 		{
@@ -347,7 +344,7 @@ namespace MQTTClient
 
 				throw;
 			}
-			
+
 		}
 
 		private void initCloseMethod()
@@ -695,51 +692,51 @@ namespace MQTTClient
 			try
 			{
 
-		
-	
-			//clientdst.Publish(textBoxPT1.Text+data.Topic, data.Message, (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
-
-			/// 1. 토픽 체크
-			/// 2. payload한 메세지에서 cmd를 체크
-			/// 3. 원하는 값 추출
-			/// 데이터그리드뷰 보여주기
-			if (data.Topic == "dawoon/Manual/3850/1/POLOR")
-			{
-				CMD_POS_VALUE cmd = JsonConvert.DeserializeObject<CMD_POS_VALUE>(Encoding.UTF8.GetString(data.Message));
-				if (cmd.CMD == "RESP_MAIN_SET_READ")
-				{
-					int pos = Convert.ToInt32(cmd.POS);
-					int value = Convert.ToInt32(cmd.VALUE);
-					dataGridViewMain["2", pos - 1].Value = value.ToString();
-				}
-				else if (cmd.CMD == "RESP_METER_COUNT")
-				{
-					CMD_ID_COUNT resp = JsonConvert.DeserializeObject<CMD_ID_COUNT>(Encoding.UTF8.GetString(data.Message));
-					//	MessageBox.Show(resp.COUNT.ToString());
-					string respText = resp.COUNT.ToString();
-					//textBoxIdCount.Text = respText;
-					myUI(respText, textBoxIdCount);
 
 
-				}
-				else if (cmd.CMD == "RESP_METER_SET_READ")
+				//clientdst.Publish(textBoxPT1.Text+data.Topic, data.Message, (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+
+				/// 1. 토픽 체크
+				/// 2. payload한 메세지에서 cmd를 체크
+				/// 3. 원하는 값 추출
+				/// 데이터그리드뷰 보여주기
+				if (data.Topic == "dawoon/Manual/3850/1/POLOR")
 				{
-					CMD_ID_POS_VALUE resp = JsonConvert.DeserializeObject<CMD_ID_POS_VALUE>(Encoding.UTF8.GetString(data.Message));
-					int id = resp.ID;
-					int pos = Convert.ToInt32(resp.POS);
-					int value = Convert.ToInt32(resp.VALUE);
-					dataGridViewMeter[id + 1, pos - 1].Value = value.ToString();
+					CMD_POS_VALUE cmd = JsonConvert.DeserializeObject<CMD_POS_VALUE>(Encoding.UTF8.GetString(data.Message));
+					if (cmd.CMD == "RESP_MAIN_SET_READ")
+					{
+						int pos = Convert.ToInt32(cmd.POS);
+						int value = Convert.ToInt32(cmd.VALUE);
+						dataGridViewMain["2", pos - 1].Value = value.ToString();
+					}
+					else if (cmd.CMD == "RESP_METER_COUNT")
+					{
+						CMD_ID_COUNT resp = JsonConvert.DeserializeObject<CMD_ID_COUNT>(Encoding.UTF8.GetString(data.Message));
+						//	MessageBox.Show(resp.COUNT.ToString());
+						string respText = resp.COUNT.ToString();
+						//textBoxIdCount.Text = respText;
+						myUI(respText, textBoxIdCount);
+
+
+					}
+					else if (cmd.CMD == "RESP_METER_SET_READ")
+					{
+						CMD_ID_POS_VALUE resp = JsonConvert.DeserializeObject<CMD_ID_POS_VALUE>(Encoding.UTF8.GetString(data.Message));
+						int id = resp.ID;
+						int pos = Convert.ToInt32(resp.POS);
+						int value = Convert.ToInt32(resp.VALUE);
+						dataGridViewMeter[id + 1, pos - 1].Value = value.ToString();
+					}
+					else if (cmd.CMD == "RESP_IR_SET_READ")
+					{
+						CMD_ID_POS_VALUE resp = JsonConvert.DeserializeObject<CMD_ID_POS_VALUE>(Encoding.UTF8.GetString(data.Message));
+						int id = resp.ID;
+						int pos = Convert.ToInt32(resp.POS);
+						int value = Convert.ToInt32(resp.VALUE);
+						dataGridViewIR[id + 1, pos - 1].Value = value.ToString();
+					}
 				}
-				else if (cmd.CMD == "RESP_IR_SET_READ")
-				{
-					CMD_ID_POS_VALUE resp = JsonConvert.DeserializeObject<CMD_ID_POS_VALUE>(Encoding.UTF8.GetString(data.Message));
-					int id = resp.ID;
-					int pos = Convert.ToInt32(resp.POS);
-					int value = Convert.ToInt32(resp.VALUE);
-					dataGridViewIR[id + 1, pos - 1].Value = value.ToString();
-				}
-			}
-			ShowMessage(data.Topic, System.Text.Encoding.UTF8.GetString(data.Message), dataGridViewMessage);
+				ShowMessage(data.Topic, System.Text.Encoding.UTF8.GetString(data.Message), dataGridViewMessage);
 			}
 			catch (Exception)
 			{
@@ -791,7 +788,52 @@ namespace MQTTClient
 		{
 			textBoxHost.Text = "103.60.126.23";
 		}
+		public class LogMgr
 
+		{
+			static string prefixMsg = "\r\n-------------------------------------------";
+			// 일반 로그 남기기
+			static public void Log(string msg)
+			{
+				try
+				{
+					string currentPath = System.IO.Directory.GetCurrentDirectory();
+					string logName = @"" + currentPath + "\\Log\\" + "Error-MQTT-" + DateTime.Now.ToString("yyyy-MM-dd") + ".log";
+					string logFileName = DateTime.Now.ToString("yyyy-MM-dd") + ".log";
+					StreamWriter tw = File.AppendText(logName);
+					tw.WriteLine(prefixMsg);
+					tw.WriteLine(msg);
+					tw.Close();
+				}
+				catch (Exception)
+				{
+				}
+			}
+			// 예외 로그
+			static public void ExceptionLog(Exception ex, string titleString = null)
+			{
+				string msg = "";
+				if (!string.IsNullOrEmpty(msg))
+				{
+					msg = titleString + "\r\n";
+				}
+				msg += GetExceptionMessage(ex);
+				msg = "예외 발생 일자 : " + DateTime.Now.ToString() + msg + "\r\n";
+				Log(msg);
+			}
+			// 예외 메세지 만들기
+			static private string GetExceptionMessage(Exception ex)
+			{
+				string err = "\r\n 에러 발생 원인 : " + ex.Source +
+					"\r\n 에러 메시지 :" + ex.Message +
+					"\r\n Stack Trace : " + ex.StackTrace.ToString();
+				if (ex.InnerException != null)
+				{
+					err += GetExceptionMessage(ex.InnerException);
+				}
+				return err;
+			}
+		}
 		private void buttonConnect_Click(object sender, EventArgs e)
 		{
 			int port;
@@ -814,6 +856,7 @@ namespace MQTTClient
 				catch (Exception ex)
 				{
 					MessageBox.Show(ex.Message);
+					LogMgr.ExceptionLog(ex);
 				}
 				if (clientUser != null && clientUser.IsConnected)
 				{
@@ -879,6 +922,7 @@ namespace MQTTClient
 				catch (Exception ex)
 				{
 					MessageBox.Show(ex.Message);
+					LogMgr.ExceptionLog(ex);
 				}
 			}
 		}
@@ -927,6 +971,7 @@ namespace MQTTClient
 			catch (Exception ex)
 			{
 				MessageBox.Show(ex.Message);
+				LogMgr.ExceptionLog(ex);
 			}
 		}
 
@@ -987,6 +1032,7 @@ namespace MQTTClient
 			catch (Exception ex)
 			{
 				MessageBox.Show(ex.Message);
+				LogMgr.ExceptionLog(ex);
 			}
 		}
 		private void buttonPublish2_Click(object sender, EventArgs e)
@@ -1201,7 +1247,7 @@ namespace MQTTClient
 			}
 			catch (Exception ex)
 			{
-
+				LogMgr.ExceptionLog(ex);
 			}
 		}
 
@@ -1342,13 +1388,13 @@ namespace MQTTClient
 			}
 			catch (Exception ex)
 			{
-
+				LogMgr.ExceptionLog(ex);
 			}
 		}
 
 		private void dataGridViewMessage_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
 		{
-				cell1(sender, e);
+			cell1(sender, e);
 		}
 
 
@@ -1365,10 +1411,19 @@ namespace MQTTClient
 
 		public void Form_Closing(object sender, FormClosedEventArgs e)
 		{
-			initCloseMethod();
-			if (clientUser != null && clientUser.IsConnected) clientUser.Disconnect();
-			if (clientscr != null && clientUser.IsConnected) clientUser.Disconnect();
-			if (clientdst != null && clientUser.IsConnected) clientUser.Disconnect();
+			try
+			{
+				initCloseMethod();
+				if (clientUser != null && clientUser.IsConnected) clientUser.Disconnect();
+				if (clientscr != null && clientscr.IsConnected) clientscr.Disconnect();
+				if (clientdst != null && clientdst.IsConnected) clientdst.Disconnect();
+
+			}
+			catch (Exception error)
+			{
+				MessageBox.Show(error.ToString());
+
+			}
 		}
 
 		private void buttonLogFolder_Click(object sender, EventArgs e)
@@ -1626,225 +1681,230 @@ namespace MQTTClient
 
 		}
 
-		private void tabControl2_Selected(object sender, TabControlEventArgs e)
-		{
-
-		}
 
 		private void tabControl2_SelectedIndexChanged(object sender, EventArgs e)
 		{
 
-		
-			//	textBoxIdCount.Text = "0";
-			if (tabControl2.SelectedTab == tabPageMain)
+			try
 			{
-				buttonIdCount.Enabled = true;
-
-				//삭제
-				dataGridViewMain.Columns.Clear();
-				dataGridViewMain.ReadOnly = true;
-				dataGridViewMain.RowHeadersVisible = false;
-				dataGridViewMain.Columns.Add("0", "POS");
-				dataGridViewMain.Columns.Add("1", "DESC");
-				dataGridViewMain.Columns.Add("2", "현재값");
-				dataGridViewMain.Columns.Add("3", "텐덤/해링본");
-				dataGridViewMain.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-			
-				dataGridViewMain.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-				dataGridViewMain.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-				dataGridViewMain.Columns[0].Width = 40;
-				dataGridViewMain.Columns[1].Width = 900;
-				dataGridViewMain.Columns[3].Width = 70;
-				for (int i = 0; i < 40; i++)
+				//	textBoxIdCount.Text = "0";
+				if (tabControl2.SelectedTab == tabPageMain)
 				{
-					dataGridViewMain.Rows.Add();
-					dataGridViewMain["0", i].Value = i + 1;
-		
+					buttonIdCount.Enabled = true;
+
+					//삭제
+					dataGridViewMain.Columns.Clear();
+					dataGridViewMain.ReadOnly = true;
+					dataGridViewMain.RowHeadersVisible = false;
+					dataGridViewMain.Columns.Add("0", "POS");
+					dataGridViewMain.Columns.Add("1", "DESC");
+					dataGridViewMain.Columns.Add("2", "현재값");
+					dataGridViewMain.Columns.Add("3", "텐덤/해링본");
+					dataGridViewMain.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+					dataGridViewMain.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+					dataGridViewMain.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+					dataGridViewMain.Columns[0].Width = 40;
+					//dataGridViewMain.Columns[1].Width = 900;
+					dataGridViewMain.Columns[2].Width = 70;
+					dataGridViewMain.Columns[3].Width = 70;
+					for (int i = 0; i < 40; i++)
+					{
+						dataGridViewMain.Rows.Add();
+						dataGridViewMain["0", i].Value = i + 1;
+
+					}
+					dataGridViewMain["1", 0].Value = "DEVICE_TYPE: 디바이스 종류";
+					dataGridViewMain["1", 1].Value = "MQTT_IP1: 농장 PC MQTT IP 첫번째 번호";
+					dataGridViewMain["1", 2].Value = "MQTT_IP2: 농장 PC MQTT IP 두번째 번호";
+					dataGridViewMain["1", 3].Value = "MQTT_IP3: 농장 PC MQTT IP 세번째 번호";
+					dataGridViewMain["1", 4].Value = "MQTT_IP4: 농장 PC MQTT IP 네번째 번호";
+					dataGridViewMain["1", 5].Value = "HTTP_IP1: 농장 PC 프로그램 IP 첫번째 번호";
+					dataGridViewMain["1", 6].Value = "HTTP_IP2: 농장 PC 프로그램 IP 두번째 번호";
+					dataGridViewMain["1", 7].Value = "HTTP_IP3: 농장 PC 프로그램 IP 세번째 번호";
+					dataGridViewMain["1", 8].Value = "HTTP_IP4: 농장 PC 프로그램 IP 네번째 번호";
+					dataGridViewMain["1", 9].Value = "Milk_Device_Max: 착유 메터 설치 수";
+					dataGridViewMain["1", 10].Value = "BackLight Auto:0(off)/1(on)";
+					dataGridViewMain["1", 11].Value = "Milking NUM SET:0(RFID)/1(장비번호)";
+					dataGridViewMain["1", 12].Value = "RFID Erase Minute: RFID 삭제 시간(기본 60분)";
+					dataGridViewMain["1", 13].Value = "DW MQTT_IP1: 리눅스서버 MQTT IP 첫번째";
+					dataGridViewMain["1", 14].Value = "DW MQTT_IP2: 리눅스서버 MQTT IP 두번째";
+					dataGridViewMain["1", 15].Value = "DW MQTT_IP3: 리눅스서버 MQTT IP 세번째";
+					dataGridViewMain["1", 16].Value = "DW MQTT_IP4: 리눅스서버 MQTT IP 네번째";
+					dataGridViewMain["1", 17].Value = "DW MQTT STATUS INFO: 0(미사용)/1(사용)";
+					dataGridViewMain["1", 18].Value = "DW MQTT MILK INFO: 0(미사용)/1(사용)";
+					dataGridViewMain["1", 19].Value = "DATA_MQTT_MODE: 0:HTTP모드/1:MQTT모드";
+					dataGridViewMain["1", 20].Value = "Farm Code: 농장코드(cowplan에 등록된 농장코드) DW2016과 같은 코드";
+					dataGridViewMain["1", 21].Value = "Device Code: MQTT 번호(1번 설정)";
+					dataGridViewMain["1", 22].Value = "RFID TYPE: (기본0 셋팅) 0:이전 착유소 인식하지않음 1:이전 착유소 읽을수 있게 변경 2:이전 착유소 지우되 각라인 마지막소는 지우지 않음";
+					dataGridViewMain["1", 23].Value = "MILKING TYPE: 0:다운착유기 1:타사착유기(기본0 셋팅)";
+					dataGridViewMain["1", 24].Value = "YIELD_LIMIT: (다운착유기 기본 0, 타사착유기 기본 2000) MILKING TYPE가 1일때 (타사착유기)착유량이 설정 값보다 적으면 착유정보 보내지 않음";
+					dataGridViewMain["1", 25].Value = "RFID_LINE_RESET: 0:착유소 나가고 바로인식 1:착유라인 전체가 종료되야 RFID인식 시작(기본 1)";
+					dataGridViewMain["1", 26].Value = "RFID_MQTT_SEND: 1:장비가 RFID인식시 MQTT정보 보냄, 0:보내지않음 1:보냄(기본1)";
+					dataGridViewMain["1", 27].Value = "IR_RFID_READ_TIME: 한 IR장비 읽기 점유율시간 (1ms) (기본 2000)";
+					dataGridViewMain["1", 28].Value = "IR_SENSOR_ENABLE: IR장비의 소입력 센서 사용유무 0:사용안함 1:사용함 (기본0) 2:전방 도어센서 인식 3:후방 도어센서 인식";
+					dataGridViewMain["1", 29].Value = "29.항목이 0일때 착유 완료후 소 IRID 읽기 쉬는 시간(1ms) (기본 60000) 29.항목이 1일때 소로 인식되는 센서 입력 길이(1ms)";
+					dataGridViewMain["1", 30].Value = "IR_READ_OK_COUNT: IRID인식 획수. 3일경우 같은 번호가 3번 연속 읽혀야 함";
+					dataGridViewMain["1", 31].Value = "IR_READ_LIMIT: 착유진행됐을 경우 IRID 못읽은 장비의 시도 횟수(값이 읽혔으면 시도횟수 초기화)";
+					dataGridViewMain["1", 32].Value = "IR_ONE_SEND: 0: 라인별 독립적으로 보냄 1: 한 개의 장비만 데이터보냄(특수한 경우가 아니면 1로 셋팅되어야함)";
+					dataGridViewMain["1", 33].Value = "YEILD_SEND_ZERO: 착유량이 없더라도 서버에 데이터를 보냄";
+					dataGridViewMain["1", 34].Value = "DOOR_OPEN_TIME: IR_SENSOR_ENABLE이 2일 경우 도어 오픈 연속 감지 시간(기본값:1000 -> 1초)";
+					dataGridViewMain["1", 35].Value = "COW_SAME_ID_TIME: 0일때 사용하지 않음,0이 아니면 있으면 그만큼 쉬고 읽기 시작(기본값:20000->20초)";
+					dataGridViewMain["1", 36].Value = "IRID_MILK_REREAD: 0일경우 착유시작시 다시 읽지 않음, 1일경우 착유 시작시 다시 읽음";
+					dataGridViewMain["1", 37].Value = "IR_LINE_OK_COUNT: 입구 IRID 인식 횟수. 3일경우 같은 번호가 3번 연속 읽혀야함";
+					dataGridViewMain["1", 38].Value = "IR_TX_MQTT_SEND: IR TX에 대한 MQTT 정보 표시 0:사용함, 1:사용안함";
+					dataGridViewMain["1", 39].Value = "MAIN_RESET: 12시간이 넘었고 착유중이 아니면 자정에 메인 리셋 진행 0:사용함 1:사용안함";
+					radioButton1_CheckedChanged(sender, e);
+					radioButton2_CheckedChanged(sender, e);
+					dataGridViewMain.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 				}
-				dataGridViewMain["1", 0].Value = "DEVICE_TYPE: 디바이스 종류";
-				dataGridViewMain["1", 1].Value = "MQTT_IP1: 농장 PC MQTT IP 첫번째 번호";
-				dataGridViewMain["1", 2].Value = "MQTT_IP2: 농장 PC MQTT IP 두번째 번호";
-				dataGridViewMain["1", 3].Value = "MQTT_IP3: 농장 PC MQTT IP 세번째 번호";
-				dataGridViewMain["1", 4].Value = "MQTT_IP4: 농장 PC MQTT IP 네번째 번호";
-				dataGridViewMain["1", 5].Value = "HTTP_IP1: 농장 PC 프로그램 IP 첫번째 번호";
-				dataGridViewMain["1", 6].Value = "HTTP_IP2: 농장 PC 프로그램 IP 두번째 번호";
-				dataGridViewMain["1", 7].Value = "HTTP_IP3: 농장 PC 프로그램 IP 세번째 번호";
-				dataGridViewMain["1", 8].Value = "HTTP_IP4: 농장 PC 프로그램 IP 네번째 번호";
-				dataGridViewMain["1", 9].Value = "Milk_Device_Max: 착유 메터 설치 수";
-				dataGridViewMain["1", 10].Value = "BackLight Auto:0(off)/1(on)";
-				dataGridViewMain["1", 11].Value = "Milking NUM SET:0(RFID)/1(장비번호)";
-				dataGridViewMain["1", 12].Value = "RFID Erase Minute: RFID 삭제 시간(기본 60분)";
-				dataGridViewMain["1", 13].Value = "DW MQTT_IP1: 리눅스서버 MQTT IP 첫번째";
-				dataGridViewMain["1", 14].Value = "DW MQTT_IP2: 리눅스서버 MQTT IP 두번째";
-				dataGridViewMain["1", 15].Value = "DW MQTT_IP3: 리눅스서버 MQTT IP 세번째";
-				dataGridViewMain["1", 16].Value = "DW MQTT_IP4: 리눅스서버 MQTT IP 네번째";
-				dataGridViewMain["1", 17].Value = "DW MQTT STATUS INFO: 0(미사용)/1(사용)";
-				dataGridViewMain["1", 18].Value = "DW MQTT MILK INFO: 0(미사용)/1(사용)";
-				dataGridViewMain["1", 19].Value = "DATA_MQTT_MODE: 0:HTTP모드/1:MQTT모드";
-				dataGridViewMain["1", 20].Value = "Farm Code: 농장코드(cowplan에 등록된 농장코드) DW2016과 같은 코드";
-				dataGridViewMain["1", 21].Value = "Device Code: MQTT 번호(1번 설정)";
-				dataGridViewMain["1", 22].Value = "RFID TYPE: (기본0 셋팅) 0:이전 착유소 인식하지않음 1:이전 착유소 읽을수 있게 변경 2:이전 착유소 지우되 각라인 마지막소는 지우지 않음";
-				dataGridViewMain["1", 23].Value = "MILKING TYPE: 0:다운착유기 1:타사착유기(기본0 셋팅)";
-				dataGridViewMain["1", 24].Value = "YIELD_LIMIT: (다운착유기 기본 0, 타사착유기 기본 2000) MILKING TYPE가 1일때 (타사착유기)착유량이 설정 값보다 적으면 착유정보 보내지 않음";
-				dataGridViewMain["1", 25].Value = "RFID_LINE_RESET: 0:착유소 나가고 바로인식 1:착유라인 전체가 종료되야 RFID인식 시작(기본 1)";
-				dataGridViewMain["1", 26].Value = "RFID_MQTT_SEND: 1:장비가 RFID인식시 MQTT정보 보냄, 0:보내지않음 1:보냄(기본1)";
-				dataGridViewMain["1", 27].Value = "IR_RFID_READ_TIME: 한 IR장비 읽기 점유율시간 (1ms) (기본 2000)";
-				dataGridViewMain["1", 28].Value = "IR_SENSOR_ENABLE: IR장비의 소입력 센서 사용유무 0:사용안함 1:사용함 (기본0) 2:전방 도어센서 인식 3:후방 도어센서 인식";
-				dataGridViewMain["1", 29].Value = "29.항목이 0일때 착유 완료후 소 IRID 읽기 쉬는 시간(1ms) (기본 60000) 29.항목이 1일때 소로 인식되는 센서 입력 길이(1ms)";
-				dataGridViewMain["1", 30].Value = "IR_READ_OK_COUNT: IRID인식 획수. 3일경우 같은 번호가 3번 연속 읽혀야 함";
-				dataGridViewMain["1", 31].Value = "IR_READ_LIMIT: 착유진행됐을 경우 IRID 못읽은 장비의 시도 횟수(값이 읽혔으면 시도횟수 초기화)";
-				dataGridViewMain["1", 32].Value = "IR_ONE_SEND: 0: 라인별 독립적으로 보냄 1: 한 개의 장비만 데이터보냄(특수한 경우가 아니면 1로 셋팅되어야함)";
-				dataGridViewMain["1", 33].Value = "YEILD_SEND_ZERO: 착유량이 없더라도 서버에 데이터를 보냄";
-				dataGridViewMain["1", 34].Value = "DOOR_OPEN_TIME: IR_SENSOR_ENABLE이 2일 경우 도어 오픈 연속 감지 시간(기본값:1000 -> 1초)";
-				dataGridViewMain["1", 35].Value = "COW_SAME_ID_TIME: 0일때 사용하지 않음,0이 아니면 있으면 그만큼 쉬고 읽기 시작(기본값:20000->20초)";
-				dataGridViewMain["1", 36].Value = "IRID_MILK_REREAD: 0일경우 착유시작시 다시 읽지 않음, 1일경우 착유 시작시 다시 읽음";
-				dataGridViewMain["1", 37].Value = "IR_LINE_OK_COUNT: 입구 IRID 인식 횟수. 3일경우 같은 번호가 3번 연속 읽혀야함";
-				dataGridViewMain["1", 38].Value = "IR_TX_MQTT_SEND: IR TX에 대한 MQTT 정보 표시 0:사용함, 1:사용안함";
-				dataGridViewMain["1", 39].Value = "MAIN_RESET: 12시간이 넘었고 착유중이 아니면 자정에 메인 리셋 진행 0:사용함 1:사용안함";
-				radioButton1_CheckedChanged(sender, e);
-				radioButton2_CheckedChanged(sender, e);
-				dataGridViewMain.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+				if (tabControl2.SelectedTab == tabPageMeter)
+				{
+					buttonIdCount.Enabled = true;
+					dataGridViewMeter.Columns.Clear();
+					dataGridViewMeter.ReadOnly = true;
+					dataGridViewMeter.RowHeadersVisible = false;
+					//dataGridViewMeter.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+					dataGridViewMeter.Columns.Add("0", "POS");
+					dataGridViewMeter.Columns.Add("1", "DESC");
+					if (textBoxIdCount.Text == "")
+					{
+						return;
+					}
+					int bbbb = Convert.ToInt32(textBoxIdCount.Text);
+					for (int i = 1; i <= bbbb; i++)
+					{
+						dataGridViewMeter.Columns.Add((i).ToString(), i.ToString());
+					}
+					dataGridViewMeter.Columns.Add((dataGridViewMeter.ColumnCount).ToString(), "텐덤/해링본");
+					for (int i = 0; i < 46; i++)
+					{
+						dataGridViewMeter.Rows.Add();
+						dataGridViewMeter["0", i].Value = i + 1;
+					}
+					dataGridViewMeter["1", 0].Value = "사용안함";
+					dataGridViewMeter["1", 1].Value = "장비 ID";
+					dataGridViewMeter["1", 2].Value = "맥동분당횟수(20~80)";
+					dataGridViewMeter["1", 3].Value = "탈착시간 초단위 계산";
+					dataGridViewMeter["1", 4].Value = "초기 착유종료 탈착 초";
+					dataGridViewMeter["1", 5].Value = "착유종료 탈착 초";
+					dataGridViewMeter["1", 6].Value = "시작마사지속도(MAX1000)";
+					dataGridViewMeter["1", 7].Value = "시작마사지 시간(1s)";
+					dataGridViewMeter["1", 8].Value = "종료마사지속도(MAX1000)";
+					dataGridViewMeter["1", 9].Value = "종료마사지 카운트 시작";
+					dataGridViewMeter["1", 10].Value = "종료마사지 카운트 종료";
+					dataGridViewMeter["1", 11].Value = "유방염 에러 밸류";
+					dataGridViewMeter["1", 12].Value = "혈류 에러 벨류(mg/L)";
+					dataGridViewMeter["1", 13].Value = "집유기 종류(다운:1/타사:0)";
+					dataGridViewMeter["1", 14].Value = "우유 ADC 값(1ms)";
+					dataGridViewMeter["1", 15].Value = "집유기 동작 시간";
+					dataGridViewMeter["1", 16].Value = "세척 집유기 시간(1s)";
+					dataGridViewMeter["1", 17].Value = "젖꼭지 탈착 시점(1ms)";
+					dataGridViewMeter["1", 18].Value = "우유 수집 시간(1ms)";
+					dataGridViewMeter["1", 19].Value = "우유 수집 시간 끝(1ms)";
+					dataGridViewMeter["1", 20].Value = "종료 우유 수집(1ms)";
+					dataGridViewMeter["1", 21].Value = "진공 개방시간(1ms)";
+					dataGridViewMeter["1", 22].Value = "RF DB 값(MAX300)";
+
+					dataGridViewMeter["1", 23].Value = "RFID 종류";
+					dataGridViewMeter["1", 24].Value = "착유량 컬러: 흰색/녹색/노란색/적색";
+					dataGridViewMeter["1", 25].Value = "RFID 변경: 뒤로밀기/현재자리/앞으로밀기";
+					dataGridViewMeter["1", 26].Value = "도어 센서위치 닫힘/열림";
+					dataGridViewMeter["1", 27].Value = "부저사용함/부저사용안함";
+					dataGridViewMeter["1", 28].Value = "세척물 ADC값";
+					dataGridViewMeter["1", 29].Value = "LCD오프타임(1s)";
+					dataGridViewMeter["1", 30].Value = "세척맥동타임(1s)";
+					dataGridViewMeter["1", 31].Value = "솔밸브초기 ON타임(1s)";
+					dataGridViewMeter["1", 32].Value = "솔밸브 Pwm 주기(1ms)";
+					dataGridViewMeter["1", 33].Value = "솔밸브 Pwm 퍼센트(1~100)";
+					dataGridViewMeter["1", 34].Value = "맥동1 비율(20~80)";
+					dataGridViewMeter["1", 35].Value = "맥동2 비율(20~80)";
+					dataGridViewMeter["1", 36].Value = "소 ID 에러페이지 활성화";
+					dataGridViewMeter["1", 37].Value = "유량 값mL (50~150)";
+					dataGridViewMeter["1", 38].Value = "유량보정배율(1.100배)";
+					dataGridViewMeter["1", 39].Value = "유량보정시작ms";
+					dataGridViewMeter["1", 40].Value = "유량보정타입()";
+
+					dataGridViewMeter["1", 41].Value = "집유기 전도도조정(기본:1000)";
+					dataGridViewMeter["1", 42].Value = "종료카운트시작 유량값(100g)";
+					dataGridViewMeter["1", 43].Value = "집유기 밸브 에러 시간(1ms)";
+					dataGridViewMeter["1", 44].Value = "집유기 밸브 에러 횟수";
+					dataGridViewMeter["1", 45].Value = "7,8 OUT 타입(): 다운 착유기시 0";
+
+					radioButton3_CheckedChanged(sender, e);
+					radioButton4_CheckedChanged(sender, e);
+					dataGridViewMeter.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+					dataGridViewMeter.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+					dataGridViewMeter.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+					//dataGridViewMeter.Columns[(dataGridViewMeter.ColumnCount).ToString()].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+					//dataGridViewMeter.Columns[(dataGridViewMeter.ColumnCount).ToString()].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+					dataGridViewMeter.Columns[0].Width = 40;
+					dataGridViewMeter.Columns[1].Width = 200;
+					//dataGridViewMeter.Columns[(dataGridViewMeter.ColumnCount).ToString()].Width = 35;
+					dataGridViewMeter.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+				}
+
+				if (tabControl2.SelectedTab == tabPageIR)
+				{
+					buttonIdCount.Enabled = true;
+					dataGridViewIR.Columns.Clear();
+					dataGridViewIR.ReadOnly = true;
+					dataGridViewIR.RowHeadersVisible = false;
+					//	dataGridViewIR.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+					dataGridViewIR.Columns.Add("0", "POS");
+					dataGridViewIR.Columns.Add("1", "DESC");
+
+					if (textBoxIdCount.Text == "")
+					{
+						return;
+					}
+					int bbbb = Convert.ToInt32(textBoxIdCount.Text);
+					for (int i = 1; i <= bbbb; i++)
+					{
+						dataGridViewIR.Columns.Add((i).ToString(), i.ToString());
+					}
+
+					for (int i = 0; i < 10; i++)
+					{
+						dataGridViewIR.Rows.Add();
+						dataGridViewIR["0", i].Value = i + 1;
+					}
+					int num = 0;
+					dataGridViewIR["1", num++].Value = "ID: 0:232통신에 사용 1~24 CAN 통신 이용시 고유 ID";
+					dataGridViewIR["1", num++].Value = "Slr: IRID Tag를 깨우기 위한 신호 시간(0.1ms). 기본값 1";
+					dataGridViewIR["1", num++].Value = "Sdp: IRID Tag를 깨우기 위한 신호의 강도(1~100). 기본값 40";
+					dataGridViewIR["1", num++].Value = "SA: IRID Tag를 깨우고 IR정보 보내는 대기 시간(0.1ms) 기본값 2000(바뀌면 안됨)";
+					dataGridViewIR["1", num++].Value = "rA: IRID 송신후 수신 대기 시간 (0.1ms). 기본값 2000(바뀌면 안됨)";
+					dataGridViewIR["1", num++].Value = "lrt: IRID 리더의 송수신 총시간(1ms). 기본값 2000 *정해진 시간만큼만 읽을 수 있음. 메인셋팅 28.에 의존";
+					dataGridViewIR["1", num++].Value = "LSe: 레이져센서의 소감지 유지시간(1ms). Main 셋팅 29.이 2일때만 사용";
+					dataGridViewIR["1", num++].Value = "rse: 리모콘사용 여부 0:사용안함 1:사용함";
+					dataGridViewIR["1", num++].Value = "be: 0:부져 사용 1: 부져 사용안함. 기본값 0";
+					dataGridViewIR["1", num++].Value = "tuc: 태그 깨어나는 IR 카운트수. IR 라이팅때 같이 사용됨";
+
+					dataGridViewIR.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+					dataGridViewIR.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+					dataGridViewIR.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+					//dataGridViewIR.Columns[(dataGridViewMeter.ColumnCount).ToString()].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+					//dataGridViewMeter.Columns[(dataGridViewMeter.ColumnCount).ToString()].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+					dataGridViewIR.Columns[0].Width = 40;
+					dataGridViewIR.Columns[1].Width = 600;
+					dataGridViewIR.Columns[3].Width = 200;
+					//dataGridViewIR.Columns[(dataGridViewMeter.ColumnCount).ToString()].Width = 35;
+					dataGridViewIR.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+					if (dataGridViewIR.Columns.Count < 3)
+					{
+						return;
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.ToString());
 			}
 
-			if (tabControl2.SelectedTab == tabPageMeter)
-			{
-				buttonIdCount.Enabled = true;
-				dataGridViewMeter.Columns.Clear();
-				dataGridViewMeter.ReadOnly = true;
-				dataGridViewMeter.RowHeadersVisible = false;
-				//dataGridViewMeter.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-				dataGridViewMeter.Columns.Add("0", "POS");
-				dataGridViewMeter.Columns.Add("1", "DESC");
-				if (textBoxIdCount.Text == "")
-				{
-					return;
-				}
-				int bbbb = Convert.ToInt32(textBoxIdCount.Text);
-				for (int i = 1; i <= bbbb; i++)
-				{
-					dataGridViewMeter.Columns.Add((i).ToString(), i.ToString());
-				}
-				dataGridViewMeter.Columns.Add((dataGridViewMeter.ColumnCount).ToString(), "텐덤/해링본");
-				for (int i = 0; i < 46; i++)
-				{
-					dataGridViewMeter.Rows.Add();
-					dataGridViewMeter["0", i].Value = i + 1;
-				}
-				dataGridViewMeter["1", 0].Value = "사용안함";
-				dataGridViewMeter["1", 1].Value = "장비 ID";
-				dataGridViewMeter["1", 2].Value = "맥동분당횟수(20~80)";
-				dataGridViewMeter["1", 3].Value = "탈착시간 초단위 계산";
-				dataGridViewMeter["1", 4].Value = "초기 착유종료 탈착 초";
-				dataGridViewMeter["1", 5].Value = "착유종료 탈착 초";
-				dataGridViewMeter["1", 6].Value = "시작마사지속도(MAX1000)";
-				dataGridViewMeter["1", 7].Value = "시작마사지 시간(1s)";
-				dataGridViewMeter["1", 8].Value = "종료마사지속도(MAX1000)";
-				dataGridViewMeter["1", 9].Value = "종료마사지 카운트 시작";
-				dataGridViewMeter["1", 10].Value = "종료마사지 카운트 종료";
-				dataGridViewMeter["1", 11].Value = "유방염 에러 밸류";
-				dataGridViewMeter["1", 12].Value = "혈류 에러 벨류(mg/L)";
-				dataGridViewMeter["1", 13].Value = "집유기 종류(다운:1/타사:0)";
-				dataGridViewMeter["1", 14].Value = "우유 ADC 값(1ms)";
-				dataGridViewMeter["1", 15].Value = "집유기 동작 시간";
-				dataGridViewMeter["1", 16].Value = "세척 집유기 시간(1s)";
-				dataGridViewMeter["1", 17].Value = "젖꼭지 탈착 시점(1ms)";
-				dataGridViewMeter["1", 18].Value = "우유 수집 시간(1ms)";
-				dataGridViewMeter["1", 19].Value = "우유 수집 시간 끝(1ms)";
-				dataGridViewMeter["1", 20].Value = "종료 우유 수집(1ms)";
-				dataGridViewMeter["1", 21].Value = "진공 개방시간(1ms)";
-				dataGridViewMeter["1", 22].Value = "RF DB 값(MAX300)";
-
-				dataGridViewMeter["1", 23].Value = "RFID 종류";
-				dataGridViewMeter["1", 24].Value = "착유량 컬러: 흰색/녹색/노란색/적색";
-				dataGridViewMeter["1", 25].Value = "RFID 변경: 뒤로밀기/현재자리/앞으로밀기";
-				dataGridViewMeter["1", 26].Value = "도어 센서위치 닫힘/열림";
-				dataGridViewMeter["1", 27].Value = "부저사용함/부저사용안함";
-				dataGridViewMeter["1", 28].Value = "세척물 ADC값";
-				dataGridViewMeter["1", 29].Value = "LCD오프타임(1s)";
-				dataGridViewMeter["1", 30].Value = "세척맥동타임(1s)";
-				dataGridViewMeter["1", 31].Value = "솔밸브초기 ON타임(1s)";
-				dataGridViewMeter["1", 32].Value = "솔밸브 Pwm 주기(1ms)";
-				dataGridViewMeter["1", 33].Value = "솔밸브 Pwm 퍼센트(1~100)";
-				dataGridViewMeter["1", 34].Value = "맥동1 비율(20~80)";
-				dataGridViewMeter["1", 35].Value = "맥동2 비율(20~80)";
-				dataGridViewMeter["1", 36].Value = "소 ID 에러페이지 활성화";
-				dataGridViewMeter["1", 37].Value = "유량 값mL (50~150)";
-				dataGridViewMeter["1", 38].Value = "유량보정배율(1.100배)";
-				dataGridViewMeter["1", 39].Value = "유량보정시작ms";
-				dataGridViewMeter["1", 40].Value = "유량보정타입()";
-
-				dataGridViewMeter["1", 41].Value = "집유기 전도도조정(기본:1000)";
-				dataGridViewMeter["1", 42].Value = "종료카운트시작 유량값(100g)";
-				dataGridViewMeter["1", 43].Value = "집유기 밸브 에러 시간(1ms)";
-				dataGridViewMeter["1", 44].Value = "집유기 밸브 에러 횟수";
-				dataGridViewMeter["1", 45].Value = "7,8 OUT 타입(): 다운 착유기시 0";
-
-				radioButton3_CheckedChanged(sender, e);
-				radioButton4_CheckedChanged(sender, e);
-				dataGridViewMeter.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-				dataGridViewMeter.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-				dataGridViewMeter.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-				//dataGridViewMeter.Columns[(dataGridViewMeter.ColumnCount).ToString()].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-				//dataGridViewMeter.Columns[(dataGridViewMeter.ColumnCount).ToString()].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-				dataGridViewMeter.Columns[0].Width = 40;
-				dataGridViewMeter.Columns[1].Width = 200;
-				//dataGridViewMeter.Columns[(dataGridViewMeter.ColumnCount).ToString()].Width = 35;
-				dataGridViewMeter.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-			}
-
-			if (tabControl2.SelectedTab == tabPageIR)
-			{
-				buttonIdCount.Enabled = true;
-				dataGridViewIR.Columns.Clear();
-				dataGridViewIR.ReadOnly = true;
-				dataGridViewIR.RowHeadersVisible = false;
-			//	dataGridViewIR.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-				dataGridViewIR.Columns.Add("0", "POS");
-				dataGridViewIR.Columns.Add("1", "DESC");
-
-				if (textBoxIdCount.Text == "")
-				{
-					return;
-				}
-				int bbbb = Convert.ToInt32(textBoxIdCount.Text);
-				for (int i = 1; i <= bbbb; i++)
-				{
-					dataGridViewIR.Columns.Add((i).ToString(), i.ToString());
-				}
-
-				for (int i = 0; i < 10; i++)
-				{
-					dataGridViewIR.Rows.Add();
-					dataGridViewIR["0", i].Value = i + 1;
-				}
-				int num = 0;
-				dataGridViewIR["1", num++].Value = "ID: 0:232통신에 사용 1~24 CAN 통신 이용시 고유 ID";
-				dataGridViewIR["1", num++].Value = "Slr: IRID Tag를 깨우기 위한 신호 시간(0.1ms). 기본값 1";
-				dataGridViewIR["1", num++].Value = "Sdp: IRID Tag를 깨우기 위한 신호의 강도(1~100). 기본값 40";
-				dataGridViewIR["1", num++].Value = "SA: IRID Tag를 깨우고 IR정보 보내는 대기 시간(0.1ms) 기본값 2000(바뀌면 안됨)";
-				dataGridViewIR["1", num++].Value = "rA: IRID 송신후 수신 대기 시간 (0.1ms). 기본값 2000(바뀌면 안됨)";
-				dataGridViewIR["1", num++].Value = "lrt: IRID 리더의 송수신 총시간(1ms). 기본값 2000 *정해진 시간만큼만 읽을 수 있음. 메인셋팅 28.에 의존";
-				dataGridViewIR["1", num++].Value = "LSe: 레이져센서의 소감지 유지시간(1ms). Main 셋팅 29.이 2일때만 사용";
-				dataGridViewIR["1", num++].Value = "rse: 리모콘사용 여부 0:사용안함 1:사용함";
-				dataGridViewIR["1", num++].Value = "be: 0:부져 사용 1: 부져 사용안함. 기본값 0";
-				dataGridViewIR["1", num++].Value = "tuc: 태그 깨어나는 IR 카운트수. IR 라이팅때 같이 사용됨";
-
-				dataGridViewIR.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-				dataGridViewIR.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-				dataGridViewIR.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-				//dataGridViewIR.Columns[(dataGridViewMeter.ColumnCount).ToString()].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-				//dataGridViewMeter.Columns[(dataGridViewMeter.ColumnCount).ToString()].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-				dataGridViewIR.Columns[0].Width = 40;
-				dataGridViewIR.Columns[1].Width = 200;
-				//dataGridViewIR.Columns[(dataGridViewMeter.ColumnCount).ToString()].Width = 35;
-				dataGridViewIR.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-				if (dataGridViewIR.Columns.Count < 3)
-				{
-					return;
-				}
-			}
 		}
 
 		private void radioButton3_CheckedChanged(object sender, EventArgs e)
@@ -1855,8 +1915,8 @@ namespace MQTTClient
 				{
 					return;
 				}
-				int dgvHeader = dataGridViewMeter.Columns.Count-1;
-				int dgvValue = Convert.ToInt32(textBoxIdCount.Text)+2;
+				int dgvHeader = dataGridViewMeter.Columns.Count - 1;
+				int dgvValue = Convert.ToInt32(textBoxIdCount.Text) + 2;
 				dataGridViewMeter.Columns[dgvHeader].HeaderText = "헤링본";
 
 				int idx = 0;
@@ -2096,12 +2156,12 @@ namespace MQTTClient
 					dataGridViewMeter.Columns.Add((i).ToString(), i.ToString());
 				}
 				dataGridViewMeter.Columns.Add((dataGridViewMeter.ColumnCount).ToString(), "텐덤/해링본");
-				
+
 				for (int i = 0; i < 46; i++)
 				{
 					dataGridViewMeter.Rows.Add();
 					dataGridViewMeter["0", i].Value = i + 1;
-				
+
 				}
 				dataGridViewMeter["1", 0].Value = "사용안함";
 				dataGridViewMeter["1", 1].Value = "장비 ID";
@@ -2203,7 +2263,7 @@ namespace MQTTClient
 				dataGridViewIR.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 				dataGridViewIR.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 				dataGridViewIR.Columns[0].Width = 40;
-				dataGridViewIR.Columns[1].Width = 200;
+				dataGridViewIR.Columns[1].Width = 600;
 				dataGridViewIR.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 				if (dataGridViewIR.Columns.Count < 3)
 				{
@@ -2381,7 +2441,7 @@ namespace MQTTClient
 			{
 				return;
 			}
-			else if (!Int32.TryParse(textBox3.Text, out port))
+			else if (!Int32.TryParse(textBoxPort3.Text, out port))
 			{
 				//로그잡기.메세지박스잡기
 				return;
@@ -2399,14 +2459,24 @@ namespace MQTTClient
 				{
 					MessageBox.Show(ex.Message);
 				}
-
+				if (clientscr != null && clientscr.IsConnected)
+				{
+					buttonSubScribe3.Enabled = true;
+					buttonUnscribe2.Enabled = true;
+					buttonDisconnect2.Enabled = true;
+					textBoxHost2.Enabled = false;
+					textBoxHost3.Enabled = false;
+					textBoxPort2.Enabled = false;
+					textBoxPort3.Enabled = false;
+					buttonConnect2.Enabled = false;
+				}
 			}
 			int port2;
 			if (textBoxHost3.Text.Length == 0)
 			{
 				return;
 			}
-			else if (!Int32.TryParse(textBox6.Text, out port2))
+			else if (!Int32.TryParse(textBoxPort2.Text, out port2))
 			{
 				return;
 			}
@@ -2486,7 +2556,7 @@ namespace MQTTClient
 
 		}
 
-		
+
 
 		private void textBox7_TextChanged(object sender, EventArgs e)
 		{
@@ -2515,9 +2585,9 @@ namespace MQTTClient
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			try 
+			try
 			{
-				listBox1.Items.Clear();
+				listBoxSub2.Items.Clear();
 				string currentPath = System.IO.Directory.GetCurrentDirectory();
 
 				//폴더 있는지 확인하고 생성하기
@@ -2533,7 +2603,7 @@ namespace MQTTClient
 				while (s != null)
 				{
 					s = file.ReadLine();
-					if (!string.IsNullOrEmpty(s)) listBox1.Items.Add(s);
+					if (!string.IsNullOrEmpty(s)) listBoxSub2.Items.Add(s);
 				}
 				file.Close();
 			}
@@ -2541,18 +2611,18 @@ namespace MQTTClient
 			{
 				MessageBox.Show(error.ToString());
 			}
-			
+
 		}
 
 		private void button4_Click(object sender, EventArgs e)
 		{
 			StreamWriter sw;
 			sw = new StreamWriter("subSend.txt");
-			int nCount = listBox1.Items.Count;
+			int nCount = listBoxSub2.Items.Count;
 			for (int i = 0; i < nCount; i++)
 			{
-				listBox1.Items[i] += "\r\n";
-				sw.Write(listBox1.Items[i]);
+				listBoxSub2.Items[i] += "\r\n";
+				sw.Write(listBoxSub2.Items[i]);
 			}
 			sw.Close();
 		}
@@ -2561,7 +2631,7 @@ namespace MQTTClient
 		{
 			try
 			{
-				foreach (var item in listBox1.Items)
+				foreach (var item in listBoxSub2.Items)
 				{
 					clientscr.Subscribe(new string[] { item.ToString() }, new byte[] { (byte)comboBoxQos2.SelectedIndex });
 				}
@@ -2577,14 +2647,14 @@ namespace MQTTClient
 		{
 			try
 			{
-				if (listBox1.SelectedItem == null)
+				if (listBoxSub2.SelectedItem == null)
 				{
 					return;
 				}
 				else
 				{
-					clientscr.Unsubscribe(new string[] { listBox1.SelectedItem.ToString() });
-					listBox1.Items.Remove(listBox1.SelectedItem);
+					clientscr.Unsubscribe(new string[] { listBoxSub2.SelectedItem.ToString() });
+					listBoxSub2.Items.Remove(listBoxSub2.SelectedItem);
 				}
 			}
 			catch (Exception ex)
@@ -2613,11 +2683,22 @@ namespace MQTTClient
 			{
 				if (clientscr != null && clientscr.IsConnected) clientscr.Disconnect();
 				if (clientdst != null && clientdst.IsConnected) clientdst.Disconnect();
-
+				listBoxSub2.Items.Clear();
+				textBoxPort2.Enabled = true;
+				textBoxPort3.Enabled = true;
+				textBoxHost2.Enabled = true;
+				textBoxHost3.Enabled = true;
+				buttonConnect2.Enabled = true;
+				buttonDisconnect2.Enabled = false;
+				buttonUnscribe2.Enabled = false;
+				buttonSubScribe3.Enabled = false;
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
-				//로그 저장
+				//메세지박스
+				MessageBox.Show(ex.ToString());
+				//로그저장
+
 			}
 		}
 
@@ -2663,9 +2744,9 @@ namespace MQTTClient
 					clientscr.Subscribe(new string[] { textBoxScrTopic.Text }, new byte[] { (byte)comboBoxQos2.SelectedIndex });
 					List<string> result = new List<string>();
 					result.Add(textBoxScrTopic.Text);
-					if (!listBox1.Items.Contains(textBoxScrTopic.Text))
+					if (!listBoxSub2.Items.Contains(textBoxScrTopic.Text))
 					{
-						this.listBox1.Items.Add(textBoxScrTopic.Text);
+						this.listBoxSub2.Items.Add(textBoxScrTopic.Text);
 					}
 				}
 				catch (Exception ex)
@@ -2683,8 +2764,8 @@ namespace MQTTClient
 			for (int i = 0; i < msg.Length; i++)
 			{
 				if (msg[i].Length < Convert.ToInt32(textBoxDelLocation.Text)) continue;
-					
-				newMsg[i] = msg[i].Substring(Convert.ToInt32(textBoxDelLocation.Text)-1, msg[i].Length- Convert.ToInt32(textBoxDelLocation.Text)+1);
+
+				newMsg[i] = msg[i].Substring(Convert.ToInt32(textBoxDelLocation.Text) - 1, msg[i].Length - Convert.ToInt32(textBoxDelLocation.Text) + 1);
 			}
 			textBox52.Lines = newMsg;
 		}
@@ -2700,7 +2781,7 @@ namespace MQTTClient
 			{
 				for (int j = 0; j < key.Length; j++)
 				{
-					if (key[j].Trim().Length<=0)
+					if (key[j].Trim().Length <= 0)
 					{
 						continue;
 					}
@@ -2711,7 +2792,7 @@ namespace MQTTClient
 					}
 				}
 			}
-		textBox52.Lines =	list.ToArray();
+			textBox52.Lines = list.ToArray();
 		}
 
 		private void button17_Click(object sender, EventArgs e)
@@ -2727,7 +2808,7 @@ namespace MQTTClient
 				int pos = msg[i].IndexOf(key);
 				if (pos == -1) continue;
 				tm[0] = msg[i].Substring(0, pos);
-				tm[1] = msg[i].Substring(pos+key.Length);
+				tm[1] = msg[i].Substring(pos + key.Length);
 				listTopic.Add(tm[0]);
 				listMessage.Add(tm[1]);
 
@@ -2763,7 +2844,7 @@ namespace MQTTClient
 				textBoxMainValue.Text = "";
 			}
 			else
-			textBoxMainValue.Text = dataGridViewMain.Rows[e.RowIndex].Cells[2].Value.ToString();
+				textBoxMainValue.Text = dataGridViewMain.Rows[e.RowIndex].Cells[2].Value.ToString();
 		}
 
 		private void panel19_Paint(object sender, PaintEventArgs e)
