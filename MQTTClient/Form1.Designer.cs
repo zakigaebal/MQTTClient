@@ -2676,9 +2676,7 @@
 			this.tabPage5.Controls.Add(this.dataGridView1);
 			this.tabPage5.Controls.Add(this.panel20);
 			this.tabPage5.Controls.Add(this.panel19);
-			this.tabPage5.Controls.Add(this.textBox7);
 			this.tabPage5.Controls.Add(this.panel18);
-			this.tabPage5.Controls.Add(this.label70);
 			this.tabPage5.Controls.Add(this.panel17);
 			this.tabPage5.Location = new System.Drawing.Point(4, 22);
 			this.tabPage5.Name = "tabPage5";
@@ -2695,27 +2693,29 @@
 			this.dataGridView1.AllowUserToDeleteRows = false;
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.dataGridView1.Location = new System.Drawing.Point(3, 327);
+			this.dataGridView1.Location = new System.Drawing.Point(3, 300);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.ReadOnly = true;
 			this.dataGridView1.RowTemplate.Height = 23;
-			this.dataGridView1.Size = new System.Drawing.Size(1148, 113);
+			this.dataGridView1.Size = new System.Drawing.Size(1148, 140);
 			this.dataGridView1.TabIndex = 17;
 			// 
 			// panel20
 			// 
 			this.panel20.Controls.Add(this.button12);
 			this.panel20.Controls.Add(this.buttonConnet2);
-			this.panel20.Location = new System.Drawing.Point(545, 167);
+			this.panel20.Controls.Add(this.label70);
+			this.panel20.Controls.Add(this.textBox7);
+			this.panel20.Location = new System.Drawing.Point(662, 139);
 			this.panel20.Name = "panel20";
-			this.panel20.Size = new System.Drawing.Size(196, 81);
+			this.panel20.Size = new System.Drawing.Size(478, 155);
 			this.panel20.TabIndex = 16;
 			this.panel20.Paint += new System.Windows.Forms.PaintEventHandler(this.panel20_Paint);
 			// 
 			// button12
 			// 
 			this.button12.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.button12.Location = new System.Drawing.Point(99, 3);
+			this.button12.Location = new System.Drawing.Point(381, 125);
 			this.button12.Name = "button12";
 			this.button12.Size = new System.Drawing.Size(94, 27);
 			this.button12.TabIndex = 2;
@@ -2726,9 +2726,9 @@
 			// buttonConnet2
 			// 
 			this.buttonConnet2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.buttonConnet2.Location = new System.Drawing.Point(3, 3);
+			this.buttonConnet2.Location = new System.Drawing.Point(381, 92);
 			this.buttonConnet2.Name = "buttonConnet2";
-			this.buttonConnet2.Size = new System.Drawing.Size(90, 27);
+			this.buttonConnet2.Size = new System.Drawing.Size(94, 27);
 			this.buttonConnet2.TabIndex = 2;
 			this.buttonConnet2.Text = "Connect";
 			this.buttonConnet2.UseVisualStyleBackColor = true;
@@ -2743,9 +2743,9 @@
 			this.panel19.Controls.Add(this.button8);
 			this.panel19.Controls.Add(this.button9);
 			this.panel19.Controls.Add(this.label69);
-			this.panel19.Location = new System.Drawing.Point(8, 129);
+			this.panel19.Location = new System.Drawing.Point(8, 139);
 			this.panel19.Name = "panel19";
-			this.panel19.Size = new System.Drawing.Size(527, 192);
+			this.panel19.Size = new System.Drawing.Size(648, 155);
 			this.panel19.TabIndex = 15;
 			this.panel19.Paint += new System.Windows.Forms.PaintEventHandler(this.panel19_Paint);
 			// 
@@ -2756,15 +2756,15 @@
 			this.listBox1.ItemHeight = 17;
 			this.listBox1.Location = new System.Drawing.Point(16, 30);
 			this.listBox1.Name = "listBox1";
-			this.listBox1.Size = new System.Drawing.Size(493, 123);
+			this.listBox1.Size = new System.Drawing.Size(493, 106);
 			this.listBox1.TabIndex = 9;
 			// 
 			// button1
 			// 
 			this.button1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.button1.Location = new System.Drawing.Point(14, 159);
+			this.button1.Location = new System.Drawing.Point(515, 30);
 			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(49, 27);
+			this.button1.Size = new System.Drawing.Size(58, 27);
 			this.button1.TabIndex = 8;
 			this.button1.Text = "Open";
 			this.button1.UseVisualStyleBackColor = true;
@@ -2773,9 +2773,9 @@
 			// button2
 			// 
 			this.button2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.button2.Location = new System.Drawing.Point(69, 159);
+			this.button2.Location = new System.Drawing.Point(515, 59);
 			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(74, 27);
+			this.button2.Size = new System.Drawing.Size(123, 27);
 			this.button2.TabIndex = 8;
 			this.button2.Text = "Subscribe";
 			this.button2.UseVisualStyleBackColor = true;
@@ -2784,9 +2784,9 @@
 			// button4
 			// 
 			this.button4.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.button4.Location = new System.Drawing.Point(149, 159);
+			this.button4.Location = new System.Drawing.Point(580, 30);
 			this.button4.Name = "button4";
-			this.button4.Size = new System.Drawing.Size(45, 27);
+			this.button4.Size = new System.Drawing.Size(58, 27);
 			this.button4.TabIndex = 8;
 			this.button4.Text = "Save";
 			this.button4.UseVisualStyleBackColor = true;
@@ -2796,9 +2796,9 @@
 			// 
 			this.button8.Enabled = false;
 			this.button8.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.button8.Location = new System.Drawing.Point(200, 159);
+			this.button8.Location = new System.Drawing.Point(515, 88);
 			this.button8.Name = "button8";
-			this.button8.Size = new System.Drawing.Size(180, 27);
+			this.button8.Size = new System.Drawing.Size(123, 27);
 			this.button8.TabIndex = 8;
 			this.button8.Text = "Unsubscribe";
 			this.button8.UseVisualStyleBackColor = true;
@@ -2807,7 +2807,7 @@
 			// button9
 			// 
 			this.button9.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.button9.Location = new System.Drawing.Point(386, 159);
+			this.button9.Location = new System.Drawing.Point(515, 116);
 			this.button9.Name = "button9";
 			this.button9.Size = new System.Drawing.Size(123, 27);
 			this.button9.TabIndex = 8;
@@ -2828,14 +2828,15 @@
 			// textBox7
 			// 
 			this.textBox7.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBox7.Location = new System.Drawing.Point(896, 172);
+			this.textBox7.Location = new System.Drawing.Point(3, 30);
 			this.textBox7.Name = "textBox7";
-			this.textBox7.Size = new System.Drawing.Size(175, 25);
+			this.textBox7.Size = new System.Drawing.Size(472, 25);
 			this.textBox7.TabIndex = 2;
 			this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
 			// 
 			// panel18
 			// 
+			this.panel18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.panel18.Controls.Add(this.button11);
 			this.panel18.Controls.Add(this.button13);
 			this.panel18.Controls.Add(this.label72);
@@ -2847,9 +2848,9 @@
 			this.panel18.Controls.Add(this.textBox6);
 			this.panel18.Controls.Add(this.comboBoxQos3);
 			this.panel18.Controls.Add(this.label68);
-			this.panel18.Location = new System.Drawing.Point(369, 9);
+			this.panel18.Location = new System.Drawing.Point(538, 0);
 			this.panel18.Name = "panel18";
-			this.panel18.Size = new System.Drawing.Size(363, 124);
+			this.panel18.Size = new System.Drawing.Size(610, 133);
 			this.panel18.TabIndex = 14;
 			this.panel18.Paint += new System.Windows.Forms.PaintEventHandler(this.panel18_Paint);
 			// 
@@ -2969,7 +2970,7 @@
 			// 
 			this.label70.AutoSize = true;
 			this.label70.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label70.Location = new System.Drawing.Point(831, 172);
+			this.label70.Location = new System.Drawing.Point(3, 7);
 			this.label70.Name = "label70";
 			this.label70.Size = new System.Drawing.Size(72, 20);
 			this.label70.TabIndex = 0;
@@ -2991,9 +2992,9 @@
 			this.panel17.Controls.Add(this.textBox3);
 			this.panel17.Controls.Add(this.comboBoxQos2);
 			this.panel17.Controls.Add(this.label64);
-			this.panel17.Location = new System.Drawing.Point(3, 6);
+			this.panel17.Location = new System.Drawing.Point(3, 0);
 			this.panel17.Name = "panel17";
-			this.panel17.Size = new System.Drawing.Size(360, 127);
+			this.panel17.Size = new System.Drawing.Size(532, 133);
 			this.panel17.TabIndex = 14;
 			this.panel17.Paint += new System.Windows.Forms.PaintEventHandler(this.panel17_Paint);
 			// 
@@ -3229,9 +3230,9 @@
 			this.panel14.ResumeLayout(false);
 			this.panel14.PerformLayout();
 			this.tabPage5.ResumeLayout(false);
-			this.tabPage5.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.panel20.ResumeLayout(false);
+			this.panel20.PerformLayout();
 			this.panel19.ResumeLayout(false);
 			this.panel19.PerformLayout();
 			this.panel18.ResumeLayout(false);
