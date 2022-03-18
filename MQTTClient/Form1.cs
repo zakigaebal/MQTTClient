@@ -1683,6 +1683,9 @@ namespace MQTTClient
 
 		private void tabControl2_SelectedIndexChanged(object sender, EventArgs e)
 		{
+
+		
+			//	textBoxIdCount.Text = "0";
 			if (tabControl2.SelectedTab == tabPageMain)
 			{
 				buttonIdCount.Enabled = true;
@@ -2526,10 +2529,7 @@ namespace MQTTClient
 
 		}
 
-		private void panel19_Paint(object sender, PaintEventArgs e)
-		{
-
-		}
+		
 
 		private void textBox7_TextChanged(object sender, EventArgs e)
 		{
@@ -2558,10 +2558,19 @@ namespace MQTTClient
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			try
+			try 
 			{
 				listBox1.Items.Clear();
 				string currentPath = System.IO.Directory.GetCurrentDirectory();
+
+				//폴더 있는지 확인하고 생성하기
+				if (!Directory.GetCurrentDirectory().Contains("subSend.txt"))
+				{
+					StreamWriter sw;
+					sw = new StreamWriter("subSend.txt");
+					sw.Close();
+				}
+
 				StreamReader file = new StreamReader(currentPath + "\\subSend.txt", Encoding.Default);
 				string s = "";
 				while (s != null)

@@ -2749,7 +2749,6 @@
 			this.panel19.Name = "panel19";
 			this.panel19.Size = new System.Drawing.Size(648, 155);
 			this.panel19.TabIndex = 15;
-			this.panel19.Paint += new System.Windows.Forms.PaintEventHandler(this.panel19_Paint);
 			// 
 			// listBox1
 			// 
