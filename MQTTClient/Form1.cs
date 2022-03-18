@@ -425,13 +425,9 @@ namespace MQTTClient
 			dt.DefaultView.Sort = "Time desc";
 			dataGridViewMessage.DataSource = dt;
 
-			//dataGridViewMessage.Columns.Add("0", "Time");
-			//dataGridViewMessage.Columns.Add("1", "Topic");
-			//dataGridViewMessage.Columns.Add("2", "Message");
-
 			dataGridViewMessage.ReadOnly = true;
 			dataGridViewMessage.RowHeadersVisible = false;
-			dataGridViewMessage.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+			//dataGridViewMessage.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 			dataGridViewMessage.Columns[dataGridViewMessage.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 			dataGridViewMessage.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 			dataGridViewMessage.Columns[1].Width = 200;
@@ -439,7 +435,7 @@ namespace MQTTClient
 			dataGridView1.DataSource = dt;
 			dataGridView1.ReadOnly = true;
 			dataGridView1.RowHeadersVisible = false;
-			dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+			//dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 			dataGridView1.Columns[dataGridView1.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 			dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 			dataGridView1.Columns[1].Width = 200;
@@ -683,6 +679,11 @@ namespace MQTTClient
 
 		private void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs data)
 		{
+			try
+			{
+
+		
+	
 			//clientdst.Publish(textBoxPT1.Text+data.Topic, data.Message, (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 
 			/// 1. 토픽 체크
@@ -725,61 +726,13 @@ namespace MQTTClient
 					dataGridViewIR[id + 1, pos - 1].Value = value.ToString();
 				}
 			}
-
-			//dynamic json = JsonConvert.DeserializeObject(Encoding.UTF8.GetString(data.Message));
-			//MessageBox.Show(cmd.ToString());
-
-
-			//			if (System.Text.Encoding.UTF8.GetString(data.Message).Contains(
-			//				"\"CMD\":" + "\"RESP_MAIN_SET_READ\""
-			//				))
-			//			{
-			//				// valu값을 포함하면 value값 가져오기
-			//				//dataGridViewMeter["2", 0].Value = System.Text.Encoding.UTF8.GetString(data.Message);
-			//				//포스가 35번이면 35번에 채우기 할 예정
-
-			//				for (int i = 1; i < 41; i++)
-			//				{
-			//					if (System.Text.Encoding.UTF8.GetString(data.Message).Contains("POS\":" + i + ","))
-			//					{
-			//						string s = System.Text.Encoding.UTF8.GetString(data.Message);
-			//						string word1 = "VALUE\":";
-			//						string word2 = "}";
-			//						string text = stringBetween(s, word1, word2);
-			//					dataGridViewMeter["2", i - 1].Value = text;
-			//						//데이터쓰기
-			//						//	if(data.Topic == "dawoon/Manual/3850/1/POLOR") 
-			//					}
-			//				}
-			//				//	"\"CMD\":" + "\"RESP_MAIN_SET_OK\""
-			//			}
-			//			else if (System.Text.Encoding.UTF8.GetString(data.Message).Contains(
-			//"\"CMD\":" + "\"MAIN_SET_OK\""
-			//))
-			//			{
-			//				// valu값을 포함하면 value값 가져오기
-			//				//dataGridViewMeter["2", 0].Value = System.Text.Encoding.UTF8.GetString(data.Message);
-			//				//포스가 35번이면 35번에 채우기 할 예정
-
-			//				for (int i = 1; i < 41; i++)
-			//				{
-			//					if (System.Text.Encoding.UTF8.GetString(data.Message).Contains("POS\":" + i + ","))
-			//					{
-			//						string s = System.Text.Encoding.UTF8.GetString(data.Message);
-			//						string word1 = "VALUE\":";
-			//						string word2 = ",\"NOWTIME\"";
-			//						string text = stringBetween(s, word1, word2);
-			//					 dataGridViewMeter["2", i - 1].Value = text;
-
-			//					}
-			//	}
-			//}
 			ShowMessage(data.Topic, System.Text.Encoding.UTF8.GetString(data.Message), dataGridViewMessage);
+			}
+			catch (Exception)
+			{
 
-
-
-
-
+				throw;
+			}
 		}
 		private void clientsrc_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs data)
 		{
@@ -801,22 +754,8 @@ namespace MQTTClient
 		private void clientdst_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs data)
 		{
 
-
-
 		}
 
-		public static string stringBetween(string Source, string Start, string End)
-		{
-			string result = "";
-			if (Source.Contains(Start) && Source.Contains(End))
-			{
-				int StartIndex = Source.IndexOf(Start, 0) + Start.Length;
-				int EndIndex = Source.IndexOf(End, StartIndex);
-				result = Source.Substring(StartIndex, EndIndex - StartIndex);
-				return result;
-			}
-			return result;
-		}
 
 		private void myUI(string myStr, TextBox ctl)
 		{
@@ -1397,9 +1336,7 @@ namespace MQTTClient
 
 		private void dataGridViewMessage_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
 		{
-			{
 				cell1(sender, e);
-			}
 		}
 
 
@@ -1763,7 +1700,7 @@ namespace MQTTClient
 				dataGridViewMeter.Columns.Clear();
 				dataGridViewMeter.ReadOnly = true;
 				dataGridViewMeter.RowHeadersVisible = false;
-				dataGridViewMeter.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+				//dataGridViewMeter.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 				dataGridViewMeter.Columns.Add("0", "POS");
 				dataGridViewMeter.Columns.Add("1", "DESC");
 				if (textBoxIdCount.Text == "")
@@ -1850,7 +1787,7 @@ namespace MQTTClient
 				dataGridViewIR.Columns.Clear();
 				dataGridViewIR.ReadOnly = true;
 				dataGridViewIR.RowHeadersVisible = false;
-				dataGridViewIR.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+			//	dataGridViewIR.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 				dataGridViewIR.Columns.Add("0", "POS");
 				dataGridViewIR.Columns.Add("1", "DESC");
 
@@ -2134,7 +2071,7 @@ namespace MQTTClient
 				dataGridViewMeter.Columns.Clear();
 				dataGridViewMeter.ReadOnly = true;
 				dataGridViewMeter.RowHeadersVisible = false;
-				dataGridViewMeter.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+				//dataGridViewMeter.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 				dataGridViewMeter.Columns.Add("0", "POS");
 				dataGridViewMeter.Columns.Add("1", "DESC");
 				if (textBoxIdCount.Text == "")
@@ -2220,7 +2157,7 @@ namespace MQTTClient
 				dataGridViewIR.Columns.Clear();
 				dataGridViewIR.ReadOnly = true;
 				dataGridViewIR.RowHeadersVisible = false;
-				dataGridViewIR.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+				//dataGridViewIR.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 				dataGridViewIR.Columns.Add("0", "POS");
 				dataGridViewIR.Columns.Add("1", "DESC");
 
