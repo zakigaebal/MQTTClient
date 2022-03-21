@@ -298,6 +298,7 @@
 			this.buttonClear = new System.Windows.Forms.Button();
 			this.dataGridViewMessage = new System.Windows.Forms.DataGridView();
 			this.splitter2 = new System.Windows.Forms.Splitter();
+			this.button2 = new System.Windows.Forms.Button();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.panel1.SuspendLayout();
@@ -2491,6 +2492,7 @@
 			// 
 			this.panel21.Controls.Add(this.textBoxSeperateString);
 			this.panel21.Controls.Add(this.label74);
+			this.panel21.Controls.Add(this.button2);
 			this.panel21.Controls.Add(this.button17);
 			this.panel21.Controls.Add(this.textBoxSearchString);
 			this.panel21.Controls.Add(this.label65);
@@ -2507,7 +2509,7 @@
 			// textBoxSeperateString
 			// 
 			this.textBoxSeperateString.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBoxSeperateString.Location = new System.Drawing.Point(1029, 9);
+			this.textBoxSeperateString.Location = new System.Drawing.Point(868, 9);
 			this.textBoxSeperateString.Name = "textBoxSeperateString";
 			this.textBoxSeperateString.Size = new System.Drawing.Size(55, 21);
 			this.textBoxSeperateString.TabIndex = 16;
@@ -2518,7 +2520,7 @@
 			// 
 			this.label74.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.label74.AutoSize = true;
-			this.label74.Location = new System.Drawing.Point(958, 13);
+			this.label74.Location = new System.Drawing.Point(797, 13);
 			this.label74.Name = "label74";
 			this.label74.Size = new System.Drawing.Size(65, 12);
 			this.label74.TabIndex = 15;
@@ -2527,7 +2529,7 @@
 			// button17
 			// 
 			this.button17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.button17.Location = new System.Drawing.Point(1090, 9);
+			this.button17.Location = new System.Drawing.Point(929, 9);
 			this.button17.Name = "button17";
 			this.button17.Size = new System.Drawing.Size(53, 21);
 			this.button17.TabIndex = 14;
@@ -2541,7 +2543,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.textBoxSearchString.Location = new System.Drawing.Point(246, 9);
 			this.textBoxSearchString.Name = "textBoxSearchString";
-			this.textBoxSearchString.Size = new System.Drawing.Size(640, 21);
+			this.textBoxSearchString.Size = new System.Drawing.Size(479, 21);
 			this.textBoxSearchString.TabIndex = 12;
 			this.textBoxSearchString.Text = "\"CMD\":\"MILKEND\",\"CMD\":\"REQ_COW_FEEDER_END\"";
 			// 
@@ -2584,7 +2586,7 @@
 			// buttonSearchRemain
 			// 
 			this.buttonSearchRemain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.buttonSearchRemain.Location = new System.Drawing.Point(892, 9);
+			this.buttonSearchRemain.Location = new System.Drawing.Point(731, 9);
 			this.buttonSearchRemain.Name = "buttonSearchRemain";
 			this.buttonSearchRemain.Size = new System.Drawing.Size(53, 21);
 			this.buttonSearchRemain.TabIndex = 9;
@@ -3234,6 +3236,17 @@
 			this.splitter2.TabIndex = 11;
 			this.splitter2.TabStop = false;
 			// 
+			// button2
+			// 
+			this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.button2.Location = new System.Drawing.Point(988, 9);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(53, 21);
+			this.button2.TabIndex = 14;
+			this.button2.Text = "정렬";
+			this.button2.UseVisualStyleBackColor = true;
+			this.button2.Click += new System.EventHandler(this.button2_Click_2);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -3581,6 +3594,7 @@
 		private System.Windows.Forms.Label label17;
 		private System.Windows.Forms.Label label18;
 		private System.Windows.Forms.Label label19;
+		private System.Windows.Forms.Button button2;
 	}
 }
 

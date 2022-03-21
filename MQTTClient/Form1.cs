@@ -818,7 +818,8 @@ namespace MQTTClient
 			}
 			else
 			{
-				ctl.AppendText(myStr + Environment.NewLine);
+				ctl.Text = myStr;
+				//ctl.AppendText(myStr + Environment.NewLine);
 			}
 		}
 
@@ -2099,16 +2100,16 @@ namespace MQTTClient
 				//	clientUser.Connect(Guid.NewGuid().ToString());
 				//	clientUser.MqttMsgPublishReceived += new MqttClient.MqttMsgPublishEventHandler(client_MqttMsgPublishReceived);
 				//}
-				if ((tabControl2.SelectedTab == tabPageMeter) || (tabControl2.SelectedTab == tabPageIR))
-				{
+				//if ((tabControl2.SelectedTab == tabPageMeter) || (tabControl2.SelectedTab == tabPageIR))
+				//{
 					textBoxIdCount.Text = "";
 					CMD_ID_COUNT req = new CMD_ID_COUNT();
-					req.CMD = "RESP_METER_COUNT";
+					req.CMD = "REQ_METER_COUNT";
 					req.ID = 1;
 					req.COUNT = 10;
 					string reqStr = (JsonConvert.SerializeObject(req, Formatting.Indented)).Trim();
 					clientUser.Publish(topic, Encoding.UTF8.GetBytes(reqStr.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
-				}
+				//}
 			}
 			catch (Exception ex)
 			{
@@ -2988,12 +2989,14 @@ namespace MQTTClient
 
 		private void textBox52_DragDrop(object sender, DragEventArgs e)
 		{
+			textBox52.Text = "";
 			string[] strFileNames = e.Data.GetData(DataFormats.FileDrop) as string[];
 			foreach (string strFilePath in strFileNames)
 			{
 				if (e.Data.GetDataPresent(DataFormats.FileDrop))
 				{
 					textBox52.AppendText(System.IO.File.ReadAllText(strFilePath));
+					//textBox52.Text += System.IO.File.ReadAllText(strFilePath);
 				}
 			}
 			//	// 파일의 내용을 텍스트박스에 추가
@@ -3012,6 +3015,19 @@ namespace MQTTClient
 				e.Effect = DragDropEffects.Copy;
 			else
 				e.Effect = DragDropEffects.None;
+		}
+
+		private void button2_Click_2(object sender, EventArgs e)
+		{
+			string[] array = textBox52.Lines;
+
+		
+	
+
+			List<string> listMessage = new List<string>();
+			listMessage.AddRange(array);
+			listMessage.Sort();
+			textBox52.Lines = listMessage.ToArray();
 		}
 		//DragEnter는 마우스로 리스트컨트롤 안으로 들어왔을 때 발생하는 함수
 	}
