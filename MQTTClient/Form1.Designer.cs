@@ -31,26 +31,53 @@
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.panel2 = new System.Windows.Forms.Panel();
+			this.textBoxBlack = new System.Windows.Forms.TextBox();
+			this.textBoxBlue = new System.Windows.Forms.TextBox();
+			this.textBoxOrange = new System.Windows.Forms.TextBox();
+			this.textBoxPink = new System.Windows.Forms.TextBox();
+			this.textBoxLime = new System.Windows.Forms.TextBox();
+			this.textBoxRed = new System.Windows.Forms.TextBox();
+			this.textBoxPurple = new System.Windows.Forms.TextBox();
+			this.textBoxNavy = new System.Windows.Forms.TextBox();
+			this.textBoxGray = new System.Windows.Forms.TextBox();
+			this.textBoxYellow = new System.Windows.Forms.TextBox();
+			this.textBoxGreen = new System.Windows.Forms.TextBox();
+			this.panel3 = new System.Windows.Forms.Panel();
+			this.listBoxSub = new System.Windows.Forms.ListBox();
+			this.buttonTopicOpen = new System.Windows.Forms.Button();
+			this.buttonSubscribe2 = new System.Windows.Forms.Button();
+			this.buttonTopicSave = new System.Windows.Forms.Button();
+			this.buttonUnscribe = new System.Windows.Forms.Button();
+			this.buttonLogFolder = new System.Windows.Forms.Button();
+			this.label15 = new System.Windows.Forms.Label();
+			this.label38 = new System.Windows.Forms.Label();
+			this.label37 = new System.Windows.Forms.Label();
+			this.label36 = new System.Windows.Forms.Label();
+			this.label35 = new System.Windows.Forms.Label();
+			this.label22 = new System.Windows.Forms.Label();
+			this.label16 = new System.Windows.Forms.Label();
+			this.label21 = new System.Windows.Forms.Label();
+			this.label20 = new System.Windows.Forms.Label();
+			this.label17 = new System.Windows.Forms.Label();
+			this.label18 = new System.Windows.Forms.Label();
+			this.label19 = new System.Windows.Forms.Label();
 			this.panel4 = new System.Windows.Forms.Panel();
 			this.panel6 = new System.Windows.Forms.Panel();
-			this.label1 = new System.Windows.Forms.Label();
-			this.label6 = new System.Windows.Forms.Label();
-			this.buttonSubscribe = new System.Windows.Forms.Button();
-			this.checkBoxTopicLog = new System.Windows.Forms.CheckBox();
-			this.textBoxSubTopic = new System.Windows.Forms.TextBox();
-			this.buttonDisconnect = new System.Windows.Forms.Button();
 			this.textBoxHost = new System.Windows.Forms.TextBox();
-			this.buttonMqttServer = new System.Windows.Forms.Button();
-			this.label3 = new System.Windows.Forms.Label();
-			this.checkBoxRetain = new System.Windows.Forms.CheckBox();
-			this.buttonConnect = new System.Windows.Forms.Button();
-			this.label5 = new System.Windows.Forms.Label();
-			this.buttonLocal = new System.Windows.Forms.Button();
-			this.label2 = new System.Windows.Forms.Label();
-			this.textBoxPort = new System.Windows.Forms.TextBox();
-			this.comboBoxQos = new System.Windows.Forms.ComboBox();
-			this.label4 = new System.Windows.Forms.Label();
 			this.panel5 = new System.Windows.Forms.Panel();
+			this.textBoxPT1 = new System.Windows.Forms.TextBox();
+			this.textBoxPT2 = new System.Windows.Forms.TextBox();
+			this.checkBoxTopicLog = new System.Windows.Forms.CheckBox();
+			this.textBoxPT3 = new System.Windows.Forms.TextBox();
+			this.textBoxPT10 = new System.Windows.Forms.TextBox();
+			this.textBoxPT9 = new System.Windows.Forms.TextBox();
+			this.textBoxPT8 = new System.Windows.Forms.TextBox();
+			this.label6 = new System.Windows.Forms.Label();
+			this.textBoxPT7 = new System.Windows.Forms.TextBox();
+			this.textBoxPT6 = new System.Windows.Forms.TextBox();
+			this.textBoxPT5 = new System.Windows.Forms.TextBox();
+			this.textBoxPT4 = new System.Windows.Forms.TextBox();
 			this.label7 = new System.Windows.Forms.Label();
 			this.buttonPublish2 = new System.Windows.Forms.Button();
 			this.label34 = new System.Windows.Forms.Label();
@@ -62,10 +89,8 @@
 			this.label14 = new System.Windows.Forms.Label();
 			this.label9 = new System.Windows.Forms.Label();
 			this.buttonPublish3 = new System.Windows.Forms.Button();
-			this.textBoxPT1 = new System.Windows.Forms.TextBox();
 			this.buttonPublish = new System.Windows.Forms.Button();
 			this.checkBoxTopicpub = new System.Windows.Forms.CheckBox();
-			this.textBoxPT2 = new System.Windows.Forms.TextBox();
 			this.label11 = new System.Windows.Forms.Label();
 			this.label12 = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
@@ -76,7 +101,6 @@
 			this.buttonPublish6 = new System.Windows.Forms.Button();
 			this.buttonPublish5 = new System.Windows.Forms.Button();
 			this.buttonPublish4 = new System.Windows.Forms.Button();
-			this.textBoxPT3 = new System.Windows.Forms.TextBox();
 			this.label10 = new System.Windows.Forms.Label();
 			this.label33 = new System.Windows.Forms.Label();
 			this.label31 = new System.Windows.Forms.Label();
@@ -85,13 +109,6 @@
 			this.label25 = new System.Windows.Forms.Label();
 			this.label23 = new System.Windows.Forms.Label();
 			this.label13 = new System.Windows.Forms.Label();
-			this.textBoxPT10 = new System.Windows.Forms.TextBox();
-			this.textBoxPT9 = new System.Windows.Forms.TextBox();
-			this.textBoxPT8 = new System.Windows.Forms.TextBox();
-			this.textBoxPT7 = new System.Windows.Forms.TextBox();
-			this.textBoxPT6 = new System.Windows.Forms.TextBox();
-			this.textBoxPT5 = new System.Windows.Forms.TextBox();
-			this.textBoxPT4 = new System.Windows.Forms.TextBox();
 			this.textBoxM10 = new System.Windows.Forms.TextBox();
 			this.textBoxM9 = new System.Windows.Forms.TextBox();
 			this.textBoxM8 = new System.Windows.Forms.TextBox();
@@ -102,45 +119,62 @@
 			this.textBoxM3 = new System.Windows.Forms.TextBox();
 			this.textBoxM1 = new System.Windows.Forms.TextBox();
 			this.textBoxM2 = new System.Windows.Forms.TextBox();
+			this.textBoxPort = new System.Windows.Forms.TextBox();
+			this.comboBoxQos = new System.Windows.Forms.ComboBox();
+			this.label1 = new System.Windows.Forms.Label();
+			this.buttonSubscribe = new System.Windows.Forms.Button();
+			this.textBoxSubTopic = new System.Windows.Forms.TextBox();
+			this.buttonDisconnect = new System.Windows.Forms.Button();
+			this.buttonMqttServer = new System.Windows.Forms.Button();
+			this.label3 = new System.Windows.Forms.Label();
+			this.checkBoxRetain = new System.Windows.Forms.CheckBox();
+			this.buttonConnect = new System.Windows.Forms.Button();
+			this.label5 = new System.Windows.Forms.Label();
+			this.buttonLocal = new System.Windows.Forms.Button();
+			this.label2 = new System.Windows.Forms.Label();
+			this.label4 = new System.Windows.Forms.Label();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.tabControl2 = new System.Windows.Forms.TabControl();
 			this.tabPageMain = new System.Windows.Forms.TabPage();
 			this.panel7 = new System.Windows.Forms.Panel();
-			this.buttonMainPulish = new System.Windows.Forms.Button();
-			this.textBoxMainValue = new System.Windows.Forms.TextBox();
-			this.textBoxMainPos = new System.Windows.Forms.TextBox();
-			this.label43 = new System.Windows.Forms.Label();
-			this.label42 = new System.Windows.Forms.Label();
 			this.dataGridViewMain = new System.Windows.Forms.DataGridView();
+			this.panel23 = new System.Windows.Forms.Panel();
 			this.buttonMain = new System.Windows.Forms.Button();
-			this.radioButton1 = new System.Windows.Forms.RadioButton();
+			this.buttonMainPulish = new System.Windows.Forms.Button();
+			this.label42 = new System.Windows.Forms.Label();
+			this.textBoxMainValue = new System.Windows.Forms.TextBox();
 			this.radioButton2 = new System.Windows.Forms.RadioButton();
+			this.textBoxMainPos = new System.Windows.Forms.TextBox();
+			this.radioButton1 = new System.Windows.Forms.RadioButton();
+			this.label43 = new System.Windows.Forms.Label();
 			this.tabPageMeter = new System.Windows.Forms.TabPage();
 			this.panel9 = new System.Windows.Forms.Panel();
 			this.panel11 = new System.Windows.Forms.Panel();
-			this.buttonMeterPublish = new System.Windows.Forms.Button();
-			this.textBoxMeterValue = new System.Windows.Forms.TextBox();
-			this.textBoxMeterPos = new System.Windows.Forms.TextBox();
-			this.label44 = new System.Windows.Forms.Label();
-			this.label45 = new System.Windows.Forms.Label();
-			this.textBoxMeterId = new System.Windows.Forms.TextBox();
-			this.label46 = new System.Windows.Forms.Label();
 			this.dataGridViewMeter = new System.Windows.Forms.DataGridView();
+			this.panel22 = new System.Windows.Forms.Panel();
 			this.buttonMeter = new System.Windows.Forms.Button();
-			this.radioButton3 = new System.Windows.Forms.RadioButton();
+			this.buttonMeterPublish = new System.Windows.Forms.Button();
 			this.radioButton4 = new System.Windows.Forms.RadioButton();
+			this.textBoxMeterValue = new System.Windows.Forms.TextBox();
+			this.radioButton3 = new System.Windows.Forms.RadioButton();
+			this.textBoxMeterPos = new System.Windows.Forms.TextBox();
+			this.label46 = new System.Windows.Forms.Label();
+			this.label44 = new System.Windows.Forms.Label();
+			this.textBoxMeterId = new System.Windows.Forms.TextBox();
+			this.label45 = new System.Windows.Forms.Label();
 			this.tabPageIR = new System.Windows.Forms.TabPage();
 			this.panel10 = new System.Windows.Forms.Panel();
 			this.panel12 = new System.Windows.Forms.Panel();
+			this.dataGridViewIR = new System.Windows.Forms.DataGridView();
+			this.panel24 = new System.Windows.Forms.Panel();
 			this.buttonIrPublish = new System.Windows.Forms.Button();
+			this.buttonIR = new System.Windows.Forms.Button();
 			this.textBoxIrValue = new System.Windows.Forms.TextBox();
+			this.label49 = new System.Windows.Forms.Label();
 			this.textBoxIrPos = new System.Windows.Forms.TextBox();
+			this.textBoxIrId = new System.Windows.Forms.TextBox();
 			this.label47 = new System.Windows.Forms.Label();
 			this.label48 = new System.Windows.Forms.Label();
-			this.textBoxIrId = new System.Windows.Forms.TextBox();
-			this.label49 = new System.Windows.Forms.Label();
-			this.dataGridViewIR = new System.Windows.Forms.DataGridView();
-			this.buttonIR = new System.Windows.Forms.Button();
 			this.panel8 = new System.Windows.Forms.Panel();
 			this.buttonIdCount = new System.Windows.Forms.Button();
 			this.textBoxIdCount = new System.Windows.Forms.TextBox();
@@ -151,11 +185,12 @@
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.panel16 = new System.Windows.Forms.Panel();
 			this.textBoxAutoPubMsg = new System.Windows.Forms.TextBox();
-			this.buttonAutoPubStart = new System.Windows.Forms.Button();
-			this.buttonAutoPubStop = new System.Windows.Forms.Button();
+			this.panel25 = new System.Windows.Forms.Panel();
 			this.textBoxAutoPubTopic = new System.Windows.Forms.TextBox();
 			this.label41 = new System.Windows.Forms.Label();
 			this.label58 = new System.Windows.Forms.Label();
+			this.buttonAutoPubStart = new System.Windows.Forms.Button();
+			this.buttonAutoPubStop = new System.Windows.Forms.Button();
 			this.panel13 = new System.Windows.Forms.Panel();
 			this.label51 = new System.Windows.Forms.Label();
 			this.textBoxPlus10 = new System.Windows.Forms.TextBox();
@@ -206,7 +241,7 @@
 			this.textBoxDelLocation = new System.Windows.Forms.TextBox();
 			this.label73 = new System.Windows.Forms.Label();
 			this.button15 = new System.Windows.Forms.Button();
-			this.button16 = new System.Windows.Forms.Button();
+			this.buttonSearchRemain = new System.Windows.Forms.Button();
 			this.panel14 = new System.Windows.Forms.Panel();
 			this.button19 = new System.Windows.Forms.Button();
 			this.button18 = new System.Windows.Forms.Button();
@@ -222,19 +257,19 @@
 			this.dataGridViewDelivery = new System.Windows.Forms.DataGridView();
 			this.panel19 = new System.Windows.Forms.Panel();
 			this.listBoxSub2 = new System.Windows.Forms.ListBox();
+			this.label70 = new System.Windows.Forms.Label();
+			this.buttonConnect2 = new System.Windows.Forms.Button();
+			this.buttonDisconnect2 = new System.Windows.Forms.Button();
+			this.textBoxTopicHeader = new System.Windows.Forms.TextBox();
+			this.panel20 = new System.Windows.Forms.Panel();
+			this.button14 = new System.Windows.Forms.Button();
 			this.button1 = new System.Windows.Forms.Button();
 			this.buttonSubScribe3 = new System.Windows.Forms.Button();
 			this.button4 = new System.Windows.Forms.Button();
 			this.buttonUnscribe2 = new System.Windows.Forms.Button();
+			this.textBoxScrTopic = new System.Windows.Forms.TextBox();
 			this.button9 = new System.Windows.Forms.Button();
 			this.label69 = new System.Windows.Forms.Label();
-			this.panel20 = new System.Windows.Forms.Panel();
-			this.button14 = new System.Windows.Forms.Button();
-			this.buttonDisconnect2 = new System.Windows.Forms.Button();
-			this.label70 = new System.Windows.Forms.Label();
-			this.textBoxScrTopic = new System.Windows.Forms.TextBox();
-			this.textBoxTopicHeader = new System.Windows.Forms.TextBox();
-			this.buttonConnect2 = new System.Windows.Forms.Button();
 			this.label61 = new System.Windows.Forms.Label();
 			this.panel17 = new System.Windows.Forms.Panel();
 			this.button7 = new System.Windows.Forms.Button();
@@ -263,44 +298,11 @@
 			this.buttonClear = new System.Windows.Forms.Button();
 			this.dataGridViewMessage = new System.Windows.Forms.DataGridView();
 			this.splitter2 = new System.Windows.Forms.Splitter();
-			this.panel22 = new System.Windows.Forms.Panel();
-			this.panel23 = new System.Windows.Forms.Panel();
-			this.panel24 = new System.Windows.Forms.Panel();
-			this.panel25 = new System.Windows.Forms.Panel();
-			this.textBoxGreen = new System.Windows.Forms.TextBox();
-			this.textBoxYellow = new System.Windows.Forms.TextBox();
-			this.textBoxGray = new System.Windows.Forms.TextBox();
-			this.textBoxNavy = new System.Windows.Forms.TextBox();
-			this.textBoxPurple = new System.Windows.Forms.TextBox();
-			this.textBoxRed = new System.Windows.Forms.TextBox();
-			this.textBoxLime = new System.Windows.Forms.TextBox();
-			this.textBoxPink = new System.Windows.Forms.TextBox();
-			this.textBoxOrange = new System.Windows.Forms.TextBox();
-			this.textBoxBlue = new System.Windows.Forms.TextBox();
-			this.textBoxBlack = new System.Windows.Forms.TextBox();
-			this.label19 = new System.Windows.Forms.Label();
-			this.label18 = new System.Windows.Forms.Label();
-			this.label17 = new System.Windows.Forms.Label();
-			this.label20 = new System.Windows.Forms.Label();
-			this.label21 = new System.Windows.Forms.Label();
-			this.label16 = new System.Windows.Forms.Label();
-			this.label22 = new System.Windows.Forms.Label();
-			this.label35 = new System.Windows.Forms.Label();
-			this.label36 = new System.Windows.Forms.Label();
-			this.label37 = new System.Windows.Forms.Label();
-			this.label38 = new System.Windows.Forms.Label();
-			this.panel3 = new System.Windows.Forms.Panel();
-			this.label15 = new System.Windows.Forms.Label();
-			this.buttonLogFolder = new System.Windows.Forms.Button();
-			this.buttonUnscribe = new System.Windows.Forms.Button();
-			this.buttonTopicSave = new System.Windows.Forms.Button();
-			this.buttonSubscribe2 = new System.Windows.Forms.Button();
-			this.buttonTopicOpen = new System.Windows.Forms.Button();
-			this.listBoxSub = new System.Windows.Forms.ListBox();
-			this.panel2 = new System.Windows.Forms.Panel();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.panel1.SuspendLayout();
+			this.panel2.SuspendLayout();
+			this.panel3.SuspendLayout();
 			this.panel4.SuspendLayout();
 			this.panel6.SuspendLayout();
 			this.panel5.SuspendLayout();
@@ -309,17 +311,21 @@
 			this.tabPageMain.SuspendLayout();
 			this.panel7.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).BeginInit();
+			this.panel23.SuspendLayout();
 			this.tabPageMeter.SuspendLayout();
 			this.panel9.SuspendLayout();
 			this.panel11.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewMeter)).BeginInit();
+			this.panel22.SuspendLayout();
 			this.tabPageIR.SuspendLayout();
 			this.panel10.SuspendLayout();
 			this.panel12.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewIR)).BeginInit();
+			this.panel24.SuspendLayout();
 			this.panel8.SuspendLayout();
 			this.tabPage3.SuspendLayout();
 			this.panel16.SuspendLayout();
+			this.panel25.SuspendLayout();
 			this.panel13.SuspendLayout();
 			this.tabPage4.SuspendLayout();
 			this.panel15.SuspendLayout();
@@ -332,12 +338,6 @@
 			this.panel17.SuspendLayout();
 			this.panel18.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewMessage)).BeginInit();
-			this.panel22.SuspendLayout();
-			this.panel23.SuspendLayout();
-			this.panel24.SuspendLayout();
-			this.panel25.SuspendLayout();
-			this.panel3.SuspendLayout();
-			this.panel2.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tabControl1
@@ -376,6 +376,391 @@
 			this.panel1.Size = new System.Drawing.Size(1148, 372);
 			this.panel1.TabIndex = 10;
 			// 
+			// panel2
+			// 
+			this.panel2.Controls.Add(this.textBoxBlack);
+			this.panel2.Controls.Add(this.textBoxBlue);
+			this.panel2.Controls.Add(this.textBoxOrange);
+			this.panel2.Controls.Add(this.textBoxPink);
+			this.panel2.Controls.Add(this.textBoxLime);
+			this.panel2.Controls.Add(this.textBoxRed);
+			this.panel2.Controls.Add(this.textBoxPurple);
+			this.panel2.Controls.Add(this.textBoxNavy);
+			this.panel2.Controls.Add(this.textBoxGray);
+			this.panel2.Controls.Add(this.textBoxYellow);
+			this.panel2.Controls.Add(this.textBoxGreen);
+			this.panel2.Controls.Add(this.panel3);
+			this.panel2.Controls.Add(this.label38);
+			this.panel2.Controls.Add(this.label37);
+			this.panel2.Controls.Add(this.label36);
+			this.panel2.Controls.Add(this.label35);
+			this.panel2.Controls.Add(this.label22);
+			this.panel2.Controls.Add(this.label16);
+			this.panel2.Controls.Add(this.label21);
+			this.panel2.Controls.Add(this.label20);
+			this.panel2.Controls.Add(this.label17);
+			this.panel2.Controls.Add(this.label18);
+			this.panel2.Controls.Add(this.label19);
+			this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel2.Location = new System.Drawing.Point(715, 0);
+			this.panel2.Name = "panel2";
+			this.panel2.Size = new System.Drawing.Size(433, 372);
+			this.panel2.TabIndex = 0;
+			// 
+			// textBoxBlack
+			// 
+			this.textBoxBlack.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.textBoxBlack.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.textBoxBlack.Location = new System.Drawing.Point(248, 266);
+			this.textBoxBlack.Name = "textBoxBlack";
+			this.textBoxBlack.Size = new System.Drawing.Size(180, 25);
+			this.textBoxBlack.TabIndex = 11;
+			// 
+			// textBoxBlue
+			// 
+			this.textBoxBlue.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.textBoxBlue.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.textBoxBlue.Location = new System.Drawing.Point(248, 240);
+			this.textBoxBlue.Name = "textBoxBlue";
+			this.textBoxBlue.Size = new System.Drawing.Size(180, 25);
+			this.textBoxBlue.TabIndex = 10;
+			// 
+			// textBoxOrange
+			// 
+			this.textBoxOrange.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.textBoxOrange.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.textBoxOrange.Location = new System.Drawing.Point(248, 214);
+			this.textBoxOrange.Name = "textBoxOrange";
+			this.textBoxOrange.Size = new System.Drawing.Size(180, 25);
+			this.textBoxOrange.TabIndex = 8;
+			// 
+			// textBoxPink
+			// 
+			this.textBoxPink.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.textBoxPink.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.textBoxPink.Location = new System.Drawing.Point(248, 188);
+			this.textBoxPink.Name = "textBoxPink";
+			this.textBoxPink.Size = new System.Drawing.Size(180, 25);
+			this.textBoxPink.TabIndex = 7;
+			// 
+			// textBoxLime
+			// 
+			this.textBoxLime.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.textBoxLime.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.textBoxLime.Location = new System.Drawing.Point(248, 162);
+			this.textBoxLime.Name = "textBoxLime";
+			this.textBoxLime.Size = new System.Drawing.Size(180, 25);
+			this.textBoxLime.TabIndex = 6;
+			// 
+			// textBoxRed
+			// 
+			this.textBoxRed.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.textBoxRed.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.textBoxRed.Location = new System.Drawing.Point(248, 6);
+			this.textBoxRed.Name = "textBoxRed";
+			this.textBoxRed.Size = new System.Drawing.Size(180, 25);
+			this.textBoxRed.TabIndex = 0;
+			// 
+			// textBoxPurple
+			// 
+			this.textBoxPurple.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.textBoxPurple.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.textBoxPurple.Location = new System.Drawing.Point(248, 136);
+			this.textBoxPurple.Name = "textBoxPurple";
+			this.textBoxPurple.Size = new System.Drawing.Size(180, 25);
+			this.textBoxPurple.TabIndex = 5;
+			// 
+			// textBoxNavy
+			// 
+			this.textBoxNavy.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.textBoxNavy.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.textBoxNavy.Location = new System.Drawing.Point(248, 110);
+			this.textBoxNavy.Name = "textBoxNavy";
+			this.textBoxNavy.Size = new System.Drawing.Size(180, 25);
+			this.textBoxNavy.TabIndex = 4;
+			// 
+			// textBoxGray
+			// 
+			this.textBoxGray.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.textBoxGray.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.textBoxGray.Location = new System.Drawing.Point(248, 84);
+			this.textBoxGray.Name = "textBoxGray";
+			this.textBoxGray.Size = new System.Drawing.Size(180, 25);
+			this.textBoxGray.TabIndex = 3;
+			// 
+			// textBoxYellow
+			// 
+			this.textBoxYellow.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.textBoxYellow.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.textBoxYellow.Location = new System.Drawing.Point(248, 58);
+			this.textBoxYellow.Name = "textBoxYellow";
+			this.textBoxYellow.Size = new System.Drawing.Size(180, 25);
+			this.textBoxYellow.TabIndex = 2;
+			// 
+			// textBoxGreen
+			// 
+			this.textBoxGreen.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.textBoxGreen.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.textBoxGreen.Location = new System.Drawing.Point(248, 32);
+			this.textBoxGreen.Name = "textBoxGreen";
+			this.textBoxGreen.Size = new System.Drawing.Size(180, 25);
+			this.textBoxGreen.TabIndex = 1;
+			// 
+			// panel3
+			// 
+			this.panel3.Controls.Add(this.listBoxSub);
+			this.panel3.Controls.Add(this.buttonTopicOpen);
+			this.panel3.Controls.Add(this.buttonSubscribe2);
+			this.panel3.Controls.Add(this.buttonTopicSave);
+			this.panel3.Controls.Add(this.buttonUnscribe);
+			this.panel3.Controls.Add(this.buttonLogFolder);
+			this.panel3.Controls.Add(this.label15);
+			this.panel3.Location = new System.Drawing.Point(3, 2);
+			this.panel3.Name = "panel3";
+			this.panel3.Size = new System.Drawing.Size(196, 297);
+			this.panel3.TabIndex = 1;
+			// 
+			// listBoxSub
+			// 
+			this.listBoxSub.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.listBoxSub.FormattingEnabled = true;
+			this.listBoxSub.ItemHeight = 17;
+			this.listBoxSub.Location = new System.Drawing.Point(6, 22);
+			this.listBoxSub.Name = "listBoxSub";
+			this.listBoxSub.Size = new System.Drawing.Size(187, 225);
+			this.listBoxSub.TabIndex = 9;
+			// 
+			// buttonTopicOpen
+			// 
+			this.buttonTopicOpen.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.buttonTopicOpen.Location = new System.Drawing.Point(6, 248);
+			this.buttonTopicOpen.Name = "buttonTopicOpen";
+			this.buttonTopicOpen.Size = new System.Drawing.Size(49, 24);
+			this.buttonTopicOpen.TabIndex = 8;
+			this.buttonTopicOpen.Text = "Open";
+			this.buttonTopicOpen.UseVisualStyleBackColor = true;
+			this.buttonTopicOpen.Click += new System.EventHandler(this.buttonTopicOpen_Click);
+			// 
+			// buttonSubscribe2
+			// 
+			this.buttonSubscribe2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.buttonSubscribe2.Location = new System.Drawing.Point(54, 248);
+			this.buttonSubscribe2.Name = "buttonSubscribe2";
+			this.buttonSubscribe2.Size = new System.Drawing.Size(95, 24);
+			this.buttonSubscribe2.TabIndex = 8;
+			this.buttonSubscribe2.Text = "Subscribe";
+			this.buttonSubscribe2.UseVisualStyleBackColor = true;
+			this.buttonSubscribe2.Click += new System.EventHandler(this.buttonSubscribe2_Click);
+			// 
+			// buttonTopicSave
+			// 
+			this.buttonTopicSave.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.buttonTopicSave.Location = new System.Drawing.Point(148, 248);
+			this.buttonTopicSave.Name = "buttonTopicSave";
+			this.buttonTopicSave.Size = new System.Drawing.Size(45, 24);
+			this.buttonTopicSave.TabIndex = 8;
+			this.buttonTopicSave.Text = "Save";
+			this.buttonTopicSave.UseVisualStyleBackColor = true;
+			this.buttonTopicSave.Click += new System.EventHandler(this.buttonTopicSave_Click);
+			// 
+			// buttonUnscribe
+			// 
+			this.buttonUnscribe.Enabled = false;
+			this.buttonUnscribe.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.buttonUnscribe.Location = new System.Drawing.Point(6, 271);
+			this.buttonUnscribe.Name = "buttonUnscribe";
+			this.buttonUnscribe.Size = new System.Drawing.Size(93, 24);
+			this.buttonUnscribe.TabIndex = 8;
+			this.buttonUnscribe.Text = "Unsubscribe";
+			this.buttonUnscribe.UseVisualStyleBackColor = true;
+			this.buttonUnscribe.Click += new System.EventHandler(this.buttonUnscribe_Click);
+			// 
+			// buttonLogFolder
+			// 
+			this.buttonLogFolder.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.buttonLogFolder.Location = new System.Drawing.Point(98, 271);
+			this.buttonLogFolder.Name = "buttonLogFolder";
+			this.buttonLogFolder.Size = new System.Drawing.Size(95, 24);
+			this.buttonLogFolder.TabIndex = 8;
+			this.buttonLogFolder.Text = "Log Folder";
+			this.buttonLogFolder.UseVisualStyleBackColor = true;
+			this.buttonLogFolder.Click += new System.EventHandler(this.buttonLogFolder_Click);
+			// 
+			// label15
+			// 
+			this.label15.AutoSize = true;
+			this.label15.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.label15.Location = new System.Drawing.Point(6, 2);
+			this.label15.Name = "label15";
+			this.label15.Size = new System.Drawing.Size(138, 20);
+			this.label15.TabIndex = 0;
+			this.label15.Text = "Subscriptions topic";
+			// 
+			// label38
+			// 
+			this.label38.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.label38.AutoSize = true;
+			this.label38.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.label38.Location = new System.Drawing.Point(212, 270);
+			this.label38.Name = "label38";
+			this.label38.Size = new System.Drawing.Size(39, 17);
+			this.label38.TabIndex = 0;
+			this.label38.Text = "Black";
+			// 
+			// label37
+			// 
+			this.label37.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.label37.AutoSize = true;
+			this.label37.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.label37.Location = new System.Drawing.Point(217, 244);
+			this.label37.Name = "label37";
+			this.label37.Size = new System.Drawing.Size(34, 17);
+			this.label37.TabIndex = 0;
+			this.label37.Text = "Blue";
+			// 
+			// label36
+			// 
+			this.label36.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.label36.AutoSize = true;
+			this.label36.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.label36.Location = new System.Drawing.Point(198, 218);
+			this.label36.Name = "label36";
+			this.label36.Size = new System.Drawing.Size(53, 17);
+			this.label36.TabIndex = 0;
+			this.label36.Text = "Orange";
+			// 
+			// label35
+			// 
+			this.label35.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.label35.AutoSize = true;
+			this.label35.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.label35.Location = new System.Drawing.Point(218, 192);
+			this.label35.Name = "label35";
+			this.label35.Size = new System.Drawing.Size(33, 17);
+			this.label35.TabIndex = 0;
+			this.label35.Text = "Pink";
+			// 
+			// label22
+			// 
+			this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.label22.AutoSize = true;
+			this.label22.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.label22.Location = new System.Drawing.Point(216, 166);
+			this.label22.Name = "label22";
+			this.label22.Size = new System.Drawing.Size(35, 17);
+			this.label22.TabIndex = 0;
+			this.label22.Text = "Lime";
+			// 
+			// label16
+			// 
+			this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.label16.AutoSize = true;
+			this.label16.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.label16.Location = new System.Drawing.Point(220, 10);
+			this.label16.Name = "label16";
+			this.label16.Size = new System.Drawing.Size(31, 17);
+			this.label16.TabIndex = 0;
+			this.label16.Text = "Red";
+			// 
+			// label21
+			// 
+			this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.label21.AutoSize = true;
+			this.label21.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.label21.Location = new System.Drawing.Point(205, 140);
+			this.label21.Name = "label21";
+			this.label21.Size = new System.Drawing.Size(46, 17);
+			this.label21.TabIndex = 0;
+			this.label21.Text = "Purple";
+			// 
+			// label20
+			// 
+			this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.label20.AutoSize = true;
+			this.label20.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.label20.Location = new System.Drawing.Point(214, 114);
+			this.label20.Name = "label20";
+			this.label20.Size = new System.Drawing.Size(37, 17);
+			this.label20.TabIndex = 0;
+			this.label20.Text = "Navy";
+			// 
+			// label17
+			// 
+			this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.label17.AutoSize = true;
+			this.label17.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.label17.Location = new System.Drawing.Point(207, 36);
+			this.label17.Name = "label17";
+			this.label17.Size = new System.Drawing.Size(44, 17);
+			this.label17.TabIndex = 0;
+			this.label17.Text = "Green";
+			// 
+			// label18
+			// 
+			this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.label18.AutoSize = true;
+			this.label18.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.label18.Location = new System.Drawing.Point(205, 62);
+			this.label18.Name = "label18";
+			this.label18.Size = new System.Drawing.Size(46, 17);
+			this.label18.TabIndex = 0;
+			this.label18.Text = "Yellow";
+			// 
+			// label19
+			// 
+			this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.label19.AutoSize = true;
+			this.label19.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.label19.Location = new System.Drawing.Point(216, 88);
+			this.label19.Name = "label19";
+			this.label19.Size = new System.Drawing.Size(35, 17);
+			this.label19.TabIndex = 0;
+			this.label19.Text = "Gray";
+			// 
 			// panel4
 			// 
 			this.panel4.Controls.Add(this.panel6);
@@ -409,69 +794,6 @@
 			this.panel6.Size = new System.Drawing.Size(715, 372);
 			this.panel6.TabIndex = 13;
 			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label1.Location = new System.Drawing.Point(18, 2);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(43, 20);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "Host:";
-			// 
-			// label6
-			// 
-			this.label6.AutoSize = true;
-			this.label6.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label6.Location = new System.Drawing.Point(542, 4);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(146, 17);
-			this.label6.TabIndex = 0;
-			this.label6.Text = "토픽단위 로그파일생성:";
-			// 
-			// buttonSubscribe
-			// 
-			this.buttonSubscribe.Enabled = false;
-			this.buttonSubscribe.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.buttonSubscribe.Location = new System.Drawing.Point(613, 53);
-			this.buttonSubscribe.Name = "buttonSubscribe";
-			this.buttonSubscribe.Size = new System.Drawing.Size(96, 24);
-			this.buttonSubscribe.TabIndex = 2;
-			this.buttonSubscribe.Text = "Subscribe";
-			this.buttonSubscribe.UseVisualStyleBackColor = true;
-			this.buttonSubscribe.Click += new System.EventHandler(this.buttonSubscribe_Click);
-			// 
-			// checkBoxTopicLog
-			// 
-			this.checkBoxTopicLog.AutoSize = true;
-			this.checkBoxTopicLog.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.checkBoxTopicLog.Location = new System.Drawing.Point(686, 6);
-			this.checkBoxTopicLog.Name = "checkBoxTopicLog";
-			this.checkBoxTopicLog.Size = new System.Drawing.Size(15, 14);
-			this.checkBoxTopicLog.TabIndex = 5;
-			this.checkBoxTopicLog.UseVisualStyleBackColor = true;
-			this.checkBoxTopicLog.CheckedChanged += new System.EventHandler(this.checkBoxTopicLog_CheckedChanged);
-			// 
-			// textBoxSubTopic
-			// 
-			this.textBoxSubTopic.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBoxSubTopic.Location = new System.Drawing.Point(57, 53);
-			this.textBoxSubTopic.Name = "textBoxSubTopic";
-			this.textBoxSubTopic.Size = new System.Drawing.Size(550, 25);
-			this.textBoxSubTopic.TabIndex = 2;
-			// 
-			// buttonDisconnect
-			// 
-			this.buttonDisconnect.Enabled = false;
-			this.buttonDisconnect.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.buttonDisconnect.Location = new System.Drawing.Point(613, 28);
-			this.buttonDisconnect.Name = "buttonDisconnect";
-			this.buttonDisconnect.Size = new System.Drawing.Size(96, 24);
-			this.buttonDisconnect.TabIndex = 2;
-			this.buttonDisconnect.Text = "Disconnect";
-			this.buttonDisconnect.UseVisualStyleBackColor = true;
-			this.buttonDisconnect.Click += new System.EventHandler(this.buttonDisconnect_Click);
-			// 
 			// textBoxHost
 			// 
 			this.textBoxHost.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -479,111 +801,6 @@
 			this.textBoxHost.Name = "textBoxHost";
 			this.textBoxHost.Size = new System.Drawing.Size(146, 25);
 			this.textBoxHost.TabIndex = 0;
-			// 
-			// buttonMqttServer
-			// 
-			this.buttonMqttServer.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.buttonMqttServer.Location = new System.Drawing.Point(676, 3);
-			this.buttonMqttServer.Name = "buttonMqttServer";
-			this.buttonMqttServer.Size = new System.Drawing.Size(17, 24);
-			this.buttonMqttServer.TabIndex = 2;
-			this.buttonMqttServer.Text = "K";
-			this.buttonMqttServer.UseVisualStyleBackColor = true;
-			this.buttonMqttServer.Click += new System.EventHandler(this.buttonMqttServer_Click);
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label3.Location = new System.Drawing.Point(12, 58);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(49, 20);
-			this.label3.TabIndex = 0;
-			this.label3.Text = "Topic:";
-			// 
-			// checkBoxRetain
-			// 
-			this.checkBoxRetain.AutoSize = true;
-			this.checkBoxRetain.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.checkBoxRetain.Location = new System.Drawing.Point(313, 34);
-			this.checkBoxRetain.Name = "checkBoxRetain";
-			this.checkBoxRetain.Size = new System.Drawing.Size(15, 14);
-			this.checkBoxRetain.TabIndex = 5;
-			this.checkBoxRetain.UseVisualStyleBackColor = true;
-			// 
-			// buttonConnect
-			// 
-			this.buttonConnect.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.buttonConnect.Location = new System.Drawing.Point(613, 3);
-			this.buttonConnect.Name = "buttonConnect";
-			this.buttonConnect.Size = new System.Drawing.Size(65, 24);
-			this.buttonConnect.TabIndex = 2;
-			this.buttonConnect.Text = "Connect";
-			this.buttonConnect.UseVisualStyleBackColor = true;
-			this.buttonConnect.Click += new System.EventHandler(this.buttonConnect_Click);
-			// 
-			// label5
-			// 
-			this.label5.AutoSize = true;
-			this.label5.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label5.Location = new System.Drawing.Point(257, 27);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(55, 20);
-			this.label5.TabIndex = 4;
-			this.label5.Text = "Retain:";
-			// 
-			// buttonLocal
-			// 
-			this.buttonLocal.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.buttonLocal.Location = new System.Drawing.Point(692, 3);
-			this.buttonLocal.Name = "buttonLocal";
-			this.buttonLocal.Size = new System.Drawing.Size(17, 24);
-			this.buttonLocal.TabIndex = 2;
-			this.buttonLocal.Text = "L";
-			this.buttonLocal.UseVisualStyleBackColor = true;
-			this.buttonLocal.Click += new System.EventHandler(this.buttonLocal_Click);
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label2.Location = new System.Drawing.Point(272, 4);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(40, 20);
-			this.label2.TabIndex = 0;
-			this.label2.Text = "Port:";
-			// 
-			// textBoxPort
-			// 
-			this.textBoxPort.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBoxPort.Location = new System.Drawing.Point(313, 3);
-			this.textBoxPort.Name = "textBoxPort";
-			this.textBoxPort.Size = new System.Drawing.Size(46, 25);
-			this.textBoxPort.TabIndex = 1;
-			// 
-			// comboBoxQos
-			// 
-			this.comboBoxQos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.comboBoxQos.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.comboBoxQos.FormattingEnabled = true;
-			this.comboBoxQos.Items.AddRange(new object[] {
-            "0 At most once",
-            "1 At least once",
-            "2 Exactly once"});
-			this.comboBoxQos.Location = new System.Drawing.Point(57, 27);
-			this.comboBoxQos.Name = "comboBoxQos";
-			this.comboBoxQos.Size = new System.Drawing.Size(146, 25);
-			this.comboBoxQos.TabIndex = 3;
-			// 
-			// label4
-			// 
-			this.label4.AutoSize = true;
-			this.label4.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label4.Location = new System.Drawing.Point(20, 27);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(41, 20);
-			this.label4.TabIndex = 0;
-			this.label4.Text = "QoS:";
 			// 
 			// panel5
 			// 
@@ -644,6 +861,107 @@
 			this.panel5.Name = "panel5";
 			this.panel5.Size = new System.Drawing.Size(704, 286);
 			this.panel5.TabIndex = 12;
+			// 
+			// textBoxPT1
+			// 
+			this.textBoxPT1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.textBoxPT1.Location = new System.Drawing.Point(57, 24);
+			this.textBoxPT1.Name = "textBoxPT1";
+			this.textBoxPT1.Size = new System.Drawing.Size(215, 25);
+			this.textBoxPT1.TabIndex = 3;
+			// 
+			// textBoxPT2
+			// 
+			this.textBoxPT2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.textBoxPT2.Location = new System.Drawing.Point(57, 50);
+			this.textBoxPT2.Name = "textBoxPT2";
+			this.textBoxPT2.Size = new System.Drawing.Size(215, 25);
+			this.textBoxPT2.TabIndex = 5;
+			// 
+			// checkBoxTopicLog
+			// 
+			this.checkBoxTopicLog.AutoSize = true;
+			this.checkBoxTopicLog.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.checkBoxTopicLog.Location = new System.Drawing.Point(686, 6);
+			this.checkBoxTopicLog.Name = "checkBoxTopicLog";
+			this.checkBoxTopicLog.Size = new System.Drawing.Size(15, 14);
+			this.checkBoxTopicLog.TabIndex = 5;
+			this.checkBoxTopicLog.UseVisualStyleBackColor = true;
+			this.checkBoxTopicLog.CheckedChanged += new System.EventHandler(this.checkBoxTopicLog_CheckedChanged);
+			// 
+			// textBoxPT3
+			// 
+			this.textBoxPT3.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.textBoxPT3.Location = new System.Drawing.Point(57, 76);
+			this.textBoxPT3.Name = "textBoxPT3";
+			this.textBoxPT3.Size = new System.Drawing.Size(215, 25);
+			this.textBoxPT3.TabIndex = 7;
+			// 
+			// textBoxPT10
+			// 
+			this.textBoxPT10.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.textBoxPT10.Location = new System.Drawing.Point(57, 258);
+			this.textBoxPT10.Name = "textBoxPT10";
+			this.textBoxPT10.Size = new System.Drawing.Size(215, 25);
+			this.textBoxPT10.TabIndex = 9;
+			// 
+			// textBoxPT9
+			// 
+			this.textBoxPT9.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.textBoxPT9.Location = new System.Drawing.Point(57, 232);
+			this.textBoxPT9.Name = "textBoxPT9";
+			this.textBoxPT9.Size = new System.Drawing.Size(215, 25);
+			this.textBoxPT9.TabIndex = 9;
+			// 
+			// textBoxPT8
+			// 
+			this.textBoxPT8.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.textBoxPT8.Location = new System.Drawing.Point(57, 206);
+			this.textBoxPT8.Name = "textBoxPT8";
+			this.textBoxPT8.Size = new System.Drawing.Size(215, 25);
+			this.textBoxPT8.TabIndex = 9;
+			// 
+			// label6
+			// 
+			this.label6.AutoSize = true;
+			this.label6.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.label6.Location = new System.Drawing.Point(542, 4);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(146, 17);
+			this.label6.TabIndex = 0;
+			this.label6.Text = "토픽단위 로그파일생성:";
+			// 
+			// textBoxPT7
+			// 
+			this.textBoxPT7.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.textBoxPT7.Location = new System.Drawing.Point(57, 180);
+			this.textBoxPT7.Name = "textBoxPT7";
+			this.textBoxPT7.Size = new System.Drawing.Size(215, 25);
+			this.textBoxPT7.TabIndex = 9;
+			// 
+			// textBoxPT6
+			// 
+			this.textBoxPT6.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.textBoxPT6.Location = new System.Drawing.Point(57, 154);
+			this.textBoxPT6.Name = "textBoxPT6";
+			this.textBoxPT6.Size = new System.Drawing.Size(215, 25);
+			this.textBoxPT6.TabIndex = 9;
+			// 
+			// textBoxPT5
+			// 
+			this.textBoxPT5.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.textBoxPT5.Location = new System.Drawing.Point(57, 128);
+			this.textBoxPT5.Name = "textBoxPT5";
+			this.textBoxPT5.Size = new System.Drawing.Size(215, 25);
+			this.textBoxPT5.TabIndex = 9;
+			// 
+			// textBoxPT4
+			// 
+			this.textBoxPT4.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.textBoxPT4.Location = new System.Drawing.Point(57, 102);
+			this.textBoxPT4.Name = "textBoxPT4";
+			this.textBoxPT4.Size = new System.Drawing.Size(215, 25);
+			this.textBoxPT4.TabIndex = 9;
 			// 
 			// label7
 			// 
@@ -759,14 +1077,6 @@
 			this.buttonPublish3.UseVisualStyleBackColor = true;
 			this.buttonPublish3.Click += new System.EventHandler(this.buttonPublish3_Click);
 			// 
-			// textBoxPT1
-			// 
-			this.textBoxPT1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBoxPT1.Location = new System.Drawing.Point(57, 24);
-			this.textBoxPT1.Name = "textBoxPT1";
-			this.textBoxPT1.Size = new System.Drawing.Size(215, 25);
-			this.textBoxPT1.TabIndex = 3;
-			// 
 			// buttonPublish
 			// 
 			this.buttonPublish.Enabled = false;
@@ -789,14 +1099,6 @@
 			this.checkBoxTopicpub.TabIndex = 11;
 			this.checkBoxTopicpub.UseVisualStyleBackColor = true;
 			this.checkBoxTopicpub.CheckedChanged += new System.EventHandler(this.checkBoxTopicpub_CheckedChanged);
-			// 
-			// textBoxPT2
-			// 
-			this.textBoxPT2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBoxPT2.Location = new System.Drawing.Point(57, 50);
-			this.textBoxPT2.Name = "textBoxPT2";
-			this.textBoxPT2.Size = new System.Drawing.Size(215, 25);
-			this.textBoxPT2.TabIndex = 5;
 			// 
 			// label11
 			// 
@@ -912,14 +1214,6 @@
 			this.buttonPublish4.UseVisualStyleBackColor = true;
 			this.buttonPublish4.Click += new System.EventHandler(this.buttonPublish4_Click);
 			// 
-			// textBoxPT3
-			// 
-			this.textBoxPT3.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBoxPT3.Location = new System.Drawing.Point(57, 76);
-			this.textBoxPT3.Name = "textBoxPT3";
-			this.textBoxPT3.Size = new System.Drawing.Size(215, 25);
-			this.textBoxPT3.TabIndex = 7;
-			// 
 			// label10
 			// 
 			this.label10.AutoSize = true;
@@ -999,62 +1293,6 @@
 			this.label13.Size = new System.Drawing.Size(39, 20);
 			this.label13.TabIndex = 0;
 			this.label13.Text = "Pub:";
-			// 
-			// textBoxPT10
-			// 
-			this.textBoxPT10.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBoxPT10.Location = new System.Drawing.Point(57, 258);
-			this.textBoxPT10.Name = "textBoxPT10";
-			this.textBoxPT10.Size = new System.Drawing.Size(215, 25);
-			this.textBoxPT10.TabIndex = 9;
-			// 
-			// textBoxPT9
-			// 
-			this.textBoxPT9.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBoxPT9.Location = new System.Drawing.Point(57, 232);
-			this.textBoxPT9.Name = "textBoxPT9";
-			this.textBoxPT9.Size = new System.Drawing.Size(215, 25);
-			this.textBoxPT9.TabIndex = 9;
-			// 
-			// textBoxPT8
-			// 
-			this.textBoxPT8.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBoxPT8.Location = new System.Drawing.Point(57, 206);
-			this.textBoxPT8.Name = "textBoxPT8";
-			this.textBoxPT8.Size = new System.Drawing.Size(215, 25);
-			this.textBoxPT8.TabIndex = 9;
-			// 
-			// textBoxPT7
-			// 
-			this.textBoxPT7.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBoxPT7.Location = new System.Drawing.Point(57, 180);
-			this.textBoxPT7.Name = "textBoxPT7";
-			this.textBoxPT7.Size = new System.Drawing.Size(215, 25);
-			this.textBoxPT7.TabIndex = 9;
-			// 
-			// textBoxPT6
-			// 
-			this.textBoxPT6.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBoxPT6.Location = new System.Drawing.Point(57, 154);
-			this.textBoxPT6.Name = "textBoxPT6";
-			this.textBoxPT6.Size = new System.Drawing.Size(215, 25);
-			this.textBoxPT6.TabIndex = 9;
-			// 
-			// textBoxPT5
-			// 
-			this.textBoxPT5.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBoxPT5.Location = new System.Drawing.Point(57, 128);
-			this.textBoxPT5.Name = "textBoxPT5";
-			this.textBoxPT5.Size = new System.Drawing.Size(215, 25);
-			this.textBoxPT5.TabIndex = 9;
-			// 
-			// textBoxPT4
-			// 
-			this.textBoxPT4.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBoxPT4.Location = new System.Drawing.Point(57, 102);
-			this.textBoxPT4.Name = "textBoxPT4";
-			this.textBoxPT4.Size = new System.Drawing.Size(215, 25);
-			this.textBoxPT4.TabIndex = 9;
 			// 
 			// textBoxM10
 			// 
@@ -1136,6 +1374,153 @@
 			this.textBoxM2.Size = new System.Drawing.Size(329, 25);
 			this.textBoxM2.TabIndex = 6;
 			// 
+			// textBoxPort
+			// 
+			this.textBoxPort.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.textBoxPort.Location = new System.Drawing.Point(313, 3);
+			this.textBoxPort.Name = "textBoxPort";
+			this.textBoxPort.Size = new System.Drawing.Size(46, 25);
+			this.textBoxPort.TabIndex = 1;
+			// 
+			// comboBoxQos
+			// 
+			this.comboBoxQos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.comboBoxQos.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.comboBoxQos.FormattingEnabled = true;
+			this.comboBoxQos.Items.AddRange(new object[] {
+            "0 At most once",
+            "1 At least once",
+            "2 Exactly once"});
+			this.comboBoxQos.Location = new System.Drawing.Point(57, 27);
+			this.comboBoxQos.Name = "comboBoxQos";
+			this.comboBoxQos.Size = new System.Drawing.Size(146, 25);
+			this.comboBoxQos.TabIndex = 3;
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.label1.Location = new System.Drawing.Point(18, 2);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(43, 20);
+			this.label1.TabIndex = 0;
+			this.label1.Text = "Host:";
+			// 
+			// buttonSubscribe
+			// 
+			this.buttonSubscribe.Enabled = false;
+			this.buttonSubscribe.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.buttonSubscribe.Location = new System.Drawing.Point(609, 53);
+			this.buttonSubscribe.Name = "buttonSubscribe";
+			this.buttonSubscribe.Size = new System.Drawing.Size(100, 24);
+			this.buttonSubscribe.TabIndex = 2;
+			this.buttonSubscribe.Text = "Subscribe";
+			this.buttonSubscribe.UseVisualStyleBackColor = true;
+			this.buttonSubscribe.Click += new System.EventHandler(this.buttonSubscribe_Click);
+			// 
+			// textBoxSubTopic
+			// 
+			this.textBoxSubTopic.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.textBoxSubTopic.Location = new System.Drawing.Point(57, 53);
+			this.textBoxSubTopic.Name = "textBoxSubTopic";
+			this.textBoxSubTopic.Size = new System.Drawing.Size(550, 25);
+			this.textBoxSubTopic.TabIndex = 2;
+			// 
+			// buttonDisconnect
+			// 
+			this.buttonDisconnect.Enabled = false;
+			this.buttonDisconnect.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.buttonDisconnect.Location = new System.Drawing.Point(609, 28);
+			this.buttonDisconnect.Name = "buttonDisconnect";
+			this.buttonDisconnect.Size = new System.Drawing.Size(100, 24);
+			this.buttonDisconnect.TabIndex = 2;
+			this.buttonDisconnect.Text = "Disconnect";
+			this.buttonDisconnect.UseVisualStyleBackColor = true;
+			this.buttonDisconnect.Click += new System.EventHandler(this.buttonDisconnect_Click);
+			// 
+			// buttonMqttServer
+			// 
+			this.buttonMqttServer.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.buttonMqttServer.Location = new System.Drawing.Point(676, 3);
+			this.buttonMqttServer.Name = "buttonMqttServer";
+			this.buttonMqttServer.Size = new System.Drawing.Size(17, 24);
+			this.buttonMqttServer.TabIndex = 2;
+			this.buttonMqttServer.Text = "K";
+			this.buttonMqttServer.UseVisualStyleBackColor = true;
+			this.buttonMqttServer.Click += new System.EventHandler(this.buttonMqttServer_Click);
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.label3.Location = new System.Drawing.Point(12, 58);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(49, 20);
+			this.label3.TabIndex = 0;
+			this.label3.Text = "Topic:";
+			// 
+			// checkBoxRetain
+			// 
+			this.checkBoxRetain.AutoSize = true;
+			this.checkBoxRetain.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.checkBoxRetain.Location = new System.Drawing.Point(313, 34);
+			this.checkBoxRetain.Name = "checkBoxRetain";
+			this.checkBoxRetain.Size = new System.Drawing.Size(15, 14);
+			this.checkBoxRetain.TabIndex = 5;
+			this.checkBoxRetain.UseVisualStyleBackColor = true;
+			// 
+			// buttonConnect
+			// 
+			this.buttonConnect.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.buttonConnect.Location = new System.Drawing.Point(609, 3);
+			this.buttonConnect.Name = "buttonConnect";
+			this.buttonConnect.Size = new System.Drawing.Size(68, 24);
+			this.buttonConnect.TabIndex = 2;
+			this.buttonConnect.Text = "Connect";
+			this.buttonConnect.UseVisualStyleBackColor = true;
+			this.buttonConnect.Click += new System.EventHandler(this.buttonConnect_Click);
+			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.label5.Location = new System.Drawing.Point(257, 27);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(55, 20);
+			this.label5.TabIndex = 4;
+			this.label5.Text = "Retain:";
+			// 
+			// buttonLocal
+			// 
+			this.buttonLocal.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.buttonLocal.Location = new System.Drawing.Point(692, 3);
+			this.buttonLocal.Name = "buttonLocal";
+			this.buttonLocal.Size = new System.Drawing.Size(17, 24);
+			this.buttonLocal.TabIndex = 2;
+			this.buttonLocal.Text = "L";
+			this.buttonLocal.UseVisualStyleBackColor = true;
+			this.buttonLocal.Click += new System.EventHandler(this.buttonLocal_Click);
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.label2.Location = new System.Drawing.Point(272, 4);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(40, 20);
+			this.label2.TabIndex = 0;
+			this.label2.Text = "Port:";
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.label4.Location = new System.Drawing.Point(20, 27);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(41, 20);
+			this.label4.TabIndex = 0;
+			this.label4.Text = "QoS:";
+			// 
 			// tabPage2
 			// 
 			this.tabPage2.Controls.Add(this.tabControl2);
@@ -1168,7 +1553,7 @@
 			this.tabPageMain.Location = new System.Drawing.Point(4, 22);
 			this.tabPageMain.Name = "tabPageMain";
 			this.tabPageMain.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPageMain.Size = new System.Drawing.Size(1140, 384);
+			this.tabPageMain.Size = new System.Drawing.Size(1140, 319);
 			this.tabPageMain.TabIndex = 0;
 			this.tabPageMain.Text = "MAIN";
 			this.tabPageMain.UseVisualStyleBackColor = true;
@@ -1180,50 +1565,8 @@
 			this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel7.Location = new System.Drawing.Point(3, 3);
 			this.panel7.Name = "panel7";
-			this.panel7.Size = new System.Drawing.Size(1134, 378);
+			this.panel7.Size = new System.Drawing.Size(1134, 313);
 			this.panel7.TabIndex = 0;
-			// 
-			// buttonMainPulish
-			// 
-			this.buttonMainPulish.Location = new System.Drawing.Point(538, 4);
-			this.buttonMainPulish.Name = "buttonMainPulish";
-			this.buttonMainPulish.Size = new System.Drawing.Size(75, 23);
-			this.buttonMainPulish.TabIndex = 10;
-			this.buttonMainPulish.Text = "MAIN쓰기";
-			this.buttonMainPulish.UseVisualStyleBackColor = true;
-			this.buttonMainPulish.Click += new System.EventHandler(this.buttonMainPulish_Click);
-			// 
-			// textBoxMainValue
-			// 
-			this.textBoxMainValue.Location = new System.Drawing.Point(480, 6);
-			this.textBoxMainValue.Name = "textBoxMainValue";
-			this.textBoxMainValue.Size = new System.Drawing.Size(52, 21);
-			this.textBoxMainValue.TabIndex = 9;
-			// 
-			// textBoxMainPos
-			// 
-			this.textBoxMainPos.Location = new System.Drawing.Point(368, 6);
-			this.textBoxMainPos.Name = "textBoxMainPos";
-			this.textBoxMainPos.Size = new System.Drawing.Size(52, 21);
-			this.textBoxMainPos.TabIndex = 9;
-			// 
-			// label43
-			// 
-			this.label43.AutoSize = true;
-			this.label43.Location = new System.Drawing.Point(426, 10);
-			this.label43.Name = "label43";
-			this.label43.Size = new System.Drawing.Size(48, 12);
-			this.label43.TabIndex = 8;
-			this.label43.Text = "VALUE:";
-			// 
-			// label42
-			// 
-			this.label42.AutoSize = true;
-			this.label42.Location = new System.Drawing.Point(328, 10);
-			this.label42.Name = "label42";
-			this.label42.Size = new System.Drawing.Size(34, 12);
-			this.label42.TabIndex = 8;
-			this.label42.Text = "POS:";
 			// 
 			// dataGridViewMain
 			// 
@@ -1235,9 +1578,25 @@
 			this.dataGridViewMain.Name = "dataGridViewMain";
 			this.dataGridViewMain.ReadOnly = true;
 			this.dataGridViewMain.RowTemplate.Height = 23;
-			this.dataGridViewMain.Size = new System.Drawing.Size(1134, 347);
+			this.dataGridViewMain.Size = new System.Drawing.Size(1134, 282);
 			this.dataGridViewMain.TabIndex = 0;
 			this.dataGridViewMain.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMain_CellClick);
+			// 
+			// panel23
+			// 
+			this.panel23.Controls.Add(this.buttonMain);
+			this.panel23.Controls.Add(this.buttonMainPulish);
+			this.panel23.Controls.Add(this.label42);
+			this.panel23.Controls.Add(this.textBoxMainValue);
+			this.panel23.Controls.Add(this.radioButton2);
+			this.panel23.Controls.Add(this.textBoxMainPos);
+			this.panel23.Controls.Add(this.radioButton1);
+			this.panel23.Controls.Add(this.label43);
+			this.panel23.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panel23.Location = new System.Drawing.Point(0, 0);
+			this.panel23.Name = "panel23";
+			this.panel23.Size = new System.Drawing.Size(1134, 31);
+			this.panel23.TabIndex = 11;
 			// 
 			// buttonMain
 			// 
@@ -1250,17 +1609,31 @@
 			this.buttonMain.UseVisualStyleBackColor = true;
 			this.buttonMain.Click += new System.EventHandler(this.buttonMain_Click);
 			// 
-			// radioButton1
+			// buttonMainPulish
 			// 
-			this.radioButton1.AutoSize = true;
-			this.radioButton1.Location = new System.Drawing.Point(79, 7);
-			this.radioButton1.Name = "radioButton1";
-			this.radioButton1.Size = new System.Drawing.Size(136, 16);
-			this.radioButton1.TabIndex = 2;
-			this.radioButton1.TabStop = true;
-			this.radioButton1.Text = "헤링본(herringbone)";
-			this.radioButton1.UseVisualStyleBackColor = true;
-			this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+			this.buttonMainPulish.Location = new System.Drawing.Point(538, 4);
+			this.buttonMainPulish.Name = "buttonMainPulish";
+			this.buttonMainPulish.Size = new System.Drawing.Size(75, 23);
+			this.buttonMainPulish.TabIndex = 10;
+			this.buttonMainPulish.Text = "MAIN쓰기";
+			this.buttonMainPulish.UseVisualStyleBackColor = true;
+			this.buttonMainPulish.Click += new System.EventHandler(this.buttonMainPulish_Click);
+			// 
+			// label42
+			// 
+			this.label42.AutoSize = true;
+			this.label42.Location = new System.Drawing.Point(328, 10);
+			this.label42.Name = "label42";
+			this.label42.Size = new System.Drawing.Size(34, 12);
+			this.label42.TabIndex = 8;
+			this.label42.Text = "POS:";
+			// 
+			// textBoxMainValue
+			// 
+			this.textBoxMainValue.Location = new System.Drawing.Point(480, 6);
+			this.textBoxMainValue.Name = "textBoxMainValue";
+			this.textBoxMainValue.Size = new System.Drawing.Size(52, 21);
+			this.textBoxMainValue.TabIndex = 9;
 			// 
 			// radioButton2
 			// 
@@ -1274,13 +1647,41 @@
 			this.radioButton2.UseVisualStyleBackColor = true;
 			this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
 			// 
+			// textBoxMainPos
+			// 
+			this.textBoxMainPos.Location = new System.Drawing.Point(368, 6);
+			this.textBoxMainPos.Name = "textBoxMainPos";
+			this.textBoxMainPos.Size = new System.Drawing.Size(52, 21);
+			this.textBoxMainPos.TabIndex = 9;
+			// 
+			// radioButton1
+			// 
+			this.radioButton1.AutoSize = true;
+			this.radioButton1.Location = new System.Drawing.Point(79, 7);
+			this.radioButton1.Name = "radioButton1";
+			this.radioButton1.Size = new System.Drawing.Size(136, 16);
+			this.radioButton1.TabIndex = 2;
+			this.radioButton1.TabStop = true;
+			this.radioButton1.Text = "헤링본(herringbone)";
+			this.radioButton1.UseVisualStyleBackColor = true;
+			this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+			// 
+			// label43
+			// 
+			this.label43.AutoSize = true;
+			this.label43.Location = new System.Drawing.Point(426, 10);
+			this.label43.Name = "label43";
+			this.label43.Size = new System.Drawing.Size(48, 12);
+			this.label43.TabIndex = 8;
+			this.label43.Text = "VALUE:";
+			// 
 			// tabPageMeter
 			// 
 			this.tabPageMeter.Controls.Add(this.panel9);
 			this.tabPageMeter.Location = new System.Drawing.Point(4, 22);
 			this.tabPageMeter.Name = "tabPageMeter";
 			this.tabPageMeter.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPageMeter.Size = new System.Drawing.Size(1140, 384);
+			this.tabPageMeter.Size = new System.Drawing.Size(1140, 319);
 			this.tabPageMeter.TabIndex = 1;
 			this.tabPageMeter.Text = "METER";
 			this.tabPageMeter.UseVisualStyleBackColor = true;
@@ -1291,7 +1692,7 @@
 			this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel9.Location = new System.Drawing.Point(3, 3);
 			this.panel9.Name = "panel9";
-			this.panel9.Size = new System.Drawing.Size(1134, 378);
+			this.panel9.Size = new System.Drawing.Size(1134, 313);
 			this.panel9.TabIndex = 0;
 			// 
 			// panel11
@@ -1301,67 +1702,9 @@
 			this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel11.Location = new System.Drawing.Point(0, 0);
 			this.panel11.Name = "panel11";
-			this.panel11.Size = new System.Drawing.Size(1134, 378);
+			this.panel11.Size = new System.Drawing.Size(1134, 313);
 			this.panel11.TabIndex = 1;
 			this.panel11.Paint += new System.Windows.Forms.PaintEventHandler(this.panel11_Paint);
-			// 
-			// buttonMeterPublish
-			// 
-			this.buttonMeterPublish.Location = new System.Drawing.Point(637, 5);
-			this.buttonMeterPublish.Name = "buttonMeterPublish";
-			this.buttonMeterPublish.Size = new System.Drawing.Size(75, 23);
-			this.buttonMeterPublish.TabIndex = 17;
-			this.buttonMeterPublish.Text = "Meter쓰기";
-			this.buttonMeterPublish.UseVisualStyleBackColor = true;
-			this.buttonMeterPublish.Click += new System.EventHandler(this.buttonMeterPublish_Click);
-			// 
-			// textBoxMeterValue
-			// 
-			this.textBoxMeterValue.Location = new System.Drawing.Point(579, 7);
-			this.textBoxMeterValue.Name = "textBoxMeterValue";
-			this.textBoxMeterValue.Size = new System.Drawing.Size(52, 21);
-			this.textBoxMeterValue.TabIndex = 14;
-			// 
-			// textBoxMeterPos
-			// 
-			this.textBoxMeterPos.Location = new System.Drawing.Point(467, 7);
-			this.textBoxMeterPos.Name = "textBoxMeterPos";
-			this.textBoxMeterPos.Size = new System.Drawing.Size(52, 21);
-			this.textBoxMeterPos.TabIndex = 15;
-			// 
-			// label44
-			// 
-			this.label44.AutoSize = true;
-			this.label44.Location = new System.Drawing.Point(525, 11);
-			this.label44.Name = "label44";
-			this.label44.Size = new System.Drawing.Size(48, 12);
-			this.label44.TabIndex = 11;
-			this.label44.Text = "VALUE:";
-			// 
-			// label45
-			// 
-			this.label45.AutoSize = true;
-			this.label45.Location = new System.Drawing.Point(427, 11);
-			this.label45.Name = "label45";
-			this.label45.Size = new System.Drawing.Size(34, 12);
-			this.label45.TabIndex = 12;
-			this.label45.Text = "POS:";
-			// 
-			// textBoxMeterId
-			// 
-			this.textBoxMeterId.Location = new System.Drawing.Point(368, 7);
-			this.textBoxMeterId.Name = "textBoxMeterId";
-			this.textBoxMeterId.Size = new System.Drawing.Size(52, 21);
-			this.textBoxMeterId.TabIndex = 16;
-			// 
-			// label46
-			// 
-			this.label46.AutoSize = true;
-			this.label46.Location = new System.Drawing.Point(342, 10);
-			this.label46.Name = "label46";
-			this.label46.Size = new System.Drawing.Size(20, 12);
-			this.label46.TabIndex = 13;
-			this.label46.Text = "ID:";
 			// 
 			// dataGridViewMeter
 			// 
@@ -1373,9 +1716,27 @@
 			this.dataGridViewMeter.Name = "dataGridViewMeter";
 			this.dataGridViewMeter.ReadOnly = true;
 			this.dataGridViewMeter.RowTemplate.Height = 23;
-			this.dataGridViewMeter.Size = new System.Drawing.Size(1134, 347);
+			this.dataGridViewMeter.Size = new System.Drawing.Size(1134, 282);
 			this.dataGridViewMeter.TabIndex = 0;
 			this.dataGridViewMeter.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMeter_CellClick);
+			// 
+			// panel22
+			// 
+			this.panel22.Controls.Add(this.buttonMeter);
+			this.panel22.Controls.Add(this.buttonMeterPublish);
+			this.panel22.Controls.Add(this.radioButton4);
+			this.panel22.Controls.Add(this.textBoxMeterValue);
+			this.panel22.Controls.Add(this.radioButton3);
+			this.panel22.Controls.Add(this.textBoxMeterPos);
+			this.panel22.Controls.Add(this.label46);
+			this.panel22.Controls.Add(this.label44);
+			this.panel22.Controls.Add(this.textBoxMeterId);
+			this.panel22.Controls.Add(this.label45);
+			this.panel22.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panel22.Location = new System.Drawing.Point(0, 0);
+			this.panel22.Name = "panel22";
+			this.panel22.Size = new System.Drawing.Size(1134, 31);
+			this.panel22.TabIndex = 18;
 			// 
 			// buttonMeter
 			// 
@@ -1387,6 +1748,35 @@
 			this.buttonMeter.Text = "METER읽기";
 			this.buttonMeter.UseVisualStyleBackColor = true;
 			this.buttonMeter.Click += new System.EventHandler(this.buttonMeter_Click);
+			// 
+			// buttonMeterPublish
+			// 
+			this.buttonMeterPublish.Location = new System.Drawing.Point(637, 5);
+			this.buttonMeterPublish.Name = "buttonMeterPublish";
+			this.buttonMeterPublish.Size = new System.Drawing.Size(75, 23);
+			this.buttonMeterPublish.TabIndex = 17;
+			this.buttonMeterPublish.Text = "Meter쓰기";
+			this.buttonMeterPublish.UseVisualStyleBackColor = true;
+			this.buttonMeterPublish.Click += new System.EventHandler(this.buttonMeterPublish_Click);
+			// 
+			// radioButton4
+			// 
+			this.radioButton4.AutoSize = true;
+			this.radioButton4.Location = new System.Drawing.Point(233, 7);
+			this.radioButton4.Name = "radioButton4";
+			this.radioButton4.Size = new System.Drawing.Size(104, 16);
+			this.radioButton4.TabIndex = 2;
+			this.radioButton4.TabStop = true;
+			this.radioButton4.Text = "텐덤(Tendom)";
+			this.radioButton4.UseVisualStyleBackColor = true;
+			this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
+			// 
+			// textBoxMeterValue
+			// 
+			this.textBoxMeterValue.Location = new System.Drawing.Point(579, 7);
+			this.textBoxMeterValue.Name = "textBoxMeterValue";
+			this.textBoxMeterValue.Size = new System.Drawing.Size(52, 21);
+			this.textBoxMeterValue.TabIndex = 14;
 			// 
 			// radioButton3
 			// 
@@ -1400,17 +1790,46 @@
 			this.radioButton3.UseVisualStyleBackColor = true;
 			this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
 			// 
-			// radioButton4
+			// textBoxMeterPos
 			// 
-			this.radioButton4.AutoSize = true;
-			this.radioButton4.Location = new System.Drawing.Point(233, 7);
-			this.radioButton4.Name = "radioButton4";
-			this.radioButton4.Size = new System.Drawing.Size(104, 16);
-			this.radioButton4.TabIndex = 2;
-			this.radioButton4.TabStop = true;
-			this.radioButton4.Text = "텐덤(Tendom)";
-			this.radioButton4.UseVisualStyleBackColor = true;
-			this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
+			this.textBoxMeterPos.Location = new System.Drawing.Point(467, 7);
+			this.textBoxMeterPos.Name = "textBoxMeterPos";
+			this.textBoxMeterPos.Size = new System.Drawing.Size(52, 21);
+			this.textBoxMeterPos.TabIndex = 15;
+			// 
+			// label46
+			// 
+			this.label46.AutoSize = true;
+			this.label46.Location = new System.Drawing.Point(342, 10);
+			this.label46.Name = "label46";
+			this.label46.Size = new System.Drawing.Size(20, 12);
+			this.label46.TabIndex = 13;
+			this.label46.Text = "ID:";
+			// 
+			// label44
+			// 
+			this.label44.AutoSize = true;
+			this.label44.Location = new System.Drawing.Point(525, 11);
+			this.label44.Name = "label44";
+			this.label44.Size = new System.Drawing.Size(48, 12);
+			this.label44.TabIndex = 11;
+			this.label44.Text = "VALUE:";
+			// 
+			// textBoxMeterId
+			// 
+			this.textBoxMeterId.Location = new System.Drawing.Point(368, 7);
+			this.textBoxMeterId.Name = "textBoxMeterId";
+			this.textBoxMeterId.Size = new System.Drawing.Size(52, 21);
+			this.textBoxMeterId.TabIndex = 16;
+			// 
+			// label45
+			// 
+			this.label45.AutoSize = true;
+			this.label45.Location = new System.Drawing.Point(427, 11);
+			this.label45.Name = "label45";
+			this.label45.Size = new System.Drawing.Size(34, 12);
+			this.label45.TabIndex = 12;
+			this.label45.Text = "POS:";
 			// 
 			// tabPageIR
 			// 
@@ -1442,6 +1861,36 @@
 			this.panel12.Size = new System.Drawing.Size(1134, 313);
 			this.panel12.TabIndex = 1;
 			// 
+			// dataGridViewIR
+			// 
+			this.dataGridViewIR.AllowUserToAddRows = false;
+			this.dataGridViewIR.AllowUserToDeleteRows = false;
+			this.dataGridViewIR.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridViewIR.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dataGridViewIR.Location = new System.Drawing.Point(0, 31);
+			this.dataGridViewIR.Name = "dataGridViewIR";
+			this.dataGridViewIR.ReadOnly = true;
+			this.dataGridViewIR.RowTemplate.Height = 23;
+			this.dataGridViewIR.Size = new System.Drawing.Size(1134, 282);
+			this.dataGridViewIR.TabIndex = 0;
+			this.dataGridViewIR.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewIR_CellClick);
+			// 
+			// panel24
+			// 
+			this.panel24.Controls.Add(this.buttonIrPublish);
+			this.panel24.Controls.Add(this.buttonIR);
+			this.panel24.Controls.Add(this.textBoxIrValue);
+			this.panel24.Controls.Add(this.label49);
+			this.panel24.Controls.Add(this.textBoxIrPos);
+			this.panel24.Controls.Add(this.textBoxIrId);
+			this.panel24.Controls.Add(this.label47);
+			this.panel24.Controls.Add(this.label48);
+			this.panel24.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panel24.Location = new System.Drawing.Point(0, 0);
+			this.panel24.Name = "panel24";
+			this.panel24.Size = new System.Drawing.Size(1134, 31);
+			this.panel24.TabIndex = 2;
+			// 
 			// buttonIrPublish
 			// 
 			this.buttonIrPublish.Location = new System.Drawing.Point(368, 4);
@@ -1452,6 +1901,17 @@
 			this.buttonIrPublish.UseVisualStyleBackColor = true;
 			this.buttonIrPublish.Click += new System.EventHandler(this.buttonIRPublish_Click);
 			// 
+			// buttonIR
+			// 
+			this.buttonIR.Enabled = false;
+			this.buttonIR.Location = new System.Drawing.Point(3, 3);
+			this.buttonIR.Name = "buttonIR";
+			this.buttonIR.Size = new System.Drawing.Size(70, 24);
+			this.buttonIR.TabIndex = 1;
+			this.buttonIR.Text = "IR읽기";
+			this.buttonIR.UseVisualStyleBackColor = true;
+			this.buttonIR.Click += new System.EventHandler(this.buttonIR_Click);
+			// 
 			// textBoxIrValue
 			// 
 			this.textBoxIrValue.Location = new System.Drawing.Point(310, 5);
@@ -1459,12 +1919,28 @@
 			this.textBoxIrValue.Size = new System.Drawing.Size(52, 21);
 			this.textBoxIrValue.TabIndex = 14;
 			// 
+			// label49
+			// 
+			this.label49.AutoSize = true;
+			this.label49.Location = new System.Drawing.Point(73, 9);
+			this.label49.Name = "label49";
+			this.label49.Size = new System.Drawing.Size(20, 12);
+			this.label49.TabIndex = 13;
+			this.label49.Text = "ID:";
+			// 
 			// textBoxIrPos
 			// 
 			this.textBoxIrPos.Location = new System.Drawing.Point(198, 5);
 			this.textBoxIrPos.Name = "textBoxIrPos";
 			this.textBoxIrPos.Size = new System.Drawing.Size(52, 21);
 			this.textBoxIrPos.TabIndex = 15;
+			// 
+			// textBoxIrId
+			// 
+			this.textBoxIrId.Location = new System.Drawing.Point(99, 5);
+			this.textBoxIrId.Name = "textBoxIrId";
+			this.textBoxIrId.Size = new System.Drawing.Size(52, 21);
+			this.textBoxIrId.TabIndex = 16;
 			// 
 			// label47
 			// 
@@ -1483,47 +1959,6 @@
 			this.label48.Size = new System.Drawing.Size(34, 12);
 			this.label48.TabIndex = 12;
 			this.label48.Text = "POS:";
-			// 
-			// textBoxIrId
-			// 
-			this.textBoxIrId.Location = new System.Drawing.Point(99, 5);
-			this.textBoxIrId.Name = "textBoxIrId";
-			this.textBoxIrId.Size = new System.Drawing.Size(52, 21);
-			this.textBoxIrId.TabIndex = 16;
-			// 
-			// label49
-			// 
-			this.label49.AutoSize = true;
-			this.label49.Location = new System.Drawing.Point(73, 9);
-			this.label49.Name = "label49";
-			this.label49.Size = new System.Drawing.Size(20, 12);
-			this.label49.TabIndex = 13;
-			this.label49.Text = "ID:";
-			// 
-			// dataGridViewIR
-			// 
-			this.dataGridViewIR.AllowUserToAddRows = false;
-			this.dataGridViewIR.AllowUserToDeleteRows = false;
-			this.dataGridViewIR.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridViewIR.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.dataGridViewIR.Location = new System.Drawing.Point(0, 31);
-			this.dataGridViewIR.Name = "dataGridViewIR";
-			this.dataGridViewIR.ReadOnly = true;
-			this.dataGridViewIR.RowTemplate.Height = 23;
-			this.dataGridViewIR.Size = new System.Drawing.Size(1134, 282);
-			this.dataGridViewIR.TabIndex = 0;
-			this.dataGridViewIR.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewIR_CellClick);
-			// 
-			// buttonIR
-			// 
-			this.buttonIR.Enabled = false;
-			this.buttonIR.Location = new System.Drawing.Point(3, 3);
-			this.buttonIR.Name = "buttonIR";
-			this.buttonIR.Size = new System.Drawing.Size(70, 24);
-			this.buttonIR.TabIndex = 1;
-			this.buttonIR.Text = "IR읽기";
-			this.buttonIR.UseVisualStyleBackColor = true;
-			this.buttonIR.Click += new System.EventHandler(this.buttonIR_Click);
 			// 
 			// panel8
 			// 
@@ -1628,25 +2063,18 @@
 			this.textBoxAutoPubMsg.WordWrap = false;
 			this.textBoxAutoPubMsg.TextChanged += new System.EventHandler(this.textBoxAutoPubMsg_TextChanged);
 			// 
-			// buttonAutoPubStart
+			// panel25
 			// 
-			this.buttonAutoPubStart.Location = new System.Drawing.Point(848, -1);
-			this.buttonAutoPubStart.Name = "buttonAutoPubStart";
-			this.buttonAutoPubStart.Size = new System.Drawing.Size(39, 23);
-			this.buttonAutoPubStart.TabIndex = 8;
-			this.buttonAutoPubStart.Text = "시작";
-			this.buttonAutoPubStart.UseVisualStyleBackColor = true;
-			this.buttonAutoPubStart.Click += new System.EventHandler(this.buttonAutoPubStart_Click);
-			// 
-			// buttonAutoPubStop
-			// 
-			this.buttonAutoPubStop.Location = new System.Drawing.Point(886, -1);
-			this.buttonAutoPubStop.Name = "buttonAutoPubStop";
-			this.buttonAutoPubStop.Size = new System.Drawing.Size(39, 23);
-			this.buttonAutoPubStop.TabIndex = 8;
-			this.buttonAutoPubStop.Text = "중지";
-			this.buttonAutoPubStop.UseVisualStyleBackColor = true;
-			this.buttonAutoPubStop.Click += new System.EventHandler(this.buttonAutoPubStop_Click);
+			this.panel25.Controls.Add(this.textBoxAutoPubTopic);
+			this.panel25.Controls.Add(this.label41);
+			this.panel25.Controls.Add(this.label58);
+			this.panel25.Controls.Add(this.buttonAutoPubStart);
+			this.panel25.Controls.Add(this.buttonAutoPubStop);
+			this.panel25.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panel25.Location = new System.Drawing.Point(0, 0);
+			this.panel25.Name = "panel25";
+			this.panel25.Size = new System.Drawing.Size(926, 41);
+			this.panel25.TabIndex = 9;
 			// 
 			// textBoxAutoPubTopic
 			// 
@@ -1677,6 +2105,26 @@
 			this.label58.TabIndex = 0;
 			this.label58.Text = "Message";
 			this.label58.Click += new System.EventHandler(this.label58_Click);
+			// 
+			// buttonAutoPubStart
+			// 
+			this.buttonAutoPubStart.Location = new System.Drawing.Point(848, -1);
+			this.buttonAutoPubStart.Name = "buttonAutoPubStart";
+			this.buttonAutoPubStart.Size = new System.Drawing.Size(39, 23);
+			this.buttonAutoPubStart.TabIndex = 8;
+			this.buttonAutoPubStart.Text = "시작";
+			this.buttonAutoPubStart.UseVisualStyleBackColor = true;
+			this.buttonAutoPubStart.Click += new System.EventHandler(this.buttonAutoPubStart_Click);
+			// 
+			// buttonAutoPubStop
+			// 
+			this.buttonAutoPubStop.Location = new System.Drawing.Point(886, -1);
+			this.buttonAutoPubStop.Name = "buttonAutoPubStop";
+			this.buttonAutoPubStop.Size = new System.Drawing.Size(39, 23);
+			this.buttonAutoPubStop.TabIndex = 8;
+			this.buttonAutoPubStop.Text = "중지";
+			this.buttonAutoPubStop.UseVisualStyleBackColor = true;
+			this.buttonAutoPubStop.Click += new System.EventHandler(this.buttonAutoPubStop_Click);
 			// 
 			// panel13
 			// 
@@ -2005,6 +2453,7 @@
 			// 
 			// textBox52
 			// 
+			this.textBox52.AllowDrop = true;
 			this.textBox52.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.textBox52.Location = new System.Drawing.Point(176, 0);
 			this.textBox52.MaxLength = 999990000;
@@ -2015,6 +2464,8 @@
 			this.textBox52.TabIndex = 5;
 			this.textBox52.WordWrap = false;
 			this.textBox52.TextChanged += new System.EventHandler(this.textBox52_TextChanged_1);
+			this.textBox52.DragDrop += new System.Windows.Forms.DragEventHandler(this.textBox52_DragDrop);
+			this.textBox52.DragEnter += new System.Windows.Forms.DragEventHandler(this.textBox52_DragEnter);
 			// 
 			// splitter1
 			// 
@@ -2046,7 +2497,7 @@
 			this.panel21.Controls.Add(this.textBoxDelLocation);
 			this.panel21.Controls.Add(this.label73);
 			this.panel21.Controls.Add(this.button15);
-			this.panel21.Controls.Add(this.button16);
+			this.panel21.Controls.Add(this.buttonSearchRemain);
 			this.panel21.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.panel21.Location = new System.Drawing.Point(0, 304);
 			this.panel21.Name = "panel21";
@@ -2130,16 +2581,16 @@
 			this.button15.UseVisualStyleBackColor = true;
 			this.button15.Click += new System.EventHandler(this.button15_Click);
 			// 
-			// button16
+			// buttonSearchRemain
 			// 
-			this.button16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.button16.Location = new System.Drawing.Point(892, 9);
-			this.button16.Name = "button16";
-			this.button16.Size = new System.Drawing.Size(53, 21);
-			this.button16.TabIndex = 9;
-			this.button16.Text = "남기기";
-			this.button16.UseVisualStyleBackColor = true;
-			this.button16.Click += new System.EventHandler(this.button16_Click);
+			this.buttonSearchRemain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.buttonSearchRemain.Location = new System.Drawing.Point(892, 9);
+			this.buttonSearchRemain.Name = "buttonSearchRemain";
+			this.buttonSearchRemain.Size = new System.Drawing.Size(53, 21);
+			this.buttonSearchRemain.TabIndex = 9;
+			this.buttonSearchRemain.Text = "남기기";
+			this.buttonSearchRemain.UseVisualStyleBackColor = true;
+			this.buttonSearchRemain.Click += new System.EventHandler(this.button16_Click);
 			// 
 			// panel14
 			// 
@@ -2289,6 +2740,7 @@
 			this.dataGridViewDelivery.RowTemplate.Height = 23;
 			this.dataGridViewDelivery.Size = new System.Drawing.Size(1148, 164);
 			this.dataGridViewDelivery.TabIndex = 17;
+			this.dataGridViewDelivery.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDelivery_CellContentClick);
 			// 
 			// panel19
 			// 
@@ -2315,71 +2767,47 @@
 			this.listBoxSub2.Size = new System.Drawing.Size(1148, 89);
 			this.listBoxSub2.TabIndex = 9;
 			// 
-			// button1
+			// label70
 			// 
-			this.button1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.button1.Location = new System.Drawing.Point(447, 0);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(49, 24);
-			this.button1.TabIndex = 8;
-			this.button1.Text = "Open";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
+			this.label70.AutoSize = true;
+			this.label70.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.label70.Location = new System.Drawing.Point(17, 0);
+			this.label70.Name = "label70";
+			this.label70.Size = new System.Drawing.Size(72, 20);
+			this.label70.TabIndex = 0;
+			this.label70.Text = "토픽헤더:";
 			// 
-			// buttonSubScribe3
+			// buttonConnect2
 			// 
-			this.buttonSubScribe3.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.buttonSubScribe3.Location = new System.Drawing.Point(495, 0);
-			this.buttonSubScribe3.Name = "buttonSubScribe3";
-			this.buttonSubScribe3.Size = new System.Drawing.Size(74, 24);
-			this.buttonSubScribe3.TabIndex = 8;
-			this.buttonSubScribe3.Text = "Subscribe";
-			this.buttonSubScribe3.UseVisualStyleBackColor = true;
-			this.buttonSubScribe3.Click += new System.EventHandler(this.button2_Click_1);
+			this.buttonConnect2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.buttonConnect2.Location = new System.Drawing.Point(239, 0);
+			this.buttonConnect2.Name = "buttonConnect2";
+			this.buttonConnect2.Size = new System.Drawing.Size(68, 24);
+			this.buttonConnect2.TabIndex = 2;
+			this.buttonConnect2.Text = "Connect";
+			this.buttonConnect2.UseVisualStyleBackColor = true;
+			this.buttonConnect2.Click += new System.EventHandler(this.buttonConnet2_Click);
 			// 
-			// button4
+			// buttonDisconnect2
 			// 
-			this.button4.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.button4.Location = new System.Drawing.Point(568, 0);
-			this.button4.Name = "button4";
-			this.button4.Size = new System.Drawing.Size(65, 24);
-			this.button4.TabIndex = 8;
-			this.button4.Text = "Save";
-			this.button4.UseVisualStyleBackColor = true;
-			this.button4.Click += new System.EventHandler(this.button4_Click);
+			this.buttonDisconnect2.Enabled = false;
+			this.buttonDisconnect2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.buttonDisconnect2.Location = new System.Drawing.Point(307, 0);
+			this.buttonDisconnect2.Name = "buttonDisconnect2";
+			this.buttonDisconnect2.Size = new System.Drawing.Size(81, 24);
+			this.buttonDisconnect2.TabIndex = 2;
+			this.buttonDisconnect2.Text = "Disconnect";
+			this.buttonDisconnect2.UseVisualStyleBackColor = true;
+			this.buttonDisconnect2.Click += new System.EventHandler(this.button12_Click);
 			// 
-			// buttonUnscribe2
+			// textBoxTopicHeader
 			// 
-			this.buttonUnscribe2.Enabled = false;
-			this.buttonUnscribe2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.buttonUnscribe2.Location = new System.Drawing.Point(632, 0);
-			this.buttonUnscribe2.Name = "buttonUnscribe2";
-			this.buttonUnscribe2.Size = new System.Drawing.Size(90, 24);
-			this.buttonUnscribe2.TabIndex = 8;
-			this.buttonUnscribe2.Text = "Unsubscribe";
-			this.buttonUnscribe2.UseVisualStyleBackColor = true;
-			this.buttonUnscribe2.Click += new System.EventHandler(this.button8_Click);
-			// 
-			// button9
-			// 
-			this.button9.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.button9.Location = new System.Drawing.Point(721, 0);
-			this.button9.Name = "button9";
-			this.button9.Size = new System.Drawing.Size(80, 24);
-			this.button9.TabIndex = 8;
-			this.button9.Text = "Log Folder";
-			this.button9.UseVisualStyleBackColor = true;
-			this.button9.Click += new System.EventHandler(this.button9_Click_1);
-			// 
-			// label69
-			// 
-			this.label69.AutoSize = true;
-			this.label69.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label69.Location = new System.Drawing.Point(398, 2);
-			this.label69.Name = "label69";
-			this.label69.Size = new System.Drawing.Size(46, 20);
-			this.label69.TabIndex = 0;
-			this.label69.Text = "topic:";
+			this.textBoxTopicHeader.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.textBoxTopicHeader.Location = new System.Drawing.Point(91, 0);
+			this.textBoxTopicHeader.Name = "textBoxTopicHeader";
+			this.textBoxTopicHeader.Size = new System.Drawing.Size(146, 25);
+			this.textBoxTopicHeader.TabIndex = 2;
+			this.textBoxTopicHeader.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
 			// 
 			// panel20
 			// 
@@ -2410,27 +2838,50 @@
 			this.button14.UseVisualStyleBackColor = true;
 			this.button14.Click += new System.EventHandler(this.button14_Click);
 			// 
-			// buttonDisconnect2
+			// button1
 			// 
-			this.buttonDisconnect2.Enabled = false;
-			this.buttonDisconnect2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.buttonDisconnect2.Location = new System.Drawing.Point(307, 0);
-			this.buttonDisconnect2.Name = "buttonDisconnect2";
-			this.buttonDisconnect2.Size = new System.Drawing.Size(81, 24);
-			this.buttonDisconnect2.TabIndex = 2;
-			this.buttonDisconnect2.Text = "Disconnect";
-			this.buttonDisconnect2.UseVisualStyleBackColor = true;
-			this.buttonDisconnect2.Click += new System.EventHandler(this.button12_Click);
+			this.button1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.button1.Location = new System.Drawing.Point(446, 0);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(49, 24);
+			this.button1.TabIndex = 8;
+			this.button1.Text = "Open";
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
-			// label70
+			// buttonSubScribe3
 			// 
-			this.label70.AutoSize = true;
-			this.label70.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label70.Location = new System.Drawing.Point(17, 0);
-			this.label70.Name = "label70";
-			this.label70.Size = new System.Drawing.Size(72, 20);
-			this.label70.TabIndex = 0;
-			this.label70.Text = "토픽헤더:";
+			this.buttonSubScribe3.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.buttonSubScribe3.Location = new System.Drawing.Point(494, 0);
+			this.buttonSubScribe3.Name = "buttonSubScribe3";
+			this.buttonSubScribe3.Size = new System.Drawing.Size(74, 24);
+			this.buttonSubScribe3.TabIndex = 8;
+			this.buttonSubScribe3.Text = "Subscribe";
+			this.buttonSubScribe3.UseVisualStyleBackColor = true;
+			this.buttonSubScribe3.Click += new System.EventHandler(this.button2_Click_1);
+			// 
+			// button4
+			// 
+			this.button4.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.button4.Location = new System.Drawing.Point(567, 0);
+			this.button4.Name = "button4";
+			this.button4.Size = new System.Drawing.Size(65, 24);
+			this.button4.TabIndex = 8;
+			this.button4.Text = "Save";
+			this.button4.UseVisualStyleBackColor = true;
+			this.button4.Click += new System.EventHandler(this.button4_Click);
+			// 
+			// buttonUnscribe2
+			// 
+			this.buttonUnscribe2.Enabled = false;
+			this.buttonUnscribe2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.buttonUnscribe2.Location = new System.Drawing.Point(631, 0);
+			this.buttonUnscribe2.Name = "buttonUnscribe2";
+			this.buttonUnscribe2.Size = new System.Drawing.Size(90, 24);
+			this.buttonUnscribe2.TabIndex = 8;
+			this.buttonUnscribe2.Text = "Unsubscribe";
+			this.buttonUnscribe2.UseVisualStyleBackColor = true;
+			this.buttonUnscribe2.Click += new System.EventHandler(this.button8_Click);
 			// 
 			// textBoxScrTopic
 			// 
@@ -2440,25 +2891,26 @@
 			this.textBoxScrTopic.Size = new System.Drawing.Size(146, 25);
 			this.textBoxScrTopic.TabIndex = 19;
 			// 
-			// textBoxTopicHeader
+			// button9
 			// 
-			this.textBoxTopicHeader.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBoxTopicHeader.Location = new System.Drawing.Point(91, 0);
-			this.textBoxTopicHeader.Name = "textBoxTopicHeader";
-			this.textBoxTopicHeader.Size = new System.Drawing.Size(146, 25);
-			this.textBoxTopicHeader.TabIndex = 2;
-			this.textBoxTopicHeader.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+			this.button9.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.button9.Location = new System.Drawing.Point(720, 0);
+			this.button9.Name = "button9";
+			this.button9.Size = new System.Drawing.Size(80, 24);
+			this.button9.TabIndex = 8;
+			this.button9.Text = "Log Folder";
+			this.button9.UseVisualStyleBackColor = true;
+			this.button9.Click += new System.EventHandler(this.button9_Click_1);
 			// 
-			// buttonConnect2
+			// label69
 			// 
-			this.buttonConnect2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.buttonConnect2.Location = new System.Drawing.Point(239, 0);
-			this.buttonConnect2.Name = "buttonConnect2";
-			this.buttonConnect2.Size = new System.Drawing.Size(68, 24);
-			this.buttonConnect2.TabIndex = 2;
-			this.buttonConnect2.Text = "Connect";
-			this.buttonConnect2.UseVisualStyleBackColor = true;
-			this.buttonConnect2.Click += new System.EventHandler(this.buttonConnet2_Click);
+			this.label69.AutoSize = true;
+			this.label69.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.label69.Location = new System.Drawing.Point(398, 2);
+			this.label69.Name = "label69";
+			this.label69.Size = new System.Drawing.Size(46, 20);
+			this.label69.TabIndex = 0;
+			this.label69.Text = "topic:";
 			// 
 			// label61
 			// 
@@ -2782,454 +3234,6 @@
 			this.splitter2.TabIndex = 11;
 			this.splitter2.TabStop = false;
 			// 
-			// panel22
-			// 
-			this.panel22.Controls.Add(this.buttonMeter);
-			this.panel22.Controls.Add(this.buttonMeterPublish);
-			this.panel22.Controls.Add(this.radioButton4);
-			this.panel22.Controls.Add(this.textBoxMeterValue);
-			this.panel22.Controls.Add(this.radioButton3);
-			this.panel22.Controls.Add(this.textBoxMeterPos);
-			this.panel22.Controls.Add(this.label46);
-			this.panel22.Controls.Add(this.label44);
-			this.panel22.Controls.Add(this.textBoxMeterId);
-			this.panel22.Controls.Add(this.label45);
-			this.panel22.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panel22.Location = new System.Drawing.Point(0, 0);
-			this.panel22.Name = "panel22";
-			this.panel22.Size = new System.Drawing.Size(1134, 31);
-			this.panel22.TabIndex = 18;
-			// 
-			// panel23
-			// 
-			this.panel23.Controls.Add(this.buttonMain);
-			this.panel23.Controls.Add(this.buttonMainPulish);
-			this.panel23.Controls.Add(this.label42);
-			this.panel23.Controls.Add(this.textBoxMainValue);
-			this.panel23.Controls.Add(this.radioButton2);
-			this.panel23.Controls.Add(this.textBoxMainPos);
-			this.panel23.Controls.Add(this.radioButton1);
-			this.panel23.Controls.Add(this.label43);
-			this.panel23.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panel23.Location = new System.Drawing.Point(0, 0);
-			this.panel23.Name = "panel23";
-			this.panel23.Size = new System.Drawing.Size(1134, 31);
-			this.panel23.TabIndex = 11;
-			// 
-			// panel24
-			// 
-			this.panel24.Controls.Add(this.buttonIrPublish);
-			this.panel24.Controls.Add(this.buttonIR);
-			this.panel24.Controls.Add(this.textBoxIrValue);
-			this.panel24.Controls.Add(this.label49);
-			this.panel24.Controls.Add(this.textBoxIrPos);
-			this.panel24.Controls.Add(this.textBoxIrId);
-			this.panel24.Controls.Add(this.label47);
-			this.panel24.Controls.Add(this.label48);
-			this.panel24.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panel24.Location = new System.Drawing.Point(0, 0);
-			this.panel24.Name = "panel24";
-			this.panel24.Size = new System.Drawing.Size(1134, 31);
-			this.panel24.TabIndex = 2;
-			// 
-			// panel25
-			// 
-			this.panel25.Controls.Add(this.textBoxAutoPubTopic);
-			this.panel25.Controls.Add(this.label41);
-			this.panel25.Controls.Add(this.label58);
-			this.panel25.Controls.Add(this.buttonAutoPubStart);
-			this.panel25.Controls.Add(this.buttonAutoPubStop);
-			this.panel25.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panel25.Location = new System.Drawing.Point(0, 0);
-			this.panel25.Name = "panel25";
-			this.panel25.Size = new System.Drawing.Size(926, 41);
-			this.panel25.TabIndex = 9;
-			// 
-			// textBoxGreen
-			// 
-			this.textBoxGreen.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBoxGreen.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBoxGreen.Location = new System.Drawing.Point(248, 32);
-			this.textBoxGreen.Name = "textBoxGreen";
-			this.textBoxGreen.Size = new System.Drawing.Size(180, 25);
-			this.textBoxGreen.TabIndex = 1;
-			// 
-			// textBoxYellow
-			// 
-			this.textBoxYellow.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBoxYellow.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBoxYellow.Location = new System.Drawing.Point(248, 58);
-			this.textBoxYellow.Name = "textBoxYellow";
-			this.textBoxYellow.Size = new System.Drawing.Size(180, 25);
-			this.textBoxYellow.TabIndex = 2;
-			// 
-			// textBoxGray
-			// 
-			this.textBoxGray.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBoxGray.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBoxGray.Location = new System.Drawing.Point(248, 84);
-			this.textBoxGray.Name = "textBoxGray";
-			this.textBoxGray.Size = new System.Drawing.Size(180, 25);
-			this.textBoxGray.TabIndex = 3;
-			// 
-			// textBoxNavy
-			// 
-			this.textBoxNavy.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBoxNavy.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBoxNavy.Location = new System.Drawing.Point(248, 110);
-			this.textBoxNavy.Name = "textBoxNavy";
-			this.textBoxNavy.Size = new System.Drawing.Size(180, 25);
-			this.textBoxNavy.TabIndex = 4;
-			// 
-			// textBoxPurple
-			// 
-			this.textBoxPurple.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBoxPurple.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBoxPurple.Location = new System.Drawing.Point(248, 136);
-			this.textBoxPurple.Name = "textBoxPurple";
-			this.textBoxPurple.Size = new System.Drawing.Size(180, 25);
-			this.textBoxPurple.TabIndex = 5;
-			// 
-			// textBoxRed
-			// 
-			this.textBoxRed.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBoxRed.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBoxRed.Location = new System.Drawing.Point(248, 6);
-			this.textBoxRed.Name = "textBoxRed";
-			this.textBoxRed.Size = new System.Drawing.Size(180, 25);
-			this.textBoxRed.TabIndex = 0;
-			// 
-			// textBoxLime
-			// 
-			this.textBoxLime.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBoxLime.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBoxLime.Location = new System.Drawing.Point(248, 162);
-			this.textBoxLime.Name = "textBoxLime";
-			this.textBoxLime.Size = new System.Drawing.Size(180, 25);
-			this.textBoxLime.TabIndex = 6;
-			// 
-			// textBoxPink
-			// 
-			this.textBoxPink.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBoxPink.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBoxPink.Location = new System.Drawing.Point(248, 188);
-			this.textBoxPink.Name = "textBoxPink";
-			this.textBoxPink.Size = new System.Drawing.Size(180, 25);
-			this.textBoxPink.TabIndex = 7;
-			// 
-			// textBoxOrange
-			// 
-			this.textBoxOrange.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBoxOrange.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBoxOrange.Location = new System.Drawing.Point(248, 214);
-			this.textBoxOrange.Name = "textBoxOrange";
-			this.textBoxOrange.Size = new System.Drawing.Size(180, 25);
-			this.textBoxOrange.TabIndex = 8;
-			// 
-			// textBoxBlue
-			// 
-			this.textBoxBlue.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBoxBlue.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBoxBlue.Location = new System.Drawing.Point(248, 240);
-			this.textBoxBlue.Name = "textBoxBlue";
-			this.textBoxBlue.Size = new System.Drawing.Size(180, 25);
-			this.textBoxBlue.TabIndex = 10;
-			// 
-			// textBoxBlack
-			// 
-			this.textBoxBlack.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBoxBlack.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBoxBlack.Location = new System.Drawing.Point(248, 266);
-			this.textBoxBlack.Name = "textBoxBlack";
-			this.textBoxBlack.Size = new System.Drawing.Size(180, 25);
-			this.textBoxBlack.TabIndex = 11;
-			// 
-			// label19
-			// 
-			this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label19.AutoSize = true;
-			this.label19.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label19.Location = new System.Drawing.Point(216, 88);
-			this.label19.Name = "label19";
-			this.label19.Size = new System.Drawing.Size(35, 17);
-			this.label19.TabIndex = 0;
-			this.label19.Text = "Gray";
-			// 
-			// label18
-			// 
-			this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label18.AutoSize = true;
-			this.label18.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label18.Location = new System.Drawing.Point(205, 62);
-			this.label18.Name = "label18";
-			this.label18.Size = new System.Drawing.Size(46, 17);
-			this.label18.TabIndex = 0;
-			this.label18.Text = "Yellow";
-			// 
-			// label17
-			// 
-			this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label17.AutoSize = true;
-			this.label17.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label17.Location = new System.Drawing.Point(207, 36);
-			this.label17.Name = "label17";
-			this.label17.Size = new System.Drawing.Size(44, 17);
-			this.label17.TabIndex = 0;
-			this.label17.Text = "Green";
-			// 
-			// label20
-			// 
-			this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label20.AutoSize = true;
-			this.label20.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label20.Location = new System.Drawing.Point(214, 114);
-			this.label20.Name = "label20";
-			this.label20.Size = new System.Drawing.Size(37, 17);
-			this.label20.TabIndex = 0;
-			this.label20.Text = "Navy";
-			// 
-			// label21
-			// 
-			this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label21.AutoSize = true;
-			this.label21.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label21.Location = new System.Drawing.Point(205, 140);
-			this.label21.Name = "label21";
-			this.label21.Size = new System.Drawing.Size(46, 17);
-			this.label21.TabIndex = 0;
-			this.label21.Text = "Purple";
-			// 
-			// label16
-			// 
-			this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label16.AutoSize = true;
-			this.label16.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label16.Location = new System.Drawing.Point(220, 10);
-			this.label16.Name = "label16";
-			this.label16.Size = new System.Drawing.Size(31, 17);
-			this.label16.TabIndex = 0;
-			this.label16.Text = "Red";
-			// 
-			// label22
-			// 
-			this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label22.AutoSize = true;
-			this.label22.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label22.Location = new System.Drawing.Point(216, 166);
-			this.label22.Name = "label22";
-			this.label22.Size = new System.Drawing.Size(35, 17);
-			this.label22.TabIndex = 0;
-			this.label22.Text = "Lime";
-			// 
-			// label35
-			// 
-			this.label35.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label35.AutoSize = true;
-			this.label35.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label35.Location = new System.Drawing.Point(218, 192);
-			this.label35.Name = "label35";
-			this.label35.Size = new System.Drawing.Size(33, 17);
-			this.label35.TabIndex = 0;
-			this.label35.Text = "Pink";
-			// 
-			// label36
-			// 
-			this.label36.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label36.AutoSize = true;
-			this.label36.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label36.Location = new System.Drawing.Point(198, 218);
-			this.label36.Name = "label36";
-			this.label36.Size = new System.Drawing.Size(53, 17);
-			this.label36.TabIndex = 0;
-			this.label36.Text = "Orange";
-			// 
-			// label37
-			// 
-			this.label37.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label37.AutoSize = true;
-			this.label37.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label37.Location = new System.Drawing.Point(217, 244);
-			this.label37.Name = "label37";
-			this.label37.Size = new System.Drawing.Size(34, 17);
-			this.label37.TabIndex = 0;
-			this.label37.Text = "Blue";
-			// 
-			// label38
-			// 
-			this.label38.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label38.AutoSize = true;
-			this.label38.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label38.Location = new System.Drawing.Point(212, 270);
-			this.label38.Name = "label38";
-			this.label38.Size = new System.Drawing.Size(39, 17);
-			this.label38.TabIndex = 0;
-			this.label38.Text = "Black";
-			// 
-			// panel3
-			// 
-			this.panel3.Controls.Add(this.listBoxSub);
-			this.panel3.Controls.Add(this.buttonTopicOpen);
-			this.panel3.Controls.Add(this.buttonSubscribe2);
-			this.panel3.Controls.Add(this.buttonTopicSave);
-			this.panel3.Controls.Add(this.buttonUnscribe);
-			this.panel3.Controls.Add(this.buttonLogFolder);
-			this.panel3.Controls.Add(this.label15);
-			this.panel3.Location = new System.Drawing.Point(3, 2);
-			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(196, 297);
-			this.panel3.TabIndex = 1;
-			// 
-			// label15
-			// 
-			this.label15.AutoSize = true;
-			this.label15.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label15.Location = new System.Drawing.Point(6, 2);
-			this.label15.Name = "label15";
-			this.label15.Size = new System.Drawing.Size(138, 20);
-			this.label15.TabIndex = 0;
-			this.label15.Text = "Subscriptions topic";
-			// 
-			// buttonLogFolder
-			// 
-			this.buttonLogFolder.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.buttonLogFolder.Location = new System.Drawing.Point(98, 271);
-			this.buttonLogFolder.Name = "buttonLogFolder";
-			this.buttonLogFolder.Size = new System.Drawing.Size(95, 24);
-			this.buttonLogFolder.TabIndex = 8;
-			this.buttonLogFolder.Text = "Log Folder";
-			this.buttonLogFolder.UseVisualStyleBackColor = true;
-			this.buttonLogFolder.Click += new System.EventHandler(this.buttonLogFolder_Click);
-			// 
-			// buttonUnscribe
-			// 
-			this.buttonUnscribe.Enabled = false;
-			this.buttonUnscribe.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.buttonUnscribe.Location = new System.Drawing.Point(6, 271);
-			this.buttonUnscribe.Name = "buttonUnscribe";
-			this.buttonUnscribe.Size = new System.Drawing.Size(93, 24);
-			this.buttonUnscribe.TabIndex = 8;
-			this.buttonUnscribe.Text = "Unsubscribe";
-			this.buttonUnscribe.UseVisualStyleBackColor = true;
-			this.buttonUnscribe.Click += new System.EventHandler(this.buttonUnscribe_Click);
-			// 
-			// buttonTopicSave
-			// 
-			this.buttonTopicSave.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.buttonTopicSave.Location = new System.Drawing.Point(148, 248);
-			this.buttonTopicSave.Name = "buttonTopicSave";
-			this.buttonTopicSave.Size = new System.Drawing.Size(45, 24);
-			this.buttonTopicSave.TabIndex = 8;
-			this.buttonTopicSave.Text = "Save";
-			this.buttonTopicSave.UseVisualStyleBackColor = true;
-			this.buttonTopicSave.Click += new System.EventHandler(this.buttonTopicSave_Click);
-			// 
-			// buttonSubscribe2
-			// 
-			this.buttonSubscribe2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.buttonSubscribe2.Location = new System.Drawing.Point(54, 248);
-			this.buttonSubscribe2.Name = "buttonSubscribe2";
-			this.buttonSubscribe2.Size = new System.Drawing.Size(95, 24);
-			this.buttonSubscribe2.TabIndex = 8;
-			this.buttonSubscribe2.Text = "Subscribe";
-			this.buttonSubscribe2.UseVisualStyleBackColor = true;
-			this.buttonSubscribe2.Click += new System.EventHandler(this.buttonSubscribe2_Click);
-			// 
-			// buttonTopicOpen
-			// 
-			this.buttonTopicOpen.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.buttonTopicOpen.Location = new System.Drawing.Point(6, 248);
-			this.buttonTopicOpen.Name = "buttonTopicOpen";
-			this.buttonTopicOpen.Size = new System.Drawing.Size(49, 24);
-			this.buttonTopicOpen.TabIndex = 8;
-			this.buttonTopicOpen.Text = "Open";
-			this.buttonTopicOpen.UseVisualStyleBackColor = true;
-			this.buttonTopicOpen.Click += new System.EventHandler(this.buttonTopicOpen_Click);
-			// 
-			// listBoxSub
-			// 
-			this.listBoxSub.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.listBoxSub.FormattingEnabled = true;
-			this.listBoxSub.ItemHeight = 17;
-			this.listBoxSub.Location = new System.Drawing.Point(6, 22);
-			this.listBoxSub.Name = "listBoxSub";
-			this.listBoxSub.Size = new System.Drawing.Size(187, 225);
-			this.listBoxSub.TabIndex = 9;
-			// 
-			// panel2
-			// 
-			this.panel2.Controls.Add(this.textBoxBlack);
-			this.panel2.Controls.Add(this.textBoxBlue);
-			this.panel2.Controls.Add(this.textBoxOrange);
-			this.panel2.Controls.Add(this.textBoxPink);
-			this.panel2.Controls.Add(this.textBoxLime);
-			this.panel2.Controls.Add(this.textBoxRed);
-			this.panel2.Controls.Add(this.textBoxPurple);
-			this.panel2.Controls.Add(this.textBoxNavy);
-			this.panel2.Controls.Add(this.textBoxGray);
-			this.panel2.Controls.Add(this.textBoxYellow);
-			this.panel2.Controls.Add(this.textBoxGreen);
-			this.panel2.Controls.Add(this.panel3);
-			this.panel2.Controls.Add(this.label38);
-			this.panel2.Controls.Add(this.label37);
-			this.panel2.Controls.Add(this.label36);
-			this.panel2.Controls.Add(this.label35);
-			this.panel2.Controls.Add(this.label22);
-			this.panel2.Controls.Add(this.label16);
-			this.panel2.Controls.Add(this.label21);
-			this.panel2.Controls.Add(this.label20);
-			this.panel2.Controls.Add(this.label17);
-			this.panel2.Controls.Add(this.label18);
-			this.panel2.Controls.Add(this.label19);
-			this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel2.Location = new System.Drawing.Point(715, 0);
-			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(433, 372);
-			this.panel2.TabIndex = 0;
-			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -3246,6 +3250,10 @@
 			this.tabControl1.ResumeLayout(false);
 			this.tabPage1.ResumeLayout(false);
 			this.panel1.ResumeLayout(false);
+			this.panel2.ResumeLayout(false);
+			this.panel2.PerformLayout();
+			this.panel3.ResumeLayout(false);
+			this.panel3.PerformLayout();
 			this.panel4.ResumeLayout(false);
 			this.panel6.ResumeLayout(false);
 			this.panel6.PerformLayout();
@@ -3256,19 +3264,27 @@
 			this.tabPageMain.ResumeLayout(false);
 			this.panel7.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).EndInit();
+			this.panel23.ResumeLayout(false);
+			this.panel23.PerformLayout();
 			this.tabPageMeter.ResumeLayout(false);
 			this.panel9.ResumeLayout(false);
 			this.panel11.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewMeter)).EndInit();
+			this.panel22.ResumeLayout(false);
+			this.panel22.PerformLayout();
 			this.tabPageIR.ResumeLayout(false);
 			this.panel10.ResumeLayout(false);
 			this.panel12.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewIR)).EndInit();
+			this.panel24.ResumeLayout(false);
+			this.panel24.PerformLayout();
 			this.panel8.ResumeLayout(false);
 			this.panel8.PerformLayout();
 			this.tabPage3.ResumeLayout(false);
 			this.panel16.ResumeLayout(false);
 			this.panel16.PerformLayout();
+			this.panel25.ResumeLayout(false);
+			this.panel25.PerformLayout();
 			this.panel13.ResumeLayout(false);
 			this.panel13.PerformLayout();
 			this.tabPage4.ResumeLayout(false);
@@ -3289,18 +3305,6 @@
 			this.panel18.ResumeLayout(false);
 			this.panel18.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewMessage)).EndInit();
-			this.panel22.ResumeLayout(false);
-			this.panel22.PerformLayout();
-			this.panel23.ResumeLayout(false);
-			this.panel23.PerformLayout();
-			this.panel24.ResumeLayout(false);
-			this.panel24.PerformLayout();
-			this.panel25.ResumeLayout(false);
-			this.panel25.PerformLayout();
-			this.panel3.ResumeLayout(false);
-			this.panel3.PerformLayout();
-			this.panel2.ResumeLayout(false);
-			this.panel2.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -3536,7 +3540,7 @@
 		private System.Windows.Forms.TextBox textBoxDelLocation;
 		private System.Windows.Forms.Label label73;
 		private System.Windows.Forms.Button button15;
-		private System.Windows.Forms.Button button16;
+		private System.Windows.Forms.Button buttonSearchRemain;
 		private System.Windows.Forms.TextBox textBoxSeperateString;
 		private System.Windows.Forms.Label label74;
 		private System.Windows.Forms.Button button17;

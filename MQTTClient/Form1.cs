@@ -60,6 +60,9 @@ namespace MQTTClient
 			iniload();
 			this.dataGridViewMessage.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
 			tabControl2_SelectedIndexChanged(sender, e);
+
+			textBox52.AllowDrop = true;
+			textBox52.DragDrop += textBox52_DragDrop;
 		}
 		private void buttonTopicSave_Click(object sender, EventArgs e)
 		{
@@ -339,10 +342,10 @@ namespace MQTTClient
 				textBoxPlus9.Text = autotextPlus9.ToString();
 				textBoxPlus10.Text = autotextPlus10.ToString();
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
-
-				throw;
+				MessageBox.Show(ex.ToString());
+		 
 			}
 
 		}
@@ -2977,7 +2980,44 @@ namespace MQTTClient
 		{
 
 		}
+
+		private void dataGridViewDelivery_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+
+		}
+
+		private void textBox52_DragDrop(object sender, DragEventArgs e)
+		{
+			string[] strFileNames = e.Data.GetData(DataFormats.FileDrop) as string[];
+			foreach (string strFilePath in strFileNames)
+			{
+				if (e.Data.GetDataPresent(DataFormats.FileDrop))
+				{
+					textBox52.AppendText(System.IO.File.ReadAllText(strFilePath));
+				}
+			}
+			//	// 파일의 내용을 텍스트박스에 추가
+			//	//txtMain.AppendText( System.IO.File.ReadAllText(strFilePath));
+			//	// 파일의 내용만 텍스트박스에 출력
+			//	textBox52.Text += System.IO.File.ReadAllText(strFilePath);
+			//	// 하나만 출력하고 그대로 빠져나감
+			//	//break;
+			// DragDrop은 리스트 컨트롤에 마우스를 드래그해서 놓았을때 발생하는 함수
+			button16_Click(sender, e);
+		}
+
+		private void textBox52_DragEnter(object sender, DragEventArgs e)
+		{
+			if (e.Data.GetDataPresent(DataFormats.FileDrop))
+				e.Effect = DragDropEffects.Copy;
+			else
+				e.Effect = DragDropEffects.None;
+		}
+		//DragEnter는 마우스로 리스트컨트롤 안으로 들어왔을 때 발생하는 함수
 	}
+}
+
+
 
 
 	//Put this class at the end of the main class or you will have problems.
@@ -2990,4 +3030,3 @@ namespace MQTTClient
 			pi.SetValue(dgv, setting, null);
 		}
 	}
-}
