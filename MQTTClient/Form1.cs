@@ -697,13 +697,18 @@ namespace MQTTClient
 			}
 		}
 
-
+		public class CMD_ID_VALUE
+		{
+			public string CMD { get; set; }
+			public string ID { get; set; }
+			public string VALUE { get; set; }
+		}
 
 		public class CMD_POS_VALUE
 		{
 			public string CMD { get; set; }
-			public string POS { get; set; }
-			public string VALUE { get; set; }
+			public int POS { get; set; }
+			public int VALUE { get; set; }
 		}
 
 		public class CMD_POS
@@ -804,7 +809,13 @@ namespace MQTTClient
 						int value = Convert.ToInt32(resp.VALUE);
 						dataGridViewIR[id + 1, pos - 1].Value = value.ToString();
 					}
-				
+					else if (cmd.CMD == "MAIN_SET")
+					{
+						CMD_POS_VALUE resp = JsonConvert.DeserializeObject<CMD_POS_VALUE>(Encoding.UTF8.GetString(data.Message));
+						int pos = Convert.ToInt32(resp.POS);
+						int value = Convert.ToInt32(resp.VALUE);
+						dataGridViewMain[2, pos - 1].Value = value.ToString();
+					}
 				}
 				ShowMessage(data.Topic, System.Text.Encoding.UTF8.GetString(data.Message), dataGridViewMessage);
 			}
@@ -2346,25 +2357,52 @@ namespace MQTTClient
 
 
 
-		private void buttonIRPublish_Click(object sender, EventArgs e)
+	private void buttonIRPublish_Click(object sender, EventArgs e)
 		{
 			string irTopic = "dawoon/meterset/" + textBoxCode.Text + "/1/POLOR";
-			string irMessage = "{ \"CMD\":\"IR_SET\",\"POS\":" + textBoxIrPos.Text + ",\"ID\":" + textBoxIrId.Text + ",\"VALUE\":" + textBoxIrValue.Text + " }";
-			clientUser.Publish(irTopic, Encoding.UTF8.GetBytes(irMessage), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+			CMD_ID_POS_VALUE message = new CMD_ID_POS_VALUE();
+			message.CMD = "IR_SET";
+			message.ID = Convert.ToInt32(textBoxIrId.Text);
+			message.POS = Convert.ToInt32(textBoxIrPos.Text);
+			message.VALUE = Convert.ToInt32(textBoxIrValue.Text);
+			string irMessage = JsonConvert.SerializeObject(message, Formatting.Indented);
+			clientUser.Publish(irTopic, Encoding.UTF8.GetBytes(irMessage.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+
+			//string irTopic = "dawoon/meterset/" + textBoxCode.Text + "/1/POLOR";
+			//string irMessage = "{ \"CMD\":\"IR_SET\",\"POS\":" + textBoxIrPos.Text + ",\"ID\":" + textBoxIrId.Text + ",\"VALUE\":" + textBoxIrValue.Text + " }";
+			//clientUser.Publish(irTopic, Encoding.UTF8.GetBytes(irMessage), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 		}
 
 		private void buttonMeterPublish_Click(object sender, EventArgs e)
 		{
-			string irTopic = "dawoon/meterset/" + textBoxCode.Text + "/1/POLOR";
-			string irMessage = "{ \"CMD\":\"METER_SET\",\"POS\":" + textBoxMeterPos.Text + ",\"ID\":" + textBoxMeterId.Text + ",\"VALUE\":" + textBoxMeterValue.Text + " }";
-			clientUser.Publish(irTopic, Encoding.UTF8.GetBytes(irMessage), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+			string metersetTopic = "dawoon/meterset/" + textBoxCode.Text + "/1/POLOR";
+			CMD_ID_POS_VALUE message = new CMD_ID_POS_VALUE();
+			message.CMD = "METER_SET";
+			message.ID = Convert.ToInt32(textBoxMeterId.Text);
+			message.POS = Convert.ToInt32(textBoxMeterPos.Text);
+			message.VALUE = Convert.ToInt32(textBoxMeterValue.Text);
+			string metersetMessage = JsonConvert.SerializeObject(message, Formatting.Indented);
+			clientUser.Publish(metersetTopic, Encoding.UTF8.GetBytes(metersetMessage.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+
+			//string metersetTopic = "dawoon/meterset/" + textBoxCode.Text + "/1/POLOR";
+			//string metersetMessage = "{ \"CMD\":\"METER_SET\",\"POS\":" + textBoxMeterPos.Text + ",\"ID\":" + textBoxMeterId.Text + ",\"VALUE\":" + textBoxMeterValue.Text + " }";
+			//clientUser.Publish(metersetTopic, Encoding.UTF8.GetBytes(metersetMessage), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 		}
 
 		private void buttonMainPulish_Click(object sender, EventArgs e)
 		{
-			string irTopic = "dawoon/Manual/" + textBoxCode.Text + "/1/POLOR";
-			string irMessage = "{ \"CMD\":\"MAIN_SET\",\"POS\":" + textBoxMainPos.Text + ",\"VALUE\":" + textBoxMainValue.Text + " }";
-			clientUser.Publish(irTopic, Encoding.UTF8.GetBytes(irMessage), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+			string mainTopic = "dawoon/meterset/" + textBoxCode.Text + "/1/POLOR";
+			CMD_POS_VALUE message = new CMD_POS_VALUE();
+			message.CMD = "MAIN_SET";
+			message.POS = Convert.ToInt32(textBoxMainPos.Text);
+			message.VALUE = Convert.ToInt32(textBoxMainValue.Text);
+			string mainMessage = JsonConvert.SerializeObject(message, Formatting.Indented);
+			clientUser.Publish(mainTopic, Encoding.UTF8.GetBytes(mainMessage.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+
+
+			//string mainTopic = "dawoon/Manual/" + textBoxCode.Text + "/1/POLOR";
+			//string mainMessage = "{ \"CMD\":\"MAIN_SET\",\"POS\":" + textBoxMainPos.Text + ",\"VALUE\":" + textBoxMainValue.Text + " }";
+			//clientUser.Publish(mainTopic, Encoding.UTF8.GetBytes(mainMessage), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 		}
 
 		bool a = true;
