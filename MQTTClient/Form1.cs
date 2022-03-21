@@ -755,7 +755,7 @@ namespace MQTTClient
 				if (data.Topic == "dawoon/Manual/" + textBoxCode.Text.Trim() + "/1/" + "POLOR")
 				{
 					CMD_POS_VALUE cmd = JsonConvert.DeserializeObject<CMD_POS_VALUE>(Encoding.UTF8.GetString(data.Message));
-					if (cmd.CMD == "RESP_MAIN_SET_READ")
+					if (cmd.CMD == "RESP_MAIN_SET_READ" || cmd.CMD == "MAIN_SET_OK")
 					{
 						int pos = Convert.ToInt32(cmd.POS);
 						int value = Convert.ToInt32(cmd.VALUE);
