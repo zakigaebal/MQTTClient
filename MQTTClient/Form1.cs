@@ -1624,6 +1624,12 @@ namespace MQTTClient
 			{
 				for (int i = 0; i < 40; i++)
 				{
+					Application.DoEvents();
+
+					if (checkBoxStop.Checked)
+					{
+						break;
+					}
 					// REQ CLASS 생성 2개를 가져오는
 					// CMD ,POS 값
 					CMD_POS req = new CMD_POS();
@@ -1631,7 +1637,7 @@ namespace MQTTClient
 					req.POS = i;
 					string reqStr = JsonConvert.SerializeObject(req, Formatting.Indented);
 					clientUser.Publish(topic, Encoding.UTF8.GetBytes(reqStr.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
-					Delay(500);
+					Delay(Convert.ToInt32(textBoxDelay.Text));
 				}
 			}
 			catch (Exception ex)
@@ -2172,17 +2178,28 @@ namespace MQTTClient
 			{
 				CMD_ID_POS req = new CMD_ID_POS();
 
-				for (int k = 1; k <= 20; k++)
+				for (int k = 1; k <= Convert.ToInt32(textBoxIdCount.Text); k++)
 				{
-					for (int i = 1; i <= 20; i++)
+					Application.DoEvents();
+					if (checkBoxStop.Checked)
 					{
+						break;
+					}
+					for (int i = 1; i <= 46; i++)
+					{
+						Application.DoEvents();
+						if (checkBoxStop.Checked)
+						{
+							break;
+						}
 						req.ID = k;
 						req.CMD = "REQ_METER_SET_READ";
 						req.POS = i;
 						string reqStr = JsonConvert.SerializeObject(req, Formatting.Indented);
 						clientUser.Publish(topic, Encoding.UTF8.GetBytes(reqStr.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+						Delay(Convert.ToInt32(textBoxDelay.Text));
 					}
-					Delay(500);
+				
 				}
 			}
 			catch (Exception ex)
@@ -2198,18 +2215,31 @@ namespace MQTTClient
 			{
 				CMD_ID_POS req = new CMD_ID_POS();
 
-				for (int k = 1; k <= 20; k++)
+				for (int k = 1; k <= Convert.ToInt32(textBoxIdCount.Text); k++)
 				{
-					for (int i = 1; i <= 20; i++)
+					Application.DoEvents();
+
+					if (checkBoxStop.Checked)
 					{
+						break;
+					}
+					for (int i = 1; i <= 10; i++)
+					{
+						Application.DoEvents();
+
+						if (checkBoxStop.Checked)
+						{
+							break;
+						}
 						req.ID = k;
 						req.CMD = "REQ_IR_SET_READ";
 						req.POS = i;
 
 						string reqStr = JsonConvert.SerializeObject(req, Formatting.Indented);
 						clientUser.Publish(topic, Encoding.UTF8.GetBytes(reqStr.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+					Delay(Convert.ToInt32(textBoxDelay.Text));
 					}
-					Delay(500);
+
 				}
 			}
 			catch (Exception ex)
@@ -3137,7 +3167,6 @@ namespace MQTTClient
 				CMD_POS_VALUE req = new CMD_POS_VALUE();
 					req.CMD = "REQ_MAIN_SET_READ";
 					req.POS = Convert.ToInt32(textBoxMainPos.Text);
-					req.VALUE = Convert.ToInt32(textBoxMainValue.Text);
 
 				string reqStr = JsonConvert.SerializeObject(req, Formatting.Indented);
 					clientUser.Publish(topic, Encoding.UTF8.GetBytes(reqStr.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
@@ -3160,7 +3189,6 @@ namespace MQTTClient
 				req.CMD = "REQ_METER_SET_READ";
 				req.ID = Convert.ToInt32(textBoxMeterId.Text);
 				req.POS = Convert.ToInt32(textBoxMeterPos.Text);
-				req.VALUE = Convert.ToInt32(textBoxMeterValue.Text);
 				string reqStr = JsonConvert.SerializeObject(req, Formatting.Indented);
 				clientUser.Publish(topic, Encoding.UTF8.GetBytes(reqStr.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 			}
@@ -3180,7 +3208,6 @@ namespace MQTTClient
 				req.CMD = "REQ_IR_SET_READ";
 				req.ID = Convert.ToInt32(textBoxIrId.Text);
 				req.POS = Convert.ToInt32(textBoxIrPos.Text);
-				req.VALUE = Convert.ToInt32(textBoxIrValue.Text);
 				string reqStr = JsonConvert.SerializeObject(req, Formatting.Indented);
 				clientUser.Publish(topic, Encoding.UTF8.GetBytes(reqStr.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 			}
@@ -3190,9 +3217,73 @@ namespace MQTTClient
 				LogMgr.ExceptionLog(ex);
 			}
 		}
+
+		private void button8_Click_1(object sender, EventArgs e)
+		{
+			string topic = "dawoon/meterset/" + textBoxCode.Text.Trim() + "/1/" + "POLOR";
+			try
+			{
+				CMD_ID_POS req = new CMD_ID_POS();
+
+					for (int i = 1; i <= 46; i++)
+					{
+						Application.DoEvents();
+						if (checkBoxStop.Checked)
+						{
+							break;
+						}
+						req.ID = Convert.ToInt32(textBoxMeterId.Text);
+						req.CMD = "REQ_METER_SET_READ";
+						req.POS = i;
+						string reqStr = JsonConvert.SerializeObject(req, Formatting.Indented);
+						clientUser.Publish(topic, Encoding.UTF8.GetBytes(reqStr.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+						Delay(Convert.ToInt32(textBoxDelay.Text));
+					}
+
+				
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+		}
+
+		private void button12_Click_1(object sender, EventArgs e)
+		{
+			string topic = "dawoon/meterset/" + textBoxCode.Text.Trim() + "/1/" + "POLOR";
+			try
+			{
+				CMD_ID_POS req = new CMD_ID_POS();
+
+			
+					for (int i = 1; i <= 14; i++)
+					{
+						Application.DoEvents();
+
+						if (checkBoxStop.Checked)
+						{
+							break;
+						}
+						req.ID = Convert.ToInt32(textBoxIrId.Text);
+						req.CMD = "REQ_IR_SET_READ";
+						req.POS = i;
+
+						string reqStr = JsonConvert.SerializeObject(req, Formatting.Indented);
+						clientUser.Publish(topic, Encoding.UTF8.GetBytes(reqStr.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+						Delay(Convert.ToInt32(textBoxDelay.Text));
+					}
+
+				
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+		}
+	}
 		//DragEnter는 마우스로 리스트컨트롤 안으로 들어왔을 때 발생하는 함수
 	}
-}
+
 
 
 

@@ -153,6 +153,7 @@
 			this.panel11 = new System.Windows.Forms.Panel();
 			this.dataGridViewMeter = new System.Windows.Forms.DataGridView();
 			this.panel22 = new System.Windows.Forms.Panel();
+			this.button8 = new System.Windows.Forms.Button();
 			this.buttonMeterRead = new System.Windows.Forms.Button();
 			this.buttonMeter = new System.Windows.Forms.Button();
 			this.buttonMeterPublish = new System.Windows.Forms.Button();
@@ -169,6 +170,7 @@
 			this.panel12 = new System.Windows.Forms.Panel();
 			this.dataGridViewIR = new System.Windows.Forms.DataGridView();
 			this.panel24 = new System.Windows.Forms.Panel();
+			this.button12 = new System.Windows.Forms.Button();
 			this.buttonIrPublish = new System.Windows.Forms.Button();
 			this.buttonIrRead = new System.Windows.Forms.Button();
 			this.buttonIR = new System.Windows.Forms.Button();
@@ -179,7 +181,10 @@
 			this.label47 = new System.Windows.Forms.Label();
 			this.label48 = new System.Windows.Forms.Label();
 			this.panel8 = new System.Windows.Forms.Panel();
+			this.checkBoxStop = new System.Windows.Forms.CheckBox();
 			this.buttonIdCount = new System.Windows.Forms.Button();
+			this.textBoxDelay = new System.Windows.Forms.TextBox();
+			this.label75 = new System.Windows.Forms.Label();
 			this.textBoxIdCount = new System.Windows.Forms.TextBox();
 			this.label40 = new System.Windows.Forms.Label();
 			this.textBoxCode = new System.Windows.Forms.TextBox();
@@ -1737,6 +1742,7 @@
 			// 
 			// panel22
 			// 
+			this.panel22.Controls.Add(this.button8);
 			this.panel22.Controls.Add(this.buttonMeterRead);
 			this.panel22.Controls.Add(this.buttonMeter);
 			this.panel22.Controls.Add(this.buttonMeterPublish);
@@ -1754,9 +1760,19 @@
 			this.panel22.Size = new System.Drawing.Size(1134, 31);
 			this.panel22.TabIndex = 18;
 			// 
+			// button8
+			// 
+			this.button8.Location = new System.Drawing.Point(426, 5);
+			this.button8.Name = "button8";
+			this.button8.Size = new System.Drawing.Size(39, 23);
+			this.button8.TabIndex = 1;
+			this.button8.Text = "읽기";
+			this.button8.UseVisualStyleBackColor = true;
+			this.button8.Click += new System.EventHandler(this.button8_Click_1);
+			// 
 			// buttonMeterRead
 			// 
-			this.buttonMeterRead.Location = new System.Drawing.Point(637, 6);
+			this.buttonMeterRead.Location = new System.Drawing.Point(675, 5);
 			this.buttonMeterRead.Name = "buttonMeterRead";
 			this.buttonMeterRead.Size = new System.Drawing.Size(39, 23);
 			this.buttonMeterRead.TabIndex = 1;
@@ -1777,7 +1793,7 @@
 			// 
 			// buttonMeterPublish
 			// 
-			this.buttonMeterPublish.Location = new System.Drawing.Point(682, 6);
+			this.buttonMeterPublish.Location = new System.Drawing.Point(720, 5);
 			this.buttonMeterPublish.Name = "buttonMeterPublish";
 			this.buttonMeterPublish.Size = new System.Drawing.Size(75, 23);
 			this.buttonMeterPublish.TabIndex = 17;
@@ -1799,7 +1815,7 @@
 			// 
 			// textBoxMeterValue
 			// 
-			this.textBoxMeterValue.Location = new System.Drawing.Point(579, 7);
+			this.textBoxMeterValue.Location = new System.Drawing.Point(617, 6);
 			this.textBoxMeterValue.Name = "textBoxMeterValue";
 			this.textBoxMeterValue.Size = new System.Drawing.Size(52, 21);
 			this.textBoxMeterValue.TabIndex = 14;
@@ -1818,7 +1834,7 @@
 			// 
 			// textBoxMeterPos
 			// 
-			this.textBoxMeterPos.Location = new System.Drawing.Point(467, 7);
+			this.textBoxMeterPos.Location = new System.Drawing.Point(505, 6);
 			this.textBoxMeterPos.Name = "textBoxMeterPos";
 			this.textBoxMeterPos.Size = new System.Drawing.Size(52, 21);
 			this.textBoxMeterPos.TabIndex = 15;
@@ -1835,7 +1851,7 @@
 			// label44
 			// 
 			this.label44.AutoSize = true;
-			this.label44.Location = new System.Drawing.Point(525, 11);
+			this.label44.Location = new System.Drawing.Point(563, 10);
 			this.label44.Name = "label44";
 			this.label44.Size = new System.Drawing.Size(48, 12);
 			this.label44.TabIndex = 11;
@@ -1851,7 +1867,7 @@
 			// label45
 			// 
 			this.label45.AutoSize = true;
-			this.label45.Location = new System.Drawing.Point(427, 11);
+			this.label45.Location = new System.Drawing.Point(465, 10);
 			this.label45.Name = "label45";
 			this.label45.Size = new System.Drawing.Size(34, 12);
 			this.label45.TabIndex = 12;
@@ -1903,6 +1919,7 @@
 			// 
 			// panel24
 			// 
+			this.panel24.Controls.Add(this.button12);
 			this.panel24.Controls.Add(this.buttonIrPublish);
 			this.panel24.Controls.Add(this.buttonIrRead);
 			this.panel24.Controls.Add(this.buttonIR);
@@ -1918,9 +1935,19 @@
 			this.panel24.Size = new System.Drawing.Size(1134, 31);
 			this.panel24.TabIndex = 2;
 			// 
+			// button12
+			// 
+			this.button12.Location = new System.Drawing.Point(157, 3);
+			this.button12.Name = "button12";
+			this.button12.Size = new System.Drawing.Size(40, 24);
+			this.button12.TabIndex = 18;
+			this.button12.Text = "읽기";
+			this.button12.UseVisualStyleBackColor = true;
+			this.button12.Click += new System.EventHandler(this.button12_Click_1);
+			// 
 			// buttonIrPublish
 			// 
-			this.buttonIrPublish.Location = new System.Drawing.Point(414, 3);
+			this.buttonIrPublish.Location = new System.Drawing.Point(454, 3);
 			this.buttonIrPublish.Name = "buttonIrPublish";
 			this.buttonIrPublish.Size = new System.Drawing.Size(70, 24);
 			this.buttonIrPublish.TabIndex = 17;
@@ -1930,7 +1957,7 @@
 			// 
 			// buttonIrRead
 			// 
-			this.buttonIrRead.Location = new System.Drawing.Point(368, 3);
+			this.buttonIrRead.Location = new System.Drawing.Point(408, 3);
 			this.buttonIrRead.Name = "buttonIrRead";
 			this.buttonIrRead.Size = new System.Drawing.Size(40, 24);
 			this.buttonIrRead.TabIndex = 1;
@@ -1951,7 +1978,7 @@
 			// 
 			// textBoxIrValue
 			// 
-			this.textBoxIrValue.Location = new System.Drawing.Point(310, 5);
+			this.textBoxIrValue.Location = new System.Drawing.Point(350, 5);
 			this.textBoxIrValue.Name = "textBoxIrValue";
 			this.textBoxIrValue.Size = new System.Drawing.Size(52, 21);
 			this.textBoxIrValue.TabIndex = 14;
@@ -1967,7 +1994,7 @@
 			// 
 			// textBoxIrPos
 			// 
-			this.textBoxIrPos.Location = new System.Drawing.Point(198, 5);
+			this.textBoxIrPos.Location = new System.Drawing.Point(238, 5);
 			this.textBoxIrPos.Name = "textBoxIrPos";
 			this.textBoxIrPos.Size = new System.Drawing.Size(52, 21);
 			this.textBoxIrPos.TabIndex = 15;
@@ -1982,7 +2009,7 @@
 			// label47
 			// 
 			this.label47.AutoSize = true;
-			this.label47.Location = new System.Drawing.Point(256, 9);
+			this.label47.Location = new System.Drawing.Point(296, 9);
 			this.label47.Name = "label47";
 			this.label47.Size = new System.Drawing.Size(48, 12);
 			this.label47.TabIndex = 11;
@@ -1991,7 +2018,7 @@
 			// label48
 			// 
 			this.label48.AutoSize = true;
-			this.label48.Location = new System.Drawing.Point(158, 9);
+			this.label48.Location = new System.Drawing.Point(198, 9);
 			this.label48.Name = "label48";
 			this.label48.Size = new System.Drawing.Size(34, 12);
 			this.label48.TabIndex = 12;
@@ -1999,7 +2026,10 @@
 			// 
 			// panel8
 			// 
+			this.panel8.Controls.Add(this.checkBoxStop);
 			this.panel8.Controls.Add(this.buttonIdCount);
+			this.panel8.Controls.Add(this.textBoxDelay);
+			this.panel8.Controls.Add(this.label75);
 			this.panel8.Controls.Add(this.textBoxIdCount);
 			this.panel8.Controls.Add(this.label40);
 			this.panel8.Controls.Add(this.textBoxCode);
@@ -2009,6 +2039,16 @@
 			this.panel8.Name = "panel8";
 			this.panel8.Size = new System.Drawing.Size(1148, 27);
 			this.panel8.TabIndex = 6;
+			// 
+			// checkBoxStop
+			// 
+			this.checkBoxStop.AutoSize = true;
+			this.checkBoxStop.Location = new System.Drawing.Point(337, 7);
+			this.checkBoxStop.Name = "checkBoxStop";
+			this.checkBoxStop.Size = new System.Drawing.Size(48, 16);
+			this.checkBoxStop.TabIndex = 8;
+			this.checkBoxStop.Text = "중지";
+			this.checkBoxStop.UseVisualStyleBackColor = true;
 			// 
 			// buttonIdCount
 			// 
@@ -2020,6 +2060,24 @@
 			this.buttonIdCount.Text = "개수 읽기";
 			this.buttonIdCount.UseVisualStyleBackColor = true;
 			this.buttonIdCount.Click += new System.EventHandler(this.buttonIdCount_Click);
+			// 
+			// textBoxDelay
+			// 
+			this.textBoxDelay.Location = new System.Drawing.Point(424, 3);
+			this.textBoxDelay.Name = "textBoxDelay";
+			this.textBoxDelay.Size = new System.Drawing.Size(36, 21);
+			this.textBoxDelay.TabIndex = 5;
+			this.textBoxDelay.Text = "300";
+			this.textBoxDelay.TextChanged += new System.EventHandler(this.textBoxIdCount_TextChanged);
+			// 
+			// label75
+			// 
+			this.label75.AutoSize = true;
+			this.label75.Location = new System.Drawing.Point(389, 7);
+			this.label75.Name = "label75";
+			this.label75.Size = new System.Drawing.Size(29, 12);
+			this.label75.TabIndex = 6;
+			this.label75.Text = "지연";
 			// 
 			// textBoxIdCount
 			// 
@@ -3637,6 +3695,11 @@
 		private System.Windows.Forms.Button buttonMainRead1;
 		private System.Windows.Forms.Button buttonMeterRead;
 		private System.Windows.Forms.Button buttonIrRead;
+		private System.Windows.Forms.CheckBox checkBoxStop;
+		private System.Windows.Forms.TextBox textBoxDelay;
+		private System.Windows.Forms.Label label75;
+		private System.Windows.Forms.Button button8;
+		private System.Windows.Forms.Button button12;
 	}
 }
 
