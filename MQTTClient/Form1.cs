@@ -99,8 +99,9 @@ namespace MQTTClient
 				}
 				file.Close();
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
+				LogMgr.ExceptionLog(ex);
 			}
 
 		}
@@ -753,7 +754,8 @@ namespace MQTTClient
 				/// 2. payload한 메세지에서 cmd를 체크
 				/// 3. 원하는 값 추출
 				/// 데이터그리드뷰 보여주기
-				/// 	string topic = "dawoon/Manual/" + textBoxCode.Text.Trim() + "/1/" + "POLOR";
+				/// string topic = "dawoon/Manual/" + textBoxCode.Text.Trim() + "/1/" + "POLOR";
+				/// 
 				if (data.Topic == "dawoon/Manual/" + textBoxCode.Text.Trim() + "/1/" + "POLOR")
 				{
 					CMD_POS_VALUE cmd = JsonConvert.DeserializeObject<CMD_POS_VALUE>(Encoding.UTF8.GetString(data.Message));
@@ -761,7 +763,7 @@ namespace MQTTClient
 					{
 						int pos = Convert.ToInt32(cmd.POS);
 						int value = Convert.ToInt32(cmd.VALUE);
-						dataGridViewMain["2", pos - 1].Value = value.ToString();
+						dataGridViewMain["2", pos].Value = value.ToString();
 					}
 					else if (cmd.CMD == "RESP_METER_COUNT")
 					{
@@ -798,7 +800,7 @@ namespace MQTTClient
 						int id = resp.ID;
 						int pos = Convert.ToInt32(resp.POS);
 						int value = Convert.ToInt32(resp.VALUE);
-						dataGridViewMeter[id + 1, pos - 1].Value = value.ToString();
+						dataGridViewMeter[id + 1, pos].Value = value.ToString();
 					}
 
 					else if (cmd.CMD == "IR_SET")
@@ -807,14 +809,14 @@ namespace MQTTClient
 						int id = resp.ID;
 						int pos = Convert.ToInt32(resp.POS);
 						int value = Convert.ToInt32(resp.VALUE);
-						dataGridViewIR[id + 1, pos - 1].Value = value.ToString();
+						dataGridViewIR[id + 1, pos].Value = value.ToString();
 					}
 					else if (cmd.CMD == "MAIN_SET")
 					{
 						CMD_POS_VALUE resp = JsonConvert.DeserializeObject<CMD_POS_VALUE>(Encoding.UTF8.GetString(data.Message));
 						int pos = Convert.ToInt32(resp.POS);
 						int value = Convert.ToInt32(resp.VALUE);
-						dataGridViewMain[2, pos - 1].Value = value.ToString();
+						dataGridViewMain[2, pos].Value = value.ToString();
 					}
 				}
 				ShowMessage(data.Topic, System.Text.Encoding.UTF8.GetString(data.Message), dataGridViewMessage);
@@ -1620,7 +1622,7 @@ namespace MQTTClient
 			string topic = "dawoon/Manual/" + textBoxCode.Text.Trim() + "/1/" + "POLOR";
 			try
 			{
-				for (int i = 1; i <= 40; i++)
+				for (int i = 0; i < 40; i++)
 				{
 					// REQ CLASS 생성 2개를 가져오는
 					// CMD ,POS 값
@@ -1786,7 +1788,7 @@ namespace MQTTClient
 					for (int i = 0; i < 40; i++)
 					{
 						dataGridViewMain.Rows.Add();
-						dataGridViewMain["0", i].Value = i + 1;
+						dataGridViewMain["0", i].Value = i;
 
 					}
 					dataGridViewMain["1", 0].Value = "DEVICE_TYPE: 디바이스 종류";
@@ -1915,7 +1917,7 @@ namespace MQTTClient
 					dataGridViewMeter.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 					dataGridViewMeter.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 					dataGridViewMeter.Columns[0].Width = 40;
-					dataGridViewMeter.Columns[1].Width = 200;
+					dataGridViewMeter.Columns[1].Width = 250;
 					dataGridViewMeter.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 				}
 
@@ -2061,9 +2063,7 @@ namespace MQTTClient
 				int dgvHeader = dataGridViewMeter.Columns.Count - 1;
 				int dgvValue = Convert.ToInt32(textBoxIdCount.Text) + 2;
 				dataGridViewMeter.Columns[dgvHeader].HeaderText = "텐덤";
-				dataGridViewMeter["1", 1].Value = "장비 ID(1~6)";
-				dataGridViewMeter["11", 11].Value = "유방염 에러 밸류 (세이버없음)";
-				dataGridViewMeter["12", 12].Value = "혈류 에러 벨류(mg/L) (세이버없음)";
+			
 				int idx = 0;
 
 				dataGridViewMeter[dgvValue.ToString(), idx++].Value = "1";
@@ -2112,6 +2112,9 @@ namespace MQTTClient
 				dataGridViewMeter[dgvValue.ToString(), idx++].Value = "50";
 				dataGridViewMeter[dgvValue.ToString(), idx++].Value = "5";
 				dataGridViewMeter[dgvValue.ToString(), idx++].Value = "0";
+				dataGridViewMeter["1", 1].Value = "장비 ID(1~6)";
+				dataGridViewMeter["1", 11].Value = "유방염 에러 밸류 (세이버없음)";
+				dataGridViewMeter["1", 12].Value = "혈류 에러 벨류(mg/L) (세이버없음)";
 			}
 		}
 
@@ -2302,7 +2305,7 @@ namespace MQTTClient
 				dataGridViewMeter.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 				dataGridViewMeter.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 				dataGridViewMeter.Columns[0].Width = 40;
-				dataGridViewMeter.Columns[1].Width = 200;
+				dataGridViewMeter.Columns[1].Width = 250;
 				dataGridViewMeter.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 			}
 
@@ -2341,6 +2344,8 @@ namespace MQTTClient
 				dataGridViewIR["1", num++].Value = "rse: 리모콘사용 여부 0:사용안함 1:사용함";
 				dataGridViewIR["1", num++].Value = "be: 0:부져 사용 1: 부져 사용안함. 기본값 0";
 				dataGridViewIR["1", num++].Value = "tuc: 태그 깨어나는 IR 카운트수. IR 라이팅때 같이 사용됨";
+
+	
 
 				dataGridViewIR.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 				dataGridViewIR.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
@@ -2551,7 +2556,7 @@ namespace MQTTClient
 			{
 				return;
 			}
-			else if (!Int32.TryParse(textBoxPort3.Text, out port))
+			else if (!Int32.TryParse(textBoxPort2.Text, out port))
 			{
 				//로그잡기.메세지박스잡기
 				return;
@@ -2560,10 +2565,10 @@ namespace MQTTClient
 			{
 				try
 				{
-					clientscr = new MqttClient(textBoxHost2.Text);
+					clientscr = new MqttClient(textBoxHost2.Text, Int32.Parse(textBoxPort2.Text), false, null, null, MqttSslProtocols.None);
 					clientscr.Connect(Guid.NewGuid().ToString());
 					clientscr.MqttMsgPublishReceived += new MqttClient.MqttMsgPublishEventHandler(clientsrc_MqttMsgPublishReceived);
-					button2_Click_1(sender, e);
+					//button2_Click_1(sender, e);
 				}
 				catch (Exception ex)
 				{
@@ -2576,8 +2581,8 @@ namespace MQTTClient
 					buttonDisconnect2.Enabled = true;
 					textBoxHost2.Enabled = false;
 					textBoxHost3.Enabled = false;
-					textBoxPort2.Enabled = false;
 					textBoxPort3.Enabled = false;
+					textBoxPort2.Enabled = false;
 					buttonConnect2.Enabled = false;
 				}
 			}
@@ -2586,7 +2591,7 @@ namespace MQTTClient
 			{
 				return;
 			}
-			else if (!Int32.TryParse(textBoxPort2.Text, out port2))
+			else if (!Int32.TryParse(textBoxPort3.Text, out port2))
 			{
 				return;
 			}
@@ -2594,7 +2599,8 @@ namespace MQTTClient
 			{
 				try
 				{
-					clientdst = new MqttClient(textBoxHost3.Text);
+
+					clientdst = new MqttClient(textBoxHost3.Text, Int32.Parse(textBoxPort3.Text), false, null, null, MqttSslProtocols.None);
 					clientdst.Connect(Guid.NewGuid().ToString());
 					clientdst.MqttMsgPublishReceived += new MqttClient.MqttMsgPublishEventHandler(clientdst_MqttMsgPublishReceived);
 				}
@@ -2697,17 +2703,16 @@ namespace MQTTClient
 		{
 			try
 			{
+				//폴더 있는지 확인하고 생성하기
+				//if (!Directory.GetCurrentDirectory().Contains("subSend.txt"))
+				//{
+				//	StreamWriter sw;
+				//	sw = new StreamWriter("subSend.txt");
+				//	sw.Close();
+				//}
+
 				listBoxSub2.Items.Clear();
 				string currentPath = System.IO.Directory.GetCurrentDirectory();
-
-				//폴더 있는지 확인하고 생성하기
-				if (!Directory.GetCurrentDirectory().Contains("subSend.txt"))
-				{
-					StreamWriter sw;
-					sw = new StreamWriter("subSend.txt");
-					sw.Close();
-				}
-
 				StreamReader file = new StreamReader(currentPath + "\\subSend.txt", Encoding.Default);
 				string s = "";
 				while (s != null)
@@ -2717,24 +2722,31 @@ namespace MQTTClient
 				}
 				file.Close();
 			}
-			catch (Exception error)
+			catch (Exception ex)
 			{
-				MessageBox.Show(error.ToString());
+				LogMgr.ExceptionLog(ex);
 			}
 
 		}
 
 		private void button4_Click(object sender, EventArgs e)
 		{
-			StreamWriter sw;
-			sw = new StreamWriter("subSend.txt");
-			int nCount = listBoxSub2.Items.Count;
-			for (int i = 0; i < nCount; i++)
+			try
 			{
-				listBoxSub2.Items[i] += "\r\n";
-				sw.Write(listBoxSub2.Items[i]);
+				StreamWriter sw;
+				sw = new StreamWriter("subSend.txt");
+				int nCount = listBoxSub2.Items.Count;
+				for (int i = 0; i < nCount; i++)
+				{
+					listBoxSub2.Items[i] += "\r\n";
+					sw.Write(listBoxSub2.Items[i]);
+				}
+				sw.Close();
 			}
-			sw.Close();
+			catch (Exception ex)
+			{
+				LogMgr.ExceptionLog(ex);
+			}
 		}
 
 		private void button2_Click_1(object sender, EventArgs e)
@@ -2794,8 +2806,8 @@ namespace MQTTClient
 				if (clientscr != null && clientscr.IsConnected) clientscr.Disconnect();
 				if (clientdst != null && clientdst.IsConnected) clientdst.Disconnect();
 				listBoxSub2.Items.Clear();
-				textBoxPort2.Enabled = true;
 				textBoxPort3.Enabled = true;
+				textBoxPort2.Enabled = true;
 				textBoxHost2.Enabled = true;
 				textBoxHost3.Enabled = true;
 				buttonConnect2.Enabled = true;
@@ -3105,6 +3117,70 @@ namespace MQTTClient
 			listMessage.AddRange(array);
 			listMessage.Sort();
 			textBox52.Lines = listMessage.ToArray();
+		}
+
+		private void buttonMainRead1_Click(object sender, EventArgs e)
+		{
+			string topic = "dawoon/Manual/" + textBoxCode.Text.Trim() + "/1/" + "POLOR";
+			try
+			{
+				// REQ CLASS 생성 2개를 가져오는
+				// CMD ,POS 값
+				CMD_POS_VALUE req = new CMD_POS_VALUE();
+					req.CMD = "REQ_MAIN_SET_READ";
+					req.POS = Convert.ToInt32(textBoxMainPos.Text);
+					req.VALUE = Convert.ToInt32(textBoxMainValue.Text);
+
+				string reqStr = JsonConvert.SerializeObject(req, Formatting.Indented);
+					clientUser.Publish(topic, Encoding.UTF8.GetBytes(reqStr.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+				LogMgr.ExceptionLog(ex);
+			}
+		}
+
+
+
+		private void buttonMeterRead_Click(object sender, EventArgs e)
+		{
+			string topic = "dawoon/meterset/" + textBoxCode.Text.Trim() + "/1/" + "POLOR";
+			try
+			{
+				CMD_ID_POS_VALUE req = new CMD_ID_POS_VALUE();
+				req.CMD = "REQ_METER_SET_READ";
+				req.ID = Convert.ToInt32(textBoxMeterId.Text);
+				req.POS = Convert.ToInt32(textBoxMeterPos.Text);
+				req.VALUE = Convert.ToInt32(textBoxMeterValue.Text);
+				string reqStr = JsonConvert.SerializeObject(req, Formatting.Indented);
+				clientUser.Publish(topic, Encoding.UTF8.GetBytes(reqStr.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+				LogMgr.ExceptionLog(ex);
+			}
+		}
+
+		private void buttonIrRead_Click(object sender, EventArgs e)
+		{
+			string topic = "dawoon/meterset/" + textBoxCode.Text.Trim() + "/1/" + "POLOR";
+			try
+			{
+				CMD_ID_POS_VALUE req = new CMD_ID_POS_VALUE();
+				req.CMD = "REQ_IR_SET_READ";
+				req.ID = Convert.ToInt32(textBoxIrId.Text);
+				req.POS = Convert.ToInt32(textBoxIrPos.Text);
+				req.VALUE = Convert.ToInt32(textBoxIrValue.Text);
+				string reqStr = JsonConvert.SerializeObject(req, Formatting.Indented);
+				clientUser.Publish(topic, Encoding.UTF8.GetBytes(reqStr.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+				LogMgr.ExceptionLog(ex);
+			}
 		}
 		//DragEnter는 마우스로 리스트컨트롤 안으로 들어왔을 때 발생하는 함수
 	}

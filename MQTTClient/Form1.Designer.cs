@@ -139,6 +139,7 @@
 			this.panel7 = new System.Windows.Forms.Panel();
 			this.dataGridViewMain = new System.Windows.Forms.DataGridView();
 			this.panel23 = new System.Windows.Forms.Panel();
+			this.buttonMainRead1 = new System.Windows.Forms.Button();
 			this.buttonMain = new System.Windows.Forms.Button();
 			this.buttonMainPulish = new System.Windows.Forms.Button();
 			this.label42 = new System.Windows.Forms.Label();
@@ -152,6 +153,7 @@
 			this.panel11 = new System.Windows.Forms.Panel();
 			this.dataGridViewMeter = new System.Windows.Forms.DataGridView();
 			this.panel22 = new System.Windows.Forms.Panel();
+			this.buttonMeterRead = new System.Windows.Forms.Button();
 			this.buttonMeter = new System.Windows.Forms.Button();
 			this.buttonMeterPublish = new System.Windows.Forms.Button();
 			this.radioButton4 = new System.Windows.Forms.RadioButton();
@@ -168,6 +170,7 @@
 			this.dataGridViewIR = new System.Windows.Forms.DataGridView();
 			this.panel24 = new System.Windows.Forms.Panel();
 			this.buttonIrPublish = new System.Windows.Forms.Button();
+			this.buttonIrRead = new System.Windows.Forms.Button();
 			this.buttonIR = new System.Windows.Forms.Button();
 			this.textBoxIrValue = new System.Windows.Forms.TextBox();
 			this.label49 = new System.Windows.Forms.Label();
@@ -256,21 +259,21 @@
 			this.button5 = new System.Windows.Forms.Button();
 			this.tabPage5 = new System.Windows.Forms.TabPage();
 			this.dataGridViewDelivery = new System.Windows.Forms.DataGridView();
-			this.panel19 = new System.Windows.Forms.Panel();
 			this.listBoxSub2 = new System.Windows.Forms.ListBox();
+			this.panel19 = new System.Windows.Forms.Panel();
 			this.label70 = new System.Windows.Forms.Label();
-			this.buttonConnect2 = new System.Windows.Forms.Button();
-			this.buttonDisconnect2 = new System.Windows.Forms.Button();
-			this.textBoxTopicHeader = new System.Windows.Forms.TextBox();
-			this.panel20 = new System.Windows.Forms.Panel();
-			this.button14 = new System.Windows.Forms.Button();
 			this.button1 = new System.Windows.Forms.Button();
 			this.buttonSubScribe3 = new System.Windows.Forms.Button();
+			this.buttonConnect2 = new System.Windows.Forms.Button();
 			this.button4 = new System.Windows.Forms.Button();
+			this.buttonDisconnect2 = new System.Windows.Forms.Button();
 			this.buttonUnscribe2 = new System.Windows.Forms.Button();
-			this.textBoxScrTopic = new System.Windows.Forms.TextBox();
-			this.button9 = new System.Windows.Forms.Button();
+			this.textBoxTopicHeader = new System.Windows.Forms.TextBox();
 			this.label69 = new System.Windows.Forms.Label();
+			this.button9 = new System.Windows.Forms.Button();
+			this.panel20 = new System.Windows.Forms.Panel();
+			this.button14 = new System.Windows.Forms.Button();
+			this.textBoxScrTopic = new System.Windows.Forms.TextBox();
 			this.label61 = new System.Windows.Forms.Label();
 			this.panel17 = new System.Windows.Forms.Panel();
 			this.button7 = new System.Windows.Forms.Button();
@@ -281,7 +284,7 @@
 			this.checkBox2 = new System.Windows.Forms.CheckBox();
 			this.label62 = new System.Windows.Forms.Label();
 			this.label63 = new System.Windows.Forms.Label();
-			this.textBoxPort3 = new System.Windows.Forms.TextBox();
+			this.textBoxPort2 = new System.Windows.Forms.TextBox();
 			this.comboBoxQos2 = new System.Windows.Forms.ComboBox();
 			this.label64 = new System.Windows.Forms.Label();
 			this.panel18 = new System.Windows.Forms.Panel();
@@ -293,7 +296,7 @@
 			this.checkBox1 = new System.Windows.Forms.CheckBox();
 			this.label66 = new System.Windows.Forms.Label();
 			this.label67 = new System.Windows.Forms.Label();
-			this.textBoxPort2 = new System.Windows.Forms.TextBox();
+			this.textBoxPort3 = new System.Windows.Forms.TextBox();
 			this.comboBoxQos3 = new System.Windows.Forms.ComboBox();
 			this.label68 = new System.Windows.Forms.Label();
 			this.buttonClear = new System.Windows.Forms.Button();
@@ -1585,6 +1588,7 @@
 			// 
 			// panel23
 			// 
+			this.panel23.Controls.Add(this.buttonMainRead1);
 			this.panel23.Controls.Add(this.buttonMain);
 			this.panel23.Controls.Add(this.buttonMainPulish);
 			this.panel23.Controls.Add(this.label42);
@@ -1599,6 +1603,16 @@
 			this.panel23.Size = new System.Drawing.Size(1134, 31);
 			this.panel23.TabIndex = 11;
 			// 
+			// buttonMainRead1
+			// 
+			this.buttonMainRead1.Location = new System.Drawing.Point(538, 4);
+			this.buttonMainRead1.Name = "buttonMainRead1";
+			this.buttonMainRead1.Size = new System.Drawing.Size(40, 24);
+			this.buttonMainRead1.TabIndex = 1;
+			this.buttonMainRead1.Text = "읽기";
+			this.buttonMainRead1.UseVisualStyleBackColor = true;
+			this.buttonMainRead1.Click += new System.EventHandler(this.buttonMainRead1_Click);
+			// 
 			// buttonMain
 			// 
 			this.buttonMain.Enabled = false;
@@ -1612,9 +1626,9 @@
 			// 
 			// buttonMainPulish
 			// 
-			this.buttonMainPulish.Location = new System.Drawing.Point(538, 4);
+			this.buttonMainPulish.Location = new System.Drawing.Point(584, 4);
 			this.buttonMainPulish.Name = "buttonMainPulish";
-			this.buttonMainPulish.Size = new System.Drawing.Size(75, 23);
+			this.buttonMainPulish.Size = new System.Drawing.Size(70, 24);
 			this.buttonMainPulish.TabIndex = 10;
 			this.buttonMainPulish.Text = "MAIN쓰기";
 			this.buttonMainPulish.UseVisualStyleBackColor = true;
@@ -1723,6 +1737,7 @@
 			// 
 			// panel22
 			// 
+			this.panel22.Controls.Add(this.buttonMeterRead);
 			this.panel22.Controls.Add(this.buttonMeter);
 			this.panel22.Controls.Add(this.buttonMeterPublish);
 			this.panel22.Controls.Add(this.radioButton4);
@@ -1739,6 +1754,16 @@
 			this.panel22.Size = new System.Drawing.Size(1134, 31);
 			this.panel22.TabIndex = 18;
 			// 
+			// buttonMeterRead
+			// 
+			this.buttonMeterRead.Location = new System.Drawing.Point(637, 6);
+			this.buttonMeterRead.Name = "buttonMeterRead";
+			this.buttonMeterRead.Size = new System.Drawing.Size(39, 23);
+			this.buttonMeterRead.TabIndex = 1;
+			this.buttonMeterRead.Text = "읽기";
+			this.buttonMeterRead.UseVisualStyleBackColor = true;
+			this.buttonMeterRead.Click += new System.EventHandler(this.buttonMeterRead_Click);
+			// 
 			// buttonMeter
 			// 
 			this.buttonMeter.Enabled = false;
@@ -1752,7 +1777,7 @@
 			// 
 			// buttonMeterPublish
 			// 
-			this.buttonMeterPublish.Location = new System.Drawing.Point(637, 5);
+			this.buttonMeterPublish.Location = new System.Drawing.Point(682, 6);
 			this.buttonMeterPublish.Name = "buttonMeterPublish";
 			this.buttonMeterPublish.Size = new System.Drawing.Size(75, 23);
 			this.buttonMeterPublish.TabIndex = 17;
@@ -1879,6 +1904,7 @@
 			// panel24
 			// 
 			this.panel24.Controls.Add(this.buttonIrPublish);
+			this.panel24.Controls.Add(this.buttonIrRead);
 			this.panel24.Controls.Add(this.buttonIR);
 			this.panel24.Controls.Add(this.textBoxIrValue);
 			this.panel24.Controls.Add(this.label49);
@@ -1894,13 +1920,23 @@
 			// 
 			// buttonIrPublish
 			// 
-			this.buttonIrPublish.Location = new System.Drawing.Point(368, 4);
+			this.buttonIrPublish.Location = new System.Drawing.Point(414, 3);
 			this.buttonIrPublish.Name = "buttonIrPublish";
-			this.buttonIrPublish.Size = new System.Drawing.Size(75, 23);
+			this.buttonIrPublish.Size = new System.Drawing.Size(70, 24);
 			this.buttonIrPublish.TabIndex = 17;
 			this.buttonIrPublish.Text = "IR쓰기";
 			this.buttonIrPublish.UseVisualStyleBackColor = true;
 			this.buttonIrPublish.Click += new System.EventHandler(this.buttonIRPublish_Click);
+			// 
+			// buttonIrRead
+			// 
+			this.buttonIrRead.Location = new System.Drawing.Point(368, 3);
+			this.buttonIrRead.Name = "buttonIrRead";
+			this.buttonIrRead.Size = new System.Drawing.Size(40, 24);
+			this.buttonIrRead.TabIndex = 1;
+			this.buttonIrRead.Text = "읽기";
+			this.buttonIrRead.UseVisualStyleBackColor = true;
+			this.buttonIrRead.Click += new System.EventHandler(this.buttonIrRead_Click);
 			// 
 			// buttonIR
 			// 
@@ -2730,6 +2766,7 @@
 			// tabPage5
 			// 
 			this.tabPage5.Controls.Add(this.dataGridViewDelivery);
+			this.tabPage5.Controls.Add(this.listBoxSub2);
 			this.tabPage5.Controls.Add(this.panel19);
 			this.tabPage5.Controls.Add(this.panel20);
 			this.tabPage5.Controls.Add(this.panel17);
@@ -2749,38 +2786,43 @@
 			this.dataGridViewDelivery.AllowUserToDeleteRows = false;
 			this.dataGridViewDelivery.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridViewDelivery.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.dataGridViewDelivery.Location = new System.Drawing.Point(3, 211);
+			this.dataGridViewDelivery.Location = new System.Drawing.Point(3, 215);
 			this.dataGridViewDelivery.Name = "dataGridViewDelivery";
 			this.dataGridViewDelivery.ReadOnly = true;
 			this.dataGridViewDelivery.RowTemplate.Height = 23;
-			this.dataGridViewDelivery.Size = new System.Drawing.Size(1148, 164);
+			this.dataGridViewDelivery.Size = new System.Drawing.Size(1148, 160);
 			this.dataGridViewDelivery.TabIndex = 17;
 			this.dataGridViewDelivery.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDelivery_CellContentClick);
 			// 
-			// panel19
-			// 
-			this.panel19.Controls.Add(this.listBoxSub2);
-			this.panel19.Controls.Add(this.label70);
-			this.panel19.Controls.Add(this.buttonConnect2);
-			this.panel19.Controls.Add(this.buttonDisconnect2);
-			this.panel19.Controls.Add(this.textBoxTopicHeader);
-			this.panel19.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panel19.Location = new System.Drawing.Point(3, 83);
-			this.panel19.Name = "panel19";
-			this.panel19.Size = new System.Drawing.Size(1148, 128);
-			this.panel19.TabIndex = 15;
-			this.panel19.Paint += new System.Windows.Forms.PaintEventHandler(this.panel19_Paint);
-			// 
 			// listBoxSub2
 			// 
-			this.listBoxSub2.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.listBoxSub2.Dock = System.Windows.Forms.DockStyle.Top;
 			this.listBoxSub2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
 			this.listBoxSub2.FormattingEnabled = true;
 			this.listBoxSub2.ItemHeight = 17;
-			this.listBoxSub2.Location = new System.Drawing.Point(0, 39);
+			this.listBoxSub2.Location = new System.Drawing.Point(3, 109);
 			this.listBoxSub2.Name = "listBoxSub2";
-			this.listBoxSub2.Size = new System.Drawing.Size(1148, 89);
-			this.listBoxSub2.TabIndex = 9;
+			this.listBoxSub2.Size = new System.Drawing.Size(1148, 106);
+			this.listBoxSub2.TabIndex = 18;
+			// 
+			// panel19
+			// 
+			this.panel19.Controls.Add(this.label70);
+			this.panel19.Controls.Add(this.button1);
+			this.panel19.Controls.Add(this.buttonSubScribe3);
+			this.panel19.Controls.Add(this.buttonConnect2);
+			this.panel19.Controls.Add(this.button4);
+			this.panel19.Controls.Add(this.buttonDisconnect2);
+			this.panel19.Controls.Add(this.buttonUnscribe2);
+			this.panel19.Controls.Add(this.textBoxTopicHeader);
+			this.panel19.Controls.Add(this.label69);
+			this.panel19.Controls.Add(this.button9);
+			this.panel19.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panel19.Location = new System.Drawing.Point(3, 83);
+			this.panel19.Name = "panel19";
+			this.panel19.Size = new System.Drawing.Size(1148, 26);
+			this.panel19.TabIndex = 15;
+			this.panel19.Paint += new System.Windows.Forms.PaintEventHandler(this.panel19_Paint);
 			// 
 			// label70
 			// 
@@ -2791,67 +2833,6 @@
 			this.label70.Size = new System.Drawing.Size(72, 20);
 			this.label70.TabIndex = 0;
 			this.label70.Text = "토픽헤더:";
-			// 
-			// buttonConnect2
-			// 
-			this.buttonConnect2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.buttonConnect2.Location = new System.Drawing.Point(239, 0);
-			this.buttonConnect2.Name = "buttonConnect2";
-			this.buttonConnect2.Size = new System.Drawing.Size(68, 24);
-			this.buttonConnect2.TabIndex = 2;
-			this.buttonConnect2.Text = "Connect";
-			this.buttonConnect2.UseVisualStyleBackColor = true;
-			this.buttonConnect2.Click += new System.EventHandler(this.buttonConnet2_Click);
-			// 
-			// buttonDisconnect2
-			// 
-			this.buttonDisconnect2.Enabled = false;
-			this.buttonDisconnect2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.buttonDisconnect2.Location = new System.Drawing.Point(307, 0);
-			this.buttonDisconnect2.Name = "buttonDisconnect2";
-			this.buttonDisconnect2.Size = new System.Drawing.Size(81, 24);
-			this.buttonDisconnect2.TabIndex = 2;
-			this.buttonDisconnect2.Text = "Disconnect";
-			this.buttonDisconnect2.UseVisualStyleBackColor = true;
-			this.buttonDisconnect2.Click += new System.EventHandler(this.button12_Click);
-			// 
-			// textBoxTopicHeader
-			// 
-			this.textBoxTopicHeader.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBoxTopicHeader.Location = new System.Drawing.Point(91, 0);
-			this.textBoxTopicHeader.Name = "textBoxTopicHeader";
-			this.textBoxTopicHeader.Size = new System.Drawing.Size(146, 25);
-			this.textBoxTopicHeader.TabIndex = 2;
-			this.textBoxTopicHeader.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
-			// 
-			// panel20
-			// 
-			this.panel20.Controls.Add(this.button14);
-			this.panel20.Controls.Add(this.button1);
-			this.panel20.Controls.Add(this.buttonSubScribe3);
-			this.panel20.Controls.Add(this.button4);
-			this.panel20.Controls.Add(this.buttonUnscribe2);
-			this.panel20.Controls.Add(this.textBoxScrTopic);
-			this.panel20.Controls.Add(this.button9);
-			this.panel20.Controls.Add(this.label69);
-			this.panel20.Controls.Add(this.label61);
-			this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panel20.Location = new System.Drawing.Point(3, 56);
-			this.panel20.Name = "panel20";
-			this.panel20.Size = new System.Drawing.Size(1148, 27);
-			this.panel20.TabIndex = 16;
-			this.panel20.Paint += new System.Windows.Forms.PaintEventHandler(this.panel20_Paint);
-			// 
-			// button14
-			// 
-			this.button14.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.button14.Location = new System.Drawing.Point(238, 0);
-			this.button14.Name = "button14";
-			this.button14.Size = new System.Drawing.Size(39, 24);
-			this.button14.TabIndex = 20;
-			this.button14.Text = "Sub";
-			this.button14.UseVisualStyleBackColor = true;
-			this.button14.Click += new System.EventHandler(this.button14_Click);
 			// 
 			// button1
 			// 
@@ -2875,6 +2856,17 @@
 			this.buttonSubScribe3.UseVisualStyleBackColor = true;
 			this.buttonSubScribe3.Click += new System.EventHandler(this.button2_Click_1);
 			// 
+			// buttonConnect2
+			// 
+			this.buttonConnect2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.buttonConnect2.Location = new System.Drawing.Point(239, 0);
+			this.buttonConnect2.Name = "buttonConnect2";
+			this.buttonConnect2.Size = new System.Drawing.Size(68, 24);
+			this.buttonConnect2.TabIndex = 2;
+			this.buttonConnect2.Text = "Connect";
+			this.buttonConnect2.UseVisualStyleBackColor = true;
+			this.buttonConnect2.Click += new System.EventHandler(this.buttonConnet2_Click);
+			// 
 			// button4
 			// 
 			this.button4.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -2885,6 +2877,18 @@
 			this.button4.Text = "Save";
 			this.button4.UseVisualStyleBackColor = true;
 			this.button4.Click += new System.EventHandler(this.button4_Click);
+			// 
+			// buttonDisconnect2
+			// 
+			this.buttonDisconnect2.Enabled = false;
+			this.buttonDisconnect2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.buttonDisconnect2.Location = new System.Drawing.Point(307, 0);
+			this.buttonDisconnect2.Name = "buttonDisconnect2";
+			this.buttonDisconnect2.Size = new System.Drawing.Size(81, 24);
+			this.buttonDisconnect2.TabIndex = 2;
+			this.buttonDisconnect2.Text = "Disconnect";
+			this.buttonDisconnect2.UseVisualStyleBackColor = true;
+			this.buttonDisconnect2.Click += new System.EventHandler(this.button12_Click);
 			// 
 			// buttonUnscribe2
 			// 
@@ -2898,13 +2902,24 @@
 			this.buttonUnscribe2.UseVisualStyleBackColor = true;
 			this.buttonUnscribe2.Click += new System.EventHandler(this.button8_Click);
 			// 
-			// textBoxScrTopic
+			// textBoxTopicHeader
 			// 
-			this.textBoxScrTopic.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBoxScrTopic.Location = new System.Drawing.Point(91, 0);
-			this.textBoxScrTopic.Name = "textBoxScrTopic";
-			this.textBoxScrTopic.Size = new System.Drawing.Size(146, 25);
-			this.textBoxScrTopic.TabIndex = 19;
+			this.textBoxTopicHeader.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.textBoxTopicHeader.Location = new System.Drawing.Point(91, 0);
+			this.textBoxTopicHeader.Name = "textBoxTopicHeader";
+			this.textBoxTopicHeader.Size = new System.Drawing.Size(146, 25);
+			this.textBoxTopicHeader.TabIndex = 2;
+			this.textBoxTopicHeader.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+			// 
+			// label69
+			// 
+			this.label69.AutoSize = true;
+			this.label69.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.label69.Location = new System.Drawing.Point(398, 2);
+			this.label69.Name = "label69";
+			this.label69.Size = new System.Drawing.Size(46, 20);
+			this.label69.TabIndex = 0;
+			this.label69.Text = "topic:";
 			// 
 			// button9
 			// 
@@ -2917,15 +2932,36 @@
 			this.button9.UseVisualStyleBackColor = true;
 			this.button9.Click += new System.EventHandler(this.button9_Click_1);
 			// 
-			// label69
+			// panel20
 			// 
-			this.label69.AutoSize = true;
-			this.label69.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label69.Location = new System.Drawing.Point(398, 2);
-			this.label69.Name = "label69";
-			this.label69.Size = new System.Drawing.Size(46, 20);
-			this.label69.TabIndex = 0;
-			this.label69.Text = "topic:";
+			this.panel20.Controls.Add(this.button14);
+			this.panel20.Controls.Add(this.textBoxScrTopic);
+			this.panel20.Controls.Add(this.label61);
+			this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panel20.Location = new System.Drawing.Point(3, 56);
+			this.panel20.Name = "panel20";
+			this.panel20.Size = new System.Drawing.Size(1148, 27);
+			this.panel20.TabIndex = 16;
+			this.panel20.Paint += new System.Windows.Forms.PaintEventHandler(this.panel20_Paint);
+			// 
+			// button14
+			// 
+			this.button14.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.button14.Location = new System.Drawing.Point(238, 0);
+			this.button14.Name = "button14";
+			this.button14.Size = new System.Drawing.Size(39, 24);
+			this.button14.TabIndex = 20;
+			this.button14.Text = "Sub";
+			this.button14.UseVisualStyleBackColor = true;
+			this.button14.Click += new System.EventHandler(this.button14_Click);
+			// 
+			// textBoxScrTopic
+			// 
+			this.textBoxScrTopic.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.textBoxScrTopic.Location = new System.Drawing.Point(91, 0);
+			this.textBoxScrTopic.Name = "textBoxScrTopic";
+			this.textBoxScrTopic.Size = new System.Drawing.Size(146, 25);
+			this.textBoxScrTopic.TabIndex = 19;
 			// 
 			// label61
 			// 
@@ -2948,7 +2984,7 @@
 			this.panel17.Controls.Add(this.checkBox2);
 			this.panel17.Controls.Add(this.label62);
 			this.panel17.Controls.Add(this.label63);
-			this.panel17.Controls.Add(this.textBoxPort3);
+			this.panel17.Controls.Add(this.textBoxPort2);
 			this.panel17.Controls.Add(this.comboBoxQos2);
 			this.panel17.Controls.Add(this.label64);
 			this.panel17.Dock = System.Windows.Forms.DockStyle.Top;
@@ -3044,15 +3080,15 @@
 			this.label63.Text = "Port:";
 			this.label63.Click += new System.EventHandler(this.label63_Click);
 			// 
-			// textBoxPort3
+			// textBoxPort2
 			// 
-			this.textBoxPort3.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBoxPort3.Location = new System.Drawing.Point(319, 0);
-			this.textBoxPort3.Name = "textBoxPort3";
-			this.textBoxPort3.Size = new System.Drawing.Size(46, 25);
-			this.textBoxPort3.TabIndex = 1;
-			this.textBoxPort3.Text = "1883";
-			this.textBoxPort3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+			this.textBoxPort2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.textBoxPort2.Location = new System.Drawing.Point(319, 0);
+			this.textBoxPort2.Name = "textBoxPort2";
+			this.textBoxPort2.Size = new System.Drawing.Size(46, 25);
+			this.textBoxPort2.TabIndex = 1;
+			this.textBoxPort2.Text = "1883";
+			this.textBoxPort2.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
 			// 
 			// comboBoxQos2
 			// 
@@ -3090,7 +3126,7 @@
 			this.panel18.Controls.Add(this.checkBox1);
 			this.panel18.Controls.Add(this.label66);
 			this.panel18.Controls.Add(this.label67);
-			this.panel18.Controls.Add(this.textBoxPort2);
+			this.panel18.Controls.Add(this.textBoxPort3);
 			this.panel18.Controls.Add(this.comboBoxQos3);
 			this.panel18.Controls.Add(this.label68);
 			this.panel18.Dock = System.Windows.Forms.DockStyle.Top;
@@ -3182,14 +3218,14 @@
 			this.label67.TabIndex = 0;
 			this.label67.Text = "Port:";
 			// 
-			// textBoxPort2
+			// textBoxPort3
 			// 
-			this.textBoxPort2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.textBoxPort2.Location = new System.Drawing.Point(319, 1);
-			this.textBoxPort2.Name = "textBoxPort2";
-			this.textBoxPort2.Size = new System.Drawing.Size(46, 25);
-			this.textBoxPort2.TabIndex = 1;
-			this.textBoxPort2.Text = "1883";
+			this.textBoxPort3.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.textBoxPort3.Location = new System.Drawing.Point(319, 1);
+			this.textBoxPort3.Name = "textBoxPort3";
+			this.textBoxPort3.Size = new System.Drawing.Size(46, 25);
+			this.textBoxPort3.TabIndex = 1;
+			this.textBoxPort3.Text = "1883";
 			// 
 			// comboBoxQos3
 			// 
@@ -3512,7 +3548,7 @@
 		private System.Windows.Forms.CheckBox checkBox1;
 		private System.Windows.Forms.Label label66;
 		private System.Windows.Forms.Label label67;
-		private System.Windows.Forms.TextBox textBoxPort2;
+		private System.Windows.Forms.TextBox textBoxPort3;
 		private System.Windows.Forms.ComboBox comboBoxQos3;
 		private System.Windows.Forms.Label label68;
 		private System.Windows.Forms.Panel panel17;
@@ -3521,12 +3557,11 @@
 		private System.Windows.Forms.CheckBox checkBox2;
 		private System.Windows.Forms.Label label62;
 		private System.Windows.Forms.Label label63;
-		private System.Windows.Forms.TextBox textBoxPort3;
+		private System.Windows.Forms.TextBox textBoxPort2;
 		private System.Windows.Forms.ComboBox comboBoxQos2;
 		private System.Windows.Forms.Label label64;
 		private System.Windows.Forms.Button buttonConnect2;
 		private System.Windows.Forms.Panel panel19;
-		public System.Windows.Forms.ListBox listBoxSub2;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Button buttonSubScribe3;
 		private System.Windows.Forms.Button button4;
@@ -3597,6 +3632,10 @@
 		private System.Windows.Forms.Label label18;
 		private System.Windows.Forms.Label label19;
 		private System.Windows.Forms.Button button2;
+		public System.Windows.Forms.ListBox listBoxSub2;
+		private System.Windows.Forms.Button buttonMainRead1;
+		private System.Windows.Forms.Button buttonMeterRead;
+		private System.Windows.Forms.Button buttonIrRead;
 	}
 }
 
