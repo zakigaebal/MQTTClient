@@ -742,9 +742,6 @@ namespace MQTTClient
 		{
 			try
 			{
-
-
-
 				//clientdst.Publish(textBoxPT1.Text+data.Topic, data.Message, (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 
 				/// 1. 토픽 체크
@@ -768,8 +765,6 @@ namespace MQTTClient
 						string respText = resp.COUNT.ToString();
 						//textBoxIdCount.Text = respText;
 						myUI(respText, textBoxIdCount);
-
-
 					}
 				}
 				else if (data.Topic == "dawoon/meterset/" + textBoxCode.Text.Trim() + "/1/" + "POLOR")
@@ -791,6 +786,25 @@ namespace MQTTClient
 						int value = Convert.ToInt32(resp.VALUE);
 						dataGridViewIR[id + 1, pos - 1].Value = value.ToString();
 					}
+
+					else if (cmd.CMD == "METER_SET")
+					{
+						CMD_ID_POS_VALUE resp = JsonConvert.DeserializeObject<CMD_ID_POS_VALUE>(Encoding.UTF8.GetString(data.Message));
+						int id = resp.ID;
+						int pos = Convert.ToInt32(resp.POS);
+						int value = Convert.ToInt32(resp.VALUE);
+						dataGridViewMeter[id + 1, pos - 1].Value = value.ToString();
+					}
+
+					else if (cmd.CMD == "IR_SET")
+					{
+						CMD_ID_POS_VALUE resp = JsonConvert.DeserializeObject<CMD_ID_POS_VALUE>(Encoding.UTF8.GetString(data.Message));
+						int id = resp.ID;
+						int pos = Convert.ToInt32(resp.POS);
+						int value = Convert.ToInt32(resp.VALUE);
+						dataGridViewIR[id + 1, pos - 1].Value = value.ToString();
+					}
+				
 				}
 				ShowMessage(data.Topic, System.Text.Encoding.UTF8.GetString(data.Message), dataGridViewMessage);
 			}
@@ -1951,6 +1965,10 @@ namespace MQTTClient
 
 		private void radioButton3_CheckedChanged(object sender, EventArgs e)
 		{
+			try
+			{
+
+			
 			if (radioButton3.Checked == true)
 			{
 				if (dataGridViewMeter.Columns.Count < 3)
@@ -2009,6 +2027,11 @@ namespace MQTTClient
 				dataGridViewMeter[dgvValue.ToString(), idx++].Value = "50";
 				dataGridViewMeter[dgvValue.ToString(), idx++].Value = "5";
 				dataGridViewMeter[dgvValue.ToString(), idx++].Value = "0";
+			}
+			}
+			catch (Exception ex)
+			{
+				LogMgr.ExceptionLog(ex);
 			}
 		}
 		private void panel11_Paint(object sender, PaintEventArgs e)
@@ -2945,7 +2968,7 @@ namespace MQTTClient
 			}
 			textBoxIrPos.Text = dataGridViewIR.Rows[e.RowIndex].Cells[0].Value.ToString();
 
-			if (dataGridViewMeter.Columns[e.ColumnIndex].HeaderText == "DESC")
+			if (dataGridViewIR.Columns[e.ColumnIndex].HeaderText == "DESC")
 			{
 				return;
 			}
