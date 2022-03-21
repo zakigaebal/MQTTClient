@@ -2584,6 +2584,7 @@ namespace MQTTClient
 					textBoxPort3.Enabled = false;
 					textBoxPort2.Enabled = false;
 					buttonConnect2.Enabled = false;
+					button14.Enabled = true;
 				}
 			}
 			int port2;
@@ -2814,6 +2815,8 @@ namespace MQTTClient
 				buttonDisconnect2.Enabled = false;
 				buttonUnscribe2.Enabled = false;
 				buttonSubScribe3.Enabled = false;
+				button14.Enabled = false;
+
 			}
 			catch (Exception ex)
 			{

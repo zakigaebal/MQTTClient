@@ -2946,6 +2946,7 @@
 			// 
 			// button14
 			// 
+			this.button14.Enabled = false;
 			this.button14.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
 			this.button14.Location = new System.Drawing.Point(238, 0);
 			this.button14.Name = "button14";
