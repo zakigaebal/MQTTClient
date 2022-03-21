@@ -902,7 +902,7 @@ namespace MQTTClient
 			{
 				try
 				{
-					clientUser = new MqttClient(textBoxHost.Text, port, false, null, null, MqttSslProtocols.None);
+					clientUser = new MqttClient(textBoxHost.Text, Int32.Parse(textBoxPort.Text), false, null, null, MqttSslProtocols.None);
 					clientUser.Connect(Guid.NewGuid().ToString());
 					clientUser.MqttMsgPublishReceived += new MqttClient.MqttMsgPublishEventHandler(client_MqttMsgPublishReceived);
 				}
