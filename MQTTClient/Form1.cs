@@ -2897,7 +2897,11 @@ namespace MQTTClient
 
 		private void button16_Click(object sender, EventArgs e)
 		{
-
+			if (textBoxSearchString.Text == "")
+			{
+			  return;
+			}
+			else { 
 			string[] key = textBoxSearchString.Text.Split(',');
 			string[] msg = textBox52.Lines;
 
@@ -2918,6 +2922,7 @@ namespace MQTTClient
 				}
 			}
 			textBox52.Lines = list.ToArray();
+			}
 		}
 
 		private void button17_Click(object sender, EventArgs e)
