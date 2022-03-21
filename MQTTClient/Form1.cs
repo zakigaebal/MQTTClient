@@ -62,7 +62,7 @@ namespace MQTTClient
 			tabControl2_SelectedIndexChanged(sender, e);
 
 			textBox52.AllowDrop = true;
-			textBox52.DragDrop += textBox52_DragDrop;
+			//textBox52.DragDrop += textBox52_DragDrop;
 		}
 		private void buttonTopicSave_Click(object sender, EventArgs e)
 		{
@@ -345,7 +345,7 @@ namespace MQTTClient
 			catch (Exception ex)
 			{
 				MessageBox.Show(ex.ToString());
-		 
+
 			}
 
 		}
@@ -665,7 +665,7 @@ namespace MQTTClient
 				{
 					System.IO.Directory.CreateDirectory("Log");
 				}
-			
+
 				string currentPath = System.IO.Directory.GetCurrentDirectory();
 				string line = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss:fff - ") + topic + " - " + payload;
 				string logName = @"" + currentPath + "\\Log\\" + "log-MQTT-" + DateTime.Now.ToString("yyyy-MM-dd") + ".log";
@@ -711,6 +711,10 @@ namespace MQTTClient
 			public string CMD { get; set; }
 			public int POS { get; set; }
 		}
+		public class COMMAND
+		{
+			public string CMD { get; set; }
+		}
 
 		public class CMD_ID_COUNT
 		{
@@ -747,7 +751,8 @@ namespace MQTTClient
 				/// 2. payload한 메세지에서 cmd를 체크
 				/// 3. 원하는 값 추출
 				/// 데이터그리드뷰 보여주기
-				if (data.Topic == "dawoon/Manual/3850/1/POLOR")
+				/// 	string topic = "dawoon/Manual/" + textBoxCode.Text.Trim() + "/1/" + "POLOR";
+				if (data.Topic == "dawoon/Manual/" + textBoxCode.Text.Trim() + "/1/" + "POLOR")
 				{
 					CMD_POS_VALUE cmd = JsonConvert.DeserializeObject<CMD_POS_VALUE>(Encoding.UTF8.GetString(data.Message));
 					if (cmd.CMD == "RESP_MAIN_SET_READ")
@@ -766,7 +771,11 @@ namespace MQTTClient
 
 
 					}
-					else if (cmd.CMD == "RESP_METER_SET_READ")
+				}
+				else if (data.Topic == "dawoon/meterset/" + textBoxCode.Text.Trim() + "/1/" + "POLOR")
+				{
+					CMD_POS_VALUE cmd = JsonConvert.DeserializeObject<CMD_POS_VALUE>(Encoding.UTF8.GetString(data.Message));
+					if (cmd.CMD == "RESP_METER_SET_READ")
 					{
 						CMD_ID_POS_VALUE resp = JsonConvert.DeserializeObject<CMD_ID_POS_VALUE>(Encoding.UTF8.GetString(data.Message));
 						int id = resp.ID;
@@ -1925,7 +1934,6 @@ namespace MQTTClient
 					//dataGridViewMeter.Columns[(dataGridViewMeter.ColumnCount).ToString()].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 					dataGridViewIR.Columns[0].Width = 40;
 					dataGridViewIR.Columns[1].Width = 600;
-					dataGridViewIR.Columns[3].Width = 200;
 					//dataGridViewIR.Columns[(dataGridViewMeter.ColumnCount).ToString()].Width = 35;
 					dataGridViewIR.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 					if (dataGridViewIR.Columns.Count < 3)
@@ -2102,13 +2110,15 @@ namespace MQTTClient
 				//}
 				//if ((tabControl2.SelectedTab == tabPageMeter) || (tabControl2.SelectedTab == tabPageIR))
 				//{
-					textBoxIdCount.Text = "";
-					CMD_ID_COUNT req = new CMD_ID_COUNT();
-					req.CMD = "REQ_METER_COUNT";
-					req.ID = 1;
-					req.COUNT = 10;
-					string reqStr = (JsonConvert.SerializeObject(req, Formatting.Indented)).Trim();
-					clientUser.Publish(topic, Encoding.UTF8.GetBytes(reqStr.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+				textBoxIdCount.Text = "";
+				//COMMAND req = new COMMAND();
+				//req.CMD = "REQ_METER_COUNT";
+				CMD_ID_COUNT req = new CMD_ID_COUNT();
+				req.CMD = "REQ_METER_COUNT";
+				req.ID = 1;
+				req.COUNT = 10;
+				string reqStr = (JsonConvert.SerializeObject(req, Formatting.Indented)).Trim();
+				clientUser.Publish(topic, Encoding.UTF8.GetBytes(reqStr.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 				//}
 			}
 			catch (Exception ex)
@@ -2120,7 +2130,7 @@ namespace MQTTClient
 
 		private void buttonMeter_Click(object sender, EventArgs e)
 		{
-			string topic = "dawoon/Manual/" + textBoxCode.Text.Trim() + "/1/" + "POLOR";
+			string topic = "dawoon/meterset/" + textBoxCode.Text.Trim() + "/1/" + "POLOR";
 			try
 			{
 				CMD_ID_POS req = new CMD_ID_POS();
@@ -2146,7 +2156,7 @@ namespace MQTTClient
 
 		private void buttonIR_Click(object sender, EventArgs e)
 		{
-			string topic = "dawoon/Manual/" + textBoxCode.Text.Trim() + "/1/" + "POLOR";
+			string topic = "dawoon/meterset/" + textBoxCode.Text.Trim() + "/1/" + "POLOR";
 			try
 			{
 				CMD_ID_POS req = new CMD_ID_POS();
@@ -2329,7 +2339,7 @@ namespace MQTTClient
 
 		private void buttonMainPulish_Click(object sender, EventArgs e)
 		{
-			string irTopic = "dawoon/meterset/" + textBoxCode.Text + "/1/POLOR";
+			string irTopic = "dawoon/Manual/" + textBoxCode.Text + "/1/POLOR";
 			string irMessage = "{ \"CMD\":\"MAIN_SET\",\"POS\":" + textBoxMainPos.Text + ",\"VALUE\":" + textBoxMainValue.Text + " }";
 			clientUser.Publish(irTopic, Encoding.UTF8.GetBytes(irMessage), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 		}
@@ -2914,7 +2924,7 @@ namespace MQTTClient
 			}
 			textBoxMeterPos.Text = dataGridViewMeter.Rows[e.RowIndex].Cells[0].Value.ToString();
 
-			if (dataGridViewMeter.Columns[e.ColumnIndex].HeaderText == "헤링본")
+			if ((dataGridViewMeter.Columns[e.ColumnIndex].HeaderText == "헤링본") || (dataGridViewMeter.Columns[e.ColumnIndex].HeaderText == "DESC"))
 			{
 				return;
 			}
@@ -2934,7 +2944,13 @@ namespace MQTTClient
 				return;
 			}
 			textBoxIrPos.Text = dataGridViewIR.Rows[e.RowIndex].Cells[0].Value.ToString();
-			textBoxIrId.Text = (dataGridViewIR.Columns[e.ColumnIndex].HeaderText);
+
+			if (dataGridViewMeter.Columns[e.ColumnIndex].HeaderText == "DESC")
+			{
+				return;
+			}
+			else textBoxIrId.Text = (dataGridViewIR.Columns[e.ColumnIndex].HeaderText);
+
 			if (dataGridViewIR.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == null)
 			{
 				textBoxIrValue.Text = "";
@@ -3021,8 +3037,8 @@ namespace MQTTClient
 		{
 			string[] array = textBox52.Lines;
 
-		
-	
+
+
 
 			List<string> listMessage = new List<string>();
 			listMessage.AddRange(array);
@@ -3036,13 +3052,13 @@ namespace MQTTClient
 
 
 
-	//Put this class at the end of the main class or you will have problems.
-	public static class ExtensionMethods    // DoubleBuffered 메서드를 확장 시켜주자..
+//Put this class at the end of the main class or you will have problems.
+public static class ExtensionMethods    // DoubleBuffered 메서드를 확장 시켜주자..
+{
+	public static void DoubleBuffered(this DataGridView dgv, bool setting)
 	{
-		public static void DoubleBuffered(this DataGridView dgv, bool setting)
-		{
-			Type dgvType = dgv.GetType();
-			PropertyInfo pi = dgvType.GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.SetProperty);
-			pi.SetValue(dgv, setting, null);
-		}
+		Type dgvType = dgv.GetType();
+		PropertyInfo pi = dgvType.GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.SetProperty);
+		pi.SetValue(dgv, setting, null);
 	}
+}

@@ -235,6 +235,7 @@
 			this.panel21 = new System.Windows.Forms.Panel();
 			this.textBoxSeperateString = new System.Windows.Forms.TextBox();
 			this.label74 = new System.Windows.Forms.Label();
+			this.button2 = new System.Windows.Forms.Button();
 			this.button17 = new System.Windows.Forms.Button();
 			this.textBoxSearchString = new System.Windows.Forms.TextBox();
 			this.label65 = new System.Windows.Forms.Label();
@@ -298,7 +299,6 @@
 			this.buttonClear = new System.Windows.Forms.Button();
 			this.dataGridViewMessage = new System.Windows.Forms.DataGridView();
 			this.splitter2 = new System.Windows.Forms.Splitter();
-			this.button2 = new System.Windows.Forms.Button();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.panel1.SuspendLayout();
@@ -2005,6 +2005,8 @@
 			// 
 			// textBoxCode
 			// 
+			this.textBoxCode.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.textBoxCode.ForeColor = System.Drawing.Color.Red;
 			this.textBoxCode.Location = new System.Drawing.Point(61, 4);
 			this.textBoxCode.Name = "textBoxCode";
 			this.textBoxCode.Size = new System.Drawing.Size(100, 21);
@@ -2525,6 +2527,17 @@
 			this.label74.Size = new System.Drawing.Size(65, 12);
 			this.label74.TabIndex = 15;
 			this.label74.Text = "분리문자열";
+			// 
+			// button2
+			// 
+			this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.button2.Location = new System.Drawing.Point(988, 9);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(53, 21);
+			this.button2.TabIndex = 14;
+			this.button2.Text = "정렬";
+			this.button2.UseVisualStyleBackColor = true;
+			this.button2.Click += new System.EventHandler(this.button2_Click_2);
 			// 
 			// button17
 			// 
@@ -3235,17 +3248,6 @@
 			this.splitter2.Size = new System.Drawing.Size(1162, 5);
 			this.splitter2.TabIndex = 11;
 			this.splitter2.TabStop = false;
-			// 
-			// button2
-			// 
-			this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.button2.Location = new System.Drawing.Point(988, 9);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(53, 21);
-			this.button2.TabIndex = 14;
-			this.button2.Text = "정렬";
-			this.button2.UseVisualStyleBackColor = true;
-			this.button2.Click += new System.EventHandler(this.button2_Click_2);
 			// 
 			// Form1
 			// 
