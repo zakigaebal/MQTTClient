@@ -510,8 +510,8 @@ namespace MQTTClient
 					}
 					//as
 
-					logSave(topic, payload);
 					//jsondata(topic, payload);
+					logSave(topic, payload);
 					jsonSave(topic, payload);
 
 					dataGridViewMessage.ResumeLayout();
@@ -570,10 +570,10 @@ namespace MQTTClient
 				System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
 				//폴더 있는지 확인하고 생성하기
-				if (!Directory.Exists("Json"))
-				{
-					System.IO.Directory.CreateDirectory("Json");
-				}
+				//if (!Directory.Exists("Json"))
+				//{
+				//	System.IO.Directory.CreateDirectory("Json");
+				//}
 
 
 				//string line =
@@ -653,6 +653,16 @@ namespace MQTTClient
 
 				//log파일은 계속해서 추가되어야 하므로 append를 선택
 
+
+				//내 폴더 위치 불러오기
+				//System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+				//폴더 있는지 확인하고 생성하기
+				if (!Directory.Exists("Log"))
+				{
+					System.IO.Directory.CreateDirectory("Log");
+				}
+			
 				string currentPath = System.IO.Directory.GetCurrentDirectory();
 				string line = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss:fff - ") + topic + " - " + payload;
 				string logName = @"" + currentPath + "\\Log\\" + "log-MQTT-" + DateTime.Now.ToString("yyyy-MM-dd") + ".log";
