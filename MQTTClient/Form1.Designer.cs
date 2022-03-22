@@ -2083,7 +2083,6 @@
 			// 
 			this.textBoxIdCount.Location = new System.Drawing.Point(278, 3);
 			this.textBoxIdCount.Name = "textBoxIdCount";
-			this.textBoxIdCount.ReadOnly = true;
 			this.textBoxIdCount.Size = new System.Drawing.Size(36, 21);
 			this.textBoxIdCount.TabIndex = 5;
 			this.textBoxIdCount.TextChanged += new System.EventHandler(this.textBoxIdCount_TextChanged);
