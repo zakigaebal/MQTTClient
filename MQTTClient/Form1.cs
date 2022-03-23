@@ -3576,12 +3576,13 @@ namespace MQTTClient
 
 		private void buttonMainSave_Click(object sender, EventArgs e)
 		{
+
 			string currentPath = System.IO.Directory.GetCurrentDirectory();
 			try
 			{
-				string aaaaa = @"" + currentPath + "\\Log\\" + "Main-" + DateTime.Now.ToString("yyyy-MM-dd") + ".main";
+				string save = @"" + currentPath + "\\Log\\" + "Main-" + DateTime.Now.ToString("yyyy-MM-dd") + ".main";
 				StreamWriter sw;
-				sw = new StreamWriter(aaaaa);
+				sw = new StreamWriter(save);
 				//	sw = new StreamWriter("Main.txt");
 				//int nCount = Convert.ToInt32(textBoxIdCount.Text);
 				//for (int i = 0; i < nCount; i++)
@@ -3635,7 +3636,38 @@ namespace MQTTClient
 				LogMgr.ExceptionLog(ex);
 			}
 		}
+		private void buttonIrSave_Click(object sender, EventArgs e)
+		{
+			string currentPath = System.IO.Directory.GetCurrentDirectory();
+			try
+			{
+				string aaaaa = @"" + currentPath + "\\Log\\" + "Ir-" + DateTime.Now.ToString("yyyy-MM-dd") + ".ir";
+				StreamWriter sw;
+				sw = new StreamWriter(aaaaa);
+				//	sw = new StreamWriter("Main.txt");
+				//int nCount = Convert.ToInt32(textBoxIdCount.Text);
+				//for (int i = 0; i < nCount; i++)
+				//{
+				//	dataGridViewMeter.Rows
+				//	listBoxSub.Items[i] += "\r\n";
+				//	sw.Write(listBoxSub.Items[i]);
+				//}
 
+				for (int k = 1; k <= Convert.ToInt32(textBoxIdCount.Text); k++)
+				{
+					for (int i = 1; i <= 46; i++)
+					{
+						dataGridViewMeter[k + 1, i - 1].Value += "\r\n";
+						sw.Write(dataGridViewMeter[k + 1, i - 1].Value);
+					}
+				}
+				sw.Close();
+			}
+			catch (Exception ex)
+			{
+				LogMgr.ExceptionLog(ex);
+			}
+		}
 		private void dataGridViewMeter_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
 		{
 			if (dataGridViewMeter.Rows.Count<=0)
@@ -3693,6 +3725,8 @@ namespace MQTTClient
 				}
 			}
 		}
+
+		
 	}
 
 
