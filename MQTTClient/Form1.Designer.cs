@@ -139,6 +139,10 @@
 			this.panel7 = new System.Windows.Forms.Panel();
 			this.dataGridViewMain = new System.Windows.Forms.DataGridView();
 			this.panel23 = new System.Windows.Forms.Panel();
+			this.checkBoxLoad = new System.Windows.Forms.CheckBox();
+			this.buttonMainLoad = new System.Windows.Forms.Button();
+			this.buttonMainSave = new System.Windows.Forms.Button();
+			this.buttonMainClear = new System.Windows.Forms.Button();
 			this.buttonMainRead1 = new System.Windows.Forms.Button();
 			this.buttonMain = new System.Windows.Forms.Button();
 			this.buttonMainPulish = new System.Windows.Forms.Button();
@@ -153,6 +157,7 @@
 			this.panel11 = new System.Windows.Forms.Panel();
 			this.dataGridViewMeter = new System.Windows.Forms.DataGridView();
 			this.panel22 = new System.Windows.Forms.Panel();
+			this.buttonIdAllWrite = new System.Windows.Forms.Button();
 			this.button8 = new System.Windows.Forms.Button();
 			this.buttonMeterRead = new System.Windows.Forms.Button();
 			this.buttonMeter = new System.Windows.Forms.Button();
@@ -307,6 +312,7 @@
 			this.buttonClear = new System.Windows.Forms.Button();
 			this.dataGridViewMessage = new System.Windows.Forms.DataGridView();
 			this.splitter2 = new System.Windows.Forms.Splitter();
+			this.buttonIdAllWrite2 = new System.Windows.Forms.Button();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.panel1.SuspendLayout();
@@ -1593,6 +1599,10 @@
 			// 
 			// panel23
 			// 
+			this.panel23.Controls.Add(this.checkBoxLoad);
+			this.panel23.Controls.Add(this.buttonMainLoad);
+			this.panel23.Controls.Add(this.buttonMainSave);
+			this.panel23.Controls.Add(this.buttonMainClear);
 			this.panel23.Controls.Add(this.buttonMainRead1);
 			this.panel23.Controls.Add(this.buttonMain);
 			this.panel23.Controls.Add(this.buttonMainPulish);
@@ -1607,6 +1617,43 @@
 			this.panel23.Name = "panel23";
 			this.panel23.Size = new System.Drawing.Size(1134, 31);
 			this.panel23.TabIndex = 11;
+			// 
+			// checkBoxLoad
+			// 
+			this.checkBoxLoad.AutoSize = true;
+			this.checkBoxLoad.Location = new System.Drawing.Point(889, 7);
+			this.checkBoxLoad.Name = "checkBoxLoad";
+			this.checkBoxLoad.Size = new System.Drawing.Size(88, 16);
+			this.checkBoxLoad.TabIndex = 12;
+			this.checkBoxLoad.Text = "로드값 비교";
+			this.checkBoxLoad.UseVisualStyleBackColor = true;
+			// 
+			// buttonMainLoad
+			// 
+			this.buttonMainLoad.Location = new System.Drawing.Point(839, 5);
+			this.buttonMainLoad.Name = "buttonMainLoad";
+			this.buttonMainLoad.Size = new System.Drawing.Size(43, 23);
+			this.buttonMainLoad.TabIndex = 11;
+			this.buttonMainLoad.Text = "Load";
+			this.buttonMainLoad.UseVisualStyleBackColor = true;
+			// 
+			// buttonMainSave
+			// 
+			this.buttonMainSave.Location = new System.Drawing.Point(790, 5);
+			this.buttonMainSave.Name = "buttonMainSave";
+			this.buttonMainSave.Size = new System.Drawing.Size(43, 23);
+			this.buttonMainSave.TabIndex = 11;
+			this.buttonMainSave.Text = "Save";
+			this.buttonMainSave.UseVisualStyleBackColor = true;
+			// 
+			// buttonMainClear
+			// 
+			this.buttonMainClear.Location = new System.Drawing.Point(741, 5);
+			this.buttonMainClear.Name = "buttonMainClear";
+			this.buttonMainClear.Size = new System.Drawing.Size(43, 23);
+			this.buttonMainClear.TabIndex = 11;
+			this.buttonMainClear.Text = "Clear";
+			this.buttonMainClear.UseVisualStyleBackColor = true;
 			// 
 			// buttonMainRead1
 			// 
@@ -1742,6 +1789,7 @@
 			// 
 			// panel22
 			// 
+			this.panel22.Controls.Add(this.buttonIdAllWrite);
 			this.panel22.Controls.Add(this.button8);
 			this.panel22.Controls.Add(this.buttonMeterRead);
 			this.panel22.Controls.Add(this.buttonMeter);
@@ -1759,6 +1807,16 @@
 			this.panel22.Name = "panel22";
 			this.panel22.Size = new System.Drawing.Size(1134, 31);
 			this.panel22.TabIndex = 18;
+			// 
+			// buttonIdAllWrite
+			// 
+			this.buttonIdAllWrite.Location = new System.Drawing.Point(801, 5);
+			this.buttonIdAllWrite.Name = "buttonIdAllWrite";
+			this.buttonIdAllWrite.Size = new System.Drawing.Size(75, 23);
+			this.buttonIdAllWrite.TabIndex = 18;
+			this.buttonIdAllWrite.Text = "ID모두쓰기";
+			this.buttonIdAllWrite.UseVisualStyleBackColor = true;
+			this.buttonIdAllWrite.Click += new System.EventHandler(this.buttonIdAllWrite_Click_1);
 			// 
 			// button8
 			// 
@@ -1919,6 +1977,7 @@
 			// 
 			// panel24
 			// 
+			this.panel24.Controls.Add(this.buttonIdAllWrite2);
 			this.panel24.Controls.Add(this.button12);
 			this.panel24.Controls.Add(this.buttonIrPublish);
 			this.panel24.Controls.Add(this.buttonIrRead);
@@ -3343,6 +3402,16 @@
 			this.splitter2.TabIndex = 11;
 			this.splitter2.TabStop = false;
 			// 
+			// buttonIdAllWrite2
+			// 
+			this.buttonIdAllWrite2.Location = new System.Drawing.Point(530, 4);
+			this.buttonIdAllWrite2.Name = "buttonIdAllWrite2";
+			this.buttonIdAllWrite2.Size = new System.Drawing.Size(75, 23);
+			this.buttonIdAllWrite2.TabIndex = 19;
+			this.buttonIdAllWrite2.Text = "ID모두쓰기";
+			this.buttonIdAllWrite2.UseVisualStyleBackColor = true;
+			this.buttonIdAllWrite2.Click += new System.EventHandler(this.buttonIdAllWrite2_Click);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -3699,6 +3768,12 @@
 		private System.Windows.Forms.Label label75;
 		private System.Windows.Forms.Button button8;
 		private System.Windows.Forms.Button button12;
+		private System.Windows.Forms.CheckBox checkBoxLoad;
+		private System.Windows.Forms.Button buttonMainLoad;
+		private System.Windows.Forms.Button buttonMainSave;
+		private System.Windows.Forms.Button buttonMainClear;
+		private System.Windows.Forms.Button buttonIdAllWrite;
+		private System.Windows.Forms.Button buttonIdAllWrite2;
 	}
 }
 
