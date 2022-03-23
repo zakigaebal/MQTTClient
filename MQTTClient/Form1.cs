@@ -2334,7 +2334,12 @@ namespace MQTTClient
 
 		private void buttonIdCount_Click(object sender, EventArgs e)
 		{
-			MessageBox.Show("개수를 읽고 컬럼수를 바꿉니다");
+			//MessageBox.Show("데이타가 변경됩니다. 하시겠습니까?","변경여부확인",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+			if (MessageBox.Show("데이타가 변경됩니다. 하시겠습니까?","변경여부확인",MessageBoxButtons.YesNo) == DialogResult.No)
+			{
+				return;
+			}
+		
 			buttonMeter.Enabled = true;
 			buttonIR.Enabled = true;
 			string topic = "dawoon/Manual/" + textBoxCode.Text.Trim() + "/1/POLOR";
