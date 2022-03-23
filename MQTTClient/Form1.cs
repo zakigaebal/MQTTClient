@@ -262,6 +262,19 @@ namespace MQTTClient
 				return;
 			}
 
+			//컬럼 수정 못하게 하기
+			//this.dataGridView1.Columns[1].ReadOnly = true;
+
+			//마우스로 row header width 조절 못하게 하기.
+			this.dataGridViewMain.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+			this.dataGridViewMeter.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+			this.dataGridViewIR.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+
+			//마우스로 column size 조절 못하게 하기
+			//this.dataGridView1.Columns[0].Resizable = DataGridViewTriState.False;
+
+			//dataGridView1.ReadOnly = true;
+			//dataGridView1.RowHeadersVisible = false;
 
 		}
 		private void buttonTopicSave_Click(object sender, EventArgs e)
@@ -3841,7 +3854,6 @@ namespace MQTTClient
 				string s = sr.ReadLine();
 				textBoxIdCount.Text = s;
 
-				
 				for (int i = 1; i <= 46; i++)
 				{
 					string s2 = sr.ReadLine();
@@ -3860,7 +3872,6 @@ namespace MQTTClient
 							{
 								dataGridViewMeter[k + 2, i - 1].Value = s4+ " | "+ s3[k].Trim();
 							}
-
 						}
 						else
 						dataGridViewMeter[k + 2, i - 1].Value = s3[k].Trim();
