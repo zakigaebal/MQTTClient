@@ -2250,6 +2250,7 @@ namespace MQTTClient
 					dataGridViewMeter[dgvValue.ToString(), idx++].Value = "0";
 				}
 			}
+
 			catch (Exception ex)
 			{
 				LogMgr.ExceptionLog(ex);
@@ -3564,6 +3565,7 @@ namespace MQTTClient
 
 		private void buttonMainClear_Click(object sender, EventArgs e)
 		{
+			button27_Click(sender, e);
 			for (int i = 0; i < 40; i++)
 			{
 				dataGridViewMain[2, i].Value = "";
@@ -3573,6 +3575,7 @@ namespace MQTTClient
 
 		private void buttonMeterClear_Click(object sender, EventArgs e)
 		{
+			button16_Click_1(sender,e);
 			//CMD_ID_POS req = new CMD_ID_POS();
 			for (int k = 1; k <= Convert.ToInt32(textBoxIdCount.Text); k++)
 			{
@@ -3595,6 +3598,7 @@ namespace MQTTClient
 				}
 			}
 			//DragEnter는 마우스로 리스트컨트롤 안으로 들어왔을 때 발생하는 함수
+			button24_Click(sender, e);
 		}
 
 		private void buttonMainSave_Click(object sender, EventArgs e)
@@ -3615,7 +3619,7 @@ namespace MQTTClient
 			// 파일 목록 필터링
 			saveFile.Filter = "main files(*.main)|*.main";
 
-			saveFile.FileName = "main-" + DateTime.Now.ToString("yyyy-MM-dd_HHmmss");
+			saveFile.FileName = textBoxCode.Text + "-main-" + DateTime.Now.ToString("yyyy-MM-dd_HHmmss");
 
 
 			// OK버튼을 눌렀을때의 동작
@@ -3623,16 +3627,45 @@ namespace MQTTClient
 			{
 				return;
 			}
-				// 경로와 파일명을 fileName에 저장
-				fileName = saveFile.FileName.ToString();
+			// 경로와 파일명을 fileName에 저장
+			fileName = saveFile.FileName.ToString();
 
 
 
 			try
 			{
+				//StreamWriter sw;
+				//sw = new StreamWriter(fileName, append: false);
+
+				//sw.WriteLine(textBoxIdCount.Text);
+
+				//for (int i = 1; i <= 46; i++)
+				//{
+				//	string str = "";
+				//	for (int k = 1; k <= Convert.ToInt32(textBoxIdCount.Text); k++)
+				//	{
+				//		str += dataGridViewMeter[k + 1, i - 1].Value + " | ";
+				//	}
+				//	sw.WriteLine(str);
+
+				//}
+				//sw.Close();
+
+
+
 				StreamWriter sw;
 				sw = new StreamWriter(fileName, append: false);
-				
+				for (int i = 0; i < 40; i++)
+				{
+					string str = "";
+					//for (int k = 1; k <= Convert.ToInt32(textBoxIdCount.Text); k++)
+					//{
+					str += dataGridViewMain[2, i].Value;
+					//}
+					sw.WriteLine(str);
+
+				}
+				sw.Close();
 
 				for (int i = 0; i < 40; i++)
 				{
@@ -3665,7 +3698,7 @@ namespace MQTTClient
 			// 파일 목록 필터링
 			saveFile.Filter = "meter files(*.meter)|*.meter";
 
-			saveFile.FileName = "meter-" + DateTime.Now.ToString("yyyy-MM-dd_HHmmss");
+			saveFile.FileName = textBoxCode.Text + "-meter-" + DateTime.Now.ToString("yyyy-MM-dd_HHmmss");
 
 			// OK버튼을 눌렀을때의 동작
 			if (saveFile.ShowDialog() != DialogResult.OK)
@@ -3674,9 +3707,6 @@ namespace MQTTClient
 			}
 			// 경로와 파일명을 fileName에 저장
 			fileName = saveFile.FileName.ToString();
-
-
-
 			try
 			{
 				StreamWriter sw;
@@ -3708,18 +3738,52 @@ namespace MQTTClient
 
 		private void buttonIrSave_Click(object sender, EventArgs e)
 		{
-			string currentPath = System.IO.Directory.GetCurrentDirectory();
-			try
+			string fileName = "";
+
+			SaveFileDialog saveFile = new SaveFileDialog();
+
+			// 다이얼 로그가 Open되었을 때 최초의 경로 설정
+			//saveFile.InitialDirectory = @"C:";   
+
+			// 다이얼 로그의 제목
+			saveFile.Title = "저장 위치 지정";
+
+			// 기본 확장자
+			saveFile.DefaultExt = "ir";
+
+			// 파일 목록 필터링
+			saveFile.Filter = "ir files(*.ir)|*.ir";
+
+			saveFile.FileName = textBoxCode.Text + "-ir-" + DateTime.Now.ToString("yyyy-MM-dd_HHmmss");
+
+			// OK버튼을 눌렀을때의 동작
+			if (saveFile.ShowDialog() != DialogResult.OK)
 			{
-				string save = @"" + currentPath + "\\Log\\" + "Ir-" + DateTime.Now.ToString("yyyy-MM-dd") + ".ir";
+				return;
+			}
+			// 경로와 파일명을 fileName에 저장
+			fileName = saveFile.FileName.ToString();
+
+
+
+			
+
+				try
+			{
 				StreamWriter sw;
-				sw = new StreamWriter(save, append: false);
+				sw = new StreamWriter(fileName, append: false);
+
+				sw.WriteLine(textBoxIdCount.Text);
+
 				for (int i = 1; i <= 10; i++)
 				{
+					string str = "";
 					for (int k = 1; k <= Convert.ToInt32(textBoxIdCount.Text); k++)
 					{
-						sw.WriteLine(dataGridViewIR[k + 1, i - 1].Value);
+						str += dataGridViewIR[k + 1, i - 1].Value + " | ";
 					}
+					sw.WriteLine(str);
+
 				}
 				sw.Close();
 			}
@@ -3727,6 +3791,25 @@ namespace MQTTClient
 			{
 				LogMgr.ExceptionLog(ex);
 			}
+			//string currentPath = System.IO.Directory.GetCurrentDirectory();
+			//try
+			//{
+			//	string save = @"" + currentPath + "\\Log\\" + "Ir-" + DateTime.Now.ToString("yyyy-MM-dd") + ".ir";
+			//	StreamWriter sw;
+			//	sw = new StreamWriter(save, append: false);
+			//	for (int i = 1; i <= 10; i++)
+			//	{
+			//		for (int k = 1; k <= Convert.ToInt32(textBoxIdCount.Text); k++)
+			//		{
+			//			sw.WriteLine(dataGridViewIR[k + 1, i - 1].Value);
+			//		}
+			//	}
+			//	sw.Close();
+			//}
+			//catch (Exception ex)
+			//{
+			//	LogMgr.ExceptionLog(ex);
+			//}
 		}
 		private void dataGridViewMeter_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
 		{
@@ -3788,28 +3871,46 @@ namespace MQTTClient
 
 		private void buttonMainLoad_Click(object sender, EventArgs e)
 		{
+			string fileName = "";
+
+			OpenFileDialog openFile = new OpenFileDialog();
+
+			// 다이얼 로그가 Open되었을 때 최초의 경로 설정
+			//saveFile.InitialDirectory = @"C:";   
+
+			// 다이얼 로그의 제목
+			openFile.Title = "저장 위치 지정";
+
+			// 기본 확장자
+			openFile.DefaultExt = "main";
+
+			// 파일 목록 필터링
+			openFile.Filter = "main files(*.main)|*.main";
+
+			openFile.FileName = textBoxCode.Text + "-main-" + DateTime.Now.ToString("yyyy-MM-dd_HHmmss");
+
+
+			// OK버튼을 눌렀을때의 동작
+			if (openFile.ShowDialog() != DialogResult.OK)
+			{
+				return;
+			}
+			// 경로와 파일명을 fileName에 저장
+			fileName = openFile.FileName.ToString();
+
+
 			try
 			{
-				string currentPath = System.IO.Directory.GetCurrentDirectory();
+				StreamReader sr;
+				sr = new StreamReader(fileName);
 
-				string read = @"" + currentPath + "\\Log\\" + "Main-" + DateTime.Now.ToString("yyyy-MM-dd") + ".main";
-
-				StreamReader file = new StreamReader(read, Encoding.Default);
-				string s = "";
-				while (s != null)
+				for (int i = 1; i <= 40; i++)
 				{
-					s = file.ReadLine();
-					if (!string.IsNullOrEmpty(s))
-					{
-						for (int i = 0; i < 40; i++)
-						{
+					string s2 = sr.ReadLine();
+					dataGridViewMain[2, i - 1].Value = s2.Trim();
 
-							dataGridViewMain[2, i].Value = s;
-						}
-						
-					}
 				}
-				file.Close();
+				sr.Close();
 			}
 			catch (Exception ex)
 			{
@@ -3835,7 +3936,7 @@ namespace MQTTClient
 			// 파일 목록 필터링
 			openFile.Filter = "meter files(*.meter)|*.meter";
 
-			openFile.FileName = "meter-" + DateTime.Now.ToString("yyyy-MM-dd_HHmmss");
+			openFile.FileName = textBoxCode.Text + "-meter-" + DateTime.Now.ToString("yyyy-MM-dd_HHmmss");
 
 			// OK버튼을 눌렀을때의 동작
 			if (openFile.ShowDialog() != DialogResult.OK)
@@ -3859,7 +3960,7 @@ namespace MQTTClient
 					string s2 = sr.ReadLine();
 					string[] s3 = s2.Split('|');
 					string str = "";
-					for (int k = 0; k < s3.Length-1; k++)
+					for (int k = 0; k < s3.Length - 1; k++)
 					{
 						if (checkBox3.Checked)
 						{
@@ -3870,11 +3971,11 @@ namespace MQTTClient
 							}
 							else
 							{
-								dataGridViewMeter[k + 2, i - 1].Value = s4+ " | "+ s3[k].Trim();
+								dataGridViewMeter[k + 2, i - 1].Value = s4 + " | " + s3[k].Trim();
 							}
 						}
 						else
-						dataGridViewMeter[k + 2, i - 1].Value = s3[k].Trim();
+							dataGridViewMeter[k + 2, i - 1].Value = s3[k].Trim();
 					}
 
 				}
@@ -3888,28 +3989,66 @@ namespace MQTTClient
 
 		private void buttonIrLoad_Click(object sender, EventArgs e)
 		{
+			string fileName = "";
+
+			OpenFileDialog openFile = new OpenFileDialog();
+
+			// 다이얼 로그가 Open되었을 때 최초의 경로 설정
+			//openFile.InitialDirectory = @"C:";   
+
+			// 다이얼 로그의 제목
+			openFile.Title = "저장 위치 지정";
+
+			// 기본 확장자
+			openFile.DefaultExt = "ir";
+
+			// 파일 목록 필터링
+			openFile.Filter = "ir files(*.ir)|*.ir";
+
+			openFile.FileName = textBoxCode.Text + "-ir-" + DateTime.Now.ToString("yyyy-MM-dd_HHmmss");
+
+			// OK버튼을 눌렀을때의 동작
+			if (openFile.ShowDialog() != DialogResult.OK)
+			{
+				return;
+			}
+			// 경로와 파일명을 fileName에 저장
+			fileName = openFile.FileName.ToString();
+
+
+
 			try
 			{
-				string currentPath = System.IO.Directory.GetCurrentDirectory();
+				StreamReader sr;
+				sr = new StreamReader(fileName);
+				string s = sr.ReadLine();
+				textBoxIdCount.Text = s;
 
-				string read = @"" + currentPath + "\\Log\\" + "Ir-" + DateTime.Now.ToString("yyyy-MM-dd") + ".ir";
-
-				StreamReader file = new StreamReader(read, Encoding.Default);
-				string s = "";
-				while (s != null)
+				for (int i = 1; i <= 10; i++)
 				{
-					s = file.ReadLine();
-					if (!string.IsNullOrEmpty(s))
+					string s2 = sr.ReadLine();
+					string[] s3 = s2.Split('|');
+					string str = "";
+					for (int k = 0; k < s3.Length - 1; k++)
 					{
-						for (int i = 0; i < 40; i++)
+						if (checkBox3.Checked)
 						{
-
-							dataGridViewMain[2, i].Value = s;
+							string s4 = dataGridViewIR[k + 2, i - 1].Value.ToString().Trim();
+							if (s4 == s3[k].Trim())
+							{
+								dataGridViewIR[k + 2, i - 1].Value = s3[k].Trim();
+							}
+							else
+							{
+								dataGridViewIR[k + 2, i - 1].Value = s4 + " | " + s3[k].Trim();
+							}
 						}
-
+						else
+							dataGridViewIR[k + 2, i - 1].Value = s3[k].Trim();
 					}
+
 				}
-				file.Close();
+				sr.Close();
 			}
 			catch (Exception ex)
 			{
@@ -3919,13 +4058,307 @@ namespace MQTTClient
 
 		private void checkBoxMqttLiveHide_CheckedChanged(object sender, EventArgs e)
 		{
+
+		}
+
+		private void buttonMainDefault_Click(object sender, EventArgs e)
+		{
+			button27_Click(sender,e);
+			for (int i = 0; i < dataGridViewMain.Rows.Count; i++)
+			{
+				if (dataGridViewMain.Rows[i].Cells[2].Value == null)
+				{
+					continue;
+				}
+				if (dataGridViewMain.Rows[i].Cells[2].Value.ToString() == dataGridViewMain.Rows[i].Cells[3].Value.ToString())
+				{
+					dataGridViewMain.Rows[i].Cells[2].Style.BackColor = Color.White;
+
+				}
+				else
+				{
+					dataGridViewMain.Rows[i].Cells[2].Style.BackColor = Color.LightGoldenrodYellow;
+
+				}
+			}
+		}
+
+		private void dataGridViewMain_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+		{
+			//헤링본값이 같으면 기본값에 색상추가
+			//if (dataGridViewMain.Rows[e.RowIndex].Cells[dataGridViewMain.Columns.Count - 2].Value == null)
+			//	return;
+			//if (dataGridViewMain.Rows[e.RowIndex].Cells[dataGridViewMain.Columns.Count - 1].Value.ToString() == dataGridViewMain.Rows[e.RowIndex].Cells[dataGridViewMain.Columns.Count - 2].Value.ToString())
+			//{
+			//	e.CellStyle.BackColor = Color.LightGoldenrodYellow;
+			//	e.CellStyle.ForeColor = Color.Black;
+			//}
+			//이전값이 같으면 기본값에 색상추가
+			//// 그 외의 경우 기본 디자인으로 보여준다
+			//else
+			//{
+			//	e.CellStyle.BackColor = Color.Orange;
+			//	e.CellStyle.ForeColor = Color.Black;
+			//}
+		}
+
+		private void dataGridViewMeter_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+		{
+
+
+			//if (e.ColumnIndex == 1)
+			//{
+			//	if ((e.Value != null))
+			//	{
+			//		string[] redSplit = textBoxRed.Text.Split(',');
+			//		for (int i = 0; i < redSplit.Length; i++)
+			//		{
+			//			if (redSplit[i].ToString().Trim().Length == 0)
+			//			{
+			//				continue;
+			//			}
+			//			if (dataGridViewMeter.Cells[0].Rows[1].Contains(redSplit[i].ToString().Trim()))
+			//			{
+			//				e.CellStyle.BackColor = Color.Red;
+			//				e.CellStyle.ForeColor = Color.White;
+			//			}
+			//		}
+			//	}
+			//}
+		}
+
+		private void button27_Click(object sender, EventArgs e)
+		{
+			for (int i = 0; i < dataGridViewMain.Rows.Count; i++)
+			{
+				dataGridViewMain.Rows[i].Cells[2].Style.BackColor = Color.White;
+			}
+		}
+
+		private void button16_Click_1(object sender, EventArgs e)
+		{
+			for (int i = 0; i < dataGridViewMeter.Rows.Count; i++)
+			{
+				for (int k = 2; k < Convert.ToInt32(textBoxIdCount.Text) + 2; k++)
+				{
+					dataGridViewMeter.Rows[i].Cells[k].Style.BackColor = Color.White;
+
+				}
+			}
+		}
+
+		private void button24_Click(object sender, EventArgs e)
+		{
+			{
+				for (int i = 0; i < dataGridViewIR.Rows.Count; i++)
+				{
+					for (int k = 2; k < Convert.ToInt32(textBoxIdCount.Text) + 2; k++)
+					{
+						dataGridViewIR.Rows[i].Cells[k].Style.BackColor = Color.White;
+
+					}
+				}
+			}
+		}
+
+		private void buttonMeterDefault_Click(object sender, EventArgs e)
+		{
+			button16_Click_1(sender, e);
+
+			for (int i = 0; i < dataGridViewMeter.Rows.Count; i++)
+			{
+				for (int k = 2; k < Convert.ToInt32(textBoxIdCount.Text)+2; k++)
+				{
+					if (dataGridViewMeter.Rows[i].Cells[k].Value == null)
+					{
+						continue;
+					}
+					if (dataGridViewMeter.Rows[i].Cells[k].Value.ToString() == dataGridViewMeter.Rows[i].Cells[dataGridViewMeter.Columns.Count-1].Value.ToString())
+					{
+						dataGridViewMeter.Rows[i].Cells[k].Style.BackColor = Color.White;
+
+					}
+					else
+					{
+						dataGridViewMeter.Rows[i].Cells[k].Style.BackColor = Color.LightGoldenrodYellow;
+
+					}
+				}
+				
+			}
+		}
+
+		private void button23_Click(object sender, EventArgs e)
+		{
+			for (int i = 0; i < dataGridViewIR.Rows.Count; i++)
+			{
+				for (int k = 2; k < Convert.ToInt32(textBoxIdCount.Text) + 2; k++)
+				{
+					if (dataGridViewIR.Rows[i].Cells[k].Value == null)
+					{
+						continue;
+					}
+					if (dataGridViewIR.Rows[i].Cells[k].Value.ToString() == dataGridViewIR.Rows[i].Cells[dataGridViewIR.Columns.Count - 1].Value.ToString())
+					{
+						dataGridViewIR.Rows[i].Cells[k].Style.BackColor = Color.White;
+
+					}
+					else
+					{
+						dataGridViewIR.Rows[i].Cells[k].Style.BackColor = Color.LightGoldenrodYellow;
+
+					}
+				}
+
+			}
+		}
+
+		private void button21_Click(object sender, EventArgs e)
+		{
+			button16_Click_1(sender, e);
+			for (int i = 0; i < dataGridViewMeter.Rows.Count; i++)
+			{
+				for (int k = 3; k < Convert.ToInt32(textBoxIdCount.Text) + 2; k++)
+				{
+					if (dataGridViewMeter.Rows[i].Cells[k].Value == null)
+					{
+						continue;
+					}
+					if (dataGridViewMeter.Rows[i].Cells[k].Value.ToString() == dataGridViewMeter.Rows[i].Cells[k - 1].Value.ToString())
+					{
+						dataGridViewMeter.Rows[i].Cells[k].Style.BackColor = Color.White;
+
+					}
+					else
+					{
+						dataGridViewMeter.Rows[i].Cells[k].Style.BackColor = Color.LightGoldenrodYellow;
+
+					}
+				}
+
+			}
+		}
+
+		private void button22_Click(object sender, EventArgs e)
+		{
+			button24_Click(sender,e);
+			for (int i = 0; i < dataGridViewIR.Rows.Count; i++)
+			{
+				for (int k = 3; k < Convert.ToInt32(textBoxIdCount.Text) + 2; k++)
+				{
+					if (dataGridViewIR.Rows[i].Cells[k].Value == null)
+					{
+						continue;
+					}
+					if (dataGridViewIR.Rows[i].Cells[k].Value.ToString() == dataGridViewIR.Rows[i].Cells[k - 1].Value.ToString())
+					{
+						dataGridViewIR.Rows[i].Cells[k].Style.BackColor = Color.White;
+
+					}
+					else
+					{
+						dataGridViewIR.Rows[i].Cells[k].Style.BackColor = Color.LightGoldenrodYellow;
+
+					}
+				}
+
+			}
+		}
+	
+		private void dataGridViewMain_SelectionChanged(object sender, EventArgs e)
+		{
+
+			int index = dataGridViewMain.CurrentCell.RowIndex;
+			if (index < 0)
+			{
+				return;
+			}
+			textBoxMainPos.Text = dataGridViewMain.Rows[index].Cells[0].Value.ToString();
+			if (dataGridViewMain.Rows[index].Cells[2].Value == null)
+			{
+				textBoxMainValue.Text = "";
+			}
+			else
+				textBoxMainValue.Text = dataGridViewMain.Rows[index].Cells[2].Value.ToString();
+		}
+
+		private void dataGridViewMeter_SelectionChanged(object sender, EventArgs e)
+		{
+			try
+			{
+				int index = dataGridViewMeter.CurrentCell.RowIndex;
+				int ColumnIndex = dataGridViewMeter.CurrentCell.ColumnIndex;
+
+				if (index < 0)
+				{
+					return;
+				}
+				if (dataGridViewMeter.Rows[index].Cells[0].Value == null)
+				{
+					return;
+				}
+				textBoxMeterPos.Text = dataGridViewMeter.Rows[index].Cells[0].Value.ToString();
+
+				if ((dataGridViewMeter.Columns[ColumnIndex].HeaderText == "헤링본") || (dataGridViewMeter.Columns[ColumnIndex].HeaderText == "DESC") || (dataGridViewMeter.Columns[ColumnIndex].HeaderText == "POS"))
+				{
+					return;
+				}
+				else textBoxMeterId.Text = (dataGridViewMeter.Columns[ColumnIndex].HeaderText);
+
+				if (dataGridViewMeter.Rows[index].Cells[ColumnIndex].Value == null)
+				{
+					textBoxMeterValue.Text = "";
+				}
+				else textBoxMeterValue.Text = dataGridViewMeter.Rows[index].Cells[ColumnIndex].Value.ToString();
+
+				//if (index < 0)
+				//{
+				//	return;
+				//}
+				//textBoxMeterPos.Text = dataGridViewMeter.Rows[index].Cells[0].Value.ToString();
+				//if (dataGridViewMeter.Rows[index].Cells[2].Value == null)
+				//{
+				//	textBoxMeterValue.Text = "";
+				//}
+				//else
+				//	textBoxMeterValue.Text = dataGridViewMeter.Rows[index].Cells[2].Value.ToString();
+			}
+			catch (Exception ex)
+			{
+
+				
+			}
 			
 		}
+
+		private void dataGridViewIR_SelectionChanged(object sender, EventArgs e)
+		{
+			int index = dataGridViewIR.CurrentCell.RowIndex;
+			int ColumnIndex = dataGridViewIR.CurrentCell.ColumnIndex;
+
+			if (index < 0)
+			{
+				return;
+			}
+			if (dataGridViewIR.Rows[index].Cells[0].Value == null)
+			{
+				return;
+			}
+			textBoxIrPos.Text = dataGridViewIR.Rows[index].Cells[0].Value.ToString();
+
+			if ((dataGridViewIR.Columns[ColumnIndex].HeaderText == "헤링본") || (dataGridViewIR.Columns[ColumnIndex].HeaderText == "DESC") || (dataGridViewIR.Columns[ColumnIndex].HeaderText == "POS"))
+			{
+				return;
+			}
+			else textBoxIrId.Text = (dataGridViewIR.Columns[ColumnIndex].HeaderText);
+
+			if (dataGridViewIR.Rows[index].Cells[ColumnIndex].Value == null)
+			{
+				textBoxIrValue.Text = "";
+			}
+			else textBoxIrValue.Text = dataGridViewIR.Rows[index].Cells[ColumnIndex].Value.ToString();
+		}
 	}
-
-
-
-
 
 	//Put this class at the end of the main class or you will have problems.
 	public static class ExtensionMethods    // DoubleBuffered 메서드를 확장 시켜주자..
@@ -3937,4 +4370,6 @@ namespace MQTTClient
 			pi.SetValue(dgv, setting, null);
 		}
 	}
+
+
 }
