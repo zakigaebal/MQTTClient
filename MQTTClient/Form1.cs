@@ -682,6 +682,10 @@ namespace MQTTClient
 		{
 			try
 			{
+				if (topic.Contains("dawoon/MqttLive") && checkBoxMqttLiveHide.Checked)
+				{
+					return;
+				}
 				if (this.InvokeRequired)
 				{
 					ShowCallBack myUpdate = new ShowCallBack(ShowMessage);
@@ -1074,12 +1078,12 @@ namespace MQTTClient
 		private void buttonMqttServer_Click(object sender, EventArgs e)
 		{
 			textBoxHost.Text = "103.60.126.23";
-			
+
 		}
 
-	
 
-		
+
+
 		public class LogMgr
 
 		{
@@ -1144,7 +1148,7 @@ namespace MQTTClient
 			}
 			static public void mainLogInfo(string msg, string titleString = null)
 			{
-				
+
 				if (!string.IsNullOrEmpty(msg))
 				{
 					msg = titleString;
@@ -2334,12 +2338,13 @@ namespace MQTTClient
 
 		private void buttonIdCount_Click(object sender, EventArgs e)
 		{
+
 			//MessageBox.Show("데이타가 변경됩니다. 하시겠습니까?","변경여부확인",MessageBoxButtons.OK,MessageBoxIcon.Warning);
-			if (MessageBox.Show("데이타가 변경됩니다. 하시겠습니까?","변경여부확인",MessageBoxButtons.YesNo) == DialogResult.No)
+			if (MessageBox.Show("데이타가 변경됩니다. 하시겠습니까?", "변경여부확인", MessageBoxButtons.YesNo) == DialogResult.No)
 			{
 				return;
 			}
-		
+
 			buttonMeter.Enabled = true;
 			buttonIR.Enabled = true;
 			string topic = "dawoon/Manual/" + textBoxCode.Text.Trim() + "/1/POLOR";
@@ -2426,10 +2431,10 @@ namespace MQTTClient
 					{
 						break;
 					}
-						for (int k = 1; k <= Convert.ToInt32(textBoxIdCount.Text); k++)
+					for (int k = 1; k <= Convert.ToInt32(textBoxIdCount.Text); k++)
 
-						{
-							Application.DoEvents();
+					{
+						Application.DoEvents();
 
 						if (checkBoxStop.Checked)
 						{
@@ -3581,24 +3586,44 @@ namespace MQTTClient
 
 		private void buttonMainSave_Click(object sender, EventArgs e)
 		{
+			string fileName = "";
 
-			string currentPath = System.IO.Directory.GetCurrentDirectory();
+			SaveFileDialog saveFile = new SaveFileDialog();
+
+			// 다이얼 로그가 Open되었을 때 최초의 경로 설정
+			//saveFile.InitialDirectory = @"C:";   
+
+			// 다이얼 로그의 제목
+			saveFile.Title = "저장 위치 지정";
+
+			// 기본 확장자
+			saveFile.DefaultExt = "main";
+
+			// 파일 목록 필터링
+			saveFile.Filter = "main files(*.main)|*.main";
+
+			saveFile.FileName = "main-" + DateTime.Now.ToString("yyyy-MM-dd_HHmmss");
+
+
+			// OK버튼을 눌렀을때의 동작
+			if (saveFile.ShowDialog() != DialogResult.OK)
+			{
+				return;
+			}
+				// 경로와 파일명을 fileName에 저장
+				fileName = saveFile.FileName.ToString();
+
+
+
 			try
 			{
-				string save = @"" + currentPath + "\\Log\\" + "Main-" + DateTime.Now.ToString("yyyy-MM-dd") + ".main";
 				StreamWriter sw;
-				sw = new StreamWriter(save);
-				//	sw = new StreamWriter("Main.txt");
-				//int nCount = Convert.ToInt32(textBoxIdCount.Text);
-				//for (int i = 0; i < nCount; i++)
-				//{
-				//	dataGridViewMeter.Rows
-				//	listBoxSub.Items[i] += "\r\n";
-				//	sw.Write(listBoxSub.Items[i]);
-				//}
+				sw = new StreamWriter(fileName, append: false);
+				
+
 				for (int i = 0; i < 40; i++)
 				{
-					dataGridViewMain[2, i].Value = "";
+					sw.WriteLine(dataGridViewMain[2, i].Value);
 				}
 				sw.Close();
 			}
@@ -3611,28 +3636,50 @@ namespace MQTTClient
 
 		private void buttonMeterSave_Click(object sender, EventArgs e)
 		{
-			string currentPath = System.IO.Directory.GetCurrentDirectory();
+			string fileName = "";
+
+			SaveFileDialog saveFile = new SaveFileDialog();
+
+			// 다이얼 로그가 Open되었을 때 최초의 경로 설정
+			//saveFile.InitialDirectory = @"C:";   
+
+			// 다이얼 로그의 제목
+			saveFile.Title = "저장 위치 지정";
+
+			// 기본 확장자
+			saveFile.DefaultExt = "meter";
+
+			// 파일 목록 필터링
+			saveFile.Filter = "meter files(*.meter)|*.meter";
+
+			saveFile.FileName = "meter-" + DateTime.Now.ToString("yyyy-MM-dd_HHmmss");
+
+			// OK버튼을 눌렀을때의 동작
+			if (saveFile.ShowDialog() != DialogResult.OK)
+			{
+				return;
+			}
+			// 경로와 파일명을 fileName에 저장
+			fileName = saveFile.FileName.ToString();
+
+
+
 			try
 			{
-				string aaaaa = @"" + currentPath + "\\Log\\" + "Meter-" + DateTime.Now.ToString("yyyy-MM-dd") + ".meter";
 				StreamWriter sw;
-				sw = new StreamWriter(aaaaa);
-				//	sw = new StreamWriter("Main.txt");
-				//int nCount = Convert.ToInt32(textBoxIdCount.Text);
-				//for (int i = 0; i < nCount; i++)
-				//{
-				//	dataGridViewMeter.Rows
-				//	listBoxSub.Items[i] += "\r\n";
-				//	sw.Write(listBoxSub.Items[i]);
-				//}
+				sw = new StreamWriter(fileName, append: false);
 
-				for (int k = 1; k <= Convert.ToInt32(textBoxIdCount.Text); k++)
+				sw.WriteLine(textBoxIdCount.Text);
+
+				for (int i = 1; i <= 46; i++)
 				{
-					for (int i = 1; i <= 46; i++)
+					string str = "";
+					for (int k = 1; k <= Convert.ToInt32(textBoxIdCount.Text); k++)
 					{
-						dataGridViewMeter[k + 1, i - 1].Value += "\r\n";
-						sw.Write(dataGridViewMeter[k + 1, i - 1].Value);
+						str += dataGridViewMeter[k + 1, i - 1].Value + " | ";
 					}
+					sw.WriteLine(str);
+
 				}
 				sw.Close();
 			}
@@ -3640,30 +3687,25 @@ namespace MQTTClient
 			{
 				LogMgr.ExceptionLog(ex);
 			}
+
+
 		}
+
+
+
 		private void buttonIrSave_Click(object sender, EventArgs e)
 		{
 			string currentPath = System.IO.Directory.GetCurrentDirectory();
 			try
 			{
-				string aaaaa = @"" + currentPath + "\\Log\\" + "Ir-" + DateTime.Now.ToString("yyyy-MM-dd") + ".ir";
+				string save = @"" + currentPath + "\\Log\\" + "Ir-" + DateTime.Now.ToString("yyyy-MM-dd") + ".ir";
 				StreamWriter sw;
-				sw = new StreamWriter(aaaaa);
-				//	sw = new StreamWriter("Main.txt");
-				//int nCount = Convert.ToInt32(textBoxIdCount.Text);
-				//for (int i = 0; i < nCount; i++)
-				//{
-				//	dataGridViewMeter.Rows
-				//	listBoxSub.Items[i] += "\r\n";
-				//	sw.Write(listBoxSub.Items[i]);
-				//}
-
-				for (int k = 1; k <= Convert.ToInt32(textBoxIdCount.Text); k++)
+				sw = new StreamWriter(save, append: false);
+				for (int i = 1; i <= 10; i++)
 				{
-					for (int i = 1; i <= 46; i++)
+					for (int k = 1; k <= Convert.ToInt32(textBoxIdCount.Text); k++)
 					{
-						dataGridViewMeter[k + 1, i - 1].Value += "\r\n";
-						sw.Write(dataGridViewMeter[k + 1, i - 1].Value);
+						sw.WriteLine(dataGridViewIR[k + 1, i - 1].Value);
 					}
 				}
 				sw.Close();
@@ -3675,7 +3717,7 @@ namespace MQTTClient
 		}
 		private void dataGridViewMeter_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
 		{
-			if (dataGridViewMeter.Rows.Count<=0)
+			if (dataGridViewMeter.Rows.Count <= 0)
 			{
 				return;
 			}
@@ -3731,20 +3773,157 @@ namespace MQTTClient
 			}
 		}
 
-		
+		private void buttonMainLoad_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				string currentPath = System.IO.Directory.GetCurrentDirectory();
+
+				string read = @"" + currentPath + "\\Log\\" + "Main-" + DateTime.Now.ToString("yyyy-MM-dd") + ".main";
+
+				StreamReader file = new StreamReader(read, Encoding.Default);
+				string s = "";
+				while (s != null)
+				{
+					s = file.ReadLine();
+					if (!string.IsNullOrEmpty(s))
+					{
+						for (int i = 0; i < 40; i++)
+						{
+
+							dataGridViewMain[2, i].Value = s;
+						}
+						
+					}
+				}
+				file.Close();
+			}
+			catch (Exception ex)
+			{
+				LogMgr.ExceptionLog(ex);
+			}
+		}
+
+		private void buttonMeterLoad_Click(object sender, EventArgs e)
+		{
+			string fileName = "";
+
+			OpenFileDialog openFile = new OpenFileDialog();
+
+			// 다이얼 로그가 Open되었을 때 최초의 경로 설정
+			//openFile.InitialDirectory = @"C:";   
+
+			// 다이얼 로그의 제목
+			openFile.Title = "저장 위치 지정";
+
+			// 기본 확장자
+			openFile.DefaultExt = "meter";
+
+			// 파일 목록 필터링
+			openFile.Filter = "meter files(*.meter)|*.meter";
+
+			openFile.FileName = "meter-" + DateTime.Now.ToString("yyyy-MM-dd_HHmmss");
+
+			// OK버튼을 눌렀을때의 동작
+			if (openFile.ShowDialog() != DialogResult.OK)
+			{
+				return;
+			}
+			// 경로와 파일명을 fileName에 저장
+			fileName = openFile.FileName.ToString();
+
+
+
+			try
+			{
+				StreamReader sr;
+				sr = new StreamReader(fileName);
+				string s = sr.ReadLine();
+				textBoxIdCount.Text = s;
+
+				
+				for (int i = 1; i <= 46; i++)
+				{
+					string s2 = sr.ReadLine();
+					string[] s3 = s2.Split('|');
+					string str = "";
+					for (int k = 0; k < s3.Length-1; k++)
+					{
+						if (checkBox3.Checked)
+						{
+							string s4 = dataGridViewMeter[k + 2, i - 1].Value.ToString().Trim();
+							if (s4 == s3[k].Trim())
+							{
+								dataGridViewMeter[k + 2, i - 1].Value = s3[k].Trim();
+							}
+							else
+							{
+								dataGridViewMeter[k + 2, i - 1].Value = s4+ " | "+ s3[k].Trim();
+							}
+
+						}
+						else
+						dataGridViewMeter[k + 2, i - 1].Value = s3[k].Trim();
+					}
+
+				}
+				sr.Close();
+			}
+			catch (Exception ex)
+			{
+				LogMgr.ExceptionLog(ex);
+			}
+		}
+
+		private void buttonIrLoad_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				string currentPath = System.IO.Directory.GetCurrentDirectory();
+
+				string read = @"" + currentPath + "\\Log\\" + "Ir-" + DateTime.Now.ToString("yyyy-MM-dd") + ".ir";
+
+				StreamReader file = new StreamReader(read, Encoding.Default);
+				string s = "";
+				while (s != null)
+				{
+					s = file.ReadLine();
+					if (!string.IsNullOrEmpty(s))
+					{
+						for (int i = 0; i < 40; i++)
+						{
+
+							dataGridViewMain[2, i].Value = s;
+						}
+
+					}
+				}
+				file.Close();
+			}
+			catch (Exception ex)
+			{
+				LogMgr.ExceptionLog(ex);
+			}
+		}
+
+		private void checkBoxMqttLiveHide_CheckedChanged(object sender, EventArgs e)
+		{
+			
+		}
 	}
+
 
 
 
 
 	//Put this class at the end of the main class or you will have problems.
 	public static class ExtensionMethods    // DoubleBuffered 메서드를 확장 시켜주자..
+	{
+		public static void DoubleBuffered(this DataGridView dgv, bool setting)
 		{
-			public static void DoubleBuffered(this DataGridView dgv, bool setting)
-			{
-				Type dgvType = dgv.GetType();
-				PropertyInfo pi = dgvType.GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.SetProperty);
-				pi.SetValue(dgv, setting, null);
-			}
+			Type dgvType = dgv.GetType();
+			PropertyInfo pi = dgvType.GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.SetProperty);
+			pi.SetValue(dgv, setting, null);
 		}
 	}
+}

@@ -32,10 +32,12 @@
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.panel2 = new System.Windows.Forms.Panel();
+			this.checkBoxMqttLiveHide = new System.Windows.Forms.CheckBox();
 			this.textBoxBlack = new System.Windows.Forms.TextBox();
 			this.textBoxBlue = new System.Windows.Forms.TextBox();
 			this.textBoxOrange = new System.Windows.Forms.TextBox();
 			this.textBoxPink = new System.Windows.Forms.TextBox();
+			this.label76 = new System.Windows.Forms.Label();
 			this.textBoxLime = new System.Windows.Forms.TextBox();
 			this.textBoxRed = new System.Windows.Forms.TextBox();
 			this.textBoxPurple = new System.Windows.Forms.TextBox();
@@ -66,14 +68,14 @@
 			this.panel6 = new System.Windows.Forms.Panel();
 			this.textBoxHost = new System.Windows.Forms.TextBox();
 			this.panel5 = new System.Windows.Forms.Panel();
+			this.checkBoxTopicLog = new System.Windows.Forms.CheckBox();
+			this.label6 = new System.Windows.Forms.Label();
 			this.textBoxPT1 = new System.Windows.Forms.TextBox();
 			this.textBoxPT2 = new System.Windows.Forms.TextBox();
-			this.checkBoxTopicLog = new System.Windows.Forms.CheckBox();
 			this.textBoxPT3 = new System.Windows.Forms.TextBox();
 			this.textBoxPT10 = new System.Windows.Forms.TextBox();
 			this.textBoxPT9 = new System.Windows.Forms.TextBox();
 			this.textBoxPT8 = new System.Windows.Forms.TextBox();
-			this.label6 = new System.Windows.Forms.Label();
 			this.textBoxPT7 = new System.Windows.Forms.TextBox();
 			this.textBoxPT6 = new System.Windows.Forms.TextBox();
 			this.textBoxPT5 = new System.Windows.Forms.TextBox();
@@ -158,7 +160,7 @@
 			this.dataGridViewMeter = new System.Windows.Forms.DataGridView();
 			this.panel22 = new System.Windows.Forms.Panel();
 			this.checkBox3 = new System.Windows.Forms.CheckBox();
-			this.button16 = new System.Windows.Forms.Button();
+			this.buttonMeterLoad = new System.Windows.Forms.Button();
 			this.buttonMeterSave = new System.Windows.Forms.Button();
 			this.buttonMeterClear = new System.Windows.Forms.Button();
 			this.buttonIdAllWrite = new System.Windows.Forms.Button();
@@ -180,7 +182,7 @@
 			this.dataGridViewIR = new System.Windows.Forms.DataGridView();
 			this.panel24 = new System.Windows.Forms.Panel();
 			this.checkBox4 = new System.Windows.Forms.CheckBox();
-			this.button20 = new System.Windows.Forms.Button();
+			this.buttonIrLoad = new System.Windows.Forms.Button();
 			this.buttonIrSave = new System.Windows.Forms.Button();
 			this.buttonIrClear = new System.Windows.Forms.Button();
 			this.buttonIdAllWrite2 = new System.Windows.Forms.Button();
@@ -195,6 +197,7 @@
 			this.label47 = new System.Windows.Forms.Label();
 			this.label48 = new System.Windows.Forms.Label();
 			this.panel8 = new System.Windows.Forms.Panel();
+			this.checkBox5 = new System.Windows.Forms.CheckBox();
 			this.checkBoxStop = new System.Windows.Forms.CheckBox();
 			this.buttonIdCount = new System.Windows.Forms.Button();
 			this.textBoxDelay = new System.Windows.Forms.TextBox();
@@ -321,6 +324,8 @@
 			this.buttonClear = new System.Windows.Forms.Button();
 			this.dataGridViewMessage = new System.Windows.Forms.DataGridView();
 			this.splitter2 = new System.Windows.Forms.Splitter();
+			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.panel1.SuspendLayout();
@@ -374,7 +379,7 @@
 			this.tabControl1.Location = new System.Drawing.Point(0, 0);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(1162, 404);
+			this.tabControl1.Size = new System.Drawing.Size(1162, 373);
 			this.tabControl1.TabIndex = 0;
 			this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
 			// 
@@ -384,7 +389,7 @@
 			this.tabPage1.Location = new System.Drawing.Point(4, 22);
 			this.tabPage1.Name = "tabPage1";
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(1154, 378);
+			this.tabPage1.Size = new System.Drawing.Size(1154, 347);
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "MQTT";
 			this.tabPage1.UseVisualStyleBackColor = true;
@@ -396,15 +401,17 @@
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel1.Location = new System.Drawing.Point(3, 3);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(1148, 372);
+			this.panel1.Size = new System.Drawing.Size(1148, 341);
 			this.panel1.TabIndex = 10;
 			// 
 			// panel2
 			// 
+			this.panel2.Controls.Add(this.checkBoxMqttLiveHide);
 			this.panel2.Controls.Add(this.textBoxBlack);
 			this.panel2.Controls.Add(this.textBoxBlue);
 			this.panel2.Controls.Add(this.textBoxOrange);
 			this.panel2.Controls.Add(this.textBoxPink);
+			this.panel2.Controls.Add(this.label76);
 			this.panel2.Controls.Add(this.textBoxLime);
 			this.panel2.Controls.Add(this.textBoxRed);
 			this.panel2.Controls.Add(this.textBoxPurple);
@@ -427,8 +434,18 @@
 			this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel2.Location = new System.Drawing.Point(715, 0);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(433, 372);
+			this.panel2.Size = new System.Drawing.Size(433, 341);
 			this.panel2.TabIndex = 0;
+			// 
+			// checkBoxMqttLiveHide
+			// 
+			this.checkBoxMqttLiveHide.AutoSize = true;
+			this.checkBoxMqttLiveHide.Location = new System.Drawing.Point(412, 319);
+			this.checkBoxMqttLiveHide.Name = "checkBoxMqttLiveHide";
+			this.checkBoxMqttLiveHide.Size = new System.Drawing.Size(15, 14);
+			this.checkBoxMqttLiveHide.TabIndex = 13;
+			this.checkBoxMqttLiveHide.UseVisualStyleBackColor = true;
+			this.checkBoxMqttLiveHide.CheckedChanged += new System.EventHandler(this.checkBoxMqttLiveHide_CheckedChanged);
 			// 
 			// textBoxBlack
 			// 
@@ -473,6 +490,16 @@
 			this.textBoxPink.Name = "textBoxPink";
 			this.textBoxPink.Size = new System.Drawing.Size(180, 25);
 			this.textBoxPink.TabIndex = 7;
+			// 
+			// label76
+			// 
+			this.label76.AutoSize = true;
+			this.label76.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.label76.Location = new System.Drawing.Point(310, 317);
+			this.label76.Name = "label76";
+			this.label76.Size = new System.Drawing.Size(105, 17);
+			this.label76.TabIndex = 0;
+			this.label76.Text = "MqttLive 감추기:";
 			// 
 			// textBoxLime
 			// 
@@ -790,7 +817,7 @@
 			this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel4.Location = new System.Drawing.Point(0, 0);
 			this.panel4.Name = "panel4";
-			this.panel4.Size = new System.Drawing.Size(715, 372);
+			this.panel4.Size = new System.Drawing.Size(715, 341);
 			this.panel4.TabIndex = 2;
 			// 
 			// panel6
@@ -814,7 +841,7 @@
 			this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel6.Location = new System.Drawing.Point(0, 0);
 			this.panel6.Name = "panel6";
-			this.panel6.Size = new System.Drawing.Size(715, 372);
+			this.panel6.Size = new System.Drawing.Size(715, 341);
 			this.panel6.TabIndex = 13;
 			// 
 			// textBoxHost
@@ -827,14 +854,14 @@
 			// 
 			// panel5
 			// 
+			this.panel5.Controls.Add(this.checkBoxTopicLog);
+			this.panel5.Controls.Add(this.label6);
 			this.panel5.Controls.Add(this.textBoxPT1);
 			this.panel5.Controls.Add(this.textBoxPT2);
-			this.panel5.Controls.Add(this.checkBoxTopicLog);
 			this.panel5.Controls.Add(this.textBoxPT3);
 			this.panel5.Controls.Add(this.textBoxPT10);
 			this.panel5.Controls.Add(this.textBoxPT9);
 			this.panel5.Controls.Add(this.textBoxPT8);
-			this.panel5.Controls.Add(this.label6);
 			this.panel5.Controls.Add(this.textBoxPT7);
 			this.panel5.Controls.Add(this.textBoxPT6);
 			this.panel5.Controls.Add(this.textBoxPT5);
@@ -885,6 +912,27 @@
 			this.panel5.Size = new System.Drawing.Size(704, 286);
 			this.panel5.TabIndex = 12;
 			// 
+			// checkBoxTopicLog
+			// 
+			this.checkBoxTopicLog.AutoSize = true;
+			this.checkBoxTopicLog.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.checkBoxTopicLog.Location = new System.Drawing.Point(686, 6);
+			this.checkBoxTopicLog.Name = "checkBoxTopicLog";
+			this.checkBoxTopicLog.Size = new System.Drawing.Size(15, 14);
+			this.checkBoxTopicLog.TabIndex = 5;
+			this.checkBoxTopicLog.UseVisualStyleBackColor = true;
+			this.checkBoxTopicLog.CheckedChanged += new System.EventHandler(this.checkBoxTopicLog_CheckedChanged);
+			// 
+			// label6
+			// 
+			this.label6.AutoSize = true;
+			this.label6.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.label6.Location = new System.Drawing.Point(542, 4);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(146, 17);
+			this.label6.TabIndex = 0;
+			this.label6.Text = "토픽단위 로그파일생성:";
+			// 
 			// textBoxPT1
 			// 
 			this.textBoxPT1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -900,17 +948,6 @@
 			this.textBoxPT2.Name = "textBoxPT2";
 			this.textBoxPT2.Size = new System.Drawing.Size(215, 25);
 			this.textBoxPT2.TabIndex = 5;
-			// 
-			// checkBoxTopicLog
-			// 
-			this.checkBoxTopicLog.AutoSize = true;
-			this.checkBoxTopicLog.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.checkBoxTopicLog.Location = new System.Drawing.Point(686, 6);
-			this.checkBoxTopicLog.Name = "checkBoxTopicLog";
-			this.checkBoxTopicLog.Size = new System.Drawing.Size(15, 14);
-			this.checkBoxTopicLog.TabIndex = 5;
-			this.checkBoxTopicLog.UseVisualStyleBackColor = true;
-			this.checkBoxTopicLog.CheckedChanged += new System.EventHandler(this.checkBoxTopicLog_CheckedChanged);
 			// 
 			// textBoxPT3
 			// 
@@ -943,16 +980,6 @@
 			this.textBoxPT8.Name = "textBoxPT8";
 			this.textBoxPT8.Size = new System.Drawing.Size(215, 25);
 			this.textBoxPT8.TabIndex = 9;
-			// 
-			// label6
-			// 
-			this.label6.AutoSize = true;
-			this.label6.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label6.Location = new System.Drawing.Point(542, 4);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(146, 17);
-			this.label6.TabIndex = 0;
-			this.label6.Text = "토픽단위 로그파일생성:";
 			// 
 			// textBoxPT7
 			// 
@@ -1552,7 +1579,7 @@
 			this.tabPage2.Location = new System.Drawing.Point(4, 22);
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(1154, 378);
+			this.tabPage2.Size = new System.Drawing.Size(1154, 347);
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "수동착유";
 			this.tabPage2.UseVisualStyleBackColor = true;
@@ -1566,7 +1593,7 @@
 			this.tabControl2.Location = new System.Drawing.Point(3, 30);
 			this.tabControl2.Name = "tabControl2";
 			this.tabControl2.SelectedIndex = 0;
-			this.tabControl2.Size = new System.Drawing.Size(1148, 345);
+			this.tabControl2.Size = new System.Drawing.Size(1148, 314);
 			this.tabControl2.TabIndex = 5;
 			this.tabControl2.SelectedIndexChanged += new System.EventHandler(this.tabControl2_SelectedIndexChanged);
 			// 
@@ -1576,7 +1603,7 @@
 			this.tabPageMain.Location = new System.Drawing.Point(4, 22);
 			this.tabPageMain.Name = "tabPageMain";
 			this.tabPageMain.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPageMain.Size = new System.Drawing.Size(1140, 319);
+			this.tabPageMain.Size = new System.Drawing.Size(1140, 288);
 			this.tabPageMain.TabIndex = 0;
 			this.tabPageMain.Text = "MAIN";
 			this.tabPageMain.UseVisualStyleBackColor = true;
@@ -1588,7 +1615,7 @@
 			this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel7.Location = new System.Drawing.Point(3, 3);
 			this.panel7.Name = "panel7";
-			this.panel7.Size = new System.Drawing.Size(1134, 313);
+			this.panel7.Size = new System.Drawing.Size(1134, 282);
 			this.panel7.TabIndex = 0;
 			// 
 			// dataGridViewMain
@@ -1601,7 +1628,7 @@
 			this.dataGridViewMain.Name = "dataGridViewMain";
 			this.dataGridViewMain.ReadOnly = true;
 			this.dataGridViewMain.RowTemplate.Height = 23;
-			this.dataGridViewMain.Size = new System.Drawing.Size(1134, 282);
+			this.dataGridViewMain.Size = new System.Drawing.Size(1134, 251);
 			this.dataGridViewMain.TabIndex = 0;
 			this.dataGridViewMain.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMain_CellClick);
 			// 
@@ -1644,6 +1671,7 @@
 			this.buttonMainLoad.TabIndex = 11;
 			this.buttonMainLoad.Text = "Load";
 			this.buttonMainLoad.UseVisualStyleBackColor = true;
+			this.buttonMainLoad.Click += new System.EventHandler(this.buttonMainLoad_Click);
 			// 
 			// buttonMainSave
 			// 
@@ -1758,7 +1786,7 @@
 			this.tabPageMeter.Location = new System.Drawing.Point(4, 22);
 			this.tabPageMeter.Name = "tabPageMeter";
 			this.tabPageMeter.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPageMeter.Size = new System.Drawing.Size(1140, 319);
+			this.tabPageMeter.Size = new System.Drawing.Size(1140, 288);
 			this.tabPageMeter.TabIndex = 1;
 			this.tabPageMeter.Text = "METER";
 			this.tabPageMeter.UseVisualStyleBackColor = true;
@@ -1769,7 +1797,7 @@
 			this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel9.Location = new System.Drawing.Point(3, 3);
 			this.panel9.Name = "panel9";
-			this.panel9.Size = new System.Drawing.Size(1134, 313);
+			this.panel9.Size = new System.Drawing.Size(1134, 282);
 			this.panel9.TabIndex = 0;
 			// 
 			// panel11
@@ -1779,7 +1807,7 @@
 			this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel11.Location = new System.Drawing.Point(0, 0);
 			this.panel11.Name = "panel11";
-			this.panel11.Size = new System.Drawing.Size(1134, 313);
+			this.panel11.Size = new System.Drawing.Size(1134, 282);
 			this.panel11.TabIndex = 1;
 			this.panel11.Paint += new System.Windows.Forms.PaintEventHandler(this.panel11_Paint);
 			// 
@@ -1793,7 +1821,7 @@
 			this.dataGridViewMeter.Name = "dataGridViewMeter";
 			this.dataGridViewMeter.ReadOnly = true;
 			this.dataGridViewMeter.RowTemplate.Height = 23;
-			this.dataGridViewMeter.Size = new System.Drawing.Size(1134, 282);
+			this.dataGridViewMeter.Size = new System.Drawing.Size(1134, 251);
 			this.dataGridViewMeter.TabIndex = 0;
 			this.dataGridViewMeter.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMeter_CellClick);
 			this.dataGridViewMeter.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMeter_CellDoubleClick);
@@ -1801,7 +1829,7 @@
 			// panel22
 			// 
 			this.panel22.Controls.Add(this.checkBox3);
-			this.panel22.Controls.Add(this.button16);
+			this.panel22.Controls.Add(this.buttonMeterLoad);
 			this.panel22.Controls.Add(this.buttonMeterSave);
 			this.panel22.Controls.Add(this.buttonMeterClear);
 			this.panel22.Controls.Add(this.buttonIdAllWrite);
@@ -1833,14 +1861,15 @@
 			this.checkBox3.Text = "로드값 비교";
 			this.checkBox3.UseVisualStyleBackColor = true;
 			// 
-			// button16
+			// buttonMeterLoad
 			// 
-			this.button16.Location = new System.Drawing.Point(980, 5);
-			this.button16.Name = "button16";
-			this.button16.Size = new System.Drawing.Size(43, 23);
-			this.button16.TabIndex = 19;
-			this.button16.Text = "Load";
-			this.button16.UseVisualStyleBackColor = true;
+			this.buttonMeterLoad.Location = new System.Drawing.Point(980, 5);
+			this.buttonMeterLoad.Name = "buttonMeterLoad";
+			this.buttonMeterLoad.Size = new System.Drawing.Size(43, 23);
+			this.buttonMeterLoad.TabIndex = 19;
+			this.buttonMeterLoad.Text = "Load";
+			this.buttonMeterLoad.UseVisualStyleBackColor = true;
+			this.buttonMeterLoad.Click += new System.EventHandler(this.buttonMeterLoad_Click);
 			// 
 			// buttonMeterSave
 			// 
@@ -1991,7 +2020,7 @@
 			this.tabPageIR.Location = new System.Drawing.Point(4, 22);
 			this.tabPageIR.Name = "tabPageIR";
 			this.tabPageIR.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPageIR.Size = new System.Drawing.Size(1140, 319);
+			this.tabPageIR.Size = new System.Drawing.Size(1140, 288);
 			this.tabPageIR.TabIndex = 2;
 			this.tabPageIR.Text = "IR";
 			this.tabPageIR.UseVisualStyleBackColor = true;
@@ -2002,7 +2031,7 @@
 			this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel10.Location = new System.Drawing.Point(3, 3);
 			this.panel10.Name = "panel10";
-			this.panel10.Size = new System.Drawing.Size(1134, 313);
+			this.panel10.Size = new System.Drawing.Size(1134, 282);
 			this.panel10.TabIndex = 1;
 			// 
 			// panel12
@@ -2012,7 +2041,7 @@
 			this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel12.Location = new System.Drawing.Point(0, 0);
 			this.panel12.Name = "panel12";
-			this.panel12.Size = new System.Drawing.Size(1134, 313);
+			this.panel12.Size = new System.Drawing.Size(1134, 282);
 			this.panel12.TabIndex = 1;
 			// 
 			// dataGridViewIR
@@ -2025,7 +2054,7 @@
 			this.dataGridViewIR.Name = "dataGridViewIR";
 			this.dataGridViewIR.ReadOnly = true;
 			this.dataGridViewIR.RowTemplate.Height = 23;
-			this.dataGridViewIR.Size = new System.Drawing.Size(1134, 282);
+			this.dataGridViewIR.Size = new System.Drawing.Size(1134, 251);
 			this.dataGridViewIR.TabIndex = 0;
 			this.dataGridViewIR.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewIR_CellClick);
 			this.dataGridViewIR.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewIR_CellDoubleClick);
@@ -2033,7 +2062,7 @@
 			// panel24
 			// 
 			this.panel24.Controls.Add(this.checkBox4);
-			this.panel24.Controls.Add(this.button20);
+			this.panel24.Controls.Add(this.buttonIrLoad);
 			this.panel24.Controls.Add(this.buttonIrSave);
 			this.panel24.Controls.Add(this.buttonIrClear);
 			this.panel24.Controls.Add(this.buttonIdAllWrite2);
@@ -2063,14 +2092,15 @@
 			this.checkBox4.Text = "로드값 비교";
 			this.checkBox4.UseVisualStyleBackColor = true;
 			// 
-			// button20
+			// buttonIrLoad
 			// 
-			this.button20.Location = new System.Drawing.Point(707, 3);
-			this.button20.Name = "button20";
-			this.button20.Size = new System.Drawing.Size(43, 23);
-			this.button20.TabIndex = 23;
-			this.button20.Text = "Load";
-			this.button20.UseVisualStyleBackColor = true;
+			this.buttonIrLoad.Location = new System.Drawing.Point(707, 3);
+			this.buttonIrLoad.Name = "buttonIrLoad";
+			this.buttonIrLoad.Size = new System.Drawing.Size(43, 23);
+			this.buttonIrLoad.TabIndex = 23;
+			this.buttonIrLoad.Text = "Load";
+			this.buttonIrLoad.UseVisualStyleBackColor = true;
+			this.buttonIrLoad.Click += new System.EventHandler(this.buttonIrLoad_Click);
 			// 
 			// buttonIrSave
 			// 
@@ -2193,6 +2223,7 @@
 			// 
 			// panel8
 			// 
+			this.panel8.Controls.Add(this.checkBox5);
 			this.panel8.Controls.Add(this.checkBoxStop);
 			this.panel8.Controls.Add(this.buttonIdCount);
 			this.panel8.Controls.Add(this.textBoxDelay);
@@ -2207,10 +2238,21 @@
 			this.panel8.Size = new System.Drawing.Size(1148, 27);
 			this.panel8.TabIndex = 6;
 			// 
+			// checkBox5
+			// 
+			this.checkBox5.AutoSize = true;
+			this.checkBox5.Location = new System.Drawing.Point(392, 5);
+			this.checkBox5.Name = "checkBox5";
+			this.checkBox5.Size = new System.Drawing.Size(187, 16);
+			this.checkBox5.TabIndex = 27;
+			this.checkBox5.Text = "체크:읽기전용,체크x:수정모드";
+			this.checkBox5.UseVisualStyleBackColor = true;
+			// 
 			// checkBoxStop
 			// 
+			this.checkBoxStop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.checkBoxStop.AutoSize = true;
-			this.checkBoxStop.Location = new System.Drawing.Point(337, 7);
+			this.checkBoxStop.Location = new System.Drawing.Point(1093, 5);
 			this.checkBoxStop.Name = "checkBoxStop";
 			this.checkBoxStop.Size = new System.Drawing.Size(48, 16);
 			this.checkBoxStop.TabIndex = 8;
@@ -2230,7 +2272,7 @@
 			// 
 			// textBoxDelay
 			// 
-			this.textBoxDelay.Location = new System.Drawing.Point(424, 3);
+			this.textBoxDelay.Location = new System.Drawing.Point(350, 3);
 			this.textBoxDelay.Name = "textBoxDelay";
 			this.textBoxDelay.Size = new System.Drawing.Size(36, 21);
 			this.textBoxDelay.TabIndex = 5;
@@ -2240,7 +2282,7 @@
 			// label75
 			// 
 			this.label75.AutoSize = true;
-			this.label75.Location = new System.Drawing.Point(389, 7);
+			this.label75.Location = new System.Drawing.Point(315, 7);
 			this.label75.Name = "label75";
 			this.label75.Size = new System.Drawing.Size(29, 12);
 			this.label75.TabIndex = 6;
@@ -2299,7 +2341,7 @@
 			this.tabPage3.Location = new System.Drawing.Point(4, 22);
 			this.tabPage3.Name = "tabPage3";
 			this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage3.Size = new System.Drawing.Size(1154, 378);
+			this.tabPage3.Size = new System.Drawing.Size(1154, 347);
 			this.tabPage3.TabIndex = 2;
 			this.tabPage3.Text = "자동Pub";
 			this.tabPage3.UseVisualStyleBackColor = true;
@@ -2311,7 +2353,7 @@
 			this.panel16.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel16.Location = new System.Drawing.Point(3, 3);
 			this.panel16.Name = "panel16";
-			this.panel16.Size = new System.Drawing.Size(926, 372);
+			this.panel16.Size = new System.Drawing.Size(926, 341);
 			this.panel16.TabIndex = 9;
 			// 
 			// textBoxAutoPubMsg
@@ -2321,7 +2363,7 @@
 			this.textBoxAutoPubMsg.Multiline = true;
 			this.textBoxAutoPubMsg.Name = "textBoxAutoPubMsg";
 			this.textBoxAutoPubMsg.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.textBoxAutoPubMsg.Size = new System.Drawing.Size(926, 331);
+			this.textBoxAutoPubMsg.Size = new System.Drawing.Size(926, 300);
 			this.textBoxAutoPubMsg.TabIndex = 1;
 			this.textBoxAutoPubMsg.WordWrap = false;
 			this.textBoxAutoPubMsg.TextChanged += new System.EventHandler(this.textBoxAutoPubMsg_TextChanged);
@@ -2429,7 +2471,7 @@
 			this.panel13.Dock = System.Windows.Forms.DockStyle.Right;
 			this.panel13.Location = new System.Drawing.Point(929, 3);
 			this.panel13.Name = "panel13";
-			this.panel13.Size = new System.Drawing.Size(222, 372);
+			this.panel13.Size = new System.Drawing.Size(222, 341);
 			this.panel13.TabIndex = 2;
 			this.panel13.Paint += new System.Windows.Forms.PaintEventHandler(this.panel13_Paint);
 			// 
@@ -2697,7 +2739,7 @@
 			this.tabPage4.Location = new System.Drawing.Point(4, 22);
 			this.tabPage4.Name = "tabPage4";
 			this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage4.Size = new System.Drawing.Size(1154, 378);
+			this.tabPage4.Size = new System.Drawing.Size(1154, 347);
 			this.tabPage4.TabIndex = 3;
 			this.tabPage4.Text = "모두전송";
 			this.tabPage4.UseVisualStyleBackColor = true;
@@ -2711,7 +2753,7 @@
 			this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel15.Location = new System.Drawing.Point(3, 32);
 			this.panel15.Name = "panel15";
-			this.panel15.Size = new System.Drawing.Size(1148, 343);
+			this.panel15.Size = new System.Drawing.Size(1148, 312);
 			this.panel15.TabIndex = 12;
 			// 
 			// textBox52
@@ -2723,7 +2765,7 @@
 			this.textBox52.Multiline = true;
 			this.textBox52.Name = "textBox52";
 			this.textBox52.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.textBox52.Size = new System.Drawing.Size(972, 304);
+			this.textBox52.Size = new System.Drawing.Size(972, 273);
 			this.textBox52.TabIndex = 5;
 			this.textBox52.WordWrap = false;
 			this.textBox52.TextChanged += new System.EventHandler(this.textBox52_TextChanged_1);
@@ -2734,7 +2776,7 @@
 			// 
 			this.splitter1.Location = new System.Drawing.Point(171, 0);
 			this.splitter1.Name = "splitter1";
-			this.splitter1.Size = new System.Drawing.Size(5, 304);
+			this.splitter1.Size = new System.Drawing.Size(5, 273);
 			this.splitter1.TabIndex = 6;
 			this.splitter1.TabStop = false;
 			// 
@@ -2745,7 +2787,7 @@
 			this.textBox51.Multiline = true;
 			this.textBox51.Name = "textBox51";
 			this.textBox51.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.textBox51.Size = new System.Drawing.Size(171, 304);
+			this.textBox51.Size = new System.Drawing.Size(171, 273);
 			this.textBox51.TabIndex = 5;
 			this.textBox51.WordWrap = false;
 			this.textBox51.TextChanged += new System.EventHandler(this.textBox51_TextChanged_1);
@@ -2763,7 +2805,7 @@
 			this.panel21.Controls.Add(this.button15);
 			this.panel21.Controls.Add(this.buttonSearchRemain);
 			this.panel21.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.panel21.Location = new System.Drawing.Point(0, 304);
+			this.panel21.Location = new System.Drawing.Point(0, 273);
 			this.panel21.Name = "panel21";
 			this.panel21.Size = new System.Drawing.Size(1148, 39);
 			this.panel21.TabIndex = 13;
@@ -2998,7 +3040,7 @@
 			this.tabPage5.Location = new System.Drawing.Point(4, 22);
 			this.tabPage5.Name = "tabPage5";
 			this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage5.Size = new System.Drawing.Size(1154, 378);
+			this.tabPage5.Size = new System.Drawing.Size(1154, 347);
 			this.tabPage5.TabIndex = 4;
 			this.tabPage5.Text = "전달";
 			this.tabPage5.UseVisualStyleBackColor = true;
@@ -3014,7 +3056,7 @@
 			this.dataGridViewDelivery.Name = "dataGridViewDelivery";
 			this.dataGridViewDelivery.ReadOnly = true;
 			this.dataGridViewDelivery.RowTemplate.Height = 23;
-			this.dataGridViewDelivery.Size = new System.Drawing.Size(1148, 160);
+			this.dataGridViewDelivery.Size = new System.Drawing.Size(1148, 129);
 			this.dataGridViewDelivery.TabIndex = 17;
 			this.dataGridViewDelivery.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDelivery_CellContentClick);
 			// 
@@ -3493,11 +3535,11 @@
 			this.dataGridViewMessage.AllowUserToDeleteRows = false;
 			this.dataGridViewMessage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridViewMessage.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.dataGridViewMessage.Location = new System.Drawing.Point(0, 409);
+			this.dataGridViewMessage.Location = new System.Drawing.Point(0, 378);
 			this.dataGridViewMessage.Name = "dataGridViewMessage";
 			this.dataGridViewMessage.ReadOnly = true;
 			this.dataGridViewMessage.RowTemplate.Height = 23;
-			this.dataGridViewMessage.Size = new System.Drawing.Size(1162, 162);
+			this.dataGridViewMessage.Size = new System.Drawing.Size(1162, 252);
 			this.dataGridViewMessage.TabIndex = 10;
 			this.dataGridViewMessage.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewMessage_CellFormatting);
 			// 
@@ -3505,17 +3547,21 @@
 			// 
 			this.splitter2.BackColor = System.Drawing.Color.MistyRose;
 			this.splitter2.Dock = System.Windows.Forms.DockStyle.Top;
-			this.splitter2.Location = new System.Drawing.Point(0, 404);
+			this.splitter2.Location = new System.Drawing.Point(0, 373);
 			this.splitter2.Name = "splitter2";
 			this.splitter2.Size = new System.Drawing.Size(1162, 5);
 			this.splitter2.TabIndex = 11;
 			this.splitter2.TabStop = false;
 			// 
+			// openFileDialog1
+			// 
+			this.openFileDialog1.FileName = "openFileDialog1";
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1162, 571);
+			this.ClientSize = new System.Drawing.Size(1162, 630);
 			this.Controls.Add(this.buttonClear);
 			this.Controls.Add(this.dataGridViewMessage);
 			this.Controls.Add(this.splitter2);
@@ -3874,13 +3920,18 @@
 		private System.Windows.Forms.Button buttonIdAllWrite;
 		private System.Windows.Forms.Button buttonIdAllWrite2;
 		private System.Windows.Forms.CheckBox checkBox3;
-		private System.Windows.Forms.Button button16;
+		private System.Windows.Forms.Button buttonMeterLoad;
 		private System.Windows.Forms.Button buttonMeterSave;
 		private System.Windows.Forms.Button buttonMeterClear;
 		private System.Windows.Forms.CheckBox checkBox4;
-		private System.Windows.Forms.Button button20;
+		private System.Windows.Forms.Button buttonIrLoad;
 		private System.Windows.Forms.Button buttonIrSave;
 		private System.Windows.Forms.Button buttonIrClear;
+		private System.Windows.Forms.CheckBox checkBoxMqttLiveHide;
+		private System.Windows.Forms.Label label76;
+		private System.Windows.Forms.CheckBox checkBox5;
+		private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+		private System.Windows.Forms.OpenFileDialog openFileDialog1;
 	}
 }
 
