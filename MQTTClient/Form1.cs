@@ -49,6 +49,7 @@ namespace MQTTClient
 		#endregion
 		private void Form1_Load(object sender, EventArgs e)
 		{
+			checkBox5.Checked = true;
 			dataGridViewMain.RowTemplate.Height = 18;
 			dataGridViewMeter.RowTemplate.Height = 18;
 			dataGridViewIR.RowTemplate.Height = 18;
@@ -215,7 +216,6 @@ namespace MQTTClient
 			dataGridViewMeter.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
 			buttonIdCount.Enabled = true;
-			dataGridViewIR.ReadOnly = true;
 			dataGridViewIR.RowHeadersVisible = false;
 			dataGridViewIR.Columns.Add("0", "POS");
 			dataGridViewIR.Columns.Add("1", "DESC");
@@ -399,6 +399,9 @@ namespace MQTTClient
 				StringBuilder autotextPlus8 = new StringBuilder();
 				StringBuilder autotextPlus9 = new StringBuilder();
 				StringBuilder autotextPlus10 = new StringBuilder();
+				StringBuilder atextBoxCode = new StringBuilder();
+				StringBuilder atextBoxIdCount = new StringBuilder();
+				StringBuilder atextBoxDelay = new StringBuilder();
 
 
 				// ini파일에서 데이터를 불러옴
@@ -478,6 +481,9 @@ namespace MQTTClient
 				GetPrivateProfileString(mc, "textBoxPlus8", "", autotextPlus8, 3200, startupPath);
 				GetPrivateProfileString(mc, "textBoxPlus9", "", autotextPlus9, 3200, startupPath);
 				GetPrivateProfileString(mc, "textBoxPlus10", "", autotextPlus10, 3200, startupPath);
+				GetPrivateProfileString(mc, "textBoxCode", "", atextBoxCode, 3200, startupPath);
+				GetPrivateProfileString(mc, "textBoxIdCount", "", atextBoxIdCount, 3200, startupPath);
+				GetPrivateProfileString(mc, "textBoxDelay", "", atextBoxDelay, 3200, startupPath);
 
 				// 텍스트박스에 ini파일에서 가져온 데이터를 넣는다
 				textBoxHost.Text = host.ToString();
@@ -555,6 +561,9 @@ namespace MQTTClient
 				textBoxPlus8.Text = autotextPlus8.ToString();
 				textBoxPlus9.Text = autotextPlus9.ToString();
 				textBoxPlus10.Text = autotextPlus10.ToString();
+				textBoxCode.Text = atextBoxCode.ToString();
+				textBoxIdCount.Text = atextBoxIdCount.ToString();
+				textBoxDelay.Text = atextBoxDelay.ToString();
 			}
 			catch (Exception ex)
 			{
@@ -642,6 +651,9 @@ namespace MQTTClient
 			WritePrivateProfileString(mc, "textBoxPlus8", textBoxPlus8.Text, startupPath);
 			WritePrivateProfileString(mc, "textBoxPlus9", textBoxPlus9.Text, startupPath);
 			WritePrivateProfileString(mc, "textBoxPlus10", textBoxPlus10.Text, startupPath);
+			WritePrivateProfileString(mc, "textBoxCode", textBoxCode.Text, startupPath);
+			WritePrivateProfileString(mc, "textBoxIdCount", textBoxIdCount.Text, startupPath);
+			WritePrivateProfileString(mc, "textBoxDelay", textBoxDelay.Text, startupPath);
 		}
 
 		private void mqttRecord()
@@ -2034,7 +2046,6 @@ namespace MQTTClient
 				{
 					//dataGridViewMain.Columns.Clear();
 					buttonIdCount.Enabled = true;
-					dataGridViewMain.ReadOnly = true;
 					dataGridViewMain.RowHeadersVisible = false;
 				}
 				else if (tabControl2.SelectedTab == tabPageMeter)
@@ -2481,7 +2492,6 @@ namespace MQTTClient
 			//{
 
 			dataGridViewMeter.Columns.Clear();
-			dataGridViewMeter.ReadOnly = true;
 			dataGridViewMeter.RowHeadersVisible = false;
 			//dataGridViewMeter.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 			dataGridViewMeter.Columns.Add("0", "POS");
@@ -2570,7 +2580,6 @@ namespace MQTTClient
 			//{
 
 			dataGridViewIR.Columns.Clear();
-			dataGridViewIR.ReadOnly = true;
 			dataGridViewIR.RowHeadersVisible = false;
 			//dataGridViewIR.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 			dataGridViewIR.Columns.Add("0", "POS");
@@ -3908,7 +3917,6 @@ namespace MQTTClient
 				{
 					string s2 = sr.ReadLine();
 					dataGridViewMain[2, i - 1].Value = s2.Trim();
-
 				}
 				sr.Close();
 			}
@@ -4031,7 +4039,7 @@ namespace MQTTClient
 					string str = "";
 					for (int k = 0; k < s3.Length - 1; k++)
 					{
-						if (checkBox3.Checked)
+						if (checkBox4.Checked)
 						{
 							string s4 = dataGridViewIR[k + 2, i - 1].Value.ToString().Trim();
 							if (s4 == s3[k].Trim())
@@ -4357,6 +4365,25 @@ namespace MQTTClient
 				textBoxIrValue.Text = "";
 			}
 			else textBoxIrValue.Text = dataGridViewIR.Rows[index].Cells[ColumnIndex].Value.ToString();
+		}
+
+		private void checkBox5_CheckedChanged(object sender, EventArgs e)
+		{
+			if (checkBox5.Checked == true)
+			{
+				dataGridViewMain.ReadOnly = true;
+				dataGridViewMeter.ReadOnly = true;
+				dataGridViewIR.ReadOnly = true;
+			}
+			else
+			{ 
+			dataGridViewMain.ReadOnly = false;
+			dataGridViewMeter.ReadOnly = false;
+			dataGridViewIR.ReadOnly = false;
+			dataGridViewMain.EditMode = DataGridViewEditMode.EditOnEnter;
+			dataGridViewMeter.EditMode = DataGridViewEditMode.EditOnEnter;
+			dataGridViewIR.EditMode = DataGridViewEditMode.EditOnEnter;
+			}
 		}
 	}
 

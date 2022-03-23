@@ -1635,7 +1635,6 @@
 			this.dataGridViewMain.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dataGridViewMain.Location = new System.Drawing.Point(0, 31);
 			this.dataGridViewMain.Name = "dataGridViewMain";
-			this.dataGridViewMain.ReadOnly = true;
 			this.dataGridViewMain.RowTemplate.Height = 23;
 			this.dataGridViewMain.Size = new System.Drawing.Size(1264, 251);
 			this.dataGridViewMain.TabIndex = 0;
@@ -1852,7 +1851,6 @@
 			this.dataGridViewMeter.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dataGridViewMeter.Location = new System.Drawing.Point(0, 31);
 			this.dataGridViewMeter.Name = "dataGridViewMeter";
-			this.dataGridViewMeter.ReadOnly = true;
 			this.dataGridViewMeter.RowTemplate.Height = 23;
 			this.dataGridViewMeter.Size = new System.Drawing.Size(1264, 251);
 			this.dataGridViewMeter.TabIndex = 0;
@@ -2120,7 +2118,6 @@
 			this.dataGridViewIR.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dataGridViewIR.Location = new System.Drawing.Point(0, 31);
 			this.dataGridViewIR.Name = "dataGridViewIR";
-			this.dataGridViewIR.ReadOnly = true;
 			this.dataGridViewIR.RowTemplate.Height = 23;
 			this.dataGridViewIR.Size = new System.Drawing.Size(1264, 251);
 			this.dataGridViewIR.TabIndex = 0;
@@ -2338,6 +2335,7 @@
 			this.checkBox5.TabIndex = 27;
 			this.checkBox5.Text = "체크:읽기전용,체크x:수정모드";
 			this.checkBox5.UseVisualStyleBackColor = true;
+			this.checkBox5.CheckedChanged += new System.EventHandler(this.checkBox5_CheckedChanged);
 			// 
 			// checkBoxStop
 			// 
