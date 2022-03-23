@@ -1000,7 +1000,7 @@ namespace MQTTClient
 						int id = resp.ID;
 						int pos = Convert.ToInt32(resp.POS);
 						int value = Convert.ToInt32(resp.VALUE);
-						dataGridViewMeter[id + 1, pos-1].Value = value.ToString();
+						dataGridViewMeter[id + 1, pos - 1].Value = value.ToString();
 					}
 
 					else if (cmd.CMD == "IR_SET")
@@ -1009,7 +1009,7 @@ namespace MQTTClient
 						int id = resp.ID;
 						int pos = Convert.ToInt32(resp.POS);
 						int value = Convert.ToInt32(resp.VALUE);
-						dataGridViewIR[id + 1, pos-1].Value = value.ToString();
+						dataGridViewIR[id + 1, pos - 1].Value = value.ToString();
 					}
 					else if (cmd.CMD == "MAIN_SET")
 					{
@@ -2355,6 +2355,7 @@ namespace MQTTClient
 						Delay(Convert.ToInt32(textBoxDelay.Text));
 					}
 
+
 				}
 			}
 			catch (Exception ex)
@@ -3494,7 +3495,41 @@ namespace MQTTClient
 				clientUser.Publish(irTopic, Encoding.UTF8.GetBytes(irMessage.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 			}
 		}
-		//DragEnter는 마우스로 리스트컨트롤 안으로 들어왔을 때 발생하는 함수
+
+		private void buttonMainClear_Click(object sender, EventArgs e)
+		{
+			for (int i = 0; i < 40; i++)
+			{
+				dataGridViewMain[2, i].Value = "";
+
+			}
+		}
+
+		private void buttonMeterClear_Click(object sender, EventArgs e)
+		{
+			//CMD_ID_POS req = new CMD_ID_POS();
+			for (int k = 1; k <= Convert.ToInt32(textBoxIdCount.Text); k++)
+			{
+				for (int i = 1; i <= 46; i++)
+				{
+					dataGridViewMeter[k + 1, i - 1].Value = "";
+				}
+			}
+			//DragEnter는 마우스로 리스트컨트롤 안으로 들어왔을 때 발생하는 함수
+		}
+
+		private void buttonIrClear_Click(object sender, EventArgs e)
+		{
+			//CMD_ID_POS req = new CMD_ID_POS();
+			for (int k = 1; k <= Convert.ToInt32(textBoxIdCount.Text); k++)
+			{
+				for (int i = 1; i <= 10; i++)
+				{
+					dataGridViewIR[k + 1, i - 1].Value = "";
+				}
+			}
+			//DragEnter는 마우스로 리스트컨트롤 안으로 들어왔을 때 발생하는 함수
+		}
 	}
 
 
@@ -3503,12 +3538,12 @@ namespace MQTTClient
 
 	//Put this class at the end of the main class or you will have problems.
 	public static class ExtensionMethods    // DoubleBuffered 메서드를 확장 시켜주자..
-	{
-		public static void DoubleBuffered(this DataGridView dgv, bool setting)
 		{
-			Type dgvType = dgv.GetType();
-			PropertyInfo pi = dgvType.GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.SetProperty);
-			pi.SetValue(dgv, setting, null);
+			public static void DoubleBuffered(this DataGridView dgv, bool setting)
+			{
+				Type dgvType = dgv.GetType();
+				PropertyInfo pi = dgvType.GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.SetProperty);
+				pi.SetValue(dgv, setting, null);
+			}
 		}
 	}
-}

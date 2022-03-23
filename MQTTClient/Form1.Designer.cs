@@ -175,6 +175,7 @@
 			this.panel12 = new System.Windows.Forms.Panel();
 			this.dataGridViewIR = new System.Windows.Forms.DataGridView();
 			this.panel24 = new System.Windows.Forms.Panel();
+			this.buttonIdAllWrite2 = new System.Windows.Forms.Button();
 			this.button12 = new System.Windows.Forms.Button();
 			this.buttonIrPublish = new System.Windows.Forms.Button();
 			this.buttonIrRead = new System.Windows.Forms.Button();
@@ -312,7 +313,14 @@
 			this.buttonClear = new System.Windows.Forms.Button();
 			this.dataGridViewMessage = new System.Windows.Forms.DataGridView();
 			this.splitter2 = new System.Windows.Forms.Splitter();
-			this.buttonIdAllWrite2 = new System.Windows.Forms.Button();
+			this.checkBox3 = new System.Windows.Forms.CheckBox();
+			this.button16 = new System.Windows.Forms.Button();
+			this.buttonMeterSave = new System.Windows.Forms.Button();
+			this.buttonMeterClear = new System.Windows.Forms.Button();
+			this.checkBox4 = new System.Windows.Forms.CheckBox();
+			this.button20 = new System.Windows.Forms.Button();
+			this.button21 = new System.Windows.Forms.Button();
+			this.buttonIrClear = new System.Windows.Forms.Button();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.panel1.SuspendLayout();
@@ -1621,7 +1629,7 @@
 			// checkBoxLoad
 			// 
 			this.checkBoxLoad.AutoSize = true;
-			this.checkBoxLoad.Location = new System.Drawing.Point(889, 7);
+			this.checkBoxLoad.Location = new System.Drawing.Point(806, 7);
 			this.checkBoxLoad.Name = "checkBoxLoad";
 			this.checkBoxLoad.Size = new System.Drawing.Size(88, 16);
 			this.checkBoxLoad.TabIndex = 12;
@@ -1630,7 +1638,7 @@
 			// 
 			// buttonMainLoad
 			// 
-			this.buttonMainLoad.Location = new System.Drawing.Point(839, 5);
+			this.buttonMainLoad.Location = new System.Drawing.Point(756, 5);
 			this.buttonMainLoad.Name = "buttonMainLoad";
 			this.buttonMainLoad.Size = new System.Drawing.Size(43, 23);
 			this.buttonMainLoad.TabIndex = 11;
@@ -1639,7 +1647,7 @@
 			// 
 			// buttonMainSave
 			// 
-			this.buttonMainSave.Location = new System.Drawing.Point(790, 5);
+			this.buttonMainSave.Location = new System.Drawing.Point(707, 5);
 			this.buttonMainSave.Name = "buttonMainSave";
 			this.buttonMainSave.Size = new System.Drawing.Size(43, 23);
 			this.buttonMainSave.TabIndex = 11;
@@ -1648,12 +1656,13 @@
 			// 
 			// buttonMainClear
 			// 
-			this.buttonMainClear.Location = new System.Drawing.Point(741, 5);
+			this.buttonMainClear.Location = new System.Drawing.Point(658, 5);
 			this.buttonMainClear.Name = "buttonMainClear";
 			this.buttonMainClear.Size = new System.Drawing.Size(43, 23);
 			this.buttonMainClear.TabIndex = 11;
 			this.buttonMainClear.Text = "Clear";
 			this.buttonMainClear.UseVisualStyleBackColor = true;
+			this.buttonMainClear.Click += new System.EventHandler(this.buttonMainClear_Click);
 			// 
 			// buttonMainRead1
 			// 
@@ -1789,6 +1798,10 @@
 			// 
 			// panel22
 			// 
+			this.panel22.Controls.Add(this.checkBox3);
+			this.panel22.Controls.Add(this.button16);
+			this.panel22.Controls.Add(this.buttonMeterSave);
+			this.panel22.Controls.Add(this.buttonMeterClear);
 			this.panel22.Controls.Add(this.buttonIdAllWrite);
 			this.panel22.Controls.Add(this.button8);
 			this.panel22.Controls.Add(this.buttonMeterRead);
@@ -1977,6 +1990,10 @@
 			// 
 			// panel24
 			// 
+			this.panel24.Controls.Add(this.checkBox4);
+			this.panel24.Controls.Add(this.button20);
+			this.panel24.Controls.Add(this.button21);
+			this.panel24.Controls.Add(this.buttonIrClear);
 			this.panel24.Controls.Add(this.buttonIdAllWrite2);
 			this.panel24.Controls.Add(this.button12);
 			this.panel24.Controls.Add(this.buttonIrPublish);
@@ -1993,6 +2010,16 @@
 			this.panel24.Name = "panel24";
 			this.panel24.Size = new System.Drawing.Size(1134, 31);
 			this.panel24.TabIndex = 2;
+			// 
+			// buttonIdAllWrite2
+			// 
+			this.buttonIdAllWrite2.Location = new System.Drawing.Point(530, 4);
+			this.buttonIdAllWrite2.Name = "buttonIdAllWrite2";
+			this.buttonIdAllWrite2.Size = new System.Drawing.Size(75, 23);
+			this.buttonIdAllWrite2.TabIndex = 19;
+			this.buttonIdAllWrite2.Text = "ID모두쓰기";
+			this.buttonIdAllWrite2.UseVisualStyleBackColor = true;
+			this.buttonIdAllWrite2.Click += new System.EventHandler(this.buttonIdAllWrite2_Click);
 			// 
 			// button12
 			// 
@@ -3402,15 +3429,81 @@
 			this.splitter2.TabIndex = 11;
 			this.splitter2.TabStop = false;
 			// 
-			// buttonIdAllWrite2
+			// checkBox3
 			// 
-			this.buttonIdAllWrite2.Location = new System.Drawing.Point(530, 4);
-			this.buttonIdAllWrite2.Name = "buttonIdAllWrite2";
-			this.buttonIdAllWrite2.Size = new System.Drawing.Size(75, 23);
-			this.buttonIdAllWrite2.TabIndex = 19;
-			this.buttonIdAllWrite2.Text = "ID모두쓰기";
-			this.buttonIdAllWrite2.UseVisualStyleBackColor = true;
-			this.buttonIdAllWrite2.Click += new System.EventHandler(this.buttonIdAllWrite2_Click);
+			this.checkBox3.AutoSize = true;
+			this.checkBox3.Location = new System.Drawing.Point(1030, 7);
+			this.checkBox3.Name = "checkBox3";
+			this.checkBox3.Size = new System.Drawing.Size(88, 16);
+			this.checkBox3.TabIndex = 22;
+			this.checkBox3.Text = "로드값 비교";
+			this.checkBox3.UseVisualStyleBackColor = true;
+			// 
+			// button16
+			// 
+			this.button16.Location = new System.Drawing.Point(980, 5);
+			this.button16.Name = "button16";
+			this.button16.Size = new System.Drawing.Size(43, 23);
+			this.button16.TabIndex = 19;
+			this.button16.Text = "Load";
+			this.button16.UseVisualStyleBackColor = true;
+			// 
+			// buttonMeterSave
+			// 
+			this.buttonMeterSave.Location = new System.Drawing.Point(931, 5);
+			this.buttonMeterSave.Name = "buttonMeterSave";
+			this.buttonMeterSave.Size = new System.Drawing.Size(43, 23);
+			this.buttonMeterSave.TabIndex = 20;
+			this.buttonMeterSave.Text = "Save";
+			this.buttonMeterSave.UseVisualStyleBackColor = true;
+			// 
+			// buttonMeterClear
+			// 
+			this.buttonMeterClear.Location = new System.Drawing.Point(882, 5);
+			this.buttonMeterClear.Name = "buttonMeterClear";
+			this.buttonMeterClear.Size = new System.Drawing.Size(43, 23);
+			this.buttonMeterClear.TabIndex = 21;
+			this.buttonMeterClear.Text = "Clear";
+			this.buttonMeterClear.UseVisualStyleBackColor = true;
+			this.buttonMeterClear.Click += new System.EventHandler(this.buttonMeterClear_Click);
+			// 
+			// checkBox4
+			// 
+			this.checkBox4.AutoSize = true;
+			this.checkBox4.Location = new System.Drawing.Point(757, 5);
+			this.checkBox4.Name = "checkBox4";
+			this.checkBox4.Size = new System.Drawing.Size(88, 16);
+			this.checkBox4.TabIndex = 26;
+			this.checkBox4.Text = "로드값 비교";
+			this.checkBox4.UseVisualStyleBackColor = true;
+			// 
+			// button20
+			// 
+			this.button20.Location = new System.Drawing.Point(707, 3);
+			this.button20.Name = "button20";
+			this.button20.Size = new System.Drawing.Size(43, 23);
+			this.button20.TabIndex = 23;
+			this.button20.Text = "Load";
+			this.button20.UseVisualStyleBackColor = true;
+			// 
+			// button21
+			// 
+			this.button21.Location = new System.Drawing.Point(658, 3);
+			this.button21.Name = "button21";
+			this.button21.Size = new System.Drawing.Size(43, 23);
+			this.button21.TabIndex = 24;
+			this.button21.Text = "Save";
+			this.button21.UseVisualStyleBackColor = true;
+			// 
+			// buttonIrClear
+			// 
+			this.buttonIrClear.Location = new System.Drawing.Point(609, 3);
+			this.buttonIrClear.Name = "buttonIrClear";
+			this.buttonIrClear.Size = new System.Drawing.Size(43, 23);
+			this.buttonIrClear.TabIndex = 25;
+			this.buttonIrClear.Text = "Clear";
+			this.buttonIrClear.UseVisualStyleBackColor = true;
+			this.buttonIrClear.Click += new System.EventHandler(this.buttonIrClear_Click);
 			// 
 			// Form1
 			// 
@@ -3774,6 +3867,14 @@
 		private System.Windows.Forms.Button buttonMainClear;
 		private System.Windows.Forms.Button buttonIdAllWrite;
 		private System.Windows.Forms.Button buttonIdAllWrite2;
+		private System.Windows.Forms.CheckBox checkBox3;
+		private System.Windows.Forms.Button button16;
+		private System.Windows.Forms.Button buttonMeterSave;
+		private System.Windows.Forms.Button buttonMeterClear;
+		private System.Windows.Forms.CheckBox checkBox4;
+		private System.Windows.Forms.Button button20;
+		private System.Windows.Forms.Button button21;
+		private System.Windows.Forms.Button buttonIrClear;
 	}
 }
 
