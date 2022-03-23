@@ -49,6 +49,7 @@ namespace MQTTClient
 		#endregion
 		private void Form1_Load(object sender, EventArgs e)
 		{
+			
 			checkBox5.Checked = true;
 			dataGridViewMain.RowTemplate.Height = 18;
 			dataGridViewMeter.RowTemplate.Height = 18;
@@ -257,6 +258,10 @@ namespace MQTTClient
 			dataGridViewIR.Columns[1].Width = 600;
 			//dataGridViewIR.Columns[(dataGridViewMeter.ColumnCount).ToString()].Width = 35;
 			dataGridViewIR.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewMain.CurrentCell = null;
+			dataGridViewMeter.CurrentCell = null;
+			dataGridViewIR.CurrentCell = null;
+
 			if (dataGridViewIR.Columns.Count < 3)
 			{
 				return;
@@ -266,15 +271,16 @@ namespace MQTTClient
 			//this.dataGridView1.Columns[1].ReadOnly = true;
 
 			//마우스로 row header width 조절 못하게 하기.
-			this.dataGridViewMain.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-			this.dataGridViewMeter.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-			this.dataGridViewIR.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+			dataGridViewMain.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+			dataGridViewMeter.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+			dataGridViewIR.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
 
 			//마우스로 column size 조절 못하게 하기
 			//this.dataGridView1.Columns[0].Resizable = DataGridViewTriState.False;
 
 			//dataGridView1.ReadOnly = true;
 			//dataGridView1.RowHeadersVisible = false;
+			textBoxIdCount_TextChanged(sender, e);
 
 		}
 		private void buttonTopicSave_Click(object sender, EventArgs e)
@@ -400,7 +406,7 @@ namespace MQTTClient
 				StringBuilder autotextPlus9 = new StringBuilder();
 				StringBuilder autotextPlus10 = new StringBuilder();
 				StringBuilder atextBoxCode = new StringBuilder();
-				StringBuilder atextBoxIdCount = new StringBuilder();
+				//StringBuilder atextBoxIdCount = new StringBuilder();
 				StringBuilder atextBoxDelay = new StringBuilder();
 
 
@@ -482,7 +488,7 @@ namespace MQTTClient
 				GetPrivateProfileString(mc, "textBoxPlus9", "", autotextPlus9, 3200, startupPath);
 				GetPrivateProfileString(mc, "textBoxPlus10", "", autotextPlus10, 3200, startupPath);
 				GetPrivateProfileString(mc, "textBoxCode", "", atextBoxCode, 3200, startupPath);
-				GetPrivateProfileString(mc, "textBoxIdCount", "", atextBoxIdCount, 3200, startupPath);
+				//GetPrivateProfileString(mc, "textBoxIdCount", "", atextBoxIdCount, 3200, startupPath);
 				GetPrivateProfileString(mc, "textBoxDelay", "", atextBoxDelay, 3200, startupPath);
 
 				// 텍스트박스에 ini파일에서 가져온 데이터를 넣는다
@@ -562,7 +568,7 @@ namespace MQTTClient
 				textBoxPlus9.Text = autotextPlus9.ToString();
 				textBoxPlus10.Text = autotextPlus10.ToString();
 				textBoxCode.Text = atextBoxCode.ToString();
-				textBoxIdCount.Text = atextBoxIdCount.ToString();
+				//textBoxIdCount.Text = atextBoxIdCount.ToString();
 				textBoxDelay.Text = atextBoxDelay.ToString();
 			}
 			catch (Exception ex)
@@ -652,7 +658,7 @@ namespace MQTTClient
 			WritePrivateProfileString(mc, "textBoxPlus9", textBoxPlus9.Text, startupPath);
 			WritePrivateProfileString(mc, "textBoxPlus10", textBoxPlus10.Text, startupPath);
 			WritePrivateProfileString(mc, "textBoxCode", textBoxCode.Text, startupPath);
-			WritePrivateProfileString(mc, "textBoxIdCount", textBoxIdCount.Text, startupPath);
+			//WritePrivateProfileString(mc, "textBoxIdCount", textBoxIdCount.Text, startupPath);
 			WritePrivateProfileString(mc, "textBoxDelay", textBoxDelay.Text, startupPath);
 		}
 
@@ -669,9 +675,6 @@ namespace MQTTClient
 			dataGridViewMessage.Columns[dataGridViewMessage.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 			dataGridViewMessage.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 			dataGridViewMessage.Columns[1].Width = 200;
-
-
-
 
 			dt2.Columns.Add("Time", typeof(string));
 			dt2.Columns.Add("Topic");
@@ -2047,6 +2050,8 @@ namespace MQTTClient
 					//dataGridViewMain.Columns.Clear();
 					buttonIdCount.Enabled = true;
 					dataGridViewMain.RowHeadersVisible = false;
+			
+
 				}
 				else if (tabControl2.SelectedTab == tabPageMeter)
 				{
@@ -2626,6 +2631,7 @@ namespace MQTTClient
 			{
 				return;
 			}
+		
 			//	}
 		}
 
@@ -3908,6 +3914,11 @@ namespace MQTTClient
 			fileName = openFile.FileName.ToString();
 
 
+
+
+
+
+
 			try
 			{
 				StreamReader sr;
@@ -3924,6 +3935,39 @@ namespace MQTTClient
 			{
 				LogMgr.ExceptionLog(ex);
 			}
+
+
+			//try
+			//{
+			//	StreamReader sr;
+			//	sr = new StreamReader(fileName);
+
+			//	for (int i = 1; i <= 40; i++)
+			//	{
+			//		string s2 = sr.ReadLine();
+			//		if (checkBoxLoad.Checked)
+			//		{
+			//			if (s2.Trim() == dataGridViewMain[2, i - 1].Value.ToString().Trim())
+			//			{
+			//				dataGridViewMain[2, i - 1].Value = s2.Trim();
+			//			}
+			//			else
+			//			{
+			//				dataGridViewMain[2, i - 1].Value = s2 + " | " + dataGridViewMain[2, i - 1].Value.ToString().Trim();
+			//			}
+			//		}
+			//		else
+			//			dataGridViewMain[2, i - 1].Value = s2.Trim();
+
+			//	}
+			//	sr.Close();
+			//}
+			//catch (Exception ex)
+			//{
+			//	LogMgr.ExceptionLog(ex);
+			//}
+
+
 		}
 
 		private void buttonMeterLoad_Click(object sender, EventArgs e)

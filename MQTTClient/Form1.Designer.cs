@@ -1635,6 +1635,8 @@
 			this.dataGridViewMain.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dataGridViewMain.Location = new System.Drawing.Point(0, 31);
 			this.dataGridViewMain.Name = "dataGridViewMain";
+			this.dataGridViewMain.RowHeadersVisible = false;
+			this.dataGridViewMain.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
 			this.dataGridViewMain.RowTemplate.Height = 23;
 			this.dataGridViewMain.Size = new System.Drawing.Size(1264, 251);
 			this.dataGridViewMain.TabIndex = 0;
@@ -3627,6 +3629,7 @@
 			this.dataGridViewMessage.Location = new System.Drawing.Point(0, 380);
 			this.dataGridViewMessage.Name = "dataGridViewMessage";
 			this.dataGridViewMessage.ReadOnly = true;
+			this.dataGridViewMessage.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
 			this.dataGridViewMessage.RowTemplate.Height = 23;
 			this.dataGridViewMessage.Size = new System.Drawing.Size(1292, 250);
 			this.dataGridViewMessage.TabIndex = 10;
