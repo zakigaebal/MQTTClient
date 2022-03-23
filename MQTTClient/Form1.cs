@@ -717,13 +717,13 @@ namespace MQTTClient
 					//jsondata(topic, payload);
 					logSave(topic, payload);
 					jsonSave(topic, payload);
+					// 한 칸 스크롤
+					dataGridViewMessage.FirstDisplayedScrollingRowIndex = 0;
+					//int rowIndex = dataGridViewMessage.FirstDisplayedScrollingRowIndex;
 
+					//// Refresh your DGV.
 
-					int rowIndex = dataGridViewMessage.FirstDisplayedScrollingRowIndex;
-
-					// Refresh your DGV.
-
-					dataGridViewMessage.FirstDisplayedScrollingRowIndex = rowIndex;
+					//dataGridViewMessage.FirstDisplayedScrollingRowIndex = rowIndex;
 
 					dataGridViewMessage.ResumeLayout();
 
@@ -1201,6 +1201,7 @@ namespace MQTTClient
 					buttonMain.Enabled = true;
 				}
 			}
+			buttonSubscribe_Click(sender, e);
 		}
 
 		private void buttonSubscribe_Click(object sender, EventArgs e)
@@ -1875,7 +1876,7 @@ namespace MQTTClient
 					CMD_POS req = new CMD_POS();
 					req.CMD = "REQ_MAIN_SET_READ";
 					req.POS = i;
-					string reqStr = JsonConvert.SerializeObject(req, Formatting.Indented);
+					string reqStr = JsonConvert.SerializeObject(req);
 					clientUser.Publish(topic, Encoding.UTF8.GetBytes(reqStr.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 					Delay(Convert.ToInt32(textBoxDelay.Text));
 				}
@@ -2354,7 +2355,7 @@ namespace MQTTClient
 				req.CMD = "REQ_METER_COUNT";
 				req.ID = 1;
 				req.COUNT = 10;
-				string reqStr = (JsonConvert.SerializeObject(req, Formatting.Indented)).Trim();
+				string reqStr = (JsonConvert.SerializeObject(req)).Trim();
 				clientUser.Publish(topic, Encoding.UTF8.GetBytes(reqStr.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 				//}
 			}
@@ -2391,7 +2392,7 @@ namespace MQTTClient
 						req.ID = k;
 						req.CMD = "REQ_METER_SET_READ";
 						req.POS = i;
-						string reqStr = JsonConvert.SerializeObject(req, Formatting.Indented);
+						string reqStr = JsonConvert.SerializeObject(req);
 						clientUser.Publish(topic, Encoding.UTF8.GetBytes(reqStr.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 						Delay(Convert.ToInt32(textBoxDelay.Text));
 					}
@@ -2433,7 +2434,7 @@ namespace MQTTClient
 						req.CMD = "REQ_IR_SET_READ";
 						req.POS = i;
 
-						string reqStr = JsonConvert.SerializeObject(req, Formatting.Indented);
+						string reqStr = JsonConvert.SerializeObject(req);
 						clientUser.Publish(topic, Encoding.UTF8.GetBytes(reqStr.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 						Delay(Convert.ToInt32(textBoxDelay.Text));
 					}
@@ -2605,7 +2606,7 @@ namespace MQTTClient
 			message.ID = Convert.ToInt32(textBoxIrId.Text);
 			message.POS = Convert.ToInt32(textBoxIrPos.Text);
 			message.VALUE = Convert.ToInt32(textBoxIrValue.Text);
-			string irMessage = JsonConvert.SerializeObject(message, Formatting.Indented);
+			string irMessage = JsonConvert.SerializeObject(message);
 			clientUser.Publish(irTopic, Encoding.UTF8.GetBytes(irMessage.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 
 			//string irTopic = "dawoon/meterset/" + textBoxCode.Text + "/1/POLOR";
@@ -2621,7 +2622,7 @@ namespace MQTTClient
 			message.ID = Convert.ToInt32(textBoxMeterId.Text);
 			message.POS = Convert.ToInt32(textBoxMeterPos.Text);
 			message.VALUE = Convert.ToInt32(textBoxMeterValue.Text);
-			string metersetMessage = JsonConvert.SerializeObject(message, Formatting.Indented);
+			string metersetMessage = JsonConvert.SerializeObject(message);
 			clientUser.Publish(metersetTopic, Encoding.UTF8.GetBytes(metersetMessage.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 
 			//string metersetTopic = "dawoon/meterset/" + textBoxCode.Text + "/1/POLOR";
@@ -2636,7 +2637,7 @@ namespace MQTTClient
 			message.CMD = "MAIN_SET";
 			message.POS = Convert.ToInt32(textBoxMainPos.Text);
 			message.VALUE = Convert.ToInt32(textBoxMainValue.Text);
-			string mainMessage = JsonConvert.SerializeObject(message, Formatting.Indented);
+			string mainMessage = JsonConvert.SerializeObject(message);
 			clientUser.Publish(mainTopic, Encoding.UTF8.GetBytes(mainMessage.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 
 
@@ -3374,7 +3375,7 @@ namespace MQTTClient
 				req.CMD = "REQ_MAIN_SET_READ";
 				req.POS = Convert.ToInt32(textBoxMainPos.Text);
 
-				string reqStr = JsonConvert.SerializeObject(req, Formatting.Indented);
+				string reqStr = JsonConvert.SerializeObject(req);
 				clientUser.Publish(topic, Encoding.UTF8.GetBytes(reqStr.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 			}
 			catch (Exception ex)
@@ -3395,7 +3396,7 @@ namespace MQTTClient
 				req.CMD = "REQ_METER_SET_READ";
 				req.ID = Convert.ToInt32(textBoxMeterId.Text);
 				req.POS = Convert.ToInt32(textBoxMeterPos.Text);
-				string reqStr = JsonConvert.SerializeObject(req, Formatting.Indented);
+				string reqStr = JsonConvert.SerializeObject(req);
 				clientUser.Publish(topic, Encoding.UTF8.GetBytes(reqStr.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 			}
 			catch (Exception ex)
@@ -3414,7 +3415,7 @@ namespace MQTTClient
 				req.CMD = "REQ_IR_SET_READ";
 				req.ID = Convert.ToInt32(textBoxIrId.Text);
 				req.POS = Convert.ToInt32(textBoxIrPos.Text);
-				string reqStr = JsonConvert.SerializeObject(req, Formatting.Indented);
+				string reqStr = JsonConvert.SerializeObject(req);
 				clientUser.Publish(topic, Encoding.UTF8.GetBytes(reqStr.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 			}
 			catch (Exception ex)
@@ -3441,7 +3442,7 @@ namespace MQTTClient
 					req.ID = Convert.ToInt32(textBoxMeterId.Text);
 					req.CMD = "REQ_METER_SET_READ";
 					req.POS = i;
-					string reqStr = JsonConvert.SerializeObject(req, Formatting.Indented);
+					string reqStr = JsonConvert.SerializeObject(req);
 					clientUser.Publish(topic, Encoding.UTF8.GetBytes(reqStr.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 					Delay(Convert.ToInt32(textBoxDelay.Text));
 				}
@@ -3474,7 +3475,7 @@ namespace MQTTClient
 					req.CMD = "REQ_IR_SET_READ";
 					req.POS = i;
 
-					string reqStr = JsonConvert.SerializeObject(req, Formatting.Indented);
+					string reqStr = JsonConvert.SerializeObject(req);
 					clientUser.Publish(topic, Encoding.UTF8.GetBytes(reqStr.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 					Delay(Convert.ToInt32(textBoxDelay.Text));
 				}
@@ -3494,7 +3495,7 @@ namespace MQTTClient
 			message.CMD = "MAIN_SET";
 			message.POS = Convert.ToInt32(textBoxMainPos.Text);
 			message.VALUE = Convert.ToInt32(textBoxMainValue.Text);
-			string mainMessage = JsonConvert.SerializeObject(message, Formatting.Indented);
+			string mainMessage = JsonConvert.SerializeObject(message);
 			clientUser.Publish(mainTopic, Encoding.UTF8.GetBytes(mainMessage.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 
 
@@ -3513,7 +3514,7 @@ namespace MQTTClient
 				message.ID = i;
 				message.POS = Convert.ToInt32(textBoxMeterPos.Text);
 				message.VALUE = Convert.ToInt32(textBoxMeterValue.Text);
-				string metersetMessage = JsonConvert.SerializeObject(message, Formatting.Indented);
+				string metersetMessage = JsonConvert.SerializeObject(message);
 				clientUser.Publish(metersetTopic, Encoding.UTF8.GetBytes(metersetMessage.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 			}
 
@@ -3533,7 +3534,7 @@ namespace MQTTClient
 				message.ID = i;
 				message.POS = Convert.ToInt32(textBoxIrPos.Text);
 				message.VALUE = Convert.ToInt32(textBoxIrValue.Text);
-				string irMessage = JsonConvert.SerializeObject(message, Formatting.Indented);
+				string irMessage = JsonConvert.SerializeObject(message);
 				clientUser.Publish(irTopic, Encoding.UTF8.GetBytes(irMessage.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 			}
 		}
@@ -3652,7 +3653,7 @@ namespace MQTTClient
 						req.CMD = "REQ_METER_SET_READ";
 						req.ID = i;
 						req.POS = Convert.ToInt32(textBoxMeterPos.Text);
-						string reqStr = JsonConvert.SerializeObject(req, Formatting.Indented);
+						string reqStr = JsonConvert.SerializeObject(req);
 						clientUser.Publish(topic, Encoding.UTF8.GetBytes(reqStr.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 					}
 					catch (Exception ex)
@@ -3681,7 +3682,7 @@ namespace MQTTClient
 						req.CMD = "REQ_IR_SET_READ";
 						req.ID = i;
 						req.POS = Convert.ToInt32(textBoxIrPos.Text);
-						string reqStr = JsonConvert.SerializeObject(req, Formatting.Indented);
+						string reqStr = JsonConvert.SerializeObject(req);
 						clientUser.Publish(topic, Encoding.UTF8.GetBytes(reqStr.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
 					}
 					catch (Exception ex)
