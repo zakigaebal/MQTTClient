@@ -1653,6 +1653,7 @@
 			this.buttonMainSave.TabIndex = 11;
 			this.buttonMainSave.Text = "Save";
 			this.buttonMainSave.UseVisualStyleBackColor = true;
+			this.buttonMainSave.Click += new System.EventHandler(this.buttonMainSave_Click);
 			// 
 			// buttonMainClear
 			// 
@@ -1795,6 +1796,7 @@
 			this.dataGridViewMeter.Size = new System.Drawing.Size(1134, 282);
 			this.dataGridViewMeter.TabIndex = 0;
 			this.dataGridViewMeter.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMeter_CellClick);
+			this.dataGridViewMeter.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMeter_CellDoubleClick);
 			// 
 			// panel22
 			// 
@@ -1987,6 +1989,7 @@
 			this.dataGridViewIR.Size = new System.Drawing.Size(1134, 282);
 			this.dataGridViewIR.TabIndex = 0;
 			this.dataGridViewIR.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewIR_CellClick);
+			this.dataGridViewIR.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewIR_CellDoubleClick);
 			// 
 			// panel24
 			// 
@@ -3456,6 +3459,7 @@
 			this.buttonMeterSave.TabIndex = 20;
 			this.buttonMeterSave.Text = "Save";
 			this.buttonMeterSave.UseVisualStyleBackColor = true;
+			this.buttonMeterSave.Click += new System.EventHandler(this.buttonMeterSave_Click);
 			// 
 			// buttonMeterClear
 			// 

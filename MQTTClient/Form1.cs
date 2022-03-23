@@ -718,6 +718,13 @@ namespace MQTTClient
 					logSave(topic, payload);
 					jsonSave(topic, payload);
 
+
+					int rowIndex = dataGridViewMessage.FirstDisplayedScrollingRowIndex;
+
+					// Refresh your DGV.
+
+					dataGridViewMessage.FirstDisplayedScrollingRowIndex = rowIndex;
+
 					dataGridViewMessage.ResumeLayout();
 
 				}
@@ -1067,7 +1074,12 @@ namespace MQTTClient
 		private void buttonMqttServer_Click(object sender, EventArgs e)
 		{
 			textBoxHost.Text = "103.60.126.23";
+			
 		}
+
+	
+
+		
 		public class LogMgr
 
 		{
@@ -1113,6 +1125,34 @@ namespace MQTTClient
 				}
 				return err;
 			}
+
+			static public void mainLog(string msg)
+			{
+				try
+				{
+					string currentPath = System.IO.Directory.GetCurrentDirectory();
+					string logName = @"" + currentPath + "\\Log\\" + "Main-" + DateTime.Now.ToString("yyyy-MM-dd") + ".log";
+					string logFileName = DateTime.Now.ToString("yyyy-MM-dd") + ".log";
+					StreamWriter tw = File.AppendText(logName);
+					//tw.WriteLine(prefixMsg);
+					tw.WriteLine(msg);
+					tw.Close();
+				}
+				catch (Exception)
+				{
+				}
+			}
+			static public void mainLogInfo(string msg, string titleString = null)
+			{
+				
+				if (!string.IsNullOrEmpty(msg))
+				{
+					msg = titleString;
+				}
+				msg = "예외 발생 일자 : " + DateTime.Now.ToString() + msg + "\r\n";
+				mainLog(msg);
+			}
+
 		}
 		private void buttonConnect_Click(object sender, EventArgs e)
 		{
@@ -2332,15 +2372,16 @@ namespace MQTTClient
 			try
 			{
 				CMD_ID_POS req = new CMD_ID_POS();
+				for (int i = 1; i <= 46; i++)
 
-				for (int k = 1; k <= Convert.ToInt32(textBoxIdCount.Text); k++)
 				{
 					Application.DoEvents();
 					if (checkBoxStop.Checked)
 					{
 						break;
 					}
-					for (int i = 1; i <= 46; i++)
+					for (int k = 1; k <= Convert.ToInt32(textBoxIdCount.Text); k++)
+
 					{
 						Application.DoEvents();
 						if (checkBoxStop.Checked)
@@ -2370,8 +2411,8 @@ namespace MQTTClient
 			try
 			{
 				CMD_ID_POS req = new CMD_ID_POS();
+				for (int i = 1; i <= 10; i++)
 
-				for (int k = 1; k <= Convert.ToInt32(textBoxIdCount.Text); k++)
 				{
 					Application.DoEvents();
 
@@ -2379,9 +2420,10 @@ namespace MQTTClient
 					{
 						break;
 					}
-					for (int i = 1; i <= 10; i++)
-					{
-						Application.DoEvents();
+						for (int k = 1; k <= Convert.ToInt32(textBoxIdCount.Text); k++)
+
+						{
+							Application.DoEvents();
 
 						if (checkBoxStop.Checked)
 						{
@@ -3530,8 +3572,127 @@ namespace MQTTClient
 			}
 			//DragEnter는 마우스로 리스트컨트롤 안으로 들어왔을 때 발생하는 함수
 		}
-	}
 
+		private void buttonMainSave_Click(object sender, EventArgs e)
+		{
+			string currentPath = System.IO.Directory.GetCurrentDirectory();
+			try
+			{
+				string aaaaa = @"" + currentPath + "\\Log\\" + "Main-" + DateTime.Now.ToString("yyyy-MM-dd") + ".main";
+				StreamWriter sw;
+				sw = new StreamWriter(aaaaa);
+				//	sw = new StreamWriter("Main.txt");
+				//int nCount = Convert.ToInt32(textBoxIdCount.Text);
+				//for (int i = 0; i < nCount; i++)
+				//{
+				//	dataGridViewMeter.Rows
+				//	listBoxSub.Items[i] += "\r\n";
+				//	sw.Write(listBoxSub.Items[i]);
+				//}
+				for (int i = 0; i < 40; i++)
+				{
+					dataGridViewMain[2, i].Value = "";
+				}
+				sw.Close();
+			}
+			catch (Exception ex)
+			{
+				LogMgr.ExceptionLog(ex);
+			}
+
+		}
+
+		private void buttonMeterSave_Click(object sender, EventArgs e)
+		{
+			string currentPath = System.IO.Directory.GetCurrentDirectory();
+			try
+			{
+				string aaaaa = @"" + currentPath + "\\Log\\" + "Meter-" + DateTime.Now.ToString("yyyy-MM-dd") + ".meter";
+				StreamWriter sw;
+				sw = new StreamWriter(aaaaa);
+				//	sw = new StreamWriter("Main.txt");
+				//int nCount = Convert.ToInt32(textBoxIdCount.Text);
+				//for (int i = 0; i < nCount; i++)
+				//{
+				//	dataGridViewMeter.Rows
+				//	listBoxSub.Items[i] += "\r\n";
+				//	sw.Write(listBoxSub.Items[i]);
+				//}
+
+				for (int k = 1; k <= Convert.ToInt32(textBoxIdCount.Text); k++)
+				{
+					for (int i = 1; i <= 46; i++)
+					{
+						dataGridViewMeter[k + 1, i - 1].Value += "\r\n";
+						sw.Write(dataGridViewMeter[k + 1, i - 1].Value);
+					}
+				}
+				sw.Close();
+			}
+			catch (Exception ex)
+			{
+				LogMgr.ExceptionLog(ex);
+			}
+		}
+
+		private void dataGridViewMeter_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+		{
+			if (dataGridViewMeter.Rows.Count<=0)
+			{
+				return;
+			}
+			if (e.ColumnIndex == 0)
+			{
+				for (int i = 1; i <= Convert.ToInt32(textBoxIdCount.Text); i++)
+				{
+					string topic = "dawoon/meterset/" + textBoxCode.Text.Trim() + "/1/" + "POLOR";
+					try
+					{
+						CMD_ID_POS_VALUE req = new CMD_ID_POS_VALUE();
+						req.CMD = "REQ_METER_SET_READ";
+						req.ID = i;
+						req.POS = Convert.ToInt32(textBoxMeterPos.Text);
+						string reqStr = JsonConvert.SerializeObject(req, Formatting.Indented);
+						clientUser.Publish(topic, Encoding.UTF8.GetBytes(reqStr.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+					}
+					catch (Exception ex)
+					{
+						MessageBox.Show(ex.Message);
+						LogMgr.ExceptionLog(ex);
+					}
+				}
+			}
+		}
+
+		private void dataGridViewIR_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+		{
+			if (dataGridViewIR.Rows.Count <= 0)
+			{
+				return;
+			}
+			if (e.ColumnIndex == 0)
+			{
+				for (int i = 1; i <= Convert.ToInt32(textBoxIdCount.Text); i++)
+				{
+					string topic = "dawoon/meterset/" + textBoxCode.Text.Trim() + "/1/" + "POLOR";
+					try
+					{
+						CMD_ID_POS_VALUE req = new CMD_ID_POS_VALUE();
+						req.CMD = "REQ_IR_SET_READ";
+						req.ID = i;
+						req.POS = Convert.ToInt32(textBoxIrPos.Text);
+						string reqStr = JsonConvert.SerializeObject(req, Formatting.Indented);
+						clientUser.Publish(topic, Encoding.UTF8.GetBytes(reqStr.Replace(" ", "")), (byte)comboBoxQos.SelectedIndex, checkBoxRetain.Checked);
+					}
+					catch (Exception ex)
+					{
+						MessageBox.Show(ex.Message);
+						LogMgr.ExceptionLog(ex);
+					}
+				}
+			}
+		}
+	}
 
 
 
