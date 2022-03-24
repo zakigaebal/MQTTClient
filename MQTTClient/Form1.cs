@@ -680,6 +680,8 @@ namespace MQTTClient
 			dataGridViewMessage.Columns[dataGridViewMessage.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 			dataGridViewMessage.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 			dataGridViewMessage.Columns[1].Width = 200;
+			dataGridViewMessage.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+			dataGridViewMessage.AllowUserToResizeRows = false;
 
 			dt2.Columns.Add("Time", typeof(string));
 			dt2.Columns.Add("Topic");
@@ -692,6 +694,8 @@ namespace MQTTClient
 			dataGridViewDelivery.Columns[dataGridViewDelivery.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 			dataGridViewDelivery.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 			dataGridViewDelivery.Columns[1].Width = 200;
+			dataGridViewDelivery.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+			dataGridViewDelivery.AllowUserToResizeRows = false;
 		}
 
 		private void buttonSubscribe2_Click(object sender, EventArgs e)
@@ -4253,8 +4257,6 @@ namespace MQTTClient
 				}
 			}
 		}
-
-
 
 
 		private void button23_Click(object sender, EventArgs e)
