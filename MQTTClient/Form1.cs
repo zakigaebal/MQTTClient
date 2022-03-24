@@ -49,7 +49,7 @@ namespace MQTTClient
 		#endregion
 		private void Form1_Load(object sender, EventArgs e)
 		{
-			
+
 			checkBox5.Checked = true;
 			dataGridViewMain.RowTemplate.Height = 18;
 			dataGridViewMeter.RowTemplate.Height = 18;
@@ -2055,7 +2055,7 @@ namespace MQTTClient
 					//dataGridViewMain.Columns.Clear();
 					buttonIdCount.Enabled = true;
 					dataGridViewMain.RowHeadersVisible = false;
-			
+
 
 				}
 				else if (tabControl2.SelectedTab == tabPageMeter)
@@ -2636,7 +2636,7 @@ namespace MQTTClient
 			{
 				return;
 			}
-		
+
 			//	}
 		}
 
@@ -3595,7 +3595,7 @@ namespace MQTTClient
 
 		private void buttonMeterClear_Click(object sender, EventArgs e)
 		{
-			button16_Click_1(sender,e);
+			button16_Click_1(sender, e);
 			//CMD_ID_POS req = new CMD_ID_POS();
 			for (int k = 1; k <= Convert.ToInt32(textBoxIdCount.Text); k++)
 			{
@@ -3786,9 +3786,9 @@ namespace MQTTClient
 
 
 
-			
 
-				try
+
+			try
 			{
 				StreamWriter sw;
 				sw = new StreamWriter(fileName, append: false);
@@ -3946,13 +3946,13 @@ namespace MQTTClient
 			{
 				StreamReader sr;
 				sr = new StreamReader(fileName);
-				
+
 				for (int i = 1; i <= 40; i++)
 				{
-				string s2 = sr.ReadLine();
+					string s2 = sr.ReadLine();
 					if (checkBoxLoad.Checked)
 					{
-				string s3 = dataGridViewMain[2, i - 1].Value.ToString().Trim();
+						string s3 = dataGridViewMain[2, i - 1].Value.ToString().Trim();
 						if (s2.Trim() == s3.Trim())
 						{
 							dataGridViewMain[2, i - 1].Value = s2.Trim();
@@ -4121,7 +4121,7 @@ namespace MQTTClient
 
 		private void buttonMainDefault_Click(object sender, EventArgs e)
 		{
-			button27_Click(sender,e);
+			button27_Click(sender, e);
 			for (int i = 0; i < dataGridViewMain.Rows.Count; i++)
 			{
 				if (dataGridViewMain.Rows[i].Cells[2].Value == null)
@@ -4132,6 +4132,10 @@ namespace MQTTClient
 				{
 					dataGridViewMain.Rows[i].Cells[2].Style.BackColor = Color.White;
 
+				}
+				else if (dataGridViewMain.Rows[i].Cells[2].Value.ToString() == "")
+				{
+					dataGridViewMain.Rows[i].Cells[2].Style.BackColor = Color.Orange;
 				}
 				else
 				{
@@ -4225,16 +4229,21 @@ namespace MQTTClient
 
 			for (int i = 0; i < dataGridViewMeter.Rows.Count; i++)
 			{
-				for (int k = 2; k < Convert.ToInt32(textBoxIdCount.Text)+2; k++)
+				for (int k = 2; k < Convert.ToInt32(textBoxIdCount.Text) + 2; k++)
 				{
-					if (dataGridViewMeter.Rows[i].Cells[k].Value == null)
+					if (dataGridViewMeter.Rows[i].Cells[k].Value.ToString() == "")
 					{
-						continue;
+						dataGridViewMeter.Rows[i].Cells[k].Style.BackColor = Color.Orange;
+						//continue;
 					}
-					if (dataGridViewMeter.Rows[i].Cells[k].Value.ToString() == dataGridViewMeter.Rows[i].Cells[dataGridViewMeter.Columns.Count-1].Value.ToString())
+					if (dataGridViewMeter.Rows[i].Cells[k].Value.ToString() == dataGridViewMeter.Rows[i].Cells[dataGridViewMeter.Columns.Count - 1].Value.ToString())
 					{
 						dataGridViewMeter.Rows[i].Cells[k].Style.BackColor = Color.White;
 
+					}
+					else if (dataGridViewMeter.Rows[i].Cells[k].Value.ToString() == "")
+					{
+						dataGridViewMeter.Rows[i].Cells[k].Style.BackColor = Color.Orange;
 					}
 					else
 					{
@@ -4242,9 +4251,11 @@ namespace MQTTClient
 
 					}
 				}
-				
 			}
 		}
+
+
+
 
 		private void button23_Click(object sender, EventArgs e)
 		{
@@ -4278,28 +4289,31 @@ namespace MQTTClient
 			{
 				for (int k = 3; k < Convert.ToInt32(textBoxIdCount.Text) + 2; k++)
 				{
-					if (dataGridViewMeter.Rows[i].Cells[k].Value == null)
+					if (dataGridViewMeter.Rows[i].Cells[k].Value.ToString() == "")
 					{
-						continue;
+						dataGridViewMeter.Rows[i].Cells[k].Style.BackColor = Color.Orange;
+						//continue;
 					}
 					if (dataGridViewMeter.Rows[i].Cells[k].Value.ToString() == dataGridViewMeter.Rows[i].Cells[k - 1].Value.ToString())
 					{
 						dataGridViewMeter.Rows[i].Cells[k].Style.BackColor = Color.White;
 
 					}
+					else if (dataGridViewMeter.Rows[i].Cells[k].Value.ToString() == "")
+					{
+						dataGridViewMeter.Rows[i].Cells[k].Style.BackColor = Color.Orange;
+					}
 					else
 					{
 						dataGridViewMeter.Rows[i].Cells[k].Style.BackColor = Color.Aqua;
-
 					}
 				}
-
 			}
 		}
 
 		private void button22_Click(object sender, EventArgs e)
 		{
-			button24_Click(sender,e);
+			button24_Click(sender, e);
 			for (int i = 0; i < dataGridViewIR.Rows.Count; i++)
 			{
 				for (int k = 3; k < Convert.ToInt32(textBoxIdCount.Text) + 2; k++)
@@ -4311,18 +4325,15 @@ namespace MQTTClient
 					if (dataGridViewIR.Rows[i].Cells[k].Value.ToString() == dataGridViewIR.Rows[i].Cells[k - 1].Value.ToString())
 					{
 						dataGridViewIR.Rows[i].Cells[k].Style.BackColor = Color.White;
-
 					}
 					else
 					{
 						dataGridViewIR.Rows[i].Cells[k].Style.BackColor = Color.Aqua;
-
 					}
 				}
-
 			}
 		}
-	
+
 		private void dataGridViewMain_SelectionChanged(object sender, EventArgs e)
 		{
 
@@ -4384,9 +4395,9 @@ namespace MQTTClient
 			catch (Exception ex)
 			{
 
-				
+
 			}
-			
+
 		}
 
 		private void dataGridViewIR_SelectionChanged(object sender, EventArgs e)
@@ -4428,13 +4439,13 @@ namespace MQTTClient
 			}
 			else
 			{
-			checkBox5.Text = "수정모드";
-			dataGridViewMain.ReadOnly = false;
-			dataGridViewMeter.ReadOnly = false;
-			dataGridViewIR.ReadOnly = false;
-			dataGridViewMain.EditMode = DataGridViewEditMode.EditOnEnter;
-			dataGridViewMeter.EditMode = DataGridViewEditMode.EditOnEnter;
-			dataGridViewIR.EditMode = DataGridViewEditMode.EditOnEnter;
+				checkBox5.Text = "수정모드";
+				dataGridViewMain.ReadOnly = false;
+				dataGridViewMeter.ReadOnly = false;
+				dataGridViewIR.ReadOnly = false;
+				dataGridViewMain.EditMode = DataGridViewEditMode.EditOnEnter;
+				dataGridViewMeter.EditMode = DataGridViewEditMode.EditOnEnter;
+				dataGridViewIR.EditMode = DataGridViewEditMode.EditOnEnter;
 			}
 		}
 	}
