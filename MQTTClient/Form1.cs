@@ -86,7 +86,8 @@ namespace MQTTClient
 			{
 				dataGridViewMain.Rows.Add();
 				dataGridViewMain["0", i].Value = i;
-
+				dataGridViewMain.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+				dataGridViewMain.AllowUserToResizeRows = false;
 			}
 			dataGridViewMain["1", 0].Value = "DEVICE_TYPE: 디바이스 종류";
 			dataGridViewMain["1", 1].Value = "MQTT_IP1: 농장 PC MQTT IP 첫번째 번호";
@@ -159,6 +160,8 @@ namespace MQTTClient
 			{
 				dataGridViewMeter.Rows.Add();
 				dataGridViewMeter["0", i].Value = i + 1;
+				dataGridViewMeter.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+				dataGridViewMeter.AllowUserToResizeRows = false;
 			}
 			dataGridViewMeter["1", 0].Value = "사용안함";
 			dataGridViewMeter["1", 1].Value = "장비 ID(1~20)";
@@ -237,6 +240,8 @@ namespace MQTTClient
 			{
 				dataGridViewIR.Rows.Add();
 				dataGridViewIR["0", i].Value = i + 1;
+				dataGridViewIR.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+				dataGridViewIR.AllowUserToResizeRows = false;
 			}
 			int num = 0;
 			dataGridViewIR["1", num++].Value = "ID: 0:232통신에 사용 1~24 CAN 통신 이용시 고유 ID";
