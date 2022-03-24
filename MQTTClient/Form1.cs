@@ -3946,17 +3946,13 @@ namespace MQTTClient
 			{
 				StreamReader sr;
 				sr = new StreamReader(fileName);
-
+				
 				for (int i = 1; i <= 40; i++)
 				{
-					string s2 = sr.ReadLine();
-					if (dataGridViewMain[2, i - 1].Value == null)
-					{
-						return;
-					}
-					string s3 = dataGridViewMain[2, i - 1].Value.ToString().Trim();
+				string s2 = sr.ReadLine();
 					if (checkBoxLoad.Checked)
 					{
+				string s3 = dataGridViewMain[2, i - 1].Value.ToString().Trim();
 						if (s2.Trim() == s3.Trim())
 						{
 							dataGridViewMain[2, i - 1].Value = s2.Trim();
