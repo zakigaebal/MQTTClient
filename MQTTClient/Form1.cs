@@ -3924,24 +3924,6 @@ namespace MQTTClient
 
 
 
-			try
-			{
-				StreamReader sr;
-				sr = new StreamReader(fileName);
-
-				for (int i = 1; i <= 40; i++)
-				{
-					string s2 = sr.ReadLine();
-					dataGridViewMain[2, i - 1].Value = s2.Trim();
-				}
-				sr.Close();
-			}
-			catch (Exception ex)
-			{
-				LogMgr.ExceptionLog(ex);
-			}
-
-
 			//try
 			//{
 			//	StreamReader sr;
@@ -3950,20 +3932,7 @@ namespace MQTTClient
 			//	for (int i = 1; i <= 40; i++)
 			//	{
 			//		string s2 = sr.ReadLine();
-			//		if (checkBoxLoad.Checked)
-			//		{
-			//			if (s2.Trim() == dataGridViewMain[2, i - 1].Value.ToString().Trim())
-			//			{
-			//				dataGridViewMain[2, i - 1].Value = s2.Trim();
-			//			}
-			//			else
-			//			{
-			//				dataGridViewMain[2, i - 1].Value = s2 + " | " + dataGridViewMain[2, i - 1].Value.ToString().Trim();
-			//			}
-			//		}
-			//		else
-			//			dataGridViewMain[2, i - 1].Value = s2.Trim();
-
+			//		dataGridViewMain[2, i - 1].Value = s2.Trim();
 			//	}
 			//	sr.Close();
 			//}
@@ -3971,6 +3940,42 @@ namespace MQTTClient
 			//{
 			//	LogMgr.ExceptionLog(ex);
 			//}
+
+
+			try
+			{
+				StreamReader sr;
+				sr = new StreamReader(fileName);
+
+				for (int i = 1; i <= 40; i++)
+				{
+					string s2 = sr.ReadLine();
+					if (dataGridViewMain[2, i - 1].Value == null)
+					{
+						return;
+					}
+					string s3 = dataGridViewMain[2, i - 1].Value.ToString().Trim();
+					if (checkBoxLoad.Checked)
+					{
+						if (s2.Trim() == s3.Trim())
+						{
+							dataGridViewMain[2, i - 1].Value = s2.Trim();
+						}
+						else
+						{
+							dataGridViewMain[2, i - 1].Value = s2 + " | " + s3;
+						}
+					}
+					else
+						dataGridViewMain[2, i - 1].Value = s2.Trim();
+
+				}
+				sr.Close();
+			}
+			catch (Exception ex)
+			{
+				LogMgr.ExceptionLog(ex);
+			}
 
 
 		}
