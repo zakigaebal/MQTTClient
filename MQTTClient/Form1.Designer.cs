@@ -2368,7 +2368,6 @@
 			this.textBoxDelay.Size = new System.Drawing.Size(36, 21);
 			this.textBoxDelay.TabIndex = 5;
 			this.textBoxDelay.Text = "300";
-			this.textBoxDelay.TextChanged += new System.EventHandler(this.textBoxIdCount_TextChanged);
 			// 
 			// label75
 			// 
