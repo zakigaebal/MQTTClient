@@ -4421,12 +4421,14 @@ namespace MQTTClient
 		{
 			if (checkBox5.Checked == true)
 			{
+				checkBox5.Text = "읽기모드";
 				dataGridViewMain.ReadOnly = true;
 				dataGridViewMeter.ReadOnly = true;
 				dataGridViewIR.ReadOnly = true;
 			}
 			else
-			{ 
+			{
+			checkBox5.Text = "수정모드";
 			dataGridViewMain.ReadOnly = false;
 			dataGridViewMeter.ReadOnly = false;
 			dataGridViewIR.ReadOnly = false;
