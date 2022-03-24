@@ -386,7 +386,7 @@
 			this.tabControl1.Location = new System.Drawing.Point(0, 0);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(1292, 373);
+			this.tabControl1.Size = new System.Drawing.Size(1292, 563);
 			this.tabControl1.TabIndex = 0;
 			this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
 			// 
@@ -396,7 +396,7 @@
 			this.tabPage1.Location = new System.Drawing.Point(4, 22);
 			this.tabPage1.Name = "tabPage1";
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(1284, 347);
+			this.tabPage1.Size = new System.Drawing.Size(1284, 537);
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "MQTT";
 			this.tabPage1.UseVisualStyleBackColor = true;
@@ -408,7 +408,7 @@
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel1.Location = new System.Drawing.Point(3, 3);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(1278, 341);
+			this.panel1.Size = new System.Drawing.Size(1278, 531);
 			this.panel1.TabIndex = 10;
 			// 
 			// panel2
@@ -441,14 +441,14 @@
 			this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel2.Location = new System.Drawing.Point(715, 0);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(563, 341);
+			this.panel2.Size = new System.Drawing.Size(563, 531);
 			this.panel2.TabIndex = 0;
 			// 
 			// checkBoxMqttLiveHide
 			// 
 			this.checkBoxMqttLiveHide.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.checkBoxMqttLiveHide.AutoSize = true;
-			this.checkBoxMqttLiveHide.Location = new System.Drawing.Point(542, 319);
+			this.checkBoxMqttLiveHide.Location = new System.Drawing.Point(541, 296);
 			this.checkBoxMqttLiveHide.Name = "checkBoxMqttLiveHide";
 			this.checkBoxMqttLiveHide.Size = new System.Drawing.Size(15, 14);
 			this.checkBoxMqttLiveHide.TabIndex = 13;
@@ -504,7 +504,7 @@
 			this.label76.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.label76.AutoSize = true;
 			this.label76.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label76.Location = new System.Drawing.Point(440, 317);
+			this.label76.Location = new System.Drawing.Point(439, 294);
 			this.label76.Name = "label76";
 			this.label76.Size = new System.Drawing.Size(105, 17);
 			this.label76.TabIndex = 0;
@@ -826,7 +826,7 @@
 			this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel4.Location = new System.Drawing.Point(0, 0);
 			this.panel4.Name = "panel4";
-			this.panel4.Size = new System.Drawing.Size(715, 341);
+			this.panel4.Size = new System.Drawing.Size(715, 531);
 			this.panel4.TabIndex = 2;
 			// 
 			// panel6
@@ -850,7 +850,7 @@
 			this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel6.Location = new System.Drawing.Point(0, 0);
 			this.panel6.Name = "panel6";
-			this.panel6.Size = new System.Drawing.Size(715, 341);
+			this.panel6.Size = new System.Drawing.Size(715, 531);
 			this.panel6.TabIndex = 13;
 			// 
 			// textBoxHost
@@ -1588,7 +1588,7 @@
 			this.tabPage2.Location = new System.Drawing.Point(4, 22);
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(1284, 347);
+			this.tabPage2.Size = new System.Drawing.Size(1284, 537);
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "수동착유";
 			this.tabPage2.UseVisualStyleBackColor = true;
@@ -1602,7 +1602,7 @@
 			this.tabControl2.Location = new System.Drawing.Point(3, 30);
 			this.tabControl2.Name = "tabControl2";
 			this.tabControl2.SelectedIndex = 0;
-			this.tabControl2.Size = new System.Drawing.Size(1278, 314);
+			this.tabControl2.Size = new System.Drawing.Size(1278, 504);
 			this.tabControl2.TabIndex = 5;
 			this.tabControl2.SelectedIndexChanged += new System.EventHandler(this.tabControl2_SelectedIndexChanged);
 			// 
@@ -1820,7 +1820,7 @@
 			this.tabPageMeter.Location = new System.Drawing.Point(4, 22);
 			this.tabPageMeter.Name = "tabPageMeter";
 			this.tabPageMeter.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPageMeter.Size = new System.Drawing.Size(1270, 288);
+			this.tabPageMeter.Size = new System.Drawing.Size(1270, 478);
 			this.tabPageMeter.TabIndex = 1;
 			this.tabPageMeter.Text = "METER";
 			this.tabPageMeter.UseVisualStyleBackColor = true;
@@ -1831,7 +1831,7 @@
 			this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel9.Location = new System.Drawing.Point(3, 3);
 			this.panel9.Name = "panel9";
-			this.panel9.Size = new System.Drawing.Size(1264, 282);
+			this.panel9.Size = new System.Drawing.Size(1264, 472);
 			this.panel9.TabIndex = 0;
 			// 
 			// panel11
@@ -1841,7 +1841,7 @@
 			this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel11.Location = new System.Drawing.Point(0, 0);
 			this.panel11.Name = "panel11";
-			this.panel11.Size = new System.Drawing.Size(1264, 282);
+			this.panel11.Size = new System.Drawing.Size(1264, 472);
 			this.panel11.TabIndex = 1;
 			this.panel11.Paint += new System.Windows.Forms.PaintEventHandler(this.panel11_Paint);
 			// 
@@ -1854,7 +1854,7 @@
 			this.dataGridViewMeter.Location = new System.Drawing.Point(0, 31);
 			this.dataGridViewMeter.Name = "dataGridViewMeter";
 			this.dataGridViewMeter.RowTemplate.Height = 23;
-			this.dataGridViewMeter.Size = new System.Drawing.Size(1264, 251);
+			this.dataGridViewMeter.Size = new System.Drawing.Size(1264, 441);
 			this.dataGridViewMeter.TabIndex = 0;
 			this.dataGridViewMeter.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMeter_CellClick);
 			this.dataGridViewMeter.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMeter_CellDoubleClick);
@@ -2088,7 +2088,7 @@
 			this.tabPageIR.Location = new System.Drawing.Point(4, 22);
 			this.tabPageIR.Name = "tabPageIR";
 			this.tabPageIR.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPageIR.Size = new System.Drawing.Size(1270, 288);
+			this.tabPageIR.Size = new System.Drawing.Size(1270, 478);
 			this.tabPageIR.TabIndex = 2;
 			this.tabPageIR.Text = "IR";
 			this.tabPageIR.UseVisualStyleBackColor = true;
@@ -2099,7 +2099,7 @@
 			this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel10.Location = new System.Drawing.Point(3, 3);
 			this.panel10.Name = "panel10";
-			this.panel10.Size = new System.Drawing.Size(1264, 282);
+			this.panel10.Size = new System.Drawing.Size(1264, 472);
 			this.panel10.TabIndex = 1;
 			// 
 			// panel12
@@ -2109,7 +2109,7 @@
 			this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel12.Location = new System.Drawing.Point(0, 0);
 			this.panel12.Name = "panel12";
-			this.panel12.Size = new System.Drawing.Size(1264, 282);
+			this.panel12.Size = new System.Drawing.Size(1264, 472);
 			this.panel12.TabIndex = 1;
 			// 
 			// dataGridViewIR
@@ -2121,7 +2121,7 @@
 			this.dataGridViewIR.Location = new System.Drawing.Point(0, 31);
 			this.dataGridViewIR.Name = "dataGridViewIR";
 			this.dataGridViewIR.RowTemplate.Height = 23;
-			this.dataGridViewIR.Size = new System.Drawing.Size(1264, 251);
+			this.dataGridViewIR.Size = new System.Drawing.Size(1264, 441);
 			this.dataGridViewIR.TabIndex = 0;
 			this.dataGridViewIR.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewIR_CellClick);
 			this.dataGridViewIR.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewIR_CellDoubleClick);
@@ -2431,7 +2431,7 @@
 			this.tabPage3.Location = new System.Drawing.Point(4, 22);
 			this.tabPage3.Name = "tabPage3";
 			this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage3.Size = new System.Drawing.Size(1284, 347);
+			this.tabPage3.Size = new System.Drawing.Size(1284, 537);
 			this.tabPage3.TabIndex = 2;
 			this.tabPage3.Text = "자동Pub";
 			this.tabPage3.UseVisualStyleBackColor = true;
@@ -2443,7 +2443,7 @@
 			this.panel16.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel16.Location = new System.Drawing.Point(3, 3);
 			this.panel16.Name = "panel16";
-			this.panel16.Size = new System.Drawing.Size(1056, 341);
+			this.panel16.Size = new System.Drawing.Size(1056, 531);
 			this.panel16.TabIndex = 9;
 			// 
 			// textBoxAutoPubMsg
@@ -2453,7 +2453,7 @@
 			this.textBoxAutoPubMsg.Multiline = true;
 			this.textBoxAutoPubMsg.Name = "textBoxAutoPubMsg";
 			this.textBoxAutoPubMsg.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.textBoxAutoPubMsg.Size = new System.Drawing.Size(1056, 300);
+			this.textBoxAutoPubMsg.Size = new System.Drawing.Size(1056, 490);
 			this.textBoxAutoPubMsg.TabIndex = 1;
 			this.textBoxAutoPubMsg.WordWrap = false;
 			this.textBoxAutoPubMsg.TextChanged += new System.EventHandler(this.textBoxAutoPubMsg_TextChanged);
@@ -2561,7 +2561,7 @@
 			this.panel13.Dock = System.Windows.Forms.DockStyle.Right;
 			this.panel13.Location = new System.Drawing.Point(1059, 3);
 			this.panel13.Name = "panel13";
-			this.panel13.Size = new System.Drawing.Size(222, 341);
+			this.panel13.Size = new System.Drawing.Size(222, 531);
 			this.panel13.TabIndex = 2;
 			this.panel13.Paint += new System.Windows.Forms.PaintEventHandler(this.panel13_Paint);
 			// 
@@ -2829,7 +2829,7 @@
 			this.tabPage4.Location = new System.Drawing.Point(4, 22);
 			this.tabPage4.Name = "tabPage4";
 			this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage4.Size = new System.Drawing.Size(1284, 347);
+			this.tabPage4.Size = new System.Drawing.Size(1284, 537);
 			this.tabPage4.TabIndex = 3;
 			this.tabPage4.Text = "모두전송";
 			this.tabPage4.UseVisualStyleBackColor = true;
@@ -2843,7 +2843,7 @@
 			this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel15.Location = new System.Drawing.Point(3, 32);
 			this.panel15.Name = "panel15";
-			this.panel15.Size = new System.Drawing.Size(1278, 312);
+			this.panel15.Size = new System.Drawing.Size(1278, 502);
 			this.panel15.TabIndex = 12;
 			// 
 			// textBox52
@@ -2855,7 +2855,7 @@
 			this.textBox52.Multiline = true;
 			this.textBox52.Name = "textBox52";
 			this.textBox52.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.textBox52.Size = new System.Drawing.Size(1102, 273);
+			this.textBox52.Size = new System.Drawing.Size(1102, 463);
 			this.textBox52.TabIndex = 5;
 			this.textBox52.WordWrap = false;
 			this.textBox52.TextChanged += new System.EventHandler(this.textBox52_TextChanged_1);
@@ -2866,7 +2866,7 @@
 			// 
 			this.splitter1.Location = new System.Drawing.Point(171, 0);
 			this.splitter1.Name = "splitter1";
-			this.splitter1.Size = new System.Drawing.Size(5, 273);
+			this.splitter1.Size = new System.Drawing.Size(5, 463);
 			this.splitter1.TabIndex = 6;
 			this.splitter1.TabStop = false;
 			// 
@@ -2877,7 +2877,7 @@
 			this.textBox51.Multiline = true;
 			this.textBox51.Name = "textBox51";
 			this.textBox51.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.textBox51.Size = new System.Drawing.Size(171, 273);
+			this.textBox51.Size = new System.Drawing.Size(171, 463);
 			this.textBox51.TabIndex = 5;
 			this.textBox51.WordWrap = false;
 			this.textBox51.TextChanged += new System.EventHandler(this.textBox51_TextChanged_1);
@@ -2895,7 +2895,7 @@
 			this.panel21.Controls.Add(this.button15);
 			this.panel21.Controls.Add(this.buttonSearchRemain);
 			this.panel21.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.panel21.Location = new System.Drawing.Point(0, 273);
+			this.panel21.Location = new System.Drawing.Point(0, 463);
 			this.panel21.Name = "panel21";
 			this.panel21.Size = new System.Drawing.Size(1278, 39);
 			this.panel21.TabIndex = 13;
@@ -3130,7 +3130,7 @@
 			this.tabPage5.Location = new System.Drawing.Point(4, 22);
 			this.tabPage5.Name = "tabPage5";
 			this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage5.Size = new System.Drawing.Size(1284, 347);
+			this.tabPage5.Size = new System.Drawing.Size(1284, 537);
 			this.tabPage5.TabIndex = 4;
 			this.tabPage5.Text = "전달";
 			this.tabPage5.UseVisualStyleBackColor = true;
@@ -3146,7 +3146,7 @@
 			this.dataGridViewDelivery.Name = "dataGridViewDelivery";
 			this.dataGridViewDelivery.ReadOnly = true;
 			this.dataGridViewDelivery.RowTemplate.Height = 23;
-			this.dataGridViewDelivery.Size = new System.Drawing.Size(1278, 129);
+			this.dataGridViewDelivery.Size = new System.Drawing.Size(1278, 319);
 			this.dataGridViewDelivery.TabIndex = 17;
 			this.dataGridViewDelivery.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDelivery_CellContentClick);
 			// 
@@ -3625,12 +3625,12 @@
 			this.dataGridViewMessage.AllowUserToDeleteRows = false;
 			this.dataGridViewMessage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridViewMessage.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.dataGridViewMessage.Location = new System.Drawing.Point(0, 380);
+			this.dataGridViewMessage.Location = new System.Drawing.Point(0, 570);
 			this.dataGridViewMessage.Name = "dataGridViewMessage";
 			this.dataGridViewMessage.ReadOnly = true;
 			this.dataGridViewMessage.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
 			this.dataGridViewMessage.RowTemplate.Height = 23;
-			this.dataGridViewMessage.Size = new System.Drawing.Size(1292, 250);
+			this.dataGridViewMessage.Size = new System.Drawing.Size(1292, 60);
 			this.dataGridViewMessage.TabIndex = 10;
 			this.dataGridViewMessage.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewMessage_CellFormatting);
 			// 
@@ -3638,7 +3638,7 @@
 			// 
 			this.splitter2.BackColor = System.Drawing.Color.MistyRose;
 			this.splitter2.Dock = System.Windows.Forms.DockStyle.Top;
-			this.splitter2.Location = new System.Drawing.Point(0, 373);
+			this.splitter2.Location = new System.Drawing.Point(0, 563);
 			this.splitter2.Name = "splitter2";
 			this.splitter2.Size = new System.Drawing.Size(1292, 7);
 			this.splitter2.TabIndex = 11;

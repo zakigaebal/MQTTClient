@@ -4128,9 +4128,9 @@ namespace MQTTClient
 			button27_Click(sender, e);
 			for (int i = 0; i < dataGridViewMain.Rows.Count; i++)
 			{
-				if (dataGridViewMain.Rows[i].Cells[2].Value == null)
+				if (dataGridViewMeter.Rows[i].Cells[2].Value.ToString() == "")
 				{
-					continue;
+					//continue;
 				}
 				if (dataGridViewMain.Rows[i].Cells[2].Value.ToString() == dataGridViewMain.Rows[i].Cells[3].Value.ToString())
 				{
@@ -4237,7 +4237,7 @@ namespace MQTTClient
 				{
 					if (dataGridViewMeter.Rows[i].Cells[k].Value.ToString() == "")
 					{
-						dataGridViewMeter.Rows[i].Cells[k].Style.BackColor = Color.Orange;
+						//dataGridViewMeter.Rows[i].Cells[k].Style.BackColor = Color.Orange;
 						//continue;
 					}
 					if (dataGridViewMeter.Rows[i].Cells[k].Value.ToString() == dataGridViewMeter.Rows[i].Cells[dataGridViewMeter.Columns.Count - 1].Value.ToString())
@@ -4265,9 +4265,10 @@ namespace MQTTClient
 			{
 				for (int k = 2; k < Convert.ToInt32(textBoxIdCount.Text) + 2; k++)
 				{
-					if (dataGridViewIR.Rows[i].Cells[k].Value == null)
+					if (dataGridViewIR.Rows[i].Cells[k].Value.ToString() == "")
 					{
-						continue;
+						dataGridViewIR.Rows[i].Cells[k].Style.BackColor = Color.Orange;
+						//continue;
 					}
 					if (dataGridViewIR.Rows[i].Cells[k].Value.ToString() == dataGridViewIR.Rows[i].Cells[dataGridViewIR.Columns.Count - 1].Value.ToString())
 					{
@@ -4284,6 +4285,8 @@ namespace MQTTClient
 			}
 		}
 
+
+
 		private void button21_Click(object sender, EventArgs e)
 		{
 			button16_Click_1(sender, e);
@@ -4293,15 +4296,21 @@ namespace MQTTClient
 				{
 					if (dataGridViewMeter.Rows[i].Cells[k].Value.ToString() == "")
 					{
-						dataGridViewMeter.Rows[i].Cells[k].Style.BackColor = Color.Orange;
+						//dataGridViewMeter.Rows[i].Cells[k].Style.BackColor = Color.Orange;
 						//continue;
 					}
-					if (dataGridViewMeter.Rows[i].Cells[k].Value.ToString() == dataGridViewMeter.Rows[i].Cells[k - 1].Value.ToString())
+					else if (dataGridViewMeter.Rows[i].Cells[k].Value.ToString() == dataGridViewMeter.Rows[i].Cells[k - 1].Value.ToString())
 					{
-						dataGridViewMeter.Rows[i].Cells[k].Style.BackColor = Color.White;
-
+					dataGridViewMeter.Rows[i].Cells[k].Style.BackColor = Color.White;
 					}
-					else if (dataGridViewMeter.Rows[i].Cells[k].Value.ToString() == "")
+
+				}
+			}
+					for (int i = 0; i < dataGridViewMeter.Rows.Count; i++)
+			{
+				for (int k = 2; k < Convert.ToInt32(textBoxIdCount.Text) + 2; k++)
+				{
+					if (dataGridViewMeter.Rows[i].Cells[k].Value.ToString() == "")
 					{
 						dataGridViewMeter.Rows[i].Cells[k].Style.BackColor = Color.Orange;
 					}
@@ -4311,22 +4320,58 @@ namespace MQTTClient
 					}
 				}
 			}
+
+
+
+
+
 		}
 
 		private void button22_Click(object sender, EventArgs e)
 		{
 			button24_Click(sender, e);
+			//for (int i = 0; i < dataGridViewIR.Rows.Count; i++)
+			//{
+			//	for (int k = 3; k < Convert.ToInt32(textBoxIdCount.Text) + 2; k++)
+			//	{
+			//		if (dataGridViewIR.Rows[i].Cells[k].Value == null)
+			//		{
+			//			continue;
+			//		}
+			//		if (dataGridViewIR.Rows[i].Cells[k].Value.ToString() == dataGridViewIR.Rows[i].Cells[k - 1].Value.ToString())
+			//		{
+			//			dataGridViewIR.Rows[i].Cells[k].Style.BackColor = Color.White;
+			//		}
+			//		else
+			//		{
+			//			dataGridViewIR.Rows[i].Cells[k].Style.BackColor = Color.Aqua;
+			//		}
+			//	}
+			//}
+
 			for (int i = 0; i < dataGridViewIR.Rows.Count; i++)
 			{
 				for (int k = 3; k < Convert.ToInt32(textBoxIdCount.Text) + 2; k++)
 				{
-					if (dataGridViewIR.Rows[i].Cells[k].Value == null)
+					if (dataGridViewIR.Rows[i].Cells[k].Value.ToString() == "")
 					{
-						continue;
+						//dataGridViewMeter.Rows[i].Cells[k].Style.BackColor = Color.Orange;
+						//continue;
 					}
-					if (dataGridViewIR.Rows[i].Cells[k].Value.ToString() == dataGridViewIR.Rows[i].Cells[k - 1].Value.ToString())
+					else if (dataGridViewIR.Rows[i].Cells[k].Value.ToString() == dataGridViewIR.Rows[i].Cells[k - 1].Value.ToString())
 					{
 						dataGridViewIR.Rows[i].Cells[k].Style.BackColor = Color.White;
+					}
+
+				}
+			}
+			for (int i = 0; i < dataGridViewIR.Rows.Count; i++)
+			{
+				for (int k = 2; k < Convert.ToInt32(textBoxIdCount.Text) + 2; k++)
+				{
+					if (dataGridViewIR.Rows[i].Cells[k].Value.ToString() == "")
+					{
+						dataGridViewIR.Rows[i].Cells[k].Style.BackColor = Color.Orange;
 					}
 					else
 					{
@@ -4334,6 +4379,10 @@ namespace MQTTClient
 					}
 				}
 			}
+
+
+
+
 		}
 
 		private void dataGridViewMain_SelectionChanged(object sender, EventArgs e)
