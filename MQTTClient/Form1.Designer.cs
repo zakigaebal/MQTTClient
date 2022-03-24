@@ -2333,9 +2333,9 @@
 			this.checkBox5.AutoSize = true;
 			this.checkBox5.Location = new System.Drawing.Point(392, 5);
 			this.checkBox5.Name = "checkBox5";
-			this.checkBox5.Size = new System.Drawing.Size(187, 16);
+			this.checkBox5.Size = new System.Drawing.Size(72, 16);
 			this.checkBox5.TabIndex = 27;
-			this.checkBox5.Text = "체크:읽기전용,체크x:수정모드";
+			this.checkBox5.Text = "읽기모드";
 			this.checkBox5.UseVisualStyleBackColor = true;
 			this.checkBox5.CheckedChanged += new System.EventHandler(this.checkBox5_CheckedChanged);
 			// 

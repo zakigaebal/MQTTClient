@@ -4135,7 +4135,7 @@ namespace MQTTClient
 				}
 				else
 				{
-					dataGridViewMain.Rows[i].Cells[2].Style.BackColor = Color.LightGoldenrodYellow;
+					dataGridViewMain.Rows[i].Cells[2].Style.BackColor = Color.Aqua;
 
 				}
 			}
@@ -4148,7 +4148,7 @@ namespace MQTTClient
 			//	return;
 			//if (dataGridViewMain.Rows[e.RowIndex].Cells[dataGridViewMain.Columns.Count - 1].Value.ToString() == dataGridViewMain.Rows[e.RowIndex].Cells[dataGridViewMain.Columns.Count - 2].Value.ToString())
 			//{
-			//	e.CellStyle.BackColor = Color.LightGoldenrodYellow;
+			//	e.CellStyle.BackColor = Color.Aqua;
 			//	e.CellStyle.ForeColor = Color.Black;
 			//}
 			//이전값이 같으면 기본값에 색상추가
@@ -4238,7 +4238,7 @@ namespace MQTTClient
 					}
 					else
 					{
-						dataGridViewMeter.Rows[i].Cells[k].Style.BackColor = Color.LightGoldenrodYellow;
+						dataGridViewMeter.Rows[i].Cells[k].Style.BackColor = Color.Aqua;
 
 					}
 				}
@@ -4263,7 +4263,7 @@ namespace MQTTClient
 					}
 					else
 					{
-						dataGridViewIR.Rows[i].Cells[k].Style.BackColor = Color.LightGoldenrodYellow;
+						dataGridViewIR.Rows[i].Cells[k].Style.BackColor = Color.Aqua;
 
 					}
 				}
@@ -4289,7 +4289,7 @@ namespace MQTTClient
 					}
 					else
 					{
-						dataGridViewMeter.Rows[i].Cells[k].Style.BackColor = Color.LightGoldenrodYellow;
+						dataGridViewMeter.Rows[i].Cells[k].Style.BackColor = Color.Aqua;
 
 					}
 				}
@@ -4315,7 +4315,7 @@ namespace MQTTClient
 					}
 					else
 					{
-						dataGridViewIR.Rows[i].Cells[k].Style.BackColor = Color.LightGoldenrodYellow;
+						dataGridViewIR.Rows[i].Cells[k].Style.BackColor = Color.Aqua;
 
 					}
 				}
